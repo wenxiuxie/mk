@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2024 A · Q23</title>
+<style>
+:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--ink);font-size:14px}
+.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
+.lang-btn:hover{background:#e0f2fe}
+.wrap{max-width:760px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
+h1{margin:0 0 8px;color:var(--ink);font-size:24px}
+.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:16px}
+.play{margin:16px 0;padding:14px;background:#f0f9ff;border-radius:14px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
+.primary{background:#0284c7;color:#fff}
+.ok{background:#22c55e;color:#fff}
+.warn{background:#fef3c7;color:#92400e}
+.ghost{background:#e2e8f0;color:#334155}
+.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink)}
+.msg.good{color:var(--ok)}
+.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.opt{min-width:56px;padding:10px 12px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer;text-align:center}
+.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
+.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.hint{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6}
+.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
+.nav a{color:var(--accent);font-weight:700;text-decoration:none}
+.chip{display:inline-block;background:#fff;border:2px solid #7dd3fc;border-radius:999px;padding:4px 10px;margin:3px;font-weight:700;color:#0369a1}
+.grid{display:inline-grid;gap:4px;background:#fff;padding:8px;border-radius:10px}
+.cell{width:44px;height:44px;border:2px solid #94a3b8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;user-select:none}
+.cell.grey{background:#94a3b8;color:#fff}
+.cell.white{background:#fff}
+.cell.path{outline:3px solid #f59e0b;outline-offset:-3px}
+.cell.start{box-shadow:inset 0 0 0 3px #22c55e}
+.cell.end{box-shadow:inset 0 0 0 3px #ef4444}
+.board{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.num{width:56px;height:56px;border-radius:12px;background:#fff;border:3px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;cursor:pointer}
+.num.on{background:#0284c7;color:#fff}
+.node{width:52px;height:52px;border-radius:50%;background:#e0f2fe;border:3px solid #0284c7;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;position:absolute}
+.node.hot{background:#fde68a;border-color:#d97706}
+.pat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.pat .item{width:64px;height:64px;border-radius:12px;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:28px;background:#fff}
+.pat .item.hl{border-color:#16a34a;background:#dcfce7;transform:scale(1.05)}
+
+.figwrap{margin:12px 0 4px;text-align:center}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
+.fig-md{max-width:420px}
+.figcap{margin:10px 0 4px;font-weight:700;color:#0369a1;font-size:14px}
+
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Math Kangaroo 2024 · Level A</div>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
+</div>
+<div class="wrap">
+  <h1 data-zh="五月做题日历" data-en="May Problem Calendar"></h1>
+  <div class="meta" data-zh="第 23 题 · 5 分" data-en="Question 23 · 5 points"></div>
+
+<div class="qbox" data-zh-html="小丽从 5 月 1 日开始做一套题（日历：1 日是星期三）。<br>每天做 2 题 → 在某个星期日做完；每天做 3 题 → 在某个星期三做完。一共多少题？"
+data-en-html="Julia starts on May 1 (Wednesday on the calendar).<br>2 problems/day → finishes on a Sunday; 3/day → finishes on a Wednesday. How many problems?"></div>
+
+<div class="figwrap"><img class="fig fig-md" src="assets/q23_figure.png" alt="Q23 May calendar"/></div>
+
+<div class="play">
+  <div class="btnrow" style="justify-content:center">
+    <button class="act primary" onclick="showLists()" data-zh="列出可能题数" data-en="List possible totals"></button>
+  </div>
+  <div id="lists" style="text-align:center;margin-top:10px"></div>
+  <div class="msg" id="playMsg"></div>
+</div>
+<div class="options">
+<div class="opt" data-ans="A" onclick="markAnswer(this,'D')">6</div>
+<div class="opt" data-ans="B" onclick="markAnswer(this,'D')">12</div>
+<div class="opt" data-ans="C" onclick="markAnswer(this,'D')">18</div>
+<div class="opt" data-ans="D" onclick="markAnswer(this,'D')">24</div>
+<div class="opt" data-ans="E" onclick="markAnswer(this,'D')">30</div>
+</div>
+<div class="msg" id="msg" data-zh="先自己想一想，再点选项。" data-en="Think first, then tap an option."></div>
+
+  <div class="nav">
+    <a href="22.html" data-zh="← 上一题" data-en="← Prev"></a>
+    <a href="24.html" data-zh="下一题 →" data-en="Next →"></a>
+  </div>
+</div>
+<script>
+
+let lang = localStorage.getItem('mk_lang') || 'zh';
+function applyLang(){
+  document.querySelectorAll('[data-zh]').forEach(el=>{
+    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+  });
+  document.querySelectorAll('[data-zh-html]').forEach(el=>{
+    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
+  });
+  const b=document.getElementById('langBtn');
+  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
+  localStorage.setItem('mk_lang', lang);
+}
+function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
+function markAnswer(btn, correctLetter){
+  const letter=btn.dataset.ans;
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.classList.remove('correct','wrong');
+    if(o.dataset.ans===correctLetter) o.classList.add('correct');
+    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
+  });
+  const msg=document.getElementById('msg');
+  if(!msg) return;
+  if(letter===correctLetter){
+    msg.className='msg good';
+    msg.setAttribute('data-zh','答对了！');
+    msg.setAttribute('data-en','Correct!');
+  }else{
+    msg.className='msg';
+    msg.setAttribute('data-zh','再想想～正确答案已标绿。');
+    msg.setAttribute('data-en','Try again — correct option is highlighted.');
+  }
+  applyLang();
+}
+document.addEventListener('DOMContentLoaded', applyLang);
+
+
+function showLists(){
+  document.getElementById('lists').innerHTML =
+    '<div class="chip">2/day → 10, 24, 38…</div><div class="chip">3/day → 3, 24, 45…</div><div class="chip">交集 / common = 24</div>';
+  const m=document.getElementById('playMsg');
+  m.className='msg good';
+  m.setAttribute('data-zh','两组唯一公共数是 24');
+  m.setAttribute('data-en','The only common number is 24');
+  applyLang();
+}
+
+</script>
+</body>
+</html>
