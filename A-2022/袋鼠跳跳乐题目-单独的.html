@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>袋鼠跳跳乐挑战</title>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 750px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 { color: #2c3e50; margin-bottom: 10px; }
+        .question { color: #555; font-size: 16px; line-height: 1.6; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 10px; border-left: 5px solid #ff9f43; }
+
+        /* 游戏场景舞台 */
+        .stage {
+            position: relative;
+            height: 180px;
+            background: linear-gradient(to bottom, #e0f7fa, #fff);
+            border-radius: 15px;
+            margin: 25px 0;
+            overflow: hidden;
+            border: 2px solid #b2ebf2;
+        }
+
+        /* 小岛 */
+        .islands-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+        .island {
+            width: 60px;
+            height: 35px;
+            background: #8d6e63;
+            border-radius: 50% / 30%;
+            position: relative;
+            box-shadow: 0 5px 0 #5d4037;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .island::after {
+            content: '';
+            position: absolute;
+            top: -5px; width: 54px; height: 30px;
+            background: #81c784; border-radius: 50% / 30%;
+        }
+        .island-num {
+            position: absolute;
+            top: -2px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* 袋鼠 */
+        .kangaroo {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            font-size: 35px;
+            line-height: 40px;
+            text-align: center;
+            bottom: 45px;
+            left: 52px; /* 初始在第一个岛 (1) 的位置 */
+            transition: left 0.6s cubic-bezier(0.25, 1, 0.5, 1), bottom 0.3s ease-in-out;
+            z-index: 10;
+        }
+
+        /* 选项布局 */
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        @media(max-width: 500px) { .choices { grid-template-columns: 1fr; } }
+
+        .btn-choice {
+            background: #fff;
+            border: 2px solid #dcdde1;
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2f3640;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-choice:hover { background: #f5f6fa; border-color: #3498db; transform: translateY(-2px); }
+        .btn-choice.correct { background: #2ecc71; color: white; border-color: #2ecc71; }
+        .btn-choice.wrong { background: #e74c3c; color: white; border-color: #e74c3c; }
+
+        /* 控制按钮 */
+        .controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 10px; }
+        .btn-action { background: #ff9f43; color: white; border: none; padding: 10px 20px; font-size: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        .btn-action:hover { background: #ee5253; }
+
+        .feedback { font-size: 18px; font-weight: bold; margin-top: 15px; min-height: 25px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🦘 袋鼠跳跳乐挑战</h2>
+    <div class="question">
+        一只袋鼠总是<b>向前跳 2 步</b>，然后<b>向后退 1 步</b>。它通过这种规律，按数字大小顺序（1 → 2 → 3 → 4 → 5）在小岛之间跳跃。请问它是按什么顺序踩到这些小岛的？
+    </div>
+
+    <div class="stage">
+        <div class="kangaroo" id="kangaroo">🦘</div>
+        <div class="islands-container">
+            <div class="island" id="is1"><span class="island-num">1</span></div>
+            <div class="island" id="is2"><span class="island-num">2</span></div>
+            <div class="island" id="is3"><span class="island-num">3</span></div>
+            <div class="island" id="is4"><span class="island-num">4</span></div>
+            <div class="island" id="is5"><span class="island-num">5</span></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn-action" onclick="playJumpAnimation()">▶ 演示袋鼠跳跃轨迹</button>
+        <button class="btn-action" style="background:#718093;" onclick="resetStage()">重置位置</button>
+    </div>
+
+    <div class="choices">
+        <button class="btn-choice" onclick="checkAnswer(this, 'A')">(A) 1 - 2 - 3 - 4 - 5</button>
+        <button class="btn-choice" onclick="checkAnswer(this, 'B')">(B) 1 - 2 - 4 - 3 - 5</button>
+        <button class="btn-choice" onclick="checkAnswer(this, 'C')">(C) 1 - 3 - 2 - 4 - 5</button>
+        <button class="btn-choice" onclick="checkAnswer(this, 'D')">(D) 1 - 4 - 2 - 3 - 5</button>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+</div>
+
+<script>
+    // 5个小岛对应的像素横坐标位置(大约值)
+    const islandPositions = [52, 198, 344, 490, 636];
+    const kango = document.getElementById('kangaroo');
+    let isAnimating = false;
+
+    // 模拟真实跳跃轨迹函数
+    function jumpTo(islandIndex, callback) {
+        let currentLeft = parseFloat(kango.style.left) || 52;
+        let targetLeft = islandPositions[islandIndex - 1];
+        
+        // 模拟起跳抛物线
+        kango.style.bottom = "110px"; 
+        kango.style.left = targetLeft + "px";
+        
+        setTimeout(() => {
+            kango.style.bottom = "45px"; // 落地
+            if(callback) setTimeout(callback, 400);
+        }, 300);
+    }
+
+    function playJumpAnimation() {
+        if (isAnimating) return;
+        isAnimating = true;
+        resetStage();
+
+        // 轨迹序列：1 -> 3 -> 2 -> 4 -> 5
+        setTimeout(() => {
+            // 从 1 跳到 3 (+2步)
+            jumpTo(3, () => {
+                // 从 3 退到 2 (-1步)
+                jumpTo(2, () => {
+                    // 从 2 跳到 4 (+2步)
+                    jumpTo(4, () => {
+                        // 从 4 跳到 5 (最终到达目标)
+                        jumpTo(5, () => {
+                            isAnimating = false;
+                        });
+                    });
+                });
+            });
+        }, 300);
+    }
+
+    function resetStage() {
+        kango.style.left = islandPositions[0] + "px";
+        kango.style.bottom = "45px";
+    }
+
+    function checkAnswer(btn, option) {
+        // 清除其他按钮状态
+        document.querySelectorAll('.btn-choice').forEach(b => b.className = 'btn-choice');
+        const feedback = document.getElementById('feedback');
+
+        if (option === 'C') {
+            btn.classList.add('correct');
+            feedback.innerHTML = "<span style='color: #2ecc71;'>🎉 恭喜答对！正确答案是 C。袋鼠的轨迹是：1 → 3 → 2 → 4 → 5！</span>";
+            playJumpAnimation();
+        } else {
+            btn.classList.add('wrong');
+            feedback.innerHTML = "<span style='color: #e74c3c;'>❌ 不对哦，再点击上面的“演示”按钮仔细观察袋鼠落在哪几个岛上吧！</span>";
+        }
+    }
+</script>
+
+</body>
+</html>

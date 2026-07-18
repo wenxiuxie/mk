@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片减法大挑战 · 2023 A级第24题</title>
+    <style>
+        :root {
+            --bg: #fff7ed;
+            --card: #ffffff;
+            --ink: #9a3412;
+            --accent: #ea580c;
+            --ok: #16a34a;
+            --muted: #78716c;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: radial-gradient(circle at top, #ffedd5, var(--bg) 55%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 16px 40px;
+            color: #1c1917;
+        }
+        h1 {
+            color: var(--ink);
+            margin: 0 0 8px;
+            font-size: 28px;
+            text-align: center;
+        }
+        .subtitle {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 18px;
+            text-align: center;
+            max-width: 560px;
+            line-height: 1.6;
+        }
+        .panel {
+            background: var(--card);
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(234, 88, 12, 0.12);
+            padding: 28px;
+            width: min(680px, 100%);
+        }
+        .stats {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+        .stat {
+            background: #fff7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 16px;
+            padding: 10px 18px;
+            font-weight: 700;
+            color: var(--ink);
+            min-width: 140px;
+            text-align: center;
+        }
+        .stat span { color: var(--accent); font-size: 22px; }
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--muted);
+            margin: 8px 0 12px;
+            text-align: center;
+        }
+        .hand {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            min-height: 96px;
+        }
+        .card-num {
+            width: 72px;
+            height: 96px;
+            border-radius: 14px;
+            border: 3px solid #fdba74;
+            background: linear-gradient(180deg, #fff, #ffedd5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 800;
+            color: #c2410c;
+            cursor: pointer;
+            user-select: none;
+            box-shadow: 0 6px 0 #fb923c;
+            transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
+        }
+        .card-num:hover:not(.used):not(.disabled) {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 0 #fb923c;
+        }
+        .card-num.used {
+            opacity: 0.28;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        .card-num.disabled { cursor: default; }
+        .equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0 8px;
+        }
+        .slot {
+            width: 78px;
+            height: 100px;
+            border-radius: 14px;
+            border: 3px dashed #fdba74;
+            background: #fffbeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 800;
+            color: #9a3412;
+            position: relative;
+        }
+        .slot.filled {
+            border-style: solid;
+            background: #ffedd5;
+            border-color: #ea580c;
+            animation: pop 0.25s ease;
+        }
+        .slot .label {
+            position: absolute;
+            bottom: -22px;
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 600;
+            white-space:nowrap;
+        }
+        .op, .eq {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ea580c;
+            margin: 0 4px;
+        }
+        .result-box {
+            min-width: 90px;
+            height: 100px;
+            border-radius: 14px;
+            background: #ecfccb;
+            border: 3px solid #84cc16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 800;
+            color: #3f6212;
+        }
+        .result-box.empty {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+            color: #94a3b8;
+            font-size: 28px;
+        }
+        @keyframes pop {
+            from { transform: scale(0.85); }
+            to { transform: scale(1); }
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.15s, filter 0.15s;
+        }
+        button:hover { filter: brightness(0.95); transform: translateY(-1px); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .btn-undo { background: #fef3c7; color: #92400e; }
+        .btn-clear { background: #fee2e2; color: #991b1b; }
+        .btn-check { background: #22c55e; color: white; }
+        .btn-auto { background: #3b82f6; color: white; }
+        .btn-reset { background: #e7e5e4; color: #44403c; }
+        .found {
+            margin-top: 22px;
+            background: #fff7ed;
+            border-radius: 16px;
+            padding: 14px 16px;
+            min-height: 70px;
+        }
+        .found h3 {
+            margin: 0 0 10px;
+            font-size: 14px;
+            color: var(--muted);
+            text-align: center;
+        }
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .chip {
+            background: white;
+            border: 2px solid #fdba74;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #c2410c;
+            animation: pop 0.25s ease;
+        }
+        .chip.new {
+            border-color: #16a34a;
+            color: #166534;
+            background: #dcfce7;
+        }
+        .msg {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ink);
+            min-height: 24px;
+        }
+        .msg.ok { color: var(--ok); }
+        .tips {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+            text-align: center;
+        }
+        .options {
+            margin-top: 18px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .opt {
+            width: 52px;
+            height: 40px;
+            border-radius: 10px;
+            border: 2px solid #e7e5e4;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #57534e;
+            cursor: pointer;
+        }
+        .opt.correct {
+            background: #dcfce7;
+            border-color: #16a34a;
+            color: #166534;
+        }
+        .opt.wrong {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+        .demo-log {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #57534e;
+            text-align: center;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🃏 卡片减法大挑战</h1>
+    <p class="subtitle">
+        2023 袋鼠数学 Level A · 第 24 题<br>
+        四张卡片：<b>1、1、2、3</b>。每次选三张，摆成「两位数 − 一位数」。一共能得到几种不同结果？
+    </p>
+
+    <div class="panel">
+        <div class="stats">
+            <div class="stat">已尝试算式<br><span id="tryCount">0</span> / 12</div>
+            <div class="stat">不同结果<br><span id="uniqueCount">0</span> / ?</div>
+        </div>
+
+        <div class="section-title">① 点击卡片，依次填入：十位 → 个位 → 减数</div>
+        <div class="hand" id="hand"></div>
+
+        <div class="section-title">② 摆出算式</div>
+        <div class="equation">
+            <div class="slot" id="slotTens"><span class="label">十位</span>?</div>
+            <div class="slot" id="slotOnes"><span class="label">个位</span>?</div>
+            <div class="op">−</div>
+            <div class="slot" id="slotSub"><span class="label">减数</span>?</div>
+            <div class="eq">=</div>
+            <div class="result-box empty" id="resultBox">?</div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn-undo" onclick="undo()" id="btnUndo">撤销一步</button>
+            <button class="btn-clear" onclick="clearEquation()">清空算式</button>
+            <button class="btn-check" onclick="checkEquation()" id="btnCheck" disabled>算出结果</button>
+            <button class="btn-auto" onclick="autoDemo()" id="btnAuto">看全部答案演示</button>
+            <button class="btn-reset" onclick="fullReset()">重新挑战</button>
+        </div>
+
+        <div class="msg" id="msg">先点一张卡片放到十位吧！</div>
+        <div class="demo-log" id="demoLog"></div>
+
+        <div class="found">
+            <h3>你发现的不同结果（答案选项：6 / 8 / 10 / 12 / 24）</h3>
+            <div class="chips" id="chips"></div>
+            <div class="options" id="options">
+                <div class="opt" data-ans="6" onclick="guessAnswer(6)">6</div>
+                <div class="opt" data-ans="8" onclick="guessAnswer(8)">8</div>
+                <div class="opt" data-ans="10" onclick="guessAnswer(10)">10</div>
+                <div class="opt" data-ans="12" onclick="guessAnswer(12)">12</div>
+                <div class="opt" data-ans="24" onclick="guessAnswer(24)">24</div>
+            </div>
+        </div>
+
+        <p class="tips">
+            【玩法】点击卡片按「十位 → 个位 → 减数」填空，再点「算出结果」。<br>
+            注意：两张「1」是不同卡片，所以像 11−2 和 11−3 都可以做；相同结果只算一种。
+        </p>
+    </div>
+
+    <script>
+        // 四张卡片：两张 1 用不同 id 区分
+        const ALL_CARDS = [
+            { id: 'a', value: 1 },
+            { id: 'b', value: 1 },
+            { id: 'c', value: 2 },
+            { id: 'd', value: 3 }
+        ];
+
+        // 全部合法算式（与官方解答一致）
+        const ALL_EXPR = [
+            { tens: 1, ones: 1, sub: 2, result: 9,  text: '11 − 2 = 9' },
+            { tens: 1, ones: 1, sub: 3, result: 8,  text: '11 − 3 = 8' },
+            { tens: 1, ones: 2, sub: 1, result: 11, text: '12 − 1 = 11' },
+            { tens: 1, ones: 2, sub: 3, result: 9,  text: '12 − 3 = 9' },
+            { tens: 1, ones: 3, sub: 1, result: 12, text: '13 − 1 = 12' },
+            { tens: 1, ones: 3, sub: 2, result: 11, text: '13 − 2 = 11' },
+            { tens: 2, ones: 1, sub: 1, result: 20, text: '21 − 1 = 20' },
+            { tens: 2, ones: 1, sub: 3, result: 18, text: '21 − 3 = 18' },
+            { tens: 2, ones: 3, sub: 1, result: 22, text: '23 − 1 = 22' },
+            { tens: 3, ones: 1, sub: 1, result: 30, text: '31 − 1 = 30' },
+            { tens: 3, ones: 1, sub: 2, result: 28, text: '31 − 2 = 28' },
+            { tens: 3, ones: 2, sub: 1, result: 31, text: '32 − 1 = 31' }
+        ];
+
+        let usedIds = new Set();
+        let slots = [null, null, null]; // tens, ones, sub -> card objects
+        let foundResults = new Set();
+        let triedKeys = new Set();
+        let isAnimating = false;
+        let answered = false;
+
+        function renderHand() {
+            const hand = document.getElementById('hand');
+            hand.innerHTML = '';
+            ALL_CARDS.forEach(card => {
+                const el = document.createElement('div');
+                el.className = 'card-num' + (usedIds.has(card.id) ? ' used' : '');
+                el.textContent = card.value;
+                el.title = `卡片 ${card.value}`;
+                el.onclick = () => pickCard(card);
+                hand.appendChild(el);
+            });
+        }
+
+        function renderSlots() {
+            const ids = ['slotTens', 'slotOnes', 'slotSub'];
+            ids.forEach((id, i) => {
+                const el = document.getElementById(id);
+                const labels = ['十位', '个位', '减数'];
+                if (slots[i]) {
+                    el.className = 'slot filled';
+                    el.innerHTML = `${slots[i].value}<span class="label">${labels[i]}</span>`;
+                } else {
+                    el.className = 'slot';
+                    el.innerHTML = `?<span class="label">${labels[i]}</span>`;
+                }
+            });
+            const full = slots.every(Boolean);
+            document.getElementById('btnCheck').disabled = !full || isAnimating;
+            document.getElementById('resultBox').className = 'result-box empty';
+            document.getElementById('resultBox').textContent = '?';
+        }
+
+        function pickCard(card) {
+            if (isAnimating || usedIds.has(card.id)) return;
+            const idx = slots.findIndex(s => s === null);
+            if (idx === -1) {
+                setMsg('三个位置都填好了，点「算出结果」或先清空～');
+                return;
+            }
+            slots[idx] = card;
+            usedIds.add(card.id);
+            renderHand();
+            renderSlots();
+            const tips = ['十位填好了，再选个位！', '个位填好了，再选减数！', '都填好啦，点「算出结果」！'];
+            setMsg(tips[idx]);
+        }
+
+        function undo() {
+            if (isAnimating) return;
+            for (let i = 2; i >= 0; i--) {
+                if (slots[i]) {
+                    usedIds.delete(slots[i].id);
+                    slots[i] = null;
+                    break;
+                }
+            }
+            renderHand();
+            renderSlots();
+            setMsg('撤销成功，继续摆卡片吧！');
+        }
+
+        function clearEquation() {
+            if (isAnimating) return;
+            slots = [null, null, null];
+            usedIds = new Set();
+            renderHand();
+            renderSlots();
+            setMsg('算式已清空，重新开始摆～');
+            document.getElementById('demoLog').textContent = '';
+        }
+
+        function exprKey(t, o, s) {
+            return `${t}${o}-${s}`;
+        }
+
+        function checkEquation() {
+            if (isAnimating || !slots.every(Boolean)) return;
+            const t = slots[0].value;
+            const o = slots[1].value;
+            const s = slots[2].value;
+            const result = t * 10 + o - s;
+            const key = exprKey(t, o, s);
+
+            // 校验是否在合法全集中（用完三张卡，第四张自动闲置）
+            const valid = ALL_EXPR.some(e => e.tens === t && e.ones === o && e.sub === s);
+            if (!valid) {
+                setMsg(`这个摆法不合法哦～请用四张卡里的三张组成「两位数 − 一位数」。`);
+                return;
+            }
+
+            document.getElementById('resultBox').className = 'result-box';
+            document.getElementById('resultBox').textContent = result;
+
+            const isNewTry = !triedKeys.has(key);
+            if (isNewTry) triedKeys.add(key);
+
+            const isNewResult = !foundResults.has(result);
+            if (isNewResult) foundResults.add(result);
+
+            updateStats();
+            renderChips(isNewResult ? result : null);
+
+            if (isNewResult) {
+                setMsg(`🎉 新结果！${t}${o} − ${s} = ${result}。已发现 ${foundResults.size} 种不同结果。`, true);
+            } else if (isNewTry) {
+                setMsg(`${t}${o} − ${s} = ${result}。这个结果之前出现过啦～`, true);
+            } else {
+                setMsg(`这个算式你已经试过了：${t}${o} − ${s} = ${result}`);
+            }
+
+            if (foundResults.size === 10) {
+                setMsg(`太棒了！一共有 10 种不同结果。下面选一选正确答案吧！`, true);
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('tryCount').textContent = triedKeys.size;
+            document.getElementById('uniqueCount').textContent = foundResults.size;
+        }
+
+        function renderChips(highlight) {
+            const box = document.getElementById('chips');
+            const sorted = [...foundResults].sort((a, b) => a - b);
+            box.innerHTML = sorted.length
+                ? sorted.map(n => `<div class="chip${n === highlight ? ' new' : ''}">${n}</div>`).join('')
+                : '<span style="color:#a8a29e;font-size:13px;">还没有结果，先摆一个算式试试～</span>';
+        }
+
+        function setMsg(text, ok = false) {
+            const el = document.getElementById('msg');
+            el.textContent = text;
+            el.className = 'msg' + (ok ? ' ok' : '');
+        }
+
+        function guessAnswer(n) {
+            if (answered) return;
+            const opts = document.querySelectorAll('.opt');
+            opts.forEach(el => {
+                const v = Number(el.dataset.ans);
+                el.classList.remove('correct', 'wrong');
+                if (v === 10) el.classList.add('correct');
+                if (v === n && n !== 10) el.classList.add('wrong');
+            });
+            answered = true;
+            if (n === 10) {
+                setMsg('✅ 答对了！共有 12 个算式，但不同结果只有 10 种。答案是 (C) 10。', true);
+            } else {
+                setMsg(`选了 ${n}。提示：算式个数和「不同结果」个数不一样哦～正确答案是 10。`);
+            }
+        }
+
+        function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }
+
+        async function autoDemo() {
+            if (isAnimating) return;
+            isAnimating = true;
+            document.getElementById('btnAuto').disabled = true;
+            document.getElementById('btnCheck').disabled = true;
+
+            // 重置探索状态，但保留演示
+            triedKeys = new Set();
+            foundResults = new Set();
+            updateStats();
+            renderChips();
+            setMsg('开始演示全部合法算式……');
+
+            for (const e of ALL_EXPR) {
+                // 清空并摆牌（按数值匹配卡片）
+                slots = [null, null, null];
+                usedIds = new Set();
+                const need = [e.tens, e.ones, e.sub];
+                const pool = ALL_CARDS.map(c => ({ ...c }));
+                for (let i = 0; i < 3; i++) {
+                    const idx = pool.findIndex(c => c.value === need[i] && !usedIds.has(c.id));
+                    const card = pool[idx];
+                    usedIds.add(card.id);
+                    slots[i] = card;
+                }
+                renderHand();
+                renderSlots();
+                await sleep(450);
+
+                const key = exprKey(e.tens, e.ones, e.sub);
+                triedKeys.add(key);
+                const isNew = !foundResults.has(e.result);
+                foundResults.add(e.result);
+                document.getElementById('resultBox').className = 'result-box';
+                document.getElementById('resultBox').textContent = e.result;
+                updateStats();
+                renderChips(isNew ? e.result : null);
+                document.getElementById('demoLog').textContent = e.text + (isNew ? '  ← 新结果' : '  ← 重复结果');
+                setMsg(`演示：${e.text}　目前不同结果 ${foundResults.size} 种`, true);
+                await sleep(700);
+            }
+
+            setMsg('演示结束：12 个算式 → 10 种不同结果。请点选正确答案！', true);
+            document.getElementById('demoLog').textContent = '唯一结果：8, 9, 11, 12, 18, 20, 22, 28, 30, 31';
+            isAnimating = false;
+            document.getElementById('btnAuto').disabled = false;
+            clearEquation();
+            // 保留已发现结果
+            updateStats();
+            renderChips();
+        }
+
+        function fullReset() {
+            if (isAnimating) return;
+            triedKeys = new Set();
+            foundResults = new Set();
+            answered = false;
+            document.querySelectorAll('.opt').forEach(el => el.classList.remove('correct', 'wrong'));
+            clearEquation();
+            updateStats();
+            renderChips();
+            setMsg('挑战重新开始！先点一张卡片放到十位。');
+            document.getElementById('demoLog').textContent = '';
+        }
+
+        // init
+        renderHand();
+        renderSlots();
+        updateStats();
+        renderChips();
+    </script>
+</body>
+</html>

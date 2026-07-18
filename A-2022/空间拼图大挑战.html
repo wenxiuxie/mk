@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空间拼图大挑战</title>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f1f2f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 { color: #2f3542; margin-bottom: 10px; }
+        .question { color: #57606f; font-size: 16px; line-height: 1.6; text-align: left; background: #f1f2f6; padding: 15px; border-radius: 10px; margin-bottom: 25px; }
+
+        .game-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* 左侧主图 */
+        .main-puzzle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #747d8c;
+            border-radius: 12px;
+            border: 4px solid #2f3542;
+        }
+        /* 已经填好的部分 */
+        .filled {
+            position: absolute;
+            background: #57606f;
+            border: 1px solid #747d8c;
+            box-sizing: border-box;
+        }
+        /* 阴影空缺部分 */
+        .shadow-gap {
+            position: absolute;
+            background: #ced6e0;
+            border: 2px dashed #a4b0be;
+            box-sizing: border-box;
+        }
+
+        /* 右侧碎片选择区 */
+        .pieces-pool {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 450px;
+        }
+
+        .piece-item {
+            background: #fff;
+            border: 2px solid #dfe4ea;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .piece-item:hover { transform: translateY(-3px); border-color: #1e90ff; }
+        .piece-item.selected { border-color: #ff4757; background: #fff0f2; box-shadow: 0 5px 15px rgba(255, 71, 87, 0.2); }
+
+        .label { font-weight: bold; margin-top: 10px; color: #2f3542; }
+
+        /* 迷你网格绘制碎片 */
+        .grid-shape { display: grid; gap: 2px; background: transparent; }
+        .cell { width: 20px; height: 20px; box-sizing: border-box; border-radius: 3px; }
+        .active { background: #ff6b81; border: 1px solid #ff4757; }
+
+        .feedback { font-size: 18px; font-weight: bold; margin-top: 25px; min-height: 30px; }
+        
+        .btn-action {
+            margin-top: 15px; background: #1e90ff; color: white; border: none;
+            padding: 12px 25px; font-size: 16px; border-radius: 8px; cursor: pointer; font-weight: bold;
+        }
+        .btn-action:hover { background: #70a1ff; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🧩 空间拼图大挑战</h2>
+    <div class="question">
+        左边是一个大正方形的一部分。右边有 5 个不同的碎片（A、B、C、D、E）。请问选择哪<b>两个碎片</b>可以通过旋转和拼接，刚好把左边的灰色虚线空缺处填满？（点击右侧两个碎片进行组合）
+    </div>
+
+    <div class="game-container">
+        <div class="main-puzzle" id="mainStage">
+            <div class="filled" style="width:200px; height:80px; top:0; left:0;"></div>
+            <div class="filled" style="width:120px; height:120px; top:80px; left:0;"></div>
+            <div class="filled" style="width:80px; height:40px; top:160px; left:120px;"></div>
+            
+            <div class="shadow-gap" id="targetGap" style="width:80px; height:120px; top:80px; left:120px; border-radius: 0 0 8px 0;">
+                <div style="position:absolute; width:40px; height:40px; bottom:0; right:0; background:#747d8c; border-top: 2px dashed #a4b0be; border-left: 2px dashed #a4b0be;"></div>
+            </div>
+        </div>
+
+        <div class="pieces-pool">
+            <div class="piece-item" data-letter="A">
+                <div class="grid-shape" style="grid-template-columns: repeat(3, 20px);">
+                    <div class="cell active"></div><div class="cell active"></div><div class="cell active"></div>
+                </div>
+                <div class="label">A</div>
+            </div>
+            <div class="piece-item" data-letter="B">
+                <div class="grid-shape" style="grid-template-columns: repeat(2, 20px);">
+                    <div class="cell active"></div><div class="cell active"></div>
+                    <div class="cell active"></div><div class="cell active"></div>
+                </div>
+                <div class="label">B</div>
+            </div>
+            <div class="piece-item" data-letter="C">
+                <div class="grid-shape" style="grid-template-columns: repeat(2, 20px);">
+                    <div class="cell active"></div><div class="cell"></div>
+                    <div class="cell active"></div><div class="cell"></div>
+                </div>
+                <div class="label">C</div>
+            </div>
+            <div class="piece-item" data-letter="D">
+                <div class="grid-shape" style="grid-template-columns: repeat(2, 20px);">
+                    <div class="cell active"></div><div class="cell active"></div>
+                    <div class="cell active"></div><div class="cell"></div>
+                </div>
+                <div class="label">D</div>
+            </div>
+            <div class="piece-item" data-letter="E">
+                <div class="grid-shape" style="grid-template-columns: repeat(2, 20px);">
+                    <div class="cell active"></div><div class="cell active"></div>
+                </div>
+                <div class="label">E</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+    <button class="btn-action" onclick="resetGame()">重置选择</button>
+</div>
+
+<script>
+    let selectedPieces = [];
+
+    document.querySelectorAll('.piece-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const letter = item.getAttribute('data-letter');
+            
+            if (item.classList.contains('selected')) {
+                item.classList.remove('selected');
+                selectedPieces = selectedPieces.filter(p => p !== letter);
+            } else {
+                if (selectedPieces.length >= 2) {
+                    // 最多选两个，再点就替换掉前一个
+                    const firstLetter = selectedPieces.shift();
+                    document.querySelector(`[data-letter="${firstLetter}"]`).classList.remove('selected');
+                }
+                item.classList.add('selected');
+                selectedPieces.push(letter);
+            }
+            
+            checkCombination();
+        });
+    });
+
+    function checkCombination() {
+        const feedback = document.getElementById('feedback');
+        const targetGap = document.getElementById('targetGap');
+        
+        if (selectedPieces.length < 2) {
+            feedback.innerHTML = "请再选择一个碎片进行组合...";
+            targetGap.style.background = "#ced6e0"; // 恢复虚线底色
+            return;
+        }
+
+        // 排序确保比对不受选择顺序影响
+        const combo = [...selectedPieces].sort().join('');
+
+        if (combo === 'CD') {
+            feedback.innerHTML = "<span style='color: #2ecc71;'>🎉 恭喜！答对了！C 和 D 旋转组合后刚好能完美填满空缺！</span>";
+            // 改变左侧阴影区背景色模拟拼满效果
+            targetGap.style.background = "#ff6b81";
+        } else {
+            feedback.innerHTML = `<span style='color: #ff4757;'>❌ 碎片 [${selectedPieces[0]}] 和 [${selectedPieces[1]}] 拼在一起无法填满空缺，换两个试试吧！</span>`;
+            targetGap.style.background = "#ced6e0";
+        }
+    }
+
+    function resetGame() {
+        selectedPieces = [];
+        document.querySelectorAll('.piece-item').forEach(item => item.classList.remove('selected'));
+        document.getElementById('targetGap').style.background = "#ced6e0";
+        document.getElementById('feedback').innerHTML = "";
+    }
+</script>
+
+</body>
+</html>

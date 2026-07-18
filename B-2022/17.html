@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小达的形状拼图挑战</title>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            padding: 24px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 { color: #2c3e50; margin-bottom: 8px; font-size: 20px; }
+        .question { color: #7f8c8d; font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+        .highlight { color: #e74c3c; font-weight: bold; }
+
+        /* 图形展示区 */
+        .shape-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-height: 120px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 10px;
+            border: 2px dashed #bdc3c7;
+        }
+
+        /* 基础图形样式 */
+        .shape {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .shape:hover { transform: scale(1.1); }
+        .shape.selected {
+            opacity: 0.4;
+            transform: scale(0.9);
+            filter: grayscale(50%);
+        }
+
+        /* 具体各个形状的 CSS 绘制 */
+        .s1 { width: 30px; height: 30px; border: 2px solid #333; }
+        .s2 { width: 80px; height: 80px; background: red; border: 2px solid #333; }
+        .s3 { 
+            width: 0; height: 0; 
+            border-left: 15px solid transparent; border-right: 15px solid transparent; 
+            border-bottom: 26px solid red; 
+        }
+        .s4 { 
+            width: 0; height: 0; 
+            border-left: 45px solid transparent; border-right: 45px solid transparent; 
+            border-bottom: 78px solid transparent; border-bottom-color: white;
+            position: relative;
+        }
+        .s4::after {
+            content: ''; position: absolute; top: 2px; left: -45px;
+            border-left: 45px solid transparent; border-right: 45px solid transparent;
+            border-bottom: 78px solid #333; z-index: -1;
+        }
+        .s4::before {
+            content: ''; position: absolute; top: 5px; left: -42px;
+            border-left: 42px solid transparent; border-right: 42px solid transparent;
+            border-bottom: 73px solid #f8f9fa; z-index: 1;
+        }
+        .s5 { width: 80px; height: 80px; border: 2px solid #333; border-radius: 50%; }
+        .s6 { width: 30px; height: 30px; background: red; border: 2px solid #333; border-radius: 50%; }
+
+        /* 目标/计数器区域 */
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin: 24px 0;
+            background: #eef2f7;
+            padding: 16px;
+            border-radius: 12px;
+        }
+        .counter-item { font-size: 16px; font-weight: bold; color: #34495e; }
+        .counter-val {
+            display: inline-block;
+            background: #fff;
+            padding: 2px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-left: 5px;
+        }
+        .meet { color: #2ecc71; }
+
+        /* 答案与状态反馈 */
+        .result-box {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            min-height: 30px;
+        }
+        .btn-reset {
+            margin-top: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-reset:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🧩 小达的形状拼图挑战</h2>
+    <p class="question">
+        小达说：“我选出的形状中有 <span class="highlight">2个涂色的</span>，<span class="highlight">2个大的</span>，<span class="highlight">2个圆的</span>。”<br>
+        请在下方<b>点击挑选</b>图形，帮小达用<b>最少</b>的图形数量达成目标！
+    </p>
+
+    <div class="shape-container" id="pool">
+        <div class="shape s1" data-id="1" data-colored="0" data-big="0" data-round="0"></div>
+        <div class="shape s2" data-id="2" data-colored="1" data-big="1" data-round="0"></div>
+        <div class="shape s3" data-id="3" data-colored="1" data-big="0" data-round="0"></div>
+        <div class="shape s4" data-id="4" data-colored="0" data-big="1" data-round="0"></div>
+        <div class="shape s5" data-id="5" data-colored="0" data-big="1" data-round="1"></div>
+        <div class="shape s6" data-id="6" data-colored="1" data-big="0" data-round="1"></div>
+    </div>
+
+    <div class="dashboard">
+        <div class="counter-item">涂色: <span class="counter-val" id="c-colored">0 / 2</span></div>
+        <div class="counter-item">大号: <span class="counter-val" id="c-big">0 / 2</span></div>
+        <div class="counter-item">圆形: <span class="counter-val" id="c-round">0 / 2</span></div>
+    </div>
+
+    <div>已选图形数量：<span id="total-count" style="font-size: 20px; font-weight: bold; color: #e67e22;">0</span> 个</div>
+    
+    <div class="result-box" id="feedback"></div>
+    <button class="btn-reset" onclick="resetGame()">重置挑战</button>
+</div>
+
+<script>
+    const selectedShapes = new Set();
+
+    document.querySelectorAll('.shape').forEach(shape => {
+        shape.addEventListener('click', () => {
+            const id = shape.getAttribute('data-id');
+            if (selectedShapes.has(id)) {
+                selectedShapes.delete(id);
+                shape.classList.remove('selected');
+            } else {
+                selectedShapes.add(id);
+                shape.classList.add('selected');
+            }
+            updateScore();
+        });
+    });
+
+    function updateScore() {
+        let colored = 0, big = 0, round = 0;
+
+        selectedShapes.forEach(id => {
+            const el = document.querySelector(`[data-id="${id}"]`);
+            colored += parseInt(el.getAttribute('data-colored'));
+            big += parseInt(el.getAttribute('data-big'));
+            round += parseInt(el.getAttribute('data-round'));
+        });
+
+        // 更新看板数值
+        document.getElementById('c-colored').innerText = `${colored} / 2`;
+        document.getElementById('c-big').innerText = `${big} / 2`;
+        document.getElementById('c-round').innerText = `${round} / 2`;
+        
+        // 变绿反馈
+        document.getElementById('c-colored').className = colored >= 2 ? 'counter-val meet' : 'counter-val';
+        document.getElementById('c-big').className = big >= 2 ? 'counter-val meet' : 'counter-val';
+        document.getElementById('c-round').className = round >= 2 ? 'counter-val meet' : 'counter-val';
+
+        const count = selectedShapes.size;
+        document.getElementById('total-count').innerText = count;
+
+        // 逻辑校验
+        const feedback = document.getElementById('feedback');
+        if (colored >= 2 && big >= 2 && round >= 2) {
+            if (count === 3) {
+                feedback.innerHTML = "<span style='color: #2ecc71;'>🎉 太棒了！你找到了最优解！只用了 3 个图形就完成了目标！正确答案选 B。</span>";
+            } else {
+                feedback.innerHTML = `<span style='color: #f39c12;'>👍 成功达成条件！你用了 ${count} 个图形。提示：再动动脑筋，还能用更少（最少3个）的图形达成哦！</span>`;
+            }
+        } else {
+            feedback.innerHTML = "";
+        }
+    }
+
+    function resetGame() {
+        selectedShapes.clear();
+        document.querySelectorAll('.shape').forEach(shape => shape.classList.remove('selected'));
+        updateScore();
+    }
+</script>
+
+</body>
+</html>

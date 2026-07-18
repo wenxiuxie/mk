@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小恐龙走格子大冒险</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0fdf4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 { color: #166534; margin-bottom: 10px; }
+        .score-board {
+            font-size: 24px;
+            font-weight: bold;
+            color: #15803d;
+            margin-bottom: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        .game-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .arrow { font-size: 32px; color: #86efac; margin: 0 15px; font-weight: bold;}
+        .dino-start { font-size: 48px; transition: all 0.3s ease; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(2, 100px);
+            gap: 12px;
+            position: relative;
+        }
+        .room {
+            background: #f3f4f6;
+            border: 3px solid #e5e7eb;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #4b5563;
+            cursor: pointer;
+            transition:自动 all 0.2s ease;
+            user-select: none;
+            position: relative;
+        }
+        .room:hover { transform: scale(1.05); border-color: #bbf7d0; }
+        .room.visited {
+            background: #86efac;
+            border-color: #22c55e;
+            color: #166534;
+        }
+        .room.current {
+            background: #4ade80;
+            border-color: #15803d;
+            box-shadow: 0 0 15px #4ade80;
+        }
+        .room.current::after {
+            content: '🦖';
+            position: absolute;
+            font-size: 32px;
+            top: -10px;
+            right: -10px;
+            animation: bounce 0.5s infinite alternate;
+        }
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-5px); } }
+        .btn-group { margin-top: 25px; display: flex; gap: 15px; }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .btn-reset { background: #ef4444; color: white; }
+        .btn-reset:hover { background: #dc2626; }
+        .btn-auto { background: #3b82f6; color: white; }
+        .btn-auto:hover { background: #2563eb; }
+        .tips { margin-top: 15px; color: #6b7280; font-size: 14px; text-align: center; max-width: 400px;}
+    </style>
+</head>
+<body>
+
+    <h1>🦖 小恐龙走格子大冒险</h1>
+    <div class="score-board">当前得分: <span id="score">0</span></div>
+
+    <div class="game-container">
+        <div class="dino-start" id="dino-left">🦖</div>
+        <div class="arrow">➔</div>
+        
+        <div class="grid" id="grid">
+            </div>
+
+        <div class="arrow">➔</div>
+        <div style="font-size: 32px;">🚪</div>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn-reset" onclick="resetGame()">重置游戏</button>
+        <button class="btn-auto" onclick="autoDemo()">看最优路线 (得分: 34)</button>
+    </div>
+
+    <p class="tips">【玩法提示】从房间 1 出发，点击相邻未走过的房间，最后成功走到房间 8 看看你能拿多少分！每个房间只能走一次。 </p>
+
+    <script>
+        const roomsData = [1, 2, 3, 4, 5, 6, 7, 8];
+        // 邻接矩阵或相邻连通定义
+        const adj = {
+            1: [2, 5],    2: [1, 3, 6], 3: [2, 4, 7], 4: [3, 8],
+            5: [1, 6],    6: [2, 5, 7], 7: [3, 6, 8], 8: [4, 7]
+        };
+
+        let path = [];
+        let score = 0;
+        let isAnimating = false;
+
+        function initGrid() {
+            const gridEl = document.getElementById('grid');
+            gridEl.innerHTML = '';
+            roomsData.forEach(num => {
+                const room = document.createElement('div');
+                room.className = 'room';
+                room.innerText = num;
+                room.id = `room-${num}`;
+                room.onclick = () => handleRoomClick(num);
+                gridEl.appendChild(room);
+            });
+            document.getElementById('dino-left').style.opacity = '1';
+        }
+
+        function handleRoomClick(num) {
+            if (isAnimating) return;
+            
+            // 起点必须是1
+            if (path.length === 0) {
+                if (num !== 1) {
+                    alert('小恐龙必须从入口的房间 1 开始哦！');
+                    return;
+                }
+                moveDinoTo(num);
+                return;
+            }
+
+            // 如果已经到了终点8，不能再走
+            if (path[path.length - 1] === 8) {
+                alert('已经通关啦！如需重新尝试请点击重置。');
+                return;
+            }
+
+            const current = path[path.length - 1];
+            
+            // 验证是否相邻且未访问过
+            if (adj[current].includes(num) && !path.includes(num)) {
+                moveDinoTo(num);
+                if (num === 8) {
+                    setTimeout(() => {
+                        alert(`🎉 成功通关！你的最终得分是：${score}\n${score === 34 ? '太棒了！这是最高分路线！' : '试试看能不能拿到更高的分数（最高34分）？'}`);
+                    }, 300);
+                }
+            } else if (path.includes(num)) {
+                alert('这个房间小恐龙已经走过啦，每个房间只能进一次！');
+            } else {
+                alert('两个房间不相通，小恐龙不会穿墙术哦！');
+            }
+        }
+
+        function moveDinoTo(num) {
+            path.push(num);
+            score += num;
+            document.getElementById('score').innerText = score;
+            document.getElementById('dino-left').style.opacity = '0';
+
+            // 更新样式
+            roomsData.forEach(n => {
+                const el = document.getElementById(`room-${n}`);
+                el.className = 'room';
+                if (path.includes(n)) el.classList.add('visited');
+            });
+            document.getElementById(`room-${num}`).classList.add('current');
+        }
+
+        function resetGame() {
+            path = [];
+            score = 0;
+            document.getElementById('score').innerText = '0';
+            initGrid();
+        }
+
+        async function autoDemo() {
+            if (isAnimating) return;
+            isAnimating = true;
+            resetGame();
+            
+            const bestPath = [1, 5, 6, 7, 3, 4, 8];
+            for (let num of bestPath) {
+                await new Promise(resolve => setTimeout(resolve, 600));
+                moveDinoTo(num);
+            }
+            isAnimating = false;
+        }
+
+        // 初始化
+        initGrid();
+    </script>
+</body>
+</html>
