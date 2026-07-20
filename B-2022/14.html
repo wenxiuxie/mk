@@ -17,28 +17,32 @@ h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;m
 .fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
 .tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
 .status{text-align:center;font-weight:800;margin:10px 0;color:#0369a1;min-height:24px}
-.paper-wrap{display:flex;justify-content:center;margin:12px 0;perspective:800px}
+.paper-wrap{display:flex;justify-content:center;margin:12px 0}
 .paper{
   display:grid;gap:2px;background:#334155;padding:2px;border-radius:6px;
-  transform-origin:center;transition:transform .45s ease;
 }
 .paper.c6{grid-template-columns:repeat(6,44px)}
-.paper.c3{grid-template-columns:repeat(3,52px)}
+.paper.c3{grid-template-columns:repeat(3,56px)}
 .sq{
   width:44px;height:44px;background:#fff;display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:13px;position:relative;
+  font-weight:800;font-size:13px;position:relative;user-select:none;
 }
-.paper.c3 .sq{width:52px;height:52px;font-size:14px}
+.paper.c3 .sq{width:56px;height:56px;font-size:14px;cursor:pointer;background:#f8fafc}
+.paper.c3 .sq:hover{background:#e0f2fe}
+.paper.c3 .sq.pick{
+  background:#fee2e2;outline:3px solid #e11d48;outline-offset:-3px;
+}
 .sq.hole::after{
   content:'';position:absolute;width:16px;height:16px;border-radius:50%;background:#0f172a;
 }
-.sq.punched{background:#fee2e2}
+.sq.punched{background:#fecaca}
 .actions{text-align:center;margin-top:8px}
-.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
 .primary{background:var(--primary);color:#fff}
 .ghost{background:#e2e8f0;color:#334155}
 .reset{background:#6c757d;color:#fff}
 .submit{background:var(--success);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
 .pool{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
 .card{min-width:100px;padding:10px 8px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;font-size:13px}
 .card.on{outline:3px solid #f59e0b}
@@ -71,23 +75,24 @@ body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
   </div>
 
   <div class="section">
-    <h2 class="lang-zh">实验：跟着折两次 → 打孔 → 再展开看洞</h2>
-    <h2 class="lang-en">Lab: fold twice → punch → unfold to see holes</h2>
-    <p class="tip lang-zh">按按钮一步步操作。展开后点有洞的格子，记下数字，再选选项。</p>
-    <p class="tip lang-en">Use the buttons step by step. After unfolding, tap holed cells, note the numbers, then choose.</p>
+    <h2 class="lang-zh">实验：折两次 → 自己点格打孔 → 展开看洞</h2>
+    <h2 class="lang-en">Lab: fold twice → tap a cell to punch → unfold</h2>
+    <p class="tip lang-zh">对照题目图，折好后自己点一个格子打孔（可换点）。展开后看哪些数有洞，再选选项。不会自动告诉你该点哪。</p>
+    <p class="tip lang-en">Match the figure: after folding, tap any cell to punch (you can change). Unfold to see which numbers get holes — nothing is pre-punched for you.</p>
 
     <div class="status" id="status"></div>
     <div class="paper-wrap"><div class="paper c6" id="paper"></div></div>
 
     <div class="actions">
-      <button class="btn primary" id="btnNext" onclick="nextStep()"></button>
-      <button class="btn ghost" onclick="prevStep()"><span class="lang-zh">上一步</span><span class="lang-en">Back</span></button>
+      <button class="btn primary" id="btnFold1" onclick="doFold1()"><span class="lang-zh">① 上半向下折</span><span class="lang-en">① Fold top ↓</span></button>
+      <button class="btn primary" id="btnFold2" onclick="doFold2()" disabled><span class="lang-zh">② 左半向右折</span><span class="lang-en">② Fold left →</span></button>
+      <button class="btn ghost" id="btnUnfold" onclick="doUnfold()" disabled><span class="lang-zh">展开看洞</span><span class="lang-en">Unfold</span></button>
       <button class="btn reset" onclick="resetAll()"><span class="lang-zh">重来</span><span class="lang-en">Reset</span></button>
     </div>
     <div class="found" id="found"></div>
 
-    <p class="tip lang-zh" style="margin-top:16px">这些洞对应选项（点选）</p>
-    <p class="tip lang-en" style="margin-top:16px">Which option matches the holes? (tap)</p>
+    <p class="tip lang-zh" style="margin-top:16px">对照展开后的洞，选选项</p>
+    <p class="tip lang-en" style="margin-top:16px">Match the holes to an option</p>
     <div class="pool" id="pool"></div>
     <div class="answer-box" id="ansBox"></div>
     <div class="actions">
@@ -103,10 +108,7 @@ body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
 </div>
 
 <script>
-// 6×6 row-major 1..36
-// Fold1: top→bottom; Fold2: left→right; punch top-middle of 3×3 → {14,17,20,23}
 const VALS=[...Array(36)].map((_,i)=>i+1);
-const PUNCHED=new Set([14,17,20,23]);
 const CHOICES=[
   {L:'A', text:'8, 11, 26, 29'},
   {L:'B', text:'14, 17, 20, 23'},
@@ -114,101 +116,113 @@ const CHOICES=[
   {L:'D', text:'14, 16, 21, 23'},
   {L:'E', text:'15, 17, 20, 22'},
 ];
-// step: 0 flat, 1 after fold1, 2 after fold2, 3 punched, 4 unfolded
-let step=0;
-let pickedHoles=new Set();
+// mode: 'flat' | 'fold1' | 'fold2' | 'open'
+let mode='flat';
+/** Student punch on folded 3×3: [vr, vc] or null */
+let punch=null;
 let ans=null;
 
 function en(){ return document.body.classList.contains('en-mode'); }
+function cellAt(r,c){ return VALS[r*6+c]; }
+
+/** Map a punch on the twice-folded 3×3 to original numbers (4 layers). */
+function holesFromPunch(vr, vc){
+  // After top↓ then left→: visible (vr,vc) stacks these original cells:
+  const cells=[
+    [vr+3, vc+3],
+    [2-vr, vc+3],
+    [vr+3, 2-vc],
+    [2-vr, 2-vc],
+  ];
+  return cells.map(([r,c])=>cellAt(r,c)).sort((a,b)=>a-b);
+}
 
 function updateStatus(){
   const s=document.getElementById('status');
-  const btn=document.getElementById('btnNext');
-  const labels=[
-    [en()?'Step 1/4: Fold top half down':'第 1/4 步：把上半向下折', en()?'Fold ↓':'向下折'],
-    [en()?'Step 2/4: Fold left half over':'第 2/4 步：把左半向右折', en()?'Fold →':'向右折'],
-    [en()?'Step 3/4: Punch the black spot':'第 3/4 步：在黑点处打孔', en()?'Punch':'打孔'],
-    [en()?'Step 4/4: Unfold and find holes':'第 4/4 步：展开找洞', en()?'Unfold':'展开'],
-    [en()?'Done — tap the red cells with holes':'完成 — 点红色有洞的格子', en()?'—':'—'],
-  ];
-  s.textContent=labels[step][0];
-  btn.textContent=labels[step][1];
-  btn.style.display = step>=4 ? 'none' : 'inline-block';
+  const msgs={
+    flat: en()?'Start: full 6×6. Fold top half down.':'开始：完整 6×6。先把上半向下折。',
+    fold1: en()?'Folded once (3×6). Now fold left half right.':'已折一次（3×6）。再把左半向右折。',
+    fold2: punch
+      ? (en()?`Punched cell (${punch[0]+1},${punch[1]+1}). Tap another cell to change, or unfold.`:`已打在第 ${punch[0]+1} 行第 ${punch[1]+1} 格。可换点别的格，或展开。`)
+      : (en()?'Folded to 3×3. Tap ONE cell to punch (try matching the figure).':'折成 3×3。点一格打孔（对照题目图的黑点）。'),
+    open: punch
+      ? (en()?'Unfolded — numbers with holes are shaded.':'已展开 — 有洞的数字已标出。')
+      : (en()?'Unfolded, but you have not punched yet.':'已展开，但还没打孔。'),
+  };
+  s.textContent=msgs[mode];
+  document.getElementById('btnFold1').disabled = mode!=='flat';
+  document.getElementById('btnFold2').disabled = mode!=='fold1';
+  document.getElementById('btnUnfold').disabled = mode!=='fold2';
 }
-
-function cellAt(r,c){ return VALS[r*6+c]; }
 
 function render(){
   const paper=document.getElementById('paper');
   paper.innerHTML='';
-  paper.className = (step<=0 || step>=4) ? 'paper c6' : (step===1 ? 'paper c6' : 'paper c3');
+  const holeSet = (mode==='open' && punch)
+    ? new Set(holesFromPunch(punch[0], punch[1]))
+    : null;
 
-  if(step===0){
-    // full 6x6
+  if(mode==='flat' || mode==='open'){
+    paper.className='paper c6';
     for(let r=0;r<6;r++) for(let c=0;c<6;c++){
       const v=cellAt(r,c);
       const d=document.createElement('div');
       d.className='sq';
       d.textContent=v;
+      if(holeSet && holeSet.has(v)){
+        d.classList.add('punched','hole');
+      }
       paper.appendChild(d);
     }
-  } else if(step===1){
-    // 3x6 blank (folded once) — show dim hint of thickness
+  } else if(mode==='fold1'){
+    paper.className='paper c6';
     for(let r=0;r<3;r++) for(let c=0;c<6;c++){
       const d=document.createElement('div');
       d.className='sq';
-      d.style.background='#f1f5f9';
+      d.style.background='#e2e8f0';
       d.textContent='';
       paper.appendChild(d);
     }
-  } else if(step===2 || step===3){
-    // 3x3
+  } else {
+    // fold2: 3×3 — student picks punch cell
+    paper.className='paper c3';
     for(let r=0;r<3;r++) for(let c=0;c<3;c++){
       const d=document.createElement('div');
       d.className='sq';
-      d.style.background='#f1f5f9';
-      if(step===3 && r===0 && c===1) d.classList.add('hole');
-      paper.appendChild(d);
-    }
-  } else {
-    // unfolded 6x6 with holes
-    for(let r=0;r<6;r++) for(let c=0;c<6;c++){
-      const v=cellAt(r,c);
-      const d=document.createElement('div');
-      d.className='sq';
-      if(PUNCHED.has(v)){
-        d.classList.add('punched','hole');
-        if(pickedHoles.has(v)) d.style.outline='3px solid #f59e0b';
-        d.onclick=()=>{
-          if(pickedHoles.has(v)) pickedHoles.delete(v); else pickedHoles.add(v);
-          renderFound(); render();
-        };
+      if(punch && punch[0]===r && punch[1]===c){
+        d.classList.add('pick','hole');
       }
-      d.textContent=v;
+      d.onclick=()=>{
+        punch=[r,c];
+        document.getElementById('feedback').textContent='';
+        render();
+      };
       paper.appendChild(d);
     }
   }
-  updateStatus();
-  renderFound();
-}
 
-function renderFound(){
   const f=document.getElementById('found');
-  if(step<4){ f.textContent=''; return; }
-  const nums=[...pickedHoles].sort((a,b)=>a-b);
-  f.textContent = en()
-    ? (nums.length?`Holes you marked: ${nums.join(', ')}`:'Tap the cells with holes.')
-    : (nums.length?`你点到的洞：${nums.join('、')}`:'请点有洞的格子。');
+  if(mode==='open' && punch){
+    const nums=holesFromPunch(punch[0], punch[1]);
+    f.textContent=en()
+      ? `Holes through: ${nums.join(', ')}`
+      : `打穿的数：${nums.join('、')}`;
+  } else if(mode==='fold2' && punch){
+    f.textContent=en()
+      ? 'Punch chosen — unfold to see which numbers.'
+      : '已选打孔位置 — 展开后看打到哪些数。';
+  } else {
+    f.textContent='';
+  }
+  updateStatus();
 }
 
-function nextStep(){
-  if(step<4){ step++; render(); }
-}
-function prevStep(){
-  if(step>0){ step--; if(step<4) pickedHoles.clear(); render(); }
-}
+function doFold1(){ if(mode==='flat'){ mode='fold1'; punch=null; render(); } }
+function doFold2(){ if(mode==='fold1'){ mode='fold2'; punch=null; render(); } }
+function doUnfold(){ if(mode==='fold2'){ mode='open'; render(); } }
+
 function resetAll(){
-  step=0; pickedHoles.clear(); ans=null;
+  mode='flat'; punch=null; ans=null;
   document.getElementById('ansBox').className='answer-box';
   document.getElementById('ansBox').textContent='';
   document.getElementById('feedback').textContent='';
@@ -246,7 +260,7 @@ function checkAnswer(){
   fb.className=ok?'ok':'bad';
   fb.textContent=ok
     ?(en()?'✅ Correct!':'✅ 找对了！')
-    :(en()?'❌ Not yet — unfold and compare the hole numbers.':'❌ 还不对——展开后对照有洞的数字再选。');
+    :(en()?'❌ Not yet — try punching the spot that matches the figure, then unfold.':'❌ 还不对——对照题目图换个位置打孔，再展开看看。');
 }
 
 render();

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q4 · 挪盒子</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.wide{max-width:720px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">挪盒子</h1>
+<h1 class="lang-en">Move Boxes</h1>
+<div class="meta lang-zh">2022 等级 B · 第 4 题 · 3 分</div>
+<div class="meta lang-en">2022 Level B · Q4 · 3 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小博至少要移动多少个盒子，才能打开装着玩具火车的黑色盒子？</p>
+    <p class="lang-en">What is the smallest number of boxes Bill has to move to open the dark TRAIN box?</p>
+    <img class="fig wide" src="assets/q4_figure.png" alt="Q4"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：先移上面的盒子，清出火车</h2>
+    <h2 class="lang-en">Lab: move upper boxes until TRAIN is clear</h2>
+    <p class="tip lang-zh">只能移「上面没有东西」的盒子。火车变绿表示已清开。数你移了几个。</p>
+    <p class="tip lang-en">Only move boxes with nothing on top. Green TRAIN = clear. Count your moves.</p>
+    
+<style>
+.box-stage{position:relative;width:min(100%,520px);height:280px;margin:12px auto;background:#f1f5f9;border-radius:12px;border:1px solid #e2e8f0}
+.box{
+  position:absolute;border:2px solid #334155;border-radius:6px;padding:4px 6px;
+  font-size:11px;font-weight:800;cursor:pointer;user-select:none;text-align:center;
+  display:flex;align-items:center;justify-content:center;line-height:1.2;
+  transition:opacity .2s, transform .2s;
+}
+.box.gone{opacity:0;pointer-events:none;transform:scale(.6)}
+.box.train{background:#1e293b;color:#fff}
+.box.blocked{box-shadow:0 0 0 3px #f87171}
+.box.free{box-shadow:0 0 0 3px #4ade80}
+</style>
+<div class="box-stage" id="stage"></div>
+<div class="info" id="info"></div>
+<div class="actions">
+  <button class="btn reset" onclick="resetBoxes()"><span class="lang-zh">重来</span><span class="lang-en">Reset</span></button>
+</div>
+<div class="pool" id="pool"><div class="card" data-ans="A" onclick="setAns('A', 'A: '+(en()?`3`:`3`))"><div>A</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">3</span><span class="lang-en">3</span></div></div><div class="card" data-ans="B" onclick="setAns('B', 'B: '+(en()?`4`:`4`))"><div>B</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">4</span><span class="lang-en">4</span></div></div><div class="card" data-ans="C" onclick="setAns('C', 'C: '+(en()?`5`:`5`))"><div>C</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">5</span><span class="lang-en">5</span></div></div><div class="card" data-ans="D" onclick="setAns('D', 'D: '+(en()?`6`:`6`))"><div>D</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">6</span><span class="lang-en">6</span></div></div><div class="card" data-ans="E" onclick="setAns('E', 'E: '+(en()?`7`:`7`))"><div>E</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">7</span><span class="lang-en">7</span></div></div></div><div class="answer-box" id="ansBox"></div><div class="actions"><button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button><div id="feedback"></div></div>
+  </div>
+
+  <div class="nav">
+    <a href="3.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="5.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const ANSWER='C';
+function en(){ return document.body.classList.contains('en-mode'); }
+function setAns(L, text){
+  window._ans=L;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  const el=[...document.querySelectorAll('.card')].find(c=>c.dataset.ans===L);
+  if(el) el.classList.add('on');
+  const box=document.getElementById('ansBox');
+  if(box){ box.className='answer-box filled'; box.textContent=text||L; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok=window._ans===ANSWER;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()?'❌ Not yet — try again in the lab.':'❌ 还不对——回到实验台再试一试。');
+}
+
+// simplified layout; resting-on relations
+const BOXES=[
+  {id:'cloths', zh:'布料', en:'cloths', x:8, y:200, w:90, h:60, on:[], train:false},
+  {id:'train', zh:'火车', en:'TRAIN', x:90, y:190, w:120, h:70, on:[], train:true},
+  {id:'cds', zh:'光碟', en:'CDs', x:210, y:200, w:90, h:60, on:[], train:false},
+  {id:'booksBig', zh:'书(底)', en:'BOOKS', x:320, y:200, w:100, h:60, on:[], train:false},
+  {id:'stuffed', zh:'毛绒', en:'stuffed animals', x:30, y:120, w:160, h:70, on:['cloths','train'], train:false},
+  {id:'bedding', zh:'床上用品', en:'bedding', x:170, y:120, w:160, h:70, on:['train','cds'], train:false},
+  {id:'puzzles', zh:'拼图', en:'puzzles', x:340, y:130, w:90, h:55, on:['booksBig'], train:false},
+  {id:'books', zh:'书', en:'books', x:40, y:50, w:80, h:55, on:['stuffed'], train:false},
+  {id:'music', zh:'乐谱', en:'music sheets', x:130, y:45, w:110, h:55, on:['stuffed','bedding'], train:false},
+  {id:'board', zh:'棋盘', en:'board games', x:260, y:45, w:130, h:55, on:['bedding','puzzles'], train:false},
+];
+let removed=new Set();
+let moves=0;
+function topsOn(id){
+  return BOXES.filter(b=>!removed.has(b.id) && b.on.includes(id)).map(b=>b.id);
+}
+function canRemove(id){
+  return topsOn(id).length===0 && id!=='train';
+}
+function trainBlocked(){
+  return topsOn('train').length>0;
+}
+function resetBoxes(){ removed=new Set(); moves=0; renderBoxes(); }
+function renderBoxes(){
+  const st=document.getElementById('stage');
+  st.innerHTML='';
+  BOXES.forEach(b=>{
+    const d=document.createElement('div');
+    d.className='box'+(removed.has(b.id)?' gone':'')+(b.train?' train':'');
+    if(b.train && !removed.has(b.id)) d.classList.add(trainBlocked()?'blocked':'free');
+    d.style.left=b.x+'px'; d.style.top=b.y+'px'; d.style.width=b.w+'px'; d.style.height=b.h+'px';
+    d.textContent=en()?b.en:b.zh;
+    d.title=b.id;
+    d.onclick=()=>{
+      if(removed.has(b.id)) return;
+      if(b.train){
+        document.getElementById('info').textContent=trainBlocked()
+          ?(en()?'TRAIN still has boxes on it.':'火车盒上还有东西。')
+          :(en()?`TRAIN is free after ${moves} moves.`:`火车盒已可打开，共移了 ${moves} 个。`);
+        return;
+      }
+      if(!canRemove(b.id)){
+        document.getElementById('info').textContent=en()?'Something is still on this box.':'这个盒子上面还有东西。';
+        return;
+      }
+      removed.add(b.id); moves++; renderBoxes();
+    };
+    st.appendChild(d);
+  });
+  document.getElementById('info').textContent=en()
+    ?`Moved: ${moves}. Tap topmost boxes to move them. Green TRAIN = clear.`
+    :`已移动：${moves}。先点最上面的盒子移走。火车变绿=已清开。`;
+}
+resetBoxes();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q2 · 激光反射</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.wide{max-width:720px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">激光反射</h1>
+<h1 class="lang-en">Laser Mirrors</h1>
+<div class="meta lang-zh">2022 等级 B · 第 2 题 · 3 分</div>
+<div class="meta lang-en">2022 Level B · Q2 · 3 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">激光按图中方式遇镜反射。激光会从哪个字母位置射出？</p>
+    <p class="lang-en">Laser beams reflect in mirrors as shown. At which letter will this laser beam end?</p>
+    <img class="fig" src="assets/q2_figure.png" alt="Q2"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：发射激光，逐步跟踪</h2>
+    <h2 class="lang-en">Lab: fire the laser and trace it</h2>
+    <p class="tip lang-zh">点发射看拐弯过程，再选出口字母。</p>
+    <p class="tip lang-en">Fire to see each turn, then pick the exit letter.</p>
+    
+<style>
+.laser-wrap{display:flex;justify-content:center;margin:12px 0}
+.laser{
+  display:grid;grid-template-columns:repeat(3,72px);grid-template-rows:repeat(2,72px);
+  gap:0;border:3px solid #334155;position:relative;background:#fff;
+}
+.lmirror{
+  border:1px dashed #cbd5e1;display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:900;position:relative;
+}
+.lmirror.hit{background:#fee2e2}
+.exit-lab{position:absolute;font-weight:800;color:#334155;font-size:14px}
+</style>
+<p class="tip lang-zh">小图：激光碰到镜子会拐弯（见题目图）。</p>
+<p class="tip lang-en">Inset: beam turns 90° on a mirror (see figure).</p>
+<img class="fig" src="assets/q2_ex.png" alt="example" style="max-width:240px"/>
+<div class="laser-wrap">
+  <div class="laser" id="laser">
+    <span class="exit-lab" style="bottom:-22px;left:28px">A</span>
+    <span class="exit-lab" style="bottom:-22px;left:100px">B</span>
+    <span class="exit-lab" style="bottom:-22px;left:172px">C</span>
+    <span class="exit-lab" style="right:-22px;bottom:24px">D</span>
+    <span class="exit-lab" style="right:-22px;top:24px">E</span>
+  </div>
+</div>
+<div class="info" id="info"></div>
+<div class="actions">
+  <button class="btn primary" onclick="fire()"><span class="lang-zh">发射激光（逐步）</span><span class="lang-en">Fire (step by step)</span></button>
+  <button class="btn reset" onclick="resetLaser()"><span class="lang-zh">清空轨迹</span><span class="lang-en">Clear</span></button>
+</div>
+<div class="pool" id="pool"><div class="card" data-ans="A" onclick="setAns('A', 'A: '+(en()?`A`:`A`))"><div>A</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">A</span><span class="lang-en">A</span></div></div><div class="card" data-ans="B" onclick="setAns('B', 'B: '+(en()?`B`:`B`))"><div>B</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">B</span><span class="lang-en">B</span></div></div><div class="card" data-ans="C" onclick="setAns('C', 'C: '+(en()?`C`:`C`))"><div>C</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">C</span><span class="lang-en">C</span></div></div><div class="card" data-ans="D" onclick="setAns('D', 'D: '+(en()?`D`:`D`))"><div>D</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">D</span><span class="lang-en">D</span></div></div><div class="card" data-ans="E" onclick="setAns('E', 'E: '+(en()?`E`:`E`))"><div>E</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">E</span><span class="lang-en">E</span></div></div></div><div class="answer-box" id="ansBox"></div><div class="actions"><button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button><div id="feedback"></div></div>
+  </div>
+
+  <div class="nav">
+    <a href="1.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="3.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const ANSWER='B';
+function en(){ return document.body.classList.contains('en-mode'); }
+function setAns(L, text){
+  window._ans=L;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  const el=[...document.querySelectorAll('.card')].find(c=>c.dataset.ans===L);
+  if(el) el.classList.add('on');
+  const box=document.getElementById('ansBox');
+  if(box){ box.className='answer-box filled'; box.textContent=text||L; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok=window._ans===ANSWER;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()?'❌ Not yet — try again in the lab.':'❌ 还不对——回到实验台再试一试。');
+}
+
+// row0=E top, row1=D bottom; cols A B C — from contest figure
+const M=[['\\','/','\\'],['/','\\','\\']];
+function reflect(m, dir){
+  // dir = travel direction
+  if(m==='\\'){ // top-left to bottom-right
+    return {R:'D',L:'U',U:'R',D:'L'}[dir];
+  } else { // /
+    return {R:'U',L:'D',U:'L',D:'R'}[dir];
+  }
+}
+function resetLaser(){
+  const box=document.getElementById('laser');
+  [...box.querySelectorAll('.lmirror')].forEach(e=>e.remove());
+  for(let r=0;r<2;r++) for(let c=0;c<3;c++){
+    const d=document.createElement('div');
+    d.className='lmirror';
+    d.id=`m${r}${c}`;
+    d.textContent=M[r][c];
+    box.appendChild(d);
+  }
+  document.getElementById('info').textContent=en()?'Fire to trace the beam.':'点发射，逐步看激光走到哪。';
+}
+let firing=false;
+async function fire(){
+  if(firing) return; firing=true;
+  resetLaser();
+  let r=0,c=0,dir='R';
+  const path=[];
+  for(let step=0;step<20;step++){
+    const m=M[r][c];
+    document.getElementById(`m${r}${c}`).classList.add('hit');
+    dir=reflect(m,dir);
+    path.push([r,c,dir]);
+    // move to next cell or exit
+    let nr=r,nc=c;
+    if(dir==='R') nc++; else if(dir==='L') nc--; else if(dir==='U') nr--; else nr++;
+    await new Promise(res=>setTimeout(res,350));
+    if(nr<0){ document.getElementById('info').textContent=en()?'Exits at E (top).':'从上方 E 出去。'; firing=false; return; }
+    if(nr>1){ const letters=['A','B','C']; document.getElementById('info').textContent=en()?`Exits at ${letters[c]} (bottom).`:`从下方 ${letters[c]} 出去。`; firing=false; return; }
+    if(nc<0){ document.getElementById('info').textContent=en()?'Exits left.':'从左边出去。'; firing=false; return; }
+    if(nc>2){ document.getElementById('info').textContent=en()?`Exits at ${r===0?'E':'D'} (right).`:`从右方 ${r===0?'E':'D'} 出去。`; firing=false; return; }
+    r=nr; c=nc;
+  }
+  firing=false;
+}
+resetLaser();
+
+</script>
+</body>
+</html>

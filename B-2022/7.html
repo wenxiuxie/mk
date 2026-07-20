@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q7 · 填等式</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.wide{max-width:720px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">填等式</h1>
+<h1 class="lang-en">Fill the Equation</h1>
+<div class="meta lang-zh">2022 等级 B · 第 7 题 · 3 分</div>
+<div class="meta lang-en">2022 Level B · Q7 · 3 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">哪两个数填入方框能使等式成立？ 2022 + □ = 2020 + □</p>
+    <p class="lang-en">Which two numbers make the statement correct? 2022 + □ = 2020 + □</p>
+    
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：选一对数字，看左右是否相等</h2>
+    <h2 class="lang-en">Lab: pick a pair and compare both sides</h2>
+    <p class="tip lang-zh">点选项后自动代入，比较两边的结果。</p>
+    <p class="tip lang-en">Tap an option to plug in and compare both sides.</p>
+    
+<style>
+.eq{font-size:28px;font-weight:800;text-align:center;margin:16px 0;letter-spacing:1px}
+.eq .box{display:inline-block;min-width:48px;padding:4px 10px;border:3px dashed #4a90e2;border-radius:10px;margin:0 4px;background:#f0f9ff}
+.result{text-align:center;font-size:18px;font-weight:700;min-height:28px}
+</style>
+<div class="eq">2022 + <span class="box" id="b1">□</span> = 2020 + <span class="box" id="b2">□</span></div>
+<div class="result" id="result"></div>
+<div class="pool" id="pool"><div class="card" data-ans="A" onclick="setAns('A', 'A: '+(en()?`3 and 5`:`3 和 5`))"><div>A</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">3 和 5</span><span class="lang-en">3 and 5</span></div></div><div class="card" data-ans="B" onclick="setAns('B', 'B: '+(en()?`4 and 1`:`4 和 1`))"><div>B</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">4 和 1</span><span class="lang-en">4 and 1</span></div></div><div class="card" data-ans="C" onclick="setAns('C', 'C: '+(en()?`3 and 4`:`3 和 4`))"><div>C</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">3 和 4</span><span class="lang-en">3 and 4</span></div></div><div class="card" data-ans="D" onclick="setAns('D', 'D: '+(en()?`7 and 2`:`7 和 2`))"><div>D</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">7 和 2</span><span class="lang-en">7 and 2</span></div></div><div class="card" data-ans="E" onclick="setAns('E', 'E: '+(en()?`9 and 8`:`9 和 8`))"><div>E</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">9 和 8</span><span class="lang-en">9 and 8</span></div></div></div><div class="answer-box" id="ansBox"></div><div class="actions"><button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button><div id="feedback"></div></div>
+  </div>
+
+  <div class="nav">
+    <a href="6.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="8.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const ANSWER='A';
+function en(){ return document.body.classList.contains('en-mode'); }
+function setAns(L, text){
+  window._ans=L;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  const el=[...document.querySelectorAll('.card')].find(c=>c.dataset.ans===L);
+  if(el) el.classList.add('on');
+  const box=document.getElementById('ansBox');
+  if(box){ box.className='answer-box filled'; box.textContent=text||L; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok=window._ans===ANSWER;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()?'❌ Not yet — try again in the lab.':'❌ 还不对——回到实验台再试一试。');
+}
+
+const PAIRS={A:[3,5],B:[4,1],C:[3,4],D:[7,2],E:[9,8]};
+const _setAns=setAns;
+setAns=function(L,text){
+  _setAns(L,text);
+  const [x,y]=PAIRS[L];
+  document.getElementById('b1').textContent=x;
+  document.getElementById('b2').textContent=y;
+  const Lhs=2022+x, Rhs=2020+y;
+  const ok=Lhs===Rhs;
+  document.getElementById('result').textContent=en()
+    ?`Left ${Lhs}  ·  Right ${Rhs}  ·  ${ok?'Equal':'not equal'}`
+    :`左边 ${Lhs}  ·  右边 ${Rhs}  ·  ${ok?'相等':'不相等'}`;
+  document.getElementById('result').style.color=ok?'#16a34a':'#dc2626';
+};
+
+</script>
+</body>
+</html>

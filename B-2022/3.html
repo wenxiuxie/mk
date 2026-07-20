@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q3 · 硬币网格</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.wide{max-width:720px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">硬币网格</h1>
+<h1 class="lang-en">Coin Grid</h1>
+<div class="meta lang-zh">2022 等级 B · 第 3 题 · 3 分</div>
+<div class="meta lang-en">2022 Level B · Q3 · 3 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小萝想让每行、每列都正好有 2 枚硬币。需要把哪枚带字母的硬币移到空格？</p>
+    <p class="lang-en">Rossitza wants 2 coins in each row and each column. Which labeled coin must she move to an empty cell?</p>
+    <img class="fig" src="assets/q3_figure.png" alt="Q3"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：拖移一枚带字母硬币，看行列计数</h2>
+    <h2 class="lang-en">Lab: move one labeled coin; watch row/col counts</h2>
+    <p class="tip lang-zh">点一枚带字母硬币，再点空格放下。目标：五行五列都是 2。</p>
+    <p class="tip lang-en">Tap a labeled coin, then an empty cell. Goal: every row and column has 2.</p>
+    
+<style>
+.coin-grid{display:grid;grid-template-columns:repeat(5,56px);grid-template-rows:repeat(5,56px);gap:0;margin:12px auto;border:3px solid #334155;width:max-content}
+.coin-cell{border:1px solid #94a3b8;display:flex;align-items:center;justify-content:center;background:#fff;cursor:pointer}
+.coin{width:36px;height:36px;border-radius:50%;background:#7dd3fc;border:2px solid #0369a1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#0c4a6e}
+.coin.sel{outline:3px solid #f59e0b;outline-offset:2px}
+.coin-cell.drop{background:#fef3c7}
+.counts{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:700;color:#475569;margin-top:8px}
+</style>
+<div class="coin-grid" id="coinGrid"></div>
+<div class="counts" id="counts"></div>
+<div class="info" id="info"></div>
+<div class="actions">
+  <button class="btn reset" onclick="resetCoins()"><span class="lang-zh">恢复原图</span><span class="lang-en">Reset</span></button>
+</div>
+<div class="pool" id="pool"><div class="card" data-ans="A" onclick="setAns('A', 'A: '+(en()?`move A`:`移 A`))"><div>A</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">移 A</span><span class="lang-en">move A</span></div></div><div class="card" data-ans="B" onclick="setAns('B', 'B: '+(en()?`move B`:`移 B`))"><div>B</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">移 B</span><span class="lang-en">move B</span></div></div><div class="card" data-ans="C" onclick="setAns('C', 'C: '+(en()?`move C`:`移 C`))"><div>C</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">移 C</span><span class="lang-en">move C</span></div></div><div class="card" data-ans="D" onclick="setAns('D', 'D: '+(en()?`move D`:`移 D`))"><div>D</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">移 D</span><span class="lang-en">move D</span></div></div><div class="card" data-ans="E" onclick="setAns('E', 'E: '+(en()?`move E`:`移 E`))"><div>E</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">移 E</span><span class="lang-en">move E</span></div></div></div><div class="answer-box" id="ansBox"></div><div class="actions"><button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button><div id="feedback"></div></div>
+  </div>
+
+  <div class="nav">
+    <a href="2.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="4.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const ANSWER='C';
+function en(){ return document.body.classList.contains('en-mode'); }
+function setAns(L, text){
+  window._ans=L;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  const el=[...document.querySelectorAll('.card')].find(c=>c.dataset.ans===L);
+  if(el) el.classList.add('on');
+  const box=document.getElementById('ansBox');
+  if(box){ box.className='answer-box filled'; box.textContent=text||L; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok=window._ans===ANSWER;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()?'❌ Not yet — try again in the lab.':'❌ 还不对——回到实验台再试一试。');
+}
+
+// 5x5; labeled coins + plains. Move one labeled coin.
+const INIT=[
+  // [r,c,label|null]
+  [0,0,'A'],[0,4,null],
+  [1,1,null],[1,3,null],
+  [2,2,'D'],[2,3,null],
+  [3,0,'B'],
+  [4,0,'C'],[4,2,'E'],[4,4,null],
+];
+let coins=INIT.map(x=>x.slice());
+let picked=null; // index in coins
+function resetCoins(){ coins=INIT.map(x=>x.slice()); picked=null; renderCoins(); }
+function renderCoins(){
+  const g=document.getElementById('coinGrid');
+  g.innerHTML='';
+  const map={};
+  coins.forEach((co,i)=>{ map[`${co[0]},${co[1]}`]=i; });
+  for(let r=0;r<5;r++) for(let c=0;c<5;c++){
+    const d=document.createElement('div');
+    d.className='coin-cell';
+    const key=`${r},${c}`;
+    if(key in map){
+      const i=map[key];
+      const lab=coins[i][2];
+      const coin=document.createElement('div');
+      coin.className='coin'+(picked===i?' sel':'');
+      coin.textContent=lab||'';
+      coin.onclick=(e)=>{ e.stopPropagation(); picked=i; renderCoins(); };
+      d.appendChild(coin);
+    } else {
+      d.onclick=()=>{
+        if(picked==null) return;
+        // only allow moving labeled A-E once from original? allow any move of one coin
+        const occ=coins.some((co,j)=>j!==picked && co[0]===r && co[1]===c);
+        if(occ) return;
+        coins[picked][0]=r; coins[picked][1]=c;
+        picked=null; renderCoins();
+      };
+    }
+    g.appendChild(d);
+  }
+  const row=[0,0,0,0,0], col=[0,0,0,0,0];
+  coins.forEach(([r,c])=>{ row[r]++; col[c]++; });
+  document.getElementById('counts').innerHTML=
+    `<span>行 rows: ${row.join(', ')}</span><span>列 cols: ${col.join(', ')}</span>`;
+  const ok=row.every(x=>x===2)&&col.every(x=>x===2);
+  document.getElementById('info').textContent=ok
+    ?(en()?'Every row and column has 2 — which labeled coin did you move?':'每行每列都是 2 枚了——你移动的是哪枚带字母的？')
+    :(en()?'Tap a labeled coin, then tap an empty cell.':'先点带字母的硬币，再点空格放下。');
+}
+resetCoins();
+
+</script>
+</body>
+</html>

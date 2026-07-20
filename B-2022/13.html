@@ -18,27 +18,36 @@ h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;m
 .tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
 .stage{
   position:relative;width:300px;height:300px;margin:16px auto;
-  background:#c7e9f5;border:3px solid #334155;border-radius:4px;overflow:hidden;
+  background:#b8e0f0;border:3px solid #1e293b;border-radius:2px;overflow:hidden;
 }
 .dots{
-  position:absolute;inset:18px;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:0;
+  position:absolute;inset:16px;display:grid;
+  grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:0;z-index:1;
 }
+.slot{
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  border-radius:4px;
+}
+.slot:hover{background:rgba(255,255,255,.25)}
+.slot.empty:hover{box-shadow:inset 0 0 0 2px rgba(225,29,72,.35)}
 .dot{
-  width:14px;height:14px;border-radius:50%;background:#e11d48;margin:auto;
-  cursor:pointer;transition:transform .12s,box-shadow .12s;
+  width:16px;height:16px;border-radius:50%;background:#e11d48;
+  box-shadow:0 1px 2px rgba(0,0,0,.15);pointer-events:none;
 }
-.dot:hover{transform:scale(1.25)}
-.dot.on{box-shadow:0 0 0 3px #fbbf24}
+.dot.given{background:#e11d48}
+.dot.placed{background:#fb7185;outline:2px dashed #9f1239;outline-offset:1px}
+/* 折角：盖住左侧，斜边与题图一致 */
 .fold{
-  position:absolute;left:0;bottom:0;width:58%;height:72%;
-  background:#fff;border:2px solid #334155;
-  clip-path:polygon(0 100%, 0 18%, 72% 0, 100% 48%, 55% 100%);
-  cursor:grab;touch-action:none;z-index:2;
-  box-shadow:2px -2px 8px rgba(0,0,0,.12);
-  transition:opacity .2s, transform .15s;
+  position:absolute;z-index:2;left:0;top:0;bottom:0;width:62%;
+  background:#fff;border:2.5px solid #1e293b;border-left:none;
+  clip-path:polygon(0 0, 52% 0, 100% 100%, 0 100%);
+  box-shadow:4px 0 10px rgba(0,0,0,.08);
+  transition:opacity .25s, transform .25s;
+  pointer-events:none;
 }
-.fold:active{cursor:grabbing}
-.fold.lifted{opacity:.15;pointer-events:none}
+.fold.lifted{
+  opacity:0;transform:translateX(-12%) rotate(-4deg);
+}
 .count{text-align:center;font-weight:800;font-size:18px;margin:8px 0;color:#0f172a}
 .actions{text-align:center}
 .btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
@@ -56,10 +65,14 @@ h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;m
 .nav a{color:var(--primary);font-weight:700;text-decoration:none}
 .lang-zh{display:block}.lang-en{display:none}
 body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.legend{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:12px;color:#64748b;margin-top:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:50%;background:#e11d48;display:inline-block}
+.sw.p{background:#fb7185;outline:2px dashed #9f1239;outline-offset:1px}
 </style>
 </head>
 <body>
-<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); updateCount()">🌐 English / 中文</button>
 
 <h1 class="lang-zh">地毯圆点</h1>
 <h1 class="lang-en">Carpet Dots</h1>
@@ -76,24 +89,29 @@ body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
   </div>
 
   <div class="section">
-    <h2 class="lang-zh">实验：掀开折角 / 点圆点来数</h2>
-    <h2 class="lang-en">Lab: lift the fold / tap dots to count</h2>
-    <p class="tip lang-zh">可点「掀开折角」看下面；也可点可见的圆点做记号，自己数一共有几颗。</p>
-    <p class="tip lang-en">Lift the fold to peek, or tap visible dots to mark and count.</p>
+    <h2 class="lang-zh">实验：掀开折角，并在空格点点来数</h2>
+    <h2 class="lang-en">Lab: lift the fold; tap blank cells to place dots while counting</h2>
+    <p class="tip lang-zh">左边折角与题图一致。中间是空的——可在空白格点上红点帮助自己数；再点一次可去掉。掀开可看折角下面。</p>
+    <p class="tip lang-en">Left fold matches the figure. Center is empty — tap blank cells to place dots while you count; tap again to remove. Lift to peek under the fold.</p>
 
     <div class="stage" id="stage">
       <div class="dots" id="dots"></div>
-      <div class="fold" id="fold" title="drag or use button"></div>
+      <div class="fold" id="fold"></div>
+    </div>
+
+    <div class="legend">
+      <span><i class="sw"></i><span class="lang-zh">地毯上的点</span><span class="lang-en">Carpet dots</span></span>
+      <span><i class="sw p"></i><span class="lang-zh">你点上的（可删）</span><span class="lang-en">Your marks (removable)</span></span>
     </div>
 
     <div class="actions">
-      <button class="btn ghost" id="liftBtn" onclick="toggleFold()">
+      <button class="btn ghost" onclick="toggleFold()">
         <span class="lang-zh">掀开 / 盖上折角</span>
         <span class="lang-en">Lift / cover fold</span>
       </button>
       <button class="btn reset" onclick="resetMarks()">
-        <span class="lang-zh">清空记号</span>
-        <span class="lang-en">Clear marks</span>
+        <span class="lang-zh">清空我点的</span>
+        <span class="lang-en">Clear my marks</span>
       </button>
     </div>
     <div class="count" id="count"></div>
@@ -115,34 +133,65 @@ body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
 </div>
 
 <script>
-const N=6; // 6×6 carpet
+const N=6;
+const BORDER=2;
 const CHOICES=[48,44,40,36,32];
 const ANSWER_VAL=32;
-let marked=new Set();
+/** Student-placed dots on blank cells (and optionally toggled off given? no — given stay) */
+let placed=new Set(); // keys "r,c" on empty cells only
 let lifted=false;
 let ans=null;
 
 function en(){ return document.body.classList.contains('en-mode'); }
 
+/** True = carpet really has a dot here (2-row border; center hollow). */
+function isGiven(r,c){
+  return r<BORDER || r>=N-BORDER || c<BORDER || c>=N-BORDER;
+}
+
+function key(r,c){ return r+','+c; }
+
 function renderDots(){
   const box=document.getElementById('dots');
   box.innerHTML='';
-  for(let i=0;i<N*N;i++){
-    const d=document.createElement('div');
-    d.className='dot'+(marked.has(i)?' on':'');
-    d.onclick=()=>{
-      if(marked.has(i)) marked.delete(i); else marked.add(i);
-      renderDots(); updateCount();
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+    const slot=document.createElement('div');
+    const given=isGiven(r,c);
+    const k=key(r,c);
+    slot.className='slot'+(given?'':' empty');
+
+    if(given){
+      const d=document.createElement('div');
+      d.className='dot given';
+      slot.appendChild(d);
+    } else if(placed.has(k)){
+      const d=document.createElement('div');
+      d.className='dot placed';
+      slot.appendChild(d);
+    }
+
+    slot.onclick=()=>{
+      if(given) return; // carpet dots stay; count them via given
+      if(placed.has(k)) placed.delete(k); else placed.add(k);
+      renderDots();
     };
-    box.appendChild(d);
+    box.appendChild(slot);
   }
   updateCount();
 }
 
+function givenCount(){
+  let n=0;
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++) if(isGiven(r,c)) n++;
+  return n;
+}
+
 function updateCount(){
+  const g=givenCount();
+  const p=placed.size;
   document.getElementById('count').textContent = en()
-    ? `Dots you marked: ${marked.size}`
-    : `你点记的圆点：${marked.size} 颗`;
+    ? `Carpet dots: ${g}  ·  Your marks in blanks: ${p}  ·  Sum on board: ${g+p}`
+    : `地毯圆点：${g}  ·  空白区你点的：${p}  ·  板上合计：${g+p}`;
 }
 
 function toggleFold(){
@@ -151,7 +200,8 @@ function toggleFold(){
 }
 
 function resetMarks(){
-  marked.clear(); renderDots();
+  placed.clear();
+  renderDots();
   document.getElementById('feedback').textContent='';
 }
 
@@ -184,7 +234,7 @@ function checkAnswer(){
   fb.className=ok?'ok':'bad';
   fb.textContent=ok
     ?(en()?'✅ Correct total!':'✅ 总数对了！')
-    :(en()?'❌ Not yet — lift the fold and count carefully.':'❌ 还不对——掀开折角再仔细数一数。');
+    :(en()?'❌ Not yet — lift the fold and count the carpet dots carefully.':'❌ 还不对——掀开折角，仔细数地毯上的圆点。');
 }
 
 renderDots();
