@@ -3,203 +3,199 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>2024 A · Q16</title>
+<title>2024 A · Q16 · 相连数之和</title>
 <style>
-:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
 *{box-sizing:border-box}
-body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
-.topbar{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
-.brand{font-weight:800;color:var(--ink);font-size:14px}
-.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
-.lang-btn:hover{background:#e0f2fe}
-.wrap{max-width:760px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
-h1{margin:0 0 8px;color:var(--ink);font-size:24px}
-.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
-.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:16px}
-.play{margin:16px 0;padding:14px;background:#f0f9ff;border-radius:14px}
-.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
-.primary{background:#0284c7;color:#fff}
-.ok{background:#22c55e;color:#fff}
-.warn{background:#fef3c7;color:#92400e}
-.ghost{background:#e2e8f0;color:#334155}
-.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink)}
-.msg.good{color:var(--ok)}
-.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.opt{min-width:56px;padding:10px 12px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer;text-align:center}
-.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
-.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
-.hint{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6}
-.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
-.nav a{color:var(--accent);font-weight:700;text-decoration:none}
-.chip{display:inline-block;background:#fff;border:2px solid #7dd3fc;border-radius:999px;padding:4px 10px;margin:3px;font-weight:700;color:#0369a1}
-.grid{display:inline-grid;gap:4px;background:#fff;padding:8px;border-radius:10px}
-.cell{width:44px;height:44px;border:2px solid #94a3b8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;user-select:none}
-.cell.grey{background:#94a3b8;color:#fff}
-.cell.white{background:#fff}
-.cell.path{outline:3px solid #f59e0b;outline-offset:-3px}
-.cell.start{box-shadow:inset 0 0 0 3px #22c55e}
-.cell.end{box-shadow:inset 0 0 0 3px #ef4444}
-.board{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.num{width:56px;height:56px;border-radius:12px;background:#fff;border:3px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;cursor:pointer}
-.num.on{background:#0284c7;color:#fff}
-.node{width:52px;height:52px;border-radius:50%;background:#e0f2fe;border:3px solid #0284c7;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;position:absolute}
-.node.hot{background:#fde68a;border-color:#d97706}
-.pat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.pat .item{width:64px;height:64px;border-radius:12px;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:28px;background:#fff}
-.pat .item.hl{border-color:#16a34a;background:#dcfce7;transform:scale(1.05)}
-
-.figwrap{margin:12px 0 4px;text-align:center}
-.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
-.fig-md{max-width:420px}
-.figcap{margin:10px 0 4px;font-weight:700;color:#0369a1;font-size:14px}
-
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:860px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:340px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.lab-row{display:flex;gap:16px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.net-wrap{position:relative;width:320px;height:320px;flex:0 0 320px}
+.node{
+  position:absolute;width:56px;height:56px;margin-left:-28px;margin-top:-28px;
+  border-radius:50%;background:#e3f2fd;border:3px solid var(--primary);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;
+  cursor:pointer;user-select:none;z-index:2;transition:transform .15s,background .15s,box-shadow .15s;
+}
+.node:hover{transform:scale(1.06)}
+.node.on{background:#ffe082;border-color:#f9a825;box-shadow:0 0 0 4px rgba(249,168,37,.35);z-index:4}
+.side-panel{
+  width:240px;min-height:160px;padding:14px 16px;border-radius:12px;
+  background:#f8fafc;border:1px solid #e2e8f0;color:#334155;font-size:14px;line-height:1.55;
+}
+.side-panel .title{font-weight:800;color:#0f172a;margin-bottom:8px;font-size:15px}
+.side-panel .nums{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.side-panel .tag{
+  background:#fef3c7;border:1px solid #fcd34d;color:#92400e;
+  border-radius:8px;padding:4px 10px;font-weight:800;font-size:16px;
+}
+.side-panel .calc{font-family:ui-monospace,Consolas,monospace;font-size:16px;color:#0f172a;font-weight:700}
+.side-panel .sum{font-size:22px;font-weight:800;color:#0369a1;margin-top:6px}
+.side-panel .wait{color:#94a3b8;font-size:13px;margin-top:8px}
+.side-panel.empty{color:#94a3b8;display:flex;align-items:center;justify-content:center;text-align:center}
+.history{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;color:#0f172a}
+.actions{text-align:center;margin-top:14px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.reset{background:#6c757d;color:#fff}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tip{font-size:13px;color:#64748b;text-align:center}
+.choices{text-align:center;margin-top:12px;font-size:14px;color:#475569}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="brand">Math Kangaroo 2024 · Level A</div>
-  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
-</div>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+
+<h1 class="lang-zh">相连数之和</h1>
+<h1 class="lang-en">Connected Number Sum</h1>
+<div class="meta lang-zh">2024 等级 A · 第 16 题 · 5 分</div>
+<div class="meta lang-en">2024 Level A · Q16 · 5 points</div>
+
 <div class="wrap">
-  <h1 data-zh="相连数之和" data-en="Connected Number Sum"></h1>
-  <div class="meta" data-zh="第 16 题 · 5 分" data-en="Question 16 · 5 points"></div>
-
-<div class="qbox" data-zh-html="图中有一个数，等于与它<b>直接相连</b>的数之和。请问是哪一个？<br>选项：3 / 5 / 7 / 10 / 12"
-data-en-html="One number equals the sum of the numbers connected directly to it. Which number?<br>Options: 3 / 5 / 7 / 10 / 12"></div>
-
-<div class="figwrap"><img class="fig fig-md" src="assets/q16_figure.png" alt="Q16 number network"/></div>
-
-<div class="play">
-  <p style="text-align:center;margin:0 0 8px;font-weight:700" data-zh="点圆圈试一试（与上图相同）" data-en="Tap a circle (same as the figure above)"></p>
-  <div id="net" style="position:relative;width:280px;height:280px;margin:0 auto">
-    <svg width="280" height="280" viewBox="0 0 280 280" style="position:absolute;inset:0">
-      <!-- horizontal -->
-      <line x1="50" y1="50" x2="230" y2="50" stroke="#64748b" stroke-width="3"/>
-      <line x1="50" y1="140" x2="230" y2="140" stroke="#64748b" stroke-width="3"/>
-      <line x1="50" y1="230" x2="230" y2="230" stroke="#64748b" stroke-width="3"/>
-      <!-- vertical -->
-      <line x1="50" y1="50" x2="50" y2="230" stroke="#64748b" stroke-width="3"/>
-      <line x1="140" y1="50" x2="140" y2="230" stroke="#64748b" stroke-width="3"/>
-      <line x1="230" y1="50" x2="230" y2="230" stroke="#64748b" stroke-width="3"/>
-      <!-- diagonals -->
-      <line x1="50" y1="50" x2="230" y2="230" stroke="#64748b" stroke-width="3"/>
-      <line x1="230" y1="50" x2="50" y2="230" stroke="#64748b" stroke-width="3"/>
-    </svg>
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">图中有一个数，等于与它<b>直接相连</b>的数之和。请问是哪一个？可选：3 / 5 / 7 / 10 / 12</p>
+    <p class="lang-en">One number equals the sum of numbers connected directly to it. Which? Choices: 3 / 5 / 7 / 10 / 12</p>
+    <img class="fig" src="assets/q16_figure.png" alt="Q16"/>
   </div>
-  <div class="msg" id="playMsg" data-zh="点一个数，看邻居之和是否等于它。" data-en="Tap a number to check its neighbor sum."></div>
-</div>
-<p class="hint" data-zh="提示：右上角 7 的直接相连是上排中间的 1、正中间的 1、右边的 5 → 1+1+5=7。"
-data-en="Hint: top-right 7 connects to top-middle 1, center 1, and right 5 → 1+1+5=7."></p>
-<div class="options">
-<div class="opt" data-ans="A" onclick="markAnswer(this,'C')">3</div>
-<div class="opt" data-ans="B" onclick="markAnswer(this,'C')">5</div>
-<div class="opt" data-ans="C" onclick="markAnswer(this,'C')">7</div>
-<div class="opt" data-ans="D" onclick="markAnswer(this,'C')">10</div>
-<div class="opt" data-ans="E" onclick="markAnswer(this,'C')">12</div>
-</div>
-<div class="msg" id="msg" data-zh="先自己想一想，再点选项。" data-en="Think first, then tap an option."></div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：多点几个数，加一加（自己判断）</h2>
+    <h2 class="lang-en">Experiment: tap several numbers and add (you decide)</h2>
+    <p class="tip lang-zh">点选 / 再点取消。选中 <b>超过 2 个</b> 时，右侧只帮你算「这些数的和」——对不对请自己想。</p>
+    <p class="tip lang-en">Tap to select / tap again to cancel. When <b>more than 2</b> are selected, the panel only shows their sum — you judge.</p>
+
+    <div class="lab-row">
+      <div class="net-wrap" id="net">
+        <svg width="320" height="320" viewBox="0 0 320 320" style="position:absolute;inset:0">
+          <line x1="60" y1="60" x2="260" y2="60" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="60" y1="160" x2="260" y2="160" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="60" y1="260" x2="260" y2="260" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="60" y1="60" x2="60" y2="260" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="160" y1="60" x2="160" y2="260" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="260" y1="60" x2="260" y2="260" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="60" y1="60" x2="260" y2="260" stroke="#94a3b8" stroke-width="3"/>
+          <line x1="260" y1="60" x2="60" y2="260" stroke="#94a3b8" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="side-panel empty" id="side">
+        <span class="lang-zh">先点选数字（可多选）</span>
+        <span class="lang-en">Select numbers (multi-tap)</span>
+      </div>
+    </div>
+
+    <div class="history" id="history"></div>
+    <p class="choices lang-zh">题目选项：3 · 5 · 7 · 10 · 12 —— 想好就记下，本页不判对错</p>
+    <p class="choices lang-en">Choices: 3 · 5 · 7 · 10 · 12 — decide yourself; no check here</p>
+
+    <div class="actions">
+      <button class="btn reset" onclick="resetAll()"><span class="lang-zh">清空所选</span><span class="lang-en">Clear selection</span></button>
+    </div>
+  </div>
 
   <div class="nav">
-    <a href="15.html" data-zh="← 上一题" data-en="← Prev"></a>
-    <a href="17.html" data-zh="下一题 →" data-en="Next →"></a>
+    <a href="15.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="17.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
   </div>
 </div>
+
 <script>
-
-let lang = localStorage.getItem('mk_lang') || 'zh';
-function applyLang(){
-  document.querySelectorAll('[data-zh]').forEach(el=>{
-    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
-  });
-  document.querySelectorAll('[data-zh-html]').forEach(el=>{
-    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
-  });
-  const b=document.getElementById('langBtn');
-  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
-  localStorage.setItem('mk_lang', lang);
-}
-function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
-function markAnswer(btn, correctLetter){
-  const letter=btn.dataset.ans;
-  document.querySelectorAll('.opt').forEach(o=>{
-    o.classList.remove('correct','wrong');
-    if(o.dataset.ans===correctLetter) o.classList.add('correct');
-    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
-  });
-  const msg=document.getElementById('msg');
-  if(!msg) return;
-  if(letter===correctLetter){
-    msg.className='msg good';
-    msg.setAttribute('data-zh','答对了！');
-    msg.setAttribute('data-en','Correct!');
-  }else{
-    msg.className='msg';
-    msg.setAttribute('data-zh','再想想～正确答案已标绿。');
-    msg.setAttribute('data-en','Try again — correct option is highlighted.');
-  }
-  applyLang();
-}
-document.addEventListener('DOMContentLoaded', applyLang);
-
-/* 3x3 grid matching official figure:
-   3  1  7
-  12  1  5
-   4  2 10
-   edges: all rows, cols, and both diagonals */
 const VALS = [3,1,7, 12,1,5, 4,2,10];
-const POS = [
-  [50,50],[140,50],[230,50],
-  [50,140],[140,140],[230,140],
-  [50,230],[140,230],[230,230]
-];
-const NEI = {
-  0:[1,3,4],       // 3 → 1,12,1
-  1:[0,2,4],       // 1 → 3,7,1
-  2:[1,4,5],       // 7 → 1,1,5  ★
-  3:[0,4,6],       // 12 → 3,1,4
-  4:[0,1,2,3,5,6,7,8], // center 1 → all
-  5:[2,4,8],       // 5 → 7,1,10
-  6:[3,4,7],       // 4 → 12,1,2
-  7:[4,6,8],       // 2 → 1,4,10
-  8:[4,5,7],       // 10 → 1,5,2
-};
+const POS = [[60,60],[160,60],[260,60],[60,160],[160,160],[260,160],[60,260],[160,260],[260,260]];
+const selected = new Set(); // indices
+const logs = [];
 
-(function build(){
-  const box=document.getElementById('net');
-  POS.forEach(([x,y],i)=>{
-    const d=document.createElement('div');
-    d.className='node';
-    d.style.left=(x-26)+'px';
-    d.style.top=(y-26)+'px';
-    d.dataset.i=String(i);
-    d.dataset.v=String(VALS[i]);
-    d.textContent=VALS[i];
-    d.onclick=()=>pickNode(i);
-    box.appendChild(d);
-  });
-})();
+const net=document.getElementById('net');
+const nodes=[];
+POS.forEach(([x,y],i)=>{
+  const d=document.createElement('div');
+  d.className='node';
+  d.style.left=x+'px'; d.style.top=y+'px';
+  d.textContent=VALS[i];
+  d.onclick=()=>toggle(i);
+  net.appendChild(d);
+  nodes.push(d);
+});
 
-function pickNode(i){
-  document.querySelectorAll('.node').forEach(n=>n.classList.remove('hot'));
-  document.querySelector(`.node[data-i="${i}"]`).classList.add('hot');
-  const v=VALS[i];
-  const neigh=NEI[i].map(j=>VALS[j]);
-  const s=neigh.reduce((a,b)=>a+b,0);
-  const m=document.getElementById('playMsg');
-  const expr=neigh.join('+')+'='+s;
-  if(s===v){
-    m.className='msg good';
-    m.setAttribute('data-zh', v+' 的邻居：'+expr+'。等于它自己！✓');
-    m.setAttribute('data-en', v+"'s neighbors: "+expr+". Equals itself! ✓");
-  }else{
-    m.className='msg';
-    m.setAttribute('data-zh', v+' 的邻居：'+expr+' ≠ '+v+'。再试试！');
-    m.setAttribute('data-en', v+"'s neighbors: "+expr+" ≠ "+v+". Try again!");
-  }
-  applyLang();
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function toggle(i){
+  if(selected.has(i)) selected.delete(i);
+  else selected.add(i);
+  nodes.forEach((n,k)=>n.classList.toggle('on', selected.has(k)));
+  updateSide();
 }
 
+function updateSide(){
+  const side=document.getElementById('side');
+  const idxs=[...selected].sort((a,b)=>a-b);
+  const nums=idxs.map(i=>VALS[i]);
+
+  if(nums.length===0){
+    side.className='side-panel empty';
+    side.innerHTML='<span class="lang-zh">先点选数字（可多选）</span><span class="lang-en">Select numbers (multi-tap)</span>';
+    return;
+  }
+
+  side.className='side-panel';
+  const tags=nums.map(n=>`<span class="tag">${n}</span>`).join('');
+
+  if(nums.length<=2){
+    side.innerHTML = en()
+      ? `<div class="title">Selected (${nums.length})</div>
+         <div class="nums">${tags}</div>
+         <div class="wait">Select more than 2 to add them up.</div>`
+      : `<div class="title">已选 ${nums.length} 个</div>
+         <div class="nums">${tags}</div>
+         <div class="wait">再多选几个（超过 2 个）才会计算它们的和。</div>`;
+    return;
+  }
+
+  const s=nums.reduce((a,b)=>a+b,0);
+  side.innerHTML = en()
+    ? `<div class="title">Selected (${nums.length})</div>
+       <div class="nums">${tags}</div>
+       <div class="calc">${nums.join(' + ')}</div>
+       <div class="sum">= ${s}</div>`
+    : `<div class="title">已选 ${nums.length} 个</div>
+       <div class="nums">${tags}</div>
+       <div class="calc">${nums.join(' + ')}</div>
+       <div class="sum">= ${s}</div>`;
+
+  // 记录一次（去重：同样的一组数）
+  const key=nums.slice().sort((a,b)=>a-b).join('+');
+  if(!logs.some(L=>L.key===key)){
+    logs.push({key, nums:nums.slice(), s});
+    renderHistory();
+  }
+}
+
+function renderHistory(){
+  const h=document.getElementById('history');
+  h.innerHTML='';
+  logs.forEach(L=>{
+    const c=document.createElement('div');
+    c.className='chip';
+    c.textContent=`${L.nums.join('+')}=${L.s}`;
+    h.appendChild(c);
+  });
+}
+
+function resetAll(){
+  selected.clear();
+  nodes.forEach(n=>n.classList.remove('on'));
+  updateSide();
+}
 </script>
 </body>
 </html>

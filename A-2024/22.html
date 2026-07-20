@@ -3,196 +3,215 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>2024 A · Q22</title>
+<title>2024 A · Q22 · 最便宜路径</title>
 <style>
-:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
 *{box-sizing:border-box}
-body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
-.topbar{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
-.brand{font-weight:800;color:var(--ink);font-size:14px}
-.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
-.lang-btn:hover{background:#e0f2fe}
-.wrap{max-width:760px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
-h1{margin:0 0 8px;color:var(--ink);font-size:24px}
-.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
-.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:16px}
-.play{margin:16px 0;padding:14px;background:#f0f9ff;border-radius:14px}
-.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
-.primary{background:#0284c7;color:#fff}
-.ok{background:#22c55e;color:#fff}
-.warn{background:#fef3c7;color:#92400e}
-.ghost{background:#e2e8f0;color:#334155}
-.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink)}
-.msg.good{color:var(--ok)}
-.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.opt{min-width:56px;padding:10px 12px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer;text-align:center}
-.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
-.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
-.hint{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6}
-.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
-.nav a{color:var(--accent);font-weight:700;text-decoration:none}
-.chip{display:inline-block;background:#fff;border:2px solid #7dd3fc;border-radius:999px;padding:4px 10px;margin:3px;font-weight:700;color:#0369a1}
-.grid{display:inline-grid;gap:4px;background:#fff;padding:8px;border-radius:10px}
-.cell{width:44px;height:44px;border:2px solid #94a3b8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;user-select:none}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:860px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.grid{display:inline-grid;gap:4px;background:#fff;padding:8px;border-radius:10px;margin:0 auto}
+.cell{width:48px;height:48px;border:2px solid #94a3b8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;user-select:none;font-size:13px}
 .cell.grey{background:#94a3b8;color:#fff}
 .cell.white{background:#fff}
 .cell.path{outline:3px solid #f59e0b;outline-offset:-3px}
 .cell.start{box-shadow:inset 0 0 0 3px #22c55e}
 .cell.end{box-shadow:inset 0 0 0 3px #ef4444}
-.board{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.num{width:56px;height:56px;border-radius:12px;background:#fff;border:3px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;cursor:pointer}
-.num.on{background:#0284c7;color:#fff}
-.node{width:52px;height:52px;border-radius:50%;background:#e0f2fe;border:3px solid #0284c7;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;position:absolute}
-.node.hot{background:#fde68a;border-color:#d97706}
-.pat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.pat .item{width:64px;height:64px;border-radius:12px;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:28px;background:#fff}
-.pat .item.hl{border-color:#16a34a;background:#dcfce7;transform:scale(1.05)}
-
-.figwrap{margin:12px 0 4px;text-align:center}
-.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
-.fig-md{max-width:420px}
-.figcap{margin:10px 0 4px;font-weight:700;color:#0369a1;font-size:14px}
-
+.cell.next{box-shadow:0 0 0 3px rgba(56,189,248,.6)}
+.board-wrap{text-align:center;margin:12px 0}
+.info{text-align:center;font-weight:700;min-height:28px;margin:10px 0;color:#0f172a}
+.legend{display:flex;gap:16px;justify-content:center;font-size:13px;color:#64748b;margin:8px 0}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;height:52px;padding:0 10px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;cursor:grab}
+.answer-box{width:96px;height:96px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+.actions{text-align:center;margin-top:10px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tip{font-size:13px;color:#64748b;text-align:center}
+.hist{text-align:center;font-size:12px;color:#94a3b8;margin-top:6px}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="brand">Math Kangaroo 2024 · Level A</div>
-  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
-</div>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+
+<h1 class="lang-zh">最便宜的格子路径</h1>
+<h1 class="lang-en">Cheapest Grid Path</h1>
+<div class="meta lang-zh">2024 等级 A · 第 22 题 · 5 分</div>
+<div class="meta lang-en">2024 Level A · Q22 · 5 points</div>
+
 <div class="wrap">
-  <h1 data-zh="最便宜的格子路径" data-en="Cheapest Grid Path"></h1>
-  <div class="meta" data-zh="第 22 题 · 5 分" data-en="Question 22 · 5 points"></div>
-
-<div class="qbox" data-zh-html="从 A 到 B，只能向右或向上。灰格 1 欧元，白格 2 欧元。最便宜多少钱？"
-data-en-html="Go from A to B: only right or up. Grey=1€, white=2€. Cheapest cost?"></div>
-
-<div class="figwrap"><img class="fig fig-md" src="assets/q22_figure.png" alt="Q22 path grid"/></div>
-
-<div class="play" style="text-align:center">
-  <div class="grid" id="pathGrid" style="grid-template-columns:repeat(6,44px)"></div>
-  <div class="btnrow" style="justify-content:center">
-    <button class="act warn" onclick="resetPath()" data-zh="重置路径" data-en="Reset path"></button>
-    <button class="act ok" onclick="bestPath()" data-zh="看最优示范" data-en="Show best demo"></button>
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">从 A 到 B，只能向右或向上。灰格 1 欧元，白格 2 欧元。最便宜多少钱？</p>
+    <p class="lang-en">From A to B: only right or up. Grey=1€, white=2€. Cheapest cost?</p>
+    <img class="fig" src="assets/q22_figure.png" alt="Q22"/>
   </div>
-  <div class="msg" id="playMsg" data-zh="从 A 出发，只能向右或向上，共 8 步。起点 A 不收费，每走到一格才付钱。" data-en="From A: only right/up, 8 steps. Start A is free; pay when you enter each next cell."></div>
-</div>
-<p class="hint" data-zh="官方解法：必须 5 右 + 3 上 = 8 步。尽量少走白格。最少 5 白 + 3 灰 → 5×2+3×1=13 欧元。"
-data-en="Official: 5 right + 3 up = 8 steps. Minimize white cells. Best: 5 white + 3 grey → 5×2+3×1=13€."></p>
-<div class="options">
-<div class="opt" data-ans="A" onclick="markAnswer(this,'C')">11€</div>
-<div class="opt" data-ans="B" onclick="markAnswer(this,'C')">12€</div>
-<div class="opt" data-ans="C" onclick="markAnswer(this,'C')">13€</div>
-<div class="opt" data-ans="D" onclick="markAnswer(this,'C')">15€</div>
-<div class="opt" data-ans="E" onclick="markAnswer(this,'C')">16€</div>
-</div>
-<div class="msg" id="msg" data-zh="先自己想一想，再点选项。" data-en="Think first, then tap an option."></div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：自己点格子走路，看花多少钱</h2>
+    <h2 class="lang-en">Lab: tap cells to walk and see the cost</h2>
+    <p class="tip lang-zh">从 A 到 B，只能向右或向上（共 4 右 + 3 上）。走过的每一格都要付钱。多试几条路，记下花费。</p>
+    <p class="tip lang-en">A to B: only right or up (4 right + 3 up). Pay for every cell you visit. Try several paths.</p>
+    <div class="legend">
+      <span><span class="lang-zh">灰 = 1€</span><span class="lang-en">Grey = 1€</span></span>
+      <span><span class="lang-zh">白 = 2€</span><span class="lang-en">White = 2€</span></span>
+    </div>
+
+    <div class="board-wrap">
+      <div class="grid" id="pathGrid" style="grid-template-columns:repeat(5,48px)"></div>
+    </div>
+    <div class="info" id="info"></div>
+    <div class="hist" id="hist"></div>
+
+    <div class="actions">
+      <button class="btn reset" onclick="resetPath()"><span class="lang-zh">重置路径</span><span class="lang-en">Reset path</span></button>
+      <button class="btn reset" onclick="undo()"><span class="lang-zh">撤销一步</span><span class="lang-en">Undo</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:16px">我认为最便宜是（拖进去）</p>
+    <p class="tip lang-en" style="margin-top:16px">I think the cheapest is (drag)</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox" ondragover="allowDrop(event)" ondrop="dropAns(event)" onclick="clearAns()"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
 
   <div class="nav">
-    <a href="21.html" data-zh="← 上一题" data-en="← Prev"></a>
-    <a href="23.html" data-zh="下一题 →" data-en="Next →"></a>
+    <a href="21.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="23.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
   </div>
 </div>
+
 <script>
+// 与原卷一致：4 行 × 5 列；1=灰(1€)，0=白(2€)
+const G=[
+  [0,0,1,0,0],
+  [0,1,0,1,0],
+  [1,0,1,0,1],
+  [0,0,1,0,0]
+];
+const ROWS=4, COLS=5;
+const CHOICES=[11,12,13,15,16];
+let path=[], trials=[], ans=null, dragN=null;
 
-let lang = localStorage.getItem('mk_lang') || 'zh';
-function applyLang(){
-  document.querySelectorAll('[data-zh]').forEach(el=>{
-    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
-  });
-  document.querySelectorAll('[data-zh-html]').forEach(el=>{
-    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
-  });
-  const b=document.getElementById('langBtn');
-  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
-  localStorage.setItem('mk_lang', lang);
+function en(){ return document.body.classList.contains('en-mode'); }
+function cost(r,c){ return G[r][c]?1:2; }
+// 走过的每一格都付钱（含 A、B）
+function sumCost(){
+  return path.reduce((s,p)=>s+cost(p[0],p[1]),0);
 }
-function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
-function markAnswer(btn, correctLetter){
-  const letter=btn.dataset.ans;
-  document.querySelectorAll('.opt').forEach(o=>{
-    o.classList.remove('correct','wrong');
-    if(o.dataset.ans===correctLetter) o.classList.add('correct');
-    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
-  });
-  const msg=document.getElementById('msg');
-  if(!msg) return;
-  if(letter===correctLetter){
-    msg.className='msg good';
-    msg.setAttribute('data-zh','答对了！');
-    msg.setAttribute('data-en','Correct!');
-  }else{
-    msg.className='msg';
-    msg.setAttribute('data-zh','再想想～正确答案已标绿。');
-    msg.setAttribute('data-en','Try again — correct option is highlighted.');
-  }
-  applyLang();
+function neighbors(r,c){
+  const out=[];
+  if(c<COLS-1) out.push([r,c+1]);
+  if(r>0) out.push([r-1,c]);
+  return out;
 }
-document.addEventListener('DOMContentLoaded', applyLang);
-
-
-const G=[[0, 0, 1, 0, 0, 0], [0, 1, 0, 1, 0, 0], [1, 0, 1, 0, 1, 0], [0, 0, 1, 0, 0, 0]]; // 1=grey cost1, 0=white cost2
-let path=[];
-function cost(r,c){return G[r][c]?1:2;}
 function render(){
   const el=document.getElementById('pathGrid');
   el.innerHTML='';
-  for(let r=0;r<4;r++) for(let c=0;c<6;c++){
+  const next=path.length? neighbors(...path[path.length-1]) : [[3,0]];
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
     const d=document.createElement('div');
     const on=path.some(p=>p[0]===r&&p[1]===c);
-    d.className='cell '+(G[r][c]?'grey':'white')+(on?' path':'');
+    const isNext=next.some(p=>p[0]===r&&p[1]===c) && !on;
+    d.className='cell '+(G[r][c]?'grey':'white')+(on?' path':'')+(isNext?' next':'');
     if(r===3&&c===0) d.classList.add('start');
-    if(r===0&&c===5) d.classList.add('end');
-    d.textContent=(r===3&&c===0)?'A':(r===0&&c===5)?'B':'';
+    if(r===0&&c===COLS-1) d.classList.add('end');
+    d.textContent=(r===3&&c===0)?'A':(r===0&&c===COLS-1)?'B':(G[r][c]?'1':'2');
     d.onclick=()=>clickCell(r,c);
     el.appendChild(d);
   }
+  updateInfo();
 }
 function clickCell(r,c){
   if(path.length===0){
-    if(!(r===3&&c===0)){alertMsg(false,'必须从 A 开始','Must start at A');return;}
-    path=[[r,c]]; render(); updateCost(); return;
+    if(!(r===3&&c===0)){ setInfo(en()?'Must start at A':'必须从 A 开始'); return; }
+    path=[[r,c]]; render(); return;
   }
-  if(path.length>=9){alertMsg(false,'已经走完 8 步','Already finished 8 steps');return;}
+  // 4 right + 3 up = 7 moves → 8 cells including A
+  if(path.length>=8){ setInfo(en()?'Already finished 7 moves':'已经走完 7 步'); return; }
   const [pr,pc]=path[path.length-1];
   const ok=(r===pr&&c===pc+1)||(c===pc&&r===pr-1);
-  if(!ok){alertMsg(false,'只能向右或向上一格','Only right or up by one');return;}
-  if(path.some(p=>p[0]===r&&p[1]===c)) return;
-  path.push([r,c]); render(); updateCost();
-  if(r===0&&c===5){
+  if(!ok){ setInfo(en()?'Only right or up by one':'只能向右或向上一格'); return; }
+  path.push([r,c]); render();
+  if(r===0&&c===COLS-1){
     const s=sumCost();
-    alertMsg(s===13, `到达 B！花费 ${s} 欧元`+(s===13?'（最优）':''), `Reached B! Cost ${s}€`+(s===13?' (best)':''));
+    trials.push(s);
+    trials=[...new Set(trials)].sort((a,b)=>a-b);
+    document.getElementById('hist').textContent = en()
+      ? `Costs you reached: ${trials.join(', ')}€`
+      : `你到达过的花费：${trials.join('、')} 欧元`;
+    setInfo(en()?`Reached B! Cost ${s}€`:`到达 B！花费 ${s} 欧元`);
   }
 }
-/* Official rule: 8 steps → pay for the 8 cells you enter (start A is free). */
-function sumCost(){
-  if(path.length<=1) return 0;
-  return path.slice(1).reduce((s,p)=>s+cost(p[0],p[1]),0);
+function setInfo(t){ document.getElementById('info').textContent=t; }
+function updateInfo(){
+  if(path.length===0){
+    setInfo(en()?'Tap A to start':'点 A 开始');
+    return;
+  }
+  const steps=path.length-1;
+  setInfo(en()
+    ? `${steps}/7 moves · cost so far ${sumCost()}€`
+    : `已走 ${steps}/7 步 · 目前花费 ${sumCost()} 欧元`);
 }
-function updateCost(){
-  const m=document.getElementById('playMsg');
-  m.className='msg';
-  const steps=Math.max(0, path.length-1);
-  m.setAttribute('data-zh',`已走 ${steps} / 8 步，花费 ${sumCost()} 欧元（起点不计费）`);
-  m.setAttribute('data-en',`${steps} / 8 steps, cost ${sumCost()}€ (start free)`);
-  applyLang();
+function resetPath(){ path=[]; render(); }
+function undo(){ if(path.length) path.pop(); render(); }
+
+(function pool(){
+  const pool=document.getElementById('pool');
+  CHOICES.forEach(n=>{
+    const d=document.createElement('div');
+    d.className='card'; d.textContent=n+'€'; d.draggable=true;
+    d.ondragstart=()=>{dragN=n};
+    d.onclick=()=>{dragN=n; setAns(n)};
+    pool.appendChild(d);
+  });
+})();
+function allowDrop(e){e.preventDefault()}
+function dropAns(e){e.preventDefault(); if(dragN!=null) setAns(dragN)}
+function setAns(n){
+  ans=n; dragN=null;
+  const box=document.getElementById('ansBox');
+  box.className='answer-box filled'; box.textContent=ans+'€';
+  document.getElementById('feedback').textContent='';
 }
-function alertMsg(ok,zh,en){
-  const m=document.getElementById('playMsg');
-  m.className='msg'+(ok?' good':'');
-  m.setAttribute('data-zh',zh); m.setAttribute('data-en',en); applyLang();
+function clearAns(){
+  ans=null;
+  const box=document.getElementById('ansBox');
+  box.className='answer-box'; box.textContent='';
+  document.getElementById('feedback').textContent='';
 }
-function resetPath(){path=[];render();alertMsg(false,'从 A 重新开始（起点免费）','Start again from A (start free)');}
-async function bestPath(){
-  // 3 grey + 5 white after leaving A → 13€
-  const demo9=[[3,0],[2,0],[2,1],[2,2],[1,2],[1,3],[0,3],[0,4],[0,5]];
-  path=[]; render();
-  for(const p of demo9){ path.push(p); render(); updateCost(); await new Promise(r=>setTimeout(r,280)); }
-  alertMsg(true,`示范：5白+3灰 → ${sumCost()} 欧元（最优）`,`Demo: 5 white + 3 grey → ${sumCost()}€ (best)`);
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(ans==null){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Drag a cost first.':'❌ 请先拖一个花费进去。';
+    return;
+  }
+  const ok=ans===13;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ Cheapest cost found!':'✅ 最便宜的花费对了！')
+    :(en()?'❌ Not yet — try more paths, prefer grey cells.':'❌ 还不对——再多试几条，尽量走灰格。');
 }
 render();
-
 </script>
 </body>
 </html>

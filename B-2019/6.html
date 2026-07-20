@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2019 B · Q6 · 脚印排序</title>
+<style>
+:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;max-width:860px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--ink);font-size:14px}
+.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
+.wrap{max-width:860px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
+h1{margin:0 0 8px;color:var(--ink);font-size:24px}
+.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:12px}
+.snow{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:12px;border:2px solid #cbd5e1;background:#fff}
+.play{margin:14px 0;padding:14px;background:#f0f9ff;border-radius:16px}
+.tip{font-size:13px;color:var(--muted);text-align:center;margin:0 0 12px}
+.slots{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.slot{
+  width:100px;height:120px;border:3px dashed #94a3b8;border-radius:14px;
+  background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding:6px;transition:border-color .15s,background .15s;
+}
+.slot.over{border-color:#0284c7;background:#e0f2fe}
+.slot.filled{border-style:solid;border-color:#38bdf8}
+.slot-lab{font-size:12px;font-weight:800;color:#0369a1;margin-bottom:4px}
+.tray{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;min-height:110px;padding:8px;border-radius:12px;background:#fff;border:2px solid #e2e8f0}
+.shoe{
+  width:84px;height:96px;border-radius:12px;background:#f8fafc;border:2px solid #cbd5e1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  cursor:grab;touch-action:none;font-weight:800;font-size:12px;color:#334155;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+}
+.shoe:active{cursor:grabbing}
+.shoe.dragging{opacity:.5}
+.shoe svg{display:block}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
+.ghost{background:#e2e8f0;color:#334155}
+.ok{background:#22c55e;color:#fff}
+.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink);text-align:center}
+.msg.good{color:var(--ok)}
+.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+.opt{min-width:56px;padding:10px 14px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer}
+.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
+.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.opt-fig{display:block;width:100%;max-width:640px;margin:10px auto 0;border-radius:10px;border:1px solid #e2e8f0}
+.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
+.nav a{color:var(--accent);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Math Kangaroo 2019 · Level B</div>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
+</div>
+<div class="wrap">
+  <h1 data-zh="雪地脚印顺序" data-en="Muddy Footprints Order"></h1>
+  <div class="meta" data-zh="第 6 题 · 3 分 · 把鞋底拖到顺序格里" data-en="Question 6 · 3 points · Drag soles into order"></div>
+  <div class="qbox" data-zh-html="三个人穿着泥泞的鞋子走过雪地。他们是按什么顺序走的？"
+       data-en-html="Three people walked across snow with muddy shoes. In which order did they walk?"></div>
+
+  <img class="snow" src="assets/q6_snow.png" alt="footprints in snow"/>
+
+  <div class="play">
+    <p class="tip" data-zh="看交叉处谁在上面：后走的会盖住先走的。把三种鞋底拖到 1→2→3。"
+       data-en="At crossings, later prints cover earlier ones. Drag three soles into 1→2→3."></p>
+    <div class="slots" id="slots">
+      <div class="slot" data-ord="0"><div class="slot-lab" data-zh="第1个走" data-en="1st"></div></div>
+      <div class="slot" data-ord="1"><div class="slot-lab" data-zh="第2个走" data-en="2nd"></div></div>
+      <div class="slot" data-ord="2"><div class="slot-lab" data-zh="第3个走" data-en="3rd"></div></div>
+    </div>
+    <div class="tray" id="tray"></div>
+    <div class="btnrow">
+      <button class="act ghost" onclick="resetShoes()" data-zh="清空重排" data-en="Clear"></button>
+      <button class="act ok" onclick="checkOrder()" data-zh="检查顺序" data-en="Check order"></button>
+    </div>
+    <div class="msg" id="playMsg" data-zh="自己拖一拖，再点检查。" data-en="Drag freely, then check."></div>
+  </div>
+
+  <img class="opt-fig" src="assets/q6_opts.png" alt="options A-E"/>
+  <div class="options">
+    <div class="opt" data-ans="A" onclick="markAnswer(this,'A')">A</div>
+    <div class="opt" data-ans="B" onclick="markAnswer(this,'A')">B</div>
+    <div class="opt" data-ans="C" onclick="markAnswer(this,'A')">C</div>
+    <div class="opt" data-ans="D" onclick="markAnswer(this,'A')">D</div>
+    <div class="opt" data-ans="E" onclick="markAnswer(this,'A')">E</div>
+  </div>
+  <div class="msg" id="msg" data-zh="也可以直接点选项。" data-en="Or tap an option directly."></div>
+
+  <div class="nav">
+    <a href="5.html" data-zh="← 上一题" data-en="← Prev"></a>
+    <a href="7.html" data-zh="下一题 →" data-en="Next →"></a>
+  </div>
+</div>
+<script>
+let lang = localStorage.getItem('mk_lang') || 'zh';
+function applyLang(){
+  document.querySelectorAll('[data-zh]').forEach(el=>{
+    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+  });
+  document.querySelectorAll('[data-zh-html]').forEach(el=>{
+    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
+  });
+  const b=document.getElementById('langBtn');
+  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
+  localStorage.setItem('mk_lang', lang);
+}
+function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
+function markAnswer(btn, correctLetter){
+  const letter=btn.dataset.ans;
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.classList.remove('correct','wrong');
+    if(o.dataset.ans===correctLetter) o.classList.add('correct');
+    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
+  });
+  const msg=document.getElementById('msg');
+  if(letter===correctLetter){
+    msg.className='msg good';
+    msg.setAttribute('data-zh','答对了！先走的脚印在最下面。');
+    msg.setAttribute('data-en','Correct! Earlier prints are underneath.');
+  }else{
+    msg.className='msg';
+    msg.setAttribute('data-zh','再看看交叉处谁盖住谁～');
+    msg.setAttribute('data-en','Check which print covers which at crossings~');
+  }
+  applyLang();
+}
+
+/* Shoe types matching option icons:
+   dotted = mesh/dots, ridged = horizontal lines, complex = ovals+bars
+   Correct order first→last = option A: dotted, ridged, complex
+*/
+const SHOES = [
+  {id:'dotted', zh:'网点底', en:'dotted', svg: shoeDotted},
+  {id:'ridged', zh:'横纹底', en:'ridged', svg: shoeRidged},
+  {id:'complex', zh:'双圈底', en:'loops', svg: shoeComplex},
+];
+const CORRECT = ['dotted','ridged','complex']; // option A left→right = 1st→3rd
+const OPTION_MAP = {
+  'dotted,ridged,complex':'A',
+  'dotted,complex,ridged':'B',
+  'ridged,dotted,complex':'C',
+  'complex,dotted,ridged':'D',
+  'ridged,complex,dotted':'E',
+};
+
+function checkOrder(){
+  const m=document.getElementById('playMsg');
+  if(order.some(x=>!x)){
+    m.className='msg';
+    m.setAttribute('data-zh','三个格子都放上鞋底再检查。');
+    m.setAttribute('data-en','Fill all three slots first.');
+    applyLang(); return;
+  }
+  const key=order.join(',');
+  const letter=OPTION_MAP[key];
+  const ok=letter==='A';
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.classList.remove('correct','wrong');
+    if(letter && o.dataset.ans===letter) o.classList.add(ok?'correct':'wrong');
+    if(ok && o.dataset.ans==='A') o.classList.add('correct');
+  });
+  if(ok){
+    m.className='msg good';
+    m.setAttribute('data-zh','顺序对了！对应选项 A');
+    m.setAttribute('data-en','Order correct! Matches option A');
+  }else if(letter){
+    m.className='msg';
+    m.setAttribute('data-zh',`你排的是选项 ${letter}，再看看交叉处谁盖住谁。`);
+    m.setAttribute('data-en',`That matches option ${letter}. Check who covers whom.`);
+  }else{
+    m.className='msg';
+    m.setAttribute('data-zh','这个顺序不在选项里，再试试。');
+    m.setAttribute('data-en','That order is not in the options. Try again.');
+  }
+  applyLang();
+}
+
+function shoeDotted(){
+  return `<svg width="44" height="64" viewBox="0 0 44 64"><ellipse cx="22" cy="32" rx="16" ry="28" fill="#cbd5e1" stroke="#334155" stroke-width="2"/>
+  ${[12,20,28,36,44,52].map(y=>[14,22,30].map(x=>`<circle cx="${x}" cy="${y}" r="2" fill="#64748b"/>`).join('')).join('')}</svg>`;
+}
+function shoeRidged(){
+  return `<svg width="44" height="56" viewBox="0 0 44 56"><ellipse cx="22" cy="28" rx="15" ry="24" fill="#94a3b8" stroke="#334155" stroke-width="2"/>
+  ${[14,20,26,32,38,44].map(y=>`<line x1="10" y1="${y}" x2="34" y2="${y}" stroke="#334155" stroke-width="2"/>`).join('')}</svg>`;
+}
+function shoeComplex(){
+  return `<svg width="44" height="64" viewBox="0 0 44 64"><ellipse cx="22" cy="32" rx="16" ry="28" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+  <ellipse cx="22" cy="20" rx="8" ry="7" fill="none" stroke="#334155" stroke-width="2"/>
+  <ellipse cx="22" cy="42" rx="8" ry="7" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="12" y="28" width="20" height="4" rx="1" fill="#64748b"/></svg>`;
+}
+
+const tray=document.getElementById('tray');
+const slots=[...document.querySelectorAll('.slot')];
+let order=[null,null,null];
+
+function makeShoeEl(shoe){
+  const d=document.createElement('div');
+  d.className='shoe';
+  d.dataset.id=shoe.id;
+  d.innerHTML = shoe.svg() + `<span data-zh="${shoe.zh}" data-en="${shoe.en}"></span>`;
+  enableDrag(d);
+  return d;
+}
+
+function resetShoes(){
+  order=[null,null,null];
+  tray.innerHTML='';
+  slots.forEach(s=>{
+    [...s.querySelectorAll('.shoe')].forEach(x=>x.remove());
+    s.classList.remove('filled','over');
+  });
+  SHOES.forEach(s=>tray.appendChild(makeShoeEl(s)));
+  applyLang();
+  const m=document.getElementById('playMsg');
+  m.className='msg';
+  m.setAttribute('data-zh','自己拖一拖，再点检查。');
+  m.setAttribute('data-en','Drag freely, then check.');
+  applyLang();
+}
+
+function enableDrag(el){
+  let ox=0,oy=0,ghost=null;
+  el.addEventListener('pointerdown', e=>{
+    e.preventDefault();
+    el.setPointerCapture(e.pointerId);
+    el.classList.add('dragging');
+    const r=el.getBoundingClientRect();
+    ox=e.clientX-r.left; oy=e.clientY-r.top;
+    ghost=el.cloneNode(true);
+    ghost.style.cssText=`position:fixed;left:${r.left}px;top:${r.top}px;width:${r.width}px;z-index:99;pointer-events:none;opacity:.9`;
+    document.body.appendChild(ghost);
+  });
+  el.addEventListener('pointermove', e=>{
+    if(!ghost) return;
+    ghost.style.left=(e.clientX-ox)+'px';
+    ghost.style.top=(e.clientY-oy)+'px';
+    slots.forEach(s=>{
+      const r=s.getBoundingClientRect();
+      const hit=e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom;
+      s.classList.toggle('over', hit);
+    });
+  });
+  el.addEventListener('pointerup', e=>{
+    el.classList.remove('dragging');
+    if(ghost){ ghost.remove(); ghost=null; }
+    let target=null;
+    slots.forEach(s=>{
+      s.classList.remove('over');
+      const r=s.getBoundingClientRect();
+      if(e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom) target=s;
+    });
+    if(target) placeInSlot(el, target);
+  });
+}
+
+function placeInSlot(el, slot){
+  const id=el.dataset.id;
+  const ord=Number(slot.dataset.ord);
+  // remove from previous place
+  const prev=order.indexOf(id);
+  if(prev>=0) order[prev]=null;
+  // if slot occupied, send old shoe back to tray
+  if(order[ord]){
+    const oldId=order[ord];
+    const oldEl=slot.querySelector('.shoe');
+    if(oldEl) tray.appendChild(oldEl);
+  }
+  order[ord]=id;
+  slot.appendChild(el);
+  slot.classList.add('filled');
+  slots.forEach(s=>{ if(!s.querySelector('.shoe')) s.classList.remove('filled'); });
+  // if was in tray and we moved, fine
+  applyLang();
+}
+
+function checkOrder(){
+  const m=document.getElementById('playMsg');
+  if(order.some(x=>!x)){
+    m.className='msg';
+    m.setAttribute('data-zh','三个格子都放上鞋底再检查。');
+    m.setAttribute('data-en','Fill all three slots first.');
+    applyLang(); return;
+  }
+  const ok=order.every((id,i)=>id===CORRECT[i]);
+  if(ok){
+    m.className='msg good';
+    m.setAttribute('data-zh','顺序对了！对应选项 A');
+    m.setAttribute('data-en','Order correct! Matches option A');
+    // highlight A
+    document.querySelectorAll('.opt').forEach(o=>{
+      o.classList.remove('correct','wrong');
+      if(o.dataset.ans==='A') o.classList.add('correct');
+    });
+  }else{
+    m.className='msg';
+    m.setAttribute('data-zh','还不对。再看看雪地图里谁盖住谁。');
+    m.setAttribute('data-en','Not yet. Check who covers whom in the snow.');
+  }
+  applyLang();
+}
+
+resetShoes();
+document.addEventListener('DOMContentLoaded', applyLang);
+applyLang();
+</script>
+</body>
+</html>

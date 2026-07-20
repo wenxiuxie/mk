@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2019 B · Q4 · 合书拖拽</title>
+<style>
+:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;max-width:860px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--ink);font-size:14px}
+.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
+.wrap{max-width:860px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
+h1{margin:0 0 8px;color:var(--ink);font-size:24px}
+.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:12px}
+.stage-wrap{margin:12px 0;padding:14px;background:#f0f9ff;border-radius:16px;user-select:none}
+.tip{font-size:13px;color:var(--muted);text-align:center;margin:0 0 10px}
+.stage{
+  position:relative;height:240px;max-width:680px;margin:0 auto;
+  background:#fff7ed;border:2px solid #fdba74;border-radius:12px;overflow:hidden;
+}
+.spine{position:absolute;left:50%;top:8px;bottom:8px;width:8px;margin-left:-4px;background:#1e293b;border-radius:4px;z-index:6;pointer-events:none}
+.page-right{
+  position:absolute;left:50%;top:0;right:0;bottom:0;z-index:1;
+  display:flex;align-items:center;justify-content:space-evenly;padding:12px 10px 12px 16px;
+  background:repeating-linear-gradient(90deg,#fef3c7 0 32px,#fde68a 32px 64px);
+}
+.veh{
+  font-size:clamp(22px,4.5vw,34px);line-height:1;padding:6px 2px;
+  transition:transform .2s, filter .2s;z-index:2;position:relative;
+}
+.veh.dim{opacity:.25;filter:grayscale(.3)}
+.veh.seen{transform:scale(1.35);filter:drop-shadow(0 0 8px #f59e0b);z-index:3}
+.cover{
+  position:absolute;left:0;top:0;bottom:0;width:50%;z-index:4;
+  transform-origin:100% 50%; /* 书脊在封面右缘 */
+  transform:scaleX(1);
+  cursor:ew-resize;touch-action:none;
+  transition:none;
+}
+.cover svg{width:100%;height:100%;display:block;pointer-events:none}
+.cover.anim{transition:transform .35s ease}
+.seen-bar{
+  min-height:40px;margin-top:12px;padding:10px;border-radius:12px;background:#fff;
+  border:2px solid #e2e8f0;text-align:center;font-size:30px;letter-spacing:8px;
+}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:#0284c7;color:#fff}
+.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink);text-align:center}
+.msg.good{color:var(--ok)}
+.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+.opt{min-width:56px;padding:10px 14px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer}
+.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
+.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.opt-fig{display:block;width:100%;max-width:640px;margin:10px auto 0;border-radius:10px;border:1px solid #e2e8f0}
+.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
+.nav a{color:var(--accent);font-weight:700;text-decoration:none}
+.slider-row{max-width:420px;margin:12px auto 0;display:flex;align-items:center;gap:10px}
+.slider-row input{flex:1}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Math Kangaroo 2019 · Level B</div>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
+</div>
+<div class="wrap">
+  <h1 data-zh="书封面的洞" data-en="Holes in the Book Cover"></h1>
+  <div class="meta" data-zh="第 4 题 · 3 分 · 拖封面合上试试" data-en="Question 4 · 3 points · Drag the cover to close"></div>
+  <div class="qbox" data-zh-html="书的封面上有两个洞。合上书时，透过洞会看到哪些车？"
+       data-en-html="Two holes in the cover. Which vehicles show through when the book is closed?"></div>
+
+  <img class="opt-fig" src="assets/q4_book.png" alt="open book reference"/>
+
+  <div class="stage-wrap">
+    <p class="tip" data-zh="拖封面，或拉动下方滑条。合上后透过洞看小车。" data-en="Drag the cover or use the slider. Peek through holes when closed."></p>
+    <div class="stage" id="stage">
+      <div class="page-right" id="pageRight">
+        <div class="veh" data-id="car">🚗</div>
+        <div class="veh" data-id="bike">🏍️</div>
+        <div class="veh" data-id="truck">🚛</div>
+        <div class="veh" data-id="suv">🚙</div>
+        <div class="veh" data-id="tractor">🚜</div>
+      </div>
+      <div class="spine"></div>
+      <!-- 封面：SVG 真正挖洞，绕书脊 scaleX 翻转合上 -->
+      <div class="cover" id="cover">
+        <svg viewBox="0 0 200 240" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <mask id="coverMask">
+              <rect width="200" height="240" fill="#fff"/>
+              <!-- 洞：靠近书脊的小洞 + 靠外的大洞（打开时在左页） -->
+              <rect x="28" y="78" width="70" height="84" rx="4" fill="#000"/>
+              <rect x="130" y="78" width="36" height="84" rx="4" fill="#000"/>
+            </mask>
+          </defs>
+          <rect width="200" height="240" fill="#fbbf24" mask="url(#coverMask)"/>
+          <!-- 洞边框虚线提示 -->
+          <rect x="28" y="78" width="70" height="84" rx="4" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3"/>
+          <rect x="130" y="78" width="36" height="84" rx="4" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="100" y="30" text-anchor="middle" fill="#92400e" font-size="14" font-weight="700">COVER</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="slider-row">
+      <span data-zh="开" data-en="Open"></span>
+      <input type="range" id="foldSlider" min="0" max="100" value="0"/>
+      <span data-zh="合" data-en="Shut"></span>
+    </div>
+
+    <div class="seen-bar" id="seenBar">—</div>
+    <div class="btnrow">
+      <button class="act ghost" onclick="setFold(0,true)" data-zh="打开重来" data-en="Open again"></button>
+      <button class="act primary" onclick="setFold(1,true)" data-zh="一键合上" data-en="Snap closed"></button>
+    </div>
+    <div class="msg" id="playMsg" data-zh="慢慢合上，看洞里露出哪几辆车。" data-en="Close slowly and see which cars appear in the holes."></div>
+  </div>
+
+  <img class="opt-fig" src="assets/q4_opts.png" alt="options A-E"/>
+  <div class="options">
+    <div class="opt" data-ans="A" onclick="markAnswer(this,'D')">A</div>
+    <div class="opt" data-ans="B" onclick="markAnswer(this,'D')">B</div>
+    <div class="opt" data-ans="C" onclick="markAnswer(this,'D')">C</div>
+    <div class="opt" data-ans="D" onclick="markAnswer(this,'D')">D</div>
+    <div class="opt" data-ans="E" onclick="markAnswer(this,'D')">E</div>
+  </div>
+  <div class="msg" id="msg" data-zh="想好了再点选项。" data-en="Tap an option when ready."></div>
+
+  <div class="nav">
+    <a href="3.html" data-zh="← 上一题" data-en="← Prev"></a>
+    <a href="5.html" data-zh="下一题 →" data-en="Next →"></a>
+  </div>
+</div>
+<script>
+let lang = localStorage.getItem('mk_lang') || 'zh';
+function applyLang(){
+  document.querySelectorAll('[data-zh]').forEach(el=>{
+    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+  });
+  document.querySelectorAll('[data-zh-html]').forEach(el=>{
+    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
+  });
+  const b=document.getElementById('langBtn');
+  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
+  localStorage.setItem('mk_lang', lang);
+}
+function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
+function markAnswer(btn, correctLetter){
+  const letter=btn.dataset.ans;
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.classList.remove('correct','wrong');
+    if(o.dataset.ans===correctLetter) o.classList.add('correct');
+    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
+  });
+  const msg=document.getElementById('msg');
+  if(letter===correctLetter){
+    msg.className='msg good';
+    msg.setAttribute('data-zh','答对了！洞里是：摩托车、越野车、拖拉机 → D');
+    msg.setAttribute('data-en','Correct! Through holes: bike, SUV, tractor → D');
+  }else{
+    msg.className='msg';
+    msg.setAttribute('data-zh','再合上看看洞里露出什么～');
+    msg.setAttribute('data-en','Close again and check the holes~');
+  }
+  applyLang();
+}
+
+const cover=document.getElementById('cover');
+const slider=document.getElementById('foldSlider');
+/* fold: 0=open, 1=closed. Visual: scaleX from 1 to -1 around spine */
+let fold=0;
+
+function setFold(v, animate){
+  fold=Math.max(0, Math.min(1, v));
+  slider.value=Math.round(fold*100);
+  cover.classList.toggle('anim', !!animate);
+  const sx=1-2*fold; // 1 → -1
+  cover.style.transform=`scaleX(${sx})`;
+  updateReveal();
+}
+
+function updateReveal(){
+  const closed=fold>=0.92;
+  const almost=fold>=0.55;
+  // When flipped closed: small hole (near spine) → bike; big hole (outer) → suv+tractor
+  const seen=new Set(closed?['bike','suv','tractor']:[]);
+  document.querySelectorAll('.veh').forEach(v=>{
+    const id=v.dataset.id;
+    v.classList.toggle('seen', seen.has(id));
+    v.classList.toggle('dim', almost && !seen.has(id) && closed);
+  });
+  const bar=document.getElementById('seenBar');
+  const msg=document.getElementById('playMsg');
+  if(!closed){
+    bar.textContent=almost?'…':'—';
+    msg.className='msg';
+    msg.setAttribute('data-zh', fold<0.15?'拖封面或拉动滑条合上书':'继续合上…透过洞开始能看见车');
+    msg.setAttribute('data-en', fold<0.15?'Drag cover or slider to close':'Keep closing… cars appear through holes');
+  }else{
+    bar.textContent='🏍️  🚙  🚜';
+    msg.className='msg good';
+    msg.setAttribute('data-zh','合上了！洞里露出：摩托车、越野车、拖拉机');
+    msg.setAttribute('data-en','Closed! Showing: motorcycle, SUV, tractor');
+  }
+  applyLang();
+}
+
+slider.addEventListener('input', ()=> setFold(Number(slider.value)/100, false));
+
+/* drag on cover */
+let dragging=false, startX=0, startFold=0;
+cover.addEventListener('pointerdown', e=>{
+  dragging=true;
+  cover.classList.remove('anim');
+  cover.setPointerCapture(e.pointerId);
+  startX=e.clientX;
+  startFold=fold;
+});
+cover.addEventListener('pointermove', e=>{
+  if(!dragging) return;
+  const w=document.getElementById('stage').getBoundingClientRect().width;
+  // drag right = close
+  const df=((e.clientX-startX)/(w*0.45));
+  setFold(startFold+df, false);
+});
+cover.addEventListener('pointerup', ()=>{ dragging=false; });
+cover.addEventListener('pointercancel', ()=>{ dragging=false; });
+
+setFold(0);
+document.addEventListener('DOMContentLoaded', applyLang);
+applyLang();
+</script>
+</body>
+</html>

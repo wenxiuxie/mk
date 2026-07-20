@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>3D 空间几何思维特训场 | 全方位自主旋转版</title>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --success: #2ec4b6;
+            --danger: #e71d36;
+            --dark: #2c3e50;
+            --bg: #f8f9fa;
+        }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .lang-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        h1 { color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: #666; margin-top: 0; margin-bottom: 20px; }
+        
+        .main-layout { display: flex; gap: 25px; max-width: 1200px; width: 100%; }
+        .level-panel { width: 260px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .level-list { display: flex; flex-direction: column; gap: 8px; }
+        .level-btn { padding: 12px 10px; background: #f1f3f5; border: 1px solid #dee2e6; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; text-align: left; line-height: 1.4; }
+        .level-btn.active { background: var(--primary); color: white; }
+
+        .content-area { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        
+        /* 3D 舞台外框 */
+        .canvas-area {
+            height: 460px;
+            background: #191b22;
+            border-radius: 12px;
+            perspective: 1500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 3D 旋转核心舞台 */
+        .stage {
+            width: 0;
+            height: 0;
+            transform-style: preserve-3d;
+            /* 初始精调角度：完全对齐试卷向右下方展开的透视 */
+            transform: rotateX(-25deg) rotateY(-45deg); 
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* 立方体与六个面 */
+        .cube { position: absolute; width: 45px; height: 45px; transform-style: preserve-3d; }
+        .face { position: absolute; width: 45px; height: 45px; border: 1.5px solid rgba(0,0,0,0.4); box-sizing: border-box; }
+        .front  { transform: translateZ(22.5px); }
+        .back   { transform: rotateY(180deg) translateZ(22.5px); }
+        .left   { transform: rotateY(-90deg) translateZ(22.5px); }
+        .right  { transform: rotateY(90deg) translateZ(22.5px); }
+        .top    { transform: rotateX(90deg) translateZ(22.5px); filter: brightness(1.15); }
+        .bottom { transform: rotateX(-90deg) translateZ(22.5px); }
+
+        .stage.xray .face { opacity: 0.25; border-color: rgba(255,255,255,0.4); }
+        .stage.xray .face.top { opacity: 0.4; }
+
+        .control-grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .control-group { background: #f8f9fa; padding: 15px; border-radius: 8px; }
+        
+        .slider-box { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+        input[type=range] { flex: 1; }
+        
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        button.tool-btn { padding: 8px; border: 1px solid #ccc; background: white; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; }
+        button.tool-btn.active { background: var(--primary); color: white; }
+
+        /* 旋转微调面板 */
+        .rotate-pad { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .rotate-row { display: flex; gap: 5px; }
+
+        .answer-zone { text-align: center; background: #eef1f6; padding: 15px; border-radius: 8px; }
+        .answer-input { width: 80px; padding: 8px; font-size: 18px; text-align: center; border: 2px solid #ccc; border-radius: 6px; margin: 0 10px; }
+        .submit-btn { background: var(--success); color: white; padding: 9px 25px; font-size: 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        #feedback { font-size: 16px; font-weight: bold; margin-top: 10px; min-height: 24px; }
+
+        .lang-zh { display: block; } .lang-en { display: none; }
+        body.en-mode .lang-zh { display: none; } body.en-mode .lang-en { display: block; }
+    </style>
+</head>
+<body>
+
+    <button class="lang-toggle-btn" onclick="toggleLanguage()">🌐 English / 中文</button>
+
+    <h1 class="lang-zh">🧠 3D 空间几何思维特训场</h1>
+    <h1 class="lang-en">🧠 3D Spatial Geometry Training Center</h1>
+    <div class="subtitle lang-zh">🧭 觉得角度不对？可在右下方自主旋转模型对齐试卷！</div>
+    <div class="subtitle lang-en">🧭 View misaligned? Use the rotation pad below to rotate 360°!</div>
+
+    <div class="main-layout">
+        <div class="level-panel">
+            <h3 class="lang-zh">思维题型特训</h3><h3 class="lang-en">Select Challenge</h3>
+            <div class="level-list" id="levelList"></div>
+        </div>
+
+        <div class="content-area">
+            <div class="canvas-area" id="canvasArea">
+                <div class="stage" id="mainStage"></div>
+            </div>
+
+            <div class="section" style="padding: 20px;">
+                <h2><span class="lang-zh">当前挑战：</span><span class="lang-en">Mission: </span><span id="levelTitle"></span></h2>
+                <p id="levelDescZh" class="lang-zh" style="line-height: 1.5; color: #444;"></p>
+                <p id="levelDescEn" class="lang-en" style="line-height: 1.5; color: #444;"></p>
+
+                <div class="control-grid-layout">
+                    <div class="control-group">
+                        <strong class="lang-zh">🛠️ 拆解透视工具：</strong><strong class="lang-en">🛠️ Explode & X-Ray:</strong>
+                        <div class="slider-box">
+                            <span class="lang-zh">重合</span><span class="lang-en">Merge</span>
+                            <input type="range" id="explodeSlider" min="0" max="120" value="0" oninput="renderCubes()">
+                            <span class="lang-zh">垂直拉开</span><span class="lang-en">Explode</span>
+                        </div>
+                        <div class="btn-grid">
+                            <button id="xrayOff" class="tool-btn active" onclick="setXray(false)"><span class="lang-zh">实体观察</span><span class="lang-en">Solid</span></button>
+                            <button id="xrayOn" class="tool-btn" onclick="setXray(true)"><span class="lang-zh">透视眼</span><span class="lang-en">X-Ray</span></button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <strong class="lang-zh">🔄 3D 视角自由旋转：</strong><strong class="lang-en">🔄 Free Rotation Pad:</strong>
+                        <div class="rotate-pad" style="margin-top: 8px;">
+                            <button class="tool-btn" style="padding: 4px 12px;" onclick="rotateStage(10, 0)">▲ 仰角</button>
+                            <div class="rotate-row">
+                                <button class="tool-btn" onclick="rotateStage(0, -10)">◀ 左转</button>
+                                <button class="tool-btn" style="background: #e2e8f0;" onclick="resetRotation()">重置</button>
+                                <button class="tool-btn" onclick="rotateStage(0, 10)">右转 ▶</button>
+                            </div>
+                            <button class="tool-btn" style="padding: 4px 12px;" onclick="rotateStage(-10, 0)">▼ 俯角</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="answer-zone" style="margin-top: 15px;">
+                    <span id="targetPrompt" style="font-weight: bold; font-size: 16px;"></span>
+                    <input type="number" id="userAnswer" class="answer-input" placeholder="?">
+                    <button class="submit-btn" onclick="checkAnswer()"><span class="lang-zh">核对答案</span><span class="lang-en">Verify</span></button>
+                    <div id="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colors = {
+            blue: '#2e96ff', red: '#e71d36', yellow: '#ff9f1c', 
+            white: '#f5f5f5', green: '#2ec4b6', purple: '#b55fe6', brown: '#8b5a2b'
+        };
+
+        // 5道完全不同逻辑和色彩的题型
+        const levels = [
+            {
+                nameZh: "题型1：金字塔还原（数底层蓝色）", nameEn: "Type 1: Original Pyramid (Base Blue)",
+                descZh: "【试卷真题完美对齐】上下颜色交替。最顶层是蓝色，中层全红，地基底层全铺满蓝色。请问最底层一共有多少个蓝色积木？",
+                descEn: "Colors alternate. Top is Blue, middle layer is Red, and the base is completely filled with Blue. How many BLUE cubes are in the BASE?",
+                targetZh: "仅数【最底层】的蓝色积木数量", targetEn: "BLUE cubes ONLY in the BASE layer", ans: 9,
+                cubes: [
+                    {x:0, y:2, z:0, c:colors.blue},
+                    {x:0, y:1, z:0, c:colors.red}, {x:1, y:1, z:0, c:colors.red}, {x:0, y:1, z:1, c:colors.red},
+                    {x:0, y:0, z:0, c:colors.blue}, {x:1, y:0, z:0, c:colors.blue}, {x:2, y:0, z:0, c:colors.blue},
+                    {x:0, y:0, z:1, c:colors.blue}, {x:1, y:0, z:1, c:colors.blue}, {x:2, y:0, z:1, c:colors.blue},
+                    {x:0, y:0, z:2, c:colors.blue}, {x:1, y:0, z:2, c:colors.blue}, {x:2, y:0, z:2, c:colors.blue}
+                ]
+            },
+            {
+                nameZh: "题型2：双色巧克力方阵（横纵交替）", nameEn: "Type 2: Chocolate Matrix (Grid)",
+                descZh: "【前后左右棋盘交替】这是一个2x2x2的实体方阵（共8块）。每一行、每一列相邻的颜色都必须相反（黑白交替）。请数出一共有多少个白巧克力块？",
+                descEn: "A solid 2x2x2 matrix. Colors alternate horizontally and vertically like a chessboard. Count the total WHITE cubes.",
+                targetZh: "整个模型里【白色】巧克力的总数", targetEn: "Total WHITE cubes in the whole model", ans: 4,
+                cubes: [
+                    {x:0,y:0,z:0,c:colors.brown},{x:1,y:0,z:0,c:colors.white},{x:0,y:0,z:1,c:colors.white},{x:1,y:0,z:1,c:colors.brown},
+                    {x:0,y:1,z:0,c:colors.white},{x:1,y:1,z:0,c:colors.brown},{x:0,y:1,z:1,c:colors.brown},{x:1,y:1,z:1,c:colors.white}
+                ]
+            },
+            {
+                nameZh: "题型3：空心天井护栏（空间剔除）", nameEn: "Type 3: Hollow Fence (Exclusion)",
+                descZh: "【核心中空掏空结构】这是一个绿翡翠底座，但它的正中心核心列（从上到下）被完全掏空了，是个空心天井！请数数剩下的翡翠积木总数。",
+                descEn: "A 3x3 base tower, but the absolute center column is completely hollowed out! Count the remaining GREEN jade cubes.",
+                targetZh: "未被掏空的【绿色】翡翠积木总数", targetEn: "Total remaining GREEN cubes", ans: 12,
+                cubes: [
+                    {x:0,y:0,z:0,c:colors.green},{x:1,y:0,z:0,c:colors.green},{x:2,y:0,z:0,c:colors.green},
+                    {x:0,y:0,z:1,c:colors.green},                             {x:2,y:0,z:1,c:colors.green},
+                    {x:0,y:0,z:2,c:colors.green},{x:1,y:0,z:2,c:colors.green},{x:2,y:0,z:2,c:colors.green},
+                    {x:0,y:1,z:0,c:colors.green},{x:1,y:1,z:0,c:colors.green},{x:0,y:1,z:1,c:colors.green},
+                    {x:0,y:2,z:0,c:colors.green}
+                ]
+            },
+            {
+                nameZh: "题型4：失落的高低台阶（非对称）", nameEn: "Type 4: Asymmetric Stairs",
+                descZh: "【打破固有对称思维】这不是对称金字塔，而是一个单向递减的紫金台阶。紫色和金色积木在空间中交替，请用透视眼数清金色共有多少个？",
+                descEn: "Not a pyramid! This is a one-way descending staircase. Purple and Gold cubes alternate. Count the total GOLD cubes.",
+                targetZh: "整个阶梯模型里【金色】积木的总数", targetEn: "Total GOLD cubes in the stairs", ans: 4,
+                cubes: [
+                    {x:0,y:0,z:0,c:colors.purple},{x:0,y:0,z:1,c:colors.yellow},{x:0,y:0,z:2,c:colors.purple},
+                    {x:1,y:0,z:0,c:colors.yellow},{x:1,y:0,z:1,c:colors.purple},{x:1,y:1,z:0,c:colors.purple},{x:1,y:1,z:1,c:colors.yellow},
+                    {x:2,y:0,z:0,c:colors.purple},{x:2,y:1,z:0,c:colors.yellow},{x:2,y:2,z:0,c:colors.purple}
+                ]
+            },
+            {
+                nameZh: "题型5：彩虹大厦（三色循环推理）", nameEn: "Type 5: Rainbow Tower (3-Color Loop)",
+                descZh: "【高级三色逻辑】大楼由蓝、白、紫三色混合。每个垂直列都按“蓝→白→紫”由上至下循环。最里面被埋住的积木眼睛看不到，请推理并算出蓝色总数！",
+                descEn: "Advanced 3-color logic. Vertical columns loop Blue -> White -> Purple from top to bottom. Deduce the hidden items and count total BLUE.",
+                targetZh: "推理并算出全楼【蓝色】积木的总数", targetEn: "Total BLUE cubes in the whole tower", ans: 4,
+                cubes: [
+                    {x:0,y:2,z:0,c:colors.blue},
+                    {x:0,y:1,z:0,c:colors.white},{x:1,y:1,z:0,c:colors.white},{x:0,y:1,z:1,c:colors.white},
+                    {x:0,y:0,z:0,c:colors.purple},{x:1,y:0,z:0,c:colors.purple},{x:0,y:0,z:1,c:colors.purple},
+                    {x:2,y:0,z:0,c:colors.blue},{x:2,y:0,z:1,c:colors.white},{x:2,y:0,z:2,c:colors.purple},
+                    {x:0,y:0,z:2,c:colors.blue},{x:1,y:0,z:2,c:colors.white},{x:1,y:0,z:1,c:colors.blue}
+                ]
+            }
+        ];
+
+        let currentIdx = 0;
+        // 初始旋转角度设置
+        let rotX = -25;
+        let rotY = -45;
+        
+        const stage = document.getElementById('mainStage');
+
+        function toggleLanguage() { document.body.classList.toggle('en-mode'); }
+        function setXray(isOn) {
+            document.getElementById('xrayOn').classList.toggle('active', isOn);
+            document.getElementById('xrayOff').classList.toggle('active', !isOn);
+            stage.classList.toggle('xray', isOn);
+        }
+
+        // 旋转操作控制
+        function rotateStage(dx, dy) {
+            rotX += dx;
+            rotY += dy;
+            stage.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+        function resetRotation() {
+            rotX = -25;
+            rotY = -45;
+            stage.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+
+        function init() {
+            const menu = document.getElementById('levelList');
+            menu.innerHTML = '';
+            levels.forEach((lvl, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `level-btn ${idx === currentIdx ? 'active' : ''}`;
+                btn.innerHTML = `<span class="lang-zh">${lvl.nameZh}</span><span class="lang-en">${lvl.nameEn}</span>`;
+                btn.onclick = () => {
+                    document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    loadLevel(idx);
+                };
+                menu.appendChild(btn);
+            });
+            loadLevel(0);
+        }
+
+        function loadLevel(idx) {
+            currentIdx = idx;
+            const lvl = levels[idx];
+            document.getElementById('levelTitle').innerHTML = `<span class="lang-zh">${lvl.nameZh}</span><span class="lang-en">${lvl.nameEn}</span>`;
+            document.getElementById('levelDescZh').innerText = lvl.descZh;
+            document.getElementById('levelDescEn').innerText = lvl.descEn;
+            document.getElementById('targetPrompt').innerHTML = `<span class="lang-zh">🎯 请输入：${lvl.targetZh}</span><span class="lang-en">🎯 Target: ${lvl.targetEn}</span>`;
+            document.getElementById('userAnswer').value = '';
+            document.getElementById('feedback').innerText = '';
+            document.getElementById('explodeSlider').value = 0;
+
+            stage.innerHTML = '';
+            lvl.cubes.forEach((cube, i) => {
+                const el = document.createElement('div');
+                el.className = 'cube';
+                el.id = `c-${i}`;
+                ['front', 'back', 'left', 'right', 'top', 'bottom'].forEach(f => {
+                    const face = document.createElement('div');
+                    face.className = `face ${f}`;
+                    face.style.backgroundColor = cube.c;
+                    el.appendChild(face);
+                });
+                stage.appendChild(el);
+            });
+            resetRotation();
+            renderCubes();
+        }
+
+        function renderCubes() {
+            const exp = parseFloat(document.getElementById('explodeSlider').value);
+            const cubes = levels[currentIdx].cubes;
+            cubes.forEach((data, i) => {
+                const el = document.getElementById(`c-${i}`);
+                if (!el) return;
+                
+                // 完美还原试卷矩阵排列轴
+                const x = data.x * 46;
+                const z = -data.z * 46;
+                const y = data.y * 46 + (data.y * exp * 0.9); 
+                el.style.transform = `translateX(${x}px) translateY(${-y}px) translateZ(${z}px)`;
+            });
+        }
+
+        function checkAnswer() {
+            const ans = parseInt(document.getElementById('userAnswer').value);
+            const feedback = document.getElementById('feedback');
+            if (ans === levels[currentIdx].ans) {
+                feedback.style.color = "var(--success)";
+                feedback.innerHTML = "🎉 太棒了！完全正确！你彻底征服了这个空间模型！";
+            } else {
+                feedback.style.color = "var(--danger)";
+                feedback.innerHTML = "❌ 数量不正确。试着点击右侧的【▲仰角】或【◀左转】变换角度，再重新数数？";
+            }
+        }
+
+        // 增加鼠标按住画布拖拽旋转的手势支持，增强交互性
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+        const canvas = document.getElementById('canvasArea');
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const deltaMove = { x: e.clientX - previousMousePosition.x, y: e.clientY - previousMousePosition.y };
+            rotY += deltaMove.x * 0.5;
+            rotX -= deltaMove.y * 0.5;
+            stage.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+        document.addEventListener('mouseup', () => { isDragging = false; });
+
+        init();
+    </script>
+</body>
+</html>

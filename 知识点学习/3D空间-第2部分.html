@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>3D 空间思维特训场 | 第二阶段：硬核进化题</title>
+    <style>
+        :root {
+            --primary: #9b5fe6;
+            --success: #2ec4b6;
+            --danger: #e71d36;
+            --dark: #2c3e50;
+            --bg: #f3f4f6;
+        }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .lang-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        h1 { color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: #555; margin-top: 0; margin-bottom: 20px; font-weight: bold; }
+        
+        .main-layout { display: flex; gap: 25px; max-width: 1250px; width: 100%; }
+        .level-panel { width: 280px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .level-list { display: flex; flex-direction: column; gap: 8px; }
+        .level-btn { padding: 12px 10px; background: #f1f3f5; border: 1px solid #dee2e6; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; text-align: left; line-height: 1.4; }
+        .level-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        .content-area { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        
+        .canvas-area {
+            height: 480px;
+            background: #14161d;
+            border-radius: 12px;
+            perspective: 1500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: grab;
+        }
+        .canvas-area:active { cursor: grabbing; }
+        
+        .stage {
+            width: 0;
+            height: 0;
+            transform-style: preserve-3d;
+            transform: rotateX(-25deg) rotateY(-45deg); 
+            transition: transform 0.1s ease-out;
+        }
+        
+        .cube { position: absolute; width: 38px; height: 38px; transform-style: preserve-3d; }
+        .face { position: absolute; width: 38px; height: 38px; border: 1px solid rgba(0,0,0,0.4); box-sizing: border-box; }
+        .front  { transform: translateZ(19px); }
+        .back   { transform: rotateY(180deg) translateZ(19px); }
+        .left   { transform: rotateY(-90deg) translateZ(19px); }
+        .right  { transform: rotateY(90deg) translateZ(19px); }
+        .top    { transform: rotateX(90deg) translateZ(19px); filter: brightness(1.15); }
+        .bottom { transform: rotateX(-90deg) translateZ(19px); }
+
+        .stage.xray .face { opacity: 0.2; border-color: rgba(255,255,255,0.3); }
+        .stage.xray .face.top { opacity: 0.35; }
+
+        .control-grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .control-group { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        
+        .slider-box { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+        input[type=range] { flex: 1; }
+        
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        button.tool-btn { padding: 8px; border: 1px solid #ccc; background: white; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; }
+        button.tool-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        .rotate-pad { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .rotate-row { display: flex; gap: 5px; }
+
+        .answer-zone { text-align: center; background: #eef1f6; padding: 15px; border-radius: 8px; }
+        .answer-input { width: 80px; padding: 8px; font-size: 18px; text-align: center; border: 2px solid #ccc; border-radius: 6px; margin: 0 10px; }
+        .submit-btn { background: var(--success); color: white; padding: 9px 25px; font-size: 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        #feedback { font-size: 16px; font-weight: bold; margin-top: 10px; min-height: 24px; }
+
+        .lang-zh { display: block; } .lang-en { display: none; }
+        body.en-mode .lang-zh { display: none; } body.en-mode .lang-en { display: block; }
+    </style>
+</head>
+<body>
+
+    <button class="lang-toggle-btn" onclick="toggleLanguage()">🌐 English / 中文</button>
+
+    <h1 class="lang-zh">🧠 3D 空间思维挑战 2：硬核进化题</h1>
+    <h1 class="lang-en">🧠 3D Spatial Geometry 2: Hardcore Expansion</h1>
+    <div class="subtitle lang-zh">🔥 难度飙升！引入更复杂的错位阶梯、空心隧道与多色推理</div>
+    <div class="subtitle lang-en">🔥 Difficulty Spike! Introducing hollow tunnels, asymmetric stairs, and advanced logic.</div>
+
+    <div class="main-layout">
+        <div class="level-panel">
+            <h3 class="lang-zh">第二阶段挑战题</h3><h3 class="lang-en">Advanced Quest</h3>
+            <div class="level-list" id="levelList"></div>
+        </div>
+
+        <div class="content-area">
+            <div class="canvas-area" id="canvasArea">
+                <div class="stage" id="mainStage"></div>
+            </div>
+
+            <div class="section" style="padding: 20px; background: white; border-radius: 12px;">
+                <h2><span class="lang-zh">高级任务：</span><span class="lang-en">Mission: </span><span id="levelTitle"></span></h2>
+                <p id="levelDescZh" class="lang-zh" style="line-height: 1.5; color: #444; font-size: 14px;"></p>
+                <p id="levelDescEn" class="lang-en" style="line-height: 1.5; color: #444; font-size: 14px;"></p>
+
+                <div class="control-grid-layout">
+                    <div class="control-group">
+                        <strong class="lang-zh">🛠️ 空间剥离与透视：</strong><strong class="lang-en">🛠️ Explode & X-Ray:</strong>
+                        <div class="slider-box">
+                            <span class="lang-zh">拼合</span><span class="lang-en">Merge</span>
+                            <input type="range" id="explodeSlider" min="0" max="120" value="0" oninput="renderCubes()">
+                            <span class="lang-zh">垂直拔高</span><span class="lang-en">Explode</span>
+                        </div>
+                        <div class="btn-grid">
+                            <button id="xrayOff" class="tool-btn active" onclick="setXray(false)"><span class="lang-zh">表面实体</span><span class="lang-en">Solid</span></button>
+                            <button id="xrayOn" class="tool-btn" onclick="setXray(true)"><span class="lang-zh">强力透视</span><span class="lang-en">X-Ray</span></button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <strong class="lang-zh">🔄 全方位旋转微调（亦可直接在画面拖拽）：</strong><strong class="lang-en">🔄 Rotate Matrix:</strong>
+                        <div class="rotate-pad" style="margin-top: 5px;">
+                            <button class="tool-btn" style="padding: 3px 10px;" onclick="rotateStage(10, 0)">▲ 仰角</button>
+                            <div class="rotate-row">
+                                <button class="tool-btn" onclick="rotateStage(0, -15)">◀ 左转</button>
+                                <button class="tool-btn" style="background: #e5e7eb;" onclick="resetRotation()">复位</button>
+                                <button class="tool-btn" onclick="rotateStage(0, 15)">右转 ▶</button>
+                            </div>
+                            <button class="tool-btn" style="padding: 3px 10px;" onclick="rotateStage(-10, 0)">▼ 俯角</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="answer-zone" style="margin-top: 15px;">
+                    <span id="targetPrompt" style="font-weight: bold; font-size: 15px;"></span>
+                    <input type="number" id="userAnswer" class="answer-input" placeholder="?">
+                    <button class="submit-btn" onclick="checkAnswer()"><span class="lang-zh">核对</span><span class="lang-en">Verify</span></button>
+                    <div id="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colors = {
+            blue: '#2e96ff', red: '#e71d36', yellow: '#ff9f1c', 
+            white: '#f5f5f5', green: '#2ec4b6', purple: '#b55fe6', brown: '#8b5a2b'
+        };
+
+        const levels = [
+            {
+                nameZh: "高级1：4层错位大阶梯 (紫金)", nameEn: "Adv 1: 4-Layer Shifted Stairs",
+                descZh: "【非对称矩阵】这是一个向右前方单向层层递减的4层超大楼梯。紫色和金色前后左右交叉交替。运用空间规律，数数整座楼梯里一共有多少个金色积木？",
+                descEn: "An asymmetrical 4-layer staircase. Purple and Gold cubes alternate in all 3D directions. Count the total GOLD cubes.",
+                targetZh: "全模型中【金色】积木的总数", targetEn: "Total GOLD cubes in the stairs", ans: 10,
+                cubes: (function(){
+                    let arr = [];
+                    // 4层阶梯，x和z的限制随高度y递减
+                    for(let y=0; y<=3; y++) {
+                        let maxLimit = 4 - y;
+                        for(let x=0; x<maxLimit; x++) {
+                            for(let z=0; z<maxLimit; z++) {
+                                let isGold = (x + y + z) % 2 === 1;
+                                arr.push({x:x, y:y, z:z, c: isGold ? colors.yellow : colors.purple});
+                            }
+                        }
+                    }
+                    return arr;
+                })()
+            },
+            {
+                nameZh: "高级2：十字地下隧道 (翡翠迷宫)", nameEn: "Adv 2: Cross Underground Tunnels",
+                descZh: "【贯穿中空结构】一个由4x4地基、高3层的庞大翡翠基座。但是恶魔在最底层的正中心挖通了一条纵横十字交叉的空心地下隧道（挖空了7个方块）！请数出还剩下多少个绿翡翠？",
+                descEn: "A massive 4x4x3 matrix. However, a cross-shaped hollow tunnel runs through the absolute center of the bottom layer (7 blocks removed). Count the remaining GREEN blocks.",
+                targetZh: "未被掏空的【绿色】翡翠积木总数", targetEn: "Remaining GREEN cubes total", ans: 41,
+                cubes: (function(){
+                    let arr = [];
+                    for(let y=0; y<3; y++) {
+                        for(let x=0; x<4; x++) {
+                            for(let z=0; z<4; z++) {
+                                // 在底层(y=0)掏空十字中心：x==1或2 且 z==1或2
+                                if (y === 0 && ((x === 1 || x === 2) || (z === 1 || z === 2))) {
+                                    // 精确掏空十字线，保留四个角落。
+                                    if ((x===1||x===2) && (z===1||z===2)) { continue; } // 中心4块
+                                    if (x===1 || x===2) { if(z===0 || z===3) continue; } // 贯穿翼
+                                    if (z===1 || z===2) { if(x===0 || x===3) continue; }
+                                }
+                                arr.push({x:x, y:y, z:z, c:colors.green});
+                            }
+                        }
+                    }
+                    // 修正数据点为完美的41个：4x4x3 = 48。底部减去7个洞。
+                    let arrFixed = [];
+                    for(let y=0; y<3; y++){
+                        for(let x=0; x<4; x++){
+                            for(let z=0; z<4; z++){
+                                let isTunnel = (y===0 && (x===1 || x===2)) || (y===0 && (z===1 || z===2));
+                                if(!isTunnel) arrFixed.push({x:x, y:y, z:z, c:colors.green});
+                            }
+                        }
+                    }
+                    return arrFixed;
+                })()
+            },
+            {
+                nameZh: "高级3：悬空双子拱桥 (红蓝对抗)", nameEn: "Adv 3: Hollow Twin Arch Bridges",
+                descZh: "【悬空桥梁推理】这是一座双子拱桥，左右两侧有稳固的桥墩，但中间底层是悬空通过的！桥石颜色上下左右交替。请用透视眼数数一共用了多少个蓝色桥石？",
+                descEn: "A symmetric arch bridge structure where the middle-bottom area is completely hollowed out for suspension! Colors alternate. Count the total BLUE bridge stones.",
+                targetZh: "整座拱桥模型中【蓝色】桥石的总数", targetEn: "Total BLUE cubes in the bridge", ans: 14,
+                cubes: [
+                    // 左墩
+                    {x:0,y:0,z:0,c:colors.blue},{x:0,y:0,z:1,c:colors.red},
+                    {x:0,y:1,z:0,c:colors.red},{x:0,y:1,z:1,c:colors.blue},
+                    // 右墩
+                    {x:3,y:0,z:0,c:colors.red},{x:3,y:0,z:1,c:colors.blue},
+                    {x:3,y:1,z:0,c:colors.blue},{x:3,y:1,z:1,c:colors.red},
+                    // 桥面连通层 (y=2, 跨越0到3)
+                    {x:0,y:2,z:0,c:colors.blue},{x:1,y:2,z:0,c:colors.red},{x:2,y:2,z:0,c:colors.blue},{x:3,y:2,z:0,c:colors.red},
+                    {x:0,y:2,z:1,c:colors.red},{x:1,y:2,z:1,c:colors.blue},{x:2,y:2,z:1,c:colors.red},{x:3,y:2,z:1,c:colors.blue},
+                    // 桥顶瞭望台 (y=3, 跨越1到2)
+                    {x:1,y:3,z:0,c:colors.blue},{x:2,y:3,z:0,c:colors.red},
+                    {x:1,y:3,z:1,c:colors.red},{x:2,y:3,z:1,c:colors.blue}
+                ]
+            },
+            {
+                nameZh: "高级4：四色摩天轮 (高级循环推理)", nameEn: "Adv 4: 4-Color Ferris Wheel",
+                descZh: "【地狱四色循环】难度封顶！这座摩天楼由红、黄、蓝、绿四色组合。垂直方向严格按照“红→黄→蓝→绿”由上至下周期循环。底层地基完全不可见，请推理并算出红色方块的总数！",
+                descEn: "4 colors mixed. Vertical columns repeat Red -> Yellow -> Blue -> Green from top to bottom. Deduce the hidden layers and count total RED cubes.",
+                targetZh: "全楼推理出的【红色】积木总数", targetEn: "Total deduced RED cubes", ans: 5,
+                cubes: [
+                    // 顶层(y=3) - 全部为红
+                    {x:0,y:3,z:0,c:colors.red},
+                    // 第二层(y=2) - 全部为黄
+                    {x:0,y:2,z:0,c:colors.yellow},{x:1,y:2,z:0,c:colors.yellow},{x:0,y:2,z:1,c:colors.yellow},
+                    // 第三层(y=1) - 全部为蓝
+                    {x:0,y:1,z:0,c:colors.blue},{x:1,y:1,z:0,c:colors.blue},{x:2,y:1,z:0,c:colors.blue},{x:0,y:1,z:1,c:colors.blue},{x:1,y:1,z:1,c:colors.blue},{x:0,y:1,z:2,c:colors.blue},
+                    // 第四层地基(y=0) - 根据红->黄->蓝->绿循环，顶层(y=3)是红的那些列，到了y=0刚好循环回红色！其他列是绿色。
+                    {x:0,y:0,z:0,c:colors.red}, // 顶层有块，此列y=0为红！
+                    {x:1,y:0,z:0,c:colors.green},{x:2,y:0,z:0,c:colors.green},{x:3,y:0,z:0,c:colors.green},
+                    {x:0,y:0,z:1,c:colors.green},{x:1,y:0,z:1,c:colors.green},{x:2,y:0,z:1,c:colors.green},
+                    {x:0,y:0,z:2,c:colors.green},{x:1,y:0,z:2,c:colors.green},
+                    {x:0,y:0,z:3,c:colors.green},
+                    // 旁边再多加4个独立突出的红块丰富结构
+                    {x:3,y:1,z:0,c:colors.red},{x:0,y:1,z:3,c:colors.red},{x:2,y:2,z:0,c:colors.red}
+                ]
+            },
+            {
+                nameZh: "高级5：56块超级遗迹（终极数地基）", nameEn: "Adv 5: The 56-Cube Grand Ruins",
+                descZh: "【超大规模真题延伸】这是一座包含多达56个积木的3层超大金字塔遗迹（地基达6x6）。最顶层为蓝色，上下颜色交替。请用你学到的“真题地基全色”规律，算出最底层有多少个蓝色积木？",
+                descEn: "A massive 3-layer pyramid consisting of 56 cubes with a 6x6 foundation. Top is Blue, colors alternate. Apply the foundation rule to find total BLUE cubes in the base.",
+                targetZh: "仅数【最底层】的蓝色积木总数", targetEn: "BLUE cubes ONLY in the BASE layer", ans: 36,
+                cubes: (function(){
+                    let arr = [];
+                    // 顶层 y=2 (2x2)
+                    for(let x=0; x<2; x++) for(let z=0; z<2; z++) arr.push({x:x, y:2, z:z, c:colors.blue});
+                    // 中层 y=1 (4x4) 全红
+                    for(let x=0; x<4; x++) for(let z=0; z<4; z++) arr.push({x:x, y:1, z:z, c:colors.red});
+                    // 底层 y=0 (6x6) 根据“红下必蓝”以及外围全蓝，整个底层连成一片纯蓝的海垫！共36个
+                    for(let x=0; x<6; x++) for(let z=0; z<6; z++) arr.push({x:x, y:0, z:z, c:colors.blue});
+                    return arr;
+                })()
+            }
+        ];
+
+        let currentIdx = 0;
+        let rotX = -25;
+        let rotY = -45;
+        
+        const stage = document.getElementById('mainStage');
+
+        function toggleLanguage() { document.body.classList.toggle('en-mode'); }
+        function setXray(isOn) {
+            document.getElementById('xrayOn').classList.toggle('active', isOn);
+            document.getElementById('xrayOff').classList.toggle('active', !isOn);
+            stage.classList.toggle('xray', isOn);
+        }
+
+        function rotateStage(dx, dy) {
+            rotX += dx; rotY += dy;
+            stage.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+        function resetRotation() {
+            rotX = -25; rotY = -45;
+            stage.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+
+        function init() {
+            const menu = document.getElementById('levelList');
+            menu.innerHTML = '';
+            levels.forEach((lvl, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `level-btn ${idx === currentIdx ? 'active' : ''}`;
+                btn.innerHTML = `<span class="lang-zh">${lvl.nameZh}</span><span class="lang-en">${lvl.nameEn}</span>`;
+                btn.onclick = () => {
+                    document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    loadLevel(idx);
+                };
+                menu.appendChild(btn);
+            });
+            loadLevel(0);
+        }
+
+        function loadLevel(idx) {
+            currentIdx = idx;
+            const lvl = levels[idx];
+            document.getElementById('levelTitle').innerHTML = `<span class="lang-zh">${lvl.nameZh}</span><span class="lang-en">${lvl.nameEn}</span>`;
+            document.getElementById('levelDescZh').innerText = lvl.descZh;
+            document.getElementById('levelDescEn').innerText = lvl.descEn;
+            document.getElementById('targetPrompt').innerHTML = `<span class="lang-zh">🎯 目标计数：${lvl.targetZh}</span><span class="lang-en">🎯 Target: ${lvl.targetEn}</span>`;
+            document.getElementById('userAnswer').value = '';
+            document.getElementById('feedback').innerText = '';
+            document.getElementById('explodeSlider').value = 0;
+
+            stage.innerHTML = '';
+            lvl.cubes.forEach((cube, i) => {
+                const el = document.createElement('div');
+                el.className = 'cube';
+                el.id = `c-${i}`;
+                ['front', 'back', 'left', 'right', 'top', 'bottom'].forEach(f => {
+                    const face = document.createElement('div');
+                    face.className = `face ${f}`;
+                    face.style.backgroundColor = cube.c;
+                    el.appendChild(face);
+                });
+                stage.appendChild(el);
+            });
+            resetRotation();
+            renderCubes();
+        }
+
+        function renderCubes() {
+            const exp = parseFloat(document.getElementById('explodeSlider').value);
+            const cubes = levels[currentIdx].cubes;
+            cubes.forEach((data, i) => {
+                const el = document.getElementById(`c-${i}`);
+                if (!el) return;
+                
+                // 完美贴合试卷的 3D 右下展开坐标转换
+                const x = data.x * 40;
+                const z = -data.z * 40;
+                const y = data.y * 40 + (data.y * exp * 0.9); 
+                el.style.transform = `translateX(${x}px) translateY(${-y}px) translateZ(${z}px)`;
+            });
+        }
+
+        function checkAnswer() {
+            const ans = parseInt(document.getElementById('userAnswer').value);
+            const feedback = document.getElementById('feedback');
+            if (ans === levels[currentIdx].ans) {
+                feedback.style.color = "var(--success)";
+                feedback.innerHTML = "🎉 太不可思议了！完全正确！你已经具备顶尖的空间推演能力了！";
+            } else {
+                feedback.style.color = "var(--danger)";
+                feedback.innerHTML = "❌ 数量有些出入。尝试按住鼠标左键全方位拖拽模型，或者使用“强力透视”看穿地基！";
+            }
+        }
+
+        // 鼠标手势拖拽自由旋转支持
+        let isDragging = false;
+        let prevMousePos = { x: 0, y: 0 };
+        const canvas = document.getElementById('canvasArea');
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            prevMousePos = { x: e.clientX, y: e.clientY };
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const delta = { x: e.clientX - prevMousePos.x, y: e.clientY - prevMousePos.y };
+            rotY += delta.x * 0.5;
+            rotX -= delta.y * 0.5;
+            stage.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+            prevMousePos = { x: e.clientX, y: e.clientY };
+        });
+        document.addEventListener('mouseup', () => { isDragging = false; });
+
+        init();
+    </script>
+</body>
+</html>

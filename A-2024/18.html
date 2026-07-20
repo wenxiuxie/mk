@@ -3,142 +3,131 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>2024 A · Q18</title>
+<title>2024 A · Q18 · 不同的和</title>
 <style>
-:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
 *{box-sizing:border-box}
-body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
-.topbar{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
-.brand{font-weight:800;color:var(--ink);font-size:14px}
-.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
-.lang-btn:hover{background:#e0f2fe}
-.wrap{max-width:760px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
-h1{margin:0 0 8px;color:var(--ink);font-size:24px}
-.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
-.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:16px}
-.play{margin:16px 0;padding:14px;background:#f0f9ff;border-radius:14px}
-.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
-.primary{background:#0284c7;color:#fff}
-.ok{background:#22c55e;color:#fff}
-.warn{background:#fef3c7;color:#92400e}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:860px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.board{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.num{
+  width:64px;height:64px;border-radius:14px;background:#fff;border:3px solid var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;
+  cursor:pointer;user-select:none;transition:background .15s,color .15s,transform .15s;
+}
+.num:hover{transform:scale(1.05)}
+.num.on{background:var(--primary);color:#fff}
+.eq{text-align:center;font-size:26px;font-weight:800;min-height:36px;color:#0f172a;margin:8px 0}
+.bucket{
+  min-height:72px;margin:12px auto;max-width:520px;padding:12px;border-radius:12px;
+  background:#f8fafc;border:2px dashed #cbd5e1;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;
+}
+.chip{
+  background:#e0f2fe;border:2px solid #7dd3fc;border-radius:999px;padding:8px 14px;
+  font-weight:800;color:#0369a1;font-size:16px;
+}
+.count{text-align:center;font-size:15px;font-weight:700;color:#475569;margin-top:8px}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{
+  width:52px;height:52px;border-radius:10px;background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;cursor:grab;user-select:none;
+}
+.answer-box{
+  width:96px;height:96px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;
+  display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;background:#fafbfc;
+}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+.actions{text-align:center;margin-top:10px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
 .ghost{background:#e2e8f0;color:#334155}
-.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink)}
-.msg.good{color:var(--ok)}
-.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.opt{min-width:56px;padding:10px 12px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer;text-align:center}
-.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
-.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
-.hint{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6}
-.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
-.nav a{color:var(--accent);font-weight:700;text-decoration:none}
-.chip{display:inline-block;background:#fff;border:2px solid #7dd3fc;border-radius:999px;padding:4px 10px;margin:3px;font-weight:700;color:#0369a1}
-.grid{display:inline-grid;gap:4px;background:#fff;padding:8px;border-radius:10px}
-.cell{width:44px;height:44px;border:2px solid #94a3b8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;user-select:none}
-.cell.grey{background:#94a3b8;color:#fff}
-.cell.white{background:#fff}
-.cell.path{outline:3px solid #f59e0b;outline-offset:-3px}
-.cell.start{box-shadow:inset 0 0 0 3px #22c55e}
-.cell.end{box-shadow:inset 0 0 0 3px #ef4444}
-.board{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.num{width:56px;height:56px;border-radius:12px;background:#fff;border:3px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;cursor:pointer}
-.num.on{background:#0284c7;color:#fff}
-.node{width:52px;height:52px;border-radius:50%;background:#e0f2fe;border:3px solid #0284c7;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;position:absolute}
-.node.hot{background:#fde68a;border-color:#d97706}
-.pat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.pat .item{width:64px;height:64px;border-radius:12px;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:28px;background:#fff}
-.pat .item.hl{border-color:#16a34a;background:#dcfce7;transform:scale(1.05)}
-
-.figwrap{margin:12px 0 4px;text-align:center}
-.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
-.fig-md{max-width:420px}
-.figcap{margin:10px 0 4px;font-weight:700;color:#0369a1;font-size:14px}
-
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tip{font-size:13px;color:#64748b;text-align:center}
+.log{max-width:520px;margin:8px auto 0;font-size:12px;color:#94a3b8;text-align:center;line-height:1.5}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="brand">Math Kangaroo 2024 · Level A</div>
-  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
-</div>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+
+<h1 class="lang-zh">两数相加有几种结果</h1>
+<h1 class="lang-en">How Many Different Sums?</h1>
+<div class="meta lang-zh">2024 等级 A · 第 18 题 · 5 分</div>
+<div class="meta lang-en">2024 Level A · Q18 · 5 points</div>
+
 <div class="wrap">
-  <h1 data-zh="两数相加有几种结果" data-en="How Many Different Sums?"></h1>
-  <div class="meta" data-zh="第 18 题 · 5 分" data-en="Question 18 · 5 points"></div>
-
-<div class="qbox" data-zh-html="黑板上有数字 <b>1、2、3、4、5</b>。每次选两个相加，一共能得到多少种不同结果？"
-data-en-html="The board has numbers <b>1, 2, 3, 4, 5</b>. Pick two and add them. How many different results are possible?"></div>
-
-<div class="figwrap"><img class="fig fig-md" src="assets/q18_figure.png" alt="Q18 board 1-5"/></div>
-
-<div class="play">
-  <div class="board" id="board"></div>
-  <div style="text-align:center;margin:10px 0;font-size:22px;font-weight:800" id="eq">? + ? = ?</div>
-  <div class="btnrow" style="justify-content:center">
-    <button class="act warn" onclick="resetPick()" data-zh="重选" data-en="Reset"></button>
-    <button class="act ok" onclick="autoAll()" data-zh="找出全部结果" data-en="Find all results"></button>
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">黑板上有数字 <b>1、2、3、4、5</b>。每次选两个相加，一共能得到多少种不同结果？</p>
+    <p class="lang-en">The board has numbers <b>1, 2, 3, 4, 5</b>. Pick two and add them. How many different results are possible?</p>
+    <img class="fig" src="assets/q18_figure.png" alt="Q18"/>
   </div>
-  <div style="text-align:center;margin-top:8px" id="chips"></div>
-  <div class="msg" id="playMsg" data-zh="点两张数字牌试试！" data-en="Tap two number cards!"></div>
-</div>
-<div class="options">
-<div class="opt" data-ans="A" onclick="markAnswer(this,'C')">5</div>
-<div class="opt" data-ans="B" onclick="markAnswer(this,'C')">6</div>
-<div class="opt" data-ans="C" onclick="markAnswer(this,'C')">7</div>
-<div class="opt" data-ans="D" onclick="markAnswer(this,'C')">8</div>
-<div class="opt" data-ans="E" onclick="markAnswer(this,'C')">10</div>
-</div>
-<div class="msg" id="msg" data-zh="先自己想一想，再点选项。" data-en="Think first, then tap an option."></div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：每次点两个数相加，收集不同的和</h2>
+    <h2 class="lang-en">Lab: tap two numbers, collect different sums</h2>
+    <p class="tip lang-zh">点两个不同的数 → 算出和，丢进下面「结果桶」。相同的和只记一次。自己数桶里有几种，再选答案。</p>
+    <p class="tip lang-en">Tap two different numbers → the sum goes in the bucket (duplicates once). Count how many kinds, then answer.</p>
+
+    <div class="board" id="board"></div>
+    <div class="eq" id="eq">? + ? = ?</div>
+
+    <p class="tip lang-zh">不同的和（结果桶）</p>
+    <p class="tip lang-en">Different sums (bucket)</p>
+    <div class="bucket" id="bucket">
+      <span style="color:#94a3b8;font-size:13px" class="lang-zh">还没有结果</span>
+      <span style="color:#94a3b8;font-size:13px" class="lang-en">No sums yet</span>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="log" id="log"></div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="clearPick()"><span class="lang-zh">重选这一对</span><span class="lang-en">Clear this pair</span></button>
+      <button class="btn reset" onclick="resetAll()"><span class="lang-zh">清空结果桶</span><span class="lang-en">Empty bucket</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:18px">我的答案：有几种不同结果？（拖进去）</p>
+    <p class="tip lang-en" style="margin-top:18px">My answer: how many different results? (drag)</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox" ondragover="allowDrop(event)" ondrop="dropAns(event)" onclick="clearAns()"></div>
+
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
 
   <div class="nav">
-    <a href="17.html" data-zh="← 上一题" data-en="← Prev"></a>
-    <a href="19.html" data-zh="下一题 →" data-en="Next →"></a>
+    <a href="17.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="19.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
   </div>
 </div>
+
 <script>
-
-let lang = localStorage.getItem('mk_lang') || 'zh';
-function applyLang(){
-  document.querySelectorAll('[data-zh]').forEach(el=>{
-    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
-  });
-  document.querySelectorAll('[data-zh-html]').forEach(el=>{
-    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
-  });
-  const b=document.getElementById('langBtn');
-  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
-  localStorage.setItem('mk_lang', lang);
-}
-function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
-function markAnswer(btn, correctLetter){
-  const letter=btn.dataset.ans;
-  document.querySelectorAll('.opt').forEach(o=>{
-    o.classList.remove('correct','wrong');
-    if(o.dataset.ans===correctLetter) o.classList.add('correct');
-    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
-  });
-  const msg=document.getElementById('msg');
-  if(!msg) return;
-  if(letter===correctLetter){
-    msg.className='msg good';
-    msg.setAttribute('data-zh','答对了！');
-    msg.setAttribute('data-en','Correct!');
-  }else{
-    msg.className='msg';
-    msg.setAttribute('data-zh','再想想～正确答案已标绿。');
-    msg.setAttribute('data-en','Try again — correct option is highlighted.');
-  }
-  applyLang();
-}
-document.addEventListener('DOMContentLoaded', applyLang);
-
-
-const nums=[1,2,3,4,5];
+const NUMS=[1,2,3,4,5];
+const CHOICES=[5,6,7,8,10];
 let picked=[];
-const found=new Set();
+const found=new Map(); // sum -> example pair string
+let ans=null, dragN=null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
 function renderBoard(){
   const b=document.getElementById('board');
   b.innerHTML='';
-  nums.forEach(n=>{
+  NUMS.forEach(n=>{
     const d=document.createElement('div');
     d.className='num'+(picked.includes(n)?' on':'');
     d.textContent=n;
@@ -146,41 +135,112 @@ function renderBoard(){
     b.appendChild(d);
   });
 }
+
 function pick(n){
-  if(picked.includes(n)) return;
+  if(picked.includes(n)){
+    picked=picked.filter(x=>x!==n);
+    updateEq();
+    renderBoard();
+    return;
+  }
   if(picked.length>=2) picked=[];
   picked.push(n);
   renderBoard();
+  updateEq();
   if(picked.length===2){
-    const s=picked[0]+picked[1];
-    document.getElementById('eq').textContent=`${picked[0]} + ${picked[1]} = ${s}`;
-    found.add(s);
-    renderChips();
-    const m=document.getElementById('playMsg');
-    m.className='msg good';
-    m.setAttribute('data-zh',`得到 ${s}。目前不同结果：${found.size} 种`);
-    m.setAttribute('data-en',`Got ${s}. Different results so far: ${found.size}`);
-    applyLang();
-  }else{
-    document.getElementById('eq').textContent=picked[0]+' + ? = ?';
+    const a=picked[0], b=picked[1], s=a+b;
+    document.getElementById('eq').textContent=`${a} + ${b} = ${s}`;
+    if(!found.has(s)) found.set(s, `${a}+${b}`);
+    renderBucket();
+    // 自动准备下一对
+    setTimeout(()=>{ picked=[]; renderBoard(); updateEq(); }, 450);
   }
 }
-function renderChips(){
-  document.getElementById('chips').innerHTML=[...found].sort((a,b)=>a-b).map(x=>`<span class="chip">${x}</span>`).join('');
-}
-function resetPick(){ picked=[]; document.getElementById('eq').textContent='? + ? = ?'; renderBoard(); }
-function autoAll(){
-  found.clear();
-  for(let i=0;i<nums.length;i++) for(let j=i+1;j<nums.length;j++) found.add(nums[i]+nums[j]);
-  renderChips();
-  const m=document.getElementById('playMsg');
-  m.className='msg good';
-  m.setAttribute('data-zh','全部不同结果：3,4,5,6,7,8,9 → 共 7 种');
-  m.setAttribute('data-en','All different results: 3–9 → 7 different sums');
-  applyLang();
-}
-renderBoard();
 
+function updateEq(){
+  const eq=document.getElementById('eq');
+  if(picked.length===0) eq.textContent='? + ? = ?';
+  else if(picked.length===1) eq.textContent=`${picked[0]} + ? = ?`;
+}
+
+function renderBucket(){
+  const bucket=document.getElementById('bucket');
+  const count=document.getElementById('count');
+  const log=document.getElementById('log');
+  const sums=[...found.keys()].sort((a,b)=>a-b);
+  if(!sums.length){
+    bucket.innerHTML='<span style="color:#94a3b8;font-size:13px" class="lang-zh">还没有结果</span><span style="color:#94a3b8;font-size:13px" class="lang-en">No sums yet</span>';
+    count.textContent='';
+    log.textContent='';
+    return;
+  }
+  bucket.innerHTML=sums.map(s=>`<span class="chip">${s}</span>`).join('');
+  count.textContent = en()
+    ? `Different sums collected: ${sums.length}`
+    : `已收集到不同的和：${sums.length} 种`;
+  log.textContent = [...found.entries()].sort((a,b)=>a[0]-b[0])
+    .map(([s,ex])=>`${ex}=${s}`).join(' · ');
+}
+
+function clearPick(){ picked=[]; renderBoard(); updateEq(); }
+function resetAll(){
+  found.clear(); picked=[]; ans=null; dragN=null;
+  renderBoard(); updateEq(); renderBucket();
+  clearAns();
+  document.getElementById('feedback').textContent='';
+}
+
+(function pool(){
+  const pool=document.getElementById('pool');
+  CHOICES.forEach(n=>{
+    const d=document.createElement('div');
+    d.className='card'; d.textContent=n; d.draggable=true;
+    d.ondragstart=()=>{dragN=n};
+    d.onclick=()=>{
+      dragN=n;
+      document.querySelectorAll('.card').forEach(c=>c.style.outline='');
+      d.style.outline='3px solid #f59e0b';
+      setAns(n);
+    };
+    pool.appendChild(d);
+  });
+})();
+
+function allowDrop(e){ e.preventDefault(); }
+function dropAns(e){
+  e.preventDefault();
+  if(dragN==null) return;
+  setAns(dragN);
+}
+function setAns(n){
+  ans=n; dragN=null;
+  const box=document.getElementById('ansBox');
+  box.className='answer-box filled'; box.textContent=ans;
+  document.getElementById('feedback').textContent='';
+}
+function clearAns(){
+  ans=null;
+  const box=document.getElementById('ansBox');
+  box.className='answer-box'; box.textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.style.outline='');
+  document.getElementById('feedback').textContent='';
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(ans==null){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Drag a number into the answer box first.':'❌ 请先把数字拖进答案框。';
+    return;
+  }
+  const ok=ans===7;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ Correct count!':'✅ 种数对了！')
+    :(en()?'❌ Not yet — keep pairing and watch the bucket.':'❌ 还不对——再多试几对，数一数桶里有几种。');
+}
+
+renderBoard();
 </script>
 </body>
 </html>

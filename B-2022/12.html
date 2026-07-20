@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q12 · 改一个数</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:860px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:280px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.lab{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:flex-start;margin-top:12px}
+.grid-wrap{position:relative}
+.grid{
+  display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(3,64px);gap:0;
+  border:3px solid #334155;
+}
+.cell{
+  border:1px solid #94a3b8;display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:800;cursor:pointer;background:#fff;user-select:none;
+}
+.cell.sel{outline:3px solid #f59e0b;outline-offset:-3px;background:#fffbeb;z-index:1}
+.cell.changed{color:#0369a1}
+.sums-r,.sums-c{display:flex;font-weight:800;font-size:14px;color:#475569}
+.sums-r{flex-direction:column;justify-content:space-around;margin-left:8px;height:192px}
+.sums-c{justify-content:space-around;width:192px;margin-top:8px}
+.sum.eq{color:#16a34a}.sum.ne{color:#dc2626}
+.edit{text-align:center;min-width:160px}
+.edit .val{font-size:36px;font-weight:800;margin:8px 0}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.ghost{background:#e2e8f0;color:#334155}
+.reset{background:#6c757d;color:#fff}
+.submit{background:var(--success);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:72px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:64px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin-top:10px;color:#0f172a}
+.actions{text-align:center}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); render()">🌐 English / 中文</button>
+
+<h1 class="lang-zh">改一个数</h1>
+<h1 class="lang-en">Fix One Number</h1>
+<div class="meta lang-zh">2022 等级 B · 第 12 题 · 4 分</div>
+<div class="meta lang-en">2022 Level B · Q12 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小莫想让每行、每列三个数之和都相同，但他写错了一个数。应改哪一个？</p>
+    <p class="lang-en">Mosif wants every row and column sum to be the same, but one number is wrong. Which must he change?</p>
+    <img class="fig" src="assets/q12_figure.png" alt="Q12"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：点一个数，用 + / − 改它，看各行各列的和</h2>
+    <h2 class="lang-en">Lab: tap one number, +/- to change it, watch the sums</h2>
+    <p class="tip lang-zh">只能改一个格子。目标：六条和全部相等。想好后选选项检查。</p>
+    <p class="tip lang-en">Change only one cell. Goal: all six sums equal. Then pick an option to check.</p>
+
+    <div class="lab">
+      <div>
+        <div style="display:flex;align-items:flex-start">
+          <div class="grid" id="grid"></div>
+          <div class="sums-r" id="rowSums"></div>
+        </div>
+        <div class="sums-c" id="colSums"></div>
+      </div>
+      <div class="edit">
+        <p class="tip lang-zh">选中格子的值</p>
+        <p class="tip lang-en">Selected value</p>
+        <div class="val" id="cur">—</div>
+        <button class="btn ghost" onclick="bump(-1)">−</button>
+        <button class="btn ghost" onclick="bump(1)">+</button>
+        <div class="actions" style="margin-top:10px">
+          <button class="btn reset" onclick="resetGrid()"><span class="lang-zh">恢复原表</span><span class="lang-en">Reset grid</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="info" id="info"></div>
+
+    <p class="tip lang-zh" style="margin-top:16px">我要改的是（点选）</p>
+    <p class="tip lang-en" style="margin-top:16px">I would change (tap)</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="11.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="13.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const ORIG=[[9,1,5],[3,7,6],[4,7,4]];
+const CHOICES=[
+  {L:'A', zh:'1', en:'1'},
+  {L:'B', zh:'3', en:'3'},
+  {L:'C', zh:'某个 4', en:'one of the 4s'},
+  {L:'D', zh:'5', en:'5'},
+  {L:'E', zh:'某个 7', en:'one of the 7s'},
+];
+let G=ORIG.map(r=>r.slice());
+let sel=null; // [r,c]
+let changed=null; // only one cell may differ from ORIG for "valid experiment"
+let ans=null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function render(){
+  const grid=document.getElementById('grid');
+  grid.innerHTML='';
+  for(let r=0;r<3;r++) for(let c=0;c<3;c++){
+    const d=document.createElement('div');
+    d.className='cell';
+    if(sel && sel[0]===r && sel[1]===c) d.classList.add('sel');
+    if(G[r][c]!==ORIG[r][c]) d.classList.add('changed');
+    d.textContent=G[r][c];
+    d.onclick=()=>{ sel=[r,c]; render(); };
+    grid.appendChild(d);
+  }
+  const rows=G.map(r=>r.reduce((a,b)=>a+b,0));
+  const cols=[0,1,2].map(c=>G[0][c]+G[1][c]+G[2][c]);
+  const all=[...rows,...cols];
+  const target=all[0];
+  const allEq=all.every(x=>x===target);
+
+  document.getElementById('rowSums').innerHTML=rows.map(s=>
+    `<div class="sum ${allEq?'eq':'ne'}">${s}</div>`).join('');
+  document.getElementById('colSums').innerHTML=cols.map(s=>
+    `<div class="sum ${allEq?'eq':'ne'}">${s}</div>`).join('');
+
+  document.getElementById('cur').textContent = sel? G[sel[0]][sel[1]] : '—';
+
+  const diffs=[];
+  for(let r=0;r<3;r++) for(let c=0;c<3;c++)
+    if(G[r][c]!==ORIG[r][c]) diffs.push([r,c,ORIG[r][c],G[r][c]]);
+  const info=document.getElementById('info');
+  if(allEq && diffs.length===1){
+    info.textContent=en()
+      ? `All sums = ${target}. You changed one number.`
+      : `六条和都是 ${target}。你只改了一个数。`;
+  } else if(diffs.length>1){
+    info.textContent=en()?'Please change only one cell (reset if needed).':'请只改一个格子（必要时先恢复原表）。';
+  } else if(diffs.length===1){
+    info.textContent=en()?`Sums not all equal yet.`:`各行各列的和还没有全部相同。`;
+  } else {
+    info.textContent=en()?'Tap a cell to start.':'点一个格子开始改。';
+  }
+
+  // pool
+  const pool=document.getElementById('pool');
+  pool.innerHTML='';
+  CHOICES.forEach(ch=>{
+    const d=document.createElement('div');
+    d.className='card'+(ans===ch.L?' on':'');
+    d.innerHTML=`<div>${ch.L}</div><div style="font-size:12px">${en()?ch.en:ch.zh}</div>`;
+    d.onclick=()=>{
+      ans=ch.L;
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled';
+      box.textContent=`${ch.L}: ${en()?ch.en:ch.zh}`;
+      document.getElementById('feedback').textContent='';
+      render();
+    };
+    pool.appendChild(d);
+  });
+}
+
+function bump(d){
+  if(!sel) return;
+  const [r,c]=sel;
+  // enforce at most one changed cell
+  for(let i=0;i<3;i++) for(let j=0;j<3;j++){
+    if((i!==r||j!==c) && G[i][j]!==ORIG[i][j]){
+      G[i][j]=ORIG[i][j];
+    }
+  }
+  G[r][c]=Math.max(1, Math.min(20, G[r][c]+d));
+  render();
+}
+
+function resetGrid(){
+  G=ORIG.map(r=>r.slice());
+  sel=null;
+  document.getElementById('feedback').textContent='';
+  render();
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!ans){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok=ans==='B';
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()?'❌ Not yet — keep adjusting one cell until all sums match.':'❌ 还不对——继续只改一格，直到所有和相同。');
+}
+
+render();
+</script>
+</body>
+</html>

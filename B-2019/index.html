@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2019 Level B · All Questions</title>
+<style>
+:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;max-width:820px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--ink);font-size:14px}
+.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
+.lang-btn:hover{background:#e0f2fe}
+.wrap{max-width:820px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
+h1{margin:0 0 8px;color:var(--ink);font-size:24px}
+.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:12px}
+.figwrap{margin:10px 0 14px;text-align:center}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
+.hint{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.6}
+.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.opt{min-width:64px;padding:10px 14px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer;text-align:center}
+.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
+.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink)}
+.msg.good{color:var(--ok)}
+.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
+.nav a{color:var(--accent);font-weight:700;text-decoration:none}
+.list a{display:block;padding:12px 14px;margin:8px 0;border-radius:12px;background:#f0f9ff;border:2px solid #bae6fd;color:#0c4a6e;text-decoration:none;font-weight:700}
+.list a:hover{background:#e0f2fe}
+.sec{margin:18px 0 6px;font-weight:800;color:#0369a1}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Math Kangaroo 2019 · Level B (Ecolier 3–4)</div>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
+</div>
+<div class="wrap">
+  <h1 data-zh="2019 等级 B 全部题目" data-en="2019 Level B — All Questions"></h1>
+  <p class="meta" data-zh="共 24 题 · 右上角可切换中文 / English · 答案见卷末：ECADA ADBBC CEBAD DECBE BEBD"
+     data-en="24 questions · Toggle Chinese / English · Key: ECADA ADBBC CEBAD DECBE BEBD"></p>
+  <div class="sec" data-zh="第一部分 · 每题 3 分（1–8）" data-en="Part 1 · 3 points (1–8)"></div>
+  <div class="list"><a href="1.html" data-zh="1 · 领奖台排名（3分）" data-en="1 · Podium Ranking (3 pts)"></a><a href="2.html" data-zh="2 · 点与长条计数（3分）" data-en="2 · Dots and Bars (3 pts)"></a><a href="3.html" data-zh="3 · 昨天星期天（3分）" data-en="3 · Day After Tomorrow (3 pts)"></a><a href="4.html" data-zh="4 · 书封面的洞（3分）" data-en="4 · Holes in the Book Cover (3 pts)"></a><a href="5.html" data-zh="5 · 切下一片（3分）" data-en="5 · Cut Out a Piece (3 pts)"></a><a href="6.html" data-zh="6 · 雪地脚印顺序（3分）" data-en="6 · Muddy Footprints Order (3 pts)"></a><a href="7.html" data-zh="7 · 木棒拼形（3分）" data-en="7 · Stick Shapes (3 pts)"></a><a href="8.html" data-zh="8 · 问号是几（3分）" data-en="8 · Replace the Question Mark (3 pts)"></a></div>
+  <div class="sec" data-zh="第二部分 · 每题 4 分（9–16）" data-en="Part 2 · 4 points (9–16)"></div>
+  <div class="list"><a href="9.html" data-zh="9 · 照片与大头针（4分）" data-en="9 · Photos and Pins (4 pts)"></a><a href="10.html" data-zh="10 · 去掉一格（4分）" data-en="10 · Remove One Cell (4 pts)"></a><a href="11.html" data-zh="11 · 编织背面（4分）" data-en="11 · Woven Pattern From Back (4 pts)"></a><a href="12.html" data-zh="12 · 玩具狗重量（4分）" data-en="12 · Dog Toy Weight (4 pts)"></a><a href="13.html" data-zh="13 · 玻璃球交换（4分）" data-en="13 · Marble Trading (4 pts)"></a><a href="14.html" data-zh="14 · 填数字求最大和（4分）" data-en="14 · Largest Sum with 2,0,1,9 (4 pts)"></a><a href="15.html" data-zh="15 · 半杯水多重（4分）" data-en="15 · Half-full Glass Weight (4 pts)"></a><a href="16.html" data-zh="16 · 糖果值多少钱（4分）" data-en="16 · Candy Costs (4 pts)"></a></div>
+  <div class="sec" data-zh="第三部分 · 每题 5 分（17–24）" data-en="Part 3 · 5 points (17–24)"></div>
+  <div class="list"><a href="17.html" data-zh="17 · 形状代表数字（5分）" data-en="17 · Shapes as Numbers (5 pts)"></a><a href="18.html" data-zh="18 · 画框用多少小方块（5分）" data-en="18 · Framing a Picture (5 pts)"></a><a href="19.html" data-zh="19 · 数字5出现16次（5分）" data-en="19 · Digit 5 Appears 16 Times (5 pts)"></a><a href="20.html" data-zh="20 · 猫走走廊（5分）" data-en="20 · Cat in the Hallway (5 pts)"></a><a href="21.html" data-zh="21 · 公园里的袋鼠（5分）" data-en="21 · Kangaroos in the Park (5 pts)"></a><a href="22.html" data-zh="22 · 彩色小三角形（5分）" data-en="22 · Colored Triangles (5 pts)"></a><a href="23.html" data-zh="23 · 谁吃了饼干（5分）" data-en="23 · Who Ate the Cookie? (5 pts)"></a><a href="24.html" data-zh="24 · 夹子挂毛巾（5分）" data-en="24 · Towels and Pegs (5 pts)"></a></div>
+</div>
+<script>
+let lang = localStorage.getItem('mk_lang') || 'zh';
+function applyLang(){
+  document.querySelectorAll('[data-zh]').forEach(el=>{
+    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+  });
+  document.querySelectorAll('[data-zh-html]').forEach(el=>{
+    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
+  });
+  const b=document.getElementById('langBtn');
+  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
+  localStorage.setItem('mk_lang', lang);
+}
+function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
+function markAnswer(btn, correctLetter){
+  const letter=btn.dataset.ans;
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.classList.remove('correct','wrong');
+    if(o.dataset.ans===correctLetter) o.classList.add('correct');
+    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
+  });
+  const msg=document.getElementById('msg');
+  if(!msg) return;
+  if(letter===correctLetter){
+    msg.className='msg good';
+    msg.setAttribute('data-zh','答对了！');
+    msg.setAttribute('data-en','Correct!');
+  }else{
+    msg.className='msg';
+    msg.setAttribute('data-zh','再想想～正确答案已标绿。');
+    msg.setAttribute('data-en','Try again — correct option is highlighted.');
+  }
+  applyLang();
+}
+document.addEventListener('DOMContentLoaded', applyLang);
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q13 · 地毯圆点</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:860px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:260px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.stage{
+  position:relative;width:300px;height:300px;margin:16px auto;
+  background:#c7e9f5;border:3px solid #334155;border-radius:4px;overflow:hidden;
+}
+.dots{
+  position:absolute;inset:18px;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:0;
+}
+.dot{
+  width:14px;height:14px;border-radius:50%;background:#e11d48;margin:auto;
+  cursor:pointer;transition:transform .12s,box-shadow .12s;
+}
+.dot:hover{transform:scale(1.25)}
+.dot.on{box-shadow:0 0 0 3px #fbbf24}
+.fold{
+  position:absolute;left:0;bottom:0;width:58%;height:72%;
+  background:#fff;border:2px solid #334155;
+  clip-path:polygon(0 100%, 0 18%, 72% 0, 100% 48%, 55% 100%);
+  cursor:grab;touch-action:none;z-index:2;
+  box-shadow:2px -2px 8px rgba(0,0,0,.12);
+  transition:opacity .2s, transform .15s;
+}
+.fold:active{cursor:grabbing}
+.fold.lifted{opacity:.15;pointer-events:none}
+.count{text-align:center;font-weight:800;font-size:18px;margin:8px 0;color:#0f172a}
+.actions{text-align:center}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.ghost{background:#e2e8f0;color:#334155}
+.reset{background:#6c757d;color:#fff}
+.submit{background:var(--success);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:96px;min-height:64px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+
+<h1 class="lang-zh">地毯圆点</h1>
+<h1 class="lang-en">Carpet Dots</h1>
+<div class="meta lang-zh">2022 等级 B · 第 13 题 · 4 分</div>
+<div class="meta lang-en">2022 Level B · Q13 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">阿拉丁的正方形地毯，每边两排圆点，点数相同。地毯一角折起来了。一共有多少个圆点？</p>
+    <p class="lang-en">Aladdin’s square carpet has two equal rows of dots along each side. A corner folded over. How many dots in total?</p>
+    <img class="fig" src="assets/q13_figure.png" alt="Q13"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：掀开折角 / 点圆点来数</h2>
+    <h2 class="lang-en">Lab: lift the fold / tap dots to count</h2>
+    <p class="tip lang-zh">可点「掀开折角」看下面；也可点可见的圆点做记号，自己数一共有几颗。</p>
+    <p class="tip lang-en">Lift the fold to peek, or tap visible dots to mark and count.</p>
+
+    <div class="stage" id="stage">
+      <div class="dots" id="dots"></div>
+      <div class="fold" id="fold" title="drag or use button"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" id="liftBtn" onclick="toggleFold()">
+        <span class="lang-zh">掀开 / 盖上折角</span>
+        <span class="lang-en">Lift / cover fold</span>
+      </button>
+      <button class="btn reset" onclick="resetMarks()">
+        <span class="lang-zh">清空记号</span>
+        <span class="lang-en">Clear marks</span>
+      </button>
+    </div>
+    <div class="count" id="count"></div>
+
+    <p class="tip lang-zh" style="margin-top:14px">我认为一共有（点选）</p>
+    <p class="tip lang-en" style="margin-top:14px">I think the total is (tap)</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="12.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="14.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const N=6; // 6×6 carpet
+const CHOICES=[48,44,40,36,32];
+const ANSWER_VAL=32;
+let marked=new Set();
+let lifted=false;
+let ans=null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function renderDots(){
+  const box=document.getElementById('dots');
+  box.innerHTML='';
+  for(let i=0;i<N*N;i++){
+    const d=document.createElement('div');
+    d.className='dot'+(marked.has(i)?' on':'');
+    d.onclick=()=>{
+      if(marked.has(i)) marked.delete(i); else marked.add(i);
+      renderDots(); updateCount();
+    };
+    box.appendChild(d);
+  }
+  updateCount();
+}
+
+function updateCount(){
+  document.getElementById('count').textContent = en()
+    ? `Dots you marked: ${marked.size}`
+    : `你点记的圆点：${marked.size} 颗`;
+}
+
+function toggleFold(){
+  lifted=!lifted;
+  document.getElementById('fold').classList.toggle('lifted', lifted);
+}
+
+function resetMarks(){
+  marked.clear(); renderDots();
+  document.getElementById('feedback').textContent='';
+}
+
+(function pool(){
+  const pool=document.getElementById('pool');
+  CHOICES.forEach(n=>{
+    const d=document.createElement('div');
+    d.className='card';
+    d.textContent=n;
+    d.onclick=()=>{
+      ans=n;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled'; box.textContent=n;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+})();
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(ans==null){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Pick a number first.':'❌ 请先选一个数字。';
+    return;
+  }
+  const ok=ans===ANSWER_VAL;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ Correct total!':'✅ 总数对了！')
+    :(en()?'❌ Not yet — lift the fold and count carefully.':'❌ 还不对——掀开折角再仔细数一数。');
+}
+
+renderDots();
+</script>
+</body>
+</html>

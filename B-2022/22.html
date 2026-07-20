@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q22 · 谁吃一样多</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:900px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:640px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig-sm{max-width:420px}
+.opts-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.opt-img{width:110px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;padding:4px;cursor:pointer}
+.opt-img.picked{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.35)}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:72px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:grab;text-align:center;user-select:none}
+.answer-box{min-width:120px;min-height:72px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+.actions{text-align:center;margin-top:10px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.info{text-align:center;font-weight:700;min-height:28px;margin:8px 0;color:#0f172a}
+.chip{display:inline-block;background:#e0f2fe;border:1px solid #7dd3fc;border-radius:999px;padding:6px 12px;margin:3px;font-weight:700;color:#0369a1}
+.ages{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.age{width:56px;height:56px;border-radius:12px;border:3px solid var(--primary);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;cursor:pointer;background:#fff}
+.age.on{background:var(--primary);color:#fff}
+.grid3{display:inline-grid;grid-template-columns:repeat(3,56px);gap:6px}
+.cell{width:56px;height:56px;border:2px solid #94a3b8;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;background:#fff;cursor:pointer}
+.cell.bad{background:#fee2e2;border-color:#ef4444}
+.cell.good{background:#dcfce7;border-color:#16a34a}
+.sumbox{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:13px;font-weight:700;color:#475569;margin-top:8px}
+.seat{display:inline-grid;gap:4px;background:#f8fafc;padding:10px;border-radius:10px;border:1px solid #e2e8f0}
+.s{width:36px;height:36px;border-radius:8px;border:2px solid #cbd5e1;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.s.me{background:#fde68a;border-color:#f59e0b}
+.s.occ{background:#bfdbfe;border-color:#3b82f6}
+.bar{display:flex;gap:8px;align-items:center;justify-content:center;margin:8px 0;flex-wrap:wrap}
+input[type=number],input[type=range],select{padding:6px 8px;border-radius:8px;border:2px solid #cbd5e1;font-weight:700}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">谁吃一样多</h1>
+<h1 class="lang-en">Same Number of Plums</h1>
+<div class="meta lang-zh">2022 等级 B · 第 22 题 · 5 分</div>
+<div class="meta lang-en">2022 Level B · Q22 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">L 比 S 多吃 2 个；B 比 L 少 3 个；C 比 B 多 1 个，且比 A 少 3 个。哪两人吃的一样多？</p>
+    <p class="lang-en">Lauren = Sophie+2; Betty = Lauren−3; Claire = Betty+1 = Alice−3. Who ate the same number?</p>
+    
+  </div>
+  <div class="section">
+    
+    <h2 class="lang-zh">实验：设 Sophie = n，推出每个人</h2>
+    <h2 class="lang-en">Lab: let Sophie = n, deduce everyone</h2>
+    <div class="bar">
+      <span>Sophie</span>
+      <input type="range" id="n" min="1" max="12" value="4" oninput="calc()"/>
+      <b id="nv">4</b>
+    </div>
+    <div class="info" id="info" style="line-height:1.8"></div>
+    
+    <p class="tip lang-zh" style="margin-top:16px">我的答案（拖进去或点选）</p>
+    <p class="tip lang-en" style="margin-top:16px">My answer (drag or tap)</p>
+    <div class="pool" id="pool"><div class="card" draggable="true" data-ans="A" ondragstart="dragN='A'" onclick="setAns('A')"><div>A</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">C和L</span><span class="lang-en">Claire & Lauren</span></div></div><div class="card" draggable="true" data-ans="B" ondragstart="dragN='B'" onclick="setAns('B')"><div>B</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">C和S</span><span class="lang-en">Claire & Sophie</span></div></div><div class="card" draggable="true" data-ans="C" ondragstart="dragN='C'" onclick="setAns('C')"><div>C</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">L和A</span><span class="lang-en">Lauren & Alice</span></div></div><div class="card" draggable="true" data-ans="D" ondragstart="dragN='D'" onclick="setAns('D')"><div>D</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">S和A</span><span class="lang-en">Sophie & Alice</span></div></div><div class="card" draggable="true" data-ans="E" ondragstart="dragN='E'" onclick="setAns('E')"><div>E</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">A和B</span><span class="lang-en">Alice & Betty</span></div></div></div>
+    <div class="answer-box" id="ansBox" ondragover="event.preventDefault()" ondrop="dropAns(event)" onclick="clearAns()"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="21.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="23.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='B';
+let ans=null, dragN=null;
+function en(){return document.body.classList.contains('en-mode');}
+function setAns(L){
+  ans=L; dragN=null;
+  const c=document.querySelector('.card[data-ans="'+L+'"]');
+  const box=document.getElementById('ansBox');
+  box.className='answer-box filled';
+  box.innerHTML=c?c.innerHTML:L;
+  document.getElementById('feedback').textContent='';
+}
+function dropAns(e){e.preventDefault(); if(dragN) setAns(dragN);}
+function clearAns(){
+  ans=null; const box=document.getElementById('ansBox');
+  box.className='answer-box'; box.innerHTML='';
+  document.getElementById('feedback').textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!ans){ fb.className='bad'; fb.textContent=en()?'❌ Choose an option first.':'❌ 请先选择一个选项。'; return; }
+  const ok=ans===CORRECT;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — keep experimenting.':'❌ 还不对——再实验一下。');
+}
+
+function calc(){
+  const s=+document.getElementById('n').value; document.getElementById('nv').textContent=s;
+  const L=s+2, B=L-3, C=B+1, A=C+3;
+  const pairs=[['C','L',C,L],['C','S',C,s],['L','A',L,A],['S','A',s,A],['A','B',A,B]];
+  const same=pairs.filter(p=>p[2]===p[3]).map(p=>p[0]+'='+p[1]).join(', ')||'(none)';
+  document.getElementById('info').innerHTML = en()
+    ? `S=${s}, L=${L}, B=${B}, C=${C}, A=${A}<br>Equal pairs: ${same}`
+    : `S=${s}, L=${L}, B=${B}, C=${C}, A=${A}<br>相同的一对：${same}`;
+}
+calc();
+
+</script>
+</body>
+</html>

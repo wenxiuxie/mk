@@ -3,146 +3,358 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>2024 A · Q17</title>
+<title>2024 A · Q17 · 俯视图</title>
 <style>
-:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--ok:#16a34a;--muted:#64748b}
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50;--green:#22c55e}
 *{box-sizing:border-box}
-body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
-.topbar{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
-.brand{font-weight:800;color:var(--ink);font-size:14px}
-.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
-.lang-btn:hover{background:#e0f2fe}
-.wrap{max-width:760px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
-h1{margin:0 0 8px;color:var(--ink);font-size:24px}
-.meta{color:var(--muted);font-size:13px;margin-bottom:14px}
-.qbox{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:14px;padding:14px;line-height:1.65;margin-bottom:16px}
-.play{margin:16px 0;padding:14px;background:#f0f9ff;border-radius:14px}
-.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-button.act{border:none;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer}
-.primary{background:#0284c7;color:#fff}
-.ok{background:#22c55e;color:#fff}
-.warn{background:#fef3c7;color:#92400e}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig-opts{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.stage-wrap{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
+.viewer{
+  position:relative;width:340px;height:320px;border-radius:14px;border:1px solid #e2e8f0;
+  background:linear-gradient(180deg,#f8fafc,#eef2ff);cursor:grab;touch-action:none;user-select:none;
+}
+.viewer:active{cursor:grabbing}
+.viewer canvas{display:block;width:100%;height:100%;border-radius:14px}
+.viewer .hint{
+  position:absolute;left:10px;bottom:8px;font-size:11px;color:#64748b;pointer-events:none;
+  background:rgba(255,255,255,.75);padding:2px 8px;border-radius:999px;
+}
+.paint-wrap{text-align:center}
+.paint-wrap h3{margin:0 0 8px;font-size:15px;color:#0f172a}
+.grid3{
+  display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(3,56px);
+  gap:5px;margin:0 auto;padding:10px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;
+}
+.cell{
+  border:2px solid #94a3b8;border-radius:8px;background:#fff;cursor:pointer;position:relative;
+}
+.cell.on{background:var(--green);border-color:#15803d}
+.cell .mark{position:absolute;top:3px;left:3px;width:10px;height:10px;background:#fff;border:1px solid #cbd5e1;border-radius:2px;display:none}
+.cell.corner .mark{display:block}
+.opts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.opt-card{
+  width:88px;padding:8px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;
+  cursor:grab;user-select:none;text-align:center;
+}
+.opt-card.picked{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.3)}
+.opt-card .letter{font-weight:800;color:#64748b;font-size:13px;margin-bottom:4px}
+.mini{display:grid;grid-template-columns:repeat(3,18px);grid-template-rows:repeat(3,18px);gap:2px;margin:0 auto;justify-content:center}
+.mini i{display:block;border:1px solid #94a3b8;border-radius:2px;background:#fff}
+.mini i.on{background:var(--green);border-color:#15803d}
+.answer-box{
+  width:120px;height:120px;border:3px dashed var(--primary);border-radius:14px;
+  margin:12px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:28px;font-weight:800;background:#fafbfc;gap:6px;
+}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+.actions{text-align:center;margin-top:10px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
 .ghost{background:#e2e8f0;color:#334155}
-.msg{min-height:22px;margin-top:10px;font-weight:700;color:var(--ink)}
-.msg.good{color:var(--ok)}
-.options{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.opt{min-width:56px;padding:10px 12px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-weight:800;cursor:pointer;text-align:center}
-.opt.correct{background:#dcfce7;border-color:#16a34a;color:#166534}
-.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
-.hint{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6}
-.nav{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
-.nav a{color:var(--accent);font-weight:700;text-decoration:none}
-.chip{display:inline-block;background:#fff;border:2px solid #7dd3fc;border-radius:999px;padding:4px 10px;margin:3px;font-weight:700;color:#0369a1}
-.grid{display:inline-grid;gap:4px;background:#fff;padding:8px;border-radius:10px}
-.cell{width:44px;height:44px;border:2px solid #94a3b8;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;user-select:none}
-.cell.grey{background:#94a3b8;color:#fff}
-.cell.white{background:#fff}
-.cell.path{outline:3px solid #f59e0b;outline-offset:-3px}
-.cell.start{box-shadow:inset 0 0 0 3px #22c55e}
-.cell.end{box-shadow:inset 0 0 0 3px #ef4444}
-.board{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.num{width:56px;height:56px;border-radius:12px;background:#fff;border:3px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;cursor:pointer}
-.num.on{background:#0284c7;color:#fff}
-.node{width:52px;height:52px;border-radius:50%;background:#e0f2fe;border:3px solid #0284c7;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;position:absolute}
-.node.hot{background:#fde68a;border-color:#d97706}
-.pat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.pat .item{width:64px;height:64px;border-radius:12px;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:28px;background:#fff}
-.pat .item.hl{border-color:#16a34a;background:#dcfce7;transform:scale(1.05)}
-
-.figwrap{margin:12px 0 4px;text-align:center}
-.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:12px;background:#fff;border:1px solid #e2e8f0}
-.fig-md{max-width:420px}
-.figcap{margin:10px 0 4px;font-weight:700;color:#0369a1;font-size:14px}
-
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="brand">Math Kangaroo 2024 · Level A</div>
-  <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN / 中文</button>
-</div>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+
+<h1 class="lang-zh">从上往下看立方体</h1>
+<h1 class="lang-en">Cubes From Above</h1>
+<div class="meta lang-zh">2024 等级 A · 第 17 题 · 5 分</div>
+<div class="meta lang-en">2024 Level A · Q17 · 5 points</div>
+
 <div class="wrap">
-  <h1 data-zh="从上往下看立方体" data-en="Cubes From Above"></h1>
-  <div class="meta" data-zh="第 17 题 · 5 分" data-en="Question 17 · 5 points"></div>
-
-<div class="qbox" data-zh-html="透明盒子里有 <b>6</b> 个小立方体。如果从上往下看，会看到哪张图？"
-data-en-html="A transparent box contains <b>6</b> small cubes. What do you see from above?"></div>
-
-<div class="figwrap">
-  <img class="fig fig-md" src="assets/q17_figure.png" alt="Q17 cube box"/>
-  <p class="figcap" data-zh="从上往下看，选项如下：" data-en="Top-view options:"></p>
-  <img class="fig" src="assets/q17opts_figure.png" alt="Q17 options A-E"/>
-</div>
-
-<div class="play">
-  <p data-zh="解题思路：从上往下看，只关心「俯视图」占哪些格。" data-en="Tip: from above, only care which cells are occupied in the top view."></p>
-  <div class="btnrow">
-    <button class="act primary" onclick="showTip()" data-zh="显示关键提示" data-en="Show key tip"></button>
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">透明盒子里有 <b>6</b> 个小立方体。如果从上往下看，会看到哪张图？</p>
+    <p class="lang-en">A transparent box contains <b>6</b> small cubes. What do you see from above?</p>
+    <img class="fig-opts" src="assets/q17_figure.png" alt="Q17" style="max-width:320px"/>
+    <p class="tip lang-zh">选项 A–E：</p>
+    <p class="tip lang-en">Options A–E:</p>
+    <img class="fig-opts" src="assets/q17opts_figure.png" alt="Q17 options"/>
   </div>
-  <div class="msg" id="playMsg"></div>
-</div>
-<p class="hint" data-zh="答案 E：左上角看到三个立方体的俯视占位，右下角透过透明玻璃还能看到一颗。"
-data-en="Answer E: three cubes in the upper-left from above, plus one visible through glass at bottom-right."></p>
-<div class="options">
-<div class="opt" data-ans="A" onclick="markAnswer(this,'E')">A</div>
-<div class="opt" data-ans="B" onclick="markAnswer(this,'E')">B</div>
-<div class="opt" data-ans="C" onclick="markAnswer(this,'E')">C</div>
-<div class="opt" data-ans="D" onclick="markAnswer(this,'E')">D</div>
-<div class="opt" data-ans="E" onclick="markAnswer(this,'E')">E</div>
-</div>
-<div class="msg" id="msg" data-zh="先自己想一想，再点选项。" data-en="Think first, then tap an option."></div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：拖动旋转立方体，多角度观察</h2>
+    <h2 class="lang-en">Lab: drag to rotate the cubes</h2>
+    <p class="tip lang-zh">按住拖动可旋转。也可点「俯视」从正上方看。右边自己画俯视图，再选选项。</p>
+    <p class="tip lang-en">Drag to rotate. Tap “Top view” to look straight down. Paint the top view on the right, then choose.</p>
+
+    <div class="stage-wrap">
+      <div>
+        <div class="viewer" id="viewer">
+          <canvas id="cv" width="680" height="640"></canvas>
+          <div class="hint lang-zh">拖动旋转</div>
+          <div class="hint lang-en">Drag to rotate</div>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" onclick="setView('iso')"><span class="lang-zh">斜视</span><span class="lang-en">Iso</span></button>
+          <button class="btn ghost" onclick="setView('top')"><span class="lang-zh">俯视</span><span class="lang-en">Top</span></button>
+          <button class="btn ghost" onclick="setView('front')"><span class="lang-zh">正视</span><span class="lang-en">Front</span></button>
+          <button class="btn ghost" onclick="setView('side')"><span class="lang-zh">侧视</span><span class="lang-en">Side</span></button>
+        </div>
+      </div>
+      <div class="paint-wrap">
+        <h3 class="lang-zh">我的俯视图（点格子）</h3>
+        <h3 class="lang-en">My top view (tap)</h3>
+        <div class="grid3" id="paint"></div>
+      </div>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:16px">拖选项到答案框</p>
+    <p class="tip lang-en" style="margin-top:16px">Drag an option to the answer box</p>
+    <div class="opts" id="opts"></div>
+    <div class="answer-box" id="ansBox" ondragover="allowDrop(event)" ondrop="dropAns(event)" onclick="placePicked()"></div>
+
+    <div class="actions">
+      <button class="btn reset" onclick="resetPaint()"><span class="lang-zh">清空俯视图</span><span class="lang-en">Clear paint</span></button>
+      <button class="btn reset" onclick="clearAns()"><span class="lang-zh">清空答案</span><span class="lang-en">Clear answer</span></button>
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
 
   <div class="nav">
-    <a href="16.html" data-zh="← 上一题" data-en="← Prev"></a>
-    <a href="18.html" data-zh="下一题 →" data-en="Next →"></a>
+    <a href="16.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="18.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
   </div>
 </div>
+
 <script>
+// 6 个小立方体：x 左右, y 上下, z 前后(2=后)。俯视占位对应选项 E
+const CUBES = [
+  [0,0,2],[0,1,2],[0,2,2], // 后左柱
+  [1,2,2],[2,2,2],         // 后排顶
+  [0,2,1]                  // 中左顶（白标在后左顶）
+];
+const MARK = [0,2,2];
 
-let lang = localStorage.getItem('mk_lang') || 'zh';
-function applyLang(){
-  document.querySelectorAll('[data-zh]').forEach(el=>{
-    el.textContent = lang==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
-  });
-  document.querySelectorAll('[data-zh-html]').forEach(el=>{
-    el.innerHTML = lang==='zh' ? el.getAttribute('data-zh-html') : el.getAttribute('data-en-html');
-  });
-  const b=document.getElementById('langBtn');
-  if(b) b.textContent = lang==='zh' ? 'EN / 中文' : '中文 / EN';
-  localStorage.setItem('mk_lang', lang);
+const OPTS = {
+  A:[1,1,1, 1,0,0, 1,0,0],
+  B:[1,1,1, 0,0,0, 1,0,0],
+  C:[1,1,1, 0,1,0, 0,0,0],
+  D:[1,1,1, 1,1,0, 0,0,0],
+  E:[1,1,1, 1,0,0, 0,0,0]
+};
+
+let paint = Array(9).fill(0);
+let ans=null, picked=null, dragLetter=null;
+let rotY = -0.7, rotX = 0.45;
+let dragging=false, lastX=0, lastY=0;
+
+const canvas=document.getElementById('cv');
+const ctx=canvas.getContext('2d');
+const viewer=document.getElementById('viewer');
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function rot(p, ry, rx){
+  let [x,y,z]=p;
+  // center of 3x3x3
+  x-=1; y-=1; z-=1;
+  // rotate Y
+  let cos=Math.cos(ry), sin=Math.sin(ry);
+  let x1=x*cos - z*sin, z1=x*sin + z*cos;
+  // rotate X
+  cos=Math.cos(rx); sin=Math.sin(rx);
+  let y1=y*cos - z1*sin, z2=y*sin + z1*cos;
+  return [x1,y1,z2];
 }
-function toggleLang(){ lang = lang==='zh'?'en':'zh'; applyLang(); }
-function markAnswer(btn, correctLetter){
-  const letter=btn.dataset.ans;
-  document.querySelectorAll('.opt').forEach(o=>{
-    o.classList.remove('correct','wrong');
-    if(o.dataset.ans===correctLetter) o.classList.add('correct');
-    if(o.dataset.ans===letter && letter!==correctLetter) o.classList.add('wrong');
+
+function project(p){
+  const scale=78;
+  const [x,y,z]=rot(p, rotY, rotX);
+  const cx=canvas.width/2, cy=canvas.height/2+20;
+  return [cx + x*scale, cy - y*scale + z*scale*0.15, z];
+}
+
+function drawCube(gx,gy,gz, marked){
+  const s=1;
+  const corners=[
+    [gx,gy,gz],[gx+s,gy,gz],[gx+s,gy+s,gz],[gx,gy+s,gz],
+    [gx,gy,gz+s],[gx+s,gy,gz+s],[gx+s,gy+s,gz+s],[gx,gy+s,gz+s]
+  ].map(c=>project(c));
+
+  const faces=[
+    [0,1,2,3], // front z
+    [4,5,6,7], // back z
+    [0,1,5,4], // bottom
+    [3,2,6,7], // top
+    [0,3,7,4], // left
+    [1,2,6,5]  // right
+  ];
+  const colors=marked
+    ? ['#86efac','#4ade80','#22c55e','#bbf7d0','#16a34a','#15803d']
+    : ['#4ade80','#22c55e','#16a34a','#86efac','#15803d','#166534'];
+
+  // depth of face = avg z of corners
+  const faced=[];
+  faces.forEach((f,i)=>{
+    const pts=f.map(j=>corners[j]);
+    const depth=pts.reduce((a,p)=>a+p[2],0)/4;
+    faced.push({pts, depth, color:colors[i], top:i===3, marked});
   });
-  const msg=document.getElementById('msg');
-  if(!msg) return;
-  if(letter===correctLetter){
-    msg.className='msg good';
-    msg.setAttribute('data-zh','答对了！');
-    msg.setAttribute('data-en','Correct!');
-  }else{
-    msg.className='msg';
-    msg.setAttribute('data-zh','再想想～正确答案已标绿。');
-    msg.setAttribute('data-en','Try again — correct option is highlighted.');
+  faced.sort((a,b)=>a.depth-b.depth);
+  faced.forEach(f=>{
+    ctx.beginPath();
+    f.pts.forEach((p,i)=>{ if(i===0) ctx.moveTo(p[0],p[1]); else ctx.lineTo(p[0],p[1]); });
+    ctx.closePath();
+    ctx.fillStyle=f.color;
+    ctx.fill();
+    ctx.strokeStyle='#14532d';
+    ctx.lineWidth=2;
+    ctx.stroke();
+    if(f.top && f.marked){
+      const cx=(f.pts[0][0]+f.pts[1][0]+f.pts[2][0]+f.pts[3][0])/4;
+      const cy=(f.pts[0][1]+f.pts[1][1]+f.pts[2][1]+f.pts[3][1])/4;
+      ctx.fillStyle='#fff';
+      ctx.fillRect(cx-8, cy-8, 16, 16);
+      ctx.strokeStyle='#94a3b8';
+      ctx.strokeRect(cx-8, cy-8, 16, 16);
+    }
+  });
+  return corners.reduce((a,p)=>a+p[2],0)/8;
+}
+
+function drawWire(){
+  // 3x3x3 wireframe box edges
+  const edges=[];
+  for(let a=0;a<=3;a++) for(let b=0;b<=3;b++){
+    edges.push([[a,0,b],[a,3,b]],[[0,a,b],[3,a,b]],[[a,b,0],[a,b,3]]);
   }
-  applyLang();
+  // only outer box edges to reduce clutter
+  const outer=[];
+  const corners=[[0,0,0],[3,0,0],[3,3,0],[0,3,0],[0,0,3],[3,0,3],[3,3,3],[0,3,3]];
+  const eidx=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+  // bottom grid
+  ctx.strokeStyle='rgba(100,116,139,.55)';
+  ctx.lineWidth=1.5;
+  for(let i=0;i<=3;i++){
+    let p0=project([i,0,0]), p1=project([i,0,3]);
+    ctx.beginPath(); ctx.moveTo(p0[0],p0[1]); ctx.lineTo(p1[0],p1[1]); ctx.stroke();
+    p0=project([0,0,i]); p1=project([3,0,i]);
+    ctx.beginPath(); ctx.moveTo(p0[0],p0[1]); ctx.lineTo(p1[0],p1[1]); ctx.stroke();
+  }
+  ctx.strokeStyle='#334155';
+  ctx.lineWidth=2;
+  eidx.forEach(([a,b])=>{
+    const p0=project(corners[a]), p1=project(corners[b]);
+    ctx.beginPath(); ctx.moveTo(p0[0],p0[1]); ctx.lineTo(p1[0],p1[1]); ctx.stroke();
+  });
 }
-document.addEventListener('DOMContentLoaded', applyLang);
 
-
-function showTip(){
-  const m=document.getElementById('playMsg');
-  m.className='msg good';
-  m.setAttribute('data-zh','俯视图要同时数「看得见的顶面」和「透过玻璃仍占格的立方体」。');
-  m.setAttribute('data-en','Count both visible top faces and cubes still occupying cells through the glass.');
-  applyLang();
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  drawWire();
+  const items=CUBES.map(([x,y,z])=>{
+    const marked=x===MARK[0]&&y===MARK[1]&&z===MARK[2];
+    const depth=rot([x+0.5,y+0.5,z+0.5], rotY, rotX)[2];
+    return {x,y,z,marked,depth};
+  });
+  items.sort((a,b)=>a.depth-b.depth);
+  items.forEach(c=>drawCube(c.x,c.y,c.z,c.marked));
 }
 
+function setView( wh ){
+  if(wh==='iso'){ rotY=-0.7; rotX=0.45; }
+  if(wh==='top'){ rotY=0; rotX=Math.PI/2-0.001; }
+  if(wh==='front'){ rotY=0; rotX=0.15; }
+  if(wh==='side'){ rotY=-Math.PI/2; rotX=0.2; }
+  draw();
+}
+
+viewer.addEventListener('pointerdown',e=>{
+  dragging=true; lastX=e.clientX; lastY=e.clientY;
+  viewer.setPointerCapture(e.pointerId);
+});
+viewer.addEventListener('pointermove',e=>{
+  if(!dragging) return;
+  const dx=e.clientX-lastX, dy=e.clientY-lastY;
+  lastX=e.clientX; lastY=e.clientY;
+  rotY += dx*0.01;
+  rotX += dy*0.01;
+  rotX=Math.max(-0.2, Math.min(Math.PI/2, rotX));
+  draw();
+});
+viewer.addEventListener('pointerup',()=>{dragging=false});
+viewer.addEventListener('pointercancel',()=>{dragging=false});
+
+function renderPaint(){
+  const g=document.getElementById('paint');
+  g.innerHTML='';
+  for(let i=0;i<9;i++){
+    const d=document.createElement('div');
+    d.className='cell'+(paint[i]?' on':'')+(i===0?' corner':'');
+    d.innerHTML='<span class="mark"></span>';
+    d.onclick=()=>{ paint[i]=paint[i]?0:1; renderPaint(); clearFb(); };
+    g.appendChild(d);
+  }
+}
+function miniHTML(arr){
+  return `<div class="mini">${arr.map(v=>`<i class="${v?'on':''}"></i>`).join('')}</div>`;
+}
+function renderOpts(){
+  const box=document.getElementById('opts');
+  box.innerHTML='';
+  Object.keys(OPTS).forEach(L=>{
+    const card=document.createElement('div');
+    card.className='opt-card'+(picked===L?' picked':'');
+    card.draggable=true;
+    card.innerHTML=`<div class="letter">${L}</div>${miniHTML(OPTS[L])}`;
+    card.ondragstart=()=>{ dragLetter=L; };
+    card.onclick=()=>{ picked=L; dragLetter=L; renderOpts(); };
+    box.appendChild(card);
+  });
+}
+function allowDrop(e){ e.preventDefault(); }
+function dropAns(e){ e.preventDefault(); if(dragLetter) setAns(dragLetter); }
+function placePicked(){ if(picked) setAns(picked); }
+function setAns(L){
+  ans=L; picked=L; dragLetter=null;
+  const box=document.getElementById('ansBox');
+  box.className='answer-box filled';
+  box.innerHTML=`<span>${L}</span>${miniHTML(OPTS[L])}`;
+  renderOpts(); clearFb();
+}
+function clearAns(){
+  ans=null; picked=null;
+  const box=document.getElementById('ansBox');
+  box.className='answer-box'; box.innerHTML='';
+  renderOpts(); clearFb();
+}
+function resetPaint(){ paint=Array(9).fill(0); renderPaint(); clearFb(); }
+function clearFb(){ document.getElementById('feedback').textContent=''; }
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!ans){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Put an option in the answer box first.':'❌ 请先把选项放进答案框。';
+    return;
+  }
+  const ok=ans==='E';
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ Top view matches!':'✅ 俯视图选对了！')
+    :(en()?'❌ Not yet — rotate and look straight down.':'❌ 还不对——再旋转，用「俯视」看一看。');
+}
+
+draw();
+renderPaint();
+renderOpts();
 </script>
 </body>
 </html>

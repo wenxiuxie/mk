@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q15 · 教室座位</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:900px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:640px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig-sm{max-width:420px}
+.opts-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.opt-img{width:110px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;padding:4px;cursor:pointer}
+.opt-img.picked{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.35)}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:72px;padding:10px 12px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:grab;text-align:center;user-select:none}
+.answer-box{min-width:120px;min-height:72px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+.actions{text-align:center;margin-top:10px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.info{text-align:center;font-weight:700;min-height:28px;margin:8px 0;color:#0f172a}
+.chip{display:inline-block;background:#e0f2fe;border:1px solid #7dd3fc;border-radius:999px;padding:6px 12px;margin:3px;font-weight:700;color:#0369a1}
+.ages{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.age{width:56px;height:56px;border-radius:12px;border:3px solid var(--primary);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;cursor:pointer;background:#fff}
+.age.on{background:var(--primary);color:#fff}
+.grid3{display:inline-grid;grid-template-columns:repeat(3,56px);gap:6px}
+.cell{width:56px;height:56px;border:2px solid #94a3b8;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;background:#fff;cursor:pointer}
+.cell.bad{background:#fee2e2;border-color:#ef4444}
+.cell.good{background:#dcfce7;border-color:#16a34a}
+.sumbox{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:13px;font-weight:700;color:#475569;margin-top:8px}
+.seat{display:inline-grid;gap:4px;background:#f8fafc;padding:10px;border-radius:10px;border:1px solid #e2e8f0}
+.s{width:36px;height:36px;border-radius:8px;border:2px solid #cbd5e1;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.s.me{background:#fde68a;border-color:#f59e0b}
+.s.occ{background:#bfdbfe;border-color:#3b82f6}
+.bar{display:flex;gap:8px;align-items:center;justify-content:center;margin:8px 0;flex-wrap:wrap}
+input[type=number],input[type=range],select{padding:6px 8px;border-radius:8px;border:2px solid #cbd5e1;font-weight:700}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">教室座位</h1>
+<h1 class="lang-en">Classroom Seats</h1>
+<div class="meta lang-zh">2022 等级 B · 第 15 题 · 4 分</div>
+<div class="meta lang-en">2022 Level B · Q15 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">每排人数相同。小罗前面 2 排、后面 1 排；他这一排左边 3 人、右边 5 人。全班多少人？</p>
+    <p class="lang-en">Same number per row. 2 rows in front of Robert, 1 behind; 3 on his left, 5 on his right. How many pupils?</p>
+    
+  </div>
+  <div class="section">
+    
+    <h2 class="lang-zh">实验：画出小罗周围的座位</h2>
+    <h2 class="lang-en">Lab: draw the seats around Robert</h2>
+    <p class="tip lang-zh">前面 2 排、后面 1 排 → 共 4 排；左边 3、自己、右边 5 → 每排 9 人。</p>
+    <p class="tip lang-en">2 rows front + him + 1 back = 4 rows; 3 left + him + 5 right = 9 per row.</p>
+    <div style="text-align:center" id="seat"></div>
+    <div class="info" id="info"></div>
+    <div class="actions"><button class="btn ghost" onclick="draw()"><span class="lang-zh">画出座位图</span><span class="lang-en">Draw seats</span></button></div>
+    
+    <p class="tip lang-zh" style="margin-top:16px">我的答案（拖进去或点选）</p>
+    <p class="tip lang-en" style="margin-top:16px">My answer (drag or tap)</p>
+    <div class="pool" id="pool"><div class="card" draggable="true" data-ans="A" ondragstart="dragN='A'" onclick="setAns('A')"><div>A</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">10</span><span class="lang-en">10</span></div></div><div class="card" draggable="true" data-ans="B" ondragstart="dragN='B'" onclick="setAns('B')"><div>B</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">17</span><span class="lang-en">17</span></div></div><div class="card" draggable="true" data-ans="C" ondragstart="dragN='C'" onclick="setAns('C')"><div>C</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">18</span><span class="lang-en">18</span></div></div><div class="card" draggable="true" data-ans="D" ondragstart="dragN='D'" onclick="setAns('D')"><div>D</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">27</span><span class="lang-en">27</span></div></div><div class="card" draggable="true" data-ans="E" ondragstart="dragN='E'" onclick="setAns('E')"><div>E</div><div style="font-size:12px;opacity:.95"><span class="lang-zh">36</span><span class="lang-en">36</span></div></div></div>
+    <div class="answer-box" id="ansBox" ondragover="event.preventDefault()" ondrop="dropAns(event)" onclick="clearAns()"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="14.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="16.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='E';
+let ans=null, dragN=null;
+function en(){return document.body.classList.contains('en-mode');}
+function setAns(L){
+  ans=L; dragN=null;
+  const c=document.querySelector('.card[data-ans="'+L+'"]');
+  const box=document.getElementById('ansBox');
+  box.className='answer-box filled';
+  box.innerHTML=c?c.innerHTML:L;
+  document.getElementById('feedback').textContent='';
+}
+function dropAns(e){e.preventDefault(); if(dragN) setAns(dragN);}
+function clearAns(){
+  ans=null; const box=document.getElementById('ansBox');
+  box.className='answer-box'; box.innerHTML='';
+  document.getElementById('feedback').textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!ans){ fb.className='bad'; fb.textContent=en()?'❌ Choose an option first.':'❌ 请先选择一个选项。'; return; }
+  const ok=ans===CORRECT;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — keep experimenting.':'❌ 还不对——再实验一下。');
+}
+
+function draw(){
+  const rows=4, cols=9, meR=2, meC=3; // 0-index: front 0,1 then Robert row 2, behind 3; left 0,1,2 then me at 3
+  const box=document.getElementById('seat');
+  const g=document.createElement('div'); g.className='seat'; g.style.gridTemplateColumns=`repeat(${cols},36px)`;
+  for(let r=0;r<rows;r++) for(let c=0;c<cols;c++){
+    const d=document.createElement('div'); d.className='s occ';
+    if(r===meR&&c===meC){ d.className='s me'; d.textContent='R'; }
+    g.appendChild(d);
+  }
+  box.innerHTML=''; box.appendChild(g);
+  document.getElementById('info').textContent = en()
+    ? `Rows=${rows}, seats/row=${cols}, total=${rows*cols}.`
+    : `排数=${rows}，每排=${cols}，全班=${rows*cols}。`;
+}
+
+</script>
+</body>
+</html>

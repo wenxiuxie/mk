@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 B · Q11 · 明信片推理</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.clues{display:flex;flex-direction:column;gap:8px;max-width:640px;margin:12px auto}
+.clue{
+  text-align:left;padding:10px 14px;border-radius:12px;border:2px solid #e2e8f0;background:#f8fafc;
+  cursor:pointer;font-weight:700;font-size:14px;line-height:1.45;transition:border-color .15s,background .15s;
+}
+.clue:hover{border-color:#93c5fd}
+.clue.on{border-color:#f59e0b;background:#fffbeb;box-shadow:0 0 0 3px rgba(245,158,11,.25)}
+.cards{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.pcard{
+  width:120px;border:3px solid #cbd5e1;border-radius:12px;background:#fff;padding:6px;position:relative;
+  cursor:pointer;transition:transform .15s,border-color .15s,opacity .15s;user-select:none;
+}
+.pcard img{width:100%;display:block;border-radius:8px}
+.pcard .lab{text-align:center;font-weight:800;margin-bottom:4px}
+.pcard.hot{border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.3)}
+.pcard.out{opacity:.35;filter:grayscale(.8)}
+.pcard.out::after{
+  content:'✕';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:48px;font-weight:900;color:#ef4444;pointer-events:none;
+}
+.pcard.assigned{border-color:#4a90e2}
+.badge{
+  position:absolute;top:6px;right:6px;background:#1e293b;color:#fff;font-size:11px;font-weight:800;
+  padding:2px 6px;border-radius:999px;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.board{overflow-x:auto;margin:14px 0}
+table.logic{border-collapse:collapse;margin:0 auto;font-size:13px}
+table.logic th,table.logic td{border:1px solid #cbd5e1;padding:8px;text-align:center;min-width:52px}
+table.logic th{background:#f1f5f9;font-weight:800}
+table.logic td.mark{cursor:pointer;font-weight:900;font-size:16px;user-select:none}
+table.logic td.mark.yes{background:#dcfce7;color:#166534}
+table.logic td.mark.no{background:#fee2e2;color:#991b1b}
+table.logic .who{text-align:left;font-weight:800;white-space:nowrap;background:#f8fafc}
+.info{text-align:center;font-weight:700;min-height:28px;margin:8px 0;color:#0f172a}
+.mike-ask{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mike-btn{
+  width:56px;height:56px;border-radius:14px;border:3px solid var(--primary);background:#fff;
+  font-weight:800;font-size:20px;cursor:pointer;
+}
+.mike-btn.on{background:var(--primary);color:#fff}
+.actions{text-align:center;margin-top:10px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.legend{font-size:12px;color:#64748b;text-align:center;margin-top:6px}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); renderAll()">🌐 English / 中文</button>
+
+<h1 class="lang-zh">明信片推理</h1>
+<h1 class="lang-en">Postcard Logic</h1>
+<div class="meta lang-zh">2022 等级 B · 第 11 题 · 4 分</div>
+<div class="meta lang-en">2022 Level B · Q11 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">五张明信片寄给五位朋友。根据线索判断：<b>小明</b>收到哪一张？</p>
+    <p class="lang-en">Five postcards to five friends. From the clues: which card did <b>Mike</b> get?</p>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验：点线索排除 → 在表格里打 ✓ / ✕</h2>
+    <h2 class="lang-en">Lab: tap clues to filter → mark ✓ / ✕ in the grid</h2>
+    <p class="tip lang-zh">① 点一条线索，符合的卡会变绿高亮；再点卡片可打叉排除。<br>② 在下方表格里：点格子在「空 / ✓ / ✕」之间切换，把人和卡对应起来。<br>③ 最后点选：小明是哪张？</p>
+    <p class="tip lang-en">① Tap a clue — matching cards turn green; tap a card to cross it out.<br>② In the grid, cycle empty / ✓ / ✕ to match people and cards.<br>③ Finally choose: which card is Mike’s?</p>
+
+    <div class="clues" id="clues"></div>
+
+    <div class="cards" id="cards"></div>
+    <div class="info" id="info"></div>
+    <p class="legend lang-zh">提示：先确定「有狗」「有袋鼠」往往最容易</p>
+    <p class="legend lang-en">Tip: “has a dog” and “has kangaroos” are usually easiest to lock first</p>
+
+    <div class="board">
+      <table class="logic" id="grid"></table>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="autoMarkFromClue()"><span class="lang-zh">按当前线索标 ✕</span><span class="lang-en">Mark ✕ from current clue</span></button>
+      <button class="btn reset" onclick="resetAll()"><span class="lang-zh">重置推理</span><span class="lang-en">Reset</span></button>
+    </div>
+
+    <h2 class="lang-zh" style="margin-top:18px">小明收到的是？</h2>
+    <h2 class="lang-en" style="margin-top:18px">Mike’s card is?</h2>
+    <div class="mike-ask" id="mikeAsk"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="10.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="12.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const CARDS = [
+  {id:'A', file:'q11_optA.png', duck:false, sun:true,  creatures:0, dog:false, roo:false},
+  {id:'B', file:'q11_optB.png', duck:false, sun:false, creatures:2, dog:false, roo:true},
+  {id:'C', file:'q11_optC.png', duck:false, sun:false, creatures:2, dog:false, roo:false},
+  {id:'D', file:'q11_optD.png', duck:true,  sun:true,  creatures:6, dog:false, roo:false},
+  {id:'E', file:'q11_optE.png', duck:false, sun:false, creatures:1, dog:true,  roo:false},
+];
+const PEOPLE = [
+  {id:'mike',    zh:'小明', en:'Mike',    clueKey:'mike'},
+  {id:'cara',    zh:'卡拉', en:'Cara',    clueKey:'cara'},
+  {id:'paula',   zh:'宝拉', en:'Paula',   clueKey:'paula'},
+  {id:'lexi',    zh:'莱西', en:'Lexi',    clueKey:'lexi'},
+  {id:'heather', zh:'希希', en:'Heather', clueKey:'heather'},
+];
+const CLUES = [
+  {key:'mike',    zh:'小明的卡上没有鸭子', en:"Mike’s card has no ducks",
+   match: c => !c.duck, person:'mike'},
+  {key:'cara',    zh:'卡拉的卡上有太阳', en:"Cara’s card has the sun",
+   match: c => c.sun, person:'cara'},
+  {key:'paula',   zh:'宝拉的卡正好两种生物', en:"Paula’s card has exactly two living creatures",
+   match: c => c.creatures===2, person:'paula'},
+  {key:'lexi',    zh:'莱西的卡上有狗', en:"Lexi’s card has a dog",
+   match: c => c.dog, person:'lexi'},
+  {key:'heather', zh:'希希的卡上有袋鼠', en:"Heather’s card has kangaroos",
+   match: c => c.roo, person:'heather'},
+];
+
+let activeClue = null;
+let crossed = new Set(); // card ids crossed out
+// grid[personId][cardId] = '' | 'yes' | 'no'
+let grid = {};
+let mikeAns = null;
+let assign = {}; // personId -> cardId
+
+function en(){ return document.body.classList.contains('en-mode'); }
+function pname(p){ return en()?p.en:p.zh; }
+
+function initGrid(){
+  grid={}; assign={};
+  PEOPLE.forEach(p=>{
+    grid[p.id]={};
+    CARDS.forEach(c=> grid[p.id][c.id]='');
+  });
+}
+
+function matchCards(clue){
+  return CARDS.filter(clue.match).map(c=>c.id);
+}
+
+function renderClues(){
+  const box=document.getElementById('clues');
+  box.innerHTML='';
+  CLUES.forEach(cl=>{
+    const d=document.createElement('div');
+    d.className='clue'+(activeClue===cl.key?' on':'');
+    d.textContent = (en()?cl.en:cl.zh);
+    d.onclick=()=>{
+      activeClue = (activeClue===cl.key)? null : cl.key;
+      renderAll();
+      const hits=matchCards(cl);
+      document.getElementById('info').textContent = en()
+        ? `Clue active: cards that fit → ${hits.join(', ')||'none'}`
+        : `当前线索：可能符合的卡 → ${hits.join('、')||'无'}`;
+    };
+    box.appendChild(d);
+  });
+}
+
+function renderCards(){
+  const box=document.getElementById('cards');
+  box.innerHTML='';
+  const hits = activeClue ? new Set(matchCards(CLUES.find(c=>c.key===activeClue))) : null;
+  // who owns this card?
+  const ownerOf = {};
+  Object.entries(assign).forEach(([pid,cid])=>{ ownerOf[cid]=pid; });
+
+  CARDS.forEach(c=>{
+    const d=document.createElement('div');
+    let cls='pcard';
+    if(crossed.has(c.id)) cls+=' out';
+    if(hits && hits.has(c.id)) cls+=' hot';
+    if(ownerOf[c.id]) cls+=' assigned';
+    d.className=cls;
+    const owner=ownerOf[c.id] ? PEOPLE.find(p=>p.id===ownerOf[c.id]) : null;
+    d.innerHTML =
+      `<div class="lab">${c.id}</div>`+
+      `<img src="assets/${c.file}" alt="${c.id}"/>`+
+      (owner?`<span class="badge">${pname(owner)}</span>`:'');
+    d.onclick=()=>{
+      if(crossed.has(c.id)) crossed.delete(c.id);
+      else crossed.add(c.id);
+      // also mark no for all people on this card? optional
+      renderAll();
+    };
+    box.appendChild(d);
+  });
+}
+
+function renderGrid(){
+  const table=document.getElementById('grid');
+  let html='<tr><th></th>'+CARDS.map(c=>`<th>${c.id}</th>`).join('')+'</tr>';
+  PEOPLE.forEach(p=>{
+    html+=`<tr><td class="who">${pname(p)}</td>`;
+    CARDS.forEach(c=>{
+      const v=grid[p.id][c.id];
+      const mark=v===''?'·':(v==='yes'?'✓':'✕');
+      html+=`<td class="mark ${v}" data-p="${p.id}" data-c="${c.id}">${mark}</td>`;
+    });
+    html+='</tr>';
+  });
+  table.innerHTML=html;
+  table.querySelectorAll('td.mark').forEach(td=>{
+    td.onclick=()=>{
+      const p=td.dataset.p, c=td.dataset.c;
+      const cur=grid[p][c];
+      const next=cur===''?'yes':(cur==='yes'?'no':'');
+      // if yes, clear other yes in same row/col for uniqueness
+      if(next==='yes'){
+        CARDS.forEach(x=>{ if(x.id!==c){ if(grid[p][x.id]==='yes') grid[p][x.id]=''; }});
+        PEOPLE.forEach(y=>{ if(y.id!==p){ if(grid[y.id][c]==='yes') grid[y.id][c]=''; }});
+        assign[p]=c;
+        // remove other assigns of this card
+        Object.keys(assign).forEach(k=>{ if(k!==p && assign[k]===c) delete assign[k]; });
+      } else {
+        if(assign[p]===c) delete assign[p];
+      }
+      grid[p][c]=next;
+      renderAll();
+    };
+  });
+}
+
+function renderMikeAsk(){
+  const box=document.getElementById('mikeAsk');
+  box.innerHTML='';
+  CARDS.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='mike-btn'+(mikeAns===c.id?' on':'');
+    b.textContent=c.id;
+    b.onclick=()=>{ mikeAns=c.id; document.getElementById('feedback').textContent=''; renderMikeAsk(); };
+    box.appendChild(b);
+  });
+}
+
+function autoMarkFromClue(){
+  if(!activeClue){
+    document.getElementById('info').textContent=en()?'Tap a clue first.':'请先点一条线索。';
+    return;
+  }
+  const cl=CLUES.find(c=>c.key===activeClue);
+  const hits=new Set(matchCards(cl));
+  // for this person: mark non-matching as no
+  PEOPLE.filter(p=>p.clueKey===cl.person).forEach(p=>{
+    CARDS.forEach(c=>{
+      if(!hits.has(c.id)) grid[p.id][c.id]='no';
+    });
+  });
+  // cross out cards that fail this clue if clue is exclusive? only for unique matches
+  if(hits.size===1){
+    const only=[...hits][0];
+    assign[cl.person]=only;
+    PEOPLE.forEach(p=>{
+      CARDS.forEach(c=>{
+        if(p.clueKey===cl.person){
+          grid[p.id][c.id] = (c.id===only)?'yes':'no';
+        } else if(c.id===only){
+          grid[p.id][c.id]='no';
+        }
+      });
+    });
+  }
+  renderAll();
+  document.getElementById('info').textContent=en()
+    ? 'Marked impossible cards for this person with ✕.'
+    : '已按该线索给对应的人标上不可能的 ✕。';
+}
+
+function resetAll(){
+  activeClue=null; crossed.clear(); mikeAns=null; initGrid();
+  document.getElementById('feedback').textContent='';
+  document.getElementById('info').textContent=en()?'Start from an easy clue.':'从一条容易的线索开始吧。';
+  renderAll();
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!mikeAns){
+    fb.className='bad';
+    fb.textContent=en()?'❌ Tap Mike’s card letter first.':'❌ 请先点选小明收到的那张卡。';
+    return;
+  }
+  const ok=mikeAns==='A';
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ Mike’s card is correct!':'✅ 小明的明信片对了！')
+    :(en()?'❌ Not yet — keep eliminating with the clues.':'❌ 还不对——继续用线索排除。');
+}
+
+function renderAll(){
+  renderClues(); renderCards(); renderGrid(); renderMikeAsk();
+}
+
+initGrid();
+renderAll();
+document.getElementById('info').textContent='';
+</script>
+</body>
+</html>

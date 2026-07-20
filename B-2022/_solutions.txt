@@ -1,0 +1,592 @@
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+3 points
+1 (KW). Buzz the bee wants to reach the flower.
+Which set of directions will get him there.
+(A) →↓→↓↓→
+(B) ↓↓→↓↓
+(C) →↓→↓→
+(D) →→↓↓↓
+(E) ↓→→↓↓↓
+Solution: The correct answer is (A) - three moves right and three moves down (right, down, right,
+down, down, right):
+2 (DK). Laser beams reflect in mirrors in the way shown in the picture.
+At which letter will this laser beam end?
+A
+B
+C
+D
+E
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution: The laser beam travels down, then right, up, right, down, left, down and ends up at point
+B.
+3 (DK). Rossitza wants to put 2 coins in each row and in each column of the grid.
+A
+B
+C
+D
+E
+1
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+Which coin does she need to move to an empty cell?
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution: Notice that most rows and columns have two coins, while the first column and the last
+row have 3 coins each for which the common coin is the coin C. This coin needs to be moved to the
+column/row with only one coin which is the second column fourth row (moving coin C diagonally next
+to the coin B:
+4 (DE). What is the smallest number of boxes that Bill has to move to be able to open the dark
+TRAIN box?
+cloths
+TRAIN
+CDs
+stuﬀed animals
+bedding
+BOOKS
+puzzles
+books
+music sheets
+board games
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+Solution: In order to reach the train box, Bill must move the boxes with books, music sheets, board
+games, stuffed animals and bedding - a total of 5 boxes.
+OR: He has to move 1. Books, 2. Music Sheets, 3. Board Games, 4. Stuffed Animals and 5. Bedding.
+The total is 5.
+Note: Only dark OR train is needed. We leave both for now for translation reasons.
+0
+2
+3
+4
+5 (NO). Kengu always makes one large jump followed
+by two small jumps on the number line, as shown in the
+picture.
+Kengu starts at 0 and ends on 16.
+What is the number of jumps that Kengu makes?
+(A) 4
+(B) 7
+(C) 8
+(D) 9
+(E) 12
+Solution: The sum of the distance of one large jump and two small jumps is 4. It is repeated.
+Therefore 16 ÷ 4 = 4 and 4 × 3 = 12.
+2
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+6 (DK).
+1
+1
+1
+1
+1
+1
+1
+2
+2
+2
+2
+2
+2
+2
+3
+3
+3
+3
+3
+3
+3
+4
+4
+4
+4
+4
+4
+4
+5
+5
+5
+5
+Anna makes a jigsaw where two squares with common sides do not contain the same number.
+Which piece should she use to complete her jigsaw?
+(A) 1 2 3
+4
+(B)
+1
+2
+3 4
+(C)
+1
+2
+3
+4
+(D)
+1
+2
+3
+4
+(E)
+1
+2
+3
+4
+Solution: The correct answer is D. To persuade yourself in this it is enough to check that each
+square from the inserted piece D is not neighbor to the square with the same number. On the other
+hand, all other answers are wrong. If we put the piece A the square with number 1 would have a
+neighbor on its left with the same number 1. For other pieces the squares with the same neighbor are
+: square with number 2 for piece B, square with number 4 for piece C and square with number 3 for
+piece E.
+Solution 2: The neighboring tiles of the red circle are 2, 3 and 5. So the red circle have to be 1 or 4.
+There is no 1 in the given answers. So it is 4. There are two 4s (D) and (E). The neighboring tiles
+of green circle are 3 and 5. So the green circle have to be 1, 2 and 4. It is 3 in answer (E) and 2 in
+answer (D).
+7 (CH). 2022 + □= 2020 + □
+Which two numbers can be written in the two boxes to make the statement correct?
+(A) 3 and 5
+(B) 4 and 1
+(C) 3 and 4
+(D) 7 and 2
+(E) 9 and 8
+Solution: Notice that the number 2022 is larger than 2020 by 2, hence in order for the equation
+to be correct the number in the first square should be smaller than the number in the second by 2.
+Among the offered pairs of numbers, the only two numbers that can be put in squares are 3 and 5.
+OR: 2022 + 3 = 2020 + 5 (= 2025)
+Note: if a country thinks this question is not suitable for 3p as numbers ¡ 1000 are needed, they can
+change the question into 20 + (box) = 22 + (box) and swap all answers (so the first answer is then
+5 and 3, and so on). Another option is to move this question to the 4p or 5p section as for 4p or 5p
+the year can be an exception.
+8 (GR). John builds the tower shown.
+What will he see if he looks at his tower from above?
+3
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: In the picture, five solid figures of different sizes are stacked. When looking down at these
+solid figures from above, the third and fourth figures are invisible because they are smaller than the
+second figure.
+4 points
+9 (PL). Five cars numbered 1, 2, 3, 4 and 5 are moving in the same direction.
+3
+4
+1
+2
+5
+First, the last car (5) overtakes the two cars ahead of it.
+Next, the second last car overtakes the two cars ahead of it.
+Finally, the middle car overtakes the two cars ahead of it.
+In what order are the cars now?
+(A) 1, 2, 3, 5, 4
+(B) 2, 1, 3, 5, 4
+(C) 2, 1, 5, 3, 4
+(D) 3, 1, 4, 2, 5
+(E) 4, 1, 2, 5, 3
+Solution: The order of the cars changes like this: 1, 2, 3, 4, 5 −→1, 2, 5, 3, 4 −→1, 3, 2, 5, 4 −→
+2, 1, 3, 5, 4
+Note: second last (=penultimate)
+2
+4
+6
+5
+8
+10
+10 (GR). The ages of a family of kangaroos are 2, 4, 5, 6, 8 and 10
+years.
+The sum of the ages of four of them is 22 years.
+What are the ages of the other two kangaroos?
+(A) 2 and 8
+(B) 4 and 5
+(C) 5 and 8
+(D) 6 and 8
+(E) 6 and 10
+Solution: The sum of all the ages is 2+4+5+6+8+10 = 35 so the other two add up to 35−22 = 13.
+This is uniquely 5 + 8 (easy to spot because only one of the given numbers is odd).
+11 (DE). During my holiday I sent the five postcards shown below to my friends.
+There are no ducks on Mike’s card.
+Cara’s card has the sun on it.
+There are exactly two living creatures on Paula’s card.
+Lexi’s card has a dog on it.
+There are kangaroos on Heather’s card.
+Which card did Mike get?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: The deduction is: Mike is not D, Heather is B, then Paula is C, then Cara is A or D,
+Lexie is E. Since now B, C, E and D are all excluded for Mike, Mike can only be A (and Cara will be
+4
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+D).
+Remark: There is also a black-and-white version of the pictures.
+9
+1
+5
+3
+7
+6
+4
+7
+4
+12 (GR). Mosif wanted the sum of the three numbers in each row and in each
+column of the grid to be the same.
+He made one mistake.
+Which number must he correct?
+(A) 1
+(B) 3
+(C) one of the 4s
+(D) 5
+(E) one of the 7s
+Solution: The sums in most rows and columns is 15.
+The exceptions are the first column and
+the second row where the sum is 16. So we must change the number at their intersection by 1 less.
+9
+1
+5
+3
+7
+6
+4
+7
+4
+15
+16
+15
+16
+15
+15
+2
+15
+15
+13 (PL). Aladdin has a square carpet.
+There are the same number of dots, arranged in two lines, along each side of his carpet. Unfortunately,
+the carpet has folded.
+How many dots are there on Aladdin’s carpet?
+(A) 48
+(B) 44
+(C) 40
+(D) 36
+(E) 32
+Solution: The same number of dots arranged in two rows means there are two rows of six dots along
+each side, therefore the unfolded square carpet should be as follows:
+.
+The total dots should be 4 × 6 + 8 = 32.
+Solution 2.
+5
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+If the whole carpet was covered with dots, it would be 6·6 = 36. Two rows of dots (4 dots) are missing
+in the middle. In total 36 −4 = 32 dots.
+Solution 3.
+If the whole carpet was covered with dots, it would be 6 · 6 = 36. Thus, the only possible answer is E.
+14 (GR). Joanna folds the number square twice as shown.
+Then she punches a hole through the black spot shown by the arrow.
+Which numbers does she also punch through?
+1
+7
+13
+19
+25
+31
+2
+8
+14
+20
+26
+32
+3
+9
+15
+21
+27
+33
+4
+10
+16
+22
+28
+34
+5
+11
+17
+23
+29
+35
+6
+12
+18
+24
+30
+36
+(A) 8, 11, 26, 29
+(B) 14, 17, 20, 23
+(C) 15, 16, 21, 22
+(D) 14, 16, 21, 23
+(E) 15, 17, 20, 22
+Solution: The picture shows the paper and the holes as we unfold it to its original shape. The
+numbers punched are clear.
+1
+7
+13
+19
+25
+31
+2
+8
+14
+20
+26
+32
+3
+9
+15
+21
+27
+33
+4
+10
+16
+22
+28
+34
+5
+11
+17
+23
+29
+35
+6
+12
+18
+24
+30
+36
+Note: If a country decides to use a dotted/dashed line, please use the official origami notation: see
+Yoshizawa-Randlett system. Here that would mean: dashed lines (no dots).
+15 (PH). The pupils in a class sit in rows.
+There are the same number of pupils in each row.
+There are 2 rows of pupils in front of Robert and 1 row of pupils behind him.
+In his row, there are 3 pupils on his left and 5 pupils on his right.
+How many pupils are there in this class?
+(A) 10
+(B) 17
+(C) 18
+(D) 27
+(E) 36
+Solution: As shown in the picture below, this rectangle formation has 3 + 1 + 5 = 9 members in
+each row.
+It follows the number of rows in the formation is 2 + 1 + 1 = 4 rows. Therefore, the total number
+of pupils is 4 × 9 = 36 pupils in all.
+Note: As some regard this problem similar to the car problem; it can be replaced with a problem from
+reserved.
+16 (PH). The cube in the picture is built from the three kinds of wooden blocks shown.
+How many white wooden blocks are used?
+6
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+(A) 8
+(B) 11
+(C) 13
+(D) 16
+(E) 19
+Solution: The first layer has a total of 2 white blocks , while the second layer has a total of 6 white
+blocks and the third layer has a total of 3 white blocks . Therefore, the total number of white wooden
+blocks in a cube is 2 + 6 + 3 = 11.
+OR A large cube can be made with a total of 27 small white wooden blocks (cubes). Grey wooden
+blocks can be formed by 5 white wooden blocks, and black wooden blocks can be formed by 3 white
+wooden blocks.
+If you look at the picture, you can see that 2 grey wooden blocks and 2 black wooden blocks are used
+to make a large cube.
+Assuming a large cube with 27 small white wooden blocks in total, 27−10 (2 grey blocks) −6 (2 black
+blocks) = 11, so 11 white wooden blocks were used.
+5 points
+17 (PL). Wanda chose a few of the following shapes and said ”Amongst the shapes I have chosen,
+there are 2 coloured ones, 2 large ones and 2 round ones.
+What is the smallest number of the following shapes that Wanda could have chosen?
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+Solution: Wanda selects the two round ones (circles); one is coloured and one is white. Then she has
+already one large figure. She could chose the other large coloured piece (square), and all conditions
+are satisfied. So the minimum amount of figures that Wanda selected is three.
+18 (IR). Three football teams participate in a sports tournament.
+Each team plays the other two teams exactly once.
+In each game, the winner gets 3 points and the loser doesn’t get any points.
+If the game finishes in a draw, each team gets 1 point.
+At the end of the tournament, which number of points is it impossible for any team to have?
+(A) 1
+(B) 2
+(C) 4
+(D) 5
+(E) 6
+Solution: As every team has just 2 games and the possibility to get 0, 1 or 3 points each game, the
+only possibilities are 0 + 0 = 0 points, 0 + 1 = 1 point, 1 + 1 = 2 points, 1 + 3 = 4 points and 3 + 3 = 6
+points. There is no chance to get 5 points - for this case a team would have to have at least 3 games
+(3 + 1 + 1 points).
+7
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+view from above
+19 (SK). A pyramid is built from cubes with a side-
+length of 10 cm.
+An ant climbed up and over the pyramid, as shown
+by the red line.
+What is the length of the path walked by the ant
+across the pyramid?
+(A) 30 cm
+(B) 60 cm
+(C) 70 cm
+(D) 80 cm
+(E) 90 cm
+Solution:
+To the middle of the cube in the top of the pyramid the ant has to climb 3 cubes
+vertically (3 · 10cm = 30cm) and 3 times half a cube length horizontally (3 · 5cm = 15cm). The way
+from the top has the same length since the pyramid is symmetric. So in total the ant will climb
+30cm + 15cm + 30cm + 15cm = 90cm.
+Alternative solution (if we assume that teh cubes are arranged symmetrically): After climbing up
+the first cube (10cm) the ant has to walk horizontally along the red line for the half length of a cube
+(5cm). So it can easily be counted: 10 (up)+5 (horizontally)+10+5+10+10 (straight, on the top)+
+10 (down) + 5 + 10 + 5 + 10 = 90 cm.
+Solution 3.
+The ant’s way consists of six vertical intervals (height of a cube) and is 6 · 10 = 60 cm. In the view
+from above we can see the horizontal part of the way of the ant, which in total is equal to three of the
+cube’s edge, i.e. 3 · 10 = 30 cm. In total 60 + 30 = 90 cm.
+Note: If you print in black/white you need to change the word red line. Picture G15331-3 is without
+the ’view from above’ text so that people can choose that for their own language (for translation
+reasons).
+20 (DK). Alma wants to put one of the pieces shown in the middle of the picture so that a child in
+A is able to travel to B and to E, but not to D.
+She can rotate the pieces.
+A
+B
+C
+D
+E
+F
+1
+2
+3
+4
+5
+Which two pieces could she use?
+(A) 1 and 2
+(B) 2 and 3
+(C) 1 and 4
+(D) 4 and 5
+(E) 1 and 5
+Solution: 1 can be put in so that the straight street leads from B to E, then A (and F, what doesn’t
+matter) has a connection as well. 2 doesn’t work because this piece connects three neighbours and
+A, B and E aren’t three neighbours. 3 would connect A with C and E, so not to B. 4 doesn’t work
+because as soon as A has access, it has access straight to D. 5 works if you put the “lonely” end of
+the streets to E, so A, B and C are connected as well, but not D. So we note that 1 and 5 are the only
+two pieces which can be put in the space so that A can travel to B and E, but not to D.
+8
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+5m
+5m
+10m
+10m
+5m
+5m
+5m
+5m
+A
+21 (IR). Ahmad and Zhaleh start moving from point
+A with the same speed, in the directions shown.
+Ahmad walks around the square-shaped garden and
+Zhaleh walks around the rectangular-shaped one.
+They meet again at A.
+What is the smallest number of laps around the
+square-shaped garden that Ahmad could do to meet
+Zhaleh there?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution: When Ahmad has returned to point A for the first time, he has walked 4 · 5m = 20m, but
+then Zhaled is not at point A, as he must walk 2 · 5m + 2 · 10m = 30m for a complete round. When
+Ahmad has returned to point A for the second time, he has walked 2 · 20m = 40m and Zhaled has
+walked more than one but less than 2 rounds, so he is not at point A. When Ahmad has returned to
+point A for the third time, he has walked 3 · 20m = 60m. Since 60m = 2 · 30m, in this moment Zhaleh
+has completed 2 full rounds an is back at point A.
+Note: We kept the text as short as possible. To be precise, you may want to add: ”for the first time
+after the start” in the last sentence. (Since they meet at the start first, the correct answer would be
+0). However, there is no 0 laps as an option right now and this clarification is not necessary if you
+keep the distractors as proposed (1, 2, 3, 4, 5). therefore, we did not add this sentence now.
+22 (PL). Five children ate some plums.
+Lauren ate two plums more than Sophie.
+Betty ate three plums fewer than Lauren.
+Claire ate one plum more than Betty and three plums fewer than Alice.
+Which two girls ate the same number of plums?
+(A) Claire and Lauren.
+(B) Claire and Sophie.
+(C) Lauren and Alice.
+(D) Sophie and Alice.
+(E) Alice and Betty.
+Solution: Note: To solve the problem it may be helpful to mark the numbers of plums on a number
+line.
+Lauren ate 2 plums more than Sophie.
+Because Betty ate 3 plums less than Lauren, Betty had 1 plum less than Sophie.
+Since Claire ate 1 plum more than Betty, Claire ate as many plums as Sophie, so (B) is correct.
+(As Alice ate 3 plums more than Claire, Alice ate 1 plum more than Lauren. And Betty and Claire
+did not eat the same number of plums, So all the numbers are different except for Claire and Sophie.)
+23 (DE). The small caterpillar shown in the picture curls up to sleep.
+What might that look like?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: As you see, the caterpillar has alternately one yellow and one black circle. So you have
+to find a possible “path” through the sleeping caterpillar where you can draw one line from the head
+to a black circle, then to a yellow, then to a black and so on. The only possibility to find such a way
+through whole the body of the caterpillar is in option A as shown:
+or
+9
+
+SOLUTIONS INCLUDED - DO NOT USE FOR CONTEST
+Ecolier Finalized
+24 (PL). In the grid, the same number is hidden under the same
+colour square.
+To the right of each row, the sum of the numbers hidden under the
+squares in that row is given.
+Which number is hidden under the black square?
+(A) 6
+(B) 8
+(C) 10
+(D) 12
+(E) 14
+Solution: The number hidden by grey square plus two numbers hidden by white squares add up 34,
+according to the first line of the table. The number hidden by white square plus two numbers hidden
+by grey squares add up 26, according to the third line of the table. This means that three numbers
+under grey squares plus three numbers under white squares add up 34+26 = 60 (first and third lines).
+Thus, the number under white square plus the number under grey square equals 60 : 3 = 20. Finally,
+if the numbers in the second line sums 32, the number under black must be 32 −20 = 12.
+10
+
