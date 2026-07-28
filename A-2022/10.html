@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q10 · 篮子里的动物</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+.basket-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.basket{width:88px;text-align:center;cursor:pointer;padding:6px;border-radius:12px;border:3px solid #e2e8f0;background:#fafafa;min-height:110px;transition:.15s}
+.basket.pair-hl{border-color:#22c55e;background:#dcfce7}
+.basket .num{font-weight:800;color:#64748b;font-size:12px;margin-bottom:4px}
+.animal-pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.animal{font-size:32px;padding:10px 14px;background:#fff;border:2px solid #cbd5e1;border-radius:12px;cursor:pointer;user-select:none}
+.animal.sel{outline:3px solid #f59e0b;background:#fef3c7}
+.animal.placed{opacity:.4}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode');updateInfo();">🌐 English / 中文</button>
+<h1 class="lang-zh">篮子里的动物</h1>
+<h1 class="lang-en">Animals in Baskets</h1>
+<div class="meta lang-zh">2022 等级 A · 第 10 题 · 4 分</div>
+<div class="meta lang-en">2022 Level A · Q10 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">每个篮子里都有一只动物在睡觉。考拉和狐狸睡在<strong>图案和形状都相同</strong>的篮子里。袋鼠和鸵鸟睡在<strong>图案相同</strong>的篮子里。小狗睡在哪个篮子里？</p>
+    <p class="lang-en">One animal sleeps in each basket. The koala and fox are in baskets with the <strong>same pattern and shape</strong>. The kangaroo and ostrich share the <strong>same pattern</strong>. Which basket is the puppy in?</p>
+    <img class="fig" src="assets/q10_figure.png" alt="Q10"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：把动物放进篮子</h2>
+    <h2 class="lang-en">Lab: place animals in baskets</h2>
+    <p class="tip lang-zh">点选动物，再点篮子。相同图案/形状的篮子会高亮。推出小狗的篮子后选 A–E（1–5 号篮）。</p>
+    <p class="tip lang-en">Pick an animal, tap a basket. Matching pairs highlight. Deduce the puppy's basket, then pick A–E (baskets 1–5).</p>
+    <div class="animal-pool" id="animalPool"></div>
+    <div class="basket-row" id="baskets"></div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh" style="margin-top:16px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:16px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="index.html"><span class="lang-zh">← 目录</span><span class="lang-en">← Index</span></a>
+    <a href="11.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='A';
+let choice=null, selAnimal=null;
+const placement={};
+// 中国卷图：2=4（圆篮圆点），3=5（方篮条纹），1 独一份
+const BASKETS=[
+  {id:1,shape:'round',pattern:'stripe-blue'},
+  {id:2,shape:'round',pattern:'dots'},
+  {id:3,shape:'box',pattern:'stripe-orange'},
+  {id:4,shape:'round',pattern:'dots'},
+  {id:5,shape:'box',pattern:'stripe-orange'},
+];
+const ANIMALS=[
+  {id:'koala',label:'🐨',zh:'考拉',en:'Koala'},
+  {id:'fox',label:'🦊',zh:'狐狸',en:'Fox'},
+  {id:'kangaroo',label:'🦘',zh:'袋鼠',en:'Kangaroo'},
+  {id:'ostrich',label:'🦩',zh:'鸵鸟',en:'Ostrich'},
+  {id:'puppy',label:'🐶',zh:'小狗',en:'Puppy'},
+];
+function en(){return document.body.classList.contains('en-mode');}
+function mkPool(){
+  ['A','B','C','D','E'].forEach(L=>{
+    const d=document.createElement('div'); d.className='card'; d.textContent=L;
+    d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+      const b=document.getElementById('ansBox');b.className='answer-box filled';b.textContent=L;document.getElementById('feedback').textContent='';};
+    document.getElementById('pool').appendChild(d);
+  });
+}
+function render(){
+  const pool=document.getElementById('animalPool'); pool.innerHTML='';
+  ANIMALS.forEach(a=>{
+    const d=document.createElement('div');
+    d.className='animal'+(selAnimal===a.id?' sel':'')+(Object.values(placement).includes(a.id)?' placed':'');
+    d.textContent=a.label; d.onclick=()=>{selAnimal=a.id;render();updateInfo();};
+    pool.appendChild(d);
+  });
+  const br=document.getElementById('baskets'); br.innerHTML='';
+  BASKETS.forEach(b=>{
+    const d=document.createElement('div'); d.className='basket'; d.dataset.id=b.id;
+    const who=placement[b.id]; const em=who?ANIMALS.find(x=>x.id===who).label:(b.shape==='round'?'🧺':'📦');
+    d.innerHTML=`<div class="num">${b.id}</div><div style="font-size:28px">${em}</div>`;
+    d.onclick=()=>{
+      if(!selAnimal)return;
+      Object.keys(placement).forEach(k=>{if(placement[k]===selAnimal)delete placement[k];});
+      placement[b.id]=selAnimal; selAnimal=null; render(); updateInfo();
+    };
+    br.appendChild(d);
+  });
+  highlightPairs();
+}
+function highlightPairs(){
+  document.querySelectorAll('.basket').forEach(el=>el.classList.remove('pair-hl'));
+  const ids=Object.keys(placement).map(Number);
+  for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++){
+    const a=BASKETS.find(x=>x.id===ids[i]), c=BASKETS.find(x=>x.id===ids[j]);
+    if(a.pattern===c.pattern){
+      document.querySelector(`.basket[data-id="${a.id}"]`)?.classList.add('pair-hl');
+      document.querySelector(`.basket[data-id="${c.id}"]`)?.classList.add('pair-hl');
+    }
+  }
+}
+function updateInfo(){
+  const info=document.getElementById('info');
+  if(!selAnimal){info.textContent=en()?'Tap an animal, then a basket.':'点选动物，再点篮子。';return;}
+  const a=ANIMALS.find(x=>x.id===selAnimal);
+  info.textContent=(en()?`Selected: ${a.en}`:`已选：${a.zh}`)+(en()?' → tap basket':' → 点篮子');
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选择选项。';return;}
+  const ok=choice===CORRECT;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — keep matching baskets.':'❌ 还不对——继续配对篮子试试。');
+}
+function resetLab(){
+  choice=null;selAnimal=null;Object.keys(placement).forEach(k=>delete placement[k]);
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('feedback').textContent=''; render(); updateInfo();
+}
+mkPool(); render(); updateInfo();
+</script>
+</body>
+</html>

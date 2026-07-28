@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q15 · 围边地砖</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.card.num-card{min-width:72px}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.tile-lab{display:flex;flex-direction:column;align-items:center;margin:12px 0}
+.border-grid{display:grid;grid-template-columns:repeat(7,36px);grid-template-rows:repeat(7,36px);gap:2px;background:#cbd5e1;padding:4px;border-radius:10px}
+.cell{border:1px solid #94a3b8;background:#fff;cursor:pointer;user-select:none}
+.cell.inner{background:#fef3c7;cursor:default;border-color:#fde68a}
+.cell.tile{background:#ef4444;border-color:#b91c1c}
+.cell.tile-h{background:linear-gradient(90deg,#ef4444 50%,#dc2626 50%)}
+.cell.tile-v{background:linear-gradient(0deg,#ef4444 50%,#dc2626 50%)}
+.count{font-size:20px;font-weight:800;color:#0f172a;margin:10px 0}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode');updateInfo();">🌐 English / 中文</button>
+<h1 class="lang-zh">围边地砖</h1>
+<h1 class="lang-en">Tiles Around a Square</h1>
+<div class="meta lang-zh">2022 等级 A · 第 15 题 · 4 分</div>
+<div class="meta lang-en">2022 Level A · Q15 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小卡用 2×1 的地砖在每个正方形周围铺一条路。边长 1 用 4 块，边长 3 用 8 块。边长 <strong>5</strong> 的正方形周围要用多少块？</p>
+    <p class="lang-en">Katrin uses 2×1 tiles around each square. Side 1 → 4 tiles; side 3 → 8 tiles. How many tiles around a square with side <strong>5</strong>?</p>
+    <img class="fig" src="assets/q15_figure.png" alt="Q15"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：在边长 5 的正方形周围铺砖</h2>
+    <h2 class="lang-en">Lab: place 2×1 tiles around side-5 square</h2>
+    <p class="tip lang-zh">点外围格子铺砖（再点取消）。每块砖占 2 格。自己数用了多少块，再选答案。</p>
+    <p class="tip lang-en">Tap border cells to place tiles (tap again to remove). Each tile covers 2 cells. Count tiles, then answer.</p>
+    <div class="tile-lab">
+      <div class="border-grid" id="grid"></div>
+      <div class="count" id="tileCount">0</div>
+    </div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh" style="margin-top:12px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:12px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="14.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="16.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='C', SIZE=7, INNER=5;
+const tiles=new Map();
+let choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function isInner(r,c){return r>=1&&r<=INNER&&c>=1&&c<=INNER;}
+function key(r,c){return r+','+c;}
+function build(){
+  const g=document.getElementById('grid'); g.innerHTML='';
+  for(let r=0;r<SIZE;r++)for(let c=0;c<SIZE;c++){
+    const d=document.createElement('div'); d.className='cell'; d.dataset.r=r; d.dataset.c=c;
+    if(isInner(r,c)) d.classList.add('inner');
+    else d.onclick=()=>toggleTile(r,c);
+    g.appendChild(d);
+  }
+  paint();
+}
+function toggleTile(r,c){
+  const k=key(r,c);
+  if(tiles.has(k)){removeTile(k);}else{
+    const neigh=[[r,c+1],[r,c-1],[r+1,c],[r-1,c]].filter(([rr,cc])=>!isInner(rr,cc)&&rr>=0&&rr<SIZE&&cc>=0&&cc<SIZE);
+    for(const [rr,cc] of neigh){
+      const nk=key(rr,cc);
+      if(!tiles.has(nk)){placeTile(r,c,rr,cc);return;}
+    }
+  }
+  paint(); updateCount(); updateInfo();
+}
+function placeTile(r1,c1,r2,c2){
+  [key(r1,c1),key(r2,c2)].forEach(k=>tiles.set(k,{pair:key(r1,c1)+'|'+key(r2,c2),hor:c1!==c2}));
+}
+function removeTile(k){
+  const t=tiles.get(k); if(!t)return;
+  const [a,b]=t.pair.split('|');
+  tiles.delete(a); tiles.delete(b);
+}
+function paint(){
+  document.querySelectorAll('.cell').forEach(el=>{
+    el.classList.remove('tile','tile-h','tile-v');
+    if(el.classList.contains('inner'))return;
+    const k=key(+el.dataset.r,+el.dataset.c);
+    if(tiles.has(k)){
+      el.classList.add('tile', tiles.get(k).hor?'tile-h':'tile-v');
+    }
+  });
+}
+function countTiles(){
+  const seen=new Set(); let n=0;
+  tiles.forEach((t,k)=>{if(!seen.has(t.pair)){seen.add(t.pair);n++;}});
+  return n;
+}
+function updateCount(){
+  document.getElementById('tileCount').textContent=(en()?'Tiles placed: ':'已铺 ') + countTiles() + (en()?'':' 块');
+}
+function updateInfo(){
+  document.getElementById('info').textContent=en()?'Each tile is 2×1. Cover the border completely.':'每块砖 2×1，把外围铺满。';
+}
+[10,11,12,14,16].forEach(n=>{
+  const d=document.createElement('div'); d.className='card num-card'; d.textContent=n;
+  d.onclick=()=>{choice=String(n);document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=n;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+const ANS_MAP={10:'A',11:'B',12:'C',14:'D',16:'E'};
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick a number.':'❌ 请选择数字。';return;}
+  const letter=ANS_MAP[choice];
+  fb.className=letter===CORRECT?'ok':'bad';
+  fb.textContent=letter===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — keep placing tiles.':'❌ 还不对——继续铺砖数数。');
+}
+function resetLab(){
+  tiles.clear(); choice=null;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent=''; build(); updateCount(); updateInfo();
+}
+build(); updateCount(); updateInfo();
+</script>
+</body>
+</html>

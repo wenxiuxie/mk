@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q18 · 最小的草地</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.lawn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.lawn-card{border:3px solid #e2e8f0;border-radius:12px;padding:8px;background:#fff;text-align:center;cursor:pointer;max-width:150px}
+.lawn-card.on{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.3)}
+.lawn-card img{width:120px;display:block;border-radius:8px;margin:0 auto}
+.lawn-card .lab{font-weight:800;margin:6px 0 4px;color:#64748b}
+.count-badge{font-size:13px;font-weight:700;color:#0369a1;min-height:18px}
+.unit-grid{display:grid;grid-template-columns:repeat(3,22px);grid-template-rows:repeat(4,22px);gap:2px;margin:6px auto;justify-content:center}
+.unit{width:22px;height:22px;border:1px solid #94a3b8;border-radius:3px;background:#fff;cursor:pointer}
+.unit.on{background:#86efac;border-color:#22c55e}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode');updateInfo();">🌐 English / 中文</button>
+<h1 class="lang-zh">哪块草地最小？</h1>
+<h1 class="lang-en">Smallest Lawn</h1>
+<div class="meta lang-zh">2022 等级 A · 第 18 题 · 5 分</div>
+<div class="meta lang-en">2022 Level A · Q18 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">下面哪块<strong>草地面积最小</strong>？（可以把点连成相同大小的三角形来比较）</p>
+    <p class="lang-en">Which lawn has the <strong>smallest area</strong>? (Connect dots to compare equal triangles.)</p>
+    <img class="fig" src="assets/q18_opts.png" alt="Q18"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：点格子标记面积，比较五块草地</h2>
+    <h2 class="lang-en">Lab: mark unit areas, compare five lawns</h2>
+    <p class="tip lang-zh">先点选一块草地，再点下方小格标记「一个单位面积」。数每块标记了几个，找出最小的，再选 A–E。</p>
+    <p class="tip lang-en">Pick a lawn, tap unit cells below to mark area. Count each lawn's units, find the smallest, pick A–E.</p>
+    <div class="lawn-row" id="lawnRow"></div>
+    <div class="unit-grid" id="unitGrid"></div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh" style="margin-top:12px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:12px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="17.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="19.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='A';
+const counts={A:0,B:0,C:0,D:0,E:0};
+const marked={A:new Set(),B:new Set(),C:new Set(),D:new Set(),E:new Set()};
+let selLawn=null, choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+['A','B','C','D','E'].forEach(L=>{
+  const w=document.createElement('div'); w.className='lawn-card'; w.dataset.lawn=L;
+  w.innerHTML=`<img src="assets/q18_opt${L}.jpeg" alt="${L}"/><div class="lab">${L}</div><div class="count-badge" id="cnt${L}">0</div>`;
+  w.onclick=()=>{selLawn=L;document.querySelectorAll('.lawn-card').forEach(c=>c.classList.toggle('on',c.dataset.lawn===L));paintUnits();updateInfo();};
+  document.getElementById('lawnRow').appendChild(w);
+  const d=document.createElement('div'); d.className='card'; d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+for(let i=0;i<12;i++){
+  const u=document.createElement('div'); u.className='unit'; u.dataset.i=i;
+  u.onclick=()=>{
+    if(!selLawn)return;
+    const s=marked[selLawn];
+    s.has(i)?s.delete(i):s.add(i);
+    counts[selLawn]=s.size;
+    document.getElementById('cnt'+selLawn).textContent=counts[selLawn];
+    paintUnits(); updateInfo();
+  };
+  document.getElementById('unitGrid').appendChild(u);
+}
+function paintUnits(){
+  document.querySelectorAll('.unit').forEach(u=>{
+    const i=+u.dataset.i;
+    u.classList.toggle('on', selLawn&&marked[selLawn].has(i));
+  });
+}
+function updateInfo(){
+  const info=document.getElementById('info');
+  if(!selLawn){info.textContent=en()?'Pick a lawn first.':'请先选一块草地。';return;}
+  const parts=['A','B','C','D','E'].filter(L=>counts[L]>0).map(L=>`${L}:${counts[L]}`);
+  info.textContent=(en()?'Counts — ':'计数 — ')+(parts.length?parts.join(' · '):(en()?'tap units below':'点下方格子'))+
+    (en()?' · which is smallest?':' · 哪个最小？');
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick an option.':'❌ 请选择选项。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — count more carefully.':'❌ 还不对——再仔细数数。');
+}
+function resetLab(){
+  selLawn=null; choice=null;
+  ['A','B','C','D','E'].forEach(L=>{counts[L]=0;marked[L].clear();document.getElementById('cnt'+L).textContent='0';});
+  document.querySelectorAll('.card,.lawn-card,.unit').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent=''; updateInfo();
+}
+updateInfo();
+</script>
+</body>
+</html>

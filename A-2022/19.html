@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q19 · 泰迪熊礼物</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.card.num-card{min-width:72px}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.year-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.year-btn{padding:12px 16px;border:2px solid #cbd5e1;border-radius:12px;background:#fff;cursor:pointer;text-align:center;min-width:80px}
+.year-btn.done{background:#dcfce7;border-color:#22c55e}
+.year-btn .age{font-weight:800;font-size:16px;color:#0f172a}
+.year-btn .bears{font-size:22px;margin-top:4px;min-height:28px}
+.total-box{text-align:center;padding:16px;background:#f0f9ff;border-radius:14px;border:2px solid #bae6fd;margin:12px auto;max-width:280px}
+.total-num{font-size:36px;font-weight:800;color:#0369a1}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode');updateInfo();">🌐 English / 中文</button>
+<h1 class="lang-zh">生日泰迪熊</h1>
+<h1 class="lang-en">Birthday Teddy Bears</h1>
+<div class="meta lang-zh">2022 等级 A · 第 19 题 · 5 分</div>
+<div class="meta lang-en">2022 Level A · Q19 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小美每年生日收到泰迪熊：第 1 个生日 1 只，第 2 个生日 2 只……之后每年比上一年多 1 只。小美 <strong>6 岁</strong>时一共多少只？</p>
+    <p class="lang-en">Maria gets teddy bears each birthday: 1 on 1st birthday, 2 on 2nd, one more each year. How many in total when she is <strong>6 years old</strong>?</p>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：一年一年累加泰迪熊</h2>
+    <h2 class="lang-en">Lab: add bears year by year</h2>
+    <p class="tip lang-zh">点每个生日年数，或点「下一年」逐个添加。看累计总数，再选答案。</p>
+    <p class="tip lang-en">Tap each birthday year, or "Next year" one at a time. Watch the running total, then answer.</p>
+    <div class="year-row" id="yearRow"></div>
+    <div class="actions">
+      <button class="btn primary" onclick="nextYear()"><span class="lang-zh">下一年 +</span><span class="lang-en">Next year +</span></button>
+      <button class="btn reset" onclick="resetYears()"><span class="lang-zh">从头开始</span><span class="lang-en">Start over</span></button>
+    </div>
+    <div class="total-box">
+      <div class="tip lang-zh">累计总数</div>
+      <div class="tip lang-en">Running total</div>
+      <div class="total-num" id="totalNum">0</div>
+    </div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh" style="margin-top:12px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:12px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="18.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="20.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='C';
+const ANS_MAP={19:'A',20:'B',21:'C',22:'D',23:'E'};
+let unlocked=0, total=0, choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+for(let y=1;y<=6;y++){
+  const b=document.createElement('button'); b.className='year-btn'; b.dataset.y=y;
+  b.innerHTML=`<div class="age">${en()?'Age ':'第'}${y}${en()?'':' 岁'}</div><div class="bears" id="yb${y}"></div>`;
+  b.onclick=()=>unlockTo(y);
+  document.getElementById('yearRow').appendChild(b);
+}
+[19,20,21,22,23].forEach(n=>{
+  const d=document.createElement('div'); d.className='card num-card'; d.textContent=n;
+  d.onclick=()=>{choice=String(n);document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=n;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function unlockTo(y){
+  unlocked=y; total=0;
+  for(let i=1;i<=6;i++){
+    const el=document.getElementById('yb'+i);
+    const btn=document.querySelector(`.year-btn[data-y="${i}"]`);
+    if(i<=y){
+      const bears='🧸'.repeat(i);
+      el.textContent=bears.length>8?('🧸×'+i):bears;
+      btn.classList.add('done');
+      total+=i;
+    }else{el.textContent='';btn.classList.remove('done');}
+  }
+  document.getElementById('totalNum').textContent=total;
+  updateInfo();
+}
+function nextYear(){
+  if(unlocked<6) unlockTo(unlocked+1);
+}
+function resetYears(){
+  unlocked=0; total=0;
+  document.getElementById('totalNum').textContent='0';
+  for(let i=1;i<=6;i++){
+    document.getElementById('yb'+i).textContent='';
+    document.querySelector(`.year-btn[data-y="${i}"]`).classList.remove('done');
+  }
+  updateInfo();
+}
+function updateInfo(){
+  document.getElementById('info').textContent=unlocked
+    ?(en()?`Through age ${unlocked}. Keep going to age 6!`:`已到第 ${unlocked} 岁，继续加到 6 岁！`)
+    :(en()?'Tap years or "Next year".':'点年份或「下一年」。');
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick a number.':'❌ 请选择数字。';return;}
+  const letter=ANS_MAP[choice];
+  fb.className=letter===CORRECT?'ok':'bad';
+  fb.textContent=letter===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — add all 6 years.':'❌ 还不对——把 6 年都加一遍。');
+}
+function resetLab(){
+  choice=null; resetYears();
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+}
+updateInfo();
+</script>
+</body>
+</html>

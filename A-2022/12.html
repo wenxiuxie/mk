@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q12 · 不同的形状</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.opts-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.pic-opt{border:3px solid #e2e8f0;border-radius:12px;padding:8px;cursor:pointer;background:#fff;text-align:center;max-width:140px}
+.pic-opt.on{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.3)}
+.pic-opt img{width:120px;display:block;border-radius:8px;margin:0 auto}
+.pic-opt .lab{font-weight:800;margin-top:6px;color:#64748b}
+.shape-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.shape-btn{padding:8px 14px;border:2px solid #cbd5e1;border-radius:10px;background:#fff;font-weight:700;cursor:pointer;font-size:13px}
+.shape-btn.on{background:#e0f2fe;border-color:var(--primary);color:#0369a1}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode');updateInfo();">🌐 English / 中文</button>
+<h1 class="lang-zh">找出不同的形状</h1>
+<h1 class="lang-en">Find the Different Shape</h1>
+<div class="meta lang-zh">2022 等级 A · 第 12 题 · 4 分</div>
+<div class="meta lang-en">2022 Level A · Q12 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">下面哪张图里用到了<strong>其他图中没有</strong>的形状？</p>
+    <p class="lang-en">In which picture is a shape used that <strong>cannot be seen in the others</strong>?</p>
+    <img class="fig" src="assets/q12_opts.png" alt="Q12"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：点形状类型，再点图片高亮</h2>
+    <h2 class="lang-en">Lab: pick a shape type, tap pictures to highlight</h2>
+    <p class="tip lang-zh">先选一种形状（正方形、三角形、平行四边形、梯形），再点 A–E 图片，看哪些图里有这种形状。找出「独有」的那张。</p>
+    <p class="tip lang-en">Pick a shape type, tap pictures A–E to mark which contain it. Find the picture with a unique shape.</p>
+    <div class="shape-bar" id="shapeBar"></div>
+    <div class="opts-row" id="picOpts"></div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh" style="margin-top:12px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:12px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="11.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="13.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='D';
+const SHAPES=[
+  {id:'sq',zh:'正方形',en:'Square',in:['A','B','D','E']},
+  {id:'tri',zh:'三角形',en:'Triangle',in:['A','B','C','D','E']},
+  {id:'para',zh:'平行四边形',en:'Parallelogram',in:['A','B','C','E']},
+  {id:'trap',zh:'梯形',en:'Trapezoid',in:['D']},
+];
+let selShape=null, marked=new Set(), choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+const SHAPE_BAR=document.getElementById('shapeBar');
+SHAPES.forEach(s=>{
+  const b=document.createElement('button'); b.className='shape-btn';
+  b.innerHTML=`<span class="lang-zh">${s.zh}</span><span class="lang-en">${s.en}</span>`;
+  b.onclick=()=>{selShape=s.id;document.querySelectorAll('.shape-btn').forEach(x=>x.classList.remove('on'));b.classList.add('on');marked.clear();updatePics();updateInfo();};
+  SHAPE_BAR.appendChild(b);
+});
+['A','B','C','D','E'].forEach(L=>{
+  const w=document.createElement('div'); w.className='pic-opt'; w.dataset.opt=L;
+  w.innerHTML=`<img src="assets/q12_opt${L}.jpeg" alt="${L}"/><div class="lab">${L}</div>`;
+  w.onclick=()=>{
+    if(!selShape)return;
+    const s=SHAPES.find(x=>x.id===selShape);
+    if(s.in.includes(L)) marked.has(L)?marked.delete(L):marked.add(L);
+    updatePics(); updateInfo();
+  };
+  document.getElementById('picOpts').appendChild(w);
+  const d=document.createElement('div'); d.className='card'; d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function updatePics(){
+  document.querySelectorAll('.pic-opt').forEach(el=>{
+    el.classList.toggle('on',marked.has(el.dataset.opt));
+  });
+}
+function updateInfo(){
+  const info=document.getElementById('info');
+  if(!selShape){info.textContent=en()?'Pick a shape type first.':'请先选一种形状。';return;}
+  const s=SHAPES.find(x=>x.id===selShape);
+  const n=marked.size;
+  info.textContent=(en()?`Marked ${n} picture(s) with "${s.en}".`:`已标记 ${n} 张含「${s.zh}」的图。`)+
+    (en()?' Which shape appears in only one picture?':' 哪种形状只出现在一张图里？');
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick an option.':'❌ 请选择选项。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — compare shape types.':'❌ 还不对——继续比较形状。');
+}
+function resetLab(){
+  selShape=null;marked.clear();choice=null;
+  document.querySelectorAll('.shape-btn,.card,.pic-opt').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent=''; updateInfo();
+}
+updateInfo();
+</script>
+</body>
+</html>

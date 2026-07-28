@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q14 · 印章印记</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.stamp-stage{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:center;margin:16px 0}
+.stamp-box,.print-box{text-align:center;padding:16px;background:#f8fafc;border-radius:12px;border:2px dashed #cbd5e1;min-width:200px}
+.stamp-face{font-size:48px;letter-spacing:8px;padding:12px 20px;background:#e9d5ff;border-radius:8px;border:3px solid #7c3aed;transform:scaleX(1);transition:.3s}
+.print-face{font-size:48px;letter-spacing:8px;padding:12px 20px;background:#fff;border-radius:8px;border:3px solid #64748b;min-height:80px;min-width:180px;display:flex;align-items:center;justify-content:center}
+.print-face.empty{color:#94a3b8;font-size:14px;font-weight:600}
+.opts-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.opt-img{width:100px;border:3px solid #e2e8f0;border-radius:10px;cursor:pointer;padding:4px;background:#fff}
+.opt-img.on{border-color:#f59e0b}
+.opt-img img{width:100%;display:block;border-radius:6px}
+.opt-lab{text-align:center;font-weight:800;font-size:12px;color:#64748b;margin-top:4px}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode');updateInfo();">🌐 English / 中文</button>
+<h1 class="lang-zh">印章印记</h1>
+<h1 class="lang-en">Stamp Print</h1>
+<div class="meta lang-zh">2022 等级 A · 第 14 题 · 4 分</div>
+<div class="meta lang-en">2022 Level A · Q14 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">使用右图中的印章时，可以得到下面哪种印记？</p>
+    <p class="lang-en">Which picture will we see when we use the stamp shown?</p>
+    <img class="fig" src="assets/q14_all.png" alt="Q14"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：盖章 / 对比选项</h2>
+    <h2 class="lang-en">Lab: press stamp / compare options</h2>
+    <p class="tip lang-zh">点「盖章」看印出来的图案（和章面可能不一样哦）。再对照 A–E 选项图片。</p>
+    <p class="tip lang-en">Tap "Press stamp" to see the print (it may differ from the stamp face!). Compare with options A–E.</p>
+    <div class="stamp-stage">
+      <div class="stamp-box">
+        <p class="tip lang-zh">章面</p><p class="tip lang-en">Stamp face</p>
+        <img src="assets/q14_stamp.jpeg" alt="stamp" style="max-width:160px;border-radius:8px"/>
+      </div>
+      <div style="font-size:28px">➡</div>
+      <div class="print-box">
+        <p class="tip lang-zh">印迹</p><p class="tip lang-en">Print</p>
+        <div class="print-face empty" id="printArea"><span class="lang-zh">还没盖</span><span class="lang-en">Not yet</span></div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" onclick="pressStamp()"><span class="lang-zh">盖章！</span><span class="lang-en">Press stamp!</span></button>
+      <button class="btn reset" onclick="clearPrint()"><span class="lang-zh">擦掉印迹</span><span class="lang-en">Clear print</span></button>
+    </div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh">选项（点图放大对比）</p>
+    <p class="tip lang-en">Options (tap to compare)</p>
+    <div class="opts-row" id="optRow"></div>
+    <p class="tip lang-zh" style="margin-top:12px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:12px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="13.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="15.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='D';
+let choice=null, printed=false;
+function en(){return document.body.classList.contains('en-mode');}
+function pressStamp(){
+  const p=document.getElementById('printArea');
+  p.className='print-face';
+  p.innerHTML='<img src="assets/q14_stamp.jpeg" alt="print" style="max-width:150px;border-radius:6px;transform:scaleX(-1)"/>';
+  printed=true; updateInfo();
+}
+function clearPrint(){
+  const p=document.getElementById('printArea');
+  p.className='print-face empty';
+  p.innerHTML='<span class="lang-zh">还没盖</span><span class="lang-en">Not yet</span>';
+  printed=false; updateInfo();
+}
+function updateInfo(){
+  document.getElementById('info').textContent=printed
+    ?(en()?'Compare your print with options A–E.':'对照印迹和 A–E 选项。')
+    :(en()?'Press the stamp to make a print.':'点「盖章」看看印出来什么样。');
+}
+['A','B','C','D','E'].forEach(L=>{
+  const w=document.createElement('div'); w.className='opt-img'; w.dataset.opt=L;
+  w.innerHTML=`<img src="assets/q14_opt${L}.jpeg" alt="${L}"/><div class="opt-lab">${L}</div>`;
+  w.onclick=()=>{document.querySelectorAll('.opt-img').forEach(o=>o.classList.toggle('on',o.dataset.opt===L));};
+  document.getElementById('optRow').appendChild(w);
+  const d=document.createElement('div'); d.className='card'; d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick an option.':'❌ 请选择选项。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — press stamp and compare.':'❌ 还不对——多盖章对比试试。');
+}
+function resetLab(){
+  choice=null; clearPrint();
+  document.querySelectorAll('.card,.opt-img').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+}
+updateInfo();
+</script>
+</body>
+</html>

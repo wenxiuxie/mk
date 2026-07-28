@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q11 · 找考拉</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+.grid-wrap{display:flex;justify-content:center;margin:12px 0}
+.path-grid{display:grid;grid-template-columns:repeat(7,44px);grid-template-rows:repeat(5,44px);gap:2px;background:#cbd5e1;padding:4px;border-radius:10px}
+.cell{border:1px solid #94a3b8;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;user-select:none}
+.cell.block{background:#7dd3fc;cursor:not-allowed}
+.cell.path{background:#fde68a;border-color:#f59e0b}
+.cell.start{background:#dcfce7}.cell.end{background:#fee2e2}
+.opts-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.opt-img{width:100px;border:3px solid #e2e8f0;border-radius:10px;cursor:pointer;padding:4px;background:#fff}
+.opt-img.on{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.35)}
+.opt-img img{width:100%;display:block;border-radius:6px}
+.opt-lab{text-align:center;font-weight:800;font-size:12px;color:#64748b}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">袋鼠找考拉</h1>
+<h1 class="lang-en">Kanga to Koala</h1>
+<div class="meta lang-zh">2022 等级 A · 第 11 题 · 4 分</div>
+<div class="meta lang-en">2022 Level A · Q11 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">袋鼠想找考拉玩，但<strong>不能经过</strong>任何彩色方块。她可以走哪条路线？</p>
+    <p class="lang-en">Kanga wants to reach the koala without going through any <strong>coloured squares</strong>. Which route could she take?</p>
+    <img class="fig" src="assets/q11_grid.png" alt="grid"/>
+    <img class="fig" src="assets/q11_opts.png" alt="options"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：在格子上画路 / 预览选项路线</h2>
+    <h2 class="lang-en">Lab: draw a path or preview option routes</h2>
+    <p class="tip lang-zh">点格子画自己的路（从袋鼠到考拉，不能踩蓝格）。或点下方选项图预览该路线，再选 A–E。</p>
+    <p class="tip lang-en">Tap cells to draw your path (kangaroo to koala, no blue). Or tap an option to preview that route, then pick A–E.</p>
+    <div class="grid-wrap"><div class="path-grid" id="grid"></div></div>
+    <div class="info" id="info"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="undoPath()"><span class="lang-zh">撤销一步</span><span class="lang-en">Undo</span></button>
+      <button class="btn reset" onclick="clearPath()"><span class="lang-zh">清空路线</span><span class="lang-en">Clear path</span></button>
+    </div>
+    <p class="tip lang-zh">预览选项路线（点图）</p>
+    <p class="tip lang-en">Preview option routes (tap)</p>
+    <div class="opts-row" id="optPreviews"></div>
+    <p class="tip lang-zh" style="margin-top:12px">我的答案</p>
+    <p class="tip lang-en" style="margin-top:12px">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetAll()"><span class="lang-zh">全部重置</span><span class="lang-en">Reset all</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="10.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="12.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='A', COLS=7, ROWS=5;
+const START={c:0,r:0}, END={c:6,r:4};
+const BLOCKED=new Set(['0,1','1,1','0,2','1,2','3,0','4,0','3,1','4,1','2,3','3,3','2,4','3,4','5,2','6,2','5,3','6,3']);
+const ROUTES={
+  A:[[0,0],[1,0],[2,0],[2,1],[2,2],[3,2],[4,2],[4,3],[4,4],[5,4],[6,4]],
+  B:[[0,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[6,2],[6,3],[6,4]],
+  C:[[0,0],[1,0],[2,0],[3,0],[3,1],[3,2],[3,3],[3,4],[4,4],[5,4],[6,4]],
+  D:[[0,0],[1,0],[2,0],[2,1],[2,2],[2,3],[2,4],[3,4],[4,4],[5,4],[6,4]],
+  E:[[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[6,1],[6,2],[6,3],[6,4]],
+};
+let path=[], choice=null, preview=null;
+function en(){return document.body.classList.contains('en-mode');}
+function key(c,r){return c+','+r;}
+function isBlocked(c,r){return BLOCKED.has(key(c,r));}
+function buildGrid(){
+  const g=document.getElementById('grid'); g.innerHTML='';
+  for(let r=ROWS-1;r>=0;r--)for(let c=0;c<COLS;c++){
+    const d=document.createElement('div'); d.className='cell'; d.dataset.c=c; d.dataset.r=r;
+    if(isBlocked(c,r)) d.classList.add('block');
+    if(c===START.c&&r===START.r){d.classList.add('start');d.textContent='🦘';}
+    if(c===END.c&&r===END.r){d.classList.add('end');d.textContent='🐨';}
+    d.onclick=()=>tapCell(c,r);
+    g.appendChild(d);
+  }
+  paintPath();
+}
+function paintPath(){
+  document.querySelectorAll('.cell').forEach(el=>{
+    const c=+el.dataset.c,r=+el.dataset.r;
+    el.classList.remove('path');
+    if(!el.classList.contains('start')&&!el.classList.contains('end')&&!el.classList.contains('block')) el.textContent='';
+  });
+  const show=preview||path;
+  show.forEach(([c,r],i)=>{
+    const el=document.querySelector(`.cell[data-c="${c}"][data-r="${r}"]`);
+    if(el&&!el.classList.contains('start')&&!el.classList.contains('end')) el.classList.add('path');
+  });
+}
+function tapCell(c,r){
+  if(preview){preview=null;paintPath();}
+  if(isBlocked(c,r)) return;
+  if(!path.length){
+    if(c===START.c&&r===START.r) path.push([c,r]);
+    else return;
+  }else{
+    const [pc,pr]=path[path.length-1];
+    const adj=Math.abs(pc-c)+Math.abs(pr-r)===1;
+    if(!adj) return;
+    const k=key(c,r), idx=path.findIndex(p=>p[0]===c&&p[1]===r);
+    if(idx>=0){path=path.slice(0,idx+1);}else{path.push([c,r]);}
+  }
+  updateInfo(); paintPath();
+}
+function undoPath(){if(path.length>1)path.pop();preview=null;paintPath();updateInfo();}
+function clearPath(){path=[];preview=null;paintPath();updateInfo();}
+function showRoute(L){
+  preview=ROUTES[L]; document.querySelectorAll('.opt-img').forEach(o=>o.classList.toggle('on',o.dataset.opt===L));
+  paintPath();
+  document.getElementById('info').textContent=en()?`Previewing route ${L}.`:`正在预览路线 ${L}。`;
+}
+function updateInfo(){
+  if(preview) return;
+  const hit=path.some(([c,r])=>isBlocked(c,r));
+  const okEnd=path.length&&path[path.length-1][0]===END.c&&path[path.length-1][1]===END.r;
+  document.getElementById('info').textContent=hit?(en()?'Path hits a blue square!':'路线踩到了蓝格！'):
+    okEnd?(en()?'Reached koala! Compare with options.':'到达考拉！对照选项。'):
+    (en()?`Steps: ${path.length}`:`步数：${path.length}`);
+}
+['A','B','C','D','E'].forEach(L=>{
+  const d=document.createElement('div'); d.className='card'; d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+  const w=document.createElement('div'); w.className='opt-img'; w.dataset.opt=L;
+  w.innerHTML=`<img src="assets/q11_opt${L}.jpeg" alt="${L}"/><div class="opt-lab">${L}</div>`;
+  w.onclick=()=>showRoute(L);
+  document.getElementById('optPreviews').appendChild(w);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick an option.':'❌ 请选择选项。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — try more paths.':'❌ 还不对——多试几条路线。');
+}
+function resetAll(){
+  choice=null;path=[];preview=null;
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.querySelectorAll('.card,.opt-img').forEach(c=>c.classList.remove('on'));
+  document.getElementById('feedback').textContent=''; buildGrid(); updateInfo();
+}
+buildGrid(); updateInfo();
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2022 A · Q17 · 两栋房子</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.house-lab{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.house-box{padding:16px;border-radius:12px;border:2px solid #e2e8f0;background:#f8fafc;min-width:200px;text-align:center}
+.house-box.left{border-color:#64748b;background:#f1f5f9}
+.house-box.right{border-color:#cbd5e1}
+.house-title{font-weight:800;margin-bottom:10px;color:#0f172a}
+.node-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0}
+.node{width:52px;height:52px;border-radius:50%;border:3px solid var(--primary);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.node input{width:40px;height:40px;border:none;text-align:center;font-size:18px;font-weight:800;background:transparent;outline:none}
+.node.fixed{background:#e0f2fe;border-color:#0369a1}
+.sum{font-weight:800;font-size:16px;margin-top:8px;color:#0369a1}
+.sum.bad{color:var(--danger)}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">两栋房子的数字</h1>
+<h1 class="lang-en">Numbers on Two Houses</h1>
+<div class="meta lang-zh">2022 等级 A · 第 17 题 · 5 分</div>
+<div class="meta lang-en">2022 Level A · Q17 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">每栋房子上五个数字之和都是 <strong>20</strong>。问号处是多少？</p>
+    <p class="lang-en">The sum of the five numbers on each house is <strong>20</strong>. What is the hidden number?</p>
+    <img class="fig" src="assets/q17_figure.png" alt="Q17"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：填空白圆圈，看每栋房子总和</h2>
+    <h2 class="lang-en">Lab: fill blanks, watch each house sum</h2>
+    <p class="tip lang-zh">在空白圆圈里填数（两栋房子共用中间两个圈）。看左边和右边的总和是否都等于 20，求出问号。</p>
+    <p class="tip lang-en">Fill blank circles (two shared in the middle). Watch sums for left and right houses — both should be 20. Find ?</p>
+    <div class="house-lab">
+      <div class="house-box left">
+        <div class="house-title lang-zh">左栋房子</div>
+        <div class="house-title lang-en">Left house</div>
+        <div class="node-row">
+          <div class="node fixed">6</div>
+        </div>
+        <div class="node-row">
+          <div class="node fixed">2</div>
+          <div class="node" id="sharedTop"><input type="number" id="sTop" min="0" max="20" placeholder="?"/></div>
+        </div>
+        <div class="node-row">
+          <div class="node fixed">5</div>
+          <div class="node" id="sharedBot"><input type="number" id="sBot" min="0" max="20" placeholder="?"/></div>
+        </div>
+        <div class="sum" id="sumLeft">= ?</div>
+      </div>
+      <div class="house-box right">
+        <div class="house-title lang-zh">右栋房子</div>
+        <div class="house-title lang-en">Right house</div>
+        <div class="node-row">
+          <div class="node fixed">3</div>
+          <div class="node fixed" style="border-color:#f59e0b;background:#fef3c7">?</div>
+        </div>
+        <div class="node-row">
+          <div class="node fixed">1</div>
+        </div>
+        <div class="sum" id="sumRight">= ?</div>
+      </div>
+    </div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh" style="margin-top:12px">问号 = ?</p>
+    <p class="tip lang-en" style="margin-top:12px">Question mark = ?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="16.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="18.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+const CORRECT='D', TARGET=20;
+const ANS_VAL={3:'A',4:'B',7:'C',9:'D',14:'E'};
+let choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+[3,4,7,9,14].forEach(n=>{
+  const d=document.createElement('div'); d.className='card'; d.textContent=n;
+  d.onclick=()=>{choice=String(n);document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=n;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function recalc(){
+  const a=parseInt(document.getElementById('sTop').value)||0;
+  const b=parseInt(document.getElementById('sBot').value)||0;
+  const left=6+2+5+a+b;
+  const right=3+1+a+b;
+  const sl=document.getElementById('sumLeft'), sr=document.getElementById('sumRight');
+  sl.textContent=(en()?'Sum = ':'总和 = ')+left;
+  sr.textContent=(en()?'Sum = ':'总和 = ')+right;
+  sl.classList.toggle('bad',left!==TARGET);
+  sr.classList.toggle('bad',right!==TARGET);
+  const info=document.getElementById('info');
+  if(left===TARGET&&right===TARGET){
+    const q=TARGET-3-1-a-b;
+    info.textContent=en()?`Both houses = 20! What is ??`:`两栋都是 20！问号是多少？`;
+  }else{
+    info.textContent=en()?'Adjust shared circles so both sums = 20.':'调整中间两个数，让两栋总和都是 20。';
+  }
+}
+document.getElementById('sTop').oninput=recalc;
+document.getElementById('sBot').oninput=recalc;
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick a number.':'❌ 请选择数字。';return;}
+  const letter=ANS_VAL[choice];
+  fb.className=letter===CORRECT?'ok':'bad';
+  fb.textContent=letter===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — fix the sums.':'❌ 还不对——调整数字再试。');
+}
+function resetLab(){
+  choice=null;
+  document.getElementById('sTop').value='';
+  document.getElementById('sBot').value='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent=''; recalc();
+}
+recalc();
+</script>
+</body>
+</html>
