@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>The Lost Cow Diagram / 折返轨迹演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 { color: #333; margin-bottom: 5px; }
+        .subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
+        .controls {
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        input, select { padding: 5px; font-size: 16px; }
+        input { width: 60px; }
+        button {
+            padding: 6px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #45a049; }
+        #canvas-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        canvas { background-color: #ffffff; }
+        .status-box {
+            margin-top: 15px;
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            width: 860px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .success { font-weight: bold; color: #4CAF50; }
+        .lang-select {
+            font-weight: bold;
+            background-color: #eef2f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="ui-title">USACO 2017 - The Lost Cow 折返轨迹演示</h2>
+    <div class="subtitle" id="ui-subtitle">数轴上方将清晰标出每一个“去-回”的过程及每次增加的距离</div>
+
+    <div class="controls">
+        <label id="ui-label-x">起点 X (FJ): <input type="number" id="inputX" value="3"></label>
+        <label id="ui-label-y">终点 Y (Bessie): <input type="number" id="inputY" value="6"></label>
+        
+        <label id="ui-label-lang">🌐 语言/Lang:
+            <select id="langSelect" class="lang-select" onchange="drawDiagram()">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+            </select>
+        </label>
+
+        <button id="ui-btn-generate" onclick="drawDiagram()">生成折返轨迹图</button>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="simCanvas" width="900" height="450"></canvas>
+    </div>
+
+    <div class="status-box" id="status"></div>
+
+    <script>
+        const i18n = {
+            zh: {
+                title: "USACO 2017 - The Lost Cow 折返轨迹演示",
+                subtitle: "数轴上方将清晰标出每一个“去-回”的过程及每次增加的距离",
+                labelX: "起点 X (FJ): ",
+                labelY: "终点 Y (Bessie): ",
+                btnGenerate: "生成折返轨迹图",
+                startX: "起点 X=",
+                bessieY: "Bessie Y=",
+                roundTrip: "第 {0} 次来回: {1} ➔ {2} ➔ {1} (走 {3} 步)",
+                finalReach: "🎉 最后到达: {0} ➔ {1} (走 {2} 步)",
+                summaryHeader: "<b>寻找轨迹分解（起点 X = {0}, Bessie Y = {1}）：</b><br>",
+                roundTripDetail: "<span style=\"color:{0}\">● 第 {1} 次来回</span>：从 {2} 到 {3} 再返回 {2}，走了 {4}×2 = <b>{5}</b> 步 （累计: {6}）<br>",
+                finalReachDetail: "<span class=\"success\">🎉 第 {0} 次直达</span>：从 {1} 直接到达 Bessie({2})，走了 <b>{3}</b> 步<br>",
+                totalDist: "总共行走距离: ",
+                alertValid: "请输入不同的有效整数！"
+            },
+            en: {
+                title: "USACO 2017 - The Lost Cow Trajectory Demo",
+                subtitle: "The back-and-forth process and distance traveled are clear above the line.",
+                labelX: "Start X (FJ): ",
+                labelY: "Target Y (Bessie): ",
+                btnGenerate: "Generate Trajectory",
+                startX: "Start X=",
+                bessieY: "Bessie Y=",
+                roundTrip: "Trip {0}: {1} ➔ {2} ➔ {1} ({3} steps)",
+                finalReach: "🎉 Final Reach: {0} ➔ {1} ({2} steps)",
+                summaryHeader: "<b>Trajectory Breakdown (Start X = {0}, Bessie Y = {1}):</b><br>",
+                roundTripDetail: "<span style=\"color:{0}\">● Round Trip {1}</span>: {2} to {3} and back to {2}, traveled {4}×2 = <b>{5}</b> steps (Total: {6})<br>",
+                finalReachDetail: "<span class=\"success\">🎉 Step {0} Direct Reach</span>: {1} directly to Bessie({2}), traveled <b>{3}</b> steps<br>",
+                totalDist: "Total Distance Traveled: ",
+                alertValid: "Please enter two distinct integers!"
+            }
+        };
+
+        function formatStr(template, ...args) {
+            return template.replace(/{(\d+)}/g, (match, number) => 
+                typeof args[number] !== 'undefined' ? args[number] : match
+            );
+        }
+
+        function drawDiagram() {
+            const canvas = document.getElementById('simCanvas');
+            const ctx = canvas.getContext('2d');
+            const x = parseInt(document.getElementById('inputX').value);
+            const y = parseInt(document.getElementById('inputY').value);
+            const lang = document.getElementById('langSelect').value;
+            const t = i18n[lang];
+
+            // 更新 UI 静态文本
+            document.getElementById('ui-title').innerText = t.title;
+            document.getElementById('ui-subtitle').innerText = t.subtitle;
+            document.getElementById('ui-label-x').childNodes[0].nodeValue = t.labelX;
+            document.getElementById('ui-label-y').childNodes[0].nodeValue = t.labelY;
+            document.getElementById('ui-btn-generate').innerText = t.btnGenerate;
+
+            const statusEl = document.getElementById('status');
+
+            if (isNaN(x) || isNaN(y) || x === y) {
+                alert(t.alertValid);
+                return;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 1. 预计算所有折返步骤
+            let steps = [];
+            let currentOffset = 1;
+            let minPos = Math.min(x, y);
+            let maxPos = Math.max(x, y);
+
+            while (true) {
+                let target = x + currentOffset;
+                minPos = Math.min(minPos, target);
+                maxPos = Math.max(maxPos, target);
+
+                let found = false;
+                let actualTarget = target;
+                if ((currentOffset > 0 && target >= y && x <= y) || 
+                    (currentOffset < 0 && target <= y && x >= y)) {
+                    found = true;
+                    actualTarget = y;
+                }
+
+                steps.push({
+                    offset: currentOffset,
+                    target: target,
+                    actualTarget: actualTarget,
+                    isLast: found
+                });
+
+                if (found) break;
+                currentOffset *= -2;
+            }
+
+            // 2. 布局计算
+            const minVal = minPos - 1;
+            const maxVal = maxPos + 1;
+            const startX = 60;
+            const endX = canvas.width - 60;
+            const lineY = canvas.height - 50;
+            const stepWidth = (endX - startX) / (maxVal - minVal);
+
+            function getX(val) {
+                return startX + (val - minVal) * stepWidth;
+            }
+
+            // 3. 画数轴主线与刻度
+            ctx.beginPath();
+            ctx.moveTo(startX, lineY);
+            ctx.lineTo(endX, lineY);
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            for (let i = minVal; i <= maxVal; i++) {
+                const posX = getX(i);
+                ctx.beginPath();
+                ctx.moveTo(posX, lineY - 5);
+                ctx.lineTo(posX, lineY + 5);
+                
+                if (i === 0) {
+                    ctx.strokeStyle = '#d9534f';
+                    ctx.lineWidth = 2;
+                } else {
+                    ctx.strokeStyle = '#aaa';
+                    ctx.lineWidth = 1;
+                }
+                ctx.stroke();
+
+                ctx.fillStyle = (i === 0) ? '#d9534f' : '#555';
+                ctx.font = (i === 0) ? 'bold 14px Arial' : '14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(i, posX, lineY + 22);
+            }
+
+            // 4. 标注起点 X 和 终点 Y
+            const xPx = getX(x);
+            const yPx = getX(y);
+
+            ctx.fillStyle = '#2196F3';
+            ctx.beginPath();
+            ctx.arc(xPx, lineY, 7, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.font = 'bold 13px Arial';
+            ctx.fillText(`${t.startX}${x}`, xPx, lineY + 40);
+
+            ctx.fillStyle = '#FF9800';
+            ctx.beginPath();
+            ctx.arc(yPx, lineY, 7, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.font = 'bold 13px Arial';
+            ctx.fillText(`${t.bessieY}${y}`, yPx, lineY + 40);
+
+            // 5. 绘制上方弧线轨迹与文字说明
+            let totalDist = 0;
+            let statusText = formatStr(t.summaryHeader, x, y);
+            
+            const colors = ['#E91E63', '#9C27B0', '#3F51B5', '#009688', '#4CAF50'];
+
+            steps.forEach((s, idx) => {
+                const color = colors[idx % colors.length];
+                const arcHeight = 40 + idx * 45;
+                const levelY = lineY - arcHeight;
+
+                const startPx = getX(x);
+                const targetPx = getX(s.actualTarget);
+
+                ctx.strokeStyle = color;
+                ctx.fillStyle = color;
+                ctx.lineWidth = 2;
+
+                if (!s.isLast) {
+                    const distOneWay = Math.abs(s.target - x);
+                    const roundTripDist = distOneWay * 2;
+                    totalDist += roundTripDist;
+
+                    ctx.beginPath();
+                    ctx.moveTo(startPx, lineY - 8);
+                    ctx.quadraticCurveTo((startPx + targetPx) / 2, levelY, targetPx, lineY - 8);
+                    ctx.setLineDash([5, 3]);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+
+                    const midX = (startPx + targetPx) / 2;
+                    ctx.font = 'bold 13px Arial';
+                    const text = formatStr(t.roundTrip, idx + 1, x, s.target, roundTripDist);
+                    ctx.fillText(text, midX, levelY - 8);
+
+                    ctx.beginPath();
+                    ctx.arc(targetPx, lineY - 5, 4, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    statusText += formatStr(t.roundTripDetail, color, idx + 1, x, s.target, distOneWay, roundTripDist, totalDist);
+
+                } else {
+                    const finalDist = Math.abs(s.actualTarget - x);
+                    totalDist += finalDist;
+
+                    ctx.beginPath();
+                    ctx.moveTo(startPx, lineY - 8);
+                    ctx.quadraticCurveTo((startPx + targetPx) / 2, levelY, targetPx, lineY - 8);
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+
+                    const midX = (startPx + targetPx) / 2;
+                    ctx.font = 'bold 14px Arial';
+                    const text = formatStr(t.finalReach, x, s.actualTarget, finalDist);
+                    ctx.fillText(text, midX, levelY - 8);
+
+                    statusText += formatStr(t.finalReachDetail, idx + 1, x, s.actualTarget, finalDist);
+                    statusText += `<hr style="border:none;border-top:1px dashed #ccc;"><b>${t.totalDist}<span class="highlight">${totalDist}</span></b>`;
+                }
+            });
+
+            statusEl.innerHTML = statusText;
+        }
+
+        // 初始化
+        drawDiagram();
+    </script>
+</body>
+</html>
