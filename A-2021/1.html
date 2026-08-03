@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q1 · 三根棍子摆图形</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.stick-sample{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0}
+.stick-sample .bar{width:120px;height:10px;background:#111;border-radius:4px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.tab{min-width:52px;padding:10px 14px;border-radius:12px;border:2px solid #cbd5e1;background:#fff;font-weight:800;cursor:pointer}
+.tab.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.lab-stage{display:flex;flex-direction:column;align-items:center;gap:10px;margin:12px 0}
+.svg-box{width:260px;height:260px;border:2px solid #e2e8f0;border-radius:14px;background:#fafbfc;display:flex;align-items:center;justify-content:center}
+.svg-box svg{width:220px;height:220px}
+.svg-box line{stroke:#111;stroke-width:10;stroke-linecap:round;cursor:pointer;transition:stroke .15s}
+.svg-box line.on{stroke:#f59e0b}
+.count{font-size:18px;font-weight:800;color:#0f172a;min-height:28px}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.note{font-size:13px;color:#64748b;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+
+<h1 class="lang-zh">三根棍子摆图形</h1>
+<h1 class="lang-en">Three Sticks Shape</h1>
+<div class="meta lang-zh">2021 等级 A · 第 1 题 · 3 分</div>
+<div class="meta lang-en">2021 Level A · Q1 · 3 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">一只袋鼠用三根这样的棍子来摆图形。不允许折断或折弯棍子，袋鼠可以摆出下列哪个图形？</p>
+    <p class="lang-en">A kangaroo laid out 3 sticks like this to make a shape. It is not allowed to break or bend the sticks. Which shape could the kangaroo make?</p>
+    <div class="stick-sample">
+      <span class="lang-zh">棍子样子：</span>
+      <span class="lang-en">Stick:</span>
+      <div class="bar" aria-hidden="true"></div>
+    </div>
+    <img class="fig" src="assets/q1_options.png" alt="Q1 options A–E"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：点一点，数每张图用了几根直棍</h2>
+    <h2 class="lang-en">Lab: tap sticks — how many straight sticks in each figure?</h2>
+    <p class="tip lang-zh">一整条穿过中心（或两端）的直线 = 1 根棍子。点亮后再点可取消。看看哪张图正好用了 <b>3</b> 根。</p>
+    <p class="tip lang-en">One full straight line (through the figure) = 1 stick. Tap to toggle. Find which figure uses exactly <b>3</b>.</p>
+    <div class="note lang-zh">提示：棍子不能折断，所以“看起来像很多短线段”时，仍要按完整的长直棍来数。</div>
+    <div class="note lang-en">Hint: sticks cannot be broken — count whole long straight sticks, not tiny segments.</div>
+
+    <div class="tabs" id="tabs"></div>
+    <div class="lab-stage">
+      <div class="svg-box" id="stage"></div>
+      <div class="count" id="count"></div>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" onclick="clearMarks()"><span class="lang-zh">清空点数</span><span class="lang-en">Clear taps</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:18px">想好后，选出你的答案：</p>
+    <p class="tip lang-en" style="margin-top:18px">When ready, pick your answer:</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="index.html"><span class="lang-zh">← 目录</span><span class="lang-en">← Index</span></a>
+    <a href="2.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+/** Stick layouts: each line is [x1,y1,x2,y2] in 0..100 viewBox */
+const FIGS = {
+  A: [
+    [10,50,90,50],[50,10,50,90],[18,18,82,82],[18,82,82,18]
+  ],
+  B: [
+    [28,12,28,88],[72,12,72,88],[12,22,88,78],[12,78,88,22]
+  ],
+  C: [
+    [20,30,80,18],[20,70,80,58],[28,12,40,88],[60,12,72,88]
+  ],
+  D: [
+    [15,50,85,50],[50,15,50,85],[22,22,78,78],[22,78,78,22]
+  ],
+  E: [
+    [18,18,82,82],[18,82,82,18],[50,10,50,90]
+  ]
+};
+const KEY = atob('RQ=='); // check key only — not shown in UI
+let cur = 'A';
+let marked = {};
+let _ans = null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function initTabs(){
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = '';
+  'ABCDE'.split('').forEach(L=>{
+    const b = document.createElement('button');
+    b.className = 'tab' + (L===cur?' on':'');
+    b.textContent = L;
+    b.onclick = ()=>{ cur=L; renderTabs(); draw(); updateCount(); };
+    tabs.appendChild(b);
+  });
+}
+function renderTabs(){
+  document.querySelectorAll('.tab').forEach(t=>{
+    t.classList.toggle('on', t.textContent===cur);
+  });
+}
+
+function draw(){
+  const stage = document.getElementById('stage');
+  const lines = FIGS[cur];
+  if(!marked[cur]) marked[cur] = lines.map(()=>false);
+  let svg = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">`;
+  lines.forEach((ln,i)=>{
+    const on = marked[cur][i] ? ' on' : '';
+    svg += `<line class="${on.trim()}" x1="${ln[0]}" y1="${ln[1]}" x2="${ln[2]}" y2="${ln[3]}" data-i="${i}"/>`;
+  });
+  svg += `</svg>`;
+  stage.innerHTML = svg;
+  stage.querySelectorAll('line').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const i = +el.dataset.i;
+      marked[cur][i] = !marked[cur][i];
+      draw();
+      updateCount();
+    });
+  });
+}
+
+function updateCount(){
+  const n = (marked[cur]||[]).filter(Boolean).length;
+  document.getElementById('count').textContent = en()
+    ? `Option ${cur}: you marked ${n} stick(s)`
+    : `选项 ${cur}：你点亮了 ${n} 根`;
+}
+
+function clearMarks(){
+  marked[cur] = FIGS[cur].map(()=>false);
+  draw(); updateCount();
+}
+function resetLab(){
+  marked = {};
+  cur = 'A';
+  _ans = null;
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  initTabs(); draw(); updateCount();
+}
+
+function initPool(){
+  const pool = document.getElementById('pool');
+  pool.innerHTML = '';
+  'ABCDE'.split('').forEach(L=>{
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.dataset.ans = L;
+    d.textContent = L;
+    d.onclick = ()=>{
+      _ans = L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box = document.getElementById('ansBox');
+      box.className = 'answer-box filled';
+      box.textContent = L;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb = document.getElementById('feedback');
+  if(!_ans){
+    fb.className='bad';
+    fb.textContent = en() ? '❌ Pick an option first.' : '❌ 请先选一个选项。';
+    return;
+  }
+  const ok = _ans === KEY;
+  fb.className = ok ? 'ok' : 'bad';
+  fb.textContent = ok
+    ? (en() ? '✅ You found it!' : '✅ 找对了！')
+    : (en() ? '❌ Not yet — go back to the lab and count the sticks again.' : '❌ 还不对——回到实验台再数一数每张图用了几根棍。');
+}
+
+initTabs();
+initPool();
+draw();
+updateCount();
+</script>
+</body>
+</html>

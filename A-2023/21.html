@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q21 · 舞蹈名次</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.ghost{background:#e2e8f0;color:#334155}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.rank-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:14px 0;min-height:60px}
+.slot{width:52px;height:52px;border:3px dashed #cbd5e1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;background:#fff;font-size:14px}
+.slot.filled{border-style:solid;background:#e0f2fe;border-color:var(--primary)}
+.slot.emma{background:#fef3c7;border-color:#f59e0b}
+.slider-wrap{text-align:center;margin:12px 0}
+input[type=range]{width:min(360px,90%)}
+.stat{font-weight:800;text-align:center;color:#0369a1;margin:8px 0}
+.constraints{background:#f0f9ff;border-radius:10px;padding:10px;font-size:13px;text-align:center;margin:10px 0}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">舞蹈比赛名次</h1>
+<h1 class="lang-en">Dance Competition Ranks</h1>
+<div class="meta lang-zh">2023 等级 A · 第 21 题 · 5 分</div>
+<div class="meta lang-en">2023 Level A · Q21 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小艾在个人舞蹈比赛中获得第三名，她和最后一名之间有三名选手。总共有多少名选手参加了比赛？</p>
+    <p class="lang-en">Emma finished third. There were three dancers between her and last place. How many dancers took part?</p>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：拖动总人数，摆名次</h2>
+    <h2 class="lang-en">Lab: set total, arrange ranks</h2>
+    <div class="constraints">
+      <span class="lang-zh">📌 小艾 = 第 3 名 &nbsp;|&nbsp; 小艾与最后一名之间恰好 3 人</span>
+      <span class="lang-en">📌 Emma = 3rd &nbsp;|&nbsp; Exactly 3 dancers between Emma and last</span>
+    </div>
+    <div class="slider-wrap">
+      <p class="tip lang-zh">总人数 n = <span id="nVal">5</span></p>
+      <p class="tip lang-en">Total dancers n = <span id="nValEn">5</span></p>
+      <input type="range" id="slider" min="4" max="10" value="5" oninput="setN(+this.value)"/>
+    </div>
+    <p class="tip lang-zh">点格子标记「小艾」在第几名（1=冠军）</p>
+    <p class="tip lang-en">Tap a slot to mark Emma's rank (1 = first)</p>
+    <div class="rank-row" id="rankRow"></div>
+    <div class="stat" id="stat"></div>
+    <p class="tip lang-zh">我的答案</p><p class="tip lang-en">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="20.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+  <a href="22.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT=7;
+let n=5,emmaRank=null,choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function setN(v){n=v;emmaRank=null;document.getElementById('nVal').textContent=v;document.getElementById('nValEn').textContent=v;render();}
+function render(){
+  const row=document.getElementById('rankRow'); row.innerHTML='';
+  for(let i=1;i<=n;i++){
+    const d=document.createElement('div');
+    d.className='slot'+(emmaRank===i?' emma filled':'');
+    d.textContent=emmaRank===i?(en()?'Emma': '艾'):i;
+    d.onclick=()=>{emmaRank=i;render();updateStat();};
+    row.appendChild(d);
+  }
+  updateStat();
+}
+function updateStat(){
+  const st=document.getElementById('stat');
+  if(emmaRank==null){st.textContent=en()?"Mark Emma's rank.":'请标记小艾的名次。';return;}
+  const between=n-emmaRank-1;
+  const ok3=emmaRank===3&&between===3;
+  st.textContent=(en()?`Emma rank ${emmaRank}, ${between} between her and last.`:`小艾第 ${emmaRank} 名，与最后一名之间 ${between} 人。`)
+    +(ok3?(en()?' ✓ fits both rules!':' ✓ 符合两个条件！'):'');
+}
+[4,5,6,7,8].forEach(num=>{
+  const d=document.createElement('div');d.className='card';d.textContent=num;
+  d.onclick=()=>{choice=num;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=num;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(choice==null){fb.className='bad';fb.textContent=en()?'❌ Pick total dancers.':'❌ 请选总人数。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — adjust n and check the rules.':'❌ 还不对——调整总人数，检查两个条件。');
+}
+function resetLab(){n=5;emmaRank=null;choice=null;document.getElementById('slider').value=5;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';setN(5);}
+render();
+</script>
+</body>
+</html>

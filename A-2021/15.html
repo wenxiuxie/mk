@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q15 · Eva 的家</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{
+  padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;background:#fff;
+  font-size:14px;line-height:1.5;display:flex;gap:10px;align-items:flex-start;
+}
+.mission .step .num{
+  flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;
+}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+
+.stage-wrap{max-width:560px;margin:12px auto}
+.stage{
+  position:relative;width:100%;aspect-ratio:1.05;
+  background:linear-gradient(180deg,#e0f2fe 0%,#ecfccb 100%);
+  border:3px solid #94a3b8;border-radius:18px;overflow:hidden;
+}
+.school{
+  position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);
+  width:100px;padding:12px 8px;background:#6366f1;color:#fff;border-radius:12px;
+  text-align:center;font-weight:900;font-size:12px;line-height:1.25;z-index:4;
+  box-shadow:0 6px 14px rgba(99,102,241,.35);
+}
+.house{
+  position:absolute;width:70px;z-index:5;cursor:pointer;user-select:none;
+  transition:transform .15s, filter .15s;
+}
+.house:hover{transform:scale(1.06)}
+.house.pass{
+  filter:drop-shadow(0 0 8px #f59e0b);
+}
+.house.pass .body{outline:3px solid #f59e0b;background:#fef3c7}
+.house.start .body{outline:3px solid #22c55e}
+.house .body{
+  border:3px solid #334155;border-radius:10px;padding:4px 2px 6px;
+  text-align:center;font-weight:900;font-size:13px;background:#fff;
+}
+.house .roof{height:14px;margin:-4px -2px 3px;border-radius:8px 8px 2px 2px}
+.house .hint{font-size:10px;color:#64748b;font-weight:700;margin-top:2px}
+
+#hE{left:16%;top:22%}
+#hE .roof{background:#64748b} #hE .body{background:#fef9c3}
+#hB{left:3%;top:58%}
+#hB .roof{background:#ea580c} #hB .body{background:#fef08a}
+#hD{left:68%;top:34%}
+#hD .roof{background:#fb923c} #hD .body{background:#99f6e4}
+#hC{left:78%;top:62%}
+#hC .roof{background:#a16207} #hC .body{background:#bbf7d0}
+#hA{left:55%;top:72%}
+#hA .roof{background:#64748b} #hA .body{background:#ffedd5}
+
+.walker{
+  position:absolute;z-index:8;font-size:28px;line-height:1;
+  transform:translate(-50%,-80%);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.2));
+  transition:left .45s linear, top .45s linear;
+  pointer-events:none;display:none;
+}
+.walker.show{display:block}
+
+.log{
+  text-align:center;font-weight:800;min-height:52px;margin:10px 0;
+  color:#0f172a;line-height:1.45;font-size:15px;
+}
+.trail-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;min-height:36px;margin:6px 0}
+.chip{
+  padding:6px 12px;border-radius:999px;background:#e2e8f0;font-weight:800;font-size:13px;color:#334155;
+}
+.chip.pass{background:#fef3c7;color:#92400e;border:2px solid #f59e0b}
+.chip.school{background:#ddd6fe;color:#5b21b6}
+
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); idleMsg();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">Eva 的家</h1>
+<h1 class="lang-en">Eva’s House</h1>
+<div class="meta lang-zh">2021 等级 A · 第 15 题 · 4 分</div>
+<div class="meta lang-en">2021 Level A · Q15 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">下图展示了五个朋友的家和学校的位置。学校是图中最大的建筑。上学路上 Doris 和 Ali 会经过 Leo 的家，Eva 会经过 Chloe 的家。请问哪一个是 Eva 的家？</p>
+    <p class="lang-en">The picture shows the five houses of five friends and their school. The school is the largest building. To go to school, Doris and Ali walk past Leo’s house. Eva walks past Chloe’s house. Which is Eva’s house?</p>
+    <img class="fig" src="assets/q15_map.png" alt="Q15 map"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：点房子，看小人怎么走到学校</h2>
+    <h2 class="lang-en">Lab: tap a house — watch the walk to school</h2>
+
+    <div class="mission">
+      <div class="step active" id="m1">
+        <div class="num">1</div>
+        <div>
+          <span class="lang-zh">分别从<strong>不同房子</strong>出发走走看。找一找：有哪一座房子，会被<strong>两条路</strong>上的人都路过？那一座就是 <b>Leo</b> 的家。</span>
+          <span class="lang-en">Start from different houses. Find the house that people from <strong>two homes</strong> both walk past — that is <b>Leo</b>.</span>
+        </div>
+      </div>
+      <div class="step" id="m2">
+        <div class="num">2</div>
+        <div>
+          <span class="lang-zh">再看<strong>另一条路</strong>：谁住得更远、上学要经过谁？更远的是 <b>Eva</b>，被经过的是 <b>Chloe</b>。</span>
+          <span class="lang-en">On the <strong>other branch</strong>: who is farther and walks past whom? Farther = <b>Eva</b>, the one passed = <b>Chloe</b>.</span>
+        </div>
+      </div>
+      <div class="step" id="m3">
+        <div class="num">3</div>
+        <div>
+          <span class="lang-zh">想好后，选出 Eva 的家是 A–E 哪一个。</span>
+          <span class="lang-en">Then pick which option A–E is Eva’s house.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="tip lang-zh">点下面地图里的房子，小人会一步步走向学校；路过的房子会变成橙色。</p>
+    <p class="tip lang-en">Tap a house on the map. The walker steps toward school; houses passed turn orange.</p>
+
+    <div class="stage-wrap">
+      <div class="stage" id="stage">
+        <div class="school" id="school"><span class="lang-zh">学校<br>SCHOOL</span><span class="lang-en">SCHOOL</span></div>
+
+        <div class="house" id="hA" data-id="A" onclick="startWalk('A')">
+          <div class="body"><div class="roof"></div>A<div class="hint lang-zh">点我出发</div><div class="hint lang-en">tap</div></div>
+        </div>
+        <div class="house" id="hB" data-id="B" onclick="startWalk('B')">
+          <div class="body"><div class="roof"></div>B<div class="hint lang-zh">点我出发</div><div class="hint lang-en">tap</div></div>
+        </div>
+        <div class="house" id="hC" data-id="C" onclick="startWalk('C')">
+          <div class="body"><div class="roof"></div>C<div class="hint lang-zh">点我出发</div><div class="hint lang-en">tap</div></div>
+        </div>
+        <div class="house" id="hD" data-id="D" onclick="startWalk('D')">
+          <div class="body"><div class="roof"></div>D<div class="hint lang-zh">点我出发</div><div class="hint lang-en">tap</div></div>
+        </div>
+        <div class="house" id="hE" data-id="E" onclick="startWalk('E')">
+          <div class="body"><div class="roof"></div>E<div class="hint lang-zh">点我出发</div><div class="hint lang-en">tap</div></div>
+        </div>
+
+        <div class="walker" id="walker">🚶</div>
+      </div>
+    </div>
+
+    <div class="trail-chips" id="trail"></div>
+    <div class="log" id="log"></div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="stopWalk()"><span class="lang-zh">停下</span><span class="lang-en">Stop</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置</span><span class="lang-en">Reset</span></button>
+    </div>
+
+    <div class="note lang-zh">小提示：先多走几趟，数一数「谁被路过了两次」；再去看没有被数到的那一侧。</div>
+    <div class="note lang-en">Tip: walk several routes and see who gets passed twice; then check the other branch.</div>
+
+    <p class="tip lang-zh" style="margin-top:16px">哪一个是 Eva 的家？</p>
+    <p class="tip lang-en" style="margin-top:16px">Which is Eva’s house?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="14.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="16.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+/**
+ * Map topology (matches contest figure):
+ *   Left branch:  B → E → School
+ *   Right branch: A → D → School
+ *                 C → D → School
+ * Positions are % of .stage for walker animation.
+ */
+const POS = {
+  A: {x: 58, y: 78},
+  B: {x: 10, y: 66},
+  C: {x: 84, y: 70},
+  D: {x: 74, y: 42},
+  E: {x: 24, y: 30},
+  S: {x: 50, y: 42}
+};
+/** Route from house to school: list of waypoints (house ids then S) */
+const ROUTE = {
+  A: ['A','D','S'],
+  B: ['B','E','S'],
+  C: ['C','D','S'],
+  D: ['D','S'],
+  E: ['E','S']
+};
+const KEY = atob('Qg==');
+let timer = null;
+let walking = false;
+let visitedStarts = new Set();
+let _ans = null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function clearPass(){
+  document.querySelectorAll('.house').forEach(h=>{
+    h.classList.remove('pass','start');
+  });
+}
+
+function setWalker(nodeId, show){
+  const w = document.getElementById('walker');
+  const p = POS[nodeId];
+  w.style.left = p.x + '%';
+  w.style.top = p.y + '%';
+  w.classList.toggle('show', !!show);
+}
+
+function showTrail(route, stepIdx){
+  const box = document.getElementById('trail');
+  box.innerHTML = '';
+  route.forEach((id, i)=>{
+    const c = document.createElement('span');
+    c.className = 'chip' + (id==='S'?' school':'') + (i>0 && i<=stepIdx && id!=='S'?' pass':'');
+    if(i===stepIdx) c.style.outline = '2px solid #0ea5e9';
+    c.textContent = id==='S' ? (en()?'School':'学校') : id;
+    box.appendChild(c);
+    if(i<route.length-1){
+      const arrow = document.createElement('span');
+      arrow.textContent = '→';
+      arrow.style.fontWeight = '900';
+      arrow.style.color = '#94a3b8';
+      box.appendChild(arrow);
+    }
+  });
+}
+
+function idleMsg(){
+  if(walking) return;
+  document.getElementById('log').textContent = en()
+    ? 'Tap a house. Watch who you walk past on the way to school.'
+    : '点一座房子出发，看上学路上会路过谁。';
+  if(!visitedStarts.size) document.getElementById('trail').innerHTML = '';
+}
+
+function updateMission(){
+  // soft progress: after visiting ≥3 different starts, mark step1 explored
+  const m1 = document.getElementById('m1');
+  const m2 = document.getElementById('m2');
+  const m3 = document.getElementById('m3');
+  if(visitedStarts.size >= 3){
+    m1.classList.add('done'); m1.classList.remove('active');
+    m2.classList.add('active');
+  }
+  if(_ans){
+    m2.classList.add('done'); m2.classList.remove('active');
+    m3.classList.add('active');
+  }
+}
+
+function stopWalk(){
+  if(timer){ clearInterval(timer); timer=null; }
+  walking = false;
+  document.getElementById('walker').classList.remove('show');
+}
+
+function startWalk(startId){
+  if(walking) stopWalk();
+  clearPass();
+  visitedStarts.add(startId);
+  updateMission();
+
+  const route = ROUTE[startId];
+  const houseEl = document.getElementById('h'+startId);
+  houseEl.classList.add('start');
+
+  setWalker(startId, true);
+  showTrail(route, 0);
+  document.getElementById('log').textContent = en()
+    ? `Starting from house ${startId}…`
+    : `从房子 ${startId} 出发…`;
+
+  let i = 0;
+  walking = true;
+  timer = setInterval(()=>{
+    i++;
+    if(i >= route.length){
+      stopWalk();
+      const passed = route.slice(1, -1); // houses between start and school
+      if(passed.length===0){
+        document.getElementById('log').textContent = en()
+          ? `From ${startId}: arrived! Did not walk past any other house.`
+          : `从 ${startId}：到学校了！没有路过别的房子。`;
+      } else {
+        document.getElementById('log').textContent = en()
+          ? `From ${startId}: walked past house ${passed.join(' & ')} on the way to school.`
+          : `从 ${startId}：上学路上路过了房子 ${passed.join('、')}。`;
+        passed.forEach(id=>{
+          document.getElementById('h'+id).classList.add('pass');
+        });
+      }
+      showTrail(route, route.length-1);
+      updateMission();
+      return;
+    }
+    const here = route[i];
+    setWalker(here, true);
+    showTrail(route, i);
+    if(here !== 'S'){
+      document.getElementById('h'+here).classList.add('pass');
+      document.getElementById('log').textContent = en()
+        ? `Passing house ${here}…`
+        : `正在路过房子 ${here}…`;
+    } else {
+      document.getElementById('log').textContent = en()
+        ? 'Arriving at school…'
+        : '到达学校…';
+    }
+  }, 700);
+}
+
+function resetLab(){
+  stopWalk();
+  clearPass();
+  visitedStarts.clear();
+  _ans = null;
+  document.getElementById('m1').className='step active';
+  document.getElementById('m2').className='step';
+  document.getElementById('m3').className='step';
+  document.getElementById('trail').innerHTML='';
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  idleMsg();
+}
+
+function initPool(){
+  const pool = document.getElementById('pool');
+  pool.innerHTML = '';
+  'ABCDE'.split('').forEach(L=>{
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.dataset.ans = L;
+    d.textContent = L;
+    d.onclick = ()=>{
+      _ans = L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box = document.getElementById('ansBox');
+      box.className = 'answer-box filled';
+      box.textContent = L;
+      document.getElementById('feedback').textContent='';
+      updateMission();
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb = document.getElementById('feedback');
+  if(!_ans){
+    fb.className='bad';
+    fb.textContent = en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok = _ans === KEY;
+  fb.className = ok?'ok':'bad';
+  fb.textContent = ok
+    ? (en()?'✅ You found it!':'✅ 找对了！')
+    : (en()
+      ? '❌ Not yet — walk more routes: find who is passed twice (Leo), then Eva on the other branch.'
+      : '❌ 还不对——多走几趟：先找被路过两次的（Leo），再去另一条路找更远的 Eva。');
+}
+
+initPool();
+idleMsg();
+</script>
+</body>
+</html>

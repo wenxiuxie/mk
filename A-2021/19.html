@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q19 · 两个盒子数字和相等</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.sm{max-width:360px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;margin:8px 0}
+
+
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:640px){.boxes{grid-template-columns:1fr}}
+.box{border:3px dashed #94a3b8;border-radius:14px;padding:12px;min-height:120px;background:#f8fafc}
+.box h3{margin:0 0 8px;font-size:15px}
+.box .sum{font-weight:900;color:#0369a1}
+.cards{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.nc{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;cursor:pointer;border:2px solid #334155;color:#0f172a}
+.nc.on{outline:3px solid #f59e0b}
+.slot{display:flex;flex-wrap:wrap;gap:6px;min-height:48px}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+<h1 class="lang-zh">两个盒子数字和相等</h1>
+<h1 class="lang-en">Two Boxes Same Sum</h1>
+<div class="meta lang-zh">2021 等级 A · 第 19 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q19 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">把卡片 <b>2、3、4、5、6</b> 放进两个盒子，使两个盒子里数字的和相同。与数字 <b>4</b> 在同一盒子里的数一定是哪个？</p>
+    <p class="lang-en">Cards 2, 3, 4, 5, 6 go into two boxes with equal sums. Which number must be in the box with 4?</p>
+    
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验台：把卡片分进两个盒子</h2>
+    <h2 class="lang-en">Lab: split the cards into two boxes</h2>
+    
+    <p class="tip lang-zh">先点卡片，再点盒子放进去。目标和：两盒数字和相等。看看和 4 在一起的是谁。</p>
+    <p class="tip lang-en">Tap a card, then a box. Make both box sums equal. What sits with 4?</p>
+    <div class="cards" id="cards"></div>
+    <div class="boxes">
+      <div class="box" id="box1" onclick="drop(1)"><h3 class="lang-zh">盒子 1　和 = <span class="sum" id="s1">0</span></h3><h3 class="lang-en">Box 1　sum = <span class="sum" id="s1b">0</span></h3><div class="slot" id="slot1"></div></div>
+      <div class="box" id="box2" onclick="drop(2)"><h3 class="lang-zh">盒子 2　和 = <span class="sum" id="s2">0</span></h3><h3 class="lang-en">Box 2　sum = <span class="sum" id="s2b">0</span></h3><div class="slot" id="slot2"></div></div>
+    </div>
+    <div class="info" id="boxInfo"></div>
+    <div class="actions"><button class="btn reset" onclick="resetBoxes()"><span class="lang-zh">清空盒子</span><span class="lang-en">Clear boxes</span></button></div>
+        
+    <p class="tip lang-zh" style="margin-top:16px">选出你的答案：</p>
+    <p class="tip lang-en" style="margin-top:16px">Pick your answer:</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="18.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="20.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+
+function en(){ return document.body.classList.contains('en-mode'); }
+function initPool(opts, letters){
+  const pool=document.getElementById('pool'); pool.innerHTML='';
+  (letters||'ABCDE').split('').forEach((L,i)=>{
+    const d=document.createElement('div'); d.className='card'; d.dataset.ans=L;
+    const label = Array.isArray(opts)? opts[i] : L;
+    d.innerHTML = Array.isArray(opts)? `<div>${L}</div><div style="font-size:12px;opacity:.95">${label}</div>` : L;
+    d.onclick=()=>{
+      window._ans=L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled';
+      box.textContent = Array.isArray(opts)? `${L}: ${opts[i]}` : L;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+function checkKey(key, badZh, badEn){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){ fb.className='bad'; fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。'; return; }
+  const ok=window._ans===key;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok?(en()?'✅ You found it!':'✅ 找对了！'):(en()?badEn:badZh);
+}
+function clearAns(){
+  window._ans=null;
+  const box=document.getElementById('ansBox'); if(box){ box.className='answer-box'; box.textContent=''; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+}
+
+const KEY=atob('Qw==');
+const OPTS=['only 3', 'only 5', 'only 6', 'only 5 or 6', 'impossible'];
+function checkAnswer(){
+  checkKey(KEY, '❌ 还不对——总和是 20，每盒应是 10；想想和 4 凑成 10 只能配谁。', '❌ Not yet — total is 20 so each box is 10; what pairs with 4 to make 10?');
+}
+
+const NUMS=[2,3,4,5,6];
+const COLORS={2:'#ddd6fe',3:'#fef08a',4:'#f1f5f9',5:'#bbf7d0',6:'#bae6fd'};
+let hand=null, b1=[], b2=[];
+function renderCards(){
+  const used=new Set([...b1,...b2]);
+  const el=document.getElementById('cards'); el.innerHTML='';
+  NUMS.forEach(n=>{
+    const d=document.createElement('div'); d.className='nc'+(hand===n?' on':'');
+    d.style.background=COLORS[n]; d.style.opacity=used.has(n)?.35:1;
+    d.textContent=n;
+    d.onclick=()=>{ if(used.has(n)) return; hand=n; renderCards(); };
+    el.appendChild(d);
+  });
+  paintSlots();
+}
+function paintSlots(){
+  const paint=(id,arr)=>{
+    const s=document.getElementById(id); s.innerHTML='';
+    arr.forEach(n=>{
+      const d=document.createElement('div'); d.className='nc'; d.style.background=COLORS[n]; d.textContent=n;
+      d.onclick=(e)=>{ e.stopPropagation(); if(id==='slot1') b1=b1.filter(x=>x!==n); else b2=b2.filter(x=>x!==n); renderCards(); };
+      s.appendChild(d);
+    });
+  };
+  paint('slot1',b1); paint('slot2',b2);
+  const s1=b1.reduce((a,b)=>a+b,0), s2=b2.reduce((a,b)=>a+b,0);
+  document.getElementById('s1').textContent=s1; document.getElementById('s1b').textContent=s1;
+  document.getElementById('s2').textContent=s2; document.getElementById('s2b').textContent=s2;
+  const eq=s1===s2 && b1.length+b2.length===5 && s1>0;
+  let msg='';
+  if(eq){
+    const with4 = (b1.includes(4)?b1:b2).filter(x=>x!==4);
+    msg = en()?`Sums equal (${s1}). With 4: ${with4.join(', ')||'(alone)'}`:`两盒和相等（${s1}）。与 4 同盒：${with4.join('、')||'（只有4）'}`;
+  } else {
+    msg = en()?'Make both sums equal and use all 5 cards.':'用完 5 张卡，让两盒和相等。';
+  }
+  document.getElementById('boxInfo').textContent=msg;
+}
+function drop(which){
+  if(hand==null) return;
+  if(b1.includes(hand)||b2.includes(hand)) return;
+  if(which===1) b1.push(hand); else b2.push(hand);
+  hand=null; renderCards();
+}
+function resetBoxes(){ hand=null; b1=[]; b2=[]; renderCards(); clearAns(); }
+function onLang(){ paintSlots(); }
+renderCards();
+        
+initPool(OPTS);
+</script>
+</body>
+</html>

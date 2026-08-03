@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q18 · 生日蛋糕</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.constraints{background:#fffbeb;border:2px solid #fde68a;border-radius:12px;padding:12px;margin:12px 0;font-size:14px;line-height:1.7}
+.cake-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.cake-card{width:100px;border:3px solid #e2e8f0;border-radius:12px;padding:6px;cursor:pointer;text-align:center;background:#fff}
+.cake-card.on{border-color:#f59e0b;background:#fef3c7}
+.cake-card img{width:100%;border-radius:8px}
+.cake-card .lab{font-weight:800;font-size:13px;margin-top:4px}
+.name-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.name-tag{padding:8px 12px;border-radius:999px;border:2px solid #cbd5e1;background:#fff;font-weight:700;cursor:pointer;font-size:13px}
+.name-tag.on{background:#e0f2fe;border-color:var(--primary)}
+.assign{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0;font-size:14px;font-weight:700}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">生日蛋糕与年龄</h1>
+<h1 class="lang-en">Birthday Cakes & Ages</h1>
+<div class="meta lang-zh">2023 等级 A · 第 18 题 · 5 分</div>
+<div class="meta lang-en">2023 Level A · Q18 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">五个孩子一起过生日，每个孩子都有自己的蛋糕。小李比小斯大两岁，但比阿里小一岁。小维是年龄最小的。哪个是莎莎的蛋糕？</p>
+    <p class="lang-en">Five children share a birthday. Lea is 2 years older than Jose, but 1 year younger than Ali. Vittorio is the youngest. Which is Sarah's cake?</p>
+    <img class="fig" src="assets/q18_figure.png" alt="Q18"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：把名字拖到蛋糕上</h2>
+    <h2 class="lang-en">Lab: assign names to cakes</h2>
+    <div class="constraints">
+      <div class="lang-zh">📌 小李 = 小斯 + 2 &nbsp;|&nbsp; 小李 = 阿里 − 1 &nbsp;|&nbsp; 小维最小</div>
+      <div class="lang-en">📌 Lea = Jose + 2 &nbsp;|&nbsp; Lea = Ali − 1 &nbsp;|&nbsp; Vittorio is youngest</div>
+    </div>
+    <p class="tip lang-zh">先点一个名字，再点一块蛋糕（蜡烛数字 = 年龄）。五人都分好后，选出莎莎的蛋糕 A–E。</p>
+    <p class="tip lang-en">Tap a name, then a cake (candle = age). Assign all five, then pick Sarah's cake A–E.</p>
+    <div class="name-row" id="names"></div>
+    <div class="cake-row" id="cakes"></div>
+    <div class="assign" id="assignView"></div>
+    <p class="tip lang-zh">莎莎的蛋糕是？</p><p class="tip lang-en">Sarah's cake is?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="17.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+  <a href="19.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT='C';
+const CAKES=[{L:'A',age:8,img:'assets/q18_cakeA.jpeg'},{L:'B',age:7,img:'assets/q18_cakeB.jpeg'},{L:'C',age:6,img:'assets/q18_cakeC.jpeg'},{L:'D',age:5,img:'assets/q18_cakeD.jpeg'},{L:'E',age:4,img:'assets/q18_cakeE.jpeg'}];
+const NAMES=[{id:'Lea',zh:'小李',en:'Lea'},{id:'Jose',zh:'小斯',en:'Jose'},{id:'Ali',zh:'阿里',en:'Ali'},{id:'Vittorio',zh:'小维',en:'Vittorio'},{id:'Sarah',zh:'莎莎',en:'Sarah'}];
+let selName=null,map={},choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function render(){
+  const nr=document.getElementById('names'); nr.innerHTML='';
+  NAMES.forEach(n=>{
+    const d=document.createElement('div');d.className='name-tag'+(selName===n.id?' on':'');
+    d.innerHTML=`<span class="lang-zh">${n.zh}</span><span class="lang-en">${n.en}</span>`;
+    d.onclick=()=>{selName=n.id;render();};
+    nr.appendChild(d);
+  });
+  const cr=document.getElementById('cakes'); cr.innerHTML='';
+  CAKES.forEach(c=>{
+    const d=document.createElement('div');d.className='cake-card';
+    d.innerHTML=`<img src="${c.img}" alt="${c.L}"/><div class="lab">${c.L} · ${c.age}</div>`;
+    d.onclick=()=>{
+      if(!selName) return;
+      Object.keys(map).forEach(k=>{if(map[k]===c.L) delete map[k];});
+      map[selName]=c.L; selName=null; render();
+    };
+    cr.appendChild(d);
+  });
+  document.getElementById('assignView').innerHTML=NAMES.map(n=>{
+    const c=map[n.id]; return `<span>${en()?n.en:n.zh} → ${c||'?'}</span>`;
+  }).join(' · ');
+}
+['A','B','C','D','E'].forEach(L=>{
+  const d=document.createElement('div');d.className='card';d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?"❌ Pick Sarah's cake A–E.":'❌ 请选莎莎的蛋糕 A–E。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — use the age rules.':'❌ 还不对——用年龄关系再试一次。');
+}
+function resetLab(){selName=null;map={};choice=null;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';render();}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q23 · 两周吃的水果</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.sm{max-width:360px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;margin:8px 0}
+
+
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:520px;margin:12px auto}
+.day{border:2px solid #e2e8f0;border-radius:10px;padding:8px 4px;text-align:center;font-size:12px;font-weight:800;background:#fff;min-height:64px}
+.day .n{color:#64748b;font-size:11px}
+.day .f{font-size:20px;margin-top:4px}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+<h1 class="lang-zh">两周吃的水果</h1>
+<h1 class="lang-en">Kangie’s Fruit in Two Weeks</h1>
+<div class="meta lang-zh">2021 等级 A · 第 23 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q23 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">Kangie 在周一、周三、周五只吃苹果；周二、周四只吃芒果。他每天要么吃 <b>2</b> 个苹果，要么吃 <b>3</b> 个芒果。周六周日不吃。两周里他一共吃了多少个水果？</p>
+    <p class="lang-en">Kangie eats only apples Mon/Wed/Fri (2 each day) and only mangoes Tue/Thu (3 each day). Nothing on weekends. How many pieces in two weeks?</p>
+    
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验台：先排一周日历，再乘 2</h2>
+    <h2 class="lang-en">Lab: fill one week, then ×2</h2>
+    
+    <p class="tip lang-zh">下面是一周。已按规则放好水果，把每天数量加起来，再想两周。</p>
+    <p class="tip lang-en">One week is filled by the rules. Sum the week, then think about two weeks.</p>
+    <div class="cal" id="cal"></div>
+    <div class="info" id="weekSum"></div>
+    <div class="actions">
+      <button class="btn primary" onclick="showWeek()"><span class="lang-zh">显示一周合计</span><span class="lang-en">Show week total</span></button>
+      <button class="btn ghost" onclick="document.getElementById('weekSum').textContent=en()?'Now double for two weeks — pick below.':'两周就是再乘 2——下面选题。'"><span class="lang-zh">提示：两周怎么算</span><span class="lang-en">Hint: two weeks</span></button>
+    </div>
+        
+    <p class="tip lang-zh" style="margin-top:16px">选出你的答案：</p>
+    <p class="tip lang-en" style="margin-top:16px">Pick your answer:</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="22.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="24.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+
+function en(){ return document.body.classList.contains('en-mode'); }
+function initPool(opts, letters){
+  const pool=document.getElementById('pool'); pool.innerHTML='';
+  (letters||'ABCDE').split('').forEach((L,i)=>{
+    const d=document.createElement('div'); d.className='card'; d.dataset.ans=L;
+    const label = Array.isArray(opts)? opts[i] : L;
+    d.innerHTML = Array.isArray(opts)? `<div>${L}</div><div style="font-size:12px;opacity:.95">${label}</div>` : L;
+    d.onclick=()=>{
+      window._ans=L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled';
+      box.textContent = Array.isArray(opts)? `${L}: ${opts[i]}` : L;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+function checkKey(key, badZh, badEn){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){ fb.className='bad'; fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。'; return; }
+  const ok=window._ans===key;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok?(en()?'✅ You found it!':'✅ 找对了！'):(en()?badEn:badZh);
+}
+function clearAns(){
+  window._ans=null;
+  const box=document.getElementById('ansBox'); if(box){ box.className='answer-box'; box.textContent=''; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+}
+
+const KEY=atob('RQ==');
+const OPTS=[12, 16, 18, 20, 24];
+function checkAnswer(){
+  checkKey(KEY, '❌ 还不对——先算一周（3天苹果+2天芒果），再乘 2。', '❌ Not yet — total one week (3 apple days + 2 mango days), then ×2.');
+}
+
+const DAYS=[
+  {zh:'一',en:'Mon',f:'🍎🍎',n:2},
+  {zh:'二',en:'Tue',f:'🥭🥭🥭',n:3},
+  {zh:'三',en:'Wed',f:'🍎🍎',n:2},
+  {zh:'四',en:'Thu',f:'🥭🥭🥭',n:3},
+  {zh:'五',en:'Fri',f:'🍎🍎',n:2},
+  {zh:'六',en:'Sat',f:'—',n:0},
+  {zh:'日',en:'Sun',f:'—',n:0},
+];
+function renderCal(){
+  const c=document.getElementById('cal'); c.innerHTML='';
+  DAYS.forEach(d=>{
+    const el=document.createElement('div'); el.className='day';
+    el.innerHTML=`<div class="n">${en()?d.en:('周'+d.zh)}</div><div class="f">${d.f}</div><div>${d.n||''}</div>`;
+    c.appendChild(el);
+  });
+}
+function showWeek(){
+  document.getElementById('weekSum').textContent=en()
+    ?`Add Mon–Fri yourself (Sat/Sun=0), then think about two weeks.`
+    :`自己把周一到周五加起来（六日为 0），再想两周。`;
+}
+function onLang(){ renderCal(); }
+renderCal();
+        
+initPool(OPTS);
+</script>
+</body>
+</html>

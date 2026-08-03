@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q20 · 两个齿轮的黑齿</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+
+.stage-wrap{
+  position:relative;max-width:560px;margin:14px auto;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(251,207,232,.55), transparent 40%),
+    radial-gradient(circle at 65% 60%, rgba(196,181,253,.5), transparent 45%),
+    linear-gradient(165deg,#0f172a 0%,#1e293b 55%,#312e81 100%);
+  border-radius:22px;padding:16px 12px 20px;
+  box-shadow:0 16px 40px rgba(15,23,42,.35), inset 0 1px 0 rgba(255,255,255,.08);
+  overflow:hidden;
+}
+.stage-wrap::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 22px,rgba(255,255,255,.03) 23px);
+}
+.stage-label{position:relative;z-index:2;display:flex;justify-content:space-between;padding:0 18px 6px;font-size:12px;font-weight:800;color:#e2e8f0;letter-spacing:.02em}
+#stage{position:relative;z-index:1;width:100%;height:auto;display:block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}
+.spark{position:absolute;width:8px;height:8px;border-radius:50%;background:#fde68a;pointer-events:none;opacity:0;z-index:3;box-shadow:0 0 8px #fbbf24}
+.hud{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.hud .box{padding:8px 14px;border-radius:12px;background:#eff6ff;border:2px solid #93c5fd;font-weight:800;font-size:14px}
+.hud .box.hot{background:#fef3c7;border-color:#f59e0b;animation:pulse .9s ease}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.progress{
+  max-width:420px;height:12px;margin:8px auto 4px;border-radius:999px;background:#e2e8f0;overflow:hidden;
+}
+.progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,#38bdf8,#a78bfa,#f472b6);transition:width .45s ease}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); syncHud();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">两个齿轮的黑齿</h1>
+<h1 class="lang-en">Two Cogs Black Teeth</h1>
+<div class="meta lang-zh">2021 等级 A · 第 20 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q20 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">图中有两个齿轮，每个都有一颗黑齿。小齿轮完整转一圈后，两颗黑齿会在什么位置？</p>
+    <p class="lang-en">The picture shows two cogs, each with a black tooth. Where will the black teeth be after the small cog has made one full turn?</p>
+    <img class="fig" src="assets/q20_hires.png" alt="Q20" onerror="this.src='assets/q20_figure.png'"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：真正咬合转动的齿轮</h2>
+    <h2 class="lang-en">Lab: gears that really mesh and spin</h2>
+
+    <div class="mission">
+      <div class="step active" id="m1">
+        <div class="num">1</div>
+        <div>
+          <span class="lang-zh">先点小齿轮的齿，数清有几颗（转一圈 = 转过这么多齿）。</span>
+          <span class="lang-en">Tap pink teeth to count them (one full turn = that many tooth-steps).</span>
+        </div>
+      </div>
+      <div class="step" id="m2">
+        <div class="num">2</div>
+        <div>
+          <span class="lang-zh">点「转 1 齿」看两轮咬合转动；或「转满一圈」看完整动画。</span>
+          <span class="lang-en">Tap “Spin 1 tooth” or “Full turn” to watch them mesh.</span>
+        </div>
+      </div>
+      <div class="step" id="m3">
+        <div class="num">3</div>
+        <div>
+          <span class="lang-zh">小轮转满一圈后，对照题目选项选 A–E。</span>
+          <span class="lang-en">After one full pink turn, match options A–E.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-wrap" id="wrap">
+      <div class="stage-label">
+        <span class="lang-zh">◀ 小齿轮顺时针</span><span class="lang-en">◀ Small CW</span>
+        <span class="lang-zh">大齿轮反向 ▶</span><span class="lang-en">Large CCW ▶</span>
+      </div>
+      <svg id="stage" viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <div class="progress"><i id="bar"></i></div>
+    <div class="hud">
+      <div class="box" id="hCount"></div>
+      <div class="box" id="hStep"></div>
+      <div class="box" id="hStatus"></div>
+    </div>
+    <div class="info" id="log"></div>
+
+    <div class="row">
+      <button class="btn primary" id="btnStep" onclick="spinTeeth(1)"><span class="lang-zh">⚙ 转 1 齿</span><span class="lang-en">⚙ Spin 1 tooth</span></button>
+      <button class="btn accent" id="btnFull" onclick="spinFull()"><span class="lang-zh">✦ 转满一圈</span><span class="lang-en">✦ Full turn</span></button>
+      <button class="btn ghost" onclick="idleSpin(true)"><span class="lang-zh">空转预览</span><span class="lang-en">Idle preview</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置</span><span class="lang-en">Reset</span></button>
+    </div>
+
+    <div class="note lang-zh">两轮咬合：小轮顺时针转，大轮一定反向转；一边走过 1 齿，另一边也走过 1 齿。</div>
+    <div class="note lang-en">Meshed: pink CW ⇒ blue CCW; one tooth on one side means one tooth on the other.</div>
+
+    <p class="tip lang-zh" style="margin-top:16px">对照题目选项，选出答案：</p>
+    <p class="tip lang-en" style="margin-top:16px">Match the problem options:</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="19.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="21.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const NS = 8, NL = 13;
+const KEY = atob('Qw==');
+const SX = 150, SY = 145, SR = 62;
+const LX = 268, LY = 220, LR = 100;
+
+let steps = 0;
+let counted = new Set();
+let busy = false;
+let idleTimer = null;
+let _ans = null;
+let angS = 0, angL = 0; // current visual degrees (SVG: + = CW)
+
+const meshAngS = Math.atan2(LY - SY, LX - SX) * 180 / Math.PI;
+const meshAngL = Math.atan2(SY - LY, SX - LX) * 180 / Math.PI;
+const baseS = meshAngS - 180 / NS;
+const baseL = meshAngL - 180 / NL;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function gearPath(cx, cy, r, n){
+  // path in local coords centered at 0,0 — we translate+rotate the group
+  const tooth = r * 0.2;
+  const rOut = r + tooth, rIn = r - tooth * 0.4;
+  let d = '';
+  for(let i = 0; i < n; i++){
+    const a0 = (i / n) * Math.PI * 2;
+    const a1 = ((i + 0.32) / n) * Math.PI * 2;
+    const a2 = ((i + 0.68) / n) * Math.PI * 2;
+    const a3 = ((i + 1) / n) * Math.PI * 2;
+    const p = (a, rr) => [(rr * Math.cos(a)).toFixed(2), (rr * Math.sin(a)).toFixed(2)];
+    const p0 = p(a0, rIn), p1 = p(a1, rOut), p2 = p(a2, rOut), p3 = p(a3, rIn);
+    d += (i === 0 ? 'M' : 'L') + p0[0] + ',' + p0[1];
+    d += ' L' + p1[0] + ',' + p1[1] + ' L' + p2[0] + ',' + p2[1] + ' L' + p3[0] + ',' + p3[1];
+  }
+  return d + ' Z';
+}
+
+function toothLocal(i, n, r){
+  const tooth = r * 0.2;
+  const a = ((i + 0.5) / n) * Math.PI * 2;
+  return [(r + tooth * 0.65) * Math.cos(a), (r + tooth * 0.65) * Math.sin(a)];
+}
+
+function buildStage(){
+  const svg = document.getElementById('stage');
+  // Fixed structure; only transform attributes update for smooth spin
+  svg.innerHTML = `
+    <defs>
+      <radialGradient id="gPink" cx="40%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#fce7f3"/><stop offset="55%" stop-color="#f9a8d4"/><stop offset="100%" stop-color="#db2777"/>
+      </radialGradient>
+      <radialGradient id="gBlue" cx="40%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#e0e7ff"/><stop offset="55%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#4f46e5"/>
+      </radialGradient>
+      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".35"/>
+      </filter>
+      <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#fde68a"/>
+      </marker>
+    </defs>
+    <path d="M 95 70 A 28 28 0 0 1 130 88" fill="none" stroke="#fde68a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <g id="gLarge" class="gear-group" filter="url(#soft)" transform="translate(${LX},${LY}) rotate(${baseL})">
+      <path d="${gearPath(0,0,LR,NL)}" fill="url(#gBlue)" stroke="#312e81" stroke-width="2.5"/>
+      <circle r="14" fill="#1e1b4b"/>
+      <circle r="5" fill="#c7d2fe"/>
+      <g id="blackL">
+        <circle cx="${toothLocal(0,NL,LR)[0]}" cy="${toothLocal(0,NL,LR)[1]}" r="11" fill="#0a0a0a" stroke="#fff" stroke-width="2"/>
+      </g>
+    </g>
+
+    <g id="gSmall" class="gear-group" filter="url(#soft)" transform="translate(${SX},${SY}) rotate(${baseS})">
+      <path d="${gearPath(0,0,SR,NS)}" fill="url(#gPink)" stroke="#9d174d" stroke-width="2.5"/>
+      <circle r="11" fill="#831843"/>
+      <circle r="4" fill="#fbcfe8"/>
+      <g id="blackS">
+        <circle cx="${toothLocal(0,NS,SR)[0]}" cy="${toothLocal(0,NS,SR)[1]}" r="10" fill="#0a0a0a" stroke="#fff" stroke-width="2"/>
+      </g>
+      <g id="hotspots"></g>
+    </g>
+
+    <circle cx="${(SX+LX)/2}" cy="${(SY+LY)/2}" r="5" fill="#fbbf24" opacity=".9"/>
+  `;
+  renderHotspots();
+  applyAngles(false);
+}
+
+function renderHotspots(){
+  const g = document.getElementById('hotspots');
+  if(!g) return;
+  let h = '';
+  for(let i = 0; i < NS; i++){
+    const [x, y] = toothLocal(i, NS, SR);
+    const on = counted.has(i);
+    h += `<circle data-i="${i}" cx="${x}" cy="${y}" r="12"
+      fill="${on ? '#fbbf24' : 'rgba(255,255,255,.15)'}"
+      stroke="${on ? '#b45309' : '#fda4af'}" stroke-width="2"
+      style="cursor:pointer"/>`;
+  }
+  g.innerHTML = h;
+  g.querySelectorAll('circle').forEach(el=>{
+    el.addEventListener('click', e=>{
+      e.stopPropagation();
+      if(busy) return;
+      const i = +el.dataset.i;
+      if(counted.has(i)) counted.delete(i); else counted.add(i);
+      renderHotspots();
+      syncHud();
+      updateMission();
+    });
+  });
+}
+
+function applyAngles(){
+  const gs = document.getElementById('gSmall');
+  const gl = document.getElementById('gLarge');
+  if(!gs || !gl) return;
+  gs.setAttribute('transform', `translate(${SX},${SY}) rotate(${baseS + angS})`);
+  gl.setAttribute('transform', `translate(${LX},${LY}) rotate(${baseL + angL})`);
+}
+
+/** Smoothly rotate both gears by one tooth (real meshing feel). */
+function animateToothStep(){
+  return new Promise(resolve=>{
+    const dS = 360 / NS;          // small CW
+    const dL = -360 / NL;         // large CCW
+    const fromS = angS, fromL = angL;
+    const toS = fromS + dS, toL = fromL + dL;
+    const dur = 520;
+    const t0 = performance.now();
+    function frame(now){
+      const u = Math.min(1, (now - t0) / dur);
+      // ease-out cubic
+      const e = 1 - Math.pow(1 - u, 3);
+      angS = fromS + (toS - fromS) * e;
+      angL = fromL + (toL - fromL) * e;
+      applyAngles();
+      if(u < 1) requestAnimationFrame(frame);
+      else { angS = toS; angL = toL; applyAngles(); resolve(); }
+    }
+    requestAnimationFrame(frame);
+  });
+}
+
+function sparkBurst(){
+  const wrap = document.getElementById('wrap');
+  const mx = (SX + LX) / 2 / 420 * wrap.clientWidth;
+  const my = (SY + LY) / 2 / 360 * wrap.clientHeight + 28;
+  for(let i = 0; i < 6; i++){
+    const s = document.createElement('div');
+    s.className = 'spark';
+    s.style.left = mx + 'px';
+    s.style.top = my + 'px';
+    wrap.appendChild(s);
+    const ang = Math.random() * Math.PI * 2;
+    const dist = 18 + Math.random() * 28;
+    requestAnimationFrame(()=>{
+      s.style.transition = 'transform .5s ease, opacity .5s ease';
+      s.style.opacity = '1';
+      s.style.transform = `translate(${Math.cos(ang)*dist}px,${Math.sin(ang)*dist}px) scale(0)`;
+    });
+    setTimeout(()=>s.remove(), 520);
+  }
+}
+
+function setBusy(v){
+  busy = v;
+  document.getElementById('btnStep').disabled = v;
+  document.getElementById('btnFull').disabled = v;
+}
+
+function syncAnglesToSteps(){
+  angS = steps * (360 / NS);
+  angL = -steps * (360 / NL);
+  applyAngles();
+}
+
+async function spinTeeth(n){
+  if(busy) return;
+  stopIdle();
+  setBusy(true);
+  for(let i = 0; i < n; i++){
+    await animateToothStep();
+    steps++;
+    sparkBurst();
+    syncHud();
+    updateMission();
+  }
+  setBusy(false);
+  syncHud();
+}
+
+async function spinFull(){
+  if(busy) return;
+  const go = (steps % NS === 0) ? NS : (NS - (steps % NS));
+  await spinTeeth(go);
+}
+
+function idleSpin(){
+  if(idleTimer){ stopIdle(); syncHud(); return; }
+  if(busy) return;
+  idleTimer = setInterval(()=>{
+    angS += 1.4;
+    angL -= 1.4 * (NS / NL); // keep pitch-line speed matched
+    applyAngles();
+  }, 16);
+  document.getElementById('log').textContent = en()
+    ? 'Idle preview — tap again or Spin to stop.'
+    : '空转预览中——再点一次或点「转 1 齿」停止。';
+}
+
+function stopIdle(){
+  if(idleTimer){ clearInterval(idleTimer); idleTimer = null; }
+  syncAnglesToSteps();
+}
+
+function syncHud(){
+  document.getElementById('hCount').textContent = en()
+    ? `Counted: ${counted.size} / ${NS}?`
+    : `已数齿：${counted.size} / ${NS}?`;
+  const box = document.getElementById('hStep');
+  box.textContent = en() ? `Turned: ${steps} teeth` : `已转：${steps} 齿`;
+  box.className = 'box' + (steps > 0 ? ' hot' : '');
+  const full = steps > 0 && steps % NS === 0;
+  const st = document.getElementById('hStatus');
+  st.textContent = full
+    ? (en() ? '✦ Full turn done!' : '✦ 小齿轮转满一圈！')
+    : (en() ? `${NS - (steps % NS)} to next full turn` : `距一圈还差 ${NS - (steps % NS)} 齿`);
+  st.className = 'box' + (full ? ' hot' : '');
+  document.getElementById('bar').style.width = (full ? 100 : ((steps % NS) / NS * 100)) + '%';
+
+  const log = document.getElementById('log');
+  if(!idleTimer){
+    if(steps === 0 && counted.size < NS)
+      log.textContent = en()
+        ? 'Tap the glowing spots on the pink gear to count teeth.'
+        : '点粉色齿轮上发亮的齿来计数，再开始转动。';
+    else if(steps === 0)
+      log.textContent = en()
+        ? 'Ready — spin 1 tooth or watch a full turn.'
+        : '可以开始了——转 1 齿，或直接转满一圈。';
+    else if(full)
+      log.textContent = en()
+        ? 'Look at both black teeth, then pick A–E below.'
+        : '看清两颗黑齿的位置，对照题目选项选 A–E。';
+    else
+      log.textContent = en()
+        ? 'Watch them mesh… black teeth ride with the gears.'
+        : '看它们咬合转动……黑齿跟着齿轮走。';
+  }
+}
+
+function updateMission(){
+  const m1 = document.getElementById('m1');
+  const m2 = document.getElementById('m2');
+  const m3 = document.getElementById('m3');
+  if(counted.size >= NS - 1){ m1.classList.add('done'); m1.classList.remove('active'); m2.classList.add('active'); }
+  if(steps >= 1){ m2.classList.add('done'); m2.classList.remove('active'); m3.classList.add('active'); }
+  if(steps >= NS){ m3.classList.add('done'); }
+}
+
+function resetLab(){
+  stopIdle();
+  busy = false;
+  steps = 0; counted = new Set(); _ans = null;
+  angS = 0; angL = 0;
+  document.getElementById('m1').className = 'step active';
+  document.getElementById('m2').className = 'step';
+  document.getElementById('m3').className = 'step';
+  document.getElementById('ansBox').className = 'answer-box';
+  document.getElementById('ansBox').textContent = '';
+  document.getElementById('feedback').textContent = '';
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('on'));
+  setBusy(false);
+  buildStage();
+  syncAnglesToSteps();
+  syncHud();
+}
+
+function initPool(){
+  const pool = document.getElementById('pool');
+  pool.innerHTML = '';
+  'ABCDE'.split('').forEach(L=>{
+    const d = document.createElement('div');
+    d.className = 'card'; d.textContent = L;
+    d.onclick = ()=>{
+      _ans = L;
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('on'));
+      d.classList.add('on');
+      const box = document.getElementById('ansBox');
+      box.className = 'answer-box filled';
+      box.textContent = L;
+      document.getElementById('feedback').textContent = '';
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb = document.getElementById('feedback');
+  if(!_ans){
+    fb.className = 'bad';
+    fb.textContent = en() ? '❌ Pick an option first.' : '❌ 请先选一个选项。';
+    return;
+  }
+  const ok = _ans === KEY;
+  fb.className = ok ? 'ok' : 'bad';
+  fb.textContent = ok
+    ? (en() ? '✅ You found it!' : '✅ 找对了！')
+    : (en()
+      ? '❌ Not yet — spin a full turn and match the black teeth to the figure.'
+      : '❌ 还不对——再转满一圈，对照黑齿位置与选项图。');
+}
+
+initPool();
+buildStage();
+syncHud();
+</script>
+</body>
+</html>

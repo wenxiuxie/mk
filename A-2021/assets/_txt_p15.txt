@@ -1,0 +1,37 @@
+KSF 2021 – ﬁnalized problems PreEcolier
+(A) 2
+(B) 4
+(C) 6
+(D) 8
+(E) 10
+Solution:
+# 12. Tom encodes words using the board shown.
+For example, the word PIZZA
+has the code A2 A4 C1 C1 B2.
+What word did Tom encode as B3 B2 C4 D2?
+(A) MAZE
+(B) MASK
+(C) MILK
+(D) MATE
+(E) MATH
+Solution:
+# 13. Which ﬁgure can be made from these two pieces?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 14. Julie and Angela played ”kangball”, a ball game. Each goal in their game scores 2 points.
+Julie scored 5 goals and Angela scored 9 goals. How many more points than Julie did Angela score?
+(A) 4
+(B) 6
+(C) 8
+(D) 10
+(E) 12
+Solution:
+# 15. The picture shows the ﬁve houses of ﬁve friends and their school. The school is the largest
+building in the picture. To go to school, Doris and Ali walk past Leo’s house. Eva walks past Chole’s
+house. Which is Eva’s house?
+SCHOOL
+5

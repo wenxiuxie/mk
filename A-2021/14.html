@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q14 · 袋鼠球得分</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+@media(max-width:640px){.board{grid-template-columns:1fr}}
+.player{border:2px solid #e2e8f0;border-radius:14px;padding:14px;background:#fafbfc}
+.player h3{margin:0 0 8px;font-size:16px;color:#0f172a}
+.goals{display:flex;flex-wrap:wrap;gap:6px;min-height:48px;margin:8px 0}
+.ball{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fde68a,#f59e0b);border:2px solid #b45309;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#78350f}
+.stat{font-weight:800;font-size:15px;color:#334155;min-height:24px}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.note{font-size:13px;color:#64748b;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.diff-box{text-align:center;font-size:18px;font-weight:800;margin:12px 0;min-height:28px;color:#0f172a}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); sync();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">袋鼠球得分</h1>
+<h1 class="lang-en">Kangball Points</h1>
+<div class="meta lang-zh">2021 等级 A · 第 14 题 · 4 分</div>
+<div class="meta lang-en">2021 Level A · Q14 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">Julie 和 Angela 玩一种叫做 “kangball” 的球类游戏，每进一球得 <b>2</b> 分。Julie 进了 <b>5</b> 个球，Angela 进了 <b>9</b> 个球。请问 Angela 比 Julie 多得几分？</p>
+    <p class="lang-en">Julie and Angela played “kangball”. Each goal scores <b>2</b> points. Julie scored <b>5</b> goals and Angela scored <b>9</b> goals. How many more points than Julie did Angela score?</p>
+    <div class="note lang-zh">选项：(A) 4　(B) 6　(C) 8　(D) 10　(E) 12</div>
+    <div class="note lang-en">Choices: (A) 4　(B) 6　(C) 8　(D) 10　(E) 12</div>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：先摆进球，再算分数差</h2>
+    <h2 class="lang-en">Lab: place goals, then compare points</h2>
+    <p class="tip lang-zh">点「+1 球」摆出题目里的进球数。每球 2 分会自动累计。想清楚「多几分」再选题。</p>
+    <p class="tip lang-en">Use +1 goal to match the problem. Each goal adds 2 points. Then pick how many more points.</p>
+
+    <div class="board">
+      <div class="player">
+        <h3>Julie</h3>
+        <div class="goals" id="gJ"></div>
+        <div class="stat" id="sJ"></div>
+        <div class="row">
+          <button class="btn ghost" onclick="add('J',-1)">−1</button>
+          <button class="btn primary" onclick="add('J',1)"><span class="lang-zh">+1 球</span><span class="lang-en">+1 goal</span></button>
+          <button class="btn ghost" onclick="setGoals('J',5)"><span class="lang-zh">摆成 5 球</span><span class="lang-en">Set to 5</span></button>
+        </div>
+      </div>
+      <div class="player">
+        <h3>Angela</h3>
+        <div class="goals" id="gA"></div>
+        <div class="stat" id="sA"></div>
+        <div class="row">
+          <button class="btn ghost" onclick="add('A',-1)">−1</button>
+          <button class="btn primary" onclick="add('A',1)"><span class="lang-zh">+1 球</span><span class="lang-en">+1 goal</span></button>
+          <button class="btn ghost" onclick="setGoals('A',9)"><span class="lang-zh">摆成 9 球</span><span class="lang-en">Set to 9</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="diff-box" id="diff"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="fillProblem()">
+        <span class="lang-zh">一键摆成题意（5 球 / 9 球）</span>
+        <span class="lang-en">Match the problem (5 / 9)</span>
+      </button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">清空</span><span class="lang-en">Clear</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:16px">Angela 比 Julie 多得几分？</p>
+    <p class="tip lang-en" style="margin-top:16px">How many more points did Angela score?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="index.html"><span class="lang-zh">← 目录</span><span class="lang-en">← Index</span></a>
+    <a href="15.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const PTS = 2;
+const OPTS = [4,6,8,10,12];
+const KEY = atob('Qw==');
+let j = 0, a = 0, _ans = null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function renderGoals(who, n){
+  const box = document.getElementById(who==='J'?'gJ':'gA');
+  box.innerHTML = '';
+  for(let i=0;i<n;i++){
+    const d = document.createElement('div');
+    d.className = 'ball';
+    d.textContent = '+'+PTS;
+    box.appendChild(d);
+  }
+}
+
+function sync(){
+  renderGoals('J', j);
+  renderGoals('A', a);
+  const pj = j*PTS, pa = a*PTS;
+  document.getElementById('sJ').textContent = en()
+    ? `${j} goals → ${pj} points`
+    : `${j} 球 → ${pj} 分`;
+  document.getElementById('sA').textContent = en()
+    ? `${a} goals → ${pa} points`
+    : `${a} 球 → ${pa} 分`;
+  const d = document.getElementById('diff');
+  if(j===0 && a===0){
+    d.textContent = en() ? 'Place some goals to start.' : '先摆几颗进球试试。';
+  } else {
+    d.textContent = en()
+      ? 'Compare the two point totals yourself, then pick an option below.'
+      : '自己比较两人总分，再在下面选出「多几分」。';
+  }
+}
+
+function add(who, delta){
+  if(who==='J') j = Math.max(0, Math.min(12, j+delta));
+  else a = Math.max(0, Math.min(12, a+delta));
+  sync();
+}
+function setGoals(who, n){
+  if(who==='J') j = n; else a = n;
+  sync();
+}
+function fillProblem(){ j=5; a=9; sync(); }
+function resetLab(){
+  j=0; a=0; _ans=null;
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  sync();
+}
+
+function initPool(){
+  const pool = document.getElementById('pool');
+  pool.innerHTML = '';
+  'ABCDE'.split('').forEach((L,i)=>{
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.dataset.ans = L;
+    d.innerHTML = `<div>${L}</div><div style="font-size:12px;opacity:.95">${OPTS[i]}</div>`;
+    d.onclick = ()=>{
+      _ans = L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box = document.getElementById('ansBox');
+      box.className = 'answer-box filled';
+      box.textContent = `${L}: ${OPTS[i]}`;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb = document.getElementById('feedback');
+  if(!_ans){
+    fb.className='bad';
+    fb.textContent = en()?'❌ Pick an option first.':'❌ 请先选一个选项。';
+    return;
+  }
+  const ok = _ans === KEY;
+  fb.className = ok?'ok':'bad';
+  fb.textContent = ok
+    ? (en()?'✅ You found it!':'✅ 找对了！')
+    : (en()
+      ? '❌ Not yet — fill 5 and 9 goals, compare total points (not just goals).'
+      : '❌ 还不对——先摆成 5 球和 9 球，比较的是「总分」差，不只是球数差。');
+}
+
+initPool();
+sync();
+</script>
+</body>
+</html>

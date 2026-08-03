@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q17 · 哪块形状没用到</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+
+.board{
+  display:grid;grid-template-columns:repeat(4,56px);gap:4px;margin:12px auto;width:max-content;
+  padding:8px;background:#f8fafc;border:2px solid #cbd5e1;border-radius:12px;
+}
+.cell{
+  width:56px;height:56px;border:2px solid #94a3b8;border-radius:8px;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;user-select:none;
+}
+.cell.mark{outline:3px solid #f59e0b;background:#fffbeb}
+.tally{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.tally .box{padding:8px 14px;border-radius:12px;background:#eff6ff;border:2px solid #93c5fd;font-weight:800;font-size:15px}
+.pieces{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:12px 0}
+@media(max-width:700px){.pieces{grid-template-columns:1fr 1fr}}
+.piece{
+  border:3px solid #cbd5e1;border-radius:12px;padding:10px 8px;text-align:center;cursor:pointer;
+  background:#fff;transition:border-color .15s, background .15s, transform .12s;
+}
+.piece:hover{transform:translateY(-2px)}
+.piece.in{border-color:#22c55e;background:#f0fdf4}
+.piece .letter{font-size:20px;font-weight:900;color:#0f172a}
+.piece .cells{font-size:12px;color:#64748b;font-weight:700;margin:4px 0}
+.piece .syms{font-size:18px;letter-spacing:1px;line-height:1.4}
+.compare{max-width:420px;margin:12px auto;border-collapse:collapse;font-size:14px;width:100%}
+.compare th,.compare td{border:1px solid #e2e8f0;padding:8px;text-align:center}
+.compare th{background:#f1f5f9}
+.compare .match{background:#dcfce7;font-weight:800}
+.compare .bad{background:#fee2e2}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); syncAll();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">哪块形状没用到</h1>
+<h1 class="lang-en">Which Shape Was Not Used</h1>
+<div class="meta lang-zh">2021 等级 A · 第 17 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q17 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">Mara 用下面五块形状中的 <b>四块</b> 拼成了正方形。哪一块没有被用到？</p>
+    <p class="lang-en">Mara built the square using <b>four</b> of the five shapes. Which shape was not used?</p>
+    <img class="fig" src="assets/q17_figure.png" alt="Q17"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：先数图案，再凑四块</h2>
+    <h2 class="lang-en">Lab: count symbols, then pick four pieces</h2>
+
+    <div class="mission">
+      <div class="step active" id="m1">
+        <div class="num">1</div>
+        <div>
+          <span class="lang-zh">点大正方形里的格子，数清每种图案有几个（★ ◆ ○ →）。</span>
+          <span class="lang-en">Tap cells in the big square and count each symbol (★ ◆ ○ →).</span>
+        </div>
+      </div>
+      <div class="step" id="m2">
+        <div class="num">2</div>
+        <div>
+          <span class="lang-zh">再点下面的 A–E：选中 =「我要用这块」。要选满 <b>4</b> 块，且图案个数加起来要和大正方形一样。</span>
+          <span class="lang-en">Tap A–E to mark pieces as used. Choose exactly <b>4</b> pieces whose symbol totals match the square.</span>
+        </div>
+      </div>
+      <div class="step" id="m3">
+        <div class="num">3</div>
+        <div>
+          <span class="lang-zh">剩下没选中的那一块，就是「没用到」的答案。</span>
+          <span class="lang-en">The one piece left out is the unused shape.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="tip lang-zh">大正方形（可点击做标记，方便数数）：</p>
+    <p class="tip lang-en">Big square (tap to mark while counting):</p>
+    <div class="board" id="board"></div>
+    <div class="tally" id="tally"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="clearMarks()"><span class="lang-zh">清除格子标记</span><span class="lang-en">Clear marks</span></button>
+      <button class="btn primary" onclick="revealBoardCount()"><span class="lang-zh">显示正方形图案总数</span><span class="lang-en">Show square totals</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:16px">五块碎片（点选「使用」；再点取消）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Five pieces (tap to use; tap again to cancel):</p>
+    <div class="pieces" id="pieces"></div>
+
+    <table class="compare" id="compare">
+      <thead>
+        <tr>
+          <th></th>
+          <th>★</th><th>◆</th><th>○</th><th>→</th>
+          <th class="lang-zh">格数</th><th class="lang-en">cells</th>
+        </tr>
+      </thead>
+      <tbody id="cmpBody"></tbody>
+    </table>
+    <div class="info" id="labInfo"></div>
+
+    <div class="note lang-zh">小提示：四块的总格数必须是 <b>16</b>（因为 4×4=16）。先用格数筛一遍，再用 ★◆○→ 的个数核对。</div>
+    <div class="note lang-en">Tip: four pieces must total <b>16</b> cells. Filter by cell count, then match ★◆○→ totals.</div>
+
+    <div class="actions">
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset lab</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:16px">哪一块没有被用到？</p>
+    <p class="tip lang-en" style="margin-top:16px">Which shape was not used?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="16.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="18.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+/** Board symbols — matches the contest figure */
+const GRID = [
+  ['★','★','◆','→'],
+  ['★','◆','◆','→'],
+  ['★','○','◆','→'],
+  ['★','○','○','○']
+];
+/** Piece inventories from the figure */
+const PIECES = {
+  A: {cells:4, c:{'★':3,'◆':1,'○':0,'→':0}, sym:'★★★◆'},
+  B: {cells:4, c:{'★':0,'◆':3,'○':1,'→':0}, sym:'◆◆◆○'},
+  C: {cells:3, c:{'★':2,'◆':0,'○':1,'→':0}, sym:'★★○'},
+  D: {cells:4, c:{'★':1,'◆':2,'○':1,'→':0}, sym:'★◆◆○'},
+  E: {cells:5, c:{'★':0,'◆':0,'○':2,'→':3}, sym:'○○→→→'}
+};
+const KEY = atob('RA==');
+const ORDER = ['★','◆','○','→'];
+
+let marks = Array.from({length:4},()=>[false,false,false,false]);
+let used = {A:false,B:false,C:false,D:false,E:false};
+let showBoardTotal = false;
+let _ans = null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function boardCount(){
+  const c={'★':0,'◆':0,'○':0,'→':0};
+  GRID.forEach(row=>row.forEach(s=>c[s]++));
+  return c;
+}
+
+function renderBoard(){
+  const b=document.getElementById('board'); b.innerHTML='';
+  for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+    const d=document.createElement('div');
+    d.className='cell'+(marks[r][c]?' mark':'');
+    d.textContent=GRID[r][c];
+    d.onclick=()=>{ marks[r][c]=!marks[r][c]; renderBoard(); updateMission(); };
+    b.appendChild(d);
+  }
+}
+
+function renderTally(){
+  const el=document.getElementById('tally');
+  const marked={'★':0,'◆':0,'○':0,'→':0};
+  let nMark=0;
+  for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+    if(marks[r][c]){ marked[GRID[r][c]]++; nMark++; }
+  }
+  const bc=boardCount();
+  el.innerHTML = ORDER.map(s=>{
+    const v = showBoardTotal ? bc[s] : (nMark? marked[s] : '·');
+    const label = showBoardTotal
+      ? (en()?`all ${s}: ${bc[s]}`:`全部 ${s}：${bc[s]}`)
+      : (en()?`marked ${s}: ${v}`:`已点 ${s}：${v}`);
+    return `<div class="box">${label}</div>`;
+  }).join('');
+}
+
+function renderPieces(){
+  const box=document.getElementById('pieces'); box.innerHTML='';
+  'ABCDE'.split('').forEach(L=>{
+    const p=PIECES[L];
+    const d=document.createElement('div');
+    d.className='piece'+(used[L]?' in':'');
+    d.innerHTML=`<div class="letter">${L}</div>
+      <div class="cells">${en()?`${p.cells} cells`:`${p.cells} 格`}</div>
+      <div class="syms">${p.sym}</div>`;
+    d.onclick=()=>{
+      used[L]=!used[L];
+      // max 4 used
+      const n=Object.values(used).filter(Boolean).length;
+      if(n>4){ used[L]=false; }
+      renderPieces(); renderCompare(); updateMission(); syncLabInfo();
+    };
+    box.appendChild(d);
+  });
+}
+
+function sumUsed(){
+  const c={'★':0,'◆':0,'○':0,'→':0}; let cells=0; const list=[];
+  'ABCDE'.split('').forEach(L=>{
+    if(!used[L]) return;
+    list.push(L);
+    cells+=PIECES[L].cells;
+    ORDER.forEach(s=>c[s]+=PIECES[L].c[s]);
+  });
+  return {c, cells, list};
+}
+
+function renderCompare(){
+  const bc=boardCount();
+  const u=sumUsed();
+  const body=document.getElementById('cmpBody');
+  const row=(name, counts, cells, cls)=>{
+    return `<tr class="${cls||''}"><td><b>${name}</b></td>${ORDER.map(s=>`<td>${counts[s]}</td>`).join('')}<td>${cells}</td></tr>`;
+  };
+  let html = row(en()?'Square':'正方形', bc, 16, '');
+  html += row(en()?`Used [${u.list.join(',')||'—'}]`:`已选 [${u.list.join(',')||'—'}]`, u.c, u.cells, '');
+  // diff
+  const diff={}; let ok=true;
+  ORDER.forEach(s=>{ diff[s]=u.c[s]-bc[s]; if(diff[s]!==0) ok=false; });
+  if(u.cells!==16) ok=false;
+  html += row(en()?'Difference':'差额', diff, u.cells-16, ok?'match':'bad');
+  body.innerHTML=html;
+}
+
+function syncLabInfo(){
+  const u=sumUsed();
+  const left='ABCDE'.split('').filter(L=>!used[L]);
+  const bc=boardCount();
+  let match=u.cells===16 && ORDER.every(s=>u.c[s]===bc[s]) && u.list.length===4;
+  document.getElementById('labInfo').textContent = match
+    ? (en()
+      ? `Totals match! Unused piece: ${left.join(', ')} — pick it below.`
+      : `图案总数对上了！没用到的是 ${left.join('、')} —— 到下面选题。`)
+    : (en()
+      ? `Using ${u.list.length} piece(s), ${u.cells} cells. Need 4 pieces & 16 cells & same ★◆○→ counts.`
+      : `已选 ${u.list.length} 块，共 ${u.cells} 格。目标：正好 4 块、16 格，且 ★◆○→ 个数与正方形相同。`);
+  if(match && left.length===1){
+    // soft fill answer box suggestion without auto-check
+  }
+}
+
+function updateMission(){
+  const nMark=marks.flat().filter(Boolean).length;
+  const u=sumUsed();
+  const m1=document.getElementById('m1'), m2=document.getElementById('m2'), m3=document.getElementById('m3');
+  if(nMark>=8 || showBoardTotal){ m1.classList.add('done'); m1.classList.remove('active'); m2.classList.add('active'); }
+  if(u.list.length>=3){ m2.classList.add('done'); m2.classList.remove('active'); m3.classList.add('active'); }
+}
+
+function revealBoardCount(){
+  showBoardTotal=true;
+  renderTally(); updateMission(); syncLabInfo();
+}
+function clearMarks(){
+  marks=Array.from({length:4},()=>[false,false,false,false]);
+  renderBoard(); renderTally();
+}
+function resetLab(){
+  used={A:false,B:false,C:false,D:false,E:false};
+  showBoardTotal=false; _ans=null;
+  clearMarks();
+  document.getElementById('m1').className='step active';
+  document.getElementById('m2').className='step';
+  document.getElementById('m3').className='step';
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('#pool .card').forEach(c=>c.classList.remove('on'));
+  renderPieces(); renderCompare(); syncLabInfo();
+}
+
+function syncAll(){ renderTally(); renderPieces(); renderCompare(); syncLabInfo(); }
+
+function initPool(){
+  const pool=document.getElementById('pool'); pool.innerHTML='';
+  'ABCDE'.split('').forEach(L=>{
+    const d=document.createElement('div'); d.className='card'; d.dataset.ans=L; d.textContent=L;
+    d.onclick=()=>{
+      _ans=L;
+      document.querySelectorAll('#pool .card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled'; box.textContent=L;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!_ans){ fb.className='bad'; fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。'; return; }
+  const ok=_ans===KEY;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()
+      ?'❌ Not yet — pick 4 pieces so cell count=16 and ★◆○→ match the square; the leftover is the answer.'
+      :'❌ 还不对——选出 4 块，使格数=16 且 ★◆○→ 与正方形相同；剩下那块才是答案。');
+}
+
+renderBoard();
+renderPieces();
+renderCompare();
+renderTally();
+syncLabInfo();
+initPool();
+</script>
+</body>
+</html>

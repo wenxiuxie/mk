@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 Level A · Interactive</title>
+<style>
+:root{--bg:#f0f9ff;--card:#fff;--ink:#0c4a6e;--accent:#0284c7;--muted:#64748b}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;margin:0;min-height:100vh;background:radial-gradient(circle at top,#e0f2fe,var(--bg));color:#0f172a;padding:20px 14px 40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 14px;gap:10px;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--ink);font-size:14px}
+.lang-btn{border:2px solid #7dd3fc;background:#fff;border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;background:var(--card);border-radius:22px;box-shadow:0 12px 28px rgba(2,132,199,.12);padding:22px}
+h1{margin:0 0 8px;color:var(--ink);font-size:24px}
+.meta{color:var(--muted);font-size:13px;margin-bottom:14px;line-height:1.55}
+h3{margin:18px 0 8px;color:var(--ink);font-size:15px}
+.list a{display:block;padding:12px 14px;margin:8px 0;border-radius:12px;background:#f0f9ff;border:2px solid #bae6fd;color:#0c4a6e;text-decoration:none;font-weight:700}
+.list a:hover{background:#e0f2fe}
+.zh{display:block}.en{display:none}
+body.en-mode .zh{display:none}body.en-mode .en{display:block}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Math Kangaroo 2021 · Level A</div>
+  <button class="lang-btn" onclick="document.body.classList.toggle('en-mode')">EN / 中文</button>
+</div>
+<div class="wrap">
+  <h1 class="zh">2021 等级 A · 互动练习</h1>
+  <h1 class="en">2021 Level A · Interactive labs</h1>
+  <p class="meta zh">实验台先探索，检查只提示对错。教师答案：<code>1-2-答案.md</code>、<code>14-15-答案.md</code>、<code>16-24-答案.md</code></p>
+  <p class="meta en">Explore first; Check only says right/wrong. Teacher keys in the <code>*-答案.md</code> files.</p>
+
+  <h3 class="zh">3 分题</h3>
+  <h3 class="en">3-point</h3>
+  <div class="list">
+    <a href="1.html"><span class="zh">1 · 三根棍子摆图形</span><span class="en">1 · Three sticks</span></a>
+    <a href="2.html"><span class="zh">2 · 蘑菇高度差</span><span class="en">2 · Mushrooms</span></a>
+  </div>
+
+  <h3 class="zh">4 分题</h3>
+  <h3 class="en">4-point</h3>
+  <div class="list">
+    <a href="14.html"><span class="zh">14 · 袋鼠球得分</span><span class="en">14 · Kangball</span></a>
+    <a href="15.html"><span class="zh">15 · Eva 的家</span><span class="en">15 · Eva’s house</span></a>
+  </div>
+
+  <h3 class="zh">5 分题</h3>
+  <h3 class="en">5-point</h3>
+  <div class="list">
+    <a href="16.html"><span class="zh">16 · 两根树枝上的叶子</span><span class="en">16 · Leaves on branches</span></a>
+    <a href="17.html"><span class="zh">17 · 哪块形状没用到</span><span class="en">17 · Unused shape</span></a>
+    <a href="18.html"><span class="zh">18 · 女巫的苹果和香蕉</span><span class="en">18 · Witch fruit</span></a>
+    <a href="19.html"><span class="zh">19 · 两个盒子数字和</span><span class="en">19 · Two boxes</span></a>
+    <a href="20.html"><span class="zh">20 · 两个齿轮的黑齿</span><span class="en">20 · Two cogs</span></a>
+    <a href="21.html"><span class="zh">21 · 跳舞配对</span><span class="en">21 · Dance pairs</span></a>
+    <a href="22.html"><span class="zh">22 · 饼干烤盘</span><span class="en">22 · Cookie trays</span></a>
+    <a href="23.html"><span class="zh">23 · 两周吃的水果</span><span class="en">23 · Two weeks fruit</span></a>
+    <a href="24.html"><span class="zh">24 · 书架上的玩具</span><span class="en">24 · Toys on shelves</span></a>
+  </div>
+</div>
+</body>
+</html>

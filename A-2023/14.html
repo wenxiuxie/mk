@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q14 · 对折打孔</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.primary{background:var(--primary);color:#fff}.ghost{background:#e2e8f0;color:#334155}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0;color:#0f172a}
+#paperStage{display:flex;justify-content:center;margin:16px 0}
+#paperStage svg{border:2px solid #cbd5e1;border-radius:8px;background:#fff;cursor:pointer}
+.pred-grid{display:flex;gap:4px;justify-content:center;margin:8px 0}
+.pred-cell{width:36px;height:36px;border:2px dashed #cbd5e1;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px}
+.pred-cell.on{background:#e0f2fe;border-color:var(--primary)}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">对折打孔</h1>
+<h1 class="lang-en">Fold and Punch</h1>
+<div class="meta lang-zh">2023 等级 A · 第 14 题 · 4 分</div>
+<div class="meta lang-en">2023 Level A · Q14 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">将一张纸对折后，打上方形孔和圆形孔。展开后这张纸是什么样子的？</p>
+    <p class="lang-en">A sheet is folded in half. Square and round holes are punched. How does it look unfolded?</p>
+    <img class="fig" src="assets/q14_figure.png" alt="Q14"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：对折 → 打孔 → 猜右半 → 展开</h2>
+    <h2 class="lang-en">Lab: fold → punch → predict → unfold</h2>
+    <p class="tip lang-zh">① 对折 → ② 在折好的半张上依次点两下（圆孔左上、方孔右下靠折痕）→ ③ 在右半预测格点标记你认为会出现的孔 → ④ 展开对比 → 选 A–E</p>
+    <p class="tip lang-en">① Fold → ② Tap twice on folded half (circle top-left, square bottom-right on fold) → ③ Mark predictions on the right half → ④ Unfold & compare → pick A–E</p>
+    <div class="actions">
+      <button class="btn primary" onclick="doFold()"><span class="lang-zh">对折</span><span class="lang-en">Fold</span></button>
+      <button class="btn ghost" onclick="doUnfold()"><span class="lang-zh">展开</span><span class="lang-en">Unfold</span></button>
+    </div>
+    <div id="paperStage"></div>
+    <p class="tip lang-zh">右半预测（展开前点格标记 ○ 或 □）</p>
+    <p class="tip lang-en">Predict right half (tap cells for ○ or □ before unfolding)</p>
+    <div class="pred-grid" id="predGrid"></div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh">我的答案</p><p class="tip lang-en">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="index.html"><span class="lang-zh">← 目录</span><span class="lang-en">← Index</span></a>
+  <a href="15.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT='B';
+let mode='flat',punchStep=0,pred={},choice=null;
+const predKeys=['RT-o','RB-s'];
+function en(){return document.body.classList.contains('en-mode');}
+function renderPaper(){
+  const s=document.getElementById('paperStage');
+  let h='<svg width="280" height="280" viewBox="0 0 100 100">';
+  h+='<rect x="1" y="1" width="98" height="98" fill="#fff" stroke="#cbd5e1"/>';
+  h+='<line x1="50" y1="1" x2="50" y2="99" stroke="#94a3b8" stroke-dasharray="3 2"/>';
+  if(mode==='folded'){
+    h+='<rect x="50" y="1" width="49" height="98" fill="#f1f5f9"/>';
+    if(punchStep>=1) h+='<circle cx="61" cy="22" r="5" fill="#111"/>';
+    if(punchStep>=2) h+='<rect x="86" y="74" width="10" height="10" fill="#111"/>';
+  }
+  if(mode==='unfolded'){
+    h+='<circle cx="22" cy="22" r="5" fill="#111"/><circle cx="78" cy="22" r="5" fill="#111"/>';
+    h+='<rect x="17" y="74" width="10" height="10" fill="#111"/><rect x="73" y="74" width="10" height="10" fill="#111"/>';
+  }
+  h+='</svg>';
+  s.innerHTML=h;
+  s.querySelector('svg').onclick=()=>{
+    if(mode!=='folded'||punchStep>=2) return;
+    punchStep++; updateInfo(); renderPaper();
+  };
+}
+function renderPred(){
+  const g=document.getElementById('predGrid');
+  g.innerHTML='';
+  [['RT-o','○ 右上','○ top-R'],['RB-s','□ 右下','□ bottom-R']].forEach(([k,zh,enl])=>{
+    const d=document.createElement('div'); d.className='pred-cell'+(pred[k]?' on':'');
+    d.textContent=pred[k]|| (en()?enl.split(' ')[0]:zh.split(' ')[0]);
+    d.onclick=()=>{ if(mode==='unfolded') return; pred[k]=pred[k]?null:(k.includes('o')?'○':'□'); renderPred(); };
+    g.appendChild(d);
+  });
+}
+function doFold(){mode='folded';punchStep=0;pred={};renderPaper();renderPred();updateInfo();}
+function doUnfold(){
+  if(mode!=='folded'||punchStep<2){updateInfo(true);return;}
+  mode='unfolded';renderPaper();updateInfo();
+}
+function updateInfo(err){
+  const el=document.getElementById('info');
+  if(err){el.textContent=en()?'Punch both holes on the folded half first.':'请先在折好的半张上打好两个孔。';return;}
+  if(mode==='unfolded') el.textContent=en()?'Unfolded! Compare with options A–E.':'展开了！和 A–E 选项比一比。';
+  else if(mode==='folded'&&punchStep===0) el.textContent=en()?'Tap folded half: circle then square.':'点折好的半张：先圆孔后方孔。';
+  else if(mode==='folded'&&punchStep===1) el.textContent=en()?'Now tap for the square hole.':'再点一下放方孔。';
+  else if(mode==='folded') el.textContent=en()?'Ready — predict right half, then Unfold!':'可以预测右半，然后点「展开」。';
+  else el.textContent=en()?'Tap Fold to start.':'点「对折」开始。';
+}
+['A','B','C','D','E'].forEach(L=>{
+  const d=document.createElement('div');d.className='card';d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick A–E.':'❌ 请选择 A–E。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — unfold and compare hole positions.':'❌ 还不对——展开后仔细比一比孔的位置。');
+}
+function resetLab(){mode='flat';punchStep=0;pred={};choice=null;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';renderPaper();renderPred();updateInfo();}
+renderPaper();renderPred();updateInfo();
+</script>
+</body>
+</html>

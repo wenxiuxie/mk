@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q2 · 蘑菇高度差</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.lab{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;align-items:flex-start;margin:14px 0}
+.ruler-wrap{display:flex;gap:16px;align-items:stretch}
+.mush{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;width:70px;position:relative}
+.mush .cap{width:54px;height:28px;background:#e11d48;border-radius:50% 50% 40% 40%;border:2px solid #9f1239;position:relative;z-index:2}
+.mush .cap::after{content:'';position:absolute;width:8px;height:8px;background:#fff;border-radius:50%;left:12px;top:10px;box-shadow:18px -2px 0 #fff, 10px 8px 0 #fff}
+.mush .stem{width:16px;background:#fde68a;border:2px solid #ca8a04;border-top:none;border-radius:0 0 6px 6px;z-index:1}
+.mush.tall .stem{height:176px}
+.mush.short .stem{height:96px}
+.ruler{width:56px;height:220px;border-left:3px solid #334155;position:relative;margin-left:8px}
+.tick{position:absolute;left:0;width:14px;border-top:2px solid #64748b;transform:translateY(-1px)}
+.tick.major{width:22px;border-color:#0f172a}
+.tick .lbl{position:absolute;left:26px;top:-9px;font-size:12px;font-weight:800;color:#334155}
+.guide{position:absolute;left:-120px;right:0;border-top:2px dashed #f59e0b;pointer-events:none;display:none}
+.guide.show{display:block}
+.pick-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.chip{min-width:40px;padding:8px 10px;border-radius:10px;border:2px solid #cbd5e1;background:#fff;font-weight:800;cursor:pointer}
+.chip.on{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.readout{text-align:center;font-weight:800;min-height:26px;color:#0f172a;margin:6px 0}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.steps{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.step{padding:6px 12px;border-radius:999px;background:#e2e8f0;font-size:12px;font-weight:800;color:#475569}
+.step.active{background:#dbeafe;color:#1d4ed8}
+.step.done{background:#d1fae5;color:#047857}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); syncText();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">蘑菇高度差</h1>
+<h1 class="lang-en">Mushroom Height Difference</h1>
+<div class="meta lang-zh">2021 等级 A · 第 2 题 · 3 分</div>
+<div class="meta lang-en">2021 Level A · Q2 · 3 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">下面两个蘑菇的高度相差多少？</p>
+    <p class="lang-en">The picture shows 2 mushrooms. What is the difference between their heights?</p>
+    <img class="fig" src="assets/q2_mushrooms.png" alt="Q2 mushrooms"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：先读高度，再算相差</h2>
+    <h2 class="lang-en">Lab: read the heights, then find the difference</h2>
+    <p class="tip lang-zh">对照原图刻度：从 0 往上数。先点「高蘑菇」的高度，再点「矮蘑菇」，最后选择相差多少。</p>
+    <p class="tip lang-en">Match the figure’s scale from 0 up. First pick the tall height, then the short one, then choose the difference.</p>
+
+    <div class="steps">
+      <div class="step active" id="s1"><span class="lang-zh">1 高蘑菇</span><span class="lang-en">1 Tall</span></div>
+      <div class="step" id="s2"><span class="lang-zh">2 矮蘑菇</span><span class="lang-en">2 Short</span></div>
+      <div class="step" id="s3"><span class="lang-zh">3 相差</span><span class="lang-en">3 Difference</span></div>
+    </div>
+
+    <div class="lab">
+      <div class="ruler-wrap">
+        <div class="mush tall" title="tall">
+          <div class="cap"></div>
+          <div class="stem"></div>
+        </div>
+        <div class="mush short" title="short">
+          <div class="cap"></div>
+          <div class="stem"></div>
+        </div>
+        <div class="ruler" id="ruler">
+          <div class="guide" id="gTall"></div>
+          <div class="guide" id="gShort" style="border-color:#38bdf8"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="readout" id="modeHint"></div>
+    <div class="pick-row" id="heightPick"></div>
+    <div class="readout" id="readout"></div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="backStep()"><span class="lang-zh">上一步</span><span class="lang-en">Back</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置</span><span class="lang-en">Reset</span></button>
+    </div>
+
+    <p class="tip lang-zh" style="margin-top:16px">相差多少？选出答案：</p>
+    <p class="tip lang-en" style="margin-top:16px">What is the difference? Pick an answer:</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="1.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="index.html"><span class="lang-zh">目录 →</span><span class="lang-en">Index →</span></a>
+  </div>
+</div>
+
+<script>
+const OPTS = [4,5,6,11,17];
+const KEY = atob('Qg=='); // letter key for check only
+let step = 1; // 1 tall, 2 short, 3 diff
+let tall = null, short = null, _ans = null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+
+function buildRuler(){
+  const r = document.getElementById('ruler');
+  // keep guides
+  const gT = document.getElementById('gTall');
+  const gS = document.getElementById('gShort');
+  r.querySelectorAll('.tick').forEach(t=>t.remove());
+  for(let i=0;i<=12;i++){
+    const t = document.createElement('div');
+    t.className = 'tick' + (i%1===0?' major':'');
+    t.style.bottom = (i/12*100) + '%';
+    if(i===0 || i===6 || i===11 || i===12){
+      const lbl = document.createElement('span');
+      lbl.className = 'lbl';
+      lbl.textContent = String(i);
+      t.appendChild(lbl);
+    }
+    r.appendChild(t);
+  }
+  r.appendChild(gT); r.appendChild(gS);
+  placeGuides();
+}
+
+function placeGuides(){
+  const gT = document.getElementById('gTall');
+  const gS = document.getElementById('gShort');
+  if(tall!=null){ gT.style.bottom = (tall/12*100) + '%'; gT.classList.add('show'); }
+  else gT.classList.remove('show');
+  if(short!=null){ gS.style.bottom = (short/12*100) + '%'; gS.classList.add('show'); }
+  else gS.classList.remove('show');
+}
+
+function buildHeightPick(){
+  const row = document.getElementById('heightPick');
+  row.innerHTML = '';
+  for(let i=0;i<=12;i++){
+    const c = document.createElement('button');
+    c.className = 'chip';
+    c.textContent = String(i);
+    c.onclick = ()=> pickHeight(i);
+    row.appendChild(c);
+  }
+}
+
+function pickHeight(v){
+  if(step===1){
+    tall = v;
+    step = 2;
+  } else if(step===2){
+    short = v;
+    step = 3;
+  }
+  placeGuides();
+  syncUI();
+}
+
+function syncUI(){
+  document.getElementById('s1').className = 'step' + (step===1?' active':'') + (tall!=null?' done':'');
+  document.getElementById('s2').className = 'step' + (step===2?' active':'') + (short!=null?' done':'');
+  document.getElementById('s3').className = 'step' + (step===3?' active':'') + (_ans?' done':'');
+
+  const hint = document.getElementById('modeHint');
+  const row = document.getElementById('heightPick');
+  if(step===1){
+    hint.textContent = en() ? 'Tap the height of the TALL mushroom.' : '点选：高蘑菇的高度是几？';
+    row.style.opacity = '1'; row.style.pointerEvents = 'auto';
+  } else if(step===2){
+    hint.textContent = en() ? 'Tap the height of the SHORT mushroom.' : '点选：矮蘑菇的高度是几？';
+    row.style.opacity = '1'; row.style.pointerEvents = 'auto';
+  } else {
+    hint.textContent = en() ? 'Now choose the difference below.' : '现在到下面选出「相差多少」。';
+    row.style.opacity = '.45'; row.style.pointerEvents = 'none';
+  }
+
+  const rd = document.getElementById('readout');
+  const parts = [];
+  if(tall!=null) parts.push(en()?`Tall: ${tall}`:`高：${tall}`);
+  if(short!=null) parts.push(en()?`Short: ${short}`:`矮：${short}`);
+  if(tall!=null && short!=null) parts.push(en()?`Your difference: ${Math.abs(tall-short)}`:`你算的差：${Math.abs(tall-short)}`);
+  rd.textContent = parts.join('  ·  ');
+
+  document.querySelectorAll('#heightPick .chip').forEach(c=>{
+    const v = +c.textContent;
+    c.classList.toggle('on', (step===1 && tall===v) || (step===2 && short===v) || (step>2 && (tall===v||short===v)));
+  });
+}
+
+function syncText(){ syncUI(); }
+
+function backStep(){
+  if(step===3){ _ans=null; step=2; document.getElementById('ansBox').className='answer-box'; document.getElementById('ansBox').textContent=''; document.querySelectorAll('.card').forEach(c=>c.classList.remove('on')); document.getElementById('feedback').textContent=''; }
+  else if(step===2){ short=null; step=1; }
+  else if(step===1){ tall=null; }
+  placeGuides();
+  syncUI();
+}
+
+function resetLab(){
+  step=1; tall=null; short=null; _ans=null;
+  placeGuides();
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  syncUI();
+}
+
+function initPool(){
+  const pool = document.getElementById('pool');
+  pool.innerHTML = '';
+  const letters = 'ABCDE';
+  OPTS.forEach((n,i)=>{
+    const L = letters[i];
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.dataset.ans = L;
+    d.innerHTML = `<div>${L}</div><div style="font-size:12px;opacity:.95">${n}</div>`;
+    d.onclick = ()=>{
+      _ans = L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box = document.getElementById('ansBox');
+      box.className = 'answer-box filled';
+      box.textContent = `${L}: ${n}`;
+      document.getElementById('feedback').textContent='';
+      if(step<3) step=3;
+      syncUI();
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb = document.getElementById('feedback');
+  if(!_ans){
+    fb.className='bad';
+    fb.textContent = en() ? '❌ Pick an option first.' : '❌ 请先选一个选项。';
+    return;
+  }
+  const ok = _ans === KEY;
+  fb.className = ok ? 'ok' : 'bad';
+  if(ok){
+    fb.textContent = en() ? '✅ You found it!' : '✅ 找对了！';
+  } else {
+    // gentle nudge without revealing heights/answer
+    if(tall==null || short==null){
+      fb.textContent = en()
+        ? '❌ Not yet — first read both heights on the scale in the lab.'
+        : '❌ 还不对——先在实验台读出两个蘑菇的高度再算差。';
+    } else {
+      fb.textContent = en()
+        ? '❌ Not yet — check the dashed lines on the figure, then subtract.'
+        : '❌ 还不对——对照原图虚线读刻度，再用大减小试一次。';
+    }
+  }
+}
+
+buildRuler();
+buildHeightPick();
+initPool();
+syncUI();
+</script>
+</body>
+</html>

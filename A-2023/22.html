@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q22 · 拼块最大和</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.ghost{background:#e2e8f0;color:#334155}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.lab-stage{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:flex-start;margin:12px 0}
+#gridWrap svg{background:#fff;border:1px solid #e2e8f0;border-radius:10px}
+.piece-pick{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.piece-btn{padding:8px 14px;border:3px solid #cbd5e1;border-radius:10px;background:#fff;font-weight:800;cursor:pointer}
+.piece-btn.on{border-color:var(--primary);background:#e0f2fe}
+.sum-display{text-align:center;font-size:22px;font-weight:800;color:#0369a1;margin:8px 0}
+.pos-row{display:flex;gap:6px;justify-content:center;margin:8px 0}
+.pos-btn{padding:6px 12px;border-radius:8px;border:2px solid #cbd5e1;background:#fff;font-weight:700;cursor:pointer;font-size:12px}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">拼块覆盖最大和</h1>
+<h1 class="lang-en">Largest Covered Sum</h1>
+<div class="meta lang-zh">2023 等级 A · 第 22 题 · 5 分</div>
+<div class="meta lang-en">2023 Level A · Q22 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小马想将五个选项中的一个拼图块放在右侧网格上，不能旋转或翻转。用哪个拼图块覆盖的数字总和最大？</p>
+    <p class="lang-en">Malik places one piece on the grid without rotating or flipping. Which piece covers the largest sum?</p>
+    <img class="fig" src="assets/q22_figure.png" alt="Q22 pieces"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：选块 → 移动位置 → 看覆盖和</h2>
+    <h2 class="lang-en">Lab: pick piece → move → see sum</h2>
+    <p class="tip lang-zh">选一个块 A–E，用 ◀▲▼▶ 移动（不能旋转）。记录每个块的最大覆盖和，再作答。</p>
+    <p class="tip lang-en">Pick piece A–E, move with arrows (no rotation). Track each piece's best sum.</p>
+    <div class="piece-pick" id="piecePick"></div>
+    <div class="pos-row">
+      <button class="pos-btn" onclick="shift(-1,0)">◀</button>
+      <button class="pos-btn" onclick="shift(0,-1)">▲</button>
+      <button class="pos-btn" onclick="shift(0,1)">▼</button>
+      <button class="pos-btn" onclick="shift(1,0)">▶</button>
+    </div>
+    <div class="lab-stage">
+      <div id="gridWrap"></div>
+    </div>
+    <div class="sum-display" id="sumDisplay"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="saveBest()"><span class="lang-zh">记录此块最佳和</span><span class="lang-en">Save best for piece</span></button>
+    </div>
+    <div class="tip" id="bestLog" style="font-size:12px"></div>
+    <p class="tip lang-zh">我的答案</p><p class="tip lang-en">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="21.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+  <a href="23.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT='E';
+const GRID=[
+  [{v:2,r:0,c:0},{v:8,r:0,c:1},{v:3,r:0,c:2}],
+  [{v:9,r:1,c:1},{v:5,r:1,c:2}],
+  [{v:6,r:2,c:0},{v:1,r:2,c:1}],
+  [{v:4,r:3,c:1},{v:7,r:3,c:2}]
+];
+const VAL=Object.fromEntries(GRID.flat().map(x=>[`${x.r},${x.c}`,x.v]));
+const PIECES={
+  A:[[0,2],[1,2],[2,0],[2,1],[2,2]],
+  B:[[0,2],[1,1],[1,2],[2,0],[2,1]],
+  C:[[0,1],[1,0],[1,1],[1,2],[2,1]],
+  D:[[0,0],[0,1],[1,1],[2,1],[2,2]],
+  E:[[0,1],[0,2],[1,0],[1,1],[1,2],[2,1]]
+};
+let cur='A',offR=0,offC=0,best={},choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function cells(){
+  return PIECES[cur].map(([r,c])=>`${r+offR},${c+offC}`);
+}
+function sumAt(){
+  return cells().reduce((s,k)=>s+(VAL[k]||0),0);
+}
+function renderGrid(){
+  const w=document.getElementById('gridWrap');
+  const cs=cells(),sum=sumAt();
+  let h='<svg width="220" height="200" viewBox="-10 -10 130 150">';
+  GRID.flat().forEach(({v,r,c})=>{
+    const x=c*36+(r%2?18:0),y=r*32;
+    const hit=cs.includes(`${r},${c}`);
+    h+=`<rect x="${x}" y="${y}" width="32" height="28" rx="4" fill="${hit?'#fde68a':'#f1f5f9'}" stroke="#64748b"/><text x="${x+16}" y="${y+18}" text-anchor="middle" font-weight="800">${v}</text>`;
+  });
+  h+='</svg>';
+  w.innerHTML=h;
+  document.getElementById('sumDisplay').textContent=(en()?'Covered sum: ':'覆盖和：')+sum;
+}
+function renderPick(){
+  document.getElementById('piecePick').innerHTML='';
+  Object.keys(PIECES).forEach(k=>{
+    const b=document.createElement('button');b.className='piece-btn'+(cur===k?' on':'');b.textContent=k;
+    b.onclick=()=>{cur=k;offR=0;offC=0;renderPick();renderGrid();};
+    document.getElementById('piecePick').appendChild(b);
+  });
+}
+function shift(dr,dc){offR+=dr;offC+=dc;renderGrid();}
+function saveBest(){
+  const s=sumAt();
+  if(!best[cur]||s>best[cur]) best[cur]=s;
+  document.getElementById('bestLog').textContent=Object.entries(best).map(([k,v])=>`${k}:${v}`).join(' · ');
+}
+['A','B','C','D','E'].forEach(L=>{
+  const d=document.createElement('div');d.className='card';d.textContent=L;
+  d.onclick=()=>{choice=L;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick A–E.':'❌ 请选择 A–E。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — try every piece in many spots.':'❌ 还不对——每个块多试几个位置。');
+}
+function resetLab(){cur='A';offR=0;offC=0;best={};choice=null;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';document.getElementById('bestLog').textContent='';
+  renderPick();renderGrid();}
+renderPick();renderGrid();
+</script>
+</body>
+</html>

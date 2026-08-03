@@ -1,0 +1,2619 @@
+
+===== PAGE 1 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+1
+3 points
+# 1.
+A kangaroo laid out 3 sticks like this
+to make a shape. It’s not allowed
+to break or to bend the sticks. Which shape could the kangaroo make?
+yì
+一
+zhī
+只
+dài
+袋
+shǔ
+鼠
+yònɡ
+用
+sān
+三
+ɡēn
+根
+zhè
+这
+yànɡ
+样
+de
+的
+ɡùn
+棍
+zi
+子
+lái
+来
+bǎi
+摆
+tú
+图
+xínɡ
+形。
+bù
+不
+yǔn
+允
+xǔ
+许
+zhé
+折
+duàn
+断
+huò
+或
+zhé
+折
+wān
+弯
+ɡùn
+棍
+zi
+子，
+dài
+袋
+shǔ
+鼠
+kě
+可
+yǐ
+以
+bǎi
+摆
+chū
+出
+xià
+下
+liè
+列
+nǎ
+哪
+ɡè
+个
+tú
+图
+xínɡ
+形？
+(A)
+(B)
+(C)
+(D)
+(E)
+# 2. The picture shows 2 mushrooms. What is the diﬀerence between their heights?
+xià
+下
+miàn
+面
+liǎnɡ
+两
+ɡè
+个
+mó
+蘑
+ɡū
+菇
+de
+的
+ɡāo
+高
+dù
+度
+xiānɡ
+相
+chà
+差
+duō
+多
+shǎo
+少？
+(A) 4
+(B) 5
+(C) 6
+(D) 11
+(E) 17
+# 3. Which of the paths shown in the pictures is the longest?
+xià
+下
+liè
+列
+nǎ
+哪
+zhānɡ
+张
+tú
+图
+xiǎn
+显
+shì
+示
+de
+的
+lù
+路
+jìnɡ
+径
+zuì
+最
+chánɡ
+长
+？
+(A)
+(B)
+(C)
+(D)
+(E)
+
+===== PAGE 2 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+2
+# 4. Four identical pieces of paper are placed as shown. Michael wants to punch a hole that
+goes through all four pieces. At which point should Michael punch the hole?
+jiānɡ
+将
+sì
+四
+zhānɡ
+张
+xiānɡ
+相
+tónɡ
+同
+de
+的
+zhǐ
+纸
+zhānɡ
+张
+bǎi
+摆
+fànɡ
+放
+rú
+如
+xià
+下。Michael
+xiǎnɡ
+想
+dǎ
+打
+yí
+一
+ɡè
+个
+dònɡ
+洞
+jiānɡ
+将
+sì
+四
+zhānɡ
+张
+zhǐ
+纸
+quán
+全
+bù
+部
+chuān
+穿
+ɡuò
+过。
+qǐnɡ
+请
+wèn
+问Michael
+yīnɡ
+应
+ɡāi
+该
+bǎ
+把
+dònɡ
+洞
+dǎ
+打
+zài
+在
+nǎ
+哪
+ɡè
+个
+diǎn
+点
+de
+的
+wèi
+位
+zhì
+置？
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+# 5. Ella puts on this t-shirt and stands in front of a mirror. Which of these images does she
+see in the mirror?
+Ella
+chuān
+穿
+zhe
+着
+shànɡ
+上
+fānɡ
+方
+de
+的T
+xù
+恤
+zhàn
+站
+zài
+在
+jìnɡ
+镜
+zi
+子
+qián
+前，
+qǐnɡ
+请
+wèn
+问
+tā
+她
+zài
+在
+jìnɡ
+镜
+zi
+子
+zhōnɡ
+中
+kàn
+看
+dào
+到
+de
+的
+tú
+图
+xiànɡ
+像
+shì
+是
+nǎ
+哪
+yí
+一
+ɡè
+个？
+(A)
+(B)
+(C)
+(D)
+(E)
+2021
+
+===== PAGE 3 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+3
+# 6. The pink tower is taller than the red tower but shorter than the green tower. The silver tower is taller
+than the green tower. Which tower is the tallest?
+fěn
+粉
+sè
+色
+de
+的
+tǎ
+塔
+bǐ
+比
+hónɡ
+红
+sè
+色
+de
+的
+tǎ
+塔
+ɡāo
+高，
+dàn
+但
+bǐ
+比
+lǜ
+绿
+sè
+色
+de
+的
+tǎ
+塔
+ǎi
+矮，
+yín
+银
+sè
+色
+de
+的
+tǎ
+塔
+bǐ
+比
+lǜ
+绿
+sè
+色
+de
+的
+tǎ
+塔
+ɡāo
+高。
+qǐnɡ
+请
+wèn
+问
+nǎ
+哪
+zuò
+座
+tǎ
+塔
+zuì
+最
+ɡāo
+高?
+(A) pink tower
+fěn
+粉
+sè
+色
+de
+的
+tǎ
+塔
+(B) green tower
+lǜ
+绿
+sè
+色
+de
+的
+tǎ
+塔
+(C) red tower
+hónɡ
+红
+sè
+色
+de
+的
+tǎ
+塔
+(D) silver tower
+yín
+银
+sè
+色
+de
+的
+tǎ
+塔
+(E) impossible to decide
+wú
+无
+fǎ
+法
+què
+确
+dìnɡ
+定
+# 7. These children are standing in a line. Some are facing forwards and others are facing
+backwards. How many children are holding another child’s hand with their right hand?
+tú
+图
+zhōnɡ
+中
+hái
+孩
+zi
+子
+men
+们
+zhàn
+站
+chénɡ
+成
+yì
+一
+pái
+排。
+yǒu
+有
+de
+的
+miàn
+面
+cháo
+朝
+qián
+前，
+yǒu
+有
+de
+的
+miàn
+面
+cháo
+朝
+hòu
+后。
+qǐnɡ
+请
+wèn
+问
+yǒu
+有
+duō
+多
+shǎo
+少
+ɡè
+个
+hái
+孩
+zi
+子
+shì
+是
+yònɡ
+用
+yòu
+右
+shǒu
+手
+wǎn
+挽
+zhe
+着
+pánɡ
+旁
+biān
+边
+de
+的
+hái
+孩
+zi
+子？
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+# 8. In the Kangaroo constellation, all stars have a number greater than 3 and their sum is 20.
+Which is the Kangaroo constellation?
+zài
+在
+dài
+袋
+shǔ
+鼠
+xīnɡ
+星
+zuò
+座
+zhōnɡ
+中
+，
+suǒ
+所
+yǒu
+有
+de
+的
+xīnɡ
+星
+xinɡ
+星
+shànɡ
+上
+dōu
+都
+yǒu
+有
+yí
+一
+ɡè
+个
+dà
+大
+yú
+于3
+de
+的
+shù
+数
+zì
+字，
+ér
+而
+qiě
+且
+tā
+它
+men
+们
+de
+的
+zǒnɡ
+总
+hé
+和
+shì
+是20。
+qǐnɡ
+请
+wèn
+问
+nǎ
+哪
+ɡè
+个
+shì
+是
+dài
+袋
+shǔ
+鼠
+xīnɡ
+星
+zuò
+座?
+(A)
+(B)
+(C)
+(D)
+(E)
+
+===== PAGE 4 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+4
+4 points
+# 9. Edmund cut a ribbon as shown in the picture. How many pieces of the ribbon did he
+ﬁnish with？
+rú
+如
+tú
+图
+suǒ
+所
+shì
+示，Edmund
+jiǎn
+剪
+duàn
+断
+le
+了
+yì
+一
+ɡēn
+根
+sī
+丝
+dài
+带。
+qǐnɡ
+请
+wèn
+问
+jiǎn
+剪
+wán
+完
+hòu
+后
+zhè
+这
+ɡēn
+根
+sī
+丝
+dài
+带
+biàn
+变
+chénɡ
+成
+le
+了
+jǐ
+几
+duàn
+段？
+(A) 9
+(B) 10
+(C) 11
+(D) 12
+(E) 13
+#
+10. Rose the cat walks along the wall. She starts at point B and follows the direction of
+the arrows shown in the picture. The cat walks a total of 20 metres.
+Where does she end up？
+xiǎo
+小
+māo
+猫
+Rose
+yán
+沿
+zhe
+着
+qiánɡ
+墙
+bì
+壁
+zǒu
+走
+lù
+路。
+tā
+它
+cónɡ
+从
+B
+diǎn
+点
+chū
+出
+fā
+发，
+yán
+沿
+zhe
+着
+tú
+图
+zhōnɡ
+中
+jiàn
+箭
+tóu
+头
+fānɡ
+方
+xiànɡ
+向
+xínɡ
+行
+zǒu
+走，
+yí
+一
+ɡònɡ
+共
+zǒu
+走
+le
+了20
+mǐ
+米。
+qǐnɡ
+请
+wèn
+问
+xiǎo
+小
+māo
+猫
+zuì
+最
+hòu
+后
+tínɡ
+停
+zài
+在
+le
+了
+nǎ
+哪
+ɡè
+个
+diǎn
+点
+shànɡ
+上
+？
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+
+===== PAGE 5 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+5
+# 11. Julia has two pots with ﬂowers, as shown. She keeps the ﬂowers exactly where they are.
+She buys more ﬂowers and puts them in the pots. After that each pot has the same number
+of each type of ﬂower.
+Julia
+yǒu
+有
+liǎnɡ
+两
+pén
+盆
+huā
+花，
+rú
+如
+tú
+图
+suǒ
+所
+shì
+示。
+tā
+她
+bǎ
+把
+huā
+花
+fànɡ
+放
+zài
+在
+yuán
+原
+chù
+处
+hòu
+后，
+yòu
+又
+mǎi
+买
+le
+了
+yì
+一
+xiē
+些
+huā
+花
+fànɡ
+放
+jìn
+进
+le
+了
+huā
+花
+pén
+盆
+lǐ
+里。
+xiàn
+现
+zài
+在
+liǎnɡ
+两
+ɡè
+个
+huā
+花
+pén
+盆
+lǐ
+里
+měi
+每
+zhǒnɡ
+种
+lèi
+类
+xínɡ
+型
+de
+的
+huā
+花
+de
+的
+shù
+数
+liànɡ
+量
+dōu
+都
+xiānɡ
+相
+tónɡ
+同。
+What is the smallest number of ﬂowers she needs to buy?
+qǐnɡ
+请
+wèn
+问Julia
+zuì
+最
+shǎo
+少
+xū
+需
+yào
+要
+mǎi
+买
+duō
+多
+shǎo
+少
+zhī
+枝
+huā
+花？
+(A) 2
+(B) 4
+(C) 6
+(D) 8
+(E) 10
+# 12. Tom encodes words using the board shown.
+For example, the word PIZZA has the code A2 A4 C1 C1 B2.
+What word did Tom encode as B3 B2 C4 D2?
+Tom
+yònɡ
+用
+rú
+如
+tú
+图
+suǒ
+所
+shì
+示
+de
+的
+zì
+字
+mǔ
+母
+bǎn
+板
+ɡěi
+给
+dān
+单
+cí
+词
+jìn
+进
+xínɡ
+行
+biān
+编
+mǎ
+码。
+bǐ
+比
+rú
+如
+dān
+单
+cí
+词PIZZA
+de
+的
+dài
+代
+mǎ
+码
+wéi
+为A2 A4 C1 C1 B2。
+qǐnɡ
+请
+wèn
+问
+dài
+代
+mǎ
+码
+wéi
+为B3 B2 C4 D2
+de
+的
+dān
+单
+cí
+词
+shì
+是
+nǎ
+哪
+yí
+一
+ɡè
+个？
+(A) MAZE
+(B) MASK
+(C) MILK
+(D) MATE
+(E) MATH
+# 13. Which ﬁgure can be made from these two pieces?
+xià
+下
+liè
+列
+liǎnɡ
+两
+zhānɡ
+张
+suì
+碎
+piàn
+片
+kě
+可
+yǐ
+以
+zǔ
+组
+chénɡ
+成
+nǎ
+哪
+ɡè
+个
+tú
+图
+xínɡ
+形？
+
+===== PAGE 6 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+6
+SCHOOL学校
+(A)
+(B)
+(C)
+(D)
+(E)
+# 14. Julie and Angela played “kangball”, a ball game. Each goal in their game scores 2 points.
+Julie scored 5 goals and Angela scored 9 goals. How many more points than Julie did Angela
+score?
+Julie
+hé
+和Angela
+wán
+玩
+yì
+一
+zhǒnɡ
+种
+jiào
+叫
+zuò
+做“kangball”
+de
+的
+qiú
+球
+lèi
+类
+yóu
+游
+xì
+戏，
+měi
+每
+jìn
+进
+yì
+一
+qiú
+球
+dé
+得2
+fēn
+分。
+Julie
+jìn
+进
+le
+了5
+ɡè
+个
+qiú
+球，Angela
+jìn
+进
+le
+了9
+ɡè
+个
+qiú
+球。
+qǐnɡ
+请
+wèn
+问Angela
+bǐ
+比Julie
+duō
+多
+dé
+得
+jǐ
+几
+fēn
+分？
+(A) 4
+(B) 6
+(C) 8
+(D) 10
+(E) 12
+# 15. The picture shows the ﬁve houses of ﬁve friends and their school. The school is the largest
+building in the picture. To go to school, Doris and Ali walk past Leo’s house. Eva walks past
+Chole’s house. Which is Eva’s house?
+xià
+下
+tú
+图
+zhǎn
+展
+shì
+示
+le
+了
+wǔ
+五
+ɡè
+个
+pénɡ
+朋
+yǒu
+友
+de
+的
+jiā
+家
+hé
+和
+xué
+学
+xiào
+校
+de
+的
+wèi
+位
+zhì
+置。
+xué
+学
+xiào
+校
+shì
+是
+tú
+图
+zhōnɡ
+中
+zuì
+最
+dà
+大
+de
+的
+jiàn
+建
+zhù
+筑。
+shànɡ
+上
+xué
+学
+lù
+路
+shànɡ
+上
+Doris
+hé
+和
+Ali
+huì
+会
+jīnɡ
+经
+ɡuò
+过Leo
+de
+的
+jiā
+家，Eva
+huì
+会
+jīnɡ
+经
+ɡuò
+过
+Chole
+de
+的
+jiā
+家。
+qǐnɡ
+请
+wèn
+问
+nǎ
+哪
+yí
+一
+ɡè
+个
+shì
+是Eva
+de
+的
+jiā
+家？
+(A)
+(B)
+(C)
+(D)
+(E)
+
+===== PAGE 7 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+7
+5 points
+# 16. The kangaroo had two branches for lunch. Each branch had 10 leaves. The kangaroo ate some
+leaves from one branch. Then, from the second branch, it ate as many leaves as were left on the
+ﬁrst branch. How many leaves in total were left on the two branches?
+dài
+袋
+shǔ
+鼠
+zhōnɡ
+中
+wǔ
+午
+chī
+吃
+le
+了
+liǎnɡ
+两
+ɡēn
+根
+shù
+树
+zhī
+枝
+shànɡ
+上
+de
+的
+yì
+一
+xiē
+些
+yè
+叶
+zi
+子。
+měi
+每
+ɡēn
+根
+shù
+树
+zhī
+枝
+shànɡ
+上
+yǒu
+有10
+piàn
+片
+yè
+叶
+zi
+子，
+dài
+袋
+shǔ
+鼠
+xiān
+先
+hòu
+后
+chī
+吃
+le
+了
+dì
+第
+yī
+一
+ɡēn
+根
+hé
+和
+dì
+第
+èr
+二
+ɡēn
+根
+shù
+树
+zhī
+枝
+shànɡ
+上
+de
+的
+jǐ
+几
+piàn
+片
+yè
+叶
+zi
+子。
+chī
+吃
+de
+的
+dì
+第
+èr
+二
+ɡēn
+根
+shù
+树
+zhī
+枝
+shànɡ
+上
+yè
+叶
+zi
+子
+de
+的
+shù
+数
+liànɡ
+量
+zhènɡ
+正
+hǎo
+好
+shì
+是
+dì
+第
+yī
+一
+ɡēn
+根
+shù
+树
+zhī
+枝
+shànɡ
+上
+chī
+吃
+shènɡ
+剩
+de
+的
+yè
+叶
+zi
+子
+shù
+数
+liànɡ
+量。
+qǐnɡ
+请
+wèn
+问
+zhè
+这
+liǎnɡ
+两
+ɡēn
+根
+shù
+树
+zhī
+枝
+shànɡ
+上
+yí
+一
+ɡònɡ
+共
+shènɡ
+剩
+xià
+下
+duō
+多
+shǎo
+少
+piàn
+片
+yè
+叶
+zi
+子？
+(A) 5
+(B) 6
+(C) 8
+(D) 10
+(E) 15
+# 17. Mara built the square by using four of the following ﬁve shapes. Which shape was not used?
+Mara
+yònɡ
+用
+wǔ
+五
+ɡè
+个
+xuǎn
+选
+xiànɡ
+项
+zhōnɡ
+中
+de
+的
+qí
+其
+zhōnɡ
+中
+sì
+四
+ɡè
+个
+suì
+碎
+piàn
+片
+lái
+来
+zǔ
+组
+chénɡ
+成
+xià
+下
+miàn
+面
+de
+的
+zhènɡ
+正
+fānɡ
+方
+xínɡ
+形。
+qǐnɡ
+请
+wèn
+问
+nǎ
+哪
+yí
+一
+ɡè
+个
+xínɡ
+形
+zhuànɡ
+状
+méi
+没
+yǒu
+有
+bèi
+被
+yònɡ
+用
+dào
+到？
+(A)
+(B)
+(C)
+(D)
+(E)
+
+===== PAGE 8 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+8
+# 18. Every time the witch has 3 apples she turns them in to 1 banana. Every time she has 3
+bananas she turns them in to 1 apple.
+What will she ﬁnish with if she starts with 4 apples and 5 bananas?
+měi
+每
+dānɡ
+当
+nǚ
+女
+wū
+巫
+yǒu
+有3
+ɡè
+个
+pínɡ
+苹
+ɡuǒ
+果，
+tā
+她
+jiù
+就
+bǎ
+把3
+ɡè
+个
+pínɡ
+苹
+ɡuǒ
+果
+biàn
+变
+chénɡ
+成
+1
+ɡè
+个
+xiānɡ
+香
+jiāo
+蕉；
+měi
+每
+dānɡ
+当
+nǚ
+女
+wū
+巫
+yǒu
+有3
+ɡè
+个
+xiānɡ
+香
+jiāo
+蕉，
+tā
+她
+jiù
+就
+bǎ
+把
+zhè
+这3
+ɡè
+个
+xiānɡ
+香
+jiāo
+蕉
+biàn
+变
+chénɡ
+成
+1
+ɡè
+个
+pínɡ
+苹
+ɡuǒ
+果。
+rú
+如
+ɡuǒ
+果
+nǚ
+女
+wū
+巫
+ɡānɡ
+刚
+kāi
+开
+shǐ
+始
+yǒu
+有4
+ɡè
+个
+pínɡ
+苹
+ɡuǒ
+果
+hé
+和5
+ɡè
+个
+xiānɡ
+香
+jiāo
+蕉，
+nà
+那
+me
+么
+tā
+她
+zuì
+最
+hòu
+后
+huì
+会
+shènɡ
+剩
+xià
+下
+shén
+什
+me
+么？
+(A)
+(B)
+(C)
+(D)
+(E)
+# 19. The cards shown are placed into two boxes.
+The sums of the numbers in each box are the same.
+Which number must be in the box with the number 4?
+jiānɡ
+将
+tú
+图
+shì
+示
+kǎ
+卡
+piàn
+片
+fànɡ
+放
+zài
+在
+liǎnɡ
+两
+ɡè
+个
+hé
+盒
+zi
+子
+zhōnɡ
+中
+，
+yāo
+要
+qiú
+求
+měi
+每
+ɡè
+个
+hé
+盒
+zi
+子
+zhōnɡ
+中
+de
+的
+shù
+数
+zì
+字
+zhī
+之
+hé
+和
+xiānɡ
+相
+děnɡ
+等。
+qǐnɡ
+请
+wèn
+问
+nǎ
+哪
+ɡè
+个
+shù
+数
+zì
+字
+yí
+一
+dìnɡ
+定
+hé
+和4
+fànɡ
+放
+zài
+在
+yì
+一
+qǐ
+起?
+(A) only 3
+zhǐ
+只
+yǒu
+有3
+(B) only 5
+zhǐ
+只
+yǒu
+有5
+(C) only 6
+zhǐ
+只
+yǒu
+有6
+(D) only 5 or 6
+zhǐ
+只
+yǒu
+有5
+huò
+或6
+(E) impossible to determine
+wú
+无
+fǎ
+法
+què
+确
+dìnɡ
+定
+
+===== PAGE 9 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+9
+# 20. The picture shows two cogs, each with a black tooth.
+xià
+下
+tú
+图
+zhōnɡ
+中
+yǒu
+有
+liǎnɡ
+两
+ɡè
+个
+chǐ
+齿
+lún
+轮，
+měi
+每
+ɡè
+个
+chǐ
+齿
+lún
+轮
+shànɡ
+上
+dōu
+都
+yǒu
+有
+yí
+一
+ɡè
+个
+hēi
+黑
+sè
+色
+de
+的
+lún
+轮
+chǐ
+齿。
+Where will the black teeth be after the small cog has made one full turn?
+qǐnɡ
+请
+wèn
+问
+xiǎo
+小
+chǐ
+齿
+lún
+轮
+zhuàn
+转
+dònɡ
+动
+yì
+一
+zhōu
+周
+hòu
+后，
+hēi
+黑
+sè
+色
+lún
+轮
+chǐ
+齿
+huì
+会
+zài
+在
+shén
+什
+me
+么
+wèi
+位
+zhì
+置？
+(A)
+(B)
+(C)
+(D)
+(E)
+# 21. Three girls and two boys were dancing. They danced in pairs so that each girl danced with each
+boy for exactly one minute. At any time, there was only one pair on the dance ﬂoor. For how many
+minutes did they dance?
+sān
+三
+ɡè
+个
+nǚ
+女
+hái
+孩
+hé
+和
+liǎnɡ
+两
+ɡè
+个
+nán
+男
+hái
+孩
+zài
+在
+tiào
+跳
+wǔ
+舞。
+nán
+男
+hái
+孩
+hé
+和
+nǚ
+女
+hái
+孩
+dā
+搭
+dànɡ
+档
+tiào
+跳
+wǔ
+舞，
+měi
+每
+ɡè
+个
+nán
+男
+hái
+孩
+hé
+和
+měi
+每
+ɡè
+个
+nǚ
+女
+hái
+孩
+dōu
+都
+qià
+恰
+hǎo
+好
+tiào
+跳
+yì
+一
+fēn
+分
+zhōnɡ
+钟
+，
+měi
+每
+cì
+次
+wǔ
+舞
+chí
+池
+zhōnɡ
+中
+zhǐ
+只
+nénɡ
+能
+yǒu
+有
+yí
+一
+duì
+对
+dā
+搭
+dànɡ
+档。
+qǐnɡ
+请
+wèn
+问
+tā
+他
+men
+们
+yí
+一
+ɡònɡ
+共
+tiào
+跳
+le
+了
+jǐ
+几
+fēn
+分
+zhōnɡ
+钟
+？
+(A) 5
+(B) 6
+(C) 8
+(D) 9
+(E) 10
+# 22. Each participant in a cooking contest baked one tray of cookies like the one shown.
+yí
+一
+cì
+次
+pēnɡ
+烹
+rèn
+饪
+bǐ
+比
+sài
+赛
+zhōnɡ
+中
+，
+měi
+每
+ɡè
+个
+xuǎn
+选
+shǒu
+手
+dōu
+都
+kǎo
+烤
+le
+了
+yì
+一
+pán
+盘
+rú
+如
+xià
+下
+tú
+图
+suǒ
+所
+shì
+示
+de
+的
+bǐnɡ
+饼
+ɡān
+干。
+
+===== PAGE 10 =====
+Kangaroo Math Competition 2021 (China) – Level 1
+10
+What is the smallest number of trays of cookies needed to make the following plate?
+yào
+要
+zǔ
+组
+chénɡ
+成
+xià
+下
+tú
+图
+suǒ
+所
+shì
+示
+de
+的
+bǐnɡ
+饼
+ɡān
+干
+pīn
+拼
+pán
+盘，
+zhì
+至
+shǎo
+少
+xū
+需
+yào
+要
+jǐ
+几
+ɡè
+个
+xuǎn
+选
+shǒu
+手
+kǎo
+烤
+de
+的
+bǐnɡ
+饼
+ɡān
+干？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+# 23. Kangie eats only apples on Monday, Wednesday and Friday. On Tuesdays and Thursdays he eats
+only mangoes. He eats either 2 apples or 3 mangoes a day. On Saturdays and Sundays he eats
+nothing. How many pieces of fruit does Kangie eat in two weeks?
+Kangie
+zài
+在
+zhōu
+周
+yī
+一、
+zhōu
+周
+sān
+三
+hé
+和
+zhōu
+周
+wǔ
+五
+zhǐ
+只
+chī
+吃
+pínɡ
+苹
+ɡuǒ
+果；
+zài
+在
+zhōu
+周
+èr
+二
+hé
+和
+zhōu
+周
+sì
+四
+zhǐ
+只
+chī
+吃
+mánɡ
+芒
+ɡuǒ
+果。
+tā
+他
+yì
+一
+tiān
+天
+chī
+吃2
+ɡè
+个
+pínɡ
+苹
+ɡuǒ
+果
+huò
+或3
+ɡè
+个
+mánɡ
+芒
+ɡuǒ
+果，
+qiě
+且
+zài
+在
+zhōu
+周
+liù
+六
+hé
+和
+zhōu
+周
+rì
+日
+shén
+什
+me
+么
+dōu
+都
+bù
+不
+chī
+吃。
+qǐnɡ
+请
+wèn
+问Kangie
+zài
+在
+liǎnɡ
+两
+zhōu
+周
+nèi
+内
+chī
+吃
+le
+了
+duō
+多
+shǎo
+少
+ɡè
+个
+shuǐ
+水
+ɡuǒ
+果？
+(A) 12
+(B) 16
+(C) 18
+(D) 20
+(E) 24
+# 24. Stan has ﬁve toys: a ball, a set of blocks, a game, a puzzle and a car. He puts each toy on a
+diﬀerent shelf of the bookcase. The ball is higher than the blocks and lower than the car. The
+game is directly above the ball. On which shelf can the puzzle not be placed?
+Stan
+yǒu
+有
+wǔ
+五
+ɡè
+个
+wán
+玩
+jù
+具：
+yí
+一
+ɡè
+个
+qiú
+球、
+yí
+一
+tào
+套
+jī
+积
+mù
+木、
+yí
+一
+ɡè
+个
+yóu
+游
+xì
+戏
+jī
+机、
+yí
+一
+ɡè
+个
+pīn
+拼
+tú
+图
+hé
+和
+yí
+一
+liànɡ
+辆
+qì
+汽
+chē
+车。
+tā
+他
+bǎ
+把
+měi
+每
+ɡè
+个
+wán
+玩
+jù
+具
+fànɡ
+放
+zài
+在
+shū
+书
+jià
+架
+bù
+不
+tónɡ
+同
+de
+的
+cénɡ
+层
+。
+qiú
+球
+de
+的
+wèi
+位
+zhì
+置
+bǐ
+比
+jī
+积
+mù
+木
+ɡāo
+高，
+bǐ
+比
+qì
+汽
+chē
+车
+dī
+低，
+yóu
+游
+xì
+戏
+jī
+机
+zài
+在
+qiú
+球
+de
+的
+shànɡ
+上
+yì
+一
+cénɡ
+层。
+qǐnɡ
+请
+wèn
+问
+pīn
+拼
+tú
+图
+bù
+不
+nénɡ
+能
+fànɡ
+放
+zài
+在
+shū
+书
+jià
+架
+de
+的
+nǎ
+哪
+yì
+一
+cénɡ
+层？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+
+===== PAGE 11 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+PROBLEMS WITH SOLUTIONS
+3 points
+# 1. A kangaroo laid out 3 sticks like this
+to make a shape. It’s not allowed to break
+or to bend the sticks. Which shape could the kangaroo make?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 2. The picture shows 2 mushrooms. What is the diﬀerence between their heights?
+12
+0
+(A) 4
+(B) 5
+(C) 6
+(D) 11
+(E) 17
+Solution:
+# 3. Which of the paths shown in the pictures is the longest?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 4. Four identical pieces of paper are placed as shown. Michael wants to punch a hole that goes
+through all four pieces. At which point should Michael punch the hole?
+1
+
+===== PAGE 12 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+A
+B
+C
+D
+E
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution:
+The ﬁgure shows the papers as a transparency.
+# 5. Ella puts on this t-shirt and stands in front of a mirror. Which of these images does she see in
+the mirror?
+2021
+(A)
+2021
+(B)
+1202
+(C)
+2120
+(D) 1202
+2
+(E) 1202
+2
+Solution:
+# 6. The pink tower is taller than the red tower but shorter than the green tower. The silver tower
+is taller than the green tower. Which tower is the tallest?
+(A) pink tower
+(B) green tower
+(C) red tower
+(D) silver tower
+(E) impossible to decide
+Solution:
+# 7. These children are standing in a line. Some are facing forwards and others are facing backwards.
+How many children are holding another child’s hand with their right hand?
+2
+
+===== PAGE 13 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+Solution:
+# 8. In the Kangaroo constellation, all stars have a number greater than 3 and their sum is 20.
+Which is the Kangaroo constellation?
+(A)
+3
+4
+6
+7
+(B)
+7
+8
+5
+(C)
+3
+7
+2
+8
+5
+(D)
+5
+4
+9
+1
+(E)
+9
+9
+2
+Solution:
+4 points
+# 9. Edmund cut a ribbon as shown in the picture. How many pieces of the ribbon did he ﬁnish
+with?
+(A) 9
+(B) 10
+(C) 11
+(D) 12
+(E) 13
+Solution:
+We do not follow the sting as it winds, but it is easier to count how many times the
+scissors cut through the string. We will ﬁnd that it cut it 11 times (red dots) so the number of pieces
+3
+
+===== PAGE 14 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+is 12.
+# 10.
+Rose the cat walks along the wall.
+She starts at point B and follows the direction of
+the arrows shown in the picture.
+The cat walks a total of 20 metres.
+Where does she end up?
+A
+B
+C
+D
+E
+3 m
+4 m
+5 m
+2 m
+1 m
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution:
+# 11. Julia has two pots with ﬂowers, as shown. She keeps the ﬂowers exactly where they are.
+She buys more ﬂowers and puts them in the pots. After that each pot has the same number of
+each type of ﬂower.
+What is the smallest number of ﬂowers she needs to buy?
+4
+
+===== PAGE 15 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+(A) 2
+(B) 4
+(C) 6
+(D) 8
+(E) 10
+Solution:
+# 12. Tom encodes words using the board shown.
+For example, the word PIZZA
+has the code A2 A4 C1 C1 B2.
+What word did Tom encode as B3 B2 C4 D2?
+(A) MAZE
+(B) MASK
+(C) MILK
+(D) MATE
+(E) MATH
+Solution:
+# 13. Which ﬁgure can be made from these two pieces?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 14. Julie and Angela played ”kangball”, a ball game. Each goal in their game scores 2 points.
+Julie scored 5 goals and Angela scored 9 goals. How many more points than Julie did Angela score?
+(A) 4
+(B) 6
+(C) 8
+(D) 10
+(E) 12
+Solution:
+# 15. The picture shows the ﬁve houses of ﬁve friends and their school. The school is the largest
+building in the picture. To go to school, Doris and Ali walk past Leo’s house. Eva walks past Chole’s
+house. Which is Eva’s house?
+SCHOOL
+5
+
+===== PAGE 16 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 16. The kangaroo had two branches for lunch. Each branch had 10 leaves. The kangaroo ate some
+leaves from one branch. Then, from the second branch, it ate as many leaves as were left on the ﬁrst
+branch. How many leaves in total were left on the two branches?
+(A) 5
+(B) 6
+(C) 8
+(D) 10
+(E) 15
+Solution:
+5 points
+# 17. Mara built the square by using four of the following ﬁve shapes. Which shape was not used?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 18. Every time the witch has 3 apples she turns them in to 1 banana. Every time she has 3
+bananas she turns them in to 1 apple.
+What will she ﬁnish with
+if she starts with 4 apples and 5 bananas?
+(A)
+(B)
+(C)
+(D)
+(E)
+6
+
+===== PAGE 17 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+Solution:
+# 19. The cards shown are placed into two boxes. 2 3 4 5 6
+The sums of the numbers in each box are the same. Which number must be in the box with the
+number 4?
+(A) only 3
+(B) only 5
+(C) only 6
+(D) only 5 or 6
+(E) impossible to determine
+Solution:
+The sum of all of the numbers is 20, so the sum of the numbers in each box is 10. The
+only way we can make 10 in the blue box is by having 4 and 6 (no other combinations work), so our
+answer is only 6.
+# 20. The picture shows two cogs, each with a black tooth.
+Where will the black teeth be after the small cog has made one full turn?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+# 21. Three girls and two boys were dancing. They danced in pairs so that each girl danced with
+each boy for exactly one minute. At any time, there was only one pair on the dance ﬂoor. For how
+many minutes did they dance?
+(A) 5
+(B) 6
+(C) 8
+(D) 9
+(E) 10
+Solution:
+# 22. Each participant in a cooking contest baked one tray of cookies like the one shown.
+What is the smallest number of trays of cookies needed to make the following plate?
+7
+
+===== PAGE 18 =====
+KSF 2021 – ﬁnalized problems PreEcolier
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution:
+# 23. Kangie eats only apples on Monday, Wednesday and Friday. On Tuesdays and Thursdays he
+eats only mangoes. He eats either 2 apples or 3 mangoes a day. On Saturdays and Sundays he eats
+nothing. How many pieces of fruit does Kangie eat in two weeks?
+(A) 12
+(B) 16
+(C) 18
+(D) 20
+(E) 24
+Solution:
+# 24. Stan has ﬁve toys: a ball, a set of blocks, a game, a puzzle and a car. He puts each toy on a
+diﬀerent shelf of the bookcase. The ball is higher than the blocks and lower than the car. The game
+is directly above the ball.
+On which shelf can the puzzle not be placed?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution:
+8

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q16 · 拼图选块</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.ghost{background:#e2e8f0;color:#334155}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.piece-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.piece{padding:8px 12px;border:3px solid #cbd5e1;border-radius:10px;cursor:pointer;font-weight:800;background:#fff;user-select:none}
+.piece.on{border-color:var(--primary);background:#e0f2fe}
+.piece.disabled{opacity:.35;pointer-events:none}
+#board svg{background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0}
+.info{text-align:center;font-weight:700;min-height:24px;margin:8px 0}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">拼图选块</h1>
+<h1 class="lang-en">Puzzle Pieces</h1>
+<div class="meta lang-zh">2023 等级 A · 第 16 题 · 4 分</div>
+<div class="meta lang-en">2023 Level A · Q16 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小麦想完成图中的拼图。他有 5 个不同的拼图块。必须用哪几块来完成这个拼图？</p>
+    <p class="lang-en">Max wants to complete the puzzle. He has 5 different pieces. Which pieces must he use?</p>
+    <img class="fig" src="assets/q16_figure.png" alt="Q16"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：选块组合 → 试摆</h2>
+    <h2 class="lang-en">Lab: pick pieces → try placing</h2>
+    <p class="tip lang-zh">点选若干块（1–5），再点「试摆」。看看能不能刚好填满轮廓。选项 A–E 表示不同的三块组合。</p>
+    <p class="tip lang-en">Select pieces (1–5), tap Try Place. See if they fill the outline. Options A–E are different triples.</p>
+    <div class="piece-row" id="pieces"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="tryPlace()"><span class="lang-zh">试摆选中的块</span><span class="lang-en">Try place selected</span></button>
+    </div>
+    <div style="text-align:center"><svg id="board" width="240" height="200" viewBox="0 0 12 10"></svg></div>
+    <div class="info" id="info"></div>
+    <p class="tip lang-zh">我的答案（选项 A–E）</p><p class="tip lang-en">My answer (A–E)</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="15.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+  <a href="17.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT='A';
+const OUTLINE=[[1,0],[2,0],[3,0],[4,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[1,3],[2,3],[3,3],[4,3],[5,3],[2,4],[3,4],[4,4],[5,4],[3,5],[4,5],[5,5]];
+const HOLE=new Set(['2,1','3,1','2,2','3,2','3,3','4,3','4,4','5,4'].map(s=>s));
+const PIECES={
+  1:{cells:[[0,0],[1,0],[0,1],[1,1],[2,0]],color:'#a78bfa',off:[2,0]},
+  2:{cells:[[0,0],[1,0],[2,0],[0,1],[1,1]],color:'#38bdf8',off:[0,1]},
+  3:{cells:[[0,0],[1,0],[0,1],[1,1]],color:'#fbbf24',off:[4,2]},
+  4:{cells:[[0,0],[1,0],[2,0],[1,1],[2,1]],color:'#fb7185',off:[4,0]},
+  5:{cells:[[0,0],[1,0],[2,0],[3,0],[1,1]],color:'#34d399',off:[2,5]}
+};
+const OPTS={A:[1,4,5],B:[1,2,3],C:[2,3,4],D:[1,3,5],E:[2,4,5]};
+let selected=new Set(),choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function renderPieces(){
+  const row=document.getElementById('pieces');
+  row.innerHTML='';
+  Object.keys(PIECES).forEach(id=>{
+    const d=document.createElement('div');
+    d.className='piece'+(selected.has(+id)?' on':'');
+    d.textContent=(en()?'Piece ':'块 ')+id;
+    d.onclick=()=>{selected.has(+id)?selected.delete(+id):selected.add(+id);renderPieces();drawBoard([]);};
+    row.appendChild(d);
+  });
+}
+function drawBoard(fills){
+  const svg=document.getElementById('board');
+  let h='';
+  OUTLINE.forEach(([x,y])=>{
+    const k=`${x},${y}`;
+    const empty=HOLE.has(k);
+    const fill=fills.find(f=>f.cells.has(k));
+    h+=`<rect x="${x*20+10}" y="${y*20+10}" width="18" height="18" rx="2" fill="${fill?fill.color:(empty?'#fff':'#cbd5e1')}" stroke="#64748b" stroke-width="1"/>`;
+  });
+  svg.innerHTML=h;
+}
+function tryPlace(){
+  const ids=[...selected].sort((a,b)=>a-b);
+  if(!ids.length){document.getElementById('info').textContent=en()?'Select some pieces first.':'请先选几块。';return;}
+  const fills=ids.map(id=>{
+    const p=PIECES[id];
+    const cells=new Set(p.cells.map(([x,y])=>`${x+p.off[0]},${y+p.off[1]}`));
+    return {color:p.color,cells};
+  });
+  drawBoard(fills);
+  const covered=[...HOLE].filter(k=>fills.some(f=>f.cells.has(k))).length;
+  document.getElementById('info').textContent=(en()?`Covers ${covered}/${HOLE.size} empty cells.`:`覆盖了 ${covered}/${HOLE.size} 个空格。`);
+}
+['A','B','C','D','E'].forEach(L=>{
+  const d=document.createElement('div');d.className='card';d.textContent=L;
+  d.title=[...OPTS[L]].join(',');
+  d.onclick=()=>{choice=L;selected=new Set(OPTS[L]);renderPieces();tryPlace();
+    document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick A–E.':'❌ 请选择 A–E。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct!':'✅ 答对了！'):(en()?'❌ Not yet — try different piece sets.':'❌ 还不对——换几组块再试摆。');
+}
+function resetLab(){selected.clear();choice=null;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';document.getElementById('info').textContent='';renderPieces();drawBoard([]);}
+renderPieces();drawBoard([]);
+</script>
+</body>
+</html>

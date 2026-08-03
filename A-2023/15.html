@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q15 · 立方体涂胶</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.stat{text-align:center;font-size:20px;font-weight:800;color:#0369a1;margin:10px 0}
+.edge-list{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:560px;margin:0 auto}
+.edge-btn{padding:6px 10px;border-radius:8px;border:2px solid #cbd5e1;background:#fff;font-size:12px;font-weight:700;cursor:pointer}
+.edge-btn.on{background:#fef3c7;border-color:#f59e0b}
+.cube-btn{width:44px;height:44px;border-radius:8px;border:2px solid #64748b;background:#94a3b8;color:#fff;font-weight:800;cursor:pointer;margin:2px}
+.cube-btn.sel{background:#38bdf8;border-color:#0369a1}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">立方体涂胶</h1>
+<h1 class="lang-en">Cube Glue Drops</h1>
+<div class="meta lang-zh">2023 等级 A · 第 15 题 · 4 分</div>
+<div class="meta lang-en">2023 Level A · Q15 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">一个学生用 12 个立方体搭成图中的形状。每两个共面的立方体之间涂一滴胶水。一共用了多少滴胶水？</p>
+    <p class="lang-en">A student built the shape with 12 cubes. One glue drop between each pair of face-sharing cubes. How many drops?</p>
+    <img class="fig" src="assets/q15_figure.png" alt="Q15"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：点相邻立方体，标记胶水</h2>
+    <h2 class="lang-en">Lab: tap neighbours to mark glue</h2>
+    <p class="tip lang-zh">对照上图，先点一个立方体，再点与它<strong>共面相邻</strong>的另一个。每对记一滴胶。自己数总数。</p>
+    <p class="tip lang-en">Match the figure. Tap one cube, then a <strong>face-sharing</strong> neighbour. Each pair = one drop. Count them.</p>
+    <div id="cubePick" style="display:flex;flex-wrap:wrap;justify-content:center;max-width:320px;margin:12px auto"></div>
+    <div class="stat" id="glueStat"></div>
+    <div class="edge-list" id="edgeList"></div>
+    <p class="tip lang-zh">我的答案</p><p class="tip lang-en">My answer</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="14.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+  <a href="16.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT=11;
+const ADJ={
+  1:[2,5],2:[1,3,6],3:[2,4,7],4:[3,8],
+  5:[1,6],6:[2,5,7,9],7:[3,6,8,10],8:[4,7,11],
+  9:[6,10],10:[7,9,11],11:[8,10,12],12:[11]
+};
+let sel=null,marked=new Set(),choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function render(){
+  const pick=document.getElementById('cubePick');
+  pick.innerHTML='';
+  for(let i=1;i<=12;i++){
+    const b=document.createElement('button');
+    b.className='cube-btn'+(sel===i?' sel':'');
+    b.textContent=i;
+    b.onclick=()=>tap(i);
+    pick.appendChild(b);
+  }
+  document.getElementById('glueStat').textContent=(en()?'Glue drops: ':'胶水滴：')+marked.size;
+  const el=document.getElementById('edgeList');
+  el.innerHTML=[...marked].sort().map(k=>{
+    const [a,b]=k.split('-');
+    return `<button class="edge-btn on" onclick="toggleEdge('${k}')">${a}↔${b}</button>`;
+  }).join('');
+}
+function key(a,b){return a<b?`${a}-${b}`:`${b}-${a}`;}
+function toggleEdge(k){marked.has(k)?marked.delete(k):marked.add(k);render();}
+function tap(n){
+  if(sel===null){sel=n;render();return;}
+  if(sel===n){sel=null;render();return;}
+  if(!ADJ[sel].includes(n)){
+    document.getElementById('feedback').className='bad';
+    document.getElementById('feedback').textContent=en()?'❌ Those cubes are not face-sharing neighbours.':'❌ 这两个立方体不是共面相邻。';
+    sel=null;render();return;
+  }
+  const k=key(sel,n);
+  marked.has(k)?marked.delete(k):marked.add(k);
+  sel=null;render();
+  document.getElementById('feedback').textContent='';
+}
+[8,9,10,11,12].forEach(n=>{
+  const d=document.createElement('div');d.className='card';d.textContent=n;
+  d.onclick=()=>{choice=n;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));d.classList.add('on');
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=n;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('pool').appendChild(d);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(choice==null){fb.className='bad';fb.textContent=en()?'❌ Pick a number.':'❌ 请选答案。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct count!':'✅ 滴数对了！'):(en()?'❌ Not yet — mark every shared face in the figure.':'❌ 还不对——对照图形把每个共面都标记一遍。');
+}
+function resetLab(){sel=null;marked.clear();choice=null;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';render();}
+render();
+</script>
+</body>
+</html>

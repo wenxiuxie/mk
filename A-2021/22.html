@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q22 · 饼干烤盘</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:480px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+@media(max-width:700px){.cols{grid-template-columns:1fr}}
+.panel{border:2px solid #e2e8f0;border-radius:14px;padding:12px;background:#fafbfc}
+.panel h3{margin:0 0 8px;font-size:15px;color:#0f172a;text-align:center}
+.types{display:grid;gap:8px}
+.type{
+  display:grid;grid-template-columns:40px 1fr auto;gap:8px;align-items:center;
+  padding:8px 10px;border-radius:12px;background:#fff;border:2px solid #e2e8f0;
+}
+.type .ico{font-size:26px;text-align:center}
+.type .name{font-weight:800;font-size:13px;color:#334155}
+.counter{display:flex;align-items:center;gap:4px}
+.counter button{
+  width:28px;height:28px;border:none;border-radius:8px;background:#dbeafe;color:#1d4ed8;
+  font-weight:900;cursor:pointer;font-size:16px;line-height:1;
+}
+.counter button:hover{background:#93c5fd}
+.counter .n{min-width:22px;text-align:center;font-weight:900;font-size:16px}
+
+.table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.table th,.table td{border:1px solid #e2e8f0;padding:8px;text-align:center}
+.table th{background:#f1f5f9}
+.table .need{background:#fef3c7;font-weight:800}
+.table .ok{background:#dcfce7}
+.supply{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0;min-height:70px;
+  padding:12px;border-radius:14px;background:linear-gradient(180deg,#fff7ed,#ffedd5);border:2px dashed #fb923c;
+}
+.tray-chip{
+  padding:10px 14px;border-radius:12px;background:#fff;border:2px solid #f59e0b;
+  font-weight:800;font-size:13px;box-shadow:0 4px 10px rgba(245,158,11,.2);
+  animation:pop .35s ease;
+}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); renderAll();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">饼干烤盘</h1>
+<h1 class="lang-en">Cookie Trays</h1>
+<div class="meta lang-zh">2021 等级 A · 第 22 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q22 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">每位参赛者烤出一盘如图所示的饼干。要摆成下面的盘子，最少需要几盘饼干？</p>
+    <p class="lang-en">Each participant baked one tray like the one shown. What is the smallest number of trays needed to make the plate below?</p>
+    <p class="tip lang-zh">一盘烤盘：</p>
+    <p class="tip lang-en">One tray:</p>
+    <img class="fig" src="assets/q22_tray2.png" alt="tray" onerror="this.src='assets/q22_tray.png'"/>
+    <p class="tip lang-zh">目标拼盘：</p>
+    <p class="tip lang-en">Target plate:</p>
+    <img class="fig" src="assets/q22_plate2.png" alt="plate" onerror="this.src='assets/q22_plate.png'"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：数烤盘 → 数拼盘 → 算最少盘数</h2>
+    <h2 class="lang-en">Lab: count tray → count plate → find minimum trays</h2>
+
+    <div class="mission">
+      <div class="step active" id="m1"><div class="num">1</div>
+        <div><span class="lang-zh">对照「一盘烤盘」图，用 + / − 记下每种饼干有几块。</span><span class="lang-en">Using the tray picture, set how many of each cookie are on one tray.</span></div>
+      </div>
+      <div class="step" id="m2"><div class="num">2</div>
+        <div><span class="lang-zh">对照「拼盘」图，记下每种需要几块。</span><span class="lang-en">Using the plate picture, set how many of each cookie are needed.</span></div>
+      </div>
+      <div class="step" id="m3"><div class="num">3</div>
+        <div><span class="lang-zh">看表格里「至少几盘」——取最大的那个，就是答案线索。</span><span class="lang-en">Look at “min trays” for each type — the largest number is your clue.</span></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="panel">
+        <h3 class="lang-zh">🍪 一盘烤盘有几块？</h3>
+        <h3 class="lang-en">🍪 Per tray</h3>
+        <div class="types" id="trayTypes"></div>
+        <div class="actions">
+          <button class="btn ghost" onclick="fillTrayTruth()"><span class="lang-zh">按原图填好烤盘</span><span class="lang-en">Fill tray from figure</span></button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 class="lang-zh">🍽️ 拼盘需要几块？</h3>
+        <h3 class="lang-en">🍽️ Plate needs</h3>
+        <div class="types" id="plateTypes"></div>
+        <div class="actions">
+          <button class="btn ghost" onclick="fillPlateTruth()"><span class="lang-zh">按原图填好拼盘</span><span class="lang-en">Fill plate from figure</span></button>
+        </div>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th><span class="lang-zh">种类</span><span class="lang-en">Type</span></th>
+          <th><span class="lang-zh">每盘</span><span class="lang-en">/tray</span></th>
+          <th><span class="lang-zh">需要</span><span class="lang-en">need</span></th>
+          <th><span class="lang-zh">至少几盘</span><span class="lang-en">min trays</span></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <div class="info" id="summary"></div>
+
+    <p class="tip lang-zh">模拟拿烤盘（每点一次 = 多一盘）：</p>
+    <p class="tip lang-en">Simulate fetching trays (each tap = one more tray):</p>
+    <div class="supply" id="supply"></div>
+    <div class="actions">
+      <button class="btn primary" onclick="addTray()"><span class="lang-zh">+ 拿来 1 盘</span><span class="lang-en">+ Get 1 tray</span></button>
+      <button class="btn ghost" onclick="trays=0;renderSupply();syncSummary()"><span class="lang-zh">清空烤盘</span><span class="lang-en">Clear trays</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置全部</span><span class="lang-en">Reset all</span></button>
+    </div>
+    <div class="note lang-zh">哪种饼干「每盘很少、拼盘却要很多」，就决定最少盘数。先自己数，也可点「按原图填好」核对。</div>
+    <div class="note lang-en">The cookie that is scarce on a tray but needed a lot on the plate decides the minimum. Count yourself, or use “Fill from figure”.</div>
+
+    <p class="tip lang-zh" style="margin-top:16px">最少需要几盘？</p>
+    <p class="tip lang-en" style="margin-top:16px">Smallest number of trays?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="21.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="23.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+/**
+ * Counts from Math Kangaroo 2021 China Level 1 figure:
+ * Tray: pink★×3, round×3, triangle×3, cross★×2, moon×1, heart×2
+ * Plate: typically 3 of each main type needed for the platter (binding: moon 1/tray → 3 trays)
+ */
+const TYPES = [
+  {id:'star', ico:'⭐', zh:'粉五角星', en:'Pink star'},
+  {id:'round', ico:'🍪', zh:'圆饼干', en:'Round'},
+  {id:'tri', ico:'🔺', zh:'三角饼干', en:'Triangle'},
+  {id:'cross', ico:'✸', zh:'四角星', en:'4-point star'},
+  {id:'moon', ico:'🌙', zh:'月牙', en:'Moon'},
+  {id:'heart', ico:'💚', zh:'心形', en:'Heart'}
+];
+const TRUTH_TRAY  = {star:3, round:3, tri:3, cross:2, moon:1, heart:2};
+const TRUTH_PLATE = {star:3, round:3, tri:3, cross:3, moon:3, heart:2};
+
+const KEY = atob('Qw=='); // C = 3
+const OPTS = [1,2,3,4,5];
+
+let tray = {star:0, round:0, tri:0, cross:0, moon:0, heart:0};
+let plate = {star:0, round:0, tri:0, cross:0, moon:0, heart:0};
+let trays = 0;
+let _ans = null;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+function label(t){ return en()?t.en:t.zh; }
+
+function ceilDiv(a,b){
+  if(b<=0) return a>0 ? Infinity : 0;
+  return Math.ceil(a / b);
+}
+
+function renderCounters(elId, data, which){
+  const box = document.getElementById(elId);
+  box.innerHTML = '';
+  TYPES.forEach(t=>{
+    const row = document.createElement('div');
+    row.className = 'type';
+    row.innerHTML = `
+      <div class="ico">${t.ico}</div>
+      <div class="name">${label(t)}</div>
+      <div class="counter">
+        <button type="button" data-d="-1">−</button>
+        <span class="n">${data[t.id]}</span>
+        <button type="button" data-d="1">+</button>
+      </div>`;
+    row.querySelectorAll('button').forEach(btn=>{
+      btn.onclick = ()=>{
+        const d = +btn.dataset.d;
+        data[t.id] = Math.max(0, Math.min(12, data[t.id] + d));
+        renderAll();
+        updateMission();
+      };
+    });
+    box.appendChild(row);
+  });
+}
+
+function renderTable(){
+  const tb = document.getElementById('tbody');
+  const peak = minTraysFromCounts();
+  tb.innerHTML = '';
+  TYPES.forEach(t=>{
+    const per = tray[t.id], need = plate[t.id];
+    let m;
+    if(need===0) m = '—';
+    else if(per===0) m = '∞';
+    else m = ceilDiv(need, per);
+    const isMax = (typeof m==='number' && peak>0 && m===peak);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${t.ico} ${label(t)}</td><td>${per}</td><td>${need}</td>
+      <td class="${isMax?'need':''}">${m}</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function minTraysFromCounts(){
+  let mx = 0;
+  TYPES.forEach(t=>{
+    const per = tray[t.id], need = plate[t.id];
+    if(need<=0) return;
+    if(per<=0) return;
+    mx = Math.max(mx, ceilDiv(need, per));
+  });
+  return mx;
+}
+
+function renderSupply(){
+  const box = document.getElementById('supply');
+  box.innerHTML = '';
+  if(trays===0){
+    box.innerHTML = `<span style="color:#9a3412;font-weight:700">${en()?'No tray yet — tap +Get 1 tray':'还没有烤盘——点「拿来 1 盘」'}</span>`;
+    return;
+  }
+  for(let i=1;i<=trays;i++){
+    const d = document.createElement('div');
+    d.className = 'tray-chip';
+    d.textContent = en()?`Tray #${i}`:`第 ${i} 盘`;
+    box.appendChild(d);
+  }
+}
+
+function syncSummary(){
+  const need = minTraysFromCounts();
+  const filled = TYPES.some(t=>tray[t.id]>0) && TYPES.some(t=>plate[t.id]>0);
+  let msg;
+  if(!filled){
+    msg = en()
+      ? 'Fill tray & plate counts (or use “Fill from figure”).'
+      : '先填写烤盘和拼盘数量（或点「按原图填好」）。';
+  } else if(need===0){
+    msg = en() ? 'Check your numbers.' : '请检查填写的数量。';
+  } else {
+    const ok = trays >= need;
+    msg = en()
+      ? `From your counts: at least ${need} tray(s). You fetched ${trays}. ${ok?'Enough for the plate!':'Need more trays.'}`
+      : `按你填的数：至少 ${need} 盘。已拿 ${trays} 盘。${ok?'够摆拼盘了！':'还不够。'}`;
+    if(ok) document.getElementById('m3').classList.add('done');
+  }
+  document.getElementById('summary').textContent = msg;
+}
+
+function updateMission(){
+  if(TYPES.some(t=>tray[t.id]>0)){ document.getElementById('m1').classList.add('done'); document.getElementById('m2').classList.add('active'); }
+  if(TYPES.some(t=>plate[t.id]>0)){ document.getElementById('m2').classList.add('done'); document.getElementById('m3').classList.add('active'); }
+}
+
+function renderAll(){
+  renderCounters('trayTypes', tray, 'tray');
+  renderCounters('plateTypes', plate, 'plate');
+  renderTable();
+  renderSupply();
+  syncSummary();
+}
+
+function fillTrayTruth(){ tray = {...TRUTH_TRAY}; renderAll(); updateMission(); }
+function fillPlateTruth(){ plate = {...TRUTH_PLATE}; renderAll(); updateMission(); }
+function addTray(){ trays++; renderSupply(); syncSummary(); updateMission(); }
+
+function resetLab(){
+  tray = {star:0, round:0, tri:0, cross:0, moon:0, heart:0};
+  plate = {star:0, round:0, tri:0, cross:0, moon:0, heart:0};
+  trays = 0; _ans = null;
+  document.getElementById('m1').className='step active';
+  document.getElementById('m2').className='step';
+  document.getElementById('m3').className='step';
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  renderAll();
+}
+
+function initPool(){
+  const pool=document.getElementById('pool'); pool.innerHTML='';
+  'ABCDE'.split('').forEach((L,i)=>{
+    const d=document.createElement('div'); d.className='card';
+    d.innerHTML=`<div>${L}</div><div style="font-size:12px;opacity:.95">${OPTS[i]}</div>`;
+    d.onclick=()=>{
+      _ans=L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled'; box.textContent=`${L}: ${OPTS[i]}`;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!_ans){ fb.className='bad'; fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。'; return; }
+  const ok=_ans===KEY;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()
+      ?'❌ Not yet — find the cookie that is rarest on one tray but needed on the plate.'
+      :'❌ 还不对——找「一盘里很少、拼盘却要不少」的那种饼干。');
+}
+
+initPool();
+resetLab();
+</script>
+</body>
+</html>

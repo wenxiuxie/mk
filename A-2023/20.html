@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 A · Q20 · 迷宫贴纸</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:720px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#6c757d;color:#fff}.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:10px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:100px;min-height:56px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;background:#fafbfc;padding:8px}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:920px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.maze-row{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.floor-box{text-align:center}
+.floor-title{font-weight:800;color:var(--primary);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(3,64px);gap:6px}
+.room{width:64px;height:64px;border:3px solid #cbd5e1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;background:#fff;position:relative;user-select:none}
+.room.visited{background:#dbeafe;border-color:var(--primary)}
+.room.current{box-shadow:0 0 0 3px #f59e0b}
+.room.stairs::after{content:'🪜';position:absolute;bottom:2px;right:4px;font-size:12px}
+.room.entry{box-shadow:inset 0 0 0 3px #22c55e}
+.room.exit{box-shadow:inset 0 0 0 3px #ef4444}
+.sticker-trail{display:flex;gap:8px;justify-content:center;margin:10px 0;font-size:28px;min-height:40px}
+.opts-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.opt-img{width:120px;border:3px solid #e2e8f0;border-radius:10px;cursor:pointer;padding:4px;background:#fff}
+.opt-img.on{border-color:#f59e0b}
+.opt-img img{width:100%;display:block;border-radius:6px}
+.opt-lab{text-align:center;font-weight:800;font-size:12px;color:#64748b}
+.info{text-align:center;font-weight:700;min-height:24px}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 English / 中文</button>
+<h1 class="lang-zh">两层迷宫贴纸顺序</h1>
+<h1 class="lang-en">Maze Sticker Order</h1>
+<div class="meta lang-zh">2023 等级 A · 第 20 题 · 5 分</div>
+<div class="meta lang-en">2023 Level A · Q20 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小萨从 1 楼入口走到 1 楼出口，穿过两层迷宫。她会按什么顺序看到墙上的贴纸？</p>
+    <p class="lang-en">Sam walks from floor-1 entrance to floor-1 exit through a two-storey maze. In what order will she find the wall stickers?</p>
+    <img class="fig" src="assets/q20_figure.png" alt="Q20"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验：点房间走路，收集贴纸</h2>
+    <h2 class="lang-en">Lab: click rooms, collect stickers</h2>
+    <p class="tip lang-zh">从 1 楼入口（绿框）出发，点相邻房间移动。经过有贴纸的房间会自动记录。到出口（红框）后对照选项。</p>
+    <p class="tip lang-en">Start at floor-1 entrance (green). Click adjacent rooms. Stickers are recorded as you pass. Compare at exit (red).</p>
+    <div class="maze-row">
+      <div class="floor-box"><div class="floor-title">1F</div><div class="grid" id="f1"></div></div>
+      <div class="floor-box"><div class="floor-title">2F</div><div class="grid" id="f2"></div></div>
+    </div>
+    <div class="info" id="info"></div>
+    <div class="sticker-trail" id="trail"></div>
+    <div class="actions">
+      <button class="btn reset" onclick="resetPath()"><span class="lang-zh">重走迷宫</span><span class="lang-en">Reset path</span></button>
+    </div>
+    <p class="tip lang-zh">选项（点图选择）</p><p class="tip lang-en">Options (tap image)</p>
+    <div class="opts-row" id="optRow"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置实验</span><span class="lang-en">Reset</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <a href="19.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+  <a href="21.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+</div>
+<script>
+const CORRECT='B';
+const STICKERS={'1-2-2':'🐸','2-0-0':'🦏','2-1-1':'🦈'};
+const ADJ={
+  '1-2-2':['1-2-1','1-1-2'],'1-2-1':['1-2-2','1-2-0','1-1-1'],'1-2-0':['1-2-1'],
+  '1-1-2':['1-2-2','1-1-1','1-0-2'],'1-1-1':['1-2-1','1-1-2','1-1-0','1-0-1'],
+  '1-1-0':['1-1-1','1-0-0'],'1-0-2':['1-1-2','1-0-1'],'1-0-1':['1-1-1','1-0-2','1-0-0'],
+  '1-0-0':['1-1-0','1-0-1','2-0-0'],
+  '2-2-2':['2-2-1','2-1-2'],'2-2-1':['2-2-2','2-1-1'],'2-2-0':['2-1-0'],
+  '2-1-2':['2-2-2','2-1-1','2-0-2'],'2-1-1':['2-2-1','2-1-2','2-1-0','2-0-1'],
+  '2-1-0':['2-1-1','2-0-0'],'2-0-2':['2-1-2','2-0-1'],'2-0-1':['2-1-1','2-0-2','2-0-0'],
+  '2-0-0':['2-1-0','2-0-1','1-0-0']
+};
+const STAIRS={'1-0-0':'2-0-0','2-0-0':'1-0-0','1-2-2':'2-2-2','2-2-2':'1-2-2'};
+let path=[],stickers=[],choice=null;
+function en(){return document.body.classList.contains('en-mode');}
+function key(f,r,c){return `${f}-${r}-${c}`;}
+function renderFloor(fid,elId){
+  const g=document.getElementById(elId); g.innerHTML='';
+  for(let r=0;r<3;r++)for(let c=0;c<3;c++){
+    const k=key(fid,r,c),d=document.createElement('div');
+    d.className='room';
+    if(fid===1&&r===2&&c===2){d.classList.add('entry');d.textContent='▶';}
+    else if(fid===1&&r===0&&c===0){d.classList.add('exit');d.textContent='⎋';}
+    else if(STICKERS[k]) d.textContent=STICKERS[k];
+    if(STAIRS[k]) d.classList.add('stairs');
+    if(path.includes(k)) d.classList.add('visited');
+    if(path[path.length-1]===k) d.classList.add('current');
+    d.onclick=()=>move(k);
+    g.appendChild(d);
+  }
+}
+function render(){renderFloor(1,'f1');renderFloor(2,'f2');
+  document.getElementById('trail').textContent=stickers.join(' → ')|| (en()?'(no stickers yet)':'（还没有贴纸）');
+}
+function move(k){
+  if(!path.length){if(k!=='1-2-2'){document.getElementById('info').textContent=en()?'Start at the entrance ▶!':'请从入口 ▶ 开始！';return;}}
+  else{
+    const cur=path[path.length-1];
+    if(!ADJ[cur]?.includes(k)&&STAIRS[cur]!==k){
+      document.getElementById('info').textContent=en()?'Can only move to a neighbouring room.':'只能走到相邻房间。';return;}
+    if(path.includes(k)&&!STAIRS[cur]){
+      document.getElementById('info').textContent=en()?'Already visited — try another path.':'这个房间走过了。';return;}
+  }
+  path.push(k);
+  if(STICKERS[k]&&!stickers.includes(STICKERS[k])) stickers.push(STICKERS[k]);
+  document.getElementById('info').textContent=(en()?`At ${k}`:`当前 ${k}`)+(k==='1-0-0'?(en()?' — reached exit area!':' — 到出口附近了！'):'');
+  render();
+}
+function resetPath(){path=[];stickers=[];render();document.getElementById('info').textContent='';}
+['A','B','C','D','E'].forEach(L=>{
+  const w=document.createElement('div');w.className='opt-img';w.dataset.opt=L;
+  w.innerHTML=`<img src="assets/q20_opt${L}.jpeg" alt="${L}"/><div class="opt-lab">${L}</div>`;
+  w.onclick=()=>{choice=L;document.querySelectorAll('.opt-img').forEach(o=>o.classList.toggle('on',o.dataset.opt===L));
+    document.getElementById('ansBox').className='answer-box filled';document.getElementById('ansBox').textContent=L;
+    document.getElementById('feedback').textContent='';};
+  document.getElementById('optRow').appendChild(w);
+});
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!choice){fb.className='bad';fb.textContent=en()?'❌ Pick an option.':'❌ 请选择选项。';return;}
+  fb.className=choice===CORRECT?'ok':'bad';
+  fb.textContent=choice===CORRECT?(en()?'✅ Correct order!':'✅ 顺序对了！'):(en()?'❌ Not yet — walk the maze again.':'❌ 还不对——再走一遍迷宫试试。');
+}
+function resetLab(){resetPath();choice=null;document.querySelectorAll('.opt-img').forEach(o=>o.classList.remove('on'));
+  document.getElementById('ansBox').className='answer-box';document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+{
+  "1": {
+    "en": "A kangaroo laid out 3 sticks like this to make a shape. It’s not allowed to break or to bend the sticks. Which shape could the kangaroo make? Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "2": {
+    "en": "The picture shows 2 mushrooms. What is the difference between their heights? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "11",
+      "E": "17"
+    }
+  },
+  "3": {
+    "en": "Which of the paths shown in the pictures is the longest? Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "4": {
+    "en": "Four identical pieces of paper are placed as shown. Michael wants to punch a hole that goes through all four pieces. At which point should Michael punch the hole? KSF 2021 – finalized problems PreEcolier Solution: The figure shows the papers as a transparency.",
+    "zh": "",
+    "opts": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "E": "E"
+    }
+  },
+  "5": {
+    "en": "Ella puts on this t-shirt and stands in front of a mirror. Which of these images does she see in the mirror? Solution:",
+    "zh": "",
+    "opts": {
+      "D": "1202",
+      "E": "1202"
+    }
+  },
+  "6": {
+    "en": "The pink tower is taller than the red tower but shorter than the green tower. The silver tower is taller than the green tower. Which tower is the tallest? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "pink tower",
+      "B": "green tower",
+      "C": "red tower",
+      "D": "silver tower",
+      "E": "impossible to decide"
+    }
+  },
+  "7": {
+    "en": "These children are standing in a line. Some are facing forwards and others are facing backwards. How many children are holding another child’s hand with their right hand? KSF 2021 – finalized problems PreEcolier Solution:",
+    "zh": "",
+    "opts": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "6"
+    }
+  },
+  "8": {
+    "en": "In the Kangaroo constellation, all stars have a number greater than 3 and their sum is 20. Which is the Kangaroo constellation? Solution: 4 points",
+    "zh": "",
+    "opts": {}
+  },
+  "9": {
+    "en": "Edmund cut a ribbon as shown in the picture. How many pieces of the ribbon did he finish with? Solution: We do not follow the sting as it winds, but it is easier to count how many times the scissors cut through the string. We will find that it cut it 11 times (red dots) so the number of pieces KSF 2021 – finalized problems PreEcolier is 12.",
+    "zh": "",
+    "opts": {
+      "A": "9",
+      "B": "10",
+      "C": "11",
+      "D": "12",
+      "E": "13"
+    }
+  },
+  "10": {
+    "en": "Rose the cat walks along the wall. She starts at point B and follows the direction of the arrows shown in the picture. The cat walks a total of 20 metres. Where does she end up? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D",
+      "E": "E"
+    }
+  },
+  "11": {
+    "en": "Julia has two pots with flowers, as shown. She keeps the flowers exactly where they are. She buys more flowers and puts them in the pots. After that each pot has the same number of each type of flower. What is the smallest number of flowers she needs to buy? KSF 2021 – finalized problems PreEcolier Solution:",
+    "zh": "",
+    "opts": {
+      "A": "2",
+      "B": "4",
+      "C": "6",
+      "D": "8",
+      "E": "10"
+    }
+  },
+  "12": {
+    "en": "Tom encodes words using the board shown. For example, the word PIZZA has the code A2 A4 C1 C1 B2. What word did Tom encode as B3 B2 C4 D2? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "MAZE",
+      "B": "MASK",
+      "C": "MILK",
+      "D": "MATE",
+      "E": "MATH"
+    }
+  },
+  "13": {
+    "en": "Which figure can be made from these two pieces? Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "14": {
+    "en": "Julie and Angela played ”kangball”, a ball game. Each goal in their game scores 2 points. Julie scored 5 goals and Angela scored 9 goals. How many more points than Julie did Angela score? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "10",
+      "E": "12"
+    }
+  },
+  "15": {
+    "en": "The picture shows the five houses of five friends and their school. The school is the largest building in the picture. To go to school, Doris and Ali walk past Leo’s house. Eva walks past Chole’s house. Which is Eva’s house? KSF 2021 – finalized problems PreEcolier Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "16": {
+    "en": "The kangaroo had two branches for lunch. Each branch had 10 leaves. The kangaroo ate some leaves from one branch. Then, from the second branch, it ate as many leaves as were left on the first branch. How many leaves in total were left on the two branches? Solution: 5 points",
+    "zh": "",
+    "opts": {
+      "A": "5",
+      "B": "6",
+      "C": "8",
+      "D": "10",
+      "E": "15"
+    }
+  },
+  "17": {
+    "en": "Mara built the square by using four of the following five shapes. Which shape was not used? Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "18": {
+    "en": "Every time the witch has 3 apples she turns them in to 1 banana. Every time she has 3 bananas she turns them in to 1 apple. What will she finish with if she starts with 4 apples and 5 bananas? KSF 2021 – finalized problems PreEcolier Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "19": {
+    "en": "The cards shown are placed into two boxes. 2 3 4 5 6 The sums of the numbers in each box are the same. Which number must be in the box with the number 4? Solution: The sum of all of the numbers is 20, so the sum of the numbers in each box is 10. The only way we can make 10 in the blue box is by having 4 and 6 (no other combinations work), so our answer is only 6.",
+    "zh": "",
+    "opts": {
+      "A": "only 3",
+      "B": "only 5",
+      "C": "only 6",
+      "D": "only 5 or 6",
+      "E": "impossible to determine"
+    }
+  },
+  "20": {
+    "en": "The picture shows two cogs, each with a black tooth. Where will the black teeth be after the small cog has made one full turn? Solution:",
+    "zh": "",
+    "opts": {}
+  },
+  "21": {
+    "en": "Three girls and two boys were dancing. They danced in pairs so that each girl danced with each boy for exactly one minute. At any time, there was only one pair on the dance floor. For how many minutes did they dance? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "5",
+      "B": "6",
+      "C": "8",
+      "D": "9",
+      "E": "10"
+    }
+  },
+  "22": {
+    "en": "Each participant in a cooking contest baked one tray of cookies like the one shown. What is the smallest number of trays of cookies needed to make the following plate? KSF 2021 – finalized problems PreEcolier Solution:",
+    "zh": "",
+    "opts": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    }
+  },
+  "23": {
+    "en": "Kangie eats only apples on Monday, Wednesday and Friday. On Tuesdays and Thursdays he eats only mangoes. He eats either 2 apples or 3 mangoes a day. On Saturdays and Sundays he eats nothing. How many pieces of fruit does Kangie eat in two weeks? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "12",
+      "B": "16",
+      "C": "18",
+      "D": "20",
+      "E": "24"
+    }
+  },
+  "24": {
+    "en": "Stan has five toys: a ball, a set of blocks, a game, a puzzle and a car. He puts each toy on a different shelf of the bookcase. The ball is higher than the blocks and lower than the car. The game is directly above the ball. On which shelf can the puzzle not be placed? Solution:",
+    "zh": "",
+    "opts": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    }
+  }
+}

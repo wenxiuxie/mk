@@ -1,0 +1,578 @@
+[
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q1: Three Sticks Shape",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第1题：三根棍子摆图形"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "A kangaroo laid out 3 sticks like this to make a shape. It is not allowed to break or to bend the sticks. Which shape could the kangaroo make?",
+      "zh": "一只袋鼠用三根这样的棍子来摆图形。不允许折断或折弯棍子，袋鼠可以摆出下列哪个图形？"
+    },
+    "choices": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "C",
+        "zh": "C"
+      },
+      {
+        "en": "D",
+        "zh": "D"
+      },
+      {
+        "en": "E",
+        "zh": "E"
+      }
+    ],
+    "correct_answer": 5,
+    "explanation": {
+      "en": "Three straight sticks can form a triangle. Match the option that can be made without breaking or bending.",
+      "zh": "三根直棍可摆成三角形。对照选项，找出无需折断或折弯就能摆成的图形。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 1,
+      "points": 3,
+      "answer_letter": "E",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q2: Mushroom Height Difference",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第2题：蘑菇高度差"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "The picture shows 2 mushrooms. What is the difference between their heights?",
+      "zh": "下面两个蘑菇的高度相差多少？"
+    },
+    "choices": [
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      },
+      {
+        "en": "11",
+        "zh": "11"
+      },
+      {
+        "en": "17",
+        "zh": "17"
+      }
+    ],
+    "correct_answer": 2,
+    "explanation": {
+      "en": "Read both heights from the figure and subtract.",
+      "zh": "从图中读出两个高度再相减。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 2,
+      "points": 3,
+      "answer_letter": "B",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q3: Longest Path",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第3题：最长的路径"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Which of the paths shown in the pictures is the longest?",
+      "zh": "下列哪张图显示的路径最长？"
+    },
+    "choices": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "C",
+        "zh": "C"
+      },
+      {
+        "en": "D",
+        "zh": "D"
+      },
+      {
+        "en": "E",
+        "zh": "E"
+      }
+    ],
+    "correct_answer": 1,
+    "explanation": {
+      "en": "Compare the total length of each path.",
+      "zh": "比较各图路径的总长度。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 3,
+      "points": 3,
+      "answer_letter": "A",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q4: Punch Through Four Papers",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第4题：打穿四张纸"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Four identical pieces of paper are placed as shown. Michael wants to punch a hole that goes through all four pieces. At which point should Michael punch the hole?",
+      "zh": "将四张相同的纸张摆放如下。Michael 想打一个洞把四张纸都打穿。他应该在哪个点打洞？"
+    },
+    "choices": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "C",
+        "zh": "C"
+      },
+      {
+        "en": "D",
+        "zh": "D"
+      },
+      {
+        "en": "E",
+        "zh": "E"
+      }
+    ],
+    "correct_answer": 4,
+    "explanation": {
+      "en": "Punch where all four layers overlap.",
+      "zh": "在四层纸都重叠的位置打洞。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 4,
+      "points": 3,
+      "answer_letter": "D",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q5: T-shirt in the Mirror",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第5题：镜子里的T恤"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Ella puts on this t-shirt and stands in front of a mirror. Which of these images does she see in the mirror?",
+      "zh": "Ella 穿上这件T恤站在镜子前。她在镜子里会看到下面哪张图？"
+    },
+    "choices": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "C",
+        "zh": "C"
+      },
+      {
+        "en": "D",
+        "zh": "D"
+      },
+      {
+        "en": "E",
+        "zh": "E"
+      }
+    ],
+    "correct_answer": 1,
+    "explanation": {
+      "en": "The mirror reverses left and right.",
+      "zh": "镜子会左右颠倒图像。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 5,
+      "points": 3,
+      "answer_letter": "A",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q6: Tallest Tower",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第6题：最高的塔"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "The pink tower is taller than the red tower but shorter than the green tower. The silver tower is taller than the green tower. Which tower is the tallest?",
+      "zh": "粉塔比红塔高，但比绿塔矮。银塔比绿塔高。哪一座塔最高？"
+    },
+    "choices": [
+      {
+        "en": "pink tower",
+        "zh": "粉塔"
+      },
+      {
+        "en": "green tower",
+        "zh": "绿塔"
+      },
+      {
+        "en": "red tower",
+        "zh": "红塔"
+      },
+      {
+        "en": "silver tower",
+        "zh": "银塔"
+      },
+      {
+        "en": "impossible to decide",
+        "zh": "无法判断"
+      }
+    ],
+    "correct_answer": 4,
+    "explanation": {
+      "en": "Order: red < pink < green < silver, so silver is tallest.",
+      "zh": "高度：红 < 粉 < 绿 < 银，银塔最高。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 6,
+      "points": 3,
+      "answer_letter": "D",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q7: Children Holding Hands",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第7题：牵手的小朋友"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "These children are standing in a line. Some are facing forwards and others are facing backwards. How many children are holding another child’s hand with their right hand?",
+      "zh": "这些小朋友排成一队。有的面朝前，有的面朝后。有多少个小朋友用右手牵着另一个小朋友的手？"
+    },
+    "choices": [
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "3",
+        "zh": "3"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "5",
+        "zh": "5"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      }
+    ],
+    "correct_answer": 5,
+    "explanation": {
+      "en": "Check each child’s facing direction to see which hand is the right hand.",
+      "zh": "结合每人朝向判断哪只手是右手。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 7,
+      "points": 3,
+      "answer_letter": "E",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q8: Kangaroo Constellation",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第8题：袋鼠星座"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "In the Kangaroo constellation, all stars have a number greater than 3 and their sum is 20. Which is the Kangaroo constellation?",
+      "zh": "在袋鼠星座中，每颗星上的数都大于 3，且它们的和是 20。哪一个是袋鼠星座？"
+    },
+    "choices": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "C",
+        "zh": "C"
+      },
+      {
+        "en": "D",
+        "zh": "D"
+      },
+      {
+        "en": "E",
+        "zh": "E"
+      }
+    ],
+    "correct_answer": 2,
+    "explanation": {
+      "en": "All numbers > 3 and sum to 20.",
+      "zh": "所有数都大于 3，且总和为 20。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 8,
+      "points": 3,
+      "answer_letter": "B",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q9: Cut Ribbon Pieces",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第9题：剪丝带"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Edmund cut a ribbon as shown in the picture. How many pieces of the ribbon did he finish with?",
+      "zh": "Edmund 按图中所示剪断丝带。他一共得到多少段丝带？"
+    },
+    "choices": [
+      {
+        "en": "9",
+        "zh": "9"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      },
+      {
+        "en": "11",
+        "zh": "11"
+      },
+      {
+        "en": "12",
+        "zh": "12"
+      },
+      {
+        "en": "13",
+        "zh": "13"
+      }
+    ],
+    "correct_answer": 4,
+    "explanation": {
+      "en": "Count how many times the scissors cut; pieces = cuts + 1 for a single ribbon (or use the figure).",
+      "zh": "数剪刀剪过的次数；一段丝带剪 n 刀一般得到 n+1 段（结合图判断）。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 9,
+      "points": 4,
+      "answer_letter": "D",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q10: Cat Walking on the Wall",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第10题：墙上走路的猫"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Rose the cat walks along the wall. She starts at point B and follows the direction of the arrows shown in the picture. The cat walks a total of 20 metres. Where does she end up?",
+      "zh": "小猫 Rose 沿着墙走。她从 B 点出发，按图中箭头方向走，一共走了 20 米。她最终停在哪里？"
+    },
+    "choices": [
+      {
+        "en": "A",
+        "zh": "A"
+      },
+      {
+        "en": "B",
+        "zh": "B"
+      },
+      {
+        "en": "C",
+        "zh": "C"
+      },
+      {
+        "en": "D",
+        "zh": "D"
+      },
+      {
+        "en": "E",
+        "zh": "E"
+      }
+    ],
+    "correct_answer": 4,
+    "explanation": {
+      "en": "Follow the arrows for a total length of 20 m.",
+      "zh": "按箭头方向累计走满 20 米。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 10,
+      "points": 4,
+      "answer_letter": "D",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q11: Equal Flowers in Two Pots",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第11题：两盆花数量相等"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Julia has two pots with flowers, as shown. She keeps the flowers exactly where they are. She buys more flowers and puts them in the pots. After that each pot has the same number of each type of flower. What is the smallest number of flowers she needs to buy?",
+      "zh": "Julia 有两盆花，如图所示。她不移动原有的花，又买了一些花放进盆里，使两盆中每种花的数量都相同。她最少需要再买多少朵花？"
+    },
+    "choices": [
+      {
+        "en": "2",
+        "zh": "2"
+      },
+      {
+        "en": "4",
+        "zh": "4"
+      },
+      {
+        "en": "6",
+        "zh": "6"
+      },
+      {
+        "en": "8",
+        "zh": "8"
+      },
+      {
+        "en": "10",
+        "zh": "10"
+      }
+    ],
+    "correct_answer": 3,
+    "explanation": {
+      "en": "For each flower type, buy enough so both pots match the larger count.",
+      "zh": "对每种花，买到让两盆都达到较大的那个数量。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 11,
+      "points": 4,
+      "answer_letter": "C",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  },
+  {
+    "title": {
+      "en": "Math Kangaroo 2021 – Level 1 -1 Q12: Letter Code Board",
+      "zh": "Math Kangaroo 2021 – Level 1 -1 第12题：字母密码板"
+    },
+    "type": "single_choice",
+    "content": {
+      "en": "Tom encodes words using the board shown. For example, the word PIZZA has the code A2 A4 C1 C1 B2. What word did Tom encode as B3 B2 C4 D2?",
+      "zh": "Tom 用图中的密码板给单词编码。例如 PIZZA 的编码是 A2 A4 C1 C1 B2。编码 B3 B2 C4 D2 对应哪个单词？"
+    },
+    "choices": [
+      {
+        "en": "MAZE",
+        "zh": "MAZE"
+      },
+      {
+        "en": "MASK",
+        "zh": "MASK"
+      },
+      {
+        "en": "MILK",
+        "zh": "MILK"
+      },
+      {
+        "en": "MATE",
+        "zh": "MATE"
+      },
+      {
+        "en": "MATH",
+        "zh": "MATH"
+      }
+    ],
+    "correct_answer": 5,
+    "explanation": {
+      "en": "Read each grid code as a letter from the board.",
+      "zh": "在密码板上按坐标读出每个字母。"
+    },
+    "meta": {
+      "contest": "Math Kangaroo 2021",
+      "level_en": "Level 1 (Grades 1–2)",
+      "level_zh": "等级 1（1–2 年级）",
+      "question_number": 12,
+      "points": 4,
+      "answer_letter": "E",
+      "set_title": "Math Kangaroo 2021 – Level 1 -1"
+    },
+    "is_published": true
+  }
+]

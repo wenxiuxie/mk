@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q21 · 跳舞配对</title>
+<style>
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+
+.stage{
+  position:relative;max-width:560px;height:340px;margin:14px auto;border-radius:20px;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(251,191,36,.35), transparent 50%),
+    linear-gradient(180deg,#1e1b4b 0%,#312e81 40%,#4c1d95 70%,#78350f 70%,#a16207 100%);
+  box-shadow:0 16px 36px rgba(30,27,75,.35);
+}
+.floor{
+  position:absolute;left:10%;right:10%;bottom:12%;height:38%;
+  background:repeating-linear-gradient(90deg,#92400e 0 28px,#b45309 28px 56px);
+  border-radius:50%;border:4px solid #fbbf24;box-shadow:inset 0 0 30px rgba(0,0,0,.35);
+}
+.spot{
+  position:absolute;width:70px;height:70px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fef3c7,#f59e0b 60%,transparent 70%);
+  opacity:.25;left:50%;top:48%;transform:translate(-50%,-50%);
+  animation:spot 2s ease-in-out infinite;
+}
+@keyframes spot{0%,100%{opacity:.2;transform:translate(-50%,-50%) scale(1)}50%{opacity:.45;transform:translate(-50%,-50%) scale(1.08)}}
+.person{
+  position:absolute;width:56px;text-align:center;font-size:34px;line-height:1;
+  transition:left .55s cubic-bezier(.22,.8,.28,1), top .55s cubic-bezier(.22,.8,.28,1), transform .3s;
+  filter:drop-shadow(0 4px 6px rgba(0,0,0,.35));
+  z-index:3;user-select:none;
+}
+.person .tag{display:block;font-size:11px;font-weight:800;color:#fff;margin-top:2px;text-shadow:0 1px 2px #000}
+.person.dancing{animation:bob .35s ease-in-out infinite;z-index:5}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+.timer{
+  position:absolute;top:12px;left:50%;transform:translateX(-50%);
+  background:rgba(15,23,42,.75);color:#fde68a;font-weight:900;font-size:22px;
+  padding:8px 18px;border-radius:999px;border:2px solid #fbbf24;z-index:6;
+}
+.pairs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:480px;margin:12px auto}
+@media(max-width:560px){.pairs{grid-template-columns:1fr 1fr}}
+.pair-btn{
+  border:2px solid #c4b5fd;background:#ede9fe;border-radius:12px;padding:10px 8px;
+  font-weight:800;cursor:pointer;font-size:13px;color:#4c1d95;transition:.15s;
+}
+.pair-btn:hover{background:#ddd6fe}
+.pair-btn.done{background:#d1fae5;border-color:#34d399;color:#065f46}
+.pair-btn:disabled{opacity:.55;cursor:not-allowed}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); syncText();">🌐 English / 中文</button>
+
+<h1 class="lang-zh">跳舞配对</h1>
+<h1 class="lang-en">Dance Pairs</h1>
+<div class="meta lang-zh">2021 等级 A · 第 21 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q21 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">三个女孩和两个男孩跳舞。他们两人一对，每个女孩与每个男孩都正好跳一分钟。任意时刻场上只有一对。他们一共跳了多少分钟？</p>
+    <p class="lang-en">Three girls and two boys danced in pairs so each girl danced with each boy for exactly one minute. Only one pair at a time. For how many minutes did they dance?</p>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：一对对上场跳</h2>
+    <h2 class="lang-en">Lab: send pairs onto the floor</h2>
+
+    <div class="mission">
+      <div class="step active" id="m1"><div class="num">1</div>
+        <div><span class="lang-zh">点下面一对名字，看他们走到舞台中央跳舞（每次只有一对）。</span><span class="lang-en">Tap a pair — they walk to center and dance (only one pair at a time).</span></div>
+      </div>
+      <div class="step" id="m2"><div class="num">2</div>
+        <div><span class="lang-zh">每跳完一对，时钟 +1 分钟。把所有配对都跳完。</span><span class="lang-en">Each finished pair adds 1 minute. Dance every pair.</span></div>
+      </div>
+      <div class="step" id="m3"><div class="num">3</div>
+        <div><span class="lang-zh">看总分钟数，再选题。</span><span class="lang-en">Read the total minutes, then pick an answer.</span></div>
+      </div>
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="timer" id="clock">⏱ 0</div>
+      <div class="floor"></div>
+      <div class="spot"></div>
+      <!-- people injected -->
+    </div>
+
+    <div class="info" id="log"></div>
+    <p class="tip lang-zh">选择一对上场：</p>
+    <p class="tip lang-en">Pick a pair:</p>
+    <div class="pairs" id="pairs"></div>
+
+    <div class="actions">
+      <button class="btn accent" id="btnAll" onclick="danceAll()"><span class="lang-zh">▶ 自动跳完所有配对</span><span class="lang-en">▶ Auto-dance all pairs</span></button>
+      <button class="btn reset" onclick="resetLab()"><span class="lang-zh">重置</span><span class="lang-en">Reset</span></button>
+    </div>
+    <div class="note lang-zh">注意：场上同时只能有一对——所以分钟数 = 配对的个数。</div>
+    <div class="note lang-en">Only one pair at a time — so minutes = number of pairs.</div>
+
+    <p class="tip lang-zh" style="margin-top:16px">一共跳了多少分钟？</p>
+    <p class="tip lang-en" style="margin-top:16px">How many minutes in total?</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="20.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="22.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+
+<script>
+const GIRLS = [
+  {id:'g1', emoji:'👧', zh:'小美', en:'Mia', home:{left:'8%', top:'18%'}},
+  {id:'g2', emoji:'👧', zh:'小华', en:'Hana', home:{left:'8%', top:'42%'}},
+  {id:'g3', emoji:'👧', zh:'小芳', en:'Faye', home:{left:'8%', top:'66%'}}
+];
+const BOYS = [
+  {id:'b1', emoji:'👦', zh:'小明', en:'Ming', home:{left:'78%', top:'28%'}},
+  {id:'b2', emoji:'👦', zh:'小强', en:'Qiang', home:{left:'78%', top:'58%'}}
+];
+const KEY = atob('Qg=='); // B = 6
+const OPTS = [5,6,8,9,10];
+
+let done = new Set();
+let minutes = 0;
+let busy = false;
+let _ans = null;
+let auto = false;
+
+function en(){ return document.body.classList.contains('en-mode'); }
+function nameOf(p){ return en()?p.en:p.zh; }
+
+function buildPeople(){
+  const stage = document.getElementById('stage');
+  stage.querySelectorAll('.person').forEach(n=>n.remove());
+  [...GIRLS, ...BOYS].forEach(p=>{
+    const d = document.createElement('div');
+    d.className = 'person';
+    d.id = p.id;
+    d.innerHTML = `${p.emoji}<span class="tag">${nameOf(p)}</span>`;
+    d.style.left = p.home.left;
+    d.style.top = p.home.top;
+    stage.appendChild(d);
+  });
+}
+
+function buildPairs(){
+  const box = document.getElementById('pairs');
+  box.innerHTML = '';
+  GIRLS.forEach(g=>{
+    BOYS.forEach(b=>{
+      const key = g.id+'-'+b.id;
+      const btn = document.createElement('button');
+      btn.className = 'pair-btn' + (done.has(key)?' done':'');
+      btn.dataset.key = key;
+      btn.disabled = busy || done.has(key);
+      btn.textContent = done.has(key)
+        ? `✓ ${nameOf(g)} × ${nameOf(b)}`
+        : `${nameOf(g)} × ${nameOf(b)}`;
+      btn.onclick = ()=> dancePair(g, b);
+      box.appendChild(btn);
+    });
+  });
+}
+
+function setBusy(v){
+  busy = v;
+  document.getElementById('btnAll').disabled = v || done.size===6;
+  buildPairs();
+}
+
+function wait(ms){ return new Promise(r=>setTimeout(r, ms)); }
+
+async function dancePair(g, b){
+  const key = g.id+'-'+b.id;
+  if(busy || done.has(key)) return;
+  setBusy(true);
+  const eg = document.getElementById(g.id);
+  const eb = document.getElementById(b.id);
+  document.getElementById('log').textContent = en()
+    ? `${nameOf(g)} & ${nameOf(b)} walk onto the floor…`
+    : `${nameOf(g)} 和 ${nameOf(b)} 上场…`;
+
+  eg.style.left = '38%'; eg.style.top = '48%';
+  eb.style.left = '52%'; eb.style.top = '48%';
+  await wait(600);
+  eg.classList.add('dancing'); eb.classList.add('dancing');
+  document.getElementById('log').textContent = en()
+    ? 'Dancing for 1 minute…'
+    : '正在跳 1 分钟…';
+  await wait(1000);
+  eg.classList.remove('dancing'); eb.classList.remove('dancing');
+  eg.style.left = g.home.left; eg.style.top = g.home.top;
+  eb.style.left = b.home.left; eb.style.top = b.home.top;
+  await wait(550);
+
+  done.add(key);
+  minutes = done.size;
+  document.getElementById('clock').textContent = '⏱ ' + minutes;
+  document.getElementById('log').textContent = en()
+    ? `Finished! Total so far: ${minutes} minute(s). (${done.size}/6 pairs)`
+    : `跳完一对！目前共 ${minutes} 分钟。（${done.size}/6 对）`;
+  updateMission();
+  setBusy(false);
+  if(done.size===6){
+    document.getElementById('m3').classList.add('done');
+    document.getElementById('log').textContent = en()
+      ? `All pairs danced. Total minutes = ${minutes}. Pick below.`
+      : `所有配对都跳完了。总分钟数 = ${minutes}。请选题。`;
+  }
+}
+
+async function danceAll(){
+  if(busy) return;
+  auto = true;
+  for(const g of GIRLS){
+    for(const b of BOYS){
+      const key = g.id+'-'+b.id;
+      if(!done.has(key)) await dancePair(g, b);
+    }
+  }
+  auto = false;
+}
+
+function updateMission(){
+  if(done.size>=1){ document.getElementById('m1').classList.add('done'); document.getElementById('m2').classList.add('active'); }
+  if(done.size>=3){ document.getElementById('m2').classList.add('done'); document.getElementById('m3').classList.add('active'); }
+}
+
+function resetLab(){
+  done.clear(); minutes=0; _ans=null; busy=false;
+  document.getElementById('clock').textContent='⏱ 0';
+  document.getElementById('m1').className='step active';
+  document.getElementById('m2').className='step';
+  document.getElementById('m3').className='step';
+  document.getElementById('ansBox').className='answer-box';
+  document.getElementById('ansBox').textContent='';
+  document.getElementById('feedback').textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  buildPeople(); buildPairs();
+  document.getElementById('log').textContent = en()
+    ? 'Tap a pair to send them onto the dance floor.'
+    : '点一对名字，送他们上场跳舞。';
+}
+
+function syncText(){ buildPeople(); buildPairs(); }
+
+function initPool(){
+  const pool=document.getElementById('pool'); pool.innerHTML='';
+  'ABCDE'.split('').forEach((L,i)=>{
+    const d=document.createElement('div'); d.className='card';
+    d.innerHTML=`<div>${L}</div><div style="font-size:12px;opacity:.95">${OPTS[i]}</div>`;
+    d.onclick=()=>{
+      _ans=L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled'; box.textContent=`${L}: ${OPTS[i]}`;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!_ans){ fb.className='bad'; fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。'; return; }
+  const ok=_ans===KEY;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok
+    ?(en()?'✅ You found it!':'✅ 找对了！')
+    :(en()
+      ?'❌ Not yet — every girl with every boy, one pair at a time. Finish the dances and count.'
+      :'❌ 还不对——每个女孩和每个男孩都要跳，每次一对。跳完再数分钟。');
+}
+
+initPool();
+resetLab();
+</script>
+</body>
+</html>

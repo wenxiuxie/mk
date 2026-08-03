@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2021 A · Q16 · 两根树枝上的叶子</title>
+<style>
+
+:root{--primary:#4a90e2;--success:#2ec4b6;--danger:#e71d36;--bg:#f8f9fa;--dark:#2c3e50}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:20px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:20px;right:20px;background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:20px;cursor:pointer;font-weight:bold;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:8px 0;font-size:22px}
+.meta{color:#64748b;font-size:14px;margin-bottom:14px}
+.wrap{max-width:920px;width:100%}
+.section{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.05);margin-bottom:16px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:18px}
+.fig{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:10px;border:1px solid #e2e8f0}
+.fig.sm{max-width:360px}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.5}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:10px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}
+.reset{background:#6c757d;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}
+.primary{background:var(--primary);color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:64px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;margin:8px 0}
+
+
+.branch{border:2px solid #e2e8f0;border-radius:14px;padding:12px;background:#fafbfc;min-width:200px}
+.leaves{display:flex;flex-wrap:wrap;gap:4px;min-height:40px;margin:8px 0;justify-content:center}
+.leaf{width:22px;height:28px;background:#22c55e;border-radius:50% 50% 45% 45%;border:1px solid #166534}
+.leaf.gone{opacity:.15;background:#94a3b8}
+
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 English / 中文</button>
+<h1 class="lang-zh">两根树枝上的叶子</h1>
+<h1 class="lang-en">Leaves on Two Branches</h1>
+<div class="meta lang-zh">2021 等级 A · 第 16 题 · 5 分</div>
+<div class="meta lang-en">2021 Level A · Q16 · 5 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">袋鼠中午吃了两根树枝上的叶子。每根树枝上有 <b>10</b> 片叶子。袋鼠先吃掉第一根上的一些叶子，再从第二根上吃掉与第一根剩余叶子同样多的叶子。两根树枝上总共还剩多少片叶子？</p>
+    <p class="lang-en">The kangaroo had two branches for lunch. Each branch had <b>10</b> leaves. It ate some from the first branch, then from the second ate as many as were left on the first. How many leaves in total were left?</p>
+    
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验台：先吃第一根，再按规则吃第二根</h2>
+    <h2 class="lang-en">Lab: eat from branch 1, then match on branch 2</h2>
+    
+    <p class="tip lang-zh">用滑块决定第一根吃掉几片；第二根会自动按规则吃掉相同数量。观察「总共还剩」是不是总一样？</p>
+    <p class="tip lang-en">Choose how many are eaten from branch 1; branch 2 follows the rule. Watch the total left.</p>
+    <div class="row">
+      <div class="branch">
+        <div class="lang-zh"><b>第一根</b></div><div class="lang-en"><b>Branch 1</b></div>
+        <div class="leaves" id="b1"></div>
+        <div class="info" id="i1"></div>
+        <input id="eat1" type="range" min="0" max="10" value="3" style="width:100%" oninput="syncLeaves()"/>
+      </div>
+      <div class="branch">
+        <div class="lang-zh"><b>第二根</b></div><div class="lang-en"><b>Branch 2</b></div>
+        <div class="leaves" id="b2"></div>
+        <div class="info" id="i2"></div>
+      </div>
+    </div>
+    <div class="info" id="total"></div>
+    <div class="note lang-zh">试几个不同的「第一根吃掉」数量，看看总和有没有变化。</div>
+    <div class="note lang-en">Try different amounts eaten from branch 1 — does the total change?</div>
+    <div class="actions"><button class="btn reset" onclick="document.getElementById('eat1').value=3;syncLeaves();clearAns()"><span class="lang-zh">重置</span><span class="lang-en">Reset</span></button></div>
+        
+    <p class="tip lang-zh" style="margin-top:16px">选出你的答案：</p>
+    <p class="tip lang-en" style="margin-top:16px">Pick your answer:</p>
+    <div class="pool" id="pool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="15.html"><span class="lang-zh">← 上一题</span><span class="lang-en">← Prev</span></a>
+    <a href="17.html"><span class="lang-zh">下一题 →</span><span class="lang-en">Next →</span></a>
+  </div>
+</div>
+<script>
+
+function en(){ return document.body.classList.contains('en-mode'); }
+function initPool(opts, letters){
+  const pool=document.getElementById('pool'); pool.innerHTML='';
+  (letters||'ABCDE').split('').forEach((L,i)=>{
+    const d=document.createElement('div'); d.className='card'; d.dataset.ans=L;
+    const label = Array.isArray(opts)? opts[i] : L;
+    d.innerHTML = Array.isArray(opts)? `<div>${L}</div><div style="font-size:12px;opacity:.95">${label}</div>` : L;
+    d.onclick=()=>{
+      window._ans=L;
+      document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+      d.classList.add('on');
+      const box=document.getElementById('ansBox');
+      box.className='answer-box filled';
+      box.textContent = Array.isArray(opts)? `${L}: ${opts[i]}` : L;
+      document.getElementById('feedback').textContent='';
+    };
+    pool.appendChild(d);
+  });
+}
+function checkKey(key, badZh, badEn){
+  const fb=document.getElementById('feedback');
+  if(!window._ans){ fb.className='bad'; fb.textContent=en()?'❌ Pick an option first.':'❌ 请先选一个选项。'; return; }
+  const ok=window._ans===key;
+  fb.className=ok?'ok':'bad';
+  fb.textContent=ok?(en()?'✅ You found it!':'✅ 找对了！'):(en()?badEn:badZh);
+}
+function clearAns(){
+  window._ans=null;
+  const box=document.getElementById('ansBox'); if(box){ box.className='answer-box'; box.textContent=''; }
+  const fb=document.getElementById('feedback'); if(fb) fb.textContent='';
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+}
+
+const KEY=atob('RA==');
+const OPTS=[5, 6, 8, 10, 15];
+function checkAnswer(){
+  checkKey(KEY, '❌ 还不对——多试几个「第一根吃掉」的数量，看总共剩下是不是总一样。', '❌ Not yet — try several amounts for branch 1; watch whether the total stays the same.');
+}
+
+function paint(el, left){
+  el.innerHTML='';
+  for(let i=0;i<10;i++){
+    const d=document.createElement('div');
+    d.className='leaf'+(i>=left?' gone':'');
+    el.appendChild(d);
+  }
+}
+function syncLeaves(){
+  const eaten1=+document.getElementById('eat1').value;
+  const left1=10-eaten1;
+  const eaten2=left1; // rule
+  const left2=Math.max(0,10-eaten2);
+  paint(document.getElementById('b1'), left1);
+  paint(document.getElementById('b2'), left2);
+  document.getElementById('i1').textContent=en()?`Ate ${eaten1}, left ${left1}`:`吃掉 ${eaten1}，剩 ${left1}`;
+  document.getElementById('i2').textContent=en()?`Ate ${eaten2}, left ${left2}`:`吃掉 ${eaten2}，剩 ${left2}`;
+  document.getElementById('total').textContent=en()
+    ?`Add the two leftovers yourself, then pick below. (Try another slider value!)`
+    :`自己把两根「剩下」加起来，再选题。（再拖滑块试几个数！）`;
+}
+function onLang(){ syncLeaves(); }
+syncLeaves();
+        
+initPool(OPTS);
+</script>
+</body>
+</html>
