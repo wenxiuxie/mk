@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2020 A · Q18 · 相对的车厢</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:#0f172a;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.idea{background:linear-gradient(135deg,#e0f2fe,#fef3c7);border:2px solid #7dd3fc;border-radius:14px;padding:12px 14px;margin:10px 0;font-weight:700;line-height:1.55;text-align:center}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;line-height:1.45}
+
+.yard{background:#0f172a;border-radius:16px;padding:14px;margin:12px auto;max-width:640px;color:#e2e8f0}
+.train{display:flex;gap:4px;justify-content:center;flex-wrap:nowrap;overflow-x:auto;padding:8px 4px;margin:8px 0}
+.car{
+  flex:0 0 36px;height:44px;border-radius:8px;background:#334155;border:2px solid #64748b;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;cursor:pointer;
+  transition:transform .15s, background .15s, border-color .15s;
+}
+.car:hover{transform:translateY(-2px)}
+.car.engine{background:#075985;border-color:#38bdf8;flex-basis:42px}
+.car.pair{background:#f59e0b;color:#111;border-color:#fde68a;transform:scale(1.08)}
+.car.focus{background:#22d3ee;color:#0f172a;border-color:#a5f3fc;transform:scale(1.1)}
+.car.opp{background:#a78bfa;color:#111;border-color:#ddd6fe;transform:scale(1.1)}
+.label-row{display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:#7dd3fc;padding:0 6px}
+.sumbox{
+  margin:12px auto;max-width:360px;padding:12px;border-radius:14px;background:#fff7ed;border:2px solid #fdba74;
+  text-align:center;font-weight:800;
+}
+.sumbox b{color:#c2410c;font-size:22px}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 EN / 中文</button>
+<h1 class="lang-zh">相对的车厢</h1>
+<h1 class="lang-en">Opposite Train Cars</h1>
+<div class="meta lang-zh">Math Kangaroo 2020 · 等级 A · 第 18 题 · 5 分</div>
+<div class="meta lang-en">Math Kangaroo 2020 · Level A · Q18 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">两列相同火车各 31 节，对开。当两列的 <b>19</b> 号相对时，几号与 <b>12</b> 号相对？</p>
+    <p class="lang-en">Two identical 31-car trains go opposite ways. When car <b>19</b> faces <b>19</b>, which car faces <b>12</b>?</p>
+    <img class="fig" src="assets/q18_stem.png" alt="trains"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：对齐 19，看谁对着谁</h2>
+    <h2 class="lang-en">Lab: align the 19s, see who faces whom</h2>
+
+    <div class="idea lang-zh">
+      对开时，相对的两个车厢号<strong>加起来总一样</strong>。<br/>
+      19 对 19 ⇒ 和 = 38 ⇒ 与 12 相对的是 <b>38 − 12</b>。
+    </div>
+    <div class="idea lang-en">
+      Facing cars always share the <strong>same sum</strong>.<br/>
+      19 faces 19 ⇒ sum = 38 ⇒ facing 12 is <b>38 − 12</b>.
+    </div>
+
+    <div class="mission lang-zh">
+      <div class="step" data-i="0"><div class="num">1</div><div>把两列对齐，使 19 对着 19</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>点亮 12 号，看对面是谁</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>用「和 = 38」验算</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>选出答案</div></div>
+    </div>
+    <div class="mission lang-en">
+      <div class="step" data-i="0"><div class="num">1</div><div>Align trains so 19 faces 19</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>Highlight 12 — who is opposite?</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>Check with sum = 38</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>Pick the answer</div></div>
+    </div>
+
+    <div class="yard">
+      <div class="label-row">
+        <span class="lang-zh">← 上行（头在左）</span><span class="lang-en">← Top (engine left)</span>
+        <span>1 … 31</span>
+      </div>
+      <div class="train" id="top"></div>
+      <div class="train" id="bot"></div>
+      <div class="label-row">
+        <span class="lang-zh">下行（头在右）→</span><span class="lang-en">Bottom (engine right) →</span>
+        <span>31 … 1</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" onclick="align19()"><span class="lang-zh">对齐：19 对 19</span><span class="lang-en">Align 19↔19</span></button>
+      <button class="btn accent" onclick="focus12()"><span class="lang-zh">点亮 12 与对面</span><span class="lang-en">Light 12 & opposite</span></button>
+      <button class="btn ghost" onclick="clearHL()"><span class="lang-zh">清除高亮</span><span class="lang-en">Clear highlight</span></button>
+    </div>
+    <div class="sumbox" id="sumBox">
+      <div class="lang-zh">相对和</div><div class="lang-en">Pair sum</div>
+      <div><b id="sumVal">?</b></div>
+      <div class="info" id="pairInfo" style="font-size:13px;margin-top:6px"></div>
+    </div>
+
+    <p class="note lang-zh">窗口只显示 12–26 附近，方便对齐；整列各有 31 节。</p>
+    <p class="note lang-en">Window shows cars around 12–26 for clarity; each train has 31 cars.</p>
+
+    <p class="tip lang-zh" style="margin-top:16px">选出与 12 相对的车厢号：</p>
+    <p class="tip lang-en" style="margin-top:16px">Pick the car facing 12:</p>
+    <div class="pool">
+      <div class="card" data-v="A" onclick="pick(this)">7</div>
+      <div class="card" data-v="B" onclick="pick(this)">12</div>
+      <div class="card" data-v="C" onclick="pick(this)">21</div>
+      <div class="card" data-v="D" onclick="pick(this)">26</div>
+      <div class="card" data-v="E" onclick="pick(this)">31</div>
+    </div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="17.html">← Q17</a><a href="19.html">Q19 →</a></div>
+</div>
+
+<script>
+const KEY = atob('RA=='); // D = 26
+const SUM = 19+19; // 38
+// Top train left→right: 1..31; Bottom facing opposite: when aligned at 19, bottom under top n is (SUM-n)
+const WIN = []; // cars to show: 12..26
+for(let i=12;i<=26;i++) WIN.push(i);
+let aligned=false, lit=false;
+let picked=null;
+
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+
+function build(){
+  const top=document.getElementById('top');
+  const bot=document.getElementById('bot');
+  top.innerHTML=''; bot.innerHTML='';
+  WIN.forEach(n=>{
+    const a=document.createElement('div');
+    a.className='car'+(n===1?' engine':'');
+    a.dataset.n=n; a.textContent=n;
+    a.onclick=()=> clickCar('top', n);
+    top.appendChild(a);
+  });
+  // bottom visual order left→right should be high→low when engines face opposite
+  // When 19 under 19: under top's k is bottom's (38-k)
+  WIN.forEach(n=>{
+    const bNum = SUM - n; // what sits under top's n when aligned
+    const a=document.createElement('div');
+    a.className='car';
+    a.dataset.n=bNum; a.dataset.under=n;
+    a.textContent=bNum;
+    a.onclick=()=> clickCar('bot', bNum);
+    bot.appendChild(a);
+  });
+  document.getElementById('sumVal').textContent='38';
+  document.getElementById('pairInfo').textContent =
+    document.body.classList.contains('en-mode')
+      ? 'Because 19+19=38, every facing pair sums to 38.'
+      : '因为 19+19=38，每一对相对车厢和都是 38。';
+  setMission(0);
+}
+
+function clearHL(){
+  document.querySelectorAll('.car').forEach(c=>c.classList.remove('pair','focus','opp'));
+  lit=false;
+}
+
+function align19(){
+  aligned=true;
+  clearHL();
+  document.querySelectorAll('#top .car').forEach(c=>{
+    if(+c.dataset.n===19) c.classList.add('pair');
+  });
+  document.querySelectorAll('#bot .car').forEach(c=>{
+    if(+c.dataset.n===19) c.classList.add('pair');
+  });
+  setMission(1);
+  document.getElementById('pairInfo').textContent =
+    document.body.classList.contains('en-mode')
+      ? '19 faces 19. Now light car 12.'
+      : '19 已对着 19。下一步点亮 12。';
+}
+
+function focus12(){
+  if(!aligned) align19();
+  clearHL();
+  // re-pair 19 faintly? just focus 12
+  document.querySelectorAll('#top .car').forEach(c=>{
+    if(+c.dataset.n===19) c.classList.add('pair');
+    if(+c.dataset.n===12) c.classList.add('focus');
+  });
+  const opp=SUM-12;
+  document.querySelectorAll('#bot .car').forEach(c=>{
+    if(+c.dataset.n===19) c.classList.add('pair');
+    if(+c.dataset.n===opp) c.classList.add('opp');
+  });
+  lit=true;
+  setMission(3);
+  document.getElementById('pairInfo').textContent =
+    document.body.classList.contains('en-mode')
+      ? `12 + ? = 38 → ? = ${opp}. Match the purple car.`
+      : `12 + ? = 38 → ? = ${opp}。看紫色那节。`;
+}
+
+function clickCar(which, n){
+  if(!aligned) align19();
+  clearHL();
+  document.querySelectorAll('#top .car').forEach(c=>{
+    if(+c.dataset.n===19) c.classList.add('pair');
+    if(which==='top' && +c.dataset.n===n) c.classList.add('focus');
+    if(which==='bot' && +c.dataset.n===SUM-n) c.classList.add('focus');
+  });
+  document.querySelectorAll('#bot .car').forEach(c=>{
+    if(+c.dataset.n===19) c.classList.add('pair');
+    if(which==='bot' && +c.dataset.n===n) c.classList.add('opp');
+    if(which==='top' && +c.dataset.n===SUM-n) c.classList.add('opp');
+  });
+  const a=n, b=SUM-n;
+  document.getElementById('pairInfo').textContent =
+    document.body.classList.contains('en-mode')
+      ? `${a} faces ${b} because ${a}+${b}=38.`
+      : `${a} 对着 ${b}，因为 ${a}+${b}=38。`;
+  setMission(2);
+}
+
+function pick(el){
+  document.querySelectorAll('.pool .card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  picked=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=el.textContent.trim(); box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!picked){
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">先选一个数</span><span class="lang-en">Pick a number first</span>';
+    return;
+  }
+  if(picked===KEY){
+    fb.className='ok';
+    fb.innerHTML='<span class="lang-zh">正确！38−12。</span><span class="lang-en">Correct! 38−12.</span>';
+  }else{
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">再算 38−12，或点「点亮 12 与对面」</span><span class="lang-en">Try 38−12, or tap “Light 12 & opposite”</span>';
+  }
+}
+
+function onLang(){ build(); if(aligned) align19(); if(lit) focus12(); }
+
+build();
+</script>
+</body>
+</html>

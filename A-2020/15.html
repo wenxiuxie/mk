@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2020 A · Q15 · 翻转卡片</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:#0f172a;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.optgrid{display:block;width:100%;max-width:360px;margin:10px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.idea{background:linear-gradient(135deg,#fae8ff,#e0f2fe);border:2px solid #c4b5fd;border-radius:14px;padding:12px 14px;margin:10px 0;font-weight:700;line-height:1.55;text-align:center}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;line-height:1.45}
+
+.stage-wrap{
+  perspective:900px; max-width:420px; margin:12px auto;
+  background:linear-gradient(180deg,#f8fafc,#e2e8f0);
+  border:2px solid #cbd5e1;border-radius:18px;padding:28px 16px 20px;
+  position:relative; min-height:220px;
+}
+.table-line{
+  position:absolute;left:10%;right:10%;top:52%;height:3px;background:#94a3b8;border-radius:2px;
+}
+.hinge-top{
+  position:absolute;left:22%;right:22%;top:18%;height:0;border-top:2px dashed #f59e0b;
+}
+.hinge-top::after{content:'↑';position:absolute;left:50%;transform:translateX(-50%);top:-22px;color:#f59e0b;font-weight:900}
+.hinge-left{
+  position:absolute;left:18%;top:28%;bottom:28%;width:0;border-left:2px dashed #38bdf8;
+}
+.hinge-left::after{content:'←';position:absolute;left:-18px;top:50%;transform:translateY(-50%);color:#38bdf8;font-weight:900}
+.flip-card{
+  width:220px;height:88px;margin:40px auto 0; position:relative;
+  transform-style:preserve-3d; transition:transform .7s ease;
+  transform-origin:center center;
+}
+.flip-face{
+  width:100%;height:100%;border:3px solid #0f172a;border-radius:12px;background:#fff;
+  display:flex;align-items:center;justify-content:space-evenly;padding:8px 10px;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);
+}
+.shape{width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.shape svg{width:40px;height:40px;display:block}
+.step-tag{
+  text-align:center;font-weight:800;margin-top:10px;color:#334155;min-height:24px;
+}
+.preview{
+  display:flex;gap:8px;justify-content:center;align-items:center;margin:8px 0;flex-wrap:wrap;
+}
+.preview .mini-card{
+  border:2px solid #cbd5e1;border-radius:10px;padding:6px 10px;background:#fff;
+  display:flex;gap:6px;align-items:center;
+}
+.preview .mini-card strong{font-size:12px;color:#64748b}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 EN / 中文</button>
+<h1 class="lang-zh">翻转卡片</h1>
+<h1 class="lang-en">Flip the Card</h1>
+<div class="meta lang-zh">Math Kangaroo 2020 · 等级 A · 第 15 题 · 4 分</div>
+<div class="meta lang-en">Math Kangaroo 2020 · Level A · Q15 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">卡片在桌上。先沿<strong>顶边</strong>翻转，再沿<strong>左边</strong>翻转。现在卡片是什么样？</p>
+    <p class="lang-en">The card is on the table. Flip it over its <strong>top</strong> edge, then over its <strong>left</strong> edge. What does it look like now?</p>
+    <img class="fig" src="assets/q15_stem.png?v=2" alt="Q15 stem"/>
+    <img class="optgrid" src="assets/q15_options.png?v=2" alt="Q15 options"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：跟着图案翻两次</h2>
+    <h2 class="lang-en">Lab: flip the real pattern twice</h2>
+
+    <div class="idea lang-zh">
+      ① 沿顶边翻 = 上下翻转（三角形尖朝向会变）<br/>
+      ② 再沿左边翻 = 左右翻转（顺序左右对调）
+    </div>
+    <div class="idea lang-en">
+      ① Over the top = vertical flip (triangle tip flips)<br/>
+      ② Over the left = horizontal flip (left↔right order)
+    </div>
+
+    <div class="mission lang-zh">
+      <div class="step" data-i="0"><div class="num">1</div><div>看起始：圆 · 方 · 三角（尖朝上）</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>点「沿顶边翻」</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>再点「沿左边翻」</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>对照选项 A–E</div></div>
+    </div>
+    <div class="mission lang-en">
+      <div class="step" data-i="0"><div class="num">1</div><div>Start: circle · square · triangle (tip up)</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>Tap “Flip over top”</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>Then “Flip over left”</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>Match options A–E</div></div>
+    </div>
+
+    <div class="stage-wrap">
+      <div class="hinge-top" id="hingeTop"></div>
+      <div class="hinge-left" id="hingeLeft" style="opacity:.35"></div>
+      <div class="table-line"></div>
+      <div class="flip-card" id="flipCard">
+        <div class="flip-face" id="face"></div>
+      </div>
+      <div class="step-tag" id="stepTag"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="btn1" onclick="doFlip(1)"><span class="lang-zh">① 沿顶边翻</span><span class="lang-en">① Flip over top</span></button>
+      <button class="btn primary" id="btn2" onclick="doFlip(2)" disabled><span class="lang-zh">② 沿左边翻</span><span class="lang-en">② Flip over left</span></button>
+      <button class="btn accent" onclick="playBoth()"><span class="lang-zh">连续翻完</span><span class="lang-en">Play both</span></button>
+      <button class="btn ghost" onclick="resetCard()"><span class="lang-zh">回到起始</span><span class="lang-en">Reset</span></button>
+    </div>
+    <div class="info" id="labInfo"></div>
+
+    <p class="note lang-zh">追踪要点：三角尖朝上还是朝下？三个图形的左右顺序有没有对调？</p>
+    <p class="note lang-en">Watch: is the triangle tip up or down? Did left–right order reverse?</p>
+
+    <p class="tip lang-zh" style="margin-top:16px">对照选项选出答案（检查只提示对错）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Match an option (Check only says right/wrong):</p>
+    <div class="pool">
+      <div class="card" data-v="A" onclick="pick(this)">A</div>
+      <div class="card" data-v="B" onclick="pick(this)">B</div>
+      <div class="card" data-v="C" onclick="pick(this)">C</div>
+      <div class="card" data-v="D" onclick="pick(this)">D</div>
+      <div class="card" data-v="E" onclick="pick(this)">E</div>
+    </div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="14.html">← Q14</a><a href="16.html">Q16 →</a></div>
+</div>
+
+<script>
+const KEY = atob('Qg=='); // B
+let step = 0; // 0 start, 1 after top flip, 2 after left flip
+let picked = null;
+// shapes: C=circle, S=square, Tu=triangle up, Td=triangle down
+let order = ['C','S','Tu'];
+
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+
+function svgFor(code){
+  if(code==='C') return `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#0f172a"/></svg>`;
+  if(code==='S') return `<svg viewBox="0 0 40 40"><rect x="7" y="7" width="26" height="26" fill="#0f172a"/></svg>`;
+  if(code==='Tu') return `<svg viewBox="0 0 40 40"><polygon points="20,6 34,34 6,34" fill="#0f172a"/></svg>`;
+  if(code==='Td') return `<svg viewBox="0 0 40 40"><polygon points="6,6 34,6 20,34" fill="#0f172a"/></svg>`;
+  return '';
+}
+
+function renderFace(){
+  const face=document.getElementById('face');
+  face.innerHTML = order.map(c=>`<div class="shape">${svgFor(c)}</div>`).join('');
+}
+
+function describe(){
+  const en=document.body.classList.contains('en-mode');
+  const tip = order.map(c=>{
+    if(c==='C') return en?'circle':'圆';
+    if(c==='S') return en?'square':'方';
+    if(c==='Tu') return en?'△ up':'三角↑';
+    return en?'▽ down':'三角↓';
+  }).join(' · ');
+  return tip;
+}
+
+function updateUI(){
+  renderFace();
+  const en=document.body.classList.contains('en-mode');
+  const tag=document.getElementById('stepTag');
+  const info=document.getElementById('labInfo');
+  document.getElementById('btn1').disabled = step!==0;
+  document.getElementById('btn2').disabled = step!==1;
+  document.getElementById('hingeTop').style.opacity = step===0 ? '1' : '.35';
+  document.getElementById('hingeLeft').style.opacity = step===1 ? '1' : '.35';
+
+  if(step===0){
+    tag.textContent = en ? 'Start position' : '起始位置';
+    info.textContent = en ? `Now: ${describe()}` : `现在：${describe()}`;
+    setMission(0);
+  }else if(step===1){
+    tag.textContent = en ? 'After flip over TOP (vertical)' : '已沿顶边翻（上下翻）';
+    info.textContent = en ? `Now: ${describe()} — next flip over LEFT` : `现在：${describe()} — 下一步沿左边翻`;
+    setMission(2);
+  }else{
+    tag.textContent = en ? 'After flip over LEFT (horizontal)' : '已沿左边翻（左右翻）';
+    info.textContent = en ? `Final look: ${describe()} — match an option` : `最终样子：${describe()} — 去对照选项`;
+    setMission(3);
+  }
+}
+
+function vFlipShape(c){
+  if(c==='Tu') return 'Td';
+  if(c==='Td') return 'Tu';
+  return c; // circle/square unchanged
+}
+
+function doFlip(which){
+  const card=document.getElementById('flipCard');
+  if(which===1 && step===0){
+    // vertical flip of pattern: each shape v-flipped, order same
+    card.style.transform='rotateX(180deg)';
+    setTimeout(()=>{
+      order = order.map(vFlipShape);
+      card.style.transition='none';
+      card.style.transform='none';
+      // force reflow
+      void card.offsetWidth;
+      card.style.transition='transform .7s ease';
+      step=1;
+      updateUI();
+    },700);
+    setMission(1);
+  }
+  if(which===2 && step===1){
+    // horizontal flip: reverse L↔R; tip direction unchanged
+    card.style.transform='rotateY(180deg)';
+    setTimeout(()=>{
+      order = order.slice().reverse();
+      card.style.transition='none';
+      card.style.transform='none';
+      void card.offsetWidth;
+      card.style.transition='transform .7s ease';
+      step=2;
+      updateUI();
+    },700);
+    setMission(2);
+  }
+}
+
+function playBoth(){
+  resetCard();
+  setTimeout(()=>{
+    doFlip(1);
+    setTimeout(()=> doFlip(2), 850);
+  }, 80);
+}
+
+function resetCard(){
+  step=0;
+  order=['C','S','Tu'];
+  const card=document.getElementById('flipCard');
+  card.style.transition='none';
+  card.style.transform='none';
+  void card.offsetWidth;
+  card.style.transition='transform .7s ease';
+  updateUI();
+}
+
+function pick(el){
+  document.querySelectorAll('.pool .card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  picked=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=picked; box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!picked){
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">先选一个选项</span><span class="lang-en">Pick an option first</span>';
+    return;
+  }
+  if(picked===KEY){
+    fb.className='ok';
+    fb.innerHTML='<span class="lang-zh">正确！先上下翻再左右翻。</span><span class="lang-en">Correct! Vertical flip, then horizontal.</span>';
+  }else{
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">再翻一次，看三角朝向和左右顺序</span><span class="lang-en">Flip again — watch tip and left–right order</span>';
+  }
+}
+
+function onLang(){ updateUI(); }
+
+resetCard();
+</script>
+</body>
+</html>

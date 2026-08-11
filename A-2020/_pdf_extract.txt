@@ -1,0 +1,558 @@
+
+===== PAGE 1 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+3 points
+# 1. The kangaroo goes up 3 steps each time the rabbit goes down 2 steps. On which step do they meet?
+tú zhōng de dài shǔ měi xiàng shàng tiào 3 céng lóu tī ， tù zi jiù huì xiàng xià tiào 2 céng。 qǐng wèn tā men huì zài nǎ yī céng jiàn miàn ？
+图 中 的 袋鼠 每 向 上 跳 3 层 楼梯，兔子就会 向 下 跳 2 层。 请 问 它 们 会在哪一层 见 面？
+(A)3 (B)4 (C)5 (D)6 (E)7
+# 2. Mordka took a selfie in front of this castle.Which of the pictures below could be Mordka’s photo?
+xiǎo mò zài zhè zuò chéng bǎo qián pāi le zhāng zì pāi zhào 。 yǐ xià nǎ zhāng tú piàn kě néng shì xiǎo mò de zhào piàn ？
+小 莫 在这 座 城 堡 前 拍了 张 自拍 照。以下哪 张 图片 可 能 是 小 莫的 照 片？
+(A) (B)
+(C) (D)
+(E)
+1
+===== PAGE 2 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 3. Nelly arranged the 4 pieces to make a picture of a kangaroo. How are the pieces arranged?
+xiǎo nài yào bǎ yǐ xià 4 zhāng tú piàn chóng xīn pái liè chéng dài shǔ de huà xiàng 。 qǐng wèn gāi rú hé pái liè zhè xiē tú piàn ？
+小 奈 要把以下4 张 图片 重 新 排列 成 袋 鼠 的画 像。 请 问 该如何排列这些图片？
+1 2
+3 4
+44 33 34 43 24 13 44 33 34 43
+22 11 22 11 42 31 12 21 12 21
+(A) (B) (C) (D) (E)
+# 4. Danial is arranging his toys in a line, as shown below. The pattern repeats every five toys. Which
+two toys will be next?
+xiǎo dān bǎ tā de wán jù àn zhào xià tú suǒ shì de shùn xù pái chéng yī háng 。 měi wǔ gè wán jù bèi pái liè hòu ， tā zài yī zhào tóng yàng de
+小 丹把他的玩 具按照 下图所 示的 顺 序 排 成 一行。 每 五个 玩具被排列后，他再依照 同 样 的
+shùn xù chóng fù bǎi fàng 。 qǐng wèn jiē xià lái shì nǎ liǎng gè wán jù ？
+顺 序 重 复摆 放。 请 问 接下来是哪两 个玩具？
+(A) (B)
+(C) (D)
+(E)
+2
+===== PAGE 3 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 5. Jos´e has two cards of the same size. Card A has four holes cut in it. Jos´e places card A directly
+on top of card B. What can Jos´e see?
+xiǎo hé yōng yǒu liǎng zhāng xiāng tóng dà xiǎo de kǎ piàn 。 kǎ piàn A shàng yǒu sì gè xiǎo dòng 。xiǎo hé jiāng kǎ piàn A zhí jiē fàng zài
+小何 拥 有 两 张 相 同 大小 的卡 片。卡片 A 上 有四个小 洞。 小 何 将 卡 片 A直接放 在
+kǎ piàn B de shàng miàn。 qǐng wèn xiǎo hé huì kàn dào shén me ？
+卡片 B的 上 面。 请 问 小 何会看 到 什 么？
+(A) (B)
+(C) (D)
+(E)
+# 6. Mary made a shape using some white cubes and 14 grey cubes. How many of these grey cubes cannot
+be seen in the picture?
+xiǎo lì ná le yī xiē bái sè de zhèng fāng tǐ hé 14 gè huī sè de zhèng fāng tǐ pīn chéng yǐ xià xíng zhuàng 。 qǐng wèn zài tú zhōng hái yǒu
+小丽拿了一些白色的 正 方 体和14个灰色的 正 方体拼 成 以下形 状。 请 问 在图 中 还 有
+duō shǎo gè huī sè de zhèng fāng tǐ shì wú fǎ bèi kàn dào de ？
+多 少 个灰色的 正 方 体是无法被 看 到的？
+(A)1 (B)3 (C)5 (D)6 (E)8
+3
+===== PAGE 4 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 7. Anna draws a picture of some shapes. Her picture contains 3 black triangles and fewer than 4 squares.
+Which could be Anna’s picture?
+xiǎo ān huà le jǐ gè tú xíng 。 tā de tú huà lǐ yǒu 3 gè hēi sè sān jiǎo xíng hé shǎo yú 4 gè zhèng fāng xíng 。 qǐng wèn yǐ xià nǎ zhāng tú kě
+小安 画了几个图形。她的图画里有3个黑色三 角 形 和 少 于4个 正 方 形。 请 问 以下哪 张 图可
+néng shì xiǎo ān huà de ？
+能 是 小 安画的？
+(A) (B) (C) (D) (E)
+# 8. The braid in the figure is composed of three threads. One thread is green, one is blue and one is red.
+What colours are the three threads?
+xià tú shì yī gǔ yóu sān gēn shéng zi biān chéng de má huā shéng ， qí zhōng yī gēn shéng zi shì lǜ sè de ， yī gēn shì lán sè de
+下图是一股 由 三 根 绳 子编 成 的麻 花 绳， 其 中 一根 绳 子是绿色的，一根 是蓝色的 ，
+hái yǒu yī gēn shì hóng sè de ， qǐng wèn dài biān hào de zhè sān gēn shéng zi fēn bié dōu shì shén me yán sè ？
+还 有一根 是 红 色的，请 问 带 编 号 的这 三 根 绳 子分别 都 是 什 么 颜色？
+1
+2
+3
+(A) 1 is blue, 2 is green and 3 is red. (B) 1 is green, 2 is red and 3 is blue.
+1 hào wéi lán sè ，2 hào wéi lǜ sè ， 3 hào wéi hóng sè 1 hào wéi lǜ sè ， 2 hào wéi hóng sè ，3 hào wéi lán sè
+1 号 为 蓝色，2号 为 绿色，3号 为 红 色 1号 为绿色，2号 为 红 色，3号 为蓝色
+(C) 1 is red, 2 is blue and 3 is green. (D) 1 is green, 2 is blue and 3 is red.
+1 hào wéi lǜ sè ， 2 hào wéi lán sè ，3 hào wéi hóng sè
+1 hào wéi hóng sè ， 2 hào wéi lán sè ，3 hào wéi lǜ sè
+1 号 为 红 色，2 号 为 蓝色，3号 为 绿色 1号 为 绿色，2号 为 蓝色，3号 为 红 色
+( E ) 1 is blue, 2 is red and 3 is green.
+1 hào wéi lán sè ， 2 hào wéi hóng sè ， 3 hào wéi lǜ sè
+1号 为 蓝 色，2号 为 红 色，3号 为 绿色
+4
+===== PAGE 5 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+4 points
+# 9. Which piece completes the picture?
+yǐ xià nǎ yī zhāng tú kě yǐ yòng yú tián bǔ tú piàn zhōng de kòng bái ？
+以下哪一 张 图可以 用 于填 补图片 中 的空 白？
+5
+2
+===== PAGE 6 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 10. A village with 12 houses has four straight roads and four circular roads. The map shows 11
+of the houses. On each straight road there are 3 houses. On each circular road there are also 3
+houses. Where is the 12th house?
+yī gè cūn zhuāng ， yǒu 12 jiān fáng zi ， hái yǒu 4 tiáo zhí lù hé 4 tiáo huán xíng lù 。 yǐ xià tú piàn yī gòng xiǎn shì le 11 jiān fáng zi 。
+一个 村 庄， 有 12间 房 子, 还 有 4条 直路和4条 环 行 路。以下图片 一 共 显示了11间 房子。
+měi tiáo zhí lù shàng yào yǒu 3 jiān fáng zi ， měi tiáo huán xíng lù shàng yě yào yǒu 3 jiān fáng zi 。 qǐng wèn dì 12 jiān fáng zi huì zài nǎ lǐ ？
+每 条 直路 上 要 有 3间 房 子，每条 环 形 路 上 也要 有3 间 房 子。请 问第12间 房子会在哪里？
+B
+A C
+D
+E
+(A)A (B)B (C)C (D)D (E)E
+# 11. Five shapes are made by gluing cubes together. Which shape uses the most cubes?
+bǎ yī xiē zhèng fāng tǐ nián hé zài yī qǐ kě yǐ zhì zuò chéng yǐ xià de wǔ gè xíng zhuàng 。 qǐng wèn nǎ zhǒng xíng zhuàng shǐ yòng de
+把一些 正 方 体粘 合在一起可以制 作 成 以下的五个 形 状。 请 问 哪 种 形 状 使 用 的
+zhèng fāng tǐ zuì duō ？
+正 方 体最多？
+(A) (B) (C)
+(D) (E)
+6
+===== PAGE 7 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 12. A number is written on each petal of two flowers. One petal is hidden. The sums of the numbers on the
+two flowers are equal. What number is written on the hidden petal?
+liǎng duǒ huā de měi piàn huā bàn shàng dōu xiě yǒu shù zì ， qí zhōng yī piàn huā bàn bèi dǎng zhù le 。 rú guǒ liǎng duǒ huā shàng de
+两 朵 花的 每 片 花 瓣 上 都写 有 数字，其 中 一片 花 瓣被 挡 住了。如 果 两 朵 花 上 的
+shù zì zhī hé shì xiāng děng de ， qǐng wèn bèi dǎng zhù de nà piàn huā bàn shàng de shù zì shì shén me ？
+数字之和是 相 等 的，请 问 被 挡 住的那片 花 瓣 上 的数字是 什么？
+4
+6
+2
+5
+8
+7
+3
+9
+1
+(A)0 (B)3 (C)5 (D)7 (E)1
+# 13. Which picture has the largest shaded area?
+yǐ xià nǎ zhāng tú piàn zhōng de yīn yǐng bù fèn miàn jī zuì dà ？
+以下哪 张 图片 中 的阴 影 部分 面积最大？
+(A) (B)
+(C) (D)
+(E)
+7
+===== PAGE 8 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 14. Mary wants to write the numbers 1, 2, 3, 4, 5 and 6 inside the six squares of the figure. She wants
+a different number in each square. She wants both the sum of the numbers in the blue squares and the
+sum of the numbers in the yellow squares to be 10. What number must she write in the square with the
+question mark?
+xiǎo lì xiǎng bǎ shù zì 1, 2, 3, 4, 5, 6 xiě jìn xià miàn de liù gè fāng gé zhōng ，qiě měi gè fāng gé zhōng de shù zì dōu bù tóng， chú cǐ
+小莉想 把 数字1,2,3,4,5,6写进下面 的六个方 格 中， 且每 个方 格 中 的数字都 不 同, 除 此
+zhī wài ， tā xiǎng ràng lán sè fāng gé lǐ de shù zì zhī hé yǔ huáng sè fāng gé lǐ de shù zì zhī hé dōu wéi 10。 qǐng wèn tā bì xū zài biāo yǒu wèn
+之外，她 想 让 蓝 色方格里的数字之和与 黄 色方 格里的数字之和都 为10。请 问 她必须在 标 有 问
+hào de fāng gé lǐ xiě shàng shén me shù zì ?
+号 的 方格里写 上 什 么数字?
+?
+(A)1 (B)2 (C)3 (D)4 (E)5
+# 15. The card was on the table. It is flipped over its top edge then flipped over its left edge. What does the
+card look like now?
+rú tú suǒ shì ， zhuō zi shàng bǎi fàng zhe yī zhāng kǎ piàn 。 gāi kǎ piàn yán zhe dǐng bù de biān yuán jìn xíng zhé dié fān zhuǎn ， rán hòu
+如图所 示， 桌 子 上 摆 放 着一 张 卡 片。 该卡 片 沿 着 顶 部的 边 缘 进 行 折 叠 翻 转， 然 后
+zài yán zhe zuǒ cè de biān yuán zhé dié fān zhuǎn hòu ， qǐng wèn gāi kǎ piàn huì biàn chéng shén me yàng zi？
+再 沿 着 左 侧的 边 缘 折 叠 翻 转 后， 请 问 该卡 片 会 变 成 什 么 样 子？
+(A)
+(B)
+(C)
+(D)
+(E)
+8
+===== PAGE 9 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 16. Grandmother has baked 12 cookies. She wants to give all the cookies to her 5 grandchildren. She
+also wants to give each grandchild the same number of cookies. How many extra cookies should she bake?
+zǔ mǔ kǎo le 12 kuài bǐng gān ， tā xiǎng jiāng suǒ yǒu bǐng gān píng jūn fēn pèi gěi tā de 5 gè sūn zi 。 qǐng wèn tā hái xū yào zài duō kǎo jǐ
+祖母烤了12 块 饼 干，她 想 将 所 有 饼 干 平 均 分配给她的5个孙子。请 问 她还需要 再 多 烤几
+kuài bǐng gān ？
+块 饼 干？
+(A)0 (B)1 (C)2 (D)3 (E)4
+5 points
+# 17. Tom has 9 cards, as shown:
+He puts the cards on the board so that each horizontal line and each vertical line countains three cards
+with three different shapes and three different number of shapes. He has already put three cards, as
+shown. Which card does he put on the grey square?
+xiǎo táng yǒu 9 zhāng kǎ piàn ， rú tú ：
+小 唐 有9 张 卡 片，如图：
+tā bǎ kǎ piàn fàng zài fāng gé nèi ， shǐ de měi gè shuǐ píng hé chuí zhí fāng xiàng shàng dōu yǒu sān zhāng bù tóng xíng zhuàng hé bù tóng
+他把卡片 放 在 方 格内，使得每 个 水 平 和垂 直 方 向 上 都 有 三 张 不 同 形 状 和不 同
+xíng zhuàng shù mù de kǎ piàn 。 tā yǐ jīng fàng le sān zhāng kǎ piàn le ， rú xià tú suǒ shì 。 qǐng wèn tā yīng gāi zài huī sè de fāng gé nèi
+形 状 数 目的卡 片。 他已经 放 了三 张 卡 片了，如下图所示。 请 问 他应 该 在灰色的方 格内
+fàng rù nǎ zhāng kǎ piàn？
+放入哪 张 卡片？
+(A) (B) (C) (D) (E)
+9
+===== PAGE 10 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 18. Two identical trains, each with 31 cars, are traveling in opposite directions. When car No. 19 of
+one train is opposite car No. 19 of the other, which car is opposite car No. 12?
+liǎng liè xiāng tóng de huǒ chē ， gè yǒu 31 jié chē xiāng ， tā men cháo xiāng fǎn de fāng xiàng xíng shǐ 。 dāng qí zhōng yī liè huǒ chē
+两 列 相 同 的火 车，各有31节 车 厢， 它们 朝 相 反 的 方 向 行 驶。当 其 中 一列火 车
+de 19 hào chē xiāng yǔ lìng yī liè huǒ chē de 19 hào chē xiāng xiāng duì shí ， jǐ hào chē xiāng huì yǔ 12 hào chē xiāng xiāng duì ？
+的19号 车 厢 与另一列火 车的19 号车 厢 相 对时，几号 车 厢 会与12 号 车 厢 相 对？
+1 2 3 4 5
+5 4 3 2 1
+(A)7 (B)12 (C)21 (D)26 (E)31
+# 19. Mark the Bee can walk only on grey cells. In how many ways could you colour exactly two white
+cells grey so that Mark can walk from A to B?
+yǒu yī zhī xiǎo mì fēng zhǐ néng zài huī sè de fēng fáng shàng xíng zǒu 。 qǐng wèn nǐ kě yǐ tōng guò jǐ zhǒng fāng shì jiāng qí zhōng liǎng gè
+有一只小 蜜 蜂 只 能 在灰色的 蜂 房 上 行 走。 请 问你可以 通 过 几 种 方 式 将 其 中 两 个
+bái sè fēng fáng tú wéi huī sè ， yǐ biàn xiǎo mì fēng kě yǐ cóng A xíng zǒu dào B？
+白色蜂 房 涂 为灰色，以便 小 蜜蜂 可以 从 A 行 走 到B？
+B
+A
+(A)3 (B)4 (C) 5 (D) 6 (E)7
+10
+===== PAGE 11 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 20. An arrow pointing from one person to another means that the first person is taller than the second. For
+example, person B is taller than person A. Who is the shortest?
+rú tú suǒ shì ， dāng yī gè jiàn tóu cóng yī gè rén zhǐ xiàng lìng yī gè rén shí, biǎo shì dì yī gè rén bǐ dì èr gè rén gāo 。 lì rú ， jiàn
+如图所示，当 一个 箭头 从 一个人 指 向 另一个人时，表 示第一个人比第二个人高。例如，箭
+tóu cóng B zhǐ xiàng A， biǎo shì B bǐ A gāo 。 qǐng wèn shéi shì dāng zhōng zuì ǎi de ？
+头 从 B 指 向 A，表 示B比A高。请 问 谁 是 当 中 最矮的？
+A
+E
+F
+D
+C
+B
+(A)A (B)B (C)C (D)D (E)E
+# 21. There are some apples and 8 pears in a basket, each of them green or yellow. There are three more
+apples than the total number of green fruit. There are 6 yellow pears. How many yellow apples are there in
+the basket?
+yī gè lán zi lǐ yǒu yī xiē píng guǒ hé 8 gè lí ， tā men yào me shì lǜ sè ， yào me shì huáng sè 。 píng guǒ de shù liàng bǐ lǜ sè shuǐ guǒ
+一个篮子里有一些 苹 果 和8个梨，它们 要 么是绿色，要么是 黄 色。 苹 果的 数 量 比绿色水 果
+zǒng shù duō le sān gè 。 rú guǒ lán zi lǐ yǒu 6 gè huáng sè de lí ， qǐng wèn lán zi lǐ yǒu jǐ gè huáng sè de píng guǒ ？
+总 数 多 了三个。如果篮子里有6个 黄 色的梨， 请 问 篮子里有几个 黄 色的苹 果？
+(A)4 (B)5 (C)6 (D)7 (E)8
+# 22. Roo wrote each of the numbers 1, 2, 3, 4 and 5 in one of the circles so that the sum of the
+numbers in the row is equal to the sum of the numbers in the column.
+What number could be written in the circle with the question mark?
+xiǎo lú zài měi gè yuán zhōng fēn bié xiě xià le shù zì 1、 2、 3、 4 hé 5， yīn cǐ héng háng zhōng de shù zì zhī hé děng yú shù
+小 卢在 每 个圆 中 分别 写下了数字1、2、3、4和5，因此横 行 中 的数字之和 等 于 竖
+liè zhōng de shù zì zhī hé 。 qǐng wèn tú zhōng huà wèn hào de yuán zhōng shì shén me shù zì ？
+列 中 的数字之和。请 问 图 中 画 问号 的圆 中 是 什 么数字？
+?
+(A)Only 5 (B)2, 3 or 4 (C)Only 3 (D)Only 1 or 3 (E)1, 3 or 5
+zhǐ yǒu huò zhǐ yǒu zhǐ yǒu huò huò
+只有5 2, 3 或 4 只有3 只 有 1 或 3 1, 3 或 5
+11
+===== PAGE 12 =====
+Kangaroo Math Competition 2020 (China) – PreEcolier
+# 23. Six different numbers chosen from 1 to 9 are written on the faces of a cube, one number on each face.
+The sums of numbers on each pair of opposite faces are equal. Which number could be on the face opposite to
+the face with number 5?
+cóng 1 dào 9 zhōng xuǎn zé liù gè bù tóng de shù zì xiě zài zhèng fāng tǐ de biǎo miàn shàng ， qiě měi yī miàn zhǐ xiě yī gè shù zì 。 rú guǒ
+从 1到 9 中 选 择六个不 同 的数字写在 正 方 体的表 面 上， 且每一 面 只写 一个数字。如果
+měi yī gè shù zì yǔ tā xiāng duì miàn shàng de shù zì zǒng hé shì xiāng děng de ， qǐng wèn nǎ gè shù zì jiāng huì chū xiàn zài shù zì 5 xiāng duì de
+每一个 数字与它相 对 面 上 的 数字总 和是 相 等 的， 请 问 哪个数字将 会 出 现 在数字5 相 对 的
+miàn shàng ？
+面 上？
+5
+4 8
+(A)3 (B)5 (C)6 (D)7 (E)9
+# 24. John and Olivia exchanged sweets. First, John gave Olivia as many sweets as Olivia had. Then, Olivia
+gave John as many sweets as John had after the first exchange. After these two exchanges, each had 4 sweets.
+How many sweets did John have at the beginning?
+xiǎo qiáng hé xiǎo ōu hù xiāng jiāo huàn táng guǒ 。 shǒu xiān ，xiǎo qiáng gěi xiǎo ōu de táng guǒ shù liàng shì xiǎo ōu yuán běn yǒu de táng
+小 强 和 小 欧互 相 交 换 糖 果。 首 先， 小 强 给 小 欧的 糖 果 数 量 是 小 欧 原 本 有 的 糖
+guǒ shù liàng 。 rán hòu ， xiǎo ōu gěi xiǎo qiáng de táng guǒ shù liàng shì dì yī cì jiāo huàn hòu xiǎo qiáng hái shèng de táng guǒ shù liàng 。 jīng guò
+果 数 量。 然 后，小 欧 给 小 强 的 糖 果 数 量 是第一次交 换 后 小 强 还 剩 的糖 果 数 量。 经 过
+zhè liǎng cì jiāo huàn hòu，měi gè rén dōu yǒu 4 kē táng guǒ 。 qǐng wèn xiǎo qiáng yī kāi shǐ yōng yǒu duō shǎo kē táng guǒ ？
+这 两 次 交 换 后，每个人 都 有 4颗 糖 果。 请 问 小 强 一开 始 拥 有 多 少 颗 糖 果？
+(A)6 (B)5 (C)4 (D)3 (E)2
+END OF PAPER
+12
+===== PAGE 13 =====
+KSF 2020 – finalized problems PreEcolier
+3 points
+# 1. The kangaroo goes up 3 steps each time the rabbit goes down 2 steps. On which step do they
+meet?
+(A)3 (B)4 (C)5 (D)6 (E)7
+Solution:
+# 2. Mordka took a selfie in front of this castle.
+Which of the pictures below could be Mordka’s photo?
+(A) (B)
+(C) (D)
+(E)
+Solution:
+# 3. Nelly arranged the 4 pieces to make a picture of a kangaroo.
+1
+===== PAGE 14 =====
+KSF 2020 – finalized problems PreEcolier
+1 2
+3 4
+How are the pieces arranged?
+44 33 34 43 24 13 44 33 34 43
+22 11 22 11 42 31 12 21 12 21
+(A) (B) (C) (D) (E)
+Solution:
+# 4. A magician is pulling toys out of his top hat. He always pulls out the toys in the same order
+asshowninthepicture.
+The pattern in the picture repeats every five toys. Which two toys does he pull out next?
+(A) (B) (C)
+(D) (E)
+Solution:
+# 5. Jos´e has two cards of the same size. Card A has four holes cut in it.
+card A card B
+Jos´e places card A directly on top of card B. What can Jos´e see?
+(A) (B) (C) (D) (E)
+Solution:
+# 6. Mary made a shape using some white cubes and 14 grey cubes.
+2
+===== PAGE 15 =====
+KSF 2020 – finalized problems PreEcolier
+How many of these grey cubes cannot be seen in the picture?
+(A)1 (B)3 (C)5 (D)6 (E)8
+Solution:
+# 7. Anna draws a picture of some shapes. Her picture contains 3 black triangles and fewer than 4
+squares. Which could be Anna’s picture?
+(A) (B) (C) (D) (E)
+Solution:
+# 8. The braid in the figure is composed of three threads. One thread is green, one is blue and one is
+1
+2
+3
+red. What colours are the three threads?
+(A)1 is blue, 2 is green and 3 is red. (B)1 is green, 2 is red and 3 is blue.
+(C)1 is red, 2 is blue and 3 is green. (D)1 is green, 2 is blue and 3 is red.
+(E)1 is blue, 2 is red and 3 is green.
+Solution: If you have black-and-white papers, here is a black-and-white version of the picture
+(remember to adapt the text!):
+1
+2
+3
+4 points
+# 9. Which piece completes the picture?
+3
+===== PAGE 16 =====
+KSF 2020 – finalized problems PreEcolier
+∫ ∂ ∂
+π
+∂ ∫ ∫
+π
+∫ ∂
+π ∏
+∫
+∫
+∂
+∏
+∏
+∏
+∏
+π ∏
+∫
+π
+π
+?
+∫
+π
+∏
+π
+∫
+π
+∫
+π
+∏
+π
+∏
+π
+∂
+π
+∏
+∂
+∂
+π
+∏
+π
+∂ ∂
+∫
+π
+∫
+∏
+(A) (B)
+1
+∫
+∂ ∏
+π ∏
+π
+?
+∫
+π
+∏
+π
+∫
+π
+∫
+π
+∏
+π
+∏
+π
+∂
+π
+∏
+∂
+∂
+π
+∏
+π
+∂ ∂
+∫
+π
+∫
+∏
+(C) (D)
+1
+∫
+∂ ∏
+π ∏
+π
+?
+∫
+π
+∏
+π
+∫
+π
+∫
+π
+∏
+π
+∏
+π
+∂
+π
+∏
+∂
+∂
+π
+∏
+π
+(E)
+Solution:
+# 10. A village of 12 houses has four straight roads and four circular roads. The map shows 11 of
+the houses. On each straight road there are 3 houses. On each circular road there are also 3 houses.
+B
+A C
+D 1
+E
+Where on the map should the 12th house be put?
+(A)at A (B)at B (C)at C (D)at D (E)at E
+Solution:
+# 11. Five shapes are made by glueing cubes together face to face. Which shape uses the most
+cubes?
+(A) (B) (C) (D) (E)
+Solution:
+# 12. A number is written on each petal of two flowers. One petal is hidden.
+4
+===== PAGE 17 =====
+KSF 2020 – finalized problems PreEcolier
+4
+6
+2
+5
+8
+7
+3
+9
+1
+The sums of the numbers on the two flowers are equal. What number is written on the hidden
+petal?
+(A)0 (B)3 (C)5 (D)7 (E)1
+Solution:
+# 13. In which of the following pictures is more of the shape shaded than any of the others?
+(A) (B) (C) (D) (E)
+Solution:
+# 14. Mary wants to write the numbers 1, 2, 3, 4, 5 and 6 inside the six squares of the figure. She
+wants a different number in each square. She wants both the sum of the numbers in the blue squares
+andthesumofthenumbersintheyellowsquarestobe10. Whatnumbermustshewriteinthesquare
+?
+with the question mark?
+(A)1 (B)2 (C)3 (D)4 (E)5
+Solution: We do not attempt to find the specific numbers. Instead, as 1+2+3+4+5+6=21 and blue
+plus yellow boxes equals 10+10=20, the last box must contain the number 21-20=1. In any case we
+have blue = 2+3+5, yellow = 4+6.
+# 15. This card lies on the table.
+It is flipped over its top edge then flipped over its left edge, as shown in the picture.
+What does the card look like after the two flips?
+(A) (B) (C)
+5
+===== PAGE 18 =====
+KSF 2020 – finalized problems PreEcolier
+(D) (E)
+Solution:
+# 16. Grandmother has just baked 12 cookies. She wants to give all of the cookies to her 5 grand-
+children but also wants to give each of the grandchildren the same number of cookies.
+How many more cookies should she bake?
+(A)0 (B)1 (C)2 (D)3 (E)4
+Solution:
+5 points
+#17. Tomhas9cards,asshown:
+Heputsthecardsontheboardsothateachhorizontallineandeachverticallinecountainsthreecards
+with three different shapes and three different number of shapes. He has already put three cards, as
+shown Which card does he put on the grey square?
+(A) (B) (C) (D) (E)
+Solution:
+# 18. Two identical trains, each with 31 cars, are traveling in opposite directions. When car No. 19
+of one train is opposite car No. 19 of the other, which car is opposite car No. 12?
+1 2 3 4 5
+5 4 3 2 1
+(A)7 (B)12 (C)21 (D)26 (E)31
+Solution:
+# 19. Mark the bee can walk only on grey cells. In how many ways could you colour exactly two
+white cells grey so that Mark can walk from A to B?
+B
+A
+6
+===== PAGE 19 =====
+KSF 2020 – finalized problems PreEcolier
+(A)3 (B)4 (C)5 (D)6 (E)7
+Solution:
+# 20. An arrow pointing from one person to another means that the first person is taller than the
+A
+E
+F
+D
+C
+B
+second.
+For example, person B is taller than person A. Who is the shortest?
+(A)Person A (B)Person B (C)Person C (D)Person D (E)Person E
+Solution:
+# 21. There are some apples and 8 pears in a basket, each of them green or yellow. There are three
+more apples than the total number of green fruit. There are 6 yellow pears. How many yellow apples
+are there in the basket?
+(A)4 (B)5 (C)6 (D)7 (E)8
+Solution: The green pears are 8−6 = 2. All apples = green apples + yellow apples = green apples
++ green pears + 3. It follows that the red apples are 2+3 = 5.
+# 22. Roo wrote each of the numbers 1, 2, 3, 4 and 5 in one of the circles so that the sum of the
+numbers in the row is equal to the sum of the numbers in the column.
+?
+What number could be written in the circle with the question mark?
+(A)Only 5 (B)2, 3 or 4 (C)Only 3 (D)Only 1 or 3 (E)1, 3 or 5
+Solution: Since the central number belongs both to the row and to the column, we see that the
+sum of the leftmost and the rightmost numbers equals to the sum of top and bottom numbers. Hence
+the sum 1 + 2 + 3 + 4 + 5 = 15 of all numbers is odd while the sum of all numbers excluding
+central is even, therefore the central number must be odd. All values: 1, 3 and 5 are possible.
+# 23. Six different numbers chosen from 1 to 9 are written on the faces of a cube, one number on
+7
+===== PAGE 20 =====
+KSF 2020 – finalized problems PreEcolier
+5
+4 8
+each face. The sums of numbers on each pair of opposite faces are equal. Which
+number could be on the face opposite to the face with the number 5?
+(A)3 (B)5 (C)6 (D)7 (E)9
+Solution:
+# 24. JohnandOliviaexchangedsweets. FirstJohngaveOliviaasmanysweetsasOliviahad. Then
+Olivia gave John as many sweets as John had after the first exchange. After these two exchanges,
+each had 4 sweets. How many sweets did John have at the beginning?
+(A)6 (B)5 (C)4 (D)3 (E)2
+Solution:
+8

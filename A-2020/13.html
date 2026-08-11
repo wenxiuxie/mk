@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2020 A · Q13 · 阴影面积最大</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--ink:#0f172a;--shade:#64748b;--whitechip:#f8fafc}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:var(--ink);margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000;box-shadow:0 6px 16px rgba(12,74,110,.25)}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:520px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.idea{
+  background:linear-gradient(135deg,#ecfccb,#dbeafe);border:2px solid #86efac;border-radius:14px;
+  padding:12px 14px;margin:10px 0;font-weight:700;line-height:1.55;text-align:center;
+}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;line-height:1.45}
+
+.race{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;margin:12px 0;
+}
+.opt{
+  border:2px solid #e2e8f0;border-radius:14px;padding:10px;background:#fafbfc;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  transition:border-color .2s, box-shadow .2s;
+}
+.opt.lead{border-color:#f59e0b;box-shadow:0 0 0 3px #fde68a;background:#fffbeb}
+.opt .name{font-weight:900;color:#0c4a6e;font-size:16px}
+.opt img{width:100%;max-width:130px;border-radius:8px;border:1px solid #e2e8f0;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:3px;min-height:22px;justify-content:center;width:100%}
+.chip{
+  width:14px;height:14px;border-radius:3px;border:1px solid #94a3b8;background:#fff;
+}
+.chip.half{
+  background:linear-gradient(135deg,#fff 50%, transparent 50%), #cbd5e1;
+  background-color:#94a3b8;
+}
+.bar-wrap{width:100%;height:14px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin-top:2px}
+.bar{height:100%;width:0;background:linear-gradient(90deg,#94a3b8,#475569);border-radius:999px;transition:width .35s ease}
+.shade-num{font-size:13px;font-weight:800;color:#334155;min-height:18px}
+.mini{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.mini button{
+  border:none;border-radius:10px;padding:6px 8px;font-weight:800;font-size:12px;cursor:pointer;
+}
+.mini .add1{background:#e0f2fe;color:#0369a1}
+.mini .addh{background:#f1f5f9;color:#334155}
+.mini .clr{background:#fee2e2;color:#b91c1c}
+.compare-board{
+  margin-top:14px;padding:12px;border-radius:14px;background:#0f172a;color:#e2e8f0;
+}
+.compare-board h3{margin:0 0 8px;font-size:14px;color:#7dd3fc;text-align:center}
+.bars-big{display:flex;flex-direction:column;gap:8px}
+.rowbar{display:grid;grid-template-columns:28px 1fr 52px;gap:8px;align-items:center;font-weight:800;font-size:13px}
+.rowbar .track{height:18px;background:#1e293b;border-radius:999px;overflow:hidden}
+.rowbar .fill{height:100%;background:linear-gradient(90deg,#64748b,#f59e0b);border-radius:999px;transition:width .4s ease}
+.rowbar.best .fill{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+.rowbar.best span:first-child{color:#fbbf24}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 EN / 中文</button>
+<h1 class="lang-zh">阴影面积最大</h1>
+<h1 class="lang-en">Largest Shade</h1>
+<div class="meta lang-zh">Math Kangaroo 2020 · 等级 A · 第 13 题 · 4 分</div>
+<div class="meta lang-en">Math Kangaroo 2020 · Level A · Q13 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">以下哪张图片中的阴影部分面积最大？</p>
+    <p class="lang-en">Which picture has the largest shaded area?</p>
+    <img class="fig" src="assets/q13_options.png" alt="Q13 options A–E"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：别数灰的——数白的更快</h2>
+    <h2 class="lang-en">Lab: don’t count grey — count white</h2>
+
+    <div class="idea lang-zh">
+      每张图都是 <b>3×3 = 9</b> 格。<br/>
+      <b>阴影格数 = 9 − 白色格数</b>（半格白算 0.5）<br/>
+      白越少 → 阴影越大。只要找出「白最少」的那张！
+    </div>
+    <div class="idea lang-en">
+      Each picture is a <b>3×3 = 9</b> grid.<br/>
+      <b>Shade = 9 − white</b> (a half-white counts as 0.5).<br/>
+      Less white → more shade. Find the one with the <b>least white</b>!
+    </div>
+
+    <div class="mission lang-zh">
+      <div class="step" data-i="0"><div class="num">1</div><div>只盯着白色（整格白 / 三角形半格白）</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>给每张图记下白色多少</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>看下方「阴影条」谁最长</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>选出阴影最大的选项</div></div>
+    </div>
+    <div class="mission lang-en">
+      <div class="step" data-i="0"><div class="num">1</div><div>Only look at white (full or half triangles)</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>Tally white for each picture</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>Longest shade bar wins</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>Pick that option</div></div>
+    </div>
+
+    <p class="tip lang-zh">点「+½ 白」或「+1 白」记录；半格三角形点一次，整格白点「+1」。</p>
+    <p class="tip lang-en">Tap +½ white or +1 white. One triangle = half; a full white square = +1.</p>
+
+    <div class="race" id="race"></div>
+
+    <div class="compare-board">
+      <h3 class="lang-zh">阴影长度赛跑（自动 = 9 − 白）</h3>
+      <h3 class="lang-en">Shade race (auto = 9 − white)</h3>
+      <div class="bars-big" id="bars"></div>
+      <div class="info" id="leadInfo" style="color:#fde68a;margin-top:10px"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="resetMarks()"><span class="lang-zh">清空全部白记录</span><span class="lang-en">Clear all white tallies</span></button>
+    </div>
+
+    <p class="note lang-zh">小提示：半格白像「三角形」；两块半格白 = 1 格白。不必把灰色一格格加起来。</p>
+    <p class="note lang-en">Tip: a white triangle is half a cell; two halves = one. No need to add every grey cell.</p>
+
+    <p class="tip lang-zh" style="margin-top:16px">想好后选出答案（检查只提示对错）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Then pick an answer (Check only says right/wrong):</p>
+    <div class="pool" id="ansPool"></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="location.reload()"><span class="lang-zh">重置整页</span><span class="lang-en">Reset page</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="12.html">← Q12</a><a href="14.html">Q14 →</a></div>
+</div>
+
+<script>
+const KEY = atob('Qg=='); // B
+const LETTERS = 'ABCDE';
+// white amounts for teacher reference only — not shown to force spoilers;
+// students enter themselves. (A:2 B:1.5 C:2 D:2 E:2)
+let white = {A:0, B:0, C:0, D:0, E:0};
+let picked = null;
+
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx = +s.dataset.i;
+    s.classList.toggle('active', idx === i);
+    s.classList.toggle('done', idx < i);
+  });
+}
+
+function shadeOf(L){ return Math.max(0, 9 - white[L]); }
+
+function build(){
+  const race = document.getElementById('race');
+  const ans = document.getElementById('ansPool');
+  race.innerHTML = '';
+  ans.innerHTML = '';
+  LETTERS.split('').forEach(L=>{
+    const box = document.createElement('div');
+    box.className = 'opt';
+    box.id = 'opt'+L;
+    box.innerHTML = `
+      <div class="name">${L}</div>
+      <img src="assets/q13_tile${L}.png" alt="option ${L}"/>
+      <div class="chips" id="chips${L}"></div>
+      <div class="shade-num" id="sn${L}"></div>
+      <div class="bar-wrap"><div class="bar" id="bar${L}"></div></div>
+      <div class="mini">
+        <button class="addh" type="button">+½ <span class="lang-zh">白</span><span class="lang-en">w</span></button>
+        <button class="add1" type="button">+1 <span class="lang-zh">白</span><span class="lang-en">w</span></button>
+        <button class="clr" type="button"><span class="lang-zh">清</span><span class="lang-en">clr</span></button>
+      </div>`;
+    box.querySelector('.addh').onclick = ()=>{ addWhite(L, 0.5); };
+    box.querySelector('.add1').onclick = ()=>{ addWhite(L, 1); };
+    box.querySelector('.clr').onclick = ()=>{ white[L]=0; render(); setMission(1); };
+    race.appendChild(box);
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.v = L;
+    card.textContent = L;
+    card.onclick = ()=> pick(card);
+    ans.appendChild(card);
+  });
+  render();
+  setMission(0);
+}
+
+function addWhite(L, d){
+  white[L] = Math.min(9, +(white[L] + d).toFixed(1));
+  setMission(1);
+  render();
+}
+
+function renderChips(L){
+  const el = document.getElementById('chips'+L);
+  el.innerHTML = '';
+  let w = white[L];
+  while(w >= 1){
+    const c = document.createElement('div');
+    c.className = 'chip';
+    el.appendChild(c);
+    w -= 1;
+  }
+  if(w >= 0.5){
+    const c = document.createElement('div');
+    c.className = 'chip half';
+    el.appendChild(c);
+  }
+}
+
+function render(){
+  const shades = LETTERS.split('').map(L=>({L, s: shadeOf(L), w: white[L]}));
+  const marked = shades.filter(x=> x.w > 0 || document.getElementById('chips'+x.L)?.children.length);
+  const any = LETTERS.split('').some(L=> white[L] > 0);
+  let best = null;
+  if(any){
+    best = shades.reduce((a,b)=> b.s > a.s ? b : a);
+  }
+
+  LETTERS.split('').forEach(L=>{
+    renderChips(L);
+    const s = shadeOf(L);
+    const pct = (s / 9) * 100;
+    document.getElementById('bar'+L).style.width = (white[L]>0 || s<9 ? pct : 0) + '%';
+    // show shade only after student started tallying that card
+    const sn = document.getElementById('sn'+L);
+    if(white[L] > 0){
+      sn.textContent = document.body.classList.contains('en-mode')
+        ? `white ${white[L]} → shade ${s}`
+        : `白 ${white[L]} → 阴影 ${s}`;
+    }else{
+      sn.textContent = document.body.classList.contains('en-mode') ? 'mark white…' : '先记白色…';
+    }
+    document.getElementById('opt'+L).classList.toggle('lead', !!(best && best.L===L && any));
+  });
+
+  // big bars
+  const bars = document.getElementById('bars');
+  bars.innerHTML = '';
+  shades.forEach(({L,s,w})=>{
+    const row = document.createElement('div');
+    row.className = 'rowbar' + (best && best.L===L && any ? ' best' : '');
+    const pct = w>0 ? (s/9*100) : 0;
+    row.innerHTML = `<span>${L}</span><div class="track"><div class="fill" style="width:${pct}%"></div></div><span>${w>0?s:'—'}</span>`;
+    bars.appendChild(row);
+  });
+
+  const lead = document.getElementById('leadInfo');
+  if(!any){
+    lead.textContent = document.body.classList.contains('en-mode')
+      ? 'Mark white on each card — the longest orange bar has the most shade.'
+      : '给每张图记下白色后，橙色条最长的阴影最大。';
+    setMission(0);
+  }else{
+    const done = LETTERS.split('').filter(L=> white[L]>0).length;
+    lead.textContent = document.body.classList.contains('en-mode')
+      ? `${done}/5 marked. Current longest shade bar: ${best.L} (shade ${best.s}).`
+      : `已记 ${done}/5 张。当前阴影条最长：${best.L}（阴影 ${best.s}）。`;
+    setMission(done>=5 ? 3 : 2);
+  }
+}
+
+function resetMarks(){
+  LETTERS.split('').forEach(L=> white[L]=0);
+  render();
+  setMission(0);
+}
+
+function pick(el){
+  document.querySelectorAll('#ansPool .card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  picked = el.dataset.v;
+  const box = document.getElementById('ansBox');
+  box.textContent = picked;
+  box.classList.add('filled');
+  document.getElementById('feedback').textContent = '';
+}
+
+function checkAnswer(){
+  const fb = document.getElementById('feedback');
+  if(!picked){
+    fb.className = 'bad';
+    fb.innerHTML = '<span class="lang-zh">先选一个选项</span><span class="lang-en">Pick an option first</span>';
+    return;
+  }
+  if(picked === KEY){
+    fb.className = 'ok';
+    fb.innerHTML = '<span class="lang-zh">正确！白最少的那张，阴影最大。</span><span class="lang-en">Correct! Least white → most shade.</span>';
+  }else{
+    fb.className = 'bad';
+    fb.innerHTML = '<span class="lang-zh">再比比各张的「白」——白更少的阴影更大</span><span class="lang-en">Compare white again — less white means more shade</span>';
+  }
+}
+
+function onLang(){ render(); }
+
+build();
+</script>
+</body>
+</html>

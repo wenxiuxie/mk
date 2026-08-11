@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2020 A · Q19 · 蜜蜂涂色通路</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:#0f172a;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.idea{background:linear-gradient(135deg,#e0f2fe,#fef3c7);border:2px solid #7dd3fc;border-radius:14px;padding:12px 14px;margin:10px 0;font-weight:700;line-height:1.55;text-align:center}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;line-height:1.45}
+.stage{border:2px solid #bae6fd;border-radius:16px;background:linear-gradient(180deg,#f8fafc,#eff6ff);padding:10px;margin:10px auto;max-width:420px}
+svg.hive{width:100%;height:auto;display:block}
+.hex{stroke:#334155;stroke-width:2;cursor:default;transition:fill .15s, stroke .15s}
+.hex.fixed{fill:#cbd5e1;cursor:default}
+.hex.white{fill:#fff;cursor:pointer}
+.hex.white:hover{fill:#fef9c3}
+.hex.painted{fill:#94a3b8;cursor:pointer}
+.hex.path{stroke:#f59e0b;stroke-width:3.5}
+.hex.labelA,.hex.labelB{fill:#94a3b8}
+text.lab{font-weight:900;font-size:18px;fill:#0f172a;pointer-events:none;text-anchor:middle;dominant-baseline:central}
+.counter{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid #bae6fd;border-radius:999px;padding:6px 14px;font-weight:800;margin:6px auto}
+.ways{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}
+.way{padding:8px 12px;border-radius:12px;border:2px solid #cbd5e1;background:#fff;font-weight:800;cursor:pointer;font-size:13px}
+.way.on{border-color:#f59e0b;background:#fffbeb}
+.way.good{border-color:#86efac;background:#f0fdf4}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); refreshTexts();">🌐 EN / 中文</button>
+<h1 class="lang-zh">蜜蜂涂色通路</h1>
+<h1 class="lang-en">Bee Path Colouring</h1>
+<div class="meta lang-zh">Math Kangaroo 2020 · 等级 A · 第 19 题 · 5 分</div>
+<div class="meta lang-en">Math Kangaroo 2020 · Level A · Q19 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小蜜蜂只能走灰色蜂房。恰把两个白格涂灰，使能从 A 走到 B，有几种涂法？</p>
+    <p class="lang-en">The bee walks only on grey cells. In how many ways can you grey exactly two white cells so A connects to B?</p>
+    <img class="fig" src="assets/q19_stem.png" alt="honeycomb"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：点白格涂灰，看 A 是否通到 B</h2>
+    <h2 class="lang-en">Lab: tap white cells grey — does A reach B?</h2>
+
+    <div class="idea lang-zh">
+      灰格已经分成左右两块；要打通，必须在中间白格里<strong>恰选 2 格</strong>当桥梁。
+    </div>
+    <div class="idea lang-en">
+      Greys start in two separate clumps. Bridge them by greying <strong>exactly 2</strong> white cells.
+    </div>
+
+    <div class="mission lang-zh">
+      <div class="step" data-i="0"><div class="num">1</div><div>点白色蜂房涂灰（最多 2 个）</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>看高亮：A 能不能走到 B</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>试不同组合，记下通的种数</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>选出答案</div></div>
+    </div>
+    <div class="mission lang-en">
+      <div class="step" data-i="0"><div class="num">1</div><div>Tap white cells (at most 2)</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>Watch highlight: can A reach B?</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>Try pairs; count the working ones</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>Pick the answer</div></div>
+    </div>
+
+    <div class="stage">
+      <svg class="hive" id="hive" viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div style="text-align:center">
+      <div class="counter"><span class="lang-zh">已涂</span><span class="lang-en">Greyed</span>：<span id="cnt">0</span>/2</div>
+    </div>
+    <div class="info" id="status"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="clearPaint()"><span class="lang-zh">清空涂色</span><span class="lang-en">Clear</span></button>
+      <button class="btn accent" onclick="showAllWays()"><span class="lang-zh">列出全部通路涂法</span><span class="lang-en">List all working pairs</span></button>
+    </div>
+    <div class="ways" id="ways"></div>
+    <p class="note lang-zh">白格可点；灰格（含 A、B）固定。通了会把整条灰路标成橙色。</p>
+    <p class="note lang-en">White cells are clickable; grey (incl. A, B) are fixed. A successful path highlights in orange.</p>
+
+    <p class="tip lang-zh" style="margin-top:16px">有几种通法？选出答案：</p>
+    <p class="tip lang-en" style="margin-top:16px">How many ways? Pick an answer:</p>
+    <div class="pool">
+      <div class="card" data-v="A" onclick="pick(this)">3</div>
+      <div class="card" data-v="B" onclick="pick(this)">4</div>
+      <div class="card" data-v="C" onclick="pick(this)">5</div>
+      <div class="card" data-v="D" onclick="pick(this)">6</div>
+      <div class="card" data-v="E" onclick="pick(this)">7</div>
+    </div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="18.html">← Q18</a><a href="20.html">Q20 →</a></div>
+</div>
+
+<script>
+const KEY = atob('Qw=='); // C = 5
+const KEY_COUNT = 5;
+
+// Column lengths 1,2,3,3,2,1 — matches the contest figure
+const COLS = [1,2,3,3,2,1];
+const FIXED_GREY = new Set(['0,0','1,1','2,2','3,0','4,0','5,0']);
+const A = '0,0', B = '5,0';
+const WHITES = ['1,0','2,0','2,1','3,1','3,2','4,1'];
+const LABELS = { '0,0':'A', '5,0':'B' };
+
+// Precomputed good pairs (answer key for the lab enumerator)
+const GOOD_PAIRS = [
+  ['1,0','2,0'],
+  ['2,0','2,1'],
+  ['2,1','3,1'],
+  ['3,1','3,2'],
+  ['3,2','4,1'],
+];
+
+let painted = new Set();
+let ansPick = null;
+let adj = {};
+let centers = {};
+
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+
+function hexPoints(cx, cy, r){
+  // pointy-top
+  const pts=[];
+  for(let i=0;i<6;i++){
+    const a = Math.PI/180*(60*i - 30);
+    pts.push([cx + r*Math.cos(a), cy + r*Math.sin(a)]);
+  }
+  return pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+}
+
+function buildGeometry(){
+  const dx=46, dy=49, cx0=48, midY=125, r=26;
+  centers={}; adj={};
+  for(let ci=0; ci<COLS.length; ci++){
+    const n=COLS[ci];
+    const span=(n-1)*dy;
+    const y0=midY - span/2;
+    const x=cx0 + ci*dx;
+    for(let ri=0; ri<n; ri++){
+      const id=ci+','+ri;
+      centers[id]={x, y:y0+ri*dy, r};
+      adj[id]=[];
+    }
+  }
+  const ids=Object.keys(centers);
+  for(let i=0;i<ids.length;i++){
+    for(let j=i+1;j<ids.length;j++){
+      const a=centers[ids[i]], b=centers[ids[j]];
+      const d=Math.hypot(a.x-b.x, a.y-b.y);
+      if(d<55){ adj[ids[i]].push(ids[j]); adj[ids[j]].push(ids[i]); }
+    }
+  }
+}
+
+function isGrey(id){
+  return FIXED_GREY.has(id) || painted.has(id);
+}
+
+function pathFromA(){
+  const q=[A], seen=new Set([A]), parent={};
+  while(q.length){
+    const u=q.shift();
+    if(u===B){
+      const path=[B];
+      let cur=B;
+      while(cur!==A){ cur=parent[cur]; path.push(cur); }
+      return path.reverse();
+    }
+    for(const v of adj[u]){
+      if(isGrey(v) && !seen.has(v)){
+        seen.add(v); parent[v]=u; q.push(v);
+      }
+    }
+  }
+  return null;
+}
+
+function draw(){
+  const svg=document.getElementById('hive');
+  const path=pathFromA();
+  const onPath=new Set(path||[]);
+  let html='';
+  for(const id of Object.keys(centers)){
+    const {x,y,r}=centers[id];
+    const fixed=FIXED_GREY.has(id);
+    const white=WHITES.includes(id);
+    let cls='hex';
+    if(fixed) cls+=' fixed';
+    else if(painted.has(id)) cls+=' painted';
+    else if(white) cls+=' white';
+    if(onPath.has(id)) cls+=' path';
+    html+=`<polygon class="${cls}" data-id="${id}" points="${hexPoints(x,y,r)}"></polygon>`;
+    if(LABELS[id]){
+      html+=`<text class="lab" x="${x}" y="${y}">${LABELS[id]}</text>`;
+    }
+  }
+  svg.innerHTML=html;
+  svg.querySelectorAll('.hex.white, .hex.painted').forEach(el=>{
+    el.addEventListener('click', ()=>toggle(el.dataset.id));
+  });
+  document.getElementById('cnt').textContent=painted.size;
+  const en=document.body.classList.contains('en-mode');
+  const st=document.getElementById('status');
+  if(painted.size<2){
+    st.textContent = en
+      ? `Pick ${2-painted.size} more white cell(s).`
+      : `再选 ${2-painted.size} 个白格。`;
+    setMission(painted.size===0?0:1);
+  }else if(path){
+    st.textContent = en ? 'Connected! A reaches B on grey cells.' : '通了！A 可以沿灰格走到 B。';
+    st.style.color='#0f766e';
+    setMission(2);
+  }else{
+    st.textContent = en ? 'Not connected — try another pair.' : '还不通 — 换一对白格试试。';
+    st.style.color='#be123c';
+    setMission(1);
+  }
+}
+
+function toggle(id){
+  if(FIXED_GREY.has(id)) return;
+  if(painted.has(id)) painted.delete(id);
+  else{
+    if(painted.size>=2) return;
+    painted.add(id);
+  }
+  draw();
+}
+
+function clearPaint(){
+  painted.clear();
+  draw();
+  setMission(0);
+}
+
+function showAllWays(){
+  const box=document.getElementById('ways');
+  const en=document.body.classList.contains('en-mode');
+  box.innerHTML='';
+  GOOD_PAIRS.forEach((pair,i)=>{
+    const btn=document.createElement('button');
+    btn.className='way';
+    btn.textContent = en ? `Way ${i+1}` : `涂法 ${i+1}`;
+    btn.onclick=()=>{
+      painted=new Set(pair);
+      document.querySelectorAll('.way').forEach(w=>w.classList.remove('on'));
+      btn.classList.add('on','good');
+      draw();
+      setMission(3);
+    };
+    box.appendChild(btn);
+  });
+  const tip=document.createElement('div');
+  tip.className='info';
+  tip.style.color='#0f766e';
+  tip.textContent = en
+    ? `There are exactly ${GOOD_PAIRS.length} working pairs. Tap each to see.`
+    : `一共恰有 ${GOOD_PAIRS.length} 种通法。点上面查看每一种。`;
+  box.appendChild(tip);
+  setMission(3);
+}
+
+function pick(el){
+  document.querySelectorAll('.pool .card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  ansPick=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=el.textContent.trim();
+  box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!ansPick){
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">先选一个数</span><span class="lang-en">Pick a number first</span>';
+    return;
+  }
+  if(ansPick===KEY){
+    fb.className='ok';
+    fb.innerHTML='<span class="lang-zh">正确！</span><span class="lang-en">Correct!</span>';
+  }else{
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">再试试 — 用「列出全部通路涂法」数一数</span><span class="lang-en">Try again — use “List all working pairs”</span>';
+  }
+}
+
+function refreshTexts(){ draw(); }
+
+buildGeometry();
+draw();
+setMission(0);
+</script>
+</body>
+</html>

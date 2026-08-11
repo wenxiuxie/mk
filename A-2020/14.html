@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2020 A · Q14 · 蓝格与黄格</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--blue:#7dd3fc;--yellow:#fde047}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:#0f172a;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:360px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.idea{background:linear-gradient(135deg,#dbeafe,#fef9c3);border:2px solid #93c5fd;border-radius:14px;padding:12px 14px;margin:10px 0;font-weight:700;line-height:1.55;text-align:center}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;line-height:1.45}
+
+.grid{
+  display:grid;grid-template-columns:repeat(3,72px);gap:8px;justify-content:center;margin:12px auto;
+}
+.cell{
+  width:72px;height:72px;border-radius:12px;border:3px solid #334155;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;font-weight:900;cursor:pointer;user-select:none;
+  transition:transform .12s, outline .15s;
+}
+.cell:hover{transform:scale(1.04)}
+.cell.blue{background:var(--blue)}
+.cell.yellow{background:var(--yellow)}
+.cell.q{background:#fff;border-style:dashed;border-color:#f59e0b}
+.cell.sel{outline:3px solid #ea580c}
+.nums{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.numchip{
+  width:48px;height:48px;border-radius:12px;background:#0ea5e9;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;
+  cursor:pointer;user-select:none;border:3px solid transparent;
+}
+.numchip.used{opacity:.25;cursor:default}
+.numchip.on{border-color:#f59e0b;box-shadow:0 0 0 3px #fde68a}
+.sums{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.sumbox{
+  min-width:140px;padding:10px 14px;border-radius:14px;font-weight:800;text-align:center;
+}
+.sumbox.blue{background:#e0f2fe;border:2px solid #38bdf8}
+.sumbox.yellow{background:#fef9c3;border:2px solid #eab308}
+.sumbox.ok{box-shadow:0 0 0 3px #86efac}
+.shortcut{
+  margin:14px auto;max-width:420px;padding:14px;border-radius:16px;
+  background:#0f172a;color:#e2e8f0;text-align:center;
+}
+.shortcut .eq{font-size:22px;font-weight:900;margin:10px 0;letter-spacing:1px}
+.shortcut .eq b{color:#fbbf24}
+.tokens{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.tok{width:28px;height:28px;border-radius:8px;background:#38bdf8;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 EN / 中文</button>
+<h1 class="lang-zh">蓝格与黄格</h1>
+<h1 class="lang-en">Blue & Yellow</h1>
+<div class="meta lang-zh">Math Kangaroo 2020 · 等级 A · 第 14 题 · 4 分</div>
+<div class="meta lang-en">Math Kangaroo 2020 · Level A · Q14 · 4 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">把 1–6 填进六个方格（各不相同）。蓝格之和与黄格之和都为 <b>10</b>。问号格必须是几？</p>
+    <p class="lang-en">Place 1–6 in the six squares (all different). Blue sum and yellow sum are both <b>10</b>. What must ? be?</p>
+    <img class="fig" src="assets/q14_stem.png?v=2" alt="Q14 figure"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：捷径推理 + 试填验证</h2>
+    <h2 class="lang-en">Lab: shortcut reasoning + try filling</h2>
+
+    <div class="idea lang-zh">
+      不必先排出全部填法！<br/>
+      1+2+3+4+5+6 = <b>21</b>，蓝 10 + 黄 10 = <b>20</b>，<br/>
+      剩下给问号的只有 <b>21 − 20</b>。
+    </div>
+    <div class="idea lang-en">
+      You don’t need a full filling first!<br/>
+      1+…+6 = <b>21</b>, blue 10 + yellow 10 = <b>20</b>,<br/>
+      so ? gets only <b>21 − 20</b>.
+    </div>
+
+    <div class="mission lang-zh">
+      <div class="step" data-i="0"><div class="num">1</div><div>看捷径：全部和 − 蓝 − 黄</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>（可选）把 1–6 拖进格子试填</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>看蓝/黄是否都到 10</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>问号格就是答案</div></div>
+    </div>
+    <div class="mission lang-en">
+      <div class="step" data-i="0"><div class="num">1</div><div>Shortcut: total − blue − yellow</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>(Optional) Place 1–6 in the grid</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>Check both sums hit 10</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>The ? cell is the answer</div></div>
+    </div>
+
+    <div class="shortcut">
+      <div class="lang-zh" style="font-weight:800;color:#7dd3fc">总和捷径</div>
+      <div class="lang-en" style="font-weight:800;color:#7dd3fc">Total shortcut</div>
+      <div class="tokens" id="allTok"></div>
+      <div class="eq" id="eqLine">21 − 10 − 10 = <b>?</b></div>
+      <button class="btn accent" onclick="revealShortcut()"><span class="lang-zh">算出问号（捷径）</span><span class="lang-en">Compute ? (shortcut)</span></button>
+      <div class="info" id="shortInfo" style="color:#fde68a"></div>
+    </div>
+
+    <p class="tip lang-zh">想验证可以试填：先点数字，再点格子；蓝/黄和会实时更新。</p>
+    <p class="tip lang-en">Optional check: tap a number, then a cell; blue/yellow sums update live.</p>
+
+    <div class="nums" id="nums"></div>
+    <div class="grid" id="grid"></div>
+    <div class="sums">
+      <div class="sumbox blue" id="sumB"><span class="lang-zh">蓝格和</span><span class="lang-en">Blue</span>: <span id="bv">0</span> / 10</div>
+      <div class="sumbox yellow" id="sumY"><span class="lang-zh">黄格和</span><span class="lang-en">Yellow</span>: <span id="yv">0</span> / 10</div>
+    </div>
+    <div class="info" id="fillInfo"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="clearGrid()"><span class="lang-zh">清空格子</span><span class="lang-en">Clear grid</span></button>
+    </div>
+
+    <p class="note lang-zh">捷径已经够用；试填只是验一验：蓝 3 格、黄 2 格、问号 1 格。</p>
+    <p class="note lang-en">The shortcut is enough; filling is just to verify: 3 blue, 2 yellow, 1 question cell.</p>
+
+    <p class="tip lang-zh" style="margin-top:16px">选出问号是几（检查只提示对错）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Pick what ? is (Check only says right/wrong):</p>
+    <div class="pool">
+      <div class="card" data-v="A" onclick="pick(this)">1</div>
+      <div class="card" data-v="B" onclick="pick(this)">2</div>
+      <div class="card" data-v="C" onclick="pick(this)">3</div>
+      <div class="card" data-v="D" onclick="pick(this)">4</div>
+      <div class="card" data-v="E" onclick="pick(this)">5</div>
+    </div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="location.reload()"><span class="lang-zh">重置整页</span><span class="lang-en">Reset page</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="13.html">← Q13</a><a href="15.html">Q15 →</a></div>
+</div>
+
+<script>
+const KEY = atob('QQ=='); // A = 1
+// layout: 0 1 2 / 3 4 5
+const COLORS = ['blue','yellow','yellow','blue','blue','q'];
+let values = [null,null,null,null,null,null];
+let selNum = null;
+let selCell = null;
+let picked = null;
+let shortcutShown = false;
+
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+
+function build(){
+  const tok=document.getElementById('allTok');
+  tok.innerHTML='';
+  for(let n=1;n<=6;n++){
+    const d=document.createElement('div');
+    d.className='tok'; d.textContent=n; tok.appendChild(d);
+  }
+  const nums=document.getElementById('nums');
+  nums.innerHTML='';
+  for(let n=1;n<=6;n++){
+    const c=document.createElement('div');
+    c.className='numchip'; c.dataset.n=n; c.textContent=n;
+    c.onclick=()=>{
+      if(c.classList.contains('used')) return;
+      selNum=n; selCell=null;
+      document.querySelectorAll('.numchip').forEach(x=>x.classList.toggle('on', +x.dataset.n===n));
+      document.querySelectorAll('.cell').forEach(x=>x.classList.remove('sel'));
+      setMission(1);
+    };
+    nums.appendChild(c);
+  }
+  const grid=document.getElementById('grid');
+  grid.innerHTML='';
+  COLORS.forEach((col,i)=>{
+    const cell=document.createElement('div');
+    cell.className='cell '+col;
+    cell.dataset.i=i;
+    cell.textContent = col==='q' ? '?' : '';
+    cell.onclick=()=> onCell(i);
+    grid.appendChild(cell);
+  });
+  render();
+  setMission(0);
+}
+
+function usedSet(){
+  return new Set(values.filter(v=>v!=null));
+}
+
+function onCell(i){
+  if(selNum!=null){
+    // place
+    const old=values[i];
+    values[i]=selNum;
+    selNum=null;
+    document.querySelectorAll('.numchip').forEach(x=>x.classList.remove('on'));
+    render();
+    setMission(2);
+    return;
+  }
+  // clear cell if has value
+  if(values[i]!=null){
+    values[i]=null;
+    render();
+    return;
+  }
+  selCell=i;
+  document.querySelectorAll('.cell').forEach((x,j)=>x.classList.toggle('sel', j===i));
+}
+
+function clearGrid(){
+  values=[null,null,null,null,null,null];
+  selNum=null; selCell=null;
+  document.querySelectorAll('.numchip').forEach(x=>x.classList.remove('on'));
+  render();
+  setMission(shortcutShown?0:0);
+}
+
+function render(){
+  const used=usedSet();
+  document.querySelectorAll('.numchip').forEach(c=>{
+    const n=+c.dataset.n;
+    c.classList.toggle('used', used.has(n));
+  });
+  document.querySelectorAll('.cell').forEach((cell,i)=>{
+    if(COLORS[i]==='q'){
+      cell.textContent = values[i]!=null ? values[i] : '?';
+    }else{
+      cell.textContent = values[i]!=null ? values[i] : '';
+    }
+  });
+  let b=0,y=0;
+  values.forEach((v,i)=>{
+    if(v==null) return;
+    if(COLORS[i]==='blue') b+=v;
+    if(COLORS[i]==='yellow') y+=v;
+  });
+  document.getElementById('bv').textContent=b;
+  document.getElementById('yv').textContent=y;
+  document.getElementById('sumB').classList.toggle('ok', b===10);
+  document.getElementById('sumY').classList.toggle('ok', y===10);
+  const q=values[5];
+  const en=document.body.classList.contains('en-mode');
+  const fi=document.getElementById('fillInfo');
+  if(values.every(v=>v!=null)){
+    fi.textContent = en
+      ? `Grid full. Blue=${b}, Yellow=${y}, ?=${q}. ${b===10&&y===10?'Both sums are 10!':'Sums not both 10 yet.'}`
+      : `已填满。蓝=${b}，黄=${y}，问号=${q}。${b===10&&y===10?'两个和都是 10！':'还没都到 10。'}`;
+    if(b===10&&y===10) setMission(3);
+  }else{
+    fi.textContent = en ? 'Place numbers to test (optional).' : '可试填数字来验证（可选）。';
+  }
+}
+
+function revealShortcut(){
+  shortcutShown=true;
+  // show 21-20 without stating answer letter; student still picks
+  const rem=21-10-10;
+  document.getElementById('eqLine').innerHTML = `21 − 10 − 10 = <b>${rem}</b>`;
+  document.getElementById('shortInfo').textContent = document.body.classList.contains('en-mode')
+    ? 'So the ? square must be that leftover number. Pick it below.'
+    : '所以问号格必须是这个剩下的数。请在下方选出。';
+  setMission(3);
+}
+
+function pick(el){
+  document.querySelectorAll('.pool .card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  picked=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=el.textContent.trim();
+  box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!picked){
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">先选一个数</span><span class="lang-en">Pick a number first</span>';
+    return;
+  }
+  if(picked===KEY){
+    fb.className='ok';
+    fb.innerHTML='<span class="lang-zh">正确！捷径：21−20，问号必是剩下的那个。</span><span class="lang-en">Correct! Shortcut: 21−20 leaves that number for ?.</span>';
+  }else{
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">再算 21−10−10</span><span class="lang-en">Try 21 − 10 − 10 again</span>';
+  }
+}
+
+function onLang(){ render(); if(shortcutShown) revealShortcut(); }
+
+build();
+</script>
+</body>
+</html>

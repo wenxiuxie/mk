@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2020 A · Q17 · 灰格上的卡片</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:#0f172a;margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:420px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.optgrid{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.idea{background:linear-gradient(135deg,#dbeafe,#fce7f3);border:2px solid #93c5fd;border-radius:14px;padding:12px 14px;margin:10px 0;font-weight:700;line-height:1.55;text-align:center}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;line-height:1.45}
+
+.board{
+  display:grid;grid-template-columns:repeat(3,90px);gap:8px;justify-content:center;margin:14px auto;
+}
+.cell{
+  width:90px;height:90px;border:3px solid #334155;border-radius:12px;background:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-weight:800;position:relative;
+}
+.cell.grey{background:#cbd5e1;border-style:dashed;border-color:#f59e0b}
+.cell.fixed{background:#f8fafc}
+.cell .mini{font-size:11px;color:#64748b}
+.shapes{display:flex;gap:3px;flex-wrap:wrap;justify-content:center;max-width:70px}
+.dot{width:14px;height:14px;background:#0f172a;border-radius:50%}
+.tri{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid #0f172a}
+.sq{width:12px;height:12px;background:#0f172a}
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.chip{
+  padding:8px 12px;border-radius:999px;font-weight:800;font-size:13px;border:2px solid #cbd5e1;background:#fff;
+}
+.chip.ban{background:#fee2e2;border-color:#f87171;color:#b91c1c;text-decoration:line-through}
+.chip.need{background:#dcfce7;border-color:#4ade80;color:#166534}
+.opt-try{
+  display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0;
+}
+.opt-btn{
+  width:72px;padding:8px 6px;border-radius:12px;border:2px solid #cbd5e1;background:#fff;
+  cursor:pointer;font-weight:800;text-align:center;
+}
+.opt-btn:hover{border-color:#0284c7}
+.opt-btn.on{border-color:#f59e0b;box-shadow:0 0 0 3px #fde68a}
+.opt-btn.fail{opacity:.45;background:#f1f5f9}
+.opt-btn .ico{min-height:36px;display:flex;align-items:center;justify-content:center;gap:2px;margin:4px 0}
+.verdict{text-align:center;font-weight:800;min-height:28px;margin:8px 0}
+.verdict.good{color:#059669}.verdict.bad{color:#dc2626}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 EN / 中文</button>
+<h1 class="lang-zh">灰格上的卡片</h1>
+<h1 class="lang-en">Grey Square Card</h1>
+<div class="meta lang-zh">Math Kangaroo 2020 · 等级 A · 第 17 题 · 5 分</div>
+<div class="meta lang-en">Math Kangaroo 2020 · Level A · Q17 · 5 points</div>
+
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">每行、每列都要有三种不同<strong>形状</strong>和三种不同<strong>数量</strong>。已放三张。灰格应放哪张？</p>
+    <p class="lang-en">Each row/column needs three different <strong>shapes</strong> and three different <strong>counts</strong>. Three cards are placed. Which goes on the grey square?</p>
+    <img class="fig" src="assets/q17_stem.png" alt="board"/>
+    <img class="optgrid" src="assets/q17_options.png" alt="options"/>
+  </div>
+
+  <div class="section">
+    <h2 class="lang-zh">实验台：排除法——灰格不能和谁重复</h2>
+    <h2 class="lang-en">Lab: eliminate — what can’t go on grey</h2>
+
+    <div class="idea lang-zh">
+      灰格看它所在的<strong>行</strong>和<strong>列</strong>：<br/>
+      已出现的形状、数量都不能再用 → 剩下的才可能是答案。
+    </div>
+    <div class="idea lang-en">
+      For the grey cell, look at its <strong>row</strong> and <strong>column</strong>:<br/>
+      Shapes/counts already used are banned → only leftovers can fit.
+    </div>
+
+    <div class="mission lang-zh">
+      <div class="step" data-i="0"><div class="num">1</div><div>看棋盘：已放的三张卡</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>读出灰格所在行/列禁用的形状与数量</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>点选项试放，看是否违规</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>选出唯一合适的</div></div>
+    </div>
+    <div class="mission lang-en">
+      <div class="step" data-i="0"><div class="num">1</div><div>See the three placed cards</div></div>
+      <div class="step" data-i="1"><div class="num">2</div><div>List banned shapes/counts for grey</div></div>
+      <div class="step" data-i="2"><div class="num">3</div><div>Try options — check conflicts</div></div>
+      <div class="step" data-i="3"><div class="num">4</div><div>Pick the one that fits</div></div>
+    </div>
+
+    <div class="board" id="board"></div>
+
+    <div class="filters" id="filters"></div>
+    <div class="info" id="ruleInfo"></div>
+
+    <p class="tip lang-zh">点选项放到灰格上试一试：</p>
+    <p class="tip lang-en">Tap an option to try it on the grey cell:</p>
+    <div class="opt-try" id="optTry"></div>
+    <div class="verdict" id="verdict"></div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="clearTry()"><span class="lang-zh">清空试放</span><span class="lang-en">Clear try</span></button>
+    </div>
+
+    <p class="note lang-zh">提示：灰格在「2 个三角」的那一行，又在「2 个圆」的那一列——形状和数量都要避开它们。</p>
+    <p class="note lang-en">Hint: grey is in the row with 2 triangles and the column with 2 circles — avoid those shapes and that count.</p>
+
+    <p class="tip lang-zh" style="margin-top:16px">选出答案（检查只提示对错）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Pick your answer (Check only says right/wrong):</p>
+    <div class="pool">
+      <div class="card" data-v="A" onclick="pick(this)">A</div>
+      <div class="card" data-v="B" onclick="pick(this)">B</div>
+      <div class="card" data-v="C" onclick="pick(this)">C</div>
+      <div class="card" data-v="D" onclick="pick(this)">D</div>
+      <div class="card" data-v="E" onclick="pick(this)">E</div>
+    </div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="16.html">← Q16</a><a href="18.html">Q18 →</a></div>
+</div>
+
+<script>
+const KEY = atob('RA=='); // D
+// shape: C circle, T triangle, S square; count 1-3
+// board row-major; grey at index 7 (row2 col1)
+const FIXED = {
+  0: {shape:'C', count:1}, // 1 circle
+  4: {shape:'C', count:2}, // 2 circles
+  6: {shape:'T', count:2}, // 2 triangles
+};
+const GREY = 7;
+const OPTIONS = {
+  A: {shape:'S', count:3},
+  B: {shape:'T', count:1},
+  C: {shape:'S', count:2},
+  D: {shape:'S', count:1},
+  E: {shape:'C', count:3},
+};
+let tried = null;
+let picked = null;
+
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+
+function drawShapes(shape, count){
+  let html='<div class="shapes">';
+  for(let i=0;i<count;i++){
+    if(shape==='C') html+='<div class="dot"></div>';
+    else if(shape==='T') html+='<div class="tri"></div>';
+    else html+='<div class="sq"></div>';
+  }
+  return html+'</div>';
+}
+
+function label(shape, count, en){
+  const sn = en ? {C:'circle',T:'triangle',S:'square'}[shape] : {C:'圆',T:'三角',S:'方'}[shape];
+  return `${count}×${sn}`;
+}
+
+function banned(){
+  // row 2: indices 6,7,8 — col 1: 1,4,7
+  const shapes=new Set(), counts=new Set();
+  [6,8].forEach(i=>{ if(FIXED[i]){ shapes.add(FIXED[i].shape); counts.add(FIXED[i].count);} });
+  [1,4].forEach(i=>{ if(FIXED[i]){ shapes.add(FIXED[i].shape); counts.add(FIXED[i].count);} });
+  // only fixed in row2 is 6; in col1 is 4
+  shapes.clear(); counts.clear();
+  if(FIXED[6]){ shapes.add(FIXED[6].shape); counts.add(FIXED[6].count); }
+  if(FIXED[4]){ shapes.add(FIXED[4].shape); counts.add(FIXED[4].count); }
+  return {shapes, counts};
+}
+
+function build(){
+  const board=document.getElementById('board');
+  board.innerHTML='';
+  for(let i=0;i<9;i++){
+    const cell=document.createElement('div');
+    cell.className='cell'+(i===GREY?' grey':'')+(FIXED[i]?' fixed':'');
+    cell.id='c'+i;
+    if(FIXED[i]){
+      cell.innerHTML = drawShapes(FIXED[i].shape, FIXED[i].count) +
+        `<div class="mini">${label(FIXED[i].shape, FIXED[i].count, false)}</div>`;
+    }else if(i===GREY){
+      cell.innerHTML = '<div style="font-size:22px;color:#64748b">?</div><div class="mini lang-zh">灰格</div><div class="mini lang-en">grey</div>';
+    }
+    board.appendChild(cell);
+  }
+
+  const b=banned();
+  const en=()=>document.body.classList.contains('en-mode');
+  const filters=document.getElementById('filters');
+  const shapeNames = en()
+    ? {C:'circle',T:'triangle',S:'square'}
+    : {C:'圆',T:'三角',S:'方'};
+  filters.innerHTML = `
+    <span class="chip ban">${en()?'Banned shapes:':'禁用形状：'} ${[...b.shapes].map(s=>shapeNames[s]).join(', ')||'—'}</span>
+    <span class="chip ban">${en()?'Banned counts:':'禁用数量：'} ${[...b.counts].join(', ')||'—'}</span>
+    <span class="chip need">${en()?'Need shape not those + count not those':'需要：避开以上形状与数量'}</span>`;
+
+  document.getElementById('ruleInfo').textContent = en()
+    ? 'Row has 2△, column has 2○ — grey cannot be triangle/circle, and cannot be count 2.'
+    : '该行已有 2△，该列已有 2○ —— 灰格不能是三角/圆，也不能是数量 2。';
+
+  const optTry=document.getElementById('optTry');
+  optTry.innerHTML='';
+  'ABCDE'.split('').forEach(L=>{
+    const o=OPTIONS[L];
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='opt-btn';
+    btn.innerHTML=`<div>${L}</div><div class="ico">${drawShapes(o.shape,o.count)}</div>`;
+    btn.onclick=()=> tryOpt(L);
+    optTry.appendChild(btn);
+  });
+  setMission(1);
+}
+
+function usedCards(){
+  return new Set(Object.values(FIXED).map(x=>x.shape+x.count));
+}
+
+function deepOk(L){
+  // Local ban + card not already used + completing the grey row won't force a used card
+  const o=OPTIONS[L];
+  const b=banned();
+  if(b.shapes.has(o.shape) || b.counts.has(o.count)) return {ok:false, why:'local'};
+  if(usedCards().has(o.shape+o.count)) return {ok:false, why:'used'};
+  // In bottom row: cells are 2T, grey=o, and (2,2) must be the remaining shape & count
+  const rowShapes=new Set(['T', o.shape]);
+  const rowCounts=new Set([2, o.count]);
+  const needShape=['C','T','S'].find(s=>!rowShapes.has(s));
+  const needCount=[1,2,3].find(c=>!rowCounts.has(c));
+  if(usedCards().has(needShape+needCount) && !(needShape===o.shape && needCount===o.count)){
+    // forced card for (2,2) already used elsewhere
+    return {ok:false, why:'force', needShape, needCount};
+  }
+  return {ok:true};
+}
+
+function tryOpt(L){
+  tried=L;
+  document.querySelectorAll('.opt-btn').forEach(b=>b.classList.toggle('on', b.textContent.trim().startsWith(L)));
+  const o=OPTIONS[L];
+  const cell=document.getElementById('c'+GREY);
+  cell.innerHTML = drawShapes(o.shape,o.count) + `<div class="mini">${L}</div>`;
+  const en=document.body.classList.contains('en-mode');
+  const v=document.getElementById('verdict');
+  const res=deepOk(L);
+  const b=banned();
+  document.querySelectorAll('.opt-btn').forEach(btn=>{
+    const letter=btn.textContent.trim()[0];
+    btn.classList.toggle('fail', !deepOk(letter).ok);
+  });
+  if(res.ok){
+    v.className='verdict good';
+    v.textContent = en
+      ? `${L} works: no row/col clash, and doesn’t force a used card.`
+      : `${L} 可以：行列不冲突，也不会逼着再用已用过的卡。`;
+    setMission(3);
+  }else{
+    v.className='verdict bad';
+    let msg;
+    if(res.why==='local'){
+      const why=[];
+      if(b.shapes.has(o.shape)) why.push(en?'shape banned':'形状冲突');
+      if(b.counts.has(o.count)) why.push(en?'count banned':'数量冲突');
+      msg = en ? `${L} fails: ${why.join(' & ')}` : `${L} 不行：${why.join('、')}`;
+    }else if(res.why==='force'){
+      msg = en
+        ? `${L} forces the last bottom cell to be a used card — impossible.`
+        : `${L} 会逼得底行最后一格变成「已用过的卡」——不行。`;
+    }else{
+      msg = en ? `${L} is already used on the board.` : `${L} 这种卡已经在棋盘上用过了。`;
+    }
+    v.textContent = msg;
+    setMission(2);
+  }
+}
+
+function clearTry(){
+  tried=null;
+  const cell=document.getElementById('c'+GREY);
+  cell.innerHTML='<div style="font-size:22px;color:#64748b">?</div>';
+  document.getElementById('verdict').textContent='';
+  document.querySelectorAll('.opt-btn').forEach(b=>{ b.classList.remove('on','fail'); });
+  setMission(1);
+}
+
+function pick(el){
+  document.querySelectorAll('.pool .card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  picked=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=picked; box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!picked){
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">先选一个选项</span><span class="lang-en">Pick an option first</span>';
+    return;
+  }
+  if(picked===KEY){
+    fb.className='ok';
+    fb.innerHTML='<span class="lang-zh">正确！</span><span class="lang-en">Correct!</span>';
+  }else{
+    fb.className='bad';
+    fb.innerHTML='<span class="lang-zh">再排除：避开行/列已有的形状与数量</span><span class="lang-en">Eliminate again — avoid used shapes & counts</span>';
+  }
+}
+
+function onLang(){ build(); if(tried) tryOpt(tried); }
+
+build();
+</script>
+</body>
+</html>
