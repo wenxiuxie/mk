@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>2016 A · Q18</title><style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--ink:#0f172a}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:var(--ink);margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig,.optgrid{display:block;width:100%;max-width:640px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-weight:800}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:960px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.list{display:grid;gap:8px;max-width:720px;margin:0 auto}
+.list a{display:block;padding:12px 14px;border-radius:12px;background:#fff;border:2px solid #bae6fd;color:#0c4a6e;text-decoration:none;font-weight:700}
+</style></head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 EN / 中文</button>
+<h1 class="lang-zh">图中有四只瓢虫，每只爬在一朵花上…</h1><h1 class="lang-en">There are 4 ladybirds in…</h1>
+<div class="meta lang-zh">Math Kangaroo 2016 · 等级 A · 第 18 题 · 4 分</div>
+<div class="meta lang-en">Math Kangaroo 2016 · Level 1 · Q18 · 4 pts</div>
+<div class="wrap">
+<div class="section"><h2 class="lang-zh">题目</h2><h2 class="lang-en">Problem</h2>
+<p class="lang-zh">图中有四只瓢虫，每只爬在一朵花上。它们左右翅膀上点的差数是叶子的数量，翅膀上 的点数的和是花瓣的数量。请问哪朵花没有瓢虫？</p><p class="lang-en">There are 4 ladybirds in the picture. Each one sits on a ﬂower. The diﬀerence between the number of dots on their left and right wings equals the number of the leaves. The sum of the number of dots on both wings equals the number of the petals. Which of the following</p><img class="fig" src="assets/q18_stem.png" alt="Q18"/><img class="optgrid" src="assets/q18_options.png" alt="opts"/></div>
+<div class="section"><h2 class="lang-zh">作答</h2><h2 class="lang-en">Answer</h2>
+<p class="tip lang-zh">先思考，再选答案（检查只提示对错）：</p>
+<p class="tip lang-en">Think, then pick (Check only says right/wrong):</p>
+<div class="pool"><div class="card" data-v="A" onclick="pick(this)">A</div><div class="card" data-v="B" onclick="pick(this)">B</div><div class="card" data-v="C" onclick="pick(this)">C</div><div class="card" data-v="D" onclick="pick(this)">D</div><div class="card" data-v="E" onclick="pick(this)">E</div></div>
+<div class="answer-box" id="ansBox"></div>
+<div class="actions">
+<button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+<button class="btn reset" onclick="location.reload()"><span class="lang-zh">重置</span><span class="lang-en">Reset</span></button>
+<div id="feedback"></div></div></div>
+<div class="nav"><a href="17.html">← Q17</a><a href="19.html">Q19 →</a></div></div>
+<script>
+const KEY=atob('RQ=='); let picked=null;
+function pick(el){document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));el.classList.add('on');picked=el.dataset.v;document.getElementById('ansBox').textContent=el.textContent;document.getElementById('feedback').textContent='';}
+function checkAnswer(){const fb=document.getElementById('feedback');if(!picked){fb.className='bad';fb.textContent='先选一个选项 / Pick first';return;}
+if(picked===KEY){fb.className='ok';fb.innerHTML='<span class="lang-zh">正确！</span><span class="lang-en">Correct!</span>';}
+else{fb.className='bad';fb.innerHTML='<span class="lang-zh">再试试</span><span class="lang-en">Try again</span>';}}
+</script></body></html>

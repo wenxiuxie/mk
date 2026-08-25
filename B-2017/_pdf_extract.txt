@@ -1,0 +1,342 @@
+==== PAGE 1 chars=337 imgs=16 ====
+Kangaroo Math Competition 2017 – Ecolier
+3 points
+# 1. Which piece can be placed between the above two pieces so the equations are correct?
+Bahagian yang manakah boleh diletakkan di antara kedua-dua bahagian di atas supaya
+persamaannya benar?
+请问哪一块拼图能被放在以下两块拼图之间，以获得正确的等式？
+8–3
+=2
+(A)
+=5 5–1
+(B)
+=3 4–2
+(C)
+=5 1+2
+(D)
+=4 5–3
+(E)
+=5 1+1
+1
+
+
+==== PAGE 2 chars=696 imgs=3 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 2. John looks through the window. He sees half of the kangaroos in the park, as in the
+picture. How many kangaroos are there in the park?
+John melihat ke luar tingkap.
+Dia nampak separuh daripada sekumpulan kanggaru di
+taman, seperti ditunjukkan pada gambar berikut. Berapakah bilangan kanggaru yang ada di
+taman tersebut?
+John 往窗外看。他看见公园里一半的袋鼠，如图所示。请问公园里有多少只袋鼠？
+(A) 12
+(B) 14
+(C) 16
+(D) 18
+(E) 20
+# 3. A picture of footprints was turned upside down. Which footprints are missing?
+Suatu gambar yang mengandungi beberapa kesan tapak kaki telah diterbalikkan.
+Kesan
+tapak kaki yang manakah telah hilang?
+一张含有多双脚印的图片被上下颠倒。请问哪一双脚印不见了？
+(A)
+(B)
+(C)
+(D)
+(E)
+2
+
+
+==== PAGE 3 chars=592 imgs=41 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 4. What number is hidden behind the panda?
+Nombor apakah yang tersembunyi di sebalik panda tersebut?
+请问熊猫后面藏着什么数字？
+– 10 =
+10 + 6 = 
+– 6 =
++8
++ 8
+A
+=
+A
+(A) 16
+(B) 18
+(C) 20
+(D) 24
+(E) 28
+# 5. The following is an addition table, with some numbers hidden. What number is in the
+box with the question mark?
+Berikut merupakan jadual bagi operasi tambah, dengan beberapa nombor yang tersembunyi.
+Apakah nombor yang terletak pada kotak yang bertanda soal?
+以下是一个不完整的加法表。请问含有问号的格子里是什么数字？
+ 
+11 
+7 
+2
+ 6 
+17 
+13 
+8
+11 
++
+?
+(A) 10
+(B) 12
+(C) 13
+(D) 15
+(E) 16
+3
+
+
+==== PAGE 4 chars=313 imgs=3 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 6. In the ﬁgure below we see a necklace with six beads. Which one is the same necklace?
+Gambar di bawah menunjukkan satu rantai dengan enam biji manik. Rantai yang manakah
+sama dengan rantai pada gambar tersebut?
+如图所示，我们看见一条含有六颗珠子的项链。请问下列哪项是同一条项链？
+(A)
+(B)
+(C)
+(D)
+(E)
+4
+
+
+==== PAGE 5 chars=470 imgs=8 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 7. The picture shows the front of Ann’s house. The back of her house has three windows
+and no door. What does Ann see when she looks at the back of her house?
+Gambar berikut menunjukkan bahagian hadapan rumah Ann. Bahagian belakang rumahnya
+ada tiga tingkap dan tiada pintu. Apakah yang dilihat oleh Ann apabila dia melihat bahagian
+belakang rumahnya?
+下图展示Ann 的家的前方。她的家后方有三个窗口，并且没有门。请问Ann 看她的家
+的后方时会看见什么？
+(A)
+(B)
+(C)
+(D)
+(E)
+5
+
+
+==== PAGE 6 chars=539 imgs=8 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 8. Which one is true?
+Yang manakah benar?
+请问下列哪项是正确的？
+(A)
+(B)
+(C)
+(D)
+(E)
+# 9. Balloons are sold in packets of 5, 10 and 25. Marius buys exactly 70 balloons. What is
+the smallest number of packets he could buy?
+Belon-belon telah dibungkus ke dalam paket yang mengandungi 5 belon, 10 belon dan 25
+belon untuk jualan. Marius membeli tepat 70 belon. Berapakah bilangan paket paling sedikit
+yang boleh dibelinya?
+气球以每包5 粒、10 粒和25 粒的形式出售。Marius 买了恰好70 粒气球。请问他最少
+买了多少包？
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+6
+
+
+==== PAGE 7 chars=501 imgs=8 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 10. Bob folded a piece of paper. He cut one hole in the paper. Then he unfolded the piece
+of paper. The result is as shown in the picture. How did Bob fold his piece of paper?
+Bob melipat sekeping kertas. Dia menebuk satu lubang pada kertas tersebut. Kemudian
+dia membuka lipatan itu semula. Hasilnya ditunjukkan pada gambar berikut. Bagaimanakah
+Bob melipat kertas tersebut?
+Bob 把一张纸折起来。他在纸上剪了一个洞。接着，他把那一张纸打开来，结果如图所
+示。请问Bob 起初如何折那一张纸？
+(A)
+(B)
+(C)
+(D)
+(E)
+7
+
+
+==== PAGE 8 chars=1216 imgs=2 ====
+Kangaroo Math Competition 2017 – Ecolier
+4 points
+# 11. There is a tournament at the pool. First, 13 children signed up. And then, another 19
+children signed up. Six teams with an equal number of members are needed for the tournament.
+At least how many more children need to sign up, so that the tournament can start?
+Satu pertandingan diadakan di kolam renang. Pada awalnya, 13 murid telah mendaftar.
+Kemudian, 19 murid lagi telah mendaftar. Pertandingan akan dimulakan sekiranya terdapat
+enam pasukan dengan bilangan murid yang sama. Berapakah bilangan murid paling sedikit
+yang perlu ditambahkan supaya pertandingan itu boleh dimulakan?
+泳池有一个比赛。起初，13 位小孩报名参加。之后，另外19 位小孩报名参加。比赛需
+要六组，每组必须含有等量成员。请问至少还需要多少位小孩报名，比赛才能开始？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+# 12. Numbers are placed in the 4×4 square shown in the picture below. Mary wants to ﬁnd
+a 2 × 2 square where the sum of the numbers is the largest. What is that sum?
+Beberapa nombor diisikan di dalam kotak 4 × 4 seperti pada gambar berikut. Mary mahu
+mencari kotak 2 × 2 yang mempunyai hasil tambah nombor yang paling besar. Apakah hasil
+tambah tersebut?
+如图所示，数字被填入一个4 × 4 平方。Mary 想要找一个2 × 2 平方，使得那2 × 2 平
+方内数字之和是最大的。请问那一个和是多少？
+(A) 11
+(B) 12
+(C) 13
+(D) 14
+(E) 15
+8
+
+
+==== PAGE 9 chars=1085 imgs=2 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 13. David wants to cook 5 dishes with only 2 stoves. The times needed to cook the 5 dishes
+are 40 minutes, 15 minutes, 35 minutes, 10 minutes and 45 minutes. He may only remove a
+dish from a stove when it is cooked. What is the shortest time in which he can cook all of the
+dishes?
+David mahu memasak 5 lauk dengan menggunakan 2 dapur gas sahaja. Masa yang diper-
+lukan untuk memasak setiap lauk ialah 40 minit, 15 minit, 35 minit, 10 minit dan 45 minit. Dia
+hanya boleh memindahkan lauk dari atas dapur gas apabila lauk tersebut telah masak sepenuh-
+nya. Berapakah masa terpendek yang diperlukan untuk memasak kesemua lauk tersebut?
+David 想要烹饪5 道菜肴，但他只有2 个火炉。烹饪菜肴所需的时间分别为40 分钟、
+15 分钟、35 分钟、10 分钟以及45 分钟。他只能在一道菜肴烹饪完后，才把它从火炉上拿
+下。请问他至少需要多少时间来烹饪所有菜肴？
+(A) 60 min
+(B) 70 min
+(C) 75 min
+(D) 80 min
+(E) 85 min
+# 14. Which number should be written in the circle containing the question mark?
+Nombor yang manakah sepatutnya ditulis pada bulatan yang mempunyai tanda soal?
+请问哪一个数字应该被填在含有问号的圆圈里？
+?
++4
+-15
+x 4
+x 0
++6
+(A) 10
+(B) 11
+(C) 12
+(D) 13
+(E) 14
+9
+
+
+==== PAGE 10 chars=522 imgs=2 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 15. The picture shows a group of building blocks and the plan of that group. Some ink has
+dripped onto the plan. What is the sum of the numbers under the ink blots?
+Gambar di bawah menunjukkan binaan batu bata dan pelan binaan tersebut.
+Beberapa
+titisan dakwat telah tertumpah di atas pelan tersebut. Apakah hasil tambah nombor-nombor
+yang tersembunyi di bawah titisan dakwat tersebut?
+下图展示一组积木以及它的平面图。一些墨汁被滴在平面图上了。请问墨迹下面的数字
+之和是什么？
+3
+4
+1
+1
+3
+1
+1
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+10
+
+
+==== PAGE 11 chars=172 imgs=4 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 16. How long is the train?
+Berapakah panjang kereta api tersebut?
+请问这列火车有多长?
+(A) 55 m
+(B) 115 m
+(C) 170 m
+(D) 220 m
+(E) 230 m
+11
+
+
+==== PAGE 12 chars=1441 imgs=7 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 17. George starts his football training at 5.00pm. The journey from his house to the bus
+stop takes 5 minutes. The bus journey takes 15 minutes. It takes him 5 minutes to go from
+this bus stop to the training ﬁeld. At what time does he have to leave his house to arrive at
+the training ﬁeld exactly on time?
+George memulakan latihan bola sepak pada pukul 5.00pm. Perjalanan dari rumahnya ke
+perhentian bas mengambil masa 5 minit. Perjalanan bas pula mengambil masa 15 minit. Beliau
+perlu berjalan kaki 5 minit lagi untuk sampai ke padang latihan dari perhentian bas. Pada pukul
+berapakah dia perlu keluar dari rumahnya supaya dia tiba di padang latihan tepat pada masanya?
+George 在5.00pm 开始足球训练。从他的家到巴士站的行程为5 分钟。巴士行程为15
+分钟。下巴士之后，他得步行5 分钟以到达训练场地。请问他必须在什么时间从家里出发，
+以准时到达训练场地？
+(A)
+(B)
+(C)
+(D)
+(E)
+# 18. A small zoo has a giraﬀe, an elephant, a lion and a turtle. Susan wants to plan a
+tour where she sees 2 diﬀerent animals. She does not want to start with the lion. How many
+diﬀerent tours can she plan?
+Terdapat seekor zirafah, seekor gajah, seekor singa dan seekor penyu di dalam sebuah
+zoo. Susan ingin merancang satu lawatan untuk melihat 2 haiwan yang berbeza. Dia tidak
+mahu bermula dengan melihat singa terlebih dahulu. Berapakah bilangan lawatan yang boleh
+dirancangnya?
+一个小型动物园拥有一只长颈鹿、一头大象、一头狮子以及一只龟。Susan 想要安排一
+个行程，以让她游览2 种不一样的动物。她不想从狮子开始。请问她能安排多少个不一样的
+行程？
+(A) 3
+(B) 7
+(C) 8
+(D) 9
+(E) 12
+12
+
+
+==== PAGE 13 chars=1682 imgs=2 ====
+Kangaroo Math Competition 2017 – Ecolier
+# 19. Four brothers have eaten 11 cookies in total. Each of them has eaten at least one cookie.
+No two of them have eaten the same number of cookies. Three of them have eaten 9 cookies
+in total and one of them has eaten exactly 3 cookies. How many cookies have been eaten by
+the boy who has eaten the largest number of cookies?
+Empat orang adik-beradik telah memakan sejumlah 11 biskut. Setiap orang telah memakan
+sekurang-kurangnya satu biskut. Tiada dua orang yang telah memakan bilangan biskut yang
+sama. Tiga orang daripada mereka telah memakan sejumlah 9 biskut dan salah seorang daripada
+mereka telah memakan 3 biskut. Berapakah bilangan biskut yang telah dimakan oleh orang yang
+telah memakan paling banyak biskut?
+四位兄弟一共吃了11 块曲奇饼。每一位吃了至少一块曲奇饼，而且没有两位吃了等量
+的曲奇饼。其中三位一共吃了9 块曲奇饼，而其中一位吃了3 块曲奇饼。请问吃最多曲奇饼
+的男孩吃了多少块曲奇饼？
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+# 20. Ten bags each contain a diﬀerent number of candies from 1 to 10. There are 5 boys.
+Each boy took two bags of candies. Alex got 5 candies, Bob got 7 candies, Charles got 9
+candies, and Dennis got 15 candies. How many candies did Eric get?
+Terdapat sepuluh beg dan setiap beg mengandungi bilangan gula-gula yang berbeza daripada
+1 hingga 10. Terdapat 5 budak lelaki. Setiap daripada mereka mendapat dua beg gula-gula. Alex
+mendapat 5 gula-gula, Bob mendapat 7 gula-gula, Charles mendapat 9 gula-gula, dan Dennis
+mendapat 15 gula-gula. Berapakah gula-gula yang Eric dapat?
+十个袋子里各包含不一样数量的糖果，从1 粒到10 粒。有5 位男孩，而每一位拿了两个
+袋子。Alex 拿到了5 粒糖果、Bob 拿到了7 粒糖果、Charles 拿到了9 粒糖果以及Dennis
+拿到了15 粒糖果。请问Eric 拿到多少粒糖果？
+(A) 9
+(B) 11
+(C) 13
+(D) 17
+(E) 19
+END OF PAPER
+13
+答案：E A C A E A E E B C D D C D C B A D C E

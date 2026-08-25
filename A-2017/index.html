@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"/><title>Math Kangaroo 2017 Level A</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--ink:#0f172a}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:var(--ink);margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig,.optgrid{display:block;width:100%;max-width:640px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-weight:800}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:960px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.list{display:grid;gap:8px;max-width:720px;margin:0 auto}
+.list a{display:block;padding:12px 14px;border-radius:12px;background:#fff;border:2px solid #bae6fd;color:#0c4a6e;text-decoration:none;font-weight:700}
+</style></head><body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 EN / 中文</button>
+<h1 class="lang-zh">袋鼠数学 2017 · 等级 A（1–2 年级）</h1>
+<h1 class="lang-en">Math Kangaroo 2017 · Level 1 (Grades 1–2)</h1>
+<p class="meta lang-zh">共 20 题。教师答案见 <code>答案.md</code>。</p>
+<p class="meta lang-en">20 questions. Teacher key in <code>答案.md</code>.</p>
+<div class="list"><a href="1.html"><span class="lang-zh">1 · 请问是谁钓到了那条鱼？ · 3分</span><span class="lang-en">1 · Who catches the ﬁsh?… · 3 pts</span></a><a href="2.html"><span class="lang-zh">2 · 图中有数个5 角星、6… · 3分</span><span class="lang-en">2 · In the picture there are… · 3 pts</span></a><a href="3.html"><span class="lang-zh">3 · 图中的蛋糕被切后平分给了几位小朋… · 3分</span><span class="lang-en">3 · The cake in the picture is… · 3 pts</span></a><a href="4.html"><span class="lang-zh">4 · 请问如果我们依着这条直线剪，这条… · 3分</span><span class="lang-en">4 · If we cut along the dotted… · 3 pts</span></a><a href="5.html"><span class="lang-zh">5 · Ellen… · 3分</span><span class="lang-en">5 · Ellen wants to decorate the… · 3 pts</span></a><a href="6.html"><span class="lang-zh">6 · 请问这个雪屋缺少几个像… · 3分</span><span class="lang-en">6 · How many bricks like this… · 3 pts</span></a><a href="7.html"><span class="lang-zh">7 · 图中我们看见一条线串着四颗珠子。… · 3分</span><span class="lang-en">7 · In the picture we see a… · 3 pts</span></a><a href="8.html"><span class="lang-zh">8 · 我们从1、3、4、5 和7… · 3分</span><span class="lang-en">8 · We choose four numbers from… · 3 pts</span></a><a href="9.html"><span class="lang-zh">9 · 在宝石城这个国家里，你可以用一颗… · 3分</span><span class="lang-en">9 · In the country of Gemland… · 3 pts</span></a><a href="10.html"><span class="lang-zh">10 · 如图所示，Jim 和Ben… · 3分</span><span class="lang-en">10 · Jim and Ben sat on the… · 3 pts</span></a><a href="11.html"><span class="lang-zh">11 · Alfred… · 4分</span><span class="lang-en">11 · Alfred is rotating a shape… · 4 pts</span></a><a href="12.html"><span class="lang-zh">12 · 请问以下哪个图片中苹果的数量是萝… · 4分</span><span class="lang-en">12 · Which picture has twice as… · 4 pts</span></a><a href="13.html"><span class="lang-zh">13 · Brian 和William… · 4分</span><span class="lang-en">13 · Brian and William stand in… · 4 pts</span></a><a href="14.html"><span class="lang-zh">14 · 现在是一点半。请问两个半小时之前… · 4分</span><span class="lang-en">14 · Now it is half past one… · 4 pts</span></a><a href="15.html"><span class="lang-zh">15 · Sepehr… · 4分</span><span class="lang-en">15 · Sepehr has two paperboards.… · 4 pts</span></a><a href="16.html"><span class="lang-zh">16 · 一只袋鼠在1 分钟内跳10… · 4分</span><span class="lang-en">16 · A kangaroo makes 10 jumps… · 4 pts</span></a><a href="17.html"><span class="lang-zh">17 · 请问哪个印章可以印出下图？ · 4分</span><span class="lang-en">17 · Which stamp has been used… · 4 pts</span></a><a href="18.html"><span class="lang-zh">18 · 每一把钥匙可以打开其中一把锁。钥… · 4分</span><span class="lang-en">18 · Each of the 4 keys ﬁts one… · 4 pts</span></a><a href="19.html"><span class="lang-zh">19 · 在Old McDonald… · 4分</span><span class="lang-en">19 · In Old McDonald’s barn… · 4 pts</span></a><a href="20.html"><span class="lang-zh">20 · 给定三张有洞的卡片。每一张卡片上… · 4分</span><span class="lang-en">20 · Given three cards with… · 4 pts</span></a></div></body></html>

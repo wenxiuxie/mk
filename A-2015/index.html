@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"/><title>Math Kangaroo 2015 Level A</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--ink:#0f172a}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:var(--ink);margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig,.optgrid{display:block;width:100%;max-width:640px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-weight:800}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;width:100%;max-width:960px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.list{display:grid;gap:8px;max-width:720px;margin:0 auto}
+.list a{display:block;padding:12px 14px;border-radius:12px;background:#fff;border:2px solid #bae6fd;color:#0c4a6e;text-decoration:none;font-weight:700}
+</style></head><body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 EN / 中文</button>
+<h1 class="lang-zh">袋鼠数学 2015 · 等级 A（1–2 年级）</h1>
+<h1 class="lang-en">Math Kangaroo 2015 · Level 1 (Grades 1–2)</h1>
+<p class="meta lang-zh">共 24 题。教师答案见 <code>答案.md</code>。</p>
+<p class="meta lang-en">24 questions. Teacher key in <code>答案.md</code>.</p>
+<div class="list"><a href="1.html"><span class="lang-zh">1 · 1. Which figure… · 3分</span><span class="lang-en">1 · Question 1 · 3 pts</span></a><a href="2.html"><span class="lang-zh">2 · 2. How many… · 3分</span><span class="lang-en">2 · Question 2 · 3 pts</span></a><a href="3.html"><span class="lang-zh">3 · 3. Find the… · 3分</span><span class="lang-en">3 · Question 3 · 3 pts</span></a><a href="4.html"><span class="lang-zh">4 · 下图瓢虫中有多少个点点？ · 3分</span><span class="lang-en">4 · Five lady-bugs live on a… · 3 pts</span></a><a href="5.html"><span class="lang-zh">5 · 5. Eric had 10… · 3分</span><span class="lang-en">5 · Question 5 · 3 pts</span></a><a href="6.html"><span class="lang-zh">6 · Which of the… · 3分</span><span class="lang-en">6 · Which of the following… · 3 pts</span></a><a href="7.html"><span class="lang-zh">7 · 7. What does… · 3分</span><span class="lang-en">7 · Question 7 · 3 pts</span></a><a href="8.html"><span class="lang-zh">8 · 8. What is the… · 3分</span><span class="lang-en">8 · 4 point problems Don made… · 3 pts</span></a><a href="9.html"><span class="lang-zh">9 · 小D用两个正方体堆成两个立方体。… · 4分</span><span class="lang-en">9 · It takes half an hour for… · 4 pts</span></a><a href="10.html"><span class="lang-zh">10 · Don made two… · 4分</span><span class="lang-en">10 · Don made two bricks by… · 4 pts</span></a><a href="11.html"><span class="lang-zh">11 · Marko has 9… · 4分</span><span class="lang-en">11 · Marko has 9 sweets and Tomo… · 4 pts</span></a><a href="12.html"><span class="lang-zh">12 · Six towers are… · 4分</span><span class="lang-en">12 · Six towers are built with… · 4 pts</span></a><a href="13.html"><span class="lang-zh">13 · 13. Which piece… · 4分</span><span class="lang-en">13 · Question 13 · 4 pts</span></a><a href="14.html"><span class="lang-zh">14 · one slice to… · 4分</span><span class="lang-en">14 · The date 5/5/2015 has three… · 4 pts</span></a><a href="15.html"><span class="lang-zh">15 · Mother ordered… · 4分</span><span class="lang-en">15 · Mother ordered 2 pizzas and… · 4 pts</span></a><a href="16.html"><span class="lang-zh">16 · Place each of… · 4分</span><span class="lang-en">16 · Place each of the numbers… · 4 pts</span></a><a href="17.html"><span class="lang-zh">17 · There were 11… · 5分</span><span class="lang-en">17 · There were 11 flags on a… · 5 pts</span></a><a href="18.html"><span class="lang-zh">18 · 一只袋鼠从圆S沿着线跳到下一个圆… · 5分</span><span class="lang-en">18 · The Kangaroo jumps from… · 5 pts</span></a><a href="19.html"><span class="lang-zh">19 · A ship was… · 5分</span><span class="lang-en">19 · A ship was attacked by… · 5 pts</span></a><a href="20.html"><span class="lang-zh">20 · During 3 days… · 5分</span><span class="lang-en">20 · During 3 days Joy the cat… · 5 pts</span></a><a href="21.html"><span class="lang-zh">21 · Rick and Tom… · 5分</span><span class="lang-en">21 · Rick and Tom were building… · 5 pts</span></a><a href="22.html"><span class="lang-zh">22 · Nick built a… · 5分</span><span class="lang-en">22 · Nick built a cube using… · 5 pts</span></a><a href="23.html"><span class="lang-zh">23 · We left for a… · 5分</span><span class="lang-en">23 · We left for a summer camp… · 5 pts</span></a><a href="24.html"><span class="lang-zh">24 · The numbers 3,… · 5分</span><span class="lang-en">24 · The numbers 3, 5, 7, 8 and… · 5 pts</span></a></div></body></html>

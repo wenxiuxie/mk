@@ -1,0 +1,975 @@
+==== PAGE 1 chars=841 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+3 points
+A
+B
+C
+D
+E
+1.
+Akira lits 5 identical candles all at the same time.
+They stopped
+burning at different times and now look as shown in the picture.
+Which candle stopped burning first?
+小安将5 支相同的蜡烛同时点燃。蜡烛在不同的时间停止燃烧，现在
+看起来如图所示。
+哪支蜡烛最先停止燃烧？
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+2. The 2 kangaroo coins with the question mark on have the same value. What is this value?
+标注问号的两枚袋鼠硬币的面值相同。它们的面值是多少？
+20
+10
+10
+?
+?
+1
++
++
++
++
++
+=51
+(A) 1
+(B) 2
+(C) 5
+(D) 10
+(E) 20
+3. A gray circle with 2 large holes in it is put on top of a clock-face, as shown.
+如图所示，将带有两个孔的灰色圆盘放在钟面上。
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+1
+5
+The gray circle is turned around its center.
+Which 2 numbers is it possible to see at the same time?
+灰色圆盘绕其中心旋转。
+哪两个数字可能同时被看到？
+(A) 4 and 9
+4 和9
+(B) 5 and 9
+5 和9
+(C) 5 and 10
+5 和10
+(D) 6 and 9
+6 和9
+(E) 7 and 12
+7 和12
+3
+
+
+==== PAGE 2 chars=618 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+4. Alice has these puzzle pieces:
+小艾有以下拼图：
+1
+2
+3
+4
+Which 2 pieces can she put together to form this square?
+她可以用哪两块拼成下方的正方形？
+(A) 1 and 2
+1 和2
+(B) 1 and 3
+1 和3
+(C) 1 and 4
+1 和4
+(D) 2 and 3
+2 和3
+(E) 2 and 4
+2 和4
+5. A light engineer in the theatre turns the lights on and off. She uses the plan shown. How long in
+total are exactly 2 of the lights on at the same time?
+剧院里的灯光工程师负责灯光的开关，她的开关计划如下图所示。恰好有2 盏灯同时亮起的总时
+长是多少？
+Green
+绿色
+Orange
+minutes 分钟
+橘黄色
+Blue 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+蓝色
+(A) 2 minutes
+2 分钟
+(B) 6 minutes
+6 分钟
+(C) 8 minutes
+8 分钟
+(D) 9 minutes
+9 分钟
+(E) 10 minutes
+10 分钟
+4
+
+
+==== PAGE 3 chars=588 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+6. Kristoffer folds the transparent paper along the dashed line.
+小凯沿着中间虚线折叠透明纸。
+What can he then see?
+他能看到什么图案？
+(A)
+(B)
+(C)
+(D)
+(E)
+7. Anna has 4 discs of different sizes. She wants to build a tower of 3 discs so
+that every disc is smaller than the disc below it. How many different towers
+can Anna make?
+小娜有4 张大小不同的圆盘。她想建造一个由3 张圆盘组成的塔，并且
+每张圆盘都比紧邻其下方的圆盘小。小娜能建造多少个不同的塔？
+(A) 1
+(B) 2
+(C) 4
+(D) 5
+(E) 6
+8. Danny glued the 2 pieces of paper
+on top of the black circle on the
+right.
+小丹把两张纸
+粘在右侧黑色圆上。
+What can he not obtain?
+他无法获得以下哪个图案？
+(A)
+(B)
+(C)
+(D)
+(E)
+5
+
+
+==== PAGE 4 chars=895 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+4 points
+9. The shape on the right is covered with the 5 pieces below.
+Which piece will cover the dot?
+右侧图形正好可以被下方选项中的5 个碎片覆盖住。
+哪个碎片将会覆盖在圆点上面？
+(A)
+(B)
+(C)
+(D)
+(E)
+10. There are six weights of 1, 2, 3, 4, 5 and 6 kg. Rossitza puts five of them on the scales and puts
+one weight aside. The scales balance. Which weight did she put aside?
+有六个砝码，重量分别为1、2、3、4、5 和6 千克。小罗将其中五个砝码放在天平上，还剩一个
+砝码。天平保持平衡，剩下的砝码重量是多少？
+(A) 1 kg 1 千克
+(B) 2 kg 2 千克
+(C) 3 kg 3 千克
+(D) 4 kg 4 千克
+(E) can’t be sure 无法确定
+11. Ali has a 60 cm ruler. Unfortunately, some of the markings have faded away. He is able to
+measure any of the lengths 10, 20 , 30 , 40 , 50 and 60 cm using his ruler only once.
+Which is Ali’s ruler?
+小力有一把60 cm 的尺子。但尺子上的一些刻度已经看不清了。每次他只用这把尺子量一回，就
+可以测出10、20、30、40、50 和60 cm 中的任意长度。
+以下哪把是小力的尺子？
+(A)
+10
+30
+60 cm
+(B)
+20
+40
+60 cm
+(C)
+30
+50
+60 cm
+(D)
+10 20
+60 cm
+(E)
+10
+40
+60 cm
+6
+
+
+==== PAGE 5 chars=1261 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+Road A 
+路 A
+Road B
+路 B
+East
+West西
+东
+North 
+South 南
+北
+12. There are 7 houses north of Road A, 8 houses east
+of Road B and 5 houses south of Road A.
+How many houses are west of Road B?
+路A 的北面有7 栋房屋，路B 的东面有8 栋房
+屋，路A 的南面有5 栋房屋。路B 的西面有多少栋
+房屋？
+(A) 4
+(B) 5
+(C) 6
+(D) 7
+(E) 8
+13. There are 8 cars waiting in a queue for the ferry. Every car contains either 2 or 3 people. There
+are 19 people in total waiting for the ferry. How many cars contain exactly 2 people?
+有8 辆摆渡车在排队等候。每辆车可容纳2 人或3 人，一共有19 人在等待摆渡。有多少辆车恰
+好只坐了两个人？
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+West
+East
+A
+B
+C
+D
+E
+F
+西
+东
+14. The Metro line has 6 stations, A, B, C,
+D, E, and F.
+The train stops at every station.
+When it reaches one of the two end stations, it changes its direction.
+The train driver started driving at station B and her first stop was station C.
+Which station will be her 96th stop?
+地铁线路有6 个车站A、B、C、D、E 和F。
+地铁每站都会停。
+当地铁到达两端的终点站时，就会改变方向。
+地铁司机从B 站出发，到达的第一站是C 站。
+那么第96 站是哪一站？
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+15. Hatice wants to paint the circles in the picture.
+She wants to paint any 2 circles connected with a line different colours.
+What is the smallest number of colours she needs?
+小花想将图中的圆圈全部涂色，同一条线段连接的任意两个圆圈都涂
+上不同颜色。她最少需要多少种颜色？
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+7
+
+
+==== PAGE 6 chars=1068 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+16. Sam walks through the two-storey maze from the entrance to the exit, passing 3 wall stickers.
+In what order will she see them?
+小莎从入口走到出口，会穿过两层楼的迷宫，路过三张贴纸。她会按照什么顺序看到这些贴纸？
+IN
+OUT
+出口
+ground ﬂoor 一楼
+入口
+ﬁrst ﬂoor 二楼
+(A)
+(B)
+(C)
+(D)
+(E)
+5 points
+1
+2
+3
+4
+5
+6
+7
+8
+17. 6 beavers and 2 kangaroos are standing in a line.
+Amongst any 3 consecutively numbered animals, exactly 1 is a
+kangaroo. Which numbered animal is a kangaroo?
+6 只海狸和2 只袋鼠站成一排。任意3 个编号连续的动物中，恰好有1 只是袋鼠。以下哪个编号
+对应的是袋鼠？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+18. Rebecca folds a square piece of paper twice. Then she cuts off one corner. Next, she unfolds the
+paper. What does the paper look like once unfolded?
+小瑞将一张正方形纸对折了两次，然后剪掉一个角，最后将这张纸展开。以下哪项是这张纸展开
+后的样子？
+(A)
+(B)
+(C)
+(D)
+(E)
+19. Hermione, Harry and Ron always walk into the common room one at a time.
+Hermione is never first, Harry is never second and Ron is never third.
+In how many different orders could they walk in?
+赫敏、哈利和罗恩总是按照不同顺序走进公共休息室。
+赫敏从来不是第一个，哈利从来不是第二个，罗恩从来不是第三个。
+他们可以有多少种不同的顺序进入休息室？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 6
+8
+
+
+==== PAGE 7 chars=1054 imgs=38 ====
+Math Kangaroo 2023 (China)–Level B
+20. There are five clocks on the wall. It is known that one clock is an hour fast, one clock is an hour
+slow, one clock shows the correct time and two clocks have stopped. Which clock shows the correct
+time?
+墙上挂着五个钟。已知有一个钟走快了一小时，一个钟走慢了一小时，一个钟显示正确的时间，两
+个时钟已停止工作，以下哪个钟显示的时间是正确的？
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+21. Adam and Brenda have 9 marbles each.
+Together, they have 8 red and 10 blue marbles.
+Brenda has twice as many blue marbles as red marbles.
+How many blue marbles does Adam have?
+小亚和小布每人有9 颗弹珠，两人的弹珠加起来一共有
+8 颗红色弹珠和10 颗蓝色弹珠。小布拥有的蓝色弹珠是红
+色弹珠的两倍。小亚有多少颗蓝色弹珠？
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 0
+22. Else has two machines. When she puts a square sheet of paper in machine R, it turns the paper
+90◦clockwise, as shown in the picture. When she puts the paper in machine S, it stamps the paper
+with a ♣.
+小艾有两台机器。如图所示, 当她把一张方形纸放进机器R 时，它会把纸张顺时针旋转90◦；当把
+方形纸放进机器S 时，它会在纸张上打印出图案♣。
+R
+S
+♣
+In which order are the machines used to produce the result shown?
+要在纸张上最终形成下图所示的图案，使用机器的顺序是什么？
+?
+?
+?
+♣
+(A) SRR
+(B) RSR
+(C) RSS
+(D) RRS
+(E) SRS
+9
+
+
+==== PAGE 8 chars=846 imgs=2 ====
+Math Kangaroo 2023 (China)–Level B
+7
+9
+8
+9
+6
+9
+8
+23. Teacher Olena wants to write the numbers 1 to 7 in the circles. Inside each
+circle she writes 1 number. She wants the sum of the numbers in 2 circles that
+are next to each other to be as shown. What number must she write inside the
+green/shaded circle?
+小欧老师想把数字1 到7 写在圆圈里，每个圆圈内写一个数字。她希望相邻圆
+圈中的数字之和如图所示。她必须在绿色/阴影圆圈内写的数字是多少？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+24. Maria has shaded exactly 5 cells in a 4 × 4 grid. She challenges 5 of her friends to guess which
+cells she has shaded. The grids they have drawn are shown below. Maria looks at them and says:
+“One of you is right and each of the rest of you has four cells correct.”Which is the correct answer?
+小玛在一个4 × 4 网格中只给5 个单元格涂上了阴影。她邀请5 个朋友猜测涂上阴影的单元格有
+哪些。5 个朋友绘制的网格如下所示。小玛看着他们说：“你们当中有一个是正确的，其余的每个人都
+猜对了四个阴影单元格。”以下哪个网格是正确的？
+(A)
+(B)
+(C)
+(D)
+(E)
+10
+
+
+==== PAGE 9 chars=1251 imgs=0 ====
+Ecolier Finalized
+Ecolier
+3 points
+A
+B
+C
+D
+E
+1 (France). Akira lits 5 identical candles all at the same time.
+They stopped burning at different times and now look as shown in the
+picture.
+Which candle stopped burning first?
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution: Since they are initially identical candles, the one that went out first is the one whose size
+has decreased the least.
+2 (Denmark). The 2 kangaroo coins with the question mark on have the same value.
+What is this value?
+20
+10
+10
+?
+?
+1
++
++
++
++
++
+=51
+(A) 1
+(B) 2
+(C) 5
+(D) 10
+(E) 20
+Solution: The value of the 2 coins together is 51 −20 −10 −10 −1 = 10. Hence their value is 5.
+3 (Denmark). A gray circle with 2 large holes in it is put on top of a clock-face, as shown.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+1
+5
+The gray circle is turned around its center.
+Which 2 numbers is it possible to see at the same time?
+(A) 4 and 9
+(B) 5 and 9
+(C) 5 and 10
+(D) 6 and 9
+(E) 7 and 12
+Solution: The picture shows that one hole will show a time 4 hours after the other. This is only
+true for B.
+4 (Denmark). Alice has these puzzle pieces:
+1
+2
+3
+4
+Which 2 pieces can she put together to form this square?
+(A) 1 and 2
+(B) 1 and 3
+(C) 1 and 4
+(D) 2 and 3
+(E) 2 and 4
+1
+Solutions included - do not use for contest
+
+
+==== PAGE 10 chars=966 imgs=0 ====
+Ecolier Finalized
+Solution:
+5 (Slovakia). A light engineer in the theatre turns the lights on and off.
+She uses the plan shown.
+How long in total are exactly 2 of the lights on at the same time?
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+minutes
+Green
+Orange
+Blue
+(A) 2 minutes
+(B) 6 minutes
+(C) 8 minutes
+(D) 9 minutes
+(E) 10 minutes
+Solution: The diagram shows twelve instants (minutes), numbered from 1 to 12, at which the lights
+are turned on or turned off. There are exactly 2 lights on during the following instants (minutes): 2
+(green and blue lights), 4 (green and orange lights), 5 (green and orange lights), 6 (orange and blue
+lights), 7 (green and blue lights), 9 (green and orange lights), 11 (orange and blue lights), and 12
+(orange and blue lights). Thus, there are 2 lights on for 8 minutes.
+6 (Denmark). Kristoffer folds the transparent paper along the dashed line.
+What can he then see?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution:
+2
+Solutions included - do not use for contest
+
+
+==== PAGE 11 chars=1588 imgs=0 ====
+Ecolier Finalized
+7 (Slovenia). Anna has 4 discs of different sizes.
+She wants to build a tower of 3 discs so that every disc is smaller than the disc
+below it.
+How many different towers can Anna make?
+(A) 1
+(B) 2
+(C) 4
+(D) 5
+(E) 6
+Solution: We can use A, B, C and D to describe the 4 discs orderd by size. Without the disc A
+there is exactly 1 way to costruct such a tower: BCD. Without the disc B there is exactly 1 way to
+costruct such a tower: ACD. Without the disc C there is exactly 1 way to costruct such a tower: ABD.
+Without the disc D there is exactly 1 way to costruct such a tower: ABC. Therefore, Anna can make
+4 different towers.
+8 (Germany). Danny glued the 2 pieces of paper
+on top of the black
+circle on the right.
+What can he not obtain?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: Answer: D. Danny can obtain the composition (A) by gluing the grey piece over the black
+piece, and the white piece over the grey piece. He also can obtain the composition (B) by gluing the
+white piece over the black piece, and the grey piece over the black and the white pieces, as shown
+beside:
+It is possible to obtain the composition (C) by gluing the white and grey pieces over the black piece.
+Finally, it is possible to obtain the composition (D) by gluing the white piece over the black piece,
+and the grey piece over the black and the white pieces, as shown beside:
+However, it is impossible to obtain the composition (E), because the grey piece is shaped like two
+white pieces together, while this option shows two grey pieces separated.
+4 points
+3
+Solutions included - do not use for contest
+
+
+==== PAGE 12 chars=1399 imgs=0 ====
+Ecolier Finalized
+9 (Greece). The shape on the right is covered with the 5 pieces below.
+Which piece will cover the dot?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: Firstly, we have to choose the piece for the corner. C is the only option to place.
+Now there are 3 and half squares on the horizontal position and 2 and half on the vertical position
+are still needed to fill.
+Combination of Piece B and Piece D can make the figure:
+and combination of Piece A and Piece
+C can make the figure
+So, the piece that covers the dot is A.
+(Or)
+We can cover the figure with the five pieces as below.
+So, the piece that covers the dot is A.
+10 (Russia). There are six weights of 1, 2, 3, 4, 5 and 6 kg.
+Rossitza puts five of them on the scales and puts one weight aside.
+The scales balance.
+Which weight did she put aside?
+(A) 1 kg
+(B) 2 kg
+(C) 3 kg
+(D) 4 kg
+(E) can’t be sure
+Solution: Weights 5 and 6 kg are already used. If we do not use weights 2 or 4 kg the total weight
+of the remaining weights will be expressed as an odd number (19 and 17 kg accordingly). In this case
+it is impossible to divide the weights so that the scales come in balance. So the answer is 1 or 3 kg.
+Let’s check them. Without the weight 1 kg the total weight will be 2 + 3 + 4 + 5 + 6 = 20 kg. So
+on each bowl of the scales should be 10 kg. It is possible if we put 5 + 3 + 2 on one bowl and 4 + 6
+4
+Solutions included - do not use for contest
+
+
+==== PAGE 13 chars=2406 imgs=0 ====
+Ecolier Finalized
+on the other bowl. It matches with the picture. Without the weight 3 kg the total weight will be
+1 + 2 + 4 + 5 + 6 = 18 kg. So on each bowl should be 9 kg. It is possible if we put 5 + 4 on one bowl
+and 6 + 2 + 1 on the other bowl. But that does not match with the picture.
+11 (Greece). Ali has a 60 cm ruler.
+Unfortunately, some of the markings have faded away.
+He is able to measure any of the lengths 10, 20 , 30 , 40 , 50 and 60 cm using his ruler only once.
+Which is Ali’s ruler?
+(A)
+10
+30
+60 cm
+(B)
+20
+40
+60 cm
+(C)
+30
+50
+60 cm
+(D)
+10 20
+60 cm
+(E)
+10
+40
+60 cm
+Solution: With E) he has ready the length 10 cm. He can measure 20 cm by using the portion from
+40 to the end, which is of length 60-40 = 20 cm. He can get 30 from the marks by using 40-10 = 30
+cm. The length 40 cm is already marked, 50 cm is from 60-10 = 50 cm. and the length 60 cm is the
+whole ruler
+Road A
+Road B
+West
+East
+South
+North
+12 (Greece). There are 7 houses north of Road A, 8
+houses east of Road B and 5 houses south of Road A.
+How many houses are west of Road B?
+(A) 4
+(B) 5
+(C) 6
+(D) 7
+(E) 8
+Solution: The houses north and south of Road A are all the houses. So all the houses are 7+5 =
+12. The houses east and west of road B are also all the houses (so 12). As there are 8 houses east of
+it, the remaining 12-8 = 4 houses are west of road B. (Note we cannot find an exact number of houses
+per quarter. Going clockwise from the first quadrant they are N, 8-N, N-3 and 7-N houses respectively
+as the parameter N can vary on an appropriate range.)
+13 (Norway). There are 8 cars waiting in a queue for the ferry.
+Every car contains either 2 or 3 people.
+There are 19 people in total waiting for the ferry.
+How many cars contain exactly 2 people?
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+Solution: Answer: D. Since 19 is divisible neither by 3 nor 2, there are at least 1 car with 2 people
+and at least 1 car with three people. If there were exactly 1 car with three people, there would be 7
+cars with two people each. However, 19 - 3 = 16, and 2 x 7 = 14. If there were exactly 2 cars with
+three people each, there would be 6 cars with two people each. However, 19 - 6 = 13, and 2 x 6 =
+12. Considering there are exactly 3 cars with three people each, there must be 5 cars with two people
+each. Also, 19 - 9 = 10, and 2 x 5 = 10. Thus, there are 5 cars with two people each.
+5
+Solutions included - do not use for contest
+
+
+==== PAGE 14 chars=2345 imgs=0 ====
+Ecolier Finalized
+West
+East
+A
+B
+C
+D
+E
+F
+14 (Greece). The Metro line has 6 stations,
+A, B, C, D, E, and F.
+The train stops at every station.
+When it reaches one of the two end stations,
+it changes its direction.
+The train driver started driving at station B and her first stop was station C.
+Which station will be her 96th stop?
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution: Solution 1: After 10 stops she is at exactly the same position and is traveling to East. So
+we only need to calculate her location after 96-90 = 6 stops. That brings her to D and she is traveling
+towards the West. Solution 2: A B C D E F 1 2 3 4 9 8 7 6 5 10 11 12 13 14 19 18 17 16 15 And
+continue this until the number 96 is reached. Or notice some regularity in here, for example for F: 4,
+14, 24, 34, 44, 54, 64, 74, 84, 94, and then two more to the left from F so that will be D. Or notice
+that for D in every second row there is 6, 16, 26, 36, and so on, until 96 so the answer is D. Note that
+this question allows for solutions at many different levels.
+15 (Hungary). Hatice wants to paint the circles in the picture.
+She wants to paint any 2 circles connected with a line different colours.
+What is the smallest number of colours she needs?
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6
+Solution: Name the circles as shown in figure.
+A
+B
+C
+D
+E
+F
+G
+Among the circles, Circle D has the highest number of connections with the other circles. So, we have
+to start with this circle to get the correct answer. The question is the get the smallest number of
+colors to be used. If we paint Circle D with blue, we can use red in Circle F and green in Circle G.
+We can choose red or green for Circle A. If we choose red for Circle A, we can use green for Circle C
+because red is also used for Circle F and it is connected to Circle C. We can choose red or green for
+Circle B. We have to choose green for Circle B, red for Circle E because green is also used for Circle
+G and it is connected to Circle E. Therefore, the smallest number of colors we need is 3; red, blue and
+green. (Or) We can paint the circles as shown in the following figure.
+The smallest number of colors we need is 3; red, blue and green.
+16 (Belgium). Sam walks through the two-storey maze from the entrance to the exit, passing 3 wall
+stickers.
+In what order will she see them?
+6
+Solutions included - do not use for contest
+
+
+==== PAGE 15 chars=1746 imgs=2 ====
+Ecolier Finalized
+IN
+OUT
+ground ﬂoor
+ﬁrst ﬂoor
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: Sam has to walk along the numbers from the entrance to exit.
+Firstly, he will see the frog in number 4, then rhino in number 8 and finally shark on number 13. So,
+the answer is (A) frog, rhino and shark.
+5 points
+1
+2
+3
+4
+5
+6
+7
+8
+17 (Greece). 6 beavers and 2 kangaroos are standing in a line.
+Amongst any 3 consecutively numbered animals, exactly 1 is a
+kangaroo.
+Which numbered animal is a kangaroo?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution: If number 1 is a kangaroo then 2 and 3 are beavers. But if 2 and 3 are beavers, then 4 is a
+kangaroo. Similarly 5 and 6 are beavers and 7 is a kangaroo. This is impossible because we only have
+two kangaroos and we found at 1, 4 and 7. Similarly 2 cannot be a kangaroo because by a variant of
+the previous argument it would follow that the 2, 5 and 8 are (three, not two) kangaroos. Number 3 is
+a possibility: It follows 3 and 6 are kangaroos and the rest are beavers. We can reject the case where
+number 4 is a kangaroo as it forces 1 and 7 to be kangaroos. Also 5 is rejected with a similar argument.
+We conclude that numbers 3 and 6, and only them, are kangaroos.
+1
+2
+3
+4
+5
+6
+7
+8
+3
+6
+Solution 2: Starting with a kangaroo at the position 1 would mean there are kangaroos at positions 4
+and 7, and there are only two kangaroos; similarly, if the first kangaroo is at the position 2, we must
+have one at position 5 and position 8 which is not possible. Therefore, kangaroos are at positions 3
+and 6, so the answer is 3.
+18 (Slovakia). Rebecca folds a square piece of paper twice.
+Then she cuts off one corner.
+Next, she unfolds the paper.
+What does the paper look like once unfolded?
+7
+Solutions included - do not use for contest
+
+
+==== PAGE 16 chars=2047 imgs=18 ====
+Ecolier Finalized
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: The upper right quarter of the square retains its position after folding, and it has a triangle
+cut out at its bottom left, which after unfolding gives shape (B).
+19 (Hungary). Hermione, Harry and Ron always walk into the common room one at a time.
+Hermione is never first, Harry is never second and Ron is never third.
+In how many different orders could they walk in?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 6
+Solution: If Hermione is second, Ron must be third and Harry first. If Hermione is third, Harry
+must be first and Ron second. Therefore, there are two possible orders.
+20 (Russia). There are five clocks on the wall.
+It is known that one clock is an hour fast, one clock is an hour slow,
+one clock shows the correct time and two clocks have stopped.
+Which clock shows the correct time?
+(A) A
+(B) B
+(C) C
+(D) D
+(E) E
+Solution: Solution 1: If one clock shows the correct time, one clock is in a hurry for an hour and
+one clock is an hour behind then three clocks should show the time with a difference of 1 hour. The
+clock in the workshop shows 6, 2, 4, 3 and 7 o’clock. The only set that fits the condition is 2, 3 and
+4 hours. So the correct time - 3 o’clock - is shown by clock D. Solution 2: Having two clocks that
+are off by 1 hour means that together with the clock that shows correct time these clocks show three
+consecutive numbers. The clocks in the workshop show 6, 2, 4, 3, and 7 o’clock, hence the correct
+time is 3 o’clock.
+21 (Brazil). Adam and Brenda have 9 marbles each.
+Together, they have 8 red and 10 blue marbles.
+Brenda has twice as many blue marbles as red marbles.
+How many blue marbles does Adam have?
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 0
+Solution: Note: the picture is not necessary but can be used. Brenda has 6 blue and 3 red marbles
+which means Adam has the remaining 10-6=4 blue marbles.
+22 (Denmark). Else has two machines.
+When she puts a square sheet of paper in machine R, it turns the paper 90◦clockwise, as shown in
+the picture.
+8
+Solutions included - do not use for contest
+
+
+==== PAGE 17 chars=367 imgs=0 ====
+Ecolier Finalized
+When she puts the paper in machine S, it stamps the paper with a ♣.
+R
+S
+♣
+In which order are the machines used to produce the result shown?
+?
+?
+?
+♣
+(A) SRR
+(B) RSR
+(C) RSS
+(D) RRS
+(E) SRS
+Solution: The paper has been turned 90 degrees clockwise twice, but only one time after it was
+stamped. Hence RSR.
+9
+Solutions included - do not use for contest
+
+
+==== PAGE 18 chars=2466 imgs=1 ====
+Ecolier Finalized
+7
+9
+8
+9
+6
+9
+8
+23 (Greece). Teacher Olena wants to write the numbers 1 to 7 in the circles.
+Inside each circle she writes 1 number.
+She wants the sum of the numbers in 2 circles that are next to each other to be as
+shown.
+What number must she write inside the green/shaded circle?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution:
+Note:
+there
+is
+a
+b/w
+version
+with
+the
+word
+sum
+in
+it
+available
+Note. Alternative text (LB) for the second line of text: Along each line is the addition of the numbers
+in the 2 circles on that line. Solution 1: The problem can be solved by figuring out where the number
+1 goes. Notice that number 1 cannot give sum 9 together with a circle next to it as the available
+numbers are from 1 to 7. Therefore number 1 must go in the top circle, and from there it’s quick to
+figure that the green circle is filled with number 4.
+The solution can also be obtained by checking all the possible solutions for the green circle one by one.
+Solution 2: We work by checking systematically the cases. For example a) suppose for the moment
+that the green circle contain the number 1. Then going anti clock wise ALL other numbers can be
+filled using the given sums. For instance the next circle (on the right of the green one) must 5 so that
+the sum is 6. The next after that must be 6-5=1, then 9-1=8. This cannot be because the numbers
+are up to 7, so we start again supposing for the moment that b) the green circle contain the number
+2. This will be followed by 6-2=4, then by 9-4=5, then by 8-8=3 then by 7-3 = 4. This cannot be
+because the number 4 has already been used. So new start with c) with 3 at the green circle. The
+next number is again 3, which we reject. We start again with 4. This time it works as shown, and we
+are done. If we tried 5 it will fail as in the cases we already saw. Note that we can save time by doing
+some ad hoc little arguments to reject cases. For example at a) above we started with the number 1.
+This can immediately be rejected because the number on its left would have to be 9-1= 8, which is
+not permitted. And so on.
+7
+9
+8
+9
+6
+9
+8
+1
+6
+3
+5
+4
+2
+7
+24 (Catalonia). Maria has shaded exactly 5 cells in a 4 × 4 grid.
+She challenges 5 of her friends to guess which cells she has shaded.
+The grids they have drawn are shown below.
+Maria looks at them and says: ”One of you is right and each of the rest of you has four cells correct.”
+Which is the correct answer?
+10
+Solutions included - do not use for contest
+
+
+==== PAGE 19 chars=274 imgs=0 ====
+Ecolier Finalized
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: There are three shaded cells which are common for all grids. Looking at the differences,
+the only grid which differs from each of the other grids by exactly one cell is grid (E).
+11
+Solutions included - do not use for contest

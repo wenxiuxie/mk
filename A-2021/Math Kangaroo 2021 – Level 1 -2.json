@@ -1,578 +1,584 @@
-[
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q13: Two Pieces Make a Figure",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第13题：两块拼图"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Which figure can be made from these two pieces?",
-      "zh": "用这两块拼图可以拼出下面哪个图形？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
-      },
-      {
-        "en": "B",
-        "zh": "B"
-      },
-      {
-        "en": "C",
-        "zh": "C"
-      },
-      {
-        "en": "D",
-        "zh": "D"
-      },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 1,
-    "explanation": {
-      "en": "Try fitting the two pieces together without gaps or overlaps.",
-      "zh": "把两块拼在一起，看哪个选项吻合。"
-    },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 13,
-      "points": 4,
-      "answer_letter": "A",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
+{
+  "title": {
+    "en": "Math Kangaroo 2021 – Level 1 -2",
+    "zh": "Math Kangaroo 2021 – 等级 1 -2 -2"
   },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q14: Kangball Points",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第14题：袋鼠球得分"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Julie and Angela played “kangball”. Each goal scores 2 points. Julie scored 5 goals and Angela scored 9 goals. How many more points than Julie did Angela score?",
-      "zh": "Julie 和 Angela 玩“袋鼠球”，每进一球得 2 分。Julie 进了 5 球，Angela 进了 9 球。Angela 比 Julie 多得多少分？"
-    },
-    "choices": [
-      {
-        "en": "4",
-        "zh": "4"
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q13: Two Pieces Make a Figure",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第13题：两块拼图"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "type": "single_choice",
+      "content": {
+        "en": "Which figure can be made from these two pieces?",
+        "zh": "用这两块拼图可以拼出下面哪个图形？"
       },
-      {
-        "en": "8",
-        "zh": "8"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Try fitting the two pieces together without gaps or overlaps.",
+        "zh": "把两块拼在一起，看哪个选项吻合。"
       },
-      {
-        "en": "10",
-        "zh": "10"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "12",
-        "zh": "12"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Angela has 4 more goals × 2 points = 8 more points.",
-      "zh": "Angela 多 4 球，每球 2 分，多 8 分。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 14,
-      "points": 4,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q15: Whose House Is Eva's",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第15题：Eva的家"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The picture shows the five houses of five friends and their school. The school is the largest building in the picture. To go to school, Doris and Ali walk past Leo’s house. Eva walks past Chloe’s house. Which is Eva’s house?",
-      "zh": "下图展示了五个朋友的家和学校的位置。学校是图中最大的建筑。上学路上 Doris 和 Ali 会经过 Leo 的家，Eva 会经过 Chloe 的家。请问哪一个是 Eva 的家？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q14: Kangball Points",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第14题：袋鼠球得分"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Julie and Angela played “kangball”. Each goal scores 2 points. Julie scored 5 goals and Angela scored 9 goals. How many more points than Julie did Angela score?",
+        "zh": "Julie 和 Angela 玩“袋鼠球”，每进一球得 2 分。Julie 进了 5 球，Angela 进了 9 球。Angela 比 Julie 多得多少分？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Angela has 4 more goals × 2 points = 8 more points.",
+        "zh": "Angela 多 4 球，每球 2 分，多 8 分。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Use who walks past whose house and the school location.",
-      "zh": "结合谁经过谁的家以及学校位置推理。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 15,
-      "points": 4,
-      "answer_letter": "B",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q16: Leaves on Two Branches",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第16题：两根树枝上的叶子"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The kangaroo had two branches for lunch. Each branch had 10 leaves. The kangaroo ate some leaves from one branch. Then, from the second branch, it ate as many leaves as were left on the first branch. How many leaves in total were left on the two branches?",
-      "zh": "袋鼠中午吃了两根树枝上的叶子。每根树枝上有 10 片叶子。袋鼠先吃掉第一根上的一些叶子，再从第二根上吃掉与第一根剩余叶子同样多的叶子。两根树枝上总共还剩多少片叶子？"
-    },
-    "choices": [
-      {
-        "en": "5",
-        "zh": "5"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q15: Whose House Is Eva's",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第15题：Eva的家"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "type": "single_choice",
+      "content": {
+        "en": "The picture shows the five houses of five friends and their school. The school is the largest building in the picture. To go to school, Doris and Ali walk past Leo’s house. Eva walks past Chloe’s house. Which is Eva’s house?",
+        "zh": "下图展示了五个朋友的家和学校的位置。学校是图中最大的建筑。上学路上 Doris 和 Ali 会经过 Leo 的家，Eva 会经过 Chloe 的家。请问哪一个是 Eva 的家？"
       },
-      {
-        "en": "8",
-        "zh": "8"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Use who walks past whose house and the school location.",
+        "zh": "结合谁经过谁的家以及学校位置推理。"
       },
-      {
-        "en": "10",
-        "zh": "10"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "15",
-        "zh": "15"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "If x left on the first, second loses x too; total left = x + (10 − x) = 10.",
-      "zh": "设第一根剩 x，第二根再吃掉 x，总共剩 x+(10−x)=10。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 16,
-      "points": 5,
-      "answer_letter": "D",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q17: Which Shape Was Not Used",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第17题：哪块形状没用到"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Mara built the square by using four of the following five shapes. Which shape was not used?",
-      "zh": "Mara 用下面五块形状中的四块拼成了正方形。哪一块没有被用到？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q16: Leaves on Two Branches",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第16题：两根树枝上的叶子"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "The kangaroo had two branches for lunch. Each branch had 10 leaves. The kangaroo ate some leaves from one branch. Then, from the second branch, it ate as many leaves as were left on the first branch. How many leaves in total were left on the two branches?",
+        "zh": "袋鼠中午吃了两根树枝上的叶子。每根树枝上有 10 片叶子。袋鼠先吃掉第一根上的一些叶子，再从第二根上吃掉与第一根剩余叶子同样多的叶子。两根树枝上总共还剩多少片叶子？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "15",
+          "zh": "15"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "If x left on the first, second loses x too; total left = x + (10 − x) = 10.",
+        "zh": "设第一根剩 x，第二根再吃掉 x，总共剩 x+(10−x)=10。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 16,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "See which four shapes tile the square; the leftover is the answer.",
-      "zh": "看哪四块能铺满正方形，剩下那块即答案。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 17,
-      "points": 5,
-      "answer_letter": "D",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q18: Witch Apples and Bananas",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第18题：女巫的苹果和香蕉"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Every time the witch has 3 apples she turns them into 1 banana. Every time she has 3 bananas she turns them into 1 apple. What will she finish with if she starts with 4 apples and 5 bananas?",
-      "zh": "女巫每有 3 个苹果就变成 1 根香蕉；每有 3 根香蕉就变成 1 个苹果。如果开始有 4 个苹果和 5 根香蕉，她最终会剩下什么？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q17: Which Shape Was Not Used",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第17题：哪块形状没用到"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Mara built the square by using four of the following five shapes. Which shape was not used?",
+        "zh": "Mara 用下面五块形状中的四块拼成了正方形。哪一块没有被用到？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "See which four shapes tile the square; the leftover is the answer.",
+        "zh": "看哪四块能铺满正方形，剩下那块即答案。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 1,
-    "explanation": {
-      "en": "Keep converting while she has 3 of a kind; track the final fruits.",
-      "zh": "只要凑满 3 个同类就转换，跟踪最终剩下的水果。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 18,
-      "points": 5,
-      "answer_letter": "A",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q19: Two Boxes Same Sum",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第19题：两个盒子数字和相等"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The cards shown (2, 3, 4, 5, 6) are placed into two boxes. The sums of the numbers in each box are the same. Which number must be in the box with the number 4?",
-      "zh": "把卡片 2、3、4、5、6 放进两个盒子，使两个盒子里数字的和相同。与数字 4 在同一盒子里的数一定是哪个？"
-    },
-    "choices": [
-      {
-        "en": "only 3",
-        "zh": "只能是 3"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q18: Witch Apples and Bananas",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第18题：女巫的苹果和香蕉"
       },
-      {
-        "en": "only 5",
-        "zh": "只能是 5"
+      "type": "single_choice",
+      "content": {
+        "en": "Every time the witch has 3 apples she turns them into 1 banana. Every time she has 3 bananas she turns them into 1 apple. What will she finish with if she starts with 4 apples and 5 bananas?",
+        "zh": "女巫每有 3 个苹果就变成 1 根香蕉；每有 3 根香蕉就变成 1 个苹果。如果开始有 4 个苹果和 5 根香蕉，她最终会剩下什么？"
       },
-      {
-        "en": "only 6",
-        "zh": "只能是 6"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Keep converting while she has 3 of a kind; track the final fruits.",
+        "zh": "只要凑满 3 个同类就转换，跟踪最终剩下的水果。"
       },
-      {
-        "en": "only 5 or 6",
-        "zh": "只能是 5 或 6"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "impossible to determine",
-        "zh": "无法确定"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Total sum 20, each box sums to 10; with 4 the partner must be 6.",
-      "zh": "总和 20，每盒和为 10；与 4 同盒只能是 6。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 19,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q20: Two Cogs Black Teeth",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第20题：两个齿轮的黑齿"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The picture shows two cogs, each with a black tooth. Where will the black teeth be after the small cog has made one full turn?",
-      "zh": "图中有两个齿轮，每个都有一颗黑齿。小齿轮完整转一圈后，两颗黑齿会在什么位置？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q19: Two Boxes Same Sum",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第19题：两个盒子数字和相等"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "The cards shown (2, 3, 4, 5, 6) are placed into two boxes. The sums of the numbers in each box are the same. Which number must be in the box with the number 4?",
+        "zh": "把卡片 2、3、4、5、6 放进两个盒子，使两个盒子里数字的和相同。与数字 4 在同一盒子里的数一定是哪个？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "only 3",
+          "zh": "只能是 3"
+        },
+        {
+          "en": "only 5",
+          "zh": "只能是 5"
+        },
+        {
+          "en": "only 6",
+          "zh": "只能是 6"
+        },
+        {
+          "en": "only 5 or 6",
+          "zh": "只能是 5 或 6"
+        },
+        {
+          "en": "impossible to determine",
+          "zh": "无法确定"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Total sum 20, each box sums to 10; with 4 the partner must be 6.",
+        "zh": "总和 20，每盒和为 10；与 4 同盒只能是 6。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Track relative positions after one full turn of the small cog.",
-      "zh": "跟踪小齿轮转一圈后黑齿的相对位置。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 20,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q21: Dance Pairs Minutes",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第21题：跳舞配对分钟数"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Three girls and two boys were dancing. They danced in pairs so that each girl danced with each boy for exactly one minute. At any time, there was only one pair on the dance floor. For how many minutes did they dance?",
-      "zh": "三个女孩和两个男孩跳舞。他们两人一对，每个女孩与每个男孩都正好跳一分钟。任意时刻场上只有一对。他们一共跳了多少分钟？"
-    },
-    "choices": [
-      {
-        "en": "5",
-        "zh": "5"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q20: Two Cogs Black Teeth",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第20题：两个齿轮的黑齿"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "type": "single_choice",
+      "content": {
+        "en": "The picture shows two cogs, each with a black tooth. Where will the black teeth be after the small cog has made one full turn?",
+        "zh": "图中有两个齿轮，每个都有一颗黑齿。小齿轮完整转一圈后，两颗黑齿会在什么位置？"
       },
-      {
-        "en": "8",
-        "zh": "8"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Track relative positions after one full turn of the small cog.",
+        "zh": "跟踪小齿轮转一圈后黑齿的相对位置。"
       },
-      {
-        "en": "9",
-        "zh": "9"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "10",
-        "zh": "10"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "3 girls × 2 boys = 6 pairs, each 1 minute → 6 minutes.",
-      "zh": "3×2=6 对，每对 1 分钟，共 6 分钟。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 21,
-      "points": 5,
-      "answer_letter": "B",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q22: Cookie Trays",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第22题：饼干烤盘"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Each participant in a cooking contest baked one tray of cookies like the one shown. What is the smallest number of trays of cookies needed to make the following plate?",
-      "zh": "每位参赛者烤出一盘如图所示的饼干。要摆成下面的盘子，最少需要几盘饼干？"
-    },
-    "choices": [
-      {
-        "en": "1",
-        "zh": "1"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q21: Dance Pairs Minutes",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第21题：跳舞配对分钟数"
       },
-      {
-        "en": "2",
-        "zh": "2"
+      "type": "single_choice",
+      "content": {
+        "en": "Three girls and two boys were dancing. They danced in pairs so that each girl danced with each boy for exactly one minute. At any time, there was only one pair on the dance floor. For how many minutes did they dance?",
+        "zh": "三个女孩和两个男孩跳舞。他们两人一对，每个女孩与每个男孩都正好跳一分钟。任意时刻场上只有一对。他们一共跳了多少分钟？"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "choices": [
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "3 girls × 2 boys = 6 pairs, each 1 minute → 6 minutes.",
+        "zh": "3×2=6 对，每对 1 分钟，共 6 分钟。"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "5",
-        "zh": "5"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "See how many trays are needed to supply the cookies on the plate.",
-      "zh": "看目标盘子需要多少盘里的饼干。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 22,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q23: Kangie's Fruit in Two Weeks",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第23题：两周吃的水果"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Kangie eats only apples on Monday, Wednesday and Friday. On Tuesdays and Thursdays he eats only mangoes. He eats either 2 apples or 3 mangoes a day. On Saturdays and Sundays he eats nothing. How many pieces of fruit does Kangie eat in two weeks?",
-      "zh": "Kangie 在周一、周三、周五只吃苹果；周二、周四只吃芒果。他每天要么吃 2 个苹果，要么吃 3 个芒果。周六周日不吃。两周里他一共吃了多少个水果？"
-    },
-    "choices": [
-      {
-        "en": "12",
-        "zh": "12"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q22: Cookie Trays",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第22题：饼干烤盘"
       },
-      {
-        "en": "16",
-        "zh": "16"
+      "type": "single_choice",
+      "content": {
+        "en": "Each participant in a cooking contest baked one tray of cookies like the one shown. What is the smallest number of trays of cookies needed to make the following plate?",
+        "zh": "每位参赛者烤出一盘如图所示的饼干。要摆成下面的盘子，最少需要几盘饼干？"
       },
-      {
-        "en": "18",
-        "zh": "18"
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "See how many trays are needed to supply the cookies on the plate.",
+        "zh": "看目标盘子需要多少盘里的饼干。"
       },
-      {
-        "en": "20",
-        "zh": "20"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "24",
-        "zh": "24"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "Per week: 3×2 apples + 2×3 mangoes = 12; two weeks = 24.",
-      "zh": "每周：3天×2苹果 + 2天×3芒果 = 12；两周 24。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 23,
-      "points": 5,
-      "answer_letter": "E",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2021 – Level 1 -2 Q24: Toys on Shelves",
-      "zh": "Math Kangaroo 2021 – Level 1 -2 第24题：书架上的玩具"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Stan has five toys: a ball, a set of blocks, a game, a puzzle and a car. He puts each toy on a different shelf of the bookcase. The ball is higher than the blocks and lower than the car. The game is directly above the ball. On which shelf can the puzzle not be placed?",
-      "zh": "Stan 有五个玩具：球、积木、游戏、拼图和汽车。他把每个玩具放在书架不同的一层。球比积木高，比汽车低。游戏紧挨在球的上面。拼图不可能放在第几层？"
-    },
-    "choices": [
-      {
-        "en": "1",
-        "zh": "1"
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q23: Kangie's Fruit in Two Weeks",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第23题：两周吃的水果"
       },
-      {
-        "en": "2",
-        "zh": "2"
+      "type": "single_choice",
+      "content": {
+        "en": "Kangie eats only apples on Monday, Wednesday and Friday. On Tuesdays and Thursdays he eats only mangoes. He eats either 2 apples or 3 mangoes a day. On Saturdays and Sundays he eats nothing. How many pieces of fruit does Kangie eat in two weeks?",
+        "zh": "Kangie 在周一、周三、周五只吃苹果；周二、周四只吃芒果。他每天要么吃 2 个苹果，要么吃 3 个芒果。周六周日不吃。两周里他一共吃了多少个水果？"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "choices": [
+        {
+          "en": "12",
+          "zh": "12"
+        },
+        {
+          "en": "16",
+          "zh": "16"
+        },
+        {
+          "en": "18",
+          "zh": "18"
+        },
+        {
+          "en": "20",
+          "zh": "20"
+        },
+        {
+          "en": "24",
+          "zh": "24"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Per week: 3×2 apples + 2×3 mangoes = 12; two weeks = 24.",
+        "zh": "每周：3天×2苹果 + 2天×3芒果 = 12；两周 24。"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
       },
-      {
-        "en": "5",
-        "zh": "5"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Use the height constraints to see which shelf is impossible for the puzzle.",
-      "zh": "用高低关系判断拼图不可能放在哪一层。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2021",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 24,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2021 – Level 1 -2"
-    },
-    "is_published": true
-  }
-]
+    {
+      "title": {
+        "en": "Math Kangaroo 2021 – Level 1 -2 Q24: Toys on Shelves",
+        "zh": "Math Kangaroo 2021 – Level 1 -2 第24题：书架上的玩具"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Stan has five toys: a ball, a set of blocks, a game, a puzzle and a car. He puts each toy on a different shelf of the bookcase. The ball is higher than the blocks and lower than the car. The game is directly above the ball. On which shelf can the puzzle not be placed?",
+        "zh": "Stan 有五个玩具：球、积木、游戏、拼图和汽车。他把每个玩具放在书架不同的一层。球比积木高，比汽车低。游戏紧挨在球的上面。拼图不可能放在第几层？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Use the height constraints to see which shelf is impossible for the puzzle.",
+        "zh": "用高低关系判断拼图不可能放在哪一层。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2021",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2021 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

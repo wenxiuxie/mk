@@ -1,0 +1,584 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2019 – Level 1 -1",
+    "zh": "Math Kangaroo 2019 – 等级 1 -1 -1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q1: Numbers Less Than 7",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第1题：少于7的数"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which cloud contains only numbers less than 7?",
+        "zh": "哪朵云只包含少于 7 的数？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Only one cloud has all numbers < 7.",
+        "zh": "只有一朵云里的数全部小于 7。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q2: Necklace Segment",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第2题：项链片段"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which figure shows a part of this necklace?",
+        "zh": "哪个图显示的是这条项链的一部分？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Match a consecutive triple on the circular necklace.",
+        "zh": "在环形项链上找连续三颗珠子的片段。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q3: Jumper’s Weight",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第3题：Jumper的体重"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Together, mum Kangaroo and her son Jumper weigh 60 kilograms. Mum Kangaroo alone weighs 52 kilograms. How much does Jumper weigh in kilograms?",
+        "zh": "袋鼠妈妈和她的儿子 Jumper 的总重量是 60 千克。袋鼠妈妈的重量为 52 千克。问 Jumper 的重量是多少千克？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "30",
+          "zh": "30"
+        },
+        {
+          "en": "46",
+          "zh": "46"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "60 − 52 = 8.",
+        "zh": "60 − 52 = 8。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q4: Cut Grid Piece",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第4题：切下的格子"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Karen cuts out one piece of the grid above. Which piece is the one she cut?",
+        "zh": "Karen 从上图中切出一部分，哪一块是她切出来的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Find the two-cell piece that appears as neighbours on the grid.",
+        "zh": "找出网格里相邻出现的那两格组合。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q5: Queue Between Lucy and Kim",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第5题：Lucy与Kim之间"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "At the entrance of the zoo there are 12 children in the queue. Lucy is the 7th from the front and Kim is the second from the back. How many children are there between Lucy and Kim in the queue?",
+        "zh": "动物园入口处有 12 个孩子在排队。从前面数 Lucy 是第 7 个，从后面数 Kim 是第 2 个。Lucy 和 Kim 之间有多少个孩子？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Lucy is 7th; Kim is 11th (2nd from back of 12). Between them: 8,9,10 → 3.",
+        "zh": "Lucy 第 7；Kim 从后第 2 即第 11。中间 8、9、10 → 3 人。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q6: Pairing Socks",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第6题：袜子配对"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Jorge pairs his socks so that the numbers match. How many pairs can he make?",
+        "zh": "Jorge 将袜子配对，使数字匹配。他能配出多少双？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Count how many numbers appear twice.",
+        "zh": "数有多少种数字能配成一对。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q7: Flowers in Rectangle",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第7题：长方形里的花"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Maya Bee was gathering pollen from all of the flowers that lie inside the rectangle, but are outside the triangle. From how many flowers did she collect pollen?",
+        "zh": "蜜蜂 Maya 从所有位于长方形之内而三角形之外的花朵上采集花粉。她从多少朵花上收集花粉？"
+      },
+      "choices": [
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "17",
+          "zh": "17"
+        },
+        {
+          "en": "20",
+          "zh": "20"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Count flowers inside the rectangle but outside the triangle.",
+        "zh": "数长方形内、三角形外的花。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q8: Apple and Pear Price",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第8题：苹果与梨的价钱"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Two apples together cost 6 cents. Two pears together cost 8 cents. How much do one apple and one pear cost together?",
+        "zh": "两个苹果合起来值 6 分钱。两个梨合起来值 8 分钱。一个苹果和一个梨合起来值多少钱？"
+      },
+      "choices": [
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Apple = 3, pear = 4; together 7.",
+        "zh": "苹果 3 分，梨 4 分；合起来 7 分。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q9: Close Two Gates",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第9题：关掉两扇门"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "You have to close two of the five gates so that the mouse cannot reach the cheese. Which gates should you close?",
+        "zh": "你必须关闭五扇门中的两扇，使得老鼠无法获取奶酪。你需要关掉哪些门？"
+      },
+      "choices": [
+        {
+          "en": "1 and 2",
+          "zh": "1 和 2"
+        },
+        {
+          "en": "2 and 3",
+          "zh": "2 和 3"
+        },
+        {
+          "en": "3 and 4",
+          "zh": "3 和 4"
+        },
+        {
+          "en": "3 and 5",
+          "zh": "3 和 5"
+        },
+        {
+          "en": "4 and 5",
+          "zh": "4 和 5"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Close the two gates that cut every path from mouse to cheese.",
+        "zh": "关掉能切断老鼠到奶酪所有通路的两扇门。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 9,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q10: Fold and Cut Paper",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第10题：折纸再剪开"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Patricia folds a sheet of paper twice and then cuts it, as shown. How many pieces of paper does she end up with?",
+        "zh": "如图所示，Patricia 将一张纸折叠两次，然后将其剪开。她最终得到了多少片纸？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Track layers after two folds, then one cut through all layers.",
+        "zh": "跟踪两次折叠后的层数，再一刀切开。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 10,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q11: Remove Stacked Cards",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第11题：移走叠放卡片"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five square cards are stacked on a table, as shown. The cards are removed one by one from the top of the stack. In what order are the cards removed?",
+        "zh": "如图所示，五张正方形卡片堆在桌上。卡片从顶部一张一张移走。卡片被移除的顺序是什么？"
+      },
+      "choices": [
+        {
+          "en": "5-2-3-1-4",
+          "zh": "5-2-3-1-4"
+        },
+        {
+          "en": "5-2-3-4-1",
+          "zh": "5-2-3-4-1"
+        },
+        {
+          "en": "4-5-2-3-1",
+          "zh": "4-5-2-3-1"
+        },
+        {
+          "en": "5-3-2-1-4",
+          "zh": "5-3-2-1-4"
+        },
+        {
+          "en": "1-2-3-4-5",
+          "zh": "1-2-3-4-5"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Always remove a card that is fully on top (not covered).",
+        "zh": "每次移走当前完全露在最上面的卡片。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q12: Cat Paths to Milk",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第12题：猫到牛奶的路径"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A cat and a bowl of milk are in the opposite corners of the board. The cat can only move as shown by the arrows. In how many ways can the cat reach the milk?",
+        "zh": "棋盘相对的角上有一只猫和一碗牛奶。猫仅能按箭头所示方式移动。猫到达牛奶的方法有多少种？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "On a 3×3 board, need 2 right and 2 down: C(4,2)=6 paths.",
+        "zh": "3×3 要向右 2、向下 2：C(4,2)=6 条路。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    }
+  ]
+}

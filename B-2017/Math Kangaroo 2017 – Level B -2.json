@@ -1,0 +1,488 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2017 – Level B -2",
+    "zh": "Math Kangaroo 2017 – 等级 B -2 -2"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q11: Pool Tournament Teams",
+        "zh": "Math Kangaroo 2017 – Level B -2 第11题：泳池比赛分组"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "13 then 19 children signed up. Six equal teams are needed. At least how many more children must sign up?",
+        "zh": "先有 13 人再有 19 人报名。需要六组人数相等。至少还要几人报名？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "13+19=32; next multiple of 6 is 36 ⇒ need 4 more.",
+        "zh": "13+19=32；下一个 6 的倍数是 36 ⇒ 还要 4 人。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q12: Largest 2×2 Sum",
+        "zh": "Math Kangaroo 2017 – Level B -2 第12题：最大2×2和"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In the 4×4 grid, what is the largest sum of numbers in a 2×2 square?",
+        "zh": "4×4 方格中，最大的 2×2 数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "14",
+          "zh": "14"
+        },
+        {
+          "en": "15",
+          "zh": "15"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The maximum 2×2 sum in the grid is 14.",
+        "zh": "网格中最大 2×2 之和为 14。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q13: Two-Stove Cooking",
+        "zh": "Math Kangaroo 2017 – Level B -2 第13题：双炉烹饪"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Cook 5 dishes (40,15,35,10,45 min) on 2 stoves; remove only when done. Shortest total time?",
+        "zh": "两炉做 5 道菜（40、15、35、10、45 分钟），做完才能取下。最短总时间？"
+      },
+      "choices": [
+        {
+          "en": "60 min",
+          "zh": "60 分钟"
+        },
+        {
+          "en": "70 min",
+          "zh": "70 分钟"
+        },
+        {
+          "en": "75 min",
+          "zh": "75 分钟"
+        },
+        {
+          "en": "80 min",
+          "zh": "80 分钟"
+        },
+        {
+          "en": "85 min",
+          "zh": "85 分钟"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Optimal schedule on two stoves finishes in 75 minutes.",
+        "zh": "两炉最优安排总时间 75 分钟。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q14: Circle Question Mark",
+        "zh": "Math Kangaroo 2017 – Level B -2 第14题：圆圈里的问号"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which number should be written in the circle with the question mark?",
+        "zh": "问号圆圈里应填哪个数？"
+      },
+      "choices": [
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "14",
+          "zh": "14"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Working backwards/forwards along the operations gives 13.",
+        "zh": "沿运算正推或反推得问号为 13。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q15: Ink on Building Plan",
+        "zh": "Math Kangaroo 2017 – Level B -2 第15题：平面图墨迹"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Some ink covers numbers on the building-block plan. What is the sum of the numbers under the ink?",
+        "zh": "积木平面图上墨迹盖住一些数字。墨迹下数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The covered plan numbers sum to 5.",
+        "zh": "墨迹下数字之和为 5。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q16: How Long Is the Train",
+        "zh": "Math Kangaroo 2017 – Level B -2 第16题：火车有多长"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How long is the train?",
+        "zh": "这列火车有多长？"
+      },
+      "choices": [
+        {
+          "en": "55 m",
+          "zh": "55 m"
+        },
+        {
+          "en": "115 m",
+          "zh": "115 m"
+        },
+        {
+          "en": "170 m",
+          "zh": "170 m"
+        },
+        {
+          "en": "220 m",
+          "zh": "220 m"
+        },
+        {
+          "en": "230 m",
+          "zh": "230 m"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "From the bridge/tunnel lengths in the figure, the train is 115 m.",
+        "zh": "由图中桥/隧道长度关系得火车长 115 m。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q17: Leave for Training",
+        "zh": "Math Kangaroo 2017 – Level B -2 第17题：出发去训练"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "George’s training starts at 5:00 pm. Walk 5 min to bus, 15 min bus, 5 min walk to field. When must he leave home?",
+        "zh": "训练 5:00 pm 开始；到站 5 分钟、巴士 15 分钟、再走 5 分钟。他何时出门？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Total travel 5+15+5=25 min ⇒ leave at 4:35 pm (option A).",
+        "zh": "路程共 25 分钟 ⇒ 4:35 pm 出门（选项 A）。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 17,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q18: Zoo Two-Animal Tours",
+        "zh": "Math Kangaroo 2017 – Level B -2 第18题：动物园两动物行程"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Zoo has giraffe, elephant, lion, turtle. Susan sees 2 different animals and won’t start with the lion. How many tours?",
+        "zh": "动物园有长颈鹿、大象、狮子、龟。看 2 种动物且不以狮子开头，有多少种行程？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "4×3=12 ordered pairs, minus 3 that start with lion ⇒ 9 tours.",
+        "zh": "4×3=12 种有序对，去掉以狮子开头的 3 种 ⇒ 9。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 18,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q19: Brothers Eat Cookies",
+        "zh": "Math Kangaroo 2017 – Level B -2 第19题：兄弟吃曲奇"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Four brothers ate 11 cookies, all different positive amounts. Three ate 9 total; one ate exactly 3. How many did the biggest eater eat?",
+        "zh": "四兄弟共吃 11 块，数量互不相同且至少 1。其中三人共 9 块，有一人恰吃 3 块。最多的那人吃了几块？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Amounts are distinct positive integers summing to 11; one is 3; three sum to 9 ⇒ largest is 5.",
+        "zh": "互异正整数和 11，含 3，三人和 9 ⇒ 最大为 5。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 19,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level B -2 Q20: Candy Bags for Eric",
+        "zh": "Math Kangaroo 2017 – Level B -2 第20题：Eric 的糖果"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Bags hold 1–10 candies (all different). Five boys take two bags each. Alex 5, Bob 7, Charles 9, Dennis 15. How many did Eric get?",
+        "zh": "十袋糖果 1–10 粒。五人各拿两袋：Alex5、Bob7、Charles9、Dennis15。Eric 拿了几粒？"
+      },
+      "choices": [
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "17",
+          "zh": "17"
+        },
+        {
+          "en": "19",
+          "zh": "19"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Used pairs leave Eric with 1+10+… → 19 candies.",
+        "zh": "其余人用去的袋子推出 Eric 为 19 粒。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 20,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2017 – Level B -2"
+      },
+      "is_published": true
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2017 B · Q2 · 公园里的袋鼠</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--ink:#0f172a}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:var(--ink);margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000;box-shadow:0 6px 16px rgba(12,74,110,.25)}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px 18px 16px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0;background:#fff}
+.optgrid{display:block;width:100%;max-width:640px;margin:10px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;gap:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.stage{border:2px solid #bae6fd;border-radius:16px;background:linear-gradient(180deg,#f8fafc,#eff6ff);padding:14px;margin:10px auto;max-width:560px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.tab{min-width:48px;padding:8px 12px;border-radius:12px;border:2px solid #cbd5e1;background:#fff;font-weight:800;cursor:pointer}
+.tab.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.info{text-align:center;font-weight:700;margin:8px 0;min-height:24px}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode')">🌐 EN / 中文</button>
+<h1 class="lang-zh">公园里的袋鼠</h1>
+<h1 class="lang-en">Kangaroos in the Park</h1>
+<div class="meta lang-zh">Math Kangaroo 2017 · 等级 B · 第 2 题 · 3 分</div>
+<div class="meta lang-en">Math Kangaroo 2017 · Level B · Q2 · 3 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">窗边看见一半袋鼠，公园一共几只？</p>
+    <p class="lang-en">Sees half the kangaroos — how many in the park?</p>
+    <img class="fig" src="assets/q2_stem.png" alt="Q2"/>
+<img class="optgrid" src="assets/q2_options.png" alt="Q2 options"/>
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验台</h2>
+    <h2 class="lang-en">Lab</h2>
+    
+    <div class="mission lang-zh"><div class="step" data-i="0"><div class="num">1</div><div>数图中袋鼠</div></div><div class="step" data-i="1"><div class="num">2</div><div>这是一半</div></div><div class="step" data-i="2"><div class="num">3</div><div>×2 得总数</div></div><div class="step" data-i="3"><div class="num">4</div><div>选选项</div></div></div><div class="mission lang-en"><div class="step" data-i="0"><div class="num">1</div><div>Count visible</div></div><div class="step" data-i="1"><div class="num">2</div><div>That is half</div></div><div class="step" data-i="2"><div class="num">3</div><div>×2 for total</div></div><div class="step" data-i="3"><div class="num">4</div><div>Pick option</div></div></div>
+    <p class="tip lang-zh">图中可见是一半，总数 = 可见×2。</p>
+    <p class="tip lang-en">Picture shows half; total = visible × 2.</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="stage">
+      <img class="fig sm" id="optView" src="assets/q2_options.png" alt="option" onerror="this.style.display='none'"/>
+      <div class="info" id="labInfo"></div>
+      <button class="btn primary" onclick="nudge()"><span class="lang-zh">下一步提示</span><span class="lang-en">Next hint</span></button>
+    </div>
+    
+    <p class="tip lang-zh" style="margin-top:16px">想好后选出答案（检查只提示对错，不公布选项字母）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Then pick an answer (Check only says right/wrong):</p>
+    <div class="pool"><div class="card" data-v="A" onclick="pick(this)">12</div><div class="card" data-v="B" onclick="pick(this)">14</div><div class="card" data-v="C" onclick="pick(this)">16</div><div class="card" data-v="D" onclick="pick(this)">18</div><div class="card" data-v="E" onclick="pick(this)">20</div></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="location.reload()"><span class="lang-zh">重置整页</span><span class="lang-en">Reset page</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="1.html">← Q1</a><a href="3.html">Q3 →</a></div>
+</div>
+<script>
+const KEY=atob('QQ==');
+let picked=null;
+function pick(el){
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on'); picked=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=el.textContent.trim(); box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!picked){ fb.className='bad'; fb.innerHTML='<span class="lang-zh">先选一个选项</span><span class="lang-en">Pick an option first</span>'; return; }
+  if(picked===KEY){ fb.className='ok'; fb.innerHTML='<span class="lang-zh">正确！</span><span class="lang-en">Correct!</span>'; }
+  else { fb.className='bad'; fb.innerHTML='<span class="lang-zh">再试试，回实验台看看</span><span class="lang-en">Try again — explore the lab</span>'; }
+}
+
+let step=0;
+const letters='ABCDE';
+const tabs=document.getElementById('tabs');
+letters.split('').forEach((L,i)=>{
+  const b=document.createElement('button'); b.className='tab'+(i===0?' on':''); b.textContent=L;
+  b.onclick=()=>{ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on')); b.classList.add('on');
+    document.getElementById('labInfo').textContent=(document.body.classList.contains('en-mode')?'Focusing on option ':'正在看选项 ')+L;
+  };
+  tabs.appendChild(b);
+});
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+function nudge(){
+  step=Math.min(step+1,3);
+  setMission(step);
+  const zh=['先看题干图','对照选项','用步骤推理','准备作答'];
+  const en=['Study the figure','Compare options','Reason step by step','Ready to answer'];
+  document.getElementById('labInfo').textContent=document.body.classList.contains('en-mode')?en[step]:zh[step];
+}
+setMission(0);
+
+</script>
+</body>
+</html>

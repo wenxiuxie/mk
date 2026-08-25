@@ -1,0 +1,488 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2018 – Level 1 -2",
+    "zh": "Math Kangaroo 2018 – 等级 1 -2 -2"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q11: Lisa has 4 pieces, but she…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第11题：Lisa…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lisa has 4 pieces, but she only needs 3 to ﬁll the given frame. Which one is left over? Lisa mempunyai 4 kepingan berikut, tetapi dia hanya memerlukan 3 kepingan untuk mengisi ruang yang diberi. Kepingan manakah yang tidak digunakan?",
+        "zh": "Lisa 有四块形状，可是要装满给定的框只需要其中三个。请问剩下的是哪一块形状？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q12: Diana took part in an…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第12题：Diana…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Diana took part in an archery contest. On her ﬁrst try, Diana got 6 points with three arrows on the target, as in the left picture. The second time she got 8 points, as in the middle picture. How many points did she get the third time?",
+        "zh": "Diana 参加了射箭比赛。如左边图形显示，她第一次射中三支箭，得6 分。如中间图形 显示，第二次她得了8 分。请问第三次，Diana 得了几分？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q13: How many of these drawings…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第13题：请问以下图画中，有多少个显示着右…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many of these drawings show the right hand? Berapakah bilangan lukisan berikut yang menggambarkan tangan kanan?",
+        "zh": "请问以下图画中，有多少个显示着右手？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q14: Charles cut a rope in three…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第14题：Charles…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Charles cut a rope in three equal pieces and then made some knots with them. Which ﬁgure shows the three pieces correctly? Charles memotong seutas tali kepada tiga bahagian yang sama panjang, dan kemudian",
+        "zh": "Charles 把一条绳子剪成三条一样长的绳子，再用这三条绳子来绑一些结。请问哪一个 图画正确地显示这三条绳子？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q15: The number of frogs that…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第15题：能在一个蘑菇下避雨的青蛙的个数，…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The number of frogs that can ﬁt under a mushroom is equal to the number of dots on the mushroom. The ﬁgure below shows one side of each mushroom. The number of dots on the other side is the same. If 30 frogs are seeking shelter from the rain, how many frogs will",
+        "zh": "能在一个蘑菇下避雨的青蛙的个数，和那一个蘑菇上点的数量一样。图中显示每一个蘑 菇的一边，而另一边的点和这一边的点是一样多的。请问，现在有 30 只青蛙要避雨，有几"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q16: The cost of 1 ice-cream is…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第16题：一个冰淇淋的价钱是1 欧元（1…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The cost of 1 ice-cream is 1 Euro (e). There is a promotion so you can buy 6 ice-creams for 5 Euros. How many ice-creams at most could you buy with 36 Euros? Harga satu aiskrim ialah 1 Euro (e). Suatu promosi sedang dibuat yang membolehkan kita",
+        "zh": "一个冰淇淋的价钱是1 欧元（1 e）。因为现在有优惠，你可以用5 欧元来买6 个冰淇 淋。请问用36 欧元，最多可以买到几个冰淇淋？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q17: A ship captain has two…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第17题：有一位船长拥有两个箱子。左边的箱…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A ship captain has two chests. There are 10 coins in the left chest, while the other is empty. Starting tomorrow, the captain will put 1 coin in the left chest and 2 coins in the right chest every day. In how many days will the two chests have the same number of coins?",
+        "zh": "有一位船长拥有两个箱子。左边的箱子装着 10 个钱币，而另一个箱子是空的。从明天 开始，船长每天会把一个钱币放进左边的箱子，然后把两个钱币放进右边的箱子。请问在多"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 17,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q18: A student had some sticks…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第18题：一位学生有一些木棒，每一个木棒长…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A student had some sticks of length 5 cm and width 1 cm. Using the sticks he constructed the fence below. What is the length of the fence? Seorang pelajar mempunyai beberapa kepingan kayu dengan panjang 5 cm dan lebar 1",
+        "zh": "一位学生有一些木棒，每一个木棒长5 cm, 宽1 cm。他用这些木棒建了以下的篱笆。请 问篱笆的长度是多少？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 18,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q19: The road from Anna’s house…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第19题：从 Anna 的家去 Mary…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The road from Anna’s house to Mary’s house is 16 km long. The road from Mary’s house to John’s house is 20 km long. The road from the crossroad to Mary’s house is 9 km long. How long is the road from Anna’s house to John’s house?",
+        "zh": "从 Anna 的家去 Mary 的家的路长 16 km。从 Mary 的家去 John 的家的路长 20 km。从 交叉路口去 Mary 的家的路长 9 km。请问从 Anna 的家去 John 的家的路有多长？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 19,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2018 – Level 1 -2 Q20: Nelly bought 4 toys from…",
+        "zh": "Math Kangaroo 2018 – Level 1 -2 第20题：Nelly…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Nelly bought 4 toys from the toystore. Their costs satisfy the three equations below. What are the cheapest and the most expensive toys? Nelly membeli 4 permainan daripada kedai permainan. Harga permainan tersebut memenuhi",
+        "zh": "Nelly 从玩具店买了四个玩具。这四个玩具的价钱符合以下的三个等式。请问最便宜和 最贵的玩具分别是哪个玩具?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2018",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 20,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2018 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

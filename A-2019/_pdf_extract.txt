@@ -1,0 +1,235 @@
+==== PAGE 1 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+1
+2019 Mathematics Kangaroo Contest
+—PreEcolier —
+2019 数学袋鼠竞赛
+Part 1: 8 problems, 3 points each | 第一部分：8 道题目，每题3 分
+1 ・Which cloud contains only numbers less than 7?
+哪朵云只包含少于7 的数？
+2 ・Which figure shows a part of this necklace?
+哪个图显示的是这条项鍊的一部分?
+(E)
+
+
+==== PAGE 2 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+2
+3.Together, mum Kangaroo and her son Jumper weigh 60 kilograms. Mum Kangaroo alone weighs 52
+kilograms. How much does Jumper weigh in kilograms?
+袋鼠妈妈和她的儿子Jumper 的总重量是60 千克。袋鼠妈妈的重量为52 千克。问Jumper 的重
+量是多少千克？
+(A) 2
+(B) 4
+(C) 8
+(D) 30
+(E) 46
+4.Karen cuts out one piece of the grid above. Which piece is the one she cut?
+Karen 从上图中切出一部分，哪一块是她切出来的？
+5 ・At the entrance of the zoo there are 12 children in the queue ・Lucy is the 7th from the front and
+Kim is the second from the back. How many children are there between Lucy and Kim in the queue?
+动物园入口处有12 个孩子在排队。从前面数Lucy 是第7 个，从后面数Kim 是第2 个。Lucy
+和Kim 之间有多少个孩子?
+
+
+==== PAGE 3 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+3
+6. Jorge pairs his socks so that the numbers match. How many pairs can he make?
+7. Maya Bee was gathering pollen from all of the flowers that lie inside the rectangle, but are out side
+the triangle. From how many flowers did she collect pollen?
+蜜蜂Maya 从所有位于长方形之内而三角形之外的花朵上采集花粉。她从多少朵花上收集花
+粉？
+(A) 9
+(B) 10
+(C) 13
+(D) 17
+(E) 20
+Jorge 将袜子配对，使数字匹配。他能配出多少双？
+
+
+==== PAGE 4 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+4
+
+
+==== PAGE 5 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+5
+You have to close two of the five gates so that the mouse cannot reach the cheese.
+你必须关闭五扇门中的两扇，使得老鼠无法获取奶酪。你需要关掉哪些门？
+(A)
+1 and 和2
+(B) 2 and 和3
+(C) 3 and 和4
+(D) 3 and 和5
+(E) 4 and 和5
+10 ・Patricia folds a sheet of paper twice and then cuts it, as shown. How many pieces of paper does she
+end up with?
+如图所示，Patricia 将一张纸折叠两次，然后将其剪开。她最终得到了多少片纸？
+11.Five square cards are stacked on a table, as shown. The cards are removed one by one from the top
+of the stack. In what order are the cards removed?
+如图所示，五张正方形卡片堆在桌上。卡片从顶部一张一张的移走。卡片被移除的顺序是什么？
+9.
+Part 2: 8 problems, 4 points each | 第二部分：8 道题目，每题4 分
+
+
+==== PAGE 6 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+6
+(A)2
+(B)3
+(C)4
+(D)5
+(E)6
+(A) 5-2-3-1-4
+(B) 5-2-3-4-1
+(C) 4-5-2-3-1
+(D)
+5-3-2-1-4
+(E) 1-2-3-4-5
+12.A cat and a bowl of milk are in the opposite corners of the board.The cat can only move as shown
+by the arrows. In how many ways can the cat reach the milk?
+棋盘相对的角上有一只猫和一碗牛奶。猫仅能按箭头所示方式移动。猫到达牛奶的方法有多少
+种？
+13.
+Four strips are woven into a pattern，as shown above. What do you see when you look at it from the
+other side?
+如上图所示，四条带子编织成一个图案。当你从另一侧看它时，看到了什么？
+
+
+==== PAGE 7 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+7
+14. Each of the shapes shown is made by glueing together four cubes of the same size. The shapes are
+to be painted. Which shape has the smallest area to be painted?
+下面所示的每个形状是通过将四个相同尺寸的立方体粘合在一起而形成的。给它们涂上顔色，
+哪个形状要涂的面积最小？
+15.A floor is covered with identical rectangular tiles as shown. The shorter side of each tile is 1 meter.
+What is the length of the side with the question mark in meters?
+如图所示，地板铺满了相同形状的长方形瓷砖。每块瓷砖短边的长度是1 米。带问号的边的长
+度是多少米？
+16 ・A train from Kang station to Aroo station leaves at 6:00 in the morning and passes by other three
+stations on the way, without stopping.
+从Kang 车站到Aroo 的火车早上6 点出发，中途经过其他三个车站，但都不停车。
+KANG
+AROO
+(A) 6 m
+(B)
+8m
+(C) 10 m
+(D) 11 m
+(E) 12 m
+
+
+==== PAGE 8 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+8
+The numbers show the journey times between two st at ions, in hours. The train arrives at Aroo station
+at 11:00 at night on the same day. What is the journey time between Aroo station and the previous one
+in hours?
+数值表示的是火车在两个站之间运行所需的时间，以小时为单位。火车在同一天的晚上11 点
+抵达Aroo 火车站。问火车在Aroo 车站和它前一车站之间的运行时间是多少小时？
+(A)2
+(B)3
+(C)4
+(D)5
+(E) 6
+Part 3: 8 problems, 5 points each | 第三部分：8 道题目，每题5 分
+17 ・On a farm, there are only sheep and cows. The number of sheep is 8 more than the number of cows.
+The number of cows is half the number of sheep. How many animals are on the farm?
+在一个农场里，只有绵羊和奶牛。绵羊的数量比奶牛的数量多8。奶牛的数量是绵羊数量的一
+半。问农场里有多少只动物？
+(A) 16
+(B) 18
+(C) 20
+(D) 24
+(E) 28
+18.
+A figure has been cut into 3 pieces as above ・Which figure could have been cut?
+一个图形被切成如上所示的3 块，问原来的图形可能是哪个？
+
+
+==== PAGE 9 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+9
+19 ・There are 10 camels in a Zoo. The camels are either bactrian (with two humps) or dromedary
+(with one hump). In total there are 14 humps. Find the number of bactrian camels in the Zoo.
+动物园里有10 只骆驼。骆驼是双峰驼(有两个驼峰)或单峰驼(有一个驼峰)。总共有14 个驼峰。
+求在动物园中双峰驼的数量。
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+20 ・Three squirrels Anni, Asia and Elli collected 7 nuts in total. Each collected a different number of
+nuts，but each collected at least one. Anni collected the least，Asia the most. How many nuts did Elli
+collect?
+三只松鼠Anni，Asia 和Elli 共采集了7 个坚果。每只松鼠采集的坚果数量不同，但每只松鼠
+至少采集了一个坚果。Anni 采集的最少，而Asia 最多。问Elli 采集了多少个坚果？
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+21 ・Tim and Tom built a sandcastle and decorated it with a flag. They stuck half of the flagpole into
+the highest point of the castle. The upper tip of the flagpole was 80 cm above the ground, the lower tip
+was 20 cm above the ground. How tall was the sandcastle in cm?
+Tim 和Tom 建造了一个沙堡并用一面旗帜来装饰。他们将旗杆的一半从沙堡的最高点插入。
+旗杆的上顶端高出地面80 厘米，而下顶端高出地面20 厘米。问沙堡的高度是多少厘米？
+
+
+==== PAGE 10 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+10
+22. Here are nine squares:
+这里有九个方块:
+First, Ani replaced all the black squares with white ones. Next, Bob replaced all the grey squares with
+black ones. Finally,Chris replaced all the white squares with grey ones.What did they get at the end?
+首先，Ani 用白色方块替换了所有黑色方块。接下来，Bob 用黑色方格替换了所有灰色方块。
+最后，Chris 用灰色方块取代了所有的白色方块。问他们最后得到了什么?
+23.
+Peter chose a square of four cells in the table above so that the sum of the four numbers inside the
+square is greater than 63. Which of the following numbers must be in the chosen square?
+Petrer 在上面表格中选择了一个用四个单元格组成的正方形，使得其中的四个数的和大于63。
+问选定的正方形中必须包括下列哪个数？
+24. Alina's machine converts one red token into three white to kens and one white token into two red to
+kens.
+Alina 的机器可以将一枚红色代币转换为三枚白色代币，将一枚白色代币转换为两枚红色代币。
+
+
+==== PAGE 11 ====
+PreEcolier
+2019 Mathematics Kangaroo Contest
+Grade 1 & 2
+11
+Alina has three red to kens and one white token:
+Alina 有三个红色代币和一个白色代币：
+She uses the machine three times. What is the smallest number of to kens she can end up with?
+她使用机器三次。她最终拥有的代币数量最小是多少？
+答案：DCCEB,CACEB,AEBBE,DDADB,CDAC
+(A)7
+(B)6
+(C)8
+(D)5
+(E)9

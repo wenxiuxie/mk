@@ -1,0 +1,900 @@
+==== PAGE 1 chars=558 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+3 points
+1. Which square is cut into 2 different shapes?
+请问哪个正方形被划分为两个不同的形状?
+(A)
+(B)
+(C)
+(D)
+(E)
+2. What is the smallest number of ladders the firefighter must use to reach the fire without jumping?
+在不跳跃的情况下，消防员最少要用多少把梯子才能去救火?
+(A) 4
+(B) 5
+(C) 6
+(D) 7
+(E) 8
+3. The table consists of 28 white cells:
+下表由28 个白色方格组成：
+Ira paints 2 rows and 1 column. A row is from left to right. A column is from top to bottom.
+How many cells will remain white?
+小艾为其中2 行和1 列方格涂色。行是从左到右，列是从上到下。请问最后还剩多少个白色方
+格?
+(A) 8
+(B) 10
+(C) 12
+(D) 14
+(E) 17
+1
+
+
+==== PAGE 2 chars=1114 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+4. Soccer players numbered 1 to 11 stand in a circle. Each player kicks
+the ball to the third player on their left. Player 1 starts. This kicking
+pattern continues until a player has the ball for the second time. What
+is the number of the player who kicked the ball last?
+编号为1 到11 的足球运动员站成一个圆圈，每名球员把球踢给自己
+左边的第三名球员。从1 号球员开始踢球。这种踢球方式一直持续到出
+现一名球员第二次拿到球为止。请问最后一名踢球的是几号球员?
+(A) 7
+(B) 8
+(C) 9
+(D) 10
+(E) 11
+5. Mohammad wrote 3 consecutive 4-digit numbers in a row. His sister erased some digits. What are
+the missing digits (from left to right)?
+(For example, 213, 214, 215 are 3 consecutive 3-digit numbers.)
+小莫将3 个连续的四位数写成一行，他的姐姐擦掉了其中一些数位上的数字。请问哪些数字被擦
+掉了?（从左到右排列）
+（例如，213，214，215 是3 个连续的三位数。）
+4897, 4898, 4899
+(A) 389, 3, 99
+(B) 489, 3, 96
+(C) 489, 4, 98
+(D) 489, 4, 99
+(E) 488, 4, 99
+6. Lizzy pays 7 dollars for 3 items. The cost of each item is different and is a whole number. How
+much is the most expensive item?
+小李花7 美元买了3 件物品。每件物品价格不同，但都是整数。请问其中最贵的物品价格是多少?
+(A) 2 dollars
+2 美元
+(B) 3 dollars
+3 美元
+(C) 4 dollars
+4 美元
+(D) 5 dollars
+5 美元
+(E) 6 dollars
+6 美元
+2
+
+
+==== PAGE 3 chars=420 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+7. A cat knocks off 1 block from Felix’s construction.
+小菲用积木搭建出一个形状，一只小猫撞掉了其中一块积木。
+What could this construction have looked like before the block was knocked off?
+请问在这块积木被撞掉前，小菲搭建的可能是什么形状?
+(A)
+(B)
+(C)
+(D)
+(E)
+8. Alex has a Kangaroo poster on the kitchen wall.
+小亚在厨房的墙上贴了一张袋鼠海报。
+2024
+How many grey tiles are there behind the poster?
+请问海报后面有多少块灰色瓷砖?
+(A) 15
+(B) 21
+(C) 25
+(D) 30
+(E) 35
+3
+
+
+==== PAGE 4 chars=906 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+4 points
+9. Antonia and Lucian toss a coin.
+小安和小卢在掷硬币。
+If the child sees the purple side, the child advances 3 steps. If the child sees the green side, the
+child goes back 1 step or stays at the starting position. Both started in front of number 1 and each
+tossed the coin 4 times. Antonia advanced to number 4 and Lucian advanced to number 8. How many
+times in total did they see the green side of the coin?
+如果掷出硬币紫色的一面，就前进3 格；如果掷出硬币绿色的一面，就后退1 格，或停留在起
+点。两人都从第1 格前面开始，每人掷4 次硬币。小安前进到第4 格，小卢前进到第8 格。请问
+他们一共有几次掷出硬币绿色的一面?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+10. There are five different kinds of fruit in a bowl:
+. Ann likes
+. Ben
+likes
+. Cam likes
+. Dan likes
+. Eli likes
+.
+Everyone gets a fruit they like. Everyone gets a different kind of fruit. What does Ben get?
+一个碗里有五种不同的水果：
+。小安喜欢
+；小本喜欢
+；小卡喜欢
+；小丹喜欢
+；小伊喜欢
+。
+每个人都得到了一个自己喜欢的水果，而且每个人得到的水果都不同。请问小本得到了什么水
+果?
+(A)
+(B)
+(C)
+(D)
+(E)
+4
+
+
+==== PAGE 5 chars=1187 images=3 ====
+Math Kangaroo 2024 (China)–Level B
+11. Ada has built a tower of 8 discs, as in the picture.
+Ada removes the second disc from the bottom of this tower. Then she removes the third
+disc from the bottom of the new tower. Then she removes the fourth disc from the bottom
+of the new tower. Then she removes the fifth disc from the bottom of the new tower. Which
+tower does Ada end up with?
+如图所示，小艾用8 个圆盘建了一座塔。
+小艾先拿走了从塔底往上数的第二个圆盘，然后又拿走了从新塔底部往上数的第三个圆盘，紧接
+着又拿走了从新塔底部往上数的第四个圆盘，最后拿走了从新塔底部往上数的第五个圆盘。请问下列
+哪项是小艾最终得到的塔?
+(A)
+(B)
+(C)
+(D)
+(E)
+12. Peter the penguin goes fishing every day and brings back 9 fish for his 2
+chicks. Each day, he gives 5 fish to the first chick he sees and 4 fish to the second
+chick, which they eat. Over the last few days, 1 chick has eaten 26 fish. How
+many fish has the other chick eaten?
+企鹅小皮每天都去钓鱼，并为他的2 只小企鹅带回9 条鱼。每天，他给自
+己看到的第一只小企鹅喂5 条鱼，给第二只喂4 条鱼。在过去的几天里，有1
+只小企鹅吃了26 条鱼。请问另一只小企鹅吃了多少条鱼?
+(A) 19
+(B) 22
+(C) 25
+(D) 28
+(E) 31
+13. 7 cards, numbered 1 to 7, are placed in 4 overlapping rings. The sum of the numbers in each ring
+is 10. Which number is under the question mark?
+将7 张分别写有数字1 - 7 的卡片放在4 个依次相交的圆环中。每个圆环中数字的总和是10。
+请问问号下面是哪个数字?
+6
+?
+3
+(A) 1
+(B) 2
+(C) 4
+(D) 5
+(E) 7
+5
+
+
+==== PAGE 6 chars=998 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+14. Lucas wants to make a caterpillar that has a head, a tail and either 1, 2 or 3 puzzle pieces in
+between. How many different caterpillars can Lucas make without flipping pieces?
+小卢想拼接一条有头有尾的毛毛虫，头尾中间可能会有1、2 或
+3 片拼图。请问在不翻转拼图
+的情况下，小卢可以拼接几条不同的毛毛虫?
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+1 2
+4 3
+6 7
+8 5
+15. John writes the numbers 1 to 4 on a sheet. Then he flips the sheet
+and writes the numbers 5 to 8, as shown. After that, he cuts the sheet into
+4 rectangular cards and puts them in a row:
+小吉在一张纸上写下数字1 到4 ，然后他把这张纸翻过来，并写下数
+字5 到8，如右图所示。紧接着，他把纸剪成4 张长方形卡片，并摆成一
+行：
+? 5 ? 6
+What is the sum of the numbers represented by the question marks?
+请问图中问号所代表的数字之和是多少?
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+16. A floor is covered with 2 kinds of tile
+and
+. The rectangles have size 23 cm × 11 cm.
+The picture shows a part of the floor. What is the side-length of the square tiles?
+地板上铺有
+和
+两种瓷砖，其中长方形瓷砖的尺寸是23 cm × 11 cm。下图是地板的一
+部分。请问正方形瓷砖的边长是多少?
+(A) 3 cm
+(B) 4 cm
+(C) 5 cm
+(D) 6 cm
+(E) 7 cm
+6
+
+
+==== PAGE 7 chars=961 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+5 points
+17. A student has 3 cards with numbers on them. Their sum is 782. Unfortunately, a worm ate part
+of each card. What is the sum of the 3 missing digits?
+一名学生有3 张写有数字的卡片，卡片上的数字之和是782。不幸的是，每张卡片都被虫子吃掉
+了一部分。请问被吃掉的3 个数字之和是多少?
+2
+3
+1
+4
+4 1
+(A) 8
+(B) 9
+(C) 10
+(D) 11
+(E) 12
+18. Lucy weighs some blocks.
+小露给一些积木称重。
+200 g
+100 g
+240 g
+?
+How much do the 3 different blocks weigh together?
+请问这3 种不同的积木一共有多重?
+(A) 270 g
+(B) 280 g
+(C) 290 g
+(D) 300 g
+(E) 310 g
+19. There are 60 pupils on a trip. When they line up, the colours of their reflective vests follow the
+pattern: yellow, green, yellow, green...The colours of their backpacks follow a different pattern: red,
+brown, orange, red, brown, orange...How many pupils with a yellow reflective vest also have an orange
+backpack?
+有60 名小学生去旅行。排队时，他们穿的反光背心颜色遵循这样的规律：黄色、绿色、黄色、绿
+色...... 他们背的书包颜色遵循另一种规律：红色、棕色、橙色、红色、棕色、橙色...... 请问有多少名
+小学生穿着黄色反光背心并且背着橙色书包?
+(A) 3
+(B) 4
+(C) 6
+(D) 8
+(E) 10
+7
+
+
+==== PAGE 8 chars=1093 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+20. In the following calculations, the same digits are hidden under the same figures. Different digits
+are hidden under different figures.
+在下面的算式中，相同图形代表相同的一位数，不同图形代表不同的一位数。
++
+=
++
+=
+What is the value of
+×
+×
+?
+请问
+×
+×
+的值是多少?
+(A) 0
+(B) 15
+(C) 18
+(D) 28
+(E) 30
+21. There are exactly 2 frogs in each row and each column. The frogs decide that 2 of them will
+jump to a neighbouring empty cell at the same time. Neighbouring cells have a side in common. After
+that, there still are exactly 2 frogs in each row and in each column. In how many ways can the frogs
+do this?
+下方每行每列都恰好有两只青蛙。青蛙们决定，它们中的两只将同时跳到一个与自己相邻的空白
+方格中。相邻方格是指共用一条边的方格。完成跳跃后，每行和每列中依然恰好有两只青蛙。请问这
+些青蛙有几种跳跃方式?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+22. The figure below shows a beehive with 9 cells. There is honey in some cells. The number in each
+cell shows how many neighbouring cells contain honey. Neighbouring cells have a side in common.
+How many cells contain honey?
+下图是一个由9 个巢穴组成的蜂巢。其中一些巢穴中含有蜂蜜，每个巢穴上的数字表示相邻巢
+穴中含有蜂蜜的巢穴数量。相邻巢穴是指共用一条边的巢穴。请问这个蜂巢中有多少个巢穴含有蜂蜜?
+1 1 3
+3
+3
+4 4 2
+2
+(A) 4
+(B) 5
+(C) 6
+(D) 7
+(E) 8
+8
+
+
+==== PAGE 9 chars=1081 images=2 ====
+Math Kangaroo 2024 (China)–Level B
+23. 3 girls go to the tray one after the other and take some cookies.
+3 个女孩相继走到托盘前拿走一些饼干。
+One of the girls takes all the hearts available on the tray. Another girl takes all the white cookies
+available on the tray. Another girl takes all the large cookies available on the tray. However, they do
+not necessarily take the cookies in this order.
+One girl takes 3 cookies, one takes 6 cookies and one takes 7 cookies.
+Which of the following sets of cookies does one of these girls take?
+其中一个女孩拿走了托盘上所有的心形饼干；另一个女孩拿走了托盘上所有的白色饼干；还有一
+个女孩拿走了托盘上所有的大块饼干。但是，她们不一定是按照这个顺序拿走的饼干。
+其中有一个女孩拿走3 块饼干；一个女孩拿走6 块饼干；还有一个女孩拿走7 块饼干。
+请问以下哪组饼干是其中一个女孩拿走的?
+(A)
+(B)
+(C)
+(D)
+(E)
+24. There are 2 types of blocks: white
+and red
+.
+A small cube can be made of 4 white blocks or of 1 white and 1 red block. The large cube shown
+in the picture is made of small cubes. What is the smallest number of white blocks needed to make
+the large cube?
+有两种积木：白色积木
+和红色积木
+。
+一个小立方体可以用4 块白色积木搭成，也可以用1 块白色积木和1 块红色积木搭成。下图所
+示的大立方体是用小立方体搭成的。请问最少需要几块白色积木才能搭成这个大立方体?
+(A) 8
+(B) 11
+(C) 13
+(D) 14
+(E) 23
+9
+
+
+==== PAGE 10 chars=667 images=0 ====
+Ecolier Finalized
+Ecolier
+3 points
+1 (Switzerland). Which square is cut into 2 different shapes?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: The shapes in the figure (colored in gray and white) are different. The gray shape is made
+from 9 squares, and white shape is made from 7 squares.
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+2 (Denmark). What is the smallest number of ladders the firefighter must use to reach the fire
+without jumping?
+(A) 4
+(B) 5
+(C) 6
+(D) 7
+(E) 8
+Solution: The firefighter must reach the fire using only stairs and without jumping. The minimum
+number of ladders required for this is 6. See the figure.
+1
+Solutions included - do not use for contest
+
+
+==== PAGE 11 chars=438 images=0 ====
+Ecolier Finalized
+1
+2
+3
+4
+5
+6
+3 (Russia). The table consists of 28 white cells:
+Ira paints 2 rows and 1 column.
+A row is from left to right.
+A column is from top to bottom.
+How many cells will remain white?
+(A) 8
+(B) 10
+(C) 12
+(D) 14
+(E) 17
+Solution: If we color two rows with green and one column with yellow, the total number of remaining
+white cells will be 12.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+2
+Solutions included - do not use for contest
+
+
+==== PAGE 12 chars=1683 images=0 ====
+Ecolier Finalized
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+4 (Ghana). Soccer players numbered 1 to 11 stand in a circle.
+Each player kicks the ball to the third player on their left.
+Player 1 starts.
+This kicking pattern continues until a player has the ball for the second
+time.
+What is the number of the player who kicked the ball last?
+(A) 7
+(B) 8
+(C) 9
+(D) 10
+(E) 11
+Solution: The 4th pass will be from the player wearing shirt number 10 to the player wearing shirt
+number 2.
+The 7th pass will be from the player wearing shirt number 8 to the player wearing shirt number 11.
+The 10th pass will be from the player wearing shirt number 6 to the player wearing shirt number 9.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+(1.)
+(2.)
+(3.)
+(4.)
+(5.)
+(6.)
+(7.)
+(8.)
+(9.)
+(10.)
+(11.)
+5 (Iran). Mohammad wrote 3 consecutive 4-digit numbers in a row.
+His sister erased some digits.
+What are the missing digits (from left to right)?
+(For example, 213, 214, 215 are 3 consecutive 3-digit numbers.)
+4897, 4898, 4899
+(A) 389, 3, 99
+(B) 489, 3, 96
+(C) 489, 4, 98
+(D) 489, 4, 99
+(E) 488, 4, 99
+Solution: The consecutive numbers are:
+4897, 4898, 4899
+The missing digits are: 489, 4, 99
+6 (Nigeria). Lizzy pays 7 dollars for 3 items.
+The cost of each item is different and is a whole number. 
+How much is the most expensive item?
+(A) 2 dollars
+(B) 3 dollars
+(C) 4 dollars
+(D) 5 dollars
+(E) 6 dollars
+Solution: Since the cost of each item is a whole number of dollars and the total cost is 7 dollars,
+the possible costs of the items are 1 dollar, 2 dollars, 4 dollars. Therefore, the most expensive item
+could cost 4 dollars.
+7 (Poland). A cat knocks off 1 block from Felix’s construction.
+3
+Solutions included - do not use for contest
+
+
+==== PAGE 13 chars=1031 images=0 ====
+Ecolier Finalized
+What could this construction have looked like before the block was knocked off?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: A cat knocked off one block. When we look Felix’s construction, we see that the construc-
+tions in options A, B, C, and D differ by two or more blocks from his construction now. Only answer
+E differs by only one block.
+8 (Iraq). Alex has a Kangaroo poster on the kitchen wall.
+2024
+How many grey tiles are there behind the poster?
+(A) 15
+(B) 21
+(C) 25
+(D) 30
+(E) 35
+Solution: If we remove the poster, we would be able to see all the 21 gray tiles that are behind the
+poster, see the picture.
+Alternatively, if we begin from the top of the poster, we can notice 3 gray tiles in the first row, 4 will
+be in the next, 3 in the following, 4 again, and so on. We have a total of 6 rows behind the poster,
+with a repeating pattern of 3 tiles in one row and 4 tiles in the second row. This results in total of 7
+tiles for every 2 rows, or 21 tiles for all 6 rows.
+4
+Solutions included - do not use for contest
+
+
+==== PAGE 14 chars=910 images=0 ====
+Ecolier Finalized
+2024
+4 points
+9 (Costa Rica). Antonia and Lucian toss a coin.
+If the child sees the purple side, the child advances 3 steps.
+If the child sees the green side, the child goes back 1 step or stays at the starting position.
+Both started in front of number 1 and each tossed the coin 4 times.
+Antonia advanced to number 4 and Lucian advanced to number 8.
+How many times in total did they see the green side of the coin?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution: Antonia advanced to number 4 meaning that he must have seen 2 purple sides and 2 green
+sides: 3 + 3 −1 −1 = 4. Lucian advanced to number 8 meaning that she must have seen 3 purple
+sides and 1 green side: 3 + 3 + 3 −1 = 8. In total, they have seen the green side 3 times.
+10 (Switzerland). There are five different kinds of fruit in a bowl:
+.
+Ann likes
+.
+Ben likes
+.
+Cam likes
+.
+Dan likes
+.
+5
+Solutions included - do not use for contest
+
+
+==== PAGE 15 chars=665 images=0 ====
+Ecolier Finalized
+Eli likes
+.
+Everyone gets a fruit they like.
+Everyone gets a different kind of fruit.
+What does Ben get?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: Ann gets
+because this is the only fruit she likes.
+Dan gets
+because Ann gets the other fruit he likes.
+Cam gets
+because Ann and Dan get the other fruits he likes.
+Eli gets
+because Cam got the other fruit she likes.
+Ben must have got
+because this is the only fruit no one else likes.
+Solution 2: Note that we could observe that the apple is the only fruit on the list of liked fruits. Only
+Ben likes apple of all fruits. Hence, the answer is that Ben gets the apple.
+6
+Solutions included - do not use for contest
+
+
+==== PAGE 16 chars=1237 images=0 ====
+Ecolier Finalized
+11 (Poland). Ada has built a tower of 8 discs, as in the picture.
+Ada removes the second disc from the bottom of this tower.
+Then she removes the third disc from the bottom of the new tower.
+Then she removes the fourth disc from the bottom of the new tower. Then she removes the
+fifth disc from the bottom of the new tower.
+Which tower does Ada end up with?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: b/w version:
+Let us use the initial letters of the colors to represent the disks on the tower starting from the bottom.
+We have,
+O
+B
+O
+W
+B
+O
+W
+B
+First, remove the 2nd disk or colored W from the bottom, what is left is BOBWOBO.
+Next remove the 3rd disk or colored B from the new tower. What is left is BOWOBO.
+Now remove the 4th disk which is O, what is left is BOWBO.
+Lastly remove the 5th disk or colored O, what is left is BOWB or
+Blue, Orange, White, Blue.
+Solution 2:
+1. Ada removes the second (lower white) disk from the bottom of this tower.
+2. Then she removes the third (middle blue) disk from the bottom of the new tower.
+3. Then she removes the fourth (middle orange) disk of the new tower and then the fifth (top orange)
+disk of the new tower.
+The tower Ada ends up with is
+7
+Solutions included - do not use for contest
+
+
+==== PAGE 17 chars=1593 images=1 ====
+Ecolier Finalized
+12 (United Kingdom). Peter the penguin goes fishing every day and brings
+back 9 fish for his 2 chicks.
+Each day, he gives 5 fish to the first chick he sees and 4 fish to the second chick,
+which they eat.
+Over the last few days, 1 chick has eaten 26 fish.
+How many fish has the other chick eaten?
+(A) 19
+(B) 22
+(C) 25
+(D) 28
+(E) 31
+Solution: To have eaten 26 fish, the first chick must have eaten 4 fish four times and 5 fish twice.
+Therefore the second chick must have eaten 5 fish four times and 4 fish twice. Hence the number of
+fish the second chick ate was 5 × 4 + 4 × 2 = 28.
+13 (China). 7 cards, numbered 1 to 7, are placed in 4 overlapping rings.
+The sum of the numbers in each ring is 10.
+Which number is under the question mark?
+6
+?
+3
+(A) 1
+(B) 2
+(C) 4
+(D) 5
+(E) 7
+Solution: The number on the right of 6 must be 4 for the sum in the first ring to be 10. The number
+on the left of 3 must be 7 for the sum in the last ring to be 10. The sum of the number under the
+question mark and the one to the left of it must be 6, and sum of the number under the question
+mark and the one to the right of it must be 3. The numbers in these three cards have to be 1, 2, and
+5, meaning that 1 is common in these sum, i.e. under the question mark: 1 + 2 = 3 and 1 + 5 = 6.
+6
+1
+3
+4
+7
+2
+5
+14 (Germany).
+Lucas wants to make a caterpillar that has a head, a tail and either 1, 2 or 3 puzzle pieces in between.
+How many different caterpillars can Lucas make without flipping pieces?
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+Solution: coloured version:
+8
+Solutions included - do not use for contest
+
+
+==== PAGE 18 chars=1383 images=0 ====
+Ecolier Finalized
+1 2
+4 3
+6 7
+8 5
+15 (Brazil). John writes the numbers 1 to 4 on a sheet.
+Then he flips the sheet and writes the numbers 5 to 8, as shown.
+After that, he cuts the sheet into 4 rectangular cards and puts them in a
+row:
+? 5 ? 6
+What is the sum of the numbers represented by the question marks?
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 7
+Solution: From the figure with the sheet, we can see that 6 is behind 2, 7 behind 1, 8 behind 3, 5
+behind 4. The numbers under the ? marks are behind 7 and 8, namely 1 and 3 with a sum 4.
+Solution 2:
+The numbers on the flipping sheet are as follows:
+1 is matched with 7.
+2 is matched with 6.
+4 is matched with 5.
+3 is matched with 8.
+When we put these numbers in a row, we notice that there are two missing numbers, which
+we’ll show with question marks 7 and 8. Their corresponding behind numbers are 1 and 3. So, if we
+add 1 and 3 together, we get 4.
+16 (Finland). A floor is covered with 2 kinds of tile
+and
+.
+The rectangles have size 23 cm × 11 cm.
+The picture shows a part of the floor.
+What is the side-length of the square tiles?
+(A) 3 cm
+(B) 4 cm
+(C) 5 cm
+(D) 6 cm
+(E) 7 cm
+Solution: coloured version:
+The long side of the tile equals the short side of the tile and two sides of the square. Thus, two sides
+of the square equal 23 −11 = 12 cm, and one side of the square equals 12 ÷ 2 = 6 cm.
+9
+Solutions included - do not use for contest
+
+
+==== PAGE 19 chars=2053 images=0 ====
+Ecolier Finalized
+5 points
+17 (Greece). A student has 3 cards with numbers on them.
+Their sum is 782.
+Unfortunately, a worm ate part of each card.
+What is the sum of the 3 missing digits?
+2
+3
+1
+4
+4 1
+(A) 8
+(B) 9
+(C) 10
+(D) 11
+(E) 12
+Solution: The missing number in the units is 5 so that 3 + 4 + 5 = 12 (which means 2 and 1 to
+carry). The tens digits (with the carry) must add up to 8, so without the carry it is 7. A 1 is already
+present, so the other two (the missing ones) must add to 6 . Any combination of digits that add up
+to 6 would do. So the missing numbers add up to 6 + 5 = 11. Note there are many examples of
+numbers that satisfy the conditions, for as long as the two missing tens digits add up to 6. Examples:
+213 + 154 + 415 = 782 or 223 + 144 + 415 = 782 or 233 + 134 + 415 = 782, etc.
+18 (Catalonia). Lucy weighs some blocks.
+200 g
+100 g
+240 g
+?
+How much do the 3 different blocks weigh together?
+(A) 270 g
+(B) 280 g
+(C) 290 g
+(D) 300 g
+(E) 310 g
+Solution: If you add the 3 scales then you will have every block 2 times. (200 g + 100 g + 240 g) :
+2 = 540 g : 2 = 270 g
+19 (Slovakia). There are 60 pupils on a trip.
+When they line up, the colours of their reflective vests follow the pattern: yellow, green, yellow, green...
+The colours of their backpacks follow a different pattern: red, brown, orange, red, brown, orange...
+How many pupils with a yellow reflective vest also have an orange backpack?
+(A) 3
+(B) 4
+(C) 6
+(D) 8
+(E) 10
+Solution: YR, GB, YO, GR, YB, GO, YR, GB, YO .... oh you notice that the pattern started to
+repeat itself after 6 pupils. Now we can see that there will be one YO (Yellow/Orange) for each 6 and
+we need to have the pattern 10 times. 1 × 10 = 10 pupils with yellow vest and orange backback.
+20 (Poland). In the following calculations, the same digits are hidden under the same figures.
+Different digits are hidden under different figures.
++
+=
++
+=
+What is the value of
+×
+×
+?
+(A) 0
+(B) 15
+(C) 18
+(D) 28
+(E) 30
+Solution: 7 + 7 = 14, 4 + 7 = 11, 7 · 4 · 1 = 28.
+10
+Solutions included - do not use for contest
+
+
+==== PAGE 20 chars=778 images=1 ====
+Ecolier Finalized
+21 (Republic of China (Taiwan)). There are exactly 2 frogs in each row and each column.
+The frogs decide that 2 of them will jump to a neighbouring empty cell at the same time.
+Neighbouring cells have a side in common.
+After that, there still are exactly 2 frogs in each row and in each column.
+In how many ways can the frogs do this?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5
+Solution: (D) 4
+The frogs can do this in 4 ways, as shown below:
+22 (Turkey). The figure below shows a beehive with 9 cells.
+There is honey in some cells.
+The number in each cell shows how many neighbouring cells contain honey. Neighbouring cells have
+a side in common.
+How many cells contain honey?
+1 1 3
+3
+3
+4 4 2
+2
+(A) 4
+(B) 5
+(C) 6
+(D) 7
+(E) 8
+11
+Solutions included - do not use for contest
+
+
+==== PAGE 21 chars=1454 images=0 ====
+Ecolier Finalized
+Solution:
+1 1 3
+3
+3
+4 4 2
+2
+23 (Poland). 3 girls go to the tray one after the other and take some cookies.
+One of the girls takes all the hearts available on the tray.
+Another girl takes all the white cookies available on the tray.
+Another girl takes all the large cookies available on the tray.
+However, they do not necessarily take the cookies in this order.
+One girl takes 3 cookies, one takes 6 cookies and one takes 7 cookies.
+Which of the following sets of cookies does one of these girls take?
+(A)
+(B)
+(C)
+(D)
+(E)
+Solution: The first girl did not take the hearts (there were 11 of them). If she took the white cookies,
+there would be 9 hearts left: 4 large and 5 small ones, and the conditions of the problem would not
+be fulfilled. So the first girl took 7 large cookies, the second took 6 small hearts, and the third took 3
+small round white cookies.
+24 (Russia). There are 2 types of blocks: white
+and red
+.
+A small cube can be made of 4 white blocks or of 1 white and 1 red block.
+The large cube shown in the picture is made of small cubes.
+What is the smallest number of white blocks needed to make the large cube?
+(A) 8
+(B) 11
+(C) 13
+(D) 14
+(E) 23
+Solution: This cube consists of 8 simple cubes. Every simple cube contains at least 1 white element.
+Two simple cubes of shown cube consist of 4 white elements. Therefore the smallest number of white
+elements is 6 + 4 + 4 = 14.
+12
+Solutions included - do not use for contest

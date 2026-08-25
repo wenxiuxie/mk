@@ -1,0 +1,488 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2017 – Level 1 -1",
+    "zh": "Math Kangaroo 2017 – 等级 1 -1 -1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q1: Who catches the ﬁsh?…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第1题：请问是谁钓到了那条鱼？"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Who catches the ﬁsh? Siapakah yang menangkap ikan tersebut?",
+        "zh": "请问是谁钓到了那条鱼？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q2: In the picture there are…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第2题：图中有数个5 角星、6…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In the picture there are 5-pointed, 6-pointed and 7-pointed stars. How many 5-pointed stars are there? Pada gambar berikut terdapat bintang dengan 5 bucu, 6 bucu dan 7 bucu.",
+        "zh": "图中有数个5 角星、6 角星和7 角星。请问图中有多少个5 角星？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q3: The cake in the picture is…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第3题：图中的蛋糕被切后平分给了几位小朋…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The cake in the picture is cut and divided among some children. Each child receives a piece of the cake with three cherries on top. How many children are there? Kek pada gambar berikut dipotong dan dibahagikan kepada beberapa orang kanak-kanak.",
+        "zh": "图中的蛋糕被切后平分给了几位小朋友。每一位小朋友都获得了一块有三颗樱桃的蛋 糕。请问共有几位小朋友？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q4: If we cut along the dotted…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第4题：请问如果我们依着这条直线剪，这条…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "If we cut along the dotted line, how many parts will the rope split into? Jika kita memotong mengikut garisan putus-putus, berapakah bahagian tali yang akan ter- hasil?",
+        "zh": "请问如果我们依着这条直线剪，这条绳子会被切成几个部分？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q5: Ellen wants to decorate the…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第5题：Ellen…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Ellen wants to decorate the butterﬂy with the given stickers. Which butterﬂy can she make? Ellen mahu menghias rama-rama berikut menggunakan pelekat yang diberikan. Rama-rama",
+        "zh": "Ellen 想要用这些贴纸设计这只蝴蝶。请问她可以设计出哪只蝴蝶？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q6: How many bricks like this…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第6题：请问这个雪屋缺少几个像…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many bricks like this are missing in the igloo? Berapakah bilangan bata berbentuk seperti ini",
+        "zh": "请问这个雪屋缺少几个像 这样的砖块？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q7: In the picture we see a…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第7题：图中我们看见一条线串着四颗珠子。…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In the picture we see a string with four beads. Which of the strings below is the same string? Seutas gelang dengan empat biji manik ditunjukkan pada gambar berikut. Gelang yang",
+        "zh": "图中我们看见一条线串着四颗珠子。请问以下哪条线与这条线相同？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q8: We choose four numbers from…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第8题：我们从1、3、4、5 和7…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "We choose four numbers from 1, 3, 4, 5, and 7. We write one number in each square so that the equation is correct. Which number is not chosen? Kita memilih empat nombor daripada 1, 3, 4, 5, dan 7. Kita tuliskan satu nombor di dalam",
+        "zh": "我们从1、3、4、5 和7 中选四个数字。然后，我们在每一个格子里写上一个数字，让 这个等式变得正确。请问哪个数字没被选中？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q9: In the country of Gemland…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第9题：在宝石城这个国家里，你可以用一颗…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In the country of Gemland you can trade three diamonds for one ruby, or one diamond for two ﬂowers. How many ﬂowers can be traded for two rubies? Di negara Gemland kita boleh tukarkan tiga berlian untuk satu delima, atau satu berlian",
+        "zh": "在宝石城这个国家里，你可以用一颗红宝石换取三颗钻石，或者用一颗钻石换取两朵 花。请问两颗红宝石可以换取几朵花？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 9,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2017 – Level 1 -1 Q10: Jim and Ben sat on the…",
+        "zh": "Math Kangaroo 2017 – Level 1 -1 第10题：如图所示，Jim 和Ben…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Jim and Ben sat on the Ferris wheel as in the picture below. The Ferris wheel turned and Ben was moved to the place where Jim was before. At that moment, where was Jim? Jim dan Ben duduk di atas roda Ferris seperti pada gambar di bawah. Roda Ferris terse-",
+        "zh": "如图所示，Jim 和Ben 坐在摩天轮上。摩天轮旋转后，Ben 已经被移到Jim 原本的位置 上。请问这时候Jim 在哪里？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2017",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 10,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2017 – Level 1 -1"
+      },
+      "is_published": true
+    }
+  ]
+}

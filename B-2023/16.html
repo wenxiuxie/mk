@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>2023 B · Q16 · 迷宫贴纸顺序</title>
+<style>
+:root{--primary:#0284c7;--success:#14b8a6;--danger:#e11d48;--bg:#f0f9ff;--dark:#0c4a6e;--ink:#0f172a}
+*{box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:radial-gradient(circle at top,#e0f2fe,var(--bg) 55%);color:var(--ink);margin:0;padding:18px;display:flex;flex-direction:column;align-items:center}
+.lang-toggle-btn{position:fixed;top:16px;right:16px;background:var(--dark);color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:800;z-index:1000;box-shadow:0 6px 16px rgba(12,74,110,.25)}
+h1{text-align:center;color:var(--primary);margin:6px 0;font-size:22px}
+.meta{color:#64748b;font-size:13px;margin-bottom:12px}
+.wrap{max-width:960px;width:100%}
+.section{background:#fff;padding:18px 18px 16px;border-radius:16px;box-shadow:0 10px 28px rgba(2,132,199,.1);margin-bottom:14px}
+h2{color:var(--primary);border-left:5px solid var(--primary);padding-left:10px;margin:0 0 10px;font-size:17px}
+.fig{display:block;width:100%;max-width:560px;margin:8px auto;border-radius:12px;border:1px solid #e2e8f0;background:#fff}
+.fig.sm{max-width:380px}.fig.xs{max-width:280px}
+.optgrid{display:block;width:100%;max-width:640px;margin:10px auto;border-radius:12px;border:1px solid #e2e8f0}
+.tip{font-size:13px;color:#64748b;text-align:center;margin:6px 0;line-height:1.55}
+.note{font-size:13px;color:#475569;background:#f1f5f9;border-radius:12px;padding:10px 12px;line-height:1.55;margin:8px 0}
+.mission{display:grid;gap:8px;margin:10px 0}
+.mission .step{padding:10px 12px;border-radius:12px;border:2px solid #e2e8f0;font-size:14px;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.mission .step .num{flex:0 0 28px;height:28px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900}
+.mission .step.active{border-color:#93c5fd;background:#eff6ff}
+.mission .step.done{border-color:#86efac;background:#f0fdf4}
+.mission .step.done .num{background:#bbf7d0;color:#166534}
+.actions{text-align:center;margin-top:12px}
+.btn{border:none;border-radius:22px;padding:10px 18px;font-weight:800;cursor:pointer;margin:4px;font-size:14px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.submit{background:var(--success);color:#fff}.reset{background:#64748b;color:#fff}
+.ghost{background:#e2e8f0;color:#334155}.primary{background:var(--primary);color:#fff}.accent{background:#f59e0b;color:#111}
+.pool{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.card{min-width:56px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;cursor:pointer;text-align:center;user-select:none}
+.card.on{outline:3px solid #f59e0b}
+.answer-box{min-width:120px;min-height:52px;border:3px dashed var(--primary);border-radius:14px;margin:10px auto;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#fafbfc}
+.answer-box.filled{border-style:solid;background:#e8f5e9}
+#feedback{text-align:center;font-weight:800;margin-top:12px;min-height:28px}
+.ok{color:var(--success)}.bad{color:var(--danger)}
+.nav{display:flex;justify-content:space-between;margin-top:8px;gap:8px}
+.nav a{color:var(--primary);font-weight:700;text-decoration:none}
+.lang-zh{display:block}.lang-en{display:none}
+body.en-mode .lang-zh{display:none}body.en-mode .lang-en{display:block}
+.info{text-align:center;font-weight:800;min-height:28px;margin:8px 0;color:#0f172a;line-height:1.45}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;align-items:center;margin:8px 0}
+.stage{border:2px solid #bae6fd;border-radius:16px;background:linear-gradient(180deg,#f8fafc,#eff6ff);padding:14px;margin:10px auto;max-width:560px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.tab{min-width:48px;padding:8px 12px;border-radius:12px;border:2px solid #cbd5e1;background:#fff;font-weight:800;cursor:pointer}
+.tab.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.counter{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid #bae6fd;border-radius:999px;padding:6px 12px;font-weight:800}
+.counter button{width:32px;height:32px;border:none;border-radius:50%;background:var(--primary);color:#fff;font-size:18px;font-weight:900;cursor:pointer}
+.circle-row{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.circle-cell{width:40px;height:40px;border-radius:50%;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-weight:800;background:#fff;font-size:12px}
+.circle-cell.on{background:#fef3c7;border-color:#f59e0b}
+.circle-cell.ball{background:#dbeafe;border-color:#0284c7}
+.coinchip{display:inline-block;padding:6px 10px;border-radius:8px;font-weight:800;margin:3px;cursor:pointer;border:2px solid #cbd5e1}
+.coinchip.purple{background:#e9d5ff;border-color:#9333ea;color:#581c87}
+.coinchip.green{background:#bbf7d0;border-color:#22c55e;color:#166534}
+</style>
+</head>
+<body>
+<button class="lang-toggle-btn" onclick="document.body.classList.toggle('en-mode'); if(window.onLang) onLang();">🌐 EN / 中文</button>
+<h1 class="lang-zh">迷宫贴纸顺序</h1>
+<h1 class="lang-en">Maze Wall Stickers</h1>
+<div class="meta lang-zh">Math Kangaroo 2023 · 等级 B · 第 16 题 · 4 分</div>
+<div class="meta lang-en">Math Kangaroo 2023 · Level B · Q16 · 4 points</div>
+<div class="wrap">
+  <div class="section">
+    <h2 class="lang-zh">题目</h2>
+    <h2 class="lang-en">Problem</h2>
+    <p class="lang-zh">小莎走过两层迷宫，路过三张贴纸。她按什么顺序看到它们？</p>
+    <p class="lang-en">Sam walks the two-storey maze from entrance to exit, passing 3 wall stickers. In what order will she see them?</p>
+    <img class="fig" src="assets/q16_stem.png" alt="Q16 figure"/>
+<img class="optgrid" src="assets/q16_options.png" alt="Q16 options"/>
+
+  </div>
+  <div class="section">
+    <h2 class="lang-zh">实验台：对照迷宫路径</h2>
+    <h2 class="lang-en">Lab: trace maze path</h2>
+    
+    <div class="mission lang-zh"><div class="step" data-i="0"><div class="num">1</div><div>先仔细看题干图</div></div><div class="step" data-i="1"><div class="num">2</div><div>逐个对照选项 A–E</div></div><div class="step" data-i="2"><div class="num">3</div><div>用实验工具帮助排除</div></div><div class="step" data-i="3"><div class="num">4</div><div>选出你的答案</div></div></div><div class="mission lang-en"><div class="step" data-i="0"><div class="num">1</div><div>Study the stem figure</div></div><div class="step" data-i="1"><div class="num">2</div><div>Compare options A–E</div></div><div class="step" data-i="2"><div class="num">3</div><div>Use the lab tools</div></div><div class="step" data-i="3"><div class="num">4</div><div>Pick your answer</div></div></div>
+    <p class="tip lang-zh">从入口走到出口，记录三张贴纸的顺序：青蛙→犀牛→鲨鱼。</p>
+    <p class="tip lang-en">Walk entrance to exit; sticker order: frog → rhino → shark.</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="stage"><img class="fig sm" id="optView" src="assets/q16_options.png" alt="option" onerror="this.style.display='none'"/></div>
+    <div class="info" id="labInfo"></div>
+    
+    <p class="tip lang-zh" style="margin-top:16px">想好后选出答案（检查只提示对错，不公布选项字母）：</p>
+    <p class="tip lang-en" style="margin-top:16px">Then pick an answer (Check only says right/wrong):</p>
+    <div class="pool"><div class="card" data-v="A" onclick="pick(this)">A</div><div class="card" data-v="B" onclick="pick(this)">B</div><div class="card" data-v="C" onclick="pick(this)">C</div><div class="card" data-v="D" onclick="pick(this)">D</div><div class="card" data-v="E" onclick="pick(this)">E</div></div>
+    <div class="answer-box" id="ansBox"></div>
+    <div class="actions">
+      <button class="btn submit" onclick="checkAnswer()"><span class="lang-zh">检查答案</span><span class="lang-en">Check</span></button>
+      <button class="btn reset" onclick="location.reload()"><span class="lang-zh">重置整页</span><span class="lang-en">Reset page</span></button>
+      <div id="feedback"></div>
+    </div>
+  </div>
+  <div class="nav"><a href="15.html">← Q15</a><a href="17.html">Q17 →</a></div>
+</div>
+<script>
+const KEY=atob('QQ==');
+let picked=null;
+function pick(el){
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on'); picked=el.dataset.v;
+  const box=document.getElementById('ansBox');
+  box.textContent=el.textContent.trim(); box.classList.add('filled');
+  document.getElementById('feedback').textContent='';
+}
+function checkAnswer(){
+  const fb=document.getElementById('feedback');
+  if(!picked){ fb.className='bad'; fb.innerHTML='<span class="lang-zh">先选一个选项</span><span class="lang-en">Pick an option first</span>'; return; }
+  if(picked===KEY){ fb.className='ok'; fb.innerHTML='<span class="lang-zh">正确！</span><span class="lang-en">Correct!</span>'; }
+  else { fb.className='bad'; fb.innerHTML='<span class="lang-zh">再试试，回实验台看看</span><span class="lang-en">Try again — explore the lab</span>'; }
+}
+function setMission(i){
+  document.querySelectorAll('.mission .step').forEach(s=>{
+    const idx=+s.dataset.i;
+    s.classList.toggle('active', idx===i);
+    s.classList.toggle('done', idx<i);
+  });
+}
+
+const letters='ABCDE';
+const tabs=document.getElementById('tabs');
+letters.split('').forEach((L,i)=>{
+  const b=document.createElement('button'); b.className='tab'+(i===0?' on':''); b.textContent=L;
+  b.onclick=()=>{ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on')); b.classList.add('on');
+    document.getElementById('labInfo').textContent=(document.body.classList.contains('en-mode')?'Focusing on option ':'正在看选项 ')+L;
+    setMission(1);
+  };
+  tabs.appendChild(b);
+});
+setMission(0);
+
+
+</script>
+</body>
+</html>

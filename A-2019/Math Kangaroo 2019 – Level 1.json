@@ -1,0 +1,1160 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2019 – Level 1",
+    "zh": "Math Kangaroo 2019 – 等级 1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q1: Numbers Less Than 7",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第1题：少于7的数"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which cloud contains only numbers less than 7?",
+        "zh": "哪朵云只包含少于 7 的数？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Only one cloud has all numbers < 7.",
+        "zh": "只有一朵云里的数全部小于 7。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q2: Necklace Segment",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第2题：项链片段"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which figure shows a part of this necklace?",
+        "zh": "哪个图显示的是这条项链的一部分？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Match a consecutive triple on the circular necklace.",
+        "zh": "在环形项链上找连续三颗珠子的片段。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q3: Jumper’s Weight",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第3题：Jumper的体重"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Together, mum Kangaroo and her son Jumper weigh 60 kilograms. Mum Kangaroo alone weighs 52 kilograms. How much does Jumper weigh in kilograms?",
+        "zh": "袋鼠妈妈和她的儿子 Jumper 的总重量是 60 千克。袋鼠妈妈的重量为 52 千克。问 Jumper 的重量是多少千克？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "30",
+          "zh": "30"
+        },
+        {
+          "en": "46",
+          "zh": "46"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "60 − 52 = 8.",
+        "zh": "60 − 52 = 8。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q4: Cut Grid Piece",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第4题：切下的格子"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Karen cuts out one piece of the grid above. Which piece is the one she cut?",
+        "zh": "Karen 从上图中切出一部分，哪一块是她切出来的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Find the two-cell piece that appears as neighbours on the grid.",
+        "zh": "找出网格里相邻出现的那两格组合。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q5: Queue Between Lucy and Kim",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第5题：Lucy与Kim之间"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "At the entrance of the zoo there are 12 children in the queue. Lucy is the 7th from the front and Kim is the second from the back. How many children are there between Lucy and Kim in the queue?",
+        "zh": "动物园入口处有 12 个孩子在排队。从前面数 Lucy 是第 7 个，从后面数 Kim 是第 2 个。Lucy 和 Kim 之间有多少个孩子？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Lucy is 7th; Kim is 11th (2nd from back of 12). Between them: 8,9,10 → 3.",
+        "zh": "Lucy 第 7；Kim 从后第 2 即第 11。中间 8、9、10 → 3 人。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q6: Pairing Socks",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第6题：袜子配对"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Jorge pairs his socks so that the numbers match. How many pairs can he make?",
+        "zh": "Jorge 将袜子配对，使数字匹配。他能配出多少双？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Count how many numbers appear twice.",
+        "zh": "数有多少种数字能配成一对。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q7: Flowers in Rectangle",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第7题：长方形里的花"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Maya Bee was gathering pollen from all of the flowers that lie inside the rectangle, but are outside the triangle. From how many flowers did she collect pollen?",
+        "zh": "蜜蜂 Maya 从所有位于长方形之内而三角形之外的花朵上采集花粉。她从多少朵花上收集花粉？"
+      },
+      "choices": [
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "17",
+          "zh": "17"
+        },
+        {
+          "en": "20",
+          "zh": "20"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Count flowers inside the rectangle but outside the triangle.",
+        "zh": "数长方形内、三角形外的花。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q8: Apple and Pear Price",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第8题：苹果与梨的价钱"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Two apples together cost 6 cents. Two pears together cost 8 cents. How much do one apple and one pear cost together?",
+        "zh": "两个苹果合起来值 6 分钱。两个梨合起来值 8 分钱。一个苹果和一个梨合起来值多少钱？"
+      },
+      "choices": [
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Apple = 3, pear = 4; together 7.",
+        "zh": "苹果 3 分，梨 4 分；合起来 7 分。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q9: Close Two Gates",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第9题：关掉两扇门"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "You have to close two of the five gates so that the mouse cannot reach the cheese. Which gates should you close?",
+        "zh": "你必须关闭五扇门中的两扇，使得老鼠无法获取奶酪。你需要关掉哪些门？"
+      },
+      "choices": [
+        {
+          "en": "1 and 2",
+          "zh": "1 和 2"
+        },
+        {
+          "en": "2 and 3",
+          "zh": "2 和 3"
+        },
+        {
+          "en": "3 and 4",
+          "zh": "3 和 4"
+        },
+        {
+          "en": "3 and 5",
+          "zh": "3 和 5"
+        },
+        {
+          "en": "4 and 5",
+          "zh": "4 和 5"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Close the two gates that cut every path from mouse to cheese.",
+        "zh": "关掉能切断老鼠到奶酪所有通路的两扇门。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 9,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q10: Fold and Cut Paper",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第10题：折纸再剪开"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Patricia folds a sheet of paper twice and then cuts it, as shown. How many pieces of paper does she end up with?",
+        "zh": "如图所示，Patricia 将一张纸折叠两次，然后将其剪开。她最终得到了多少片纸？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Track layers after two folds, then one cut through all layers.",
+        "zh": "跟踪两次折叠后的层数，再一刀切开。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 10,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q11: Remove Stacked Cards",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第11题：移走叠放卡片"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five square cards are stacked on a table, as shown. The cards are removed one by one from the top of the stack. In what order are the cards removed?",
+        "zh": "如图所示，五张正方形卡片堆在桌上。卡片从顶部一张一张移走。卡片被移除的顺序是什么？"
+      },
+      "choices": [
+        {
+          "en": "5-2-3-1-4",
+          "zh": "5-2-3-1-4"
+        },
+        {
+          "en": "5-2-3-4-1",
+          "zh": "5-2-3-4-1"
+        },
+        {
+          "en": "4-5-2-3-1",
+          "zh": "4-5-2-3-1"
+        },
+        {
+          "en": "5-3-2-1-4",
+          "zh": "5-3-2-1-4"
+        },
+        {
+          "en": "1-2-3-4-5",
+          "zh": "1-2-3-4-5"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Always remove a card that is fully on top (not covered).",
+        "zh": "每次移走当前完全露在最上面的卡片。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -1 Q12: Cat Paths to Milk",
+        "zh": "Math Kangaroo 2019 – Level 1 -1 第12题：猫到牛奶的路径"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A cat and a bowl of milk are in the opposite corners of the board. The cat can only move as shown by the arrows. In how many ways can the cat reach the milk?",
+        "zh": "棋盘相对的角上有一只猫和一碗牛奶。猫仅能按箭头所示方式移动。猫到达牛奶的方法有多少种？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "On a 3×3 board, need 2 right and 2 down: C(4,2)=6 paths.",
+        "zh": "3×3 要向右 2、向下 2：C(4,2)=6 条路。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q13: Weave From the Back",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第13题：编织背面"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Four strips are woven into a pattern, as shown above. What do you see when you look at it from the other side?",
+        "zh": "如上图所示，四条带子编织成一个图案。当你从另一侧看它时，看到了什么？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "From the back, over/under swaps and left–right mirrors.",
+        "zh": "从背面看：上下关系对调，并左右镜像。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q14: Smallest Paint Area",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第14题：涂色面积最小"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Each of the shapes shown is made by glueing together four cubes of the same size. The shapes are to be painted. Which shape has the smallest area to be painted?",
+        "zh": "下面所示的每个形状是通过将四个相同尺寸的立方体粘合在一起而形成的。给它们涂上颜色，哪个形状要涂的面积最小？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "More glued faces ⇒ less paint. The 2×2 block hides the most faces.",
+        "zh": "粘合面越多，可涂面积越小。2×2 方块粘合最多。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q15: Tiled Floor Length",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第15题：瓷砖地板边长"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A floor is covered with identical rectangular tiles as shown. The shorter side of each tile is 1 meter. What is the length of the side with the question mark in meters?",
+        "zh": "如图所示，地板铺满了相同形状的长方形瓷砖。每块瓷砖短边的长度是 1 米。带问号的边的长度是多少米？"
+      },
+      "choices": [
+        {
+          "en": "6 m",
+          "zh": "6 米"
+        },
+        {
+          "en": "8 m",
+          "zh": "8 米"
+        },
+        {
+          "en": "10 m",
+          "zh": "10 米"
+        },
+        {
+          "en": "11 m",
+          "zh": "11 米"
+        },
+        {
+          "en": "12 m",
+          "zh": "12 米"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Use the short side 1 m to find the long side of a tile, then add along the marked edge to get 12 m.",
+        "zh": "用短边 1 米推出瓷砖长边，再沿问号边相加得到 12 米。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q16: Train Journey Hours",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第16题：火车运行时间"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A train from Kang station to Aroo station leaves at 6:00 in the morning and passes by three other stations without stopping. The numbers show journey times in hours. The train arrives at Aroo at 11:00 at night the same day. What is the journey time between Aroo and the previous station in hours?",
+        "zh": "从 Kang 车站到 Aroo 的火车早上 6 点出发，中途经过其他三个车站但不停车。数值表示站间运行时间（小时）。火车在同一天晚上 11 点抵达 Aroo。问 Aroo 与前一站之间的运行时间是多少小时？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "6:00 to 23:00 is 17 hours; 2+3+7+?=17 ⇒ ?=5.",
+        "zh": "6 点到 23 点共 17 小时；2+3+7+?=17 ⇒ ?=5。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q17: Sheep and Cows",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第17题：绵羊与奶牛"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "On a farm, there are only sheep and cows. The number of sheep is 8 more than the number of cows. The number of cows is half the number of sheep. How many animals are on the farm?",
+        "zh": "在一个农场里，只有绵羊和奶牛。绵羊的数量比奶牛的数量多 8。奶牛的数量是绵羊数量的一半。问农场里有多少只动物？"
+      },
+      "choices": [
+        {
+          "en": "16",
+          "zh": "16"
+        },
+        {
+          "en": "18",
+          "zh": "18"
+        },
+        {
+          "en": "20",
+          "zh": "20"
+        },
+        {
+          "en": "24",
+          "zh": "24"
+        },
+        {
+          "en": "28",
+          "zh": "28"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Cows = sheep/2 and sheep = cows+8 ⇒ sheep=16, cows=8, total=24.",
+        "zh": "牛=羊/2 且羊=牛+8 ⇒ 羊16、牛8，共24。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q18: Three Cut Pieces",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第18题：切成三块"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A figure has been cut into 3 pieces as above. Which figure could have been cut?",
+        "zh": "一个图形被切成如上所示的 3 块，问原来的图形可能是哪个？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Assemble the three pieces into one of the option shapes.",
+        "zh": "把三块拼回，对照选项图形。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q19: Bactrian Camels",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第19题：双峰驼数量"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are 10 camels in a Zoo. The camels are either bactrian (with two humps) or dromedary (with one hump). In total there are 14 humps. Find the number of bactrian camels in the Zoo.",
+        "zh": "动物园里有 10 只骆驼。骆驼是双峰驼（两个驼峰）或单峰驼（一个驼峰）。总共有 14 个驼峰。求双峰驼的数量。"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Let b bactrians: b+d=10, 2b+d=14 ⇒ b=4.",
+        "zh": "设双峰 b：b+d=10，2b+d=14 ⇒ b=4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q20: Elli’s Nuts",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第20题：Elli的坚果"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Three squirrels Anni, Asia and Elli collected 7 nuts in total. Each collected a different number of nuts, but each collected at least one. Anni collected the least, Asia the most. How many nuts did Elli collect?",
+        "zh": "三只松鼠 Anni、Asia 和 Elli 共采集了 7 个坚果。每只数量不同，且至少 1 个。Anni 最少，Asia 最多。问 Elli 采集了多少个？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Distinct positive integers summing to 7, Anni least, Asia most ⇒ 1+2+4; Elli=2.",
+        "zh": "互不相同正整数和为7，Anni最少Asia最多 ⇒ 1+2+4；Elli=2。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q21: Sandcastle Height",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第21题：沙堡高度"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Tim and Tom built a sandcastle and stuck half of the flagpole into the highest point. The upper tip of the flagpole was 80 cm above the ground, the lower tip was 20 cm above the ground. How tall was the sandcastle in cm?",
+        "zh": "Tim 和 Tom 建造沙堡并将旗杆的一半从最高点插入。旗杆上顶端高出地面 80 厘米，下顶端高出地面 20 厘米。问沙堡高度是多少厘米？"
+      },
+      "choices": [
+        {
+          "en": "40",
+          "zh": "40"
+        },
+        {
+          "en": "45",
+          "zh": "45"
+        },
+        {
+          "en": "50",
+          "zh": "50"
+        },
+        {
+          "en": "55",
+          "zh": "55"
+        },
+        {
+          "en": "60",
+          "zh": "60"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Pole length 60; half in sandcastle ⇒ height = 20+30 = 50.",
+        "zh": "旗杆长60；一半插入 ⇒ 高度=20+30=50。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q22: Colour Replacement",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第22题：方块换色"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Here are nine squares. First, Ani replaced all the black squares with white ones. Next, Bob replaced all the grey squares with black ones. Finally, Chris replaced all the white squares with grey ones. What did they get at the end?",
+        "zh": "这里有九个方块。首先 Ani 把所有黑方换成白方；接着 Bob 把所有灰方换成黑方；最后 Chris 把所有白方换成灰方。问最后得到什么？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Apply the three replacements in order: black→white→… final pattern is option D.",
+        "zh": "按三次替换顺序变色，最终对应选项 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q23: Square Sum Over 63",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第23题：四格之和大于63"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Peter chose a square of four cells in the table so that the sum of the four numbers is greater than 63. Which of the following numbers must be in the chosen square?",
+        "zh": "Peter 在表格中选了一个由四个单元格组成的正方形，使其中四个数之和大于 63。问选定的正方形中必须包括下列哪个数？"
+      },
+      "choices": [
+        {
+          "en": "14",
+          "zh": "14"
+        },
+        {
+          "en": "15",
+          "zh": "15"
+        },
+        {
+          "en": "17",
+          "zh": "17"
+        },
+        {
+          "en": "18",
+          "zh": "18"
+        },
+        {
+          "en": "20",
+          "zh": "20"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Only 2×2 blocks with sum>63 all contain 14.",
+        "zh": "所有和>63 的 2×2 都包含 14。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2019 – Level 1 -2 Q24: Token Machine",
+        "zh": "Math Kangaroo 2019 – Level 1 -2 第24题：代币转换机器"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Alina's machine converts one red token into three white tokens and one white token into two red tokens. Alina has three red tokens and one white token. She uses the machine three times. What is the smallest number of tokens she can end up with?",
+        "zh": "Alina 的机器可将 1 红换成 3 白，或将 1 白换成 2 红。她有 3 红 1 白，使用机器三次。她最终拥有的代币数量最小是多少？"
+      },
+      "choices": [
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Try sequences of 3 conversions; the minimal total is 8.",
+        "zh": "试三次转换的不同顺序；最小总数是 8。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2019",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2019 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

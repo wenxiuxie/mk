@@ -1,0 +1,584 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2023 – Level B -2",
+    "zh": "Math Kangaroo 2023 – 等级 B -2 -2"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q13: Cars with Two People",
+        "zh": "Math Kangaroo 2023 – Level B -2 第13题：只坐两人的车"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "8 cars wait for the ferry; each has 2 or 3 people; 19 people total. How many cars contain exactly 2 people?",
+        "zh": "8 辆车排队，每辆 2 或 3 人，共 19 人。恰好坐 2 人的车有几辆？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "2a+3(8−a)=19 ⇒ a=5.",
+        "zh": "2a+3(8−a)=19 ⇒ a=5。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q14: Metro 96th Stop",
+        "zh": "Math Kangaroo 2023 – Level B -2 第14题：地铁第96站"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Metro stations A–F; train reverses at ends. Started at B, first stop C. Which is the 96th stop?",
+        "zh": "地铁站 A–F，到终点折返。从 B 出发第一站 C。第 96 站是哪一站？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Period 10; 96 mod 10 = 6 → station D.",
+        "zh": "周期 10；96÷10 余 6 → D 站。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q15: Colour Connected Circles",
+        "zh": "Math Kangaroo 2023 – Level B -2 第15题：圆圈最少着色"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Hatice paints circles so any two connected by a line have different colours. Smallest number of colours needed?",
+        "zh": "相连圆圈不同色。最少需要多少种颜色？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Graph colouring needs 3 colours.",
+        "zh": "图着色最少 3 色。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q16: Maze Wall Stickers",
+        "zh": "Math Kangaroo 2023 – Level B -2 第16题：迷宫贴纸顺序"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Sam walks the two-storey maze from entrance to exit, passing 3 wall stickers. In what order will she see them?",
+        "zh": "小莎走过两层迷宫，路过三张贴纸。她按什么顺序看到它们？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Path order: frog, then rhino, then shark.",
+        "zh": "路径顺序：青蛙→犀牛→鲨鱼。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q17: Kangaroos in a Line",
+        "zh": "Math Kangaroo 2023 – Level B -2 第17题：队列中的袋鼠"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "6 beavers and 2 kangaroos in a line. Amongst any 3 consecutively numbered animals, exactly 1 is a kangaroo. Which numbered animal is a kangaroo?",
+        "zh": "6 海狸 2 袋鼠站成一排；任意连续 3 个中恰有 1 只袋鼠。哪个编号是袋鼠？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Only positions 3 and 6 work; so 3 is a kangaroo.",
+        "zh": "袋鼠只能在 3 与 6；故选 3。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q18: Fold Cut Unfold",
+        "zh": "Math Kangaroo 2023 – Level B -2 第18题：对折剪角展开"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Rebecca folds a square twice, cuts off one corner, then unfolds. What does the paper look like?",
+        "zh": "正方形纸对折两次，剪掉一角再展开。展开后是什么样？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Two folds then cut corner unfolds to option B.",
+        "zh": "对折两次剪角展开对应 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q19: Entering Orders",
+        "zh": "Math Kangaroo 2023 – Level B -2 第19题：进入顺序"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Hermione is never first, Harry never second, Ron never third. In how many different orders could they walk in?",
+        "zh": "赫敏不当第一，哈利不当第二，罗恩不当第三。有多少种进入顺序？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Only two orders: H→Hermione→Ron and H→Ron→Hermione.",
+        "zh": "仅两种：哈→赫→罗，哈→罗→赫。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q20: Correct Clock",
+        "zh": "Math Kangaroo 2023 – Level B -2 第20题：正确的钟"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five clocks: one hour fast, one hour slow, one correct, two stopped. Which shows the correct time?",
+        "zh": "五个钟：一个快一小时，一个慢一小时，一个正确，两个停走。哪个显示正确时间？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Correct time is 3 o’clock — clock D.",
+        "zh": "正确时间是 3 点，钟 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q21: Adam’s Blue Marbles",
+        "zh": "Math Kangaroo 2023 – Level B -2 第21题：小亚的蓝弹珠"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Adam and Brenda have 9 marbles each; together 8 red and 10 blue. Brenda has twice as many blue as red. How many blue marbles does Adam have?",
+        "zh": "两人各 9 颗弹珠，共 8 红 10 蓝；小布蓝是红的两倍。小亚有几颗蓝弹珠？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "0",
+          "zh": "0"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Brenda 6 blue + 3 red; Adam has 4 blue.",
+        "zh": "小布 6 蓝 3 红；小亚蓝弹珠 4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q22: Machines R and S",
+        "zh": "Math Kangaroo 2023 – Level B -2 第22题：机器R与S"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Machine R rotates 90° clockwise; machine S stamps ♣. In which order are the machines used to produce the result shown?",
+        "zh": "机器 R 顺时针转 90°，机器 S 盖章 ♣。要得到图示结果，机器顺序是？"
+      },
+      "choices": [
+        {
+          "en": "SRR",
+          "zh": "SRR"
+        },
+        {
+          "en": "RSR",
+          "zh": "RSR"
+        },
+        {
+          "en": "RSS",
+          "zh": "RSS"
+        },
+        {
+          "en": "RRS",
+          "zh": "RRS"
+        },
+        {
+          "en": "SRS",
+          "zh": "SRS"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Two clockwise turns with stamp between ⇒ RSR.",
+        "zh": "盖章前后各转一次 ⇒ RSR。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q23: Circle Number Sums",
+        "zh": "Math Kangaroo 2023 – Level B -2 第23题：圆圈数字和"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Write 1–7 in circles so neighbouring sums match the labels. What number must be in the green/shaded circle?",
+        "zh": "把 1–7 写入圆圈，相邻和如图。阴影圆圈必须写几？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Neighbour sums force 4 in the shaded circle.",
+        "zh": "相邻和推出阴影格为 4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2023 – Level B -2 Q24: Shaded Grid Guess",
+        "zh": "Math Kangaroo 2023 – Level B -2 第24题：阴影网格猜测"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Maria shaded exactly 5 cells in a 4×4 grid. One friend is right; each of the others has four cells correct. Which is the correct grid?",
+        "zh": "4×4 中恰涂 5 格。一人全对，其余每人猜对 4 个阴影格。哪个是正确网格？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Only grid E is fully correct while others share exactly 4 shaded cells with it.",
+        "zh": "只有 E 全对，且与其余各恰重叠 4 个阴影格。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2023",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2023 – Level B -2"
+      },
+      "is_published": true
+    }
+  ]
+}

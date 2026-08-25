@@ -1,0 +1,1160 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2024 – Level B",
+    "zh": "Math Kangaroo 2024 – 等级 B"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q1: Two Different Shapes",
+        "zh": "Math Kangaroo 2024 – Level B -1 第1题：两个不同形状"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which square is cut into 2 different shapes?",
+        "zh": "请问哪个正方形被划分为两个不同的形状？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Only option E splits into two shapes with different area (9 vs 7 small squares).",
+        "zh": "只有 E 分成面积不同的两块（9 与 7 个小格）。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q2: Firefighter Ladders",
+        "zh": "Math Kangaroo 2024 – Level B -1 第2题：消防员的梯子"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "What is the smallest number of ladders the firefighter must use to reach the fire without jumping?",
+        "zh": "在不跳跃的情况下，消防员最少要用多少把梯子才能去救火？"
+      },
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The shortest ladder path without jumping uses 6 ladders.",
+        "zh": "不跳跃的最短路径需要 6 把梯子。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q3: Painted Rows and Column",
+        "zh": "Math Kangaroo 2024 – Level B -1 第3题：涂色的行与列"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The table consists of 28 white cells. Ira paints 2 rows and 1 column. How many cells will remain white?",
+        "zh": "下表由 28 个白色方格组成。小艾为其中 2 行和 1 列方格涂色。请问最后还剩多少个白色方格？"
+      },
+      "choices": [
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        },
+        {
+          "en": "14",
+          "zh": "14"
+        },
+        {
+          "en": "17",
+          "zh": "17"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Paint 2 rows and 1 column on a 4×7 grid of 28; 12 cells remain white.",
+        "zh": "4×7 共 28 格，涂 2 行 1 列后剩 12 个白格。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q4: Soccer Circle Kick",
+        "zh": "Math Kangaroo 2024 – Level B -1 第4题：圆圈传球"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Soccer players numbered 1 to 11 stand in a circle. Each player kicks the ball to the third player on their left. Player 1 starts. This continues until a player has the ball for the second time. What is the number of the player who kicked the ball last?",
+        "zh": "编号为 1 到 11 的足球运动员站成圆圈，每人把球踢给左边第三名球员。从 1 号开始，直到有人第二次拿到球。请问最后一名踢球的是几号？"
+      },
+      "choices": [
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Kicks +3 mod 11 from 1 until a player gets the ball twice; the last kicker is 9.",
+        "zh": "从 1 每次传给左边第 3 人，直到有人第二次拿球；最后踢球的是 9 号。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q5: Erased Digits",
+        "zh": "Math Kangaroo 2024 – Level B -1 第5题：被擦掉的数字"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Mohammad wrote 3 consecutive 4-digit numbers in a row. His sister erased some digits. What are the missing digits (from left to right)?",
+        "zh": "小莫将 3 个连续的四位数写成一行，姐姐擦掉了一些数位。请问哪些数字被擦掉了？（从左到右）"
+      },
+      "choices": [
+        {
+          "en": "389, 3, 99",
+          "zh": "389, 3, 99"
+        },
+        {
+          "en": "489, 3, 96",
+          "zh": "489, 3, 96"
+        },
+        {
+          "en": "489, 4, 98",
+          "zh": "489, 4, 98"
+        },
+        {
+          "en": "489, 4, 99",
+          "zh": "489, 4, 99"
+        },
+        {
+          "en": "488, 4, 99",
+          "zh": "488, 4, 99"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The numbers are 4897, 4898, 4899; missing digits 489, 4, 99.",
+        "zh": "连续数为 4897、4898、4899；缺 489、4、99。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q6: Most Expensive Item",
+        "zh": "Math Kangaroo 2024 – Level B -1 第6题：最贵的物品"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lizzy pays 7 dollars for 3 items. The cost of each item is different and is a whole number. How much is the most expensive item?",
+        "zh": "小李花 7 美元买了 3 件物品。每件价格不同且为整数。请问最贵的物品价格是多少？"
+      },
+      "choices": [
+        {
+          "en": "2 dollars",
+          "zh": "2 美元"
+        },
+        {
+          "en": "3 dollars",
+          "zh": "3 美元"
+        },
+        {
+          "en": "4 dollars",
+          "zh": "4 美元"
+        },
+        {
+          "en": "5 dollars",
+          "zh": "5 美元"
+        },
+        {
+          "en": "6 dollars",
+          "zh": "6 美元"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Different positive integers summing to 7: 1+2+4; most expensive is 4.",
+        "zh": "互不相同正整数和为 7：1+2+4；最贵 4 美元。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q7: Knocked-Off Block",
+        "zh": "Math Kangaroo 2024 – Level B -1 第7题：被撞掉的积木"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A cat knocks off 1 block from Felix’s construction. What could this construction have looked like before the block was knocked off?",
+        "zh": "小猫撞掉了小菲搭建形状中的一块积木。请问撞掉前可能是什么形状？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Only option E differs from the remaining figure by exactly one block.",
+        "zh": "只有 E 与剩余形状恰好差一块。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q8: Grey Tiles Behind Poster",
+        "zh": "Math Kangaroo 2024 – Level B -1 第8题：海报后的灰砖"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Alex has a Kangaroo poster on the kitchen wall. How many grey tiles are there behind the poster?",
+        "zh": "小亚在厨房墙上贴了袋鼠海报。请问海报后面有多少块灰色瓷砖？"
+      },
+      "choices": [
+        {
+          "en": "15",
+          "zh": "15"
+        },
+        {
+          "en": "21",
+          "zh": "21"
+        },
+        {
+          "en": "25",
+          "zh": "25"
+        },
+        {
+          "en": "30",
+          "zh": "30"
+        },
+        {
+          "en": "35",
+          "zh": "35"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Behind the poster there are 21 grey tiles (pattern 3+4 repeating).",
+        "zh": "海报后灰砖共 21 块（3+4 交替共 6 行）。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q9: Coin Toss Steps",
+        "zh": "Math Kangaroo 2024 – Level B -1 第9题：掷硬币前进"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Antonia and Lucian toss a coin. Purple advances 3 steps; green goes back 1 step or stays. Each tossed 4 times. Antonia reached 4 and Lucian reached 8. How many times in total did they see the green side?",
+        "zh": "掷出紫色前进 3 格，绿色后退 1 格或停在起点。两人各掷 4 次；小安到 4，小卢到 8。请问一共几次掷出绿色？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Antonia: 2 purple + 2 green; Lucian: 3 purple + 1 green; green total 3.",
+        "zh": "小安 2 紫 2 绿；小卢 3 紫 1 绿；绿色共 3 次。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 9,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q10: Fruit Preferences",
+        "zh": "Math Kangaroo 2024 – Level B -1 第10题：喜欢的水果"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are five different kinds of fruit in a bowl. Everyone gets a fruit they like, and everyone gets a different kind. What does Ben get?",
+        "zh": "碗里有五种不同水果。每人得到自己喜欢且互不相同的水果。请问小本得到了什么？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "By elimination, Ben must get the apple — the only fruit only he likes.",
+        "zh": "排除后小本只能拿到苹果（只有他喜欢）。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 10,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q11: Removing Discs",
+        "zh": "Math Kangaroo 2024 – Level B -1 第11题：拿走圆盘"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Ada has a tower of 8 discs. She removes the 2nd from the bottom, then the 3rd from the bottom of the new tower, then the 4th, then the 5th. Which tower does she end up with?",
+        "zh": "小艾用 8 个圆盘建塔。依次拿走从底往上第 2、再新塔第 3、再第 4、再第 5 个圆盘。最终是哪座塔？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "After the four removals the remaining discs are blue–orange–white–blue.",
+        "zh": "四次移除后剩下蓝–橙–白–蓝。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -1 Q12: Penguin Chicks’ Fish",
+        "zh": "Math Kangaroo 2024 – Level B -1 第12题：小企鹅吃鱼"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Peter brings 9 fish daily for 2 chicks: 5 to the first he sees and 4 to the second. Over some days one chick ate 26 fish. How many did the other eat?",
+        "zh": "企鹅每天带回 9 条鱼：先看到的喂 5，另一只喂 4。过去几天一只吃了 26 条，另一只吃了多少？"
+      },
+      "choices": [
+        {
+          "en": "19",
+          "zh": "19"
+        },
+        {
+          "en": "22",
+          "zh": "22"
+        },
+        {
+          "en": "25",
+          "zh": "25"
+        },
+        {
+          "en": "28",
+          "zh": "28"
+        },
+        {
+          "en": "31",
+          "zh": "31"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "26 = 4×4 + 2×5 ⇒ other chick 4×5 + 2×4 = 28.",
+        "zh": "26=4×4+2×5 ⇒ 另一只 4×5+2×4=28。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q13: Overlapping Rings",
+        "zh": "Math Kangaroo 2024 – Level B -2 第13题：相交圆环"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "7 cards numbered 1 to 7 are in 4 overlapping rings. Each ring sums to 10. Which number is under the question mark?",
+        "zh": "1–7 的卡片放在 4 个相交圆环中，每环数字和为 10。问号下是哪个数？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Ring sums force ? = 1.",
+        "zh": "各环和为 10 可推出问号为 1。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q14: Caterpillar Puzzles",
+        "zh": "Math Kangaroo 2024 – Level B -2 第14题：毛毛虫拼图"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lucas makes a caterpillar with a head, a tail and 1, 2 or 3 puzzle pieces between. How many different caterpillars can he make without flipping pieces?",
+        "zh": "毛毛虫有头有尾，中间 1、2 或 3 片拼图。不翻转时能拼出几条不同的？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Without flipping, exactly 4 different caterpillars are possible.",
+        "zh": "不翻转时恰有 4 种拼法。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q15: Flipped Number Cards",
+        "zh": "Math Kangaroo 2024 – Level B -2 第15题：翻转后的数字卡"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "John writes 1–4 on a sheet, flips it and writes 5–8, then cuts into 4 cards in a row: ? 5 ? 6. What is the sum of the numbers under the question marks?",
+        "zh": "纸上写 1–4，翻面写 5–8，剪成 4 张排成 ? 5 ? 6。问号数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Pairs: 1↔7, 2↔6, 3↔8, 4↔5; the ? cards show 1 and 3, sum 4.",
+        "zh": "正反配对后问号为 1 与 3，和为 4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q16: Square Tile Side",
+        "zh": "Math Kangaroo 2024 – Level B -2 第16题：正方形瓷砖边长"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A floor uses rectangular tiles 23 cm × 11 cm and square tiles. What is the side-length of the square tiles?",
+        "zh": "地板有 23 cm × 11 cm 长方形瓷砖和正方形瓷砖。正方形边长是多少？"
+      },
+      "choices": [
+        {
+          "en": "3 cm",
+          "zh": "3 cm"
+        },
+        {
+          "en": "4 cm",
+          "zh": "4 cm"
+        },
+        {
+          "en": "5 cm",
+          "zh": "5 cm"
+        },
+        {
+          "en": "6 cm",
+          "zh": "6 cm"
+        },
+        {
+          "en": "7 cm",
+          "zh": "7 cm"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "23 = 11 + 2s ⇒ s = 6.",
+        "zh": "23=11+2s ⇒ s=6。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q17: Worm-Eaten Digits",
+        "zh": "Math Kangaroo 2024 – Level B -2 第17题：被虫吃掉的数字"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Three cards sum to 782. A worm ate part of each card. What is the sum of the 3 missing digits?",
+        "zh": "三张卡片数字之和为 782，每张都被虫吃掉一部分。被吃掉的 3 个数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Missing units digit 5; missing tens digits sum to 6; total missing 11.",
+        "zh": "个位缺 5；十位两缺数之和 6；缺数之和 11。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q18: Weighing Blocks",
+        "zh": "Math Kangaroo 2024 – Level B -2 第18题：积木称重"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lucy weighs some blocks on three scales showing 200 g, 100 g and 240 g. How much do the 3 different blocks weigh together?",
+        "zh": "三台秤分别显示 200 g、100 g、240 g。三种不同积木一共多重？"
+      },
+      "choices": [
+        {
+          "en": "270 g",
+          "zh": "270 g"
+        },
+        {
+          "en": "280 g",
+          "zh": "280 g"
+        },
+        {
+          "en": "290 g",
+          "zh": "290 g"
+        },
+        {
+          "en": "300 g",
+          "zh": "300 g"
+        },
+        {
+          "en": "310 g",
+          "zh": "310 g"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "(200+100+240)/2 = 270 because each block appears twice.",
+        "zh": "三秤相加每种积木出现两次，(200+100+240)/2=270。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q19: Yellow Vest Orange Pack",
+        "zh": "Math Kangaroo 2024 – Level B -2 第19题：黄背心橙书包"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "60 pupils: vests yellow, green, yellow, green…; backpacks red, brown, orange, red, brown, orange… How many have a yellow vest and an orange backpack?",
+        "zh": "60 名学生：背心黄绿交替；书包红棕橙循环。黄背心且橙书包的有多少人？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "LCM of periods 2 and 3 is 6; yellow+orange once per 6 ⇒ 60/6=10.",
+        "zh": "周期 2 与 3 的最小公倍数为 6；每 6 人 1 个黄+橙 ⇒ 10。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q20: Hidden Digits Product",
+        "zh": "Math Kangaroo 2024 – Level B -2 第20题：图形藏数字"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Same shapes hide the same digits; different shapes hide different digits. What is the value of the product of the three shapes?",
+        "zh": "相同图形代表相同数字。请问三个图形相乘的值是多少？"
+      },
+      "choices": [
+        {
+          "en": "0",
+          "zh": "0"
+        },
+        {
+          "en": "15",
+          "zh": "15"
+        },
+        {
+          "en": "18",
+          "zh": "18"
+        },
+        {
+          "en": "28",
+          "zh": "28"
+        },
+        {
+          "en": "30",
+          "zh": "30"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Digits give 7+7=14 and 4+7=11; product 7×4×1=28.",
+        "zh": "解得 7+7=14、4+7=11；乘积 7×4×1=28。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q21: Frogs Jump Together",
+        "zh": "Math Kangaroo 2024 – Level B -2 第21题：青蛙同时跳"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Exactly 2 frogs in each row and column. Two frogs jump at once to neighbouring empty cells; afterwards still 2 per row/column. In how many ways?",
+        "zh": "每行每列恰有 2 只青蛙。两只同时跳到相邻空格后仍每行每列 2 只。有几种跳法？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "There are exactly 4 valid simultaneous jump pairs.",
+        "zh": "恰有 4 种合法的同时跳跃方式。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q22: Honeycomb Honey Count",
+        "zh": "Math Kangaroo 2024 – Level B -2 第22题：蜂巢蜂蜜格"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A beehive has 9 cells. Each number shows how many neighbouring cells contain honey. How many cells contain honey?",
+        "zh": "9 格蜂巢，数字表示相邻含蜜格数。共有多少格含有蜂蜜？"
+      },
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Forced neighbour constraints yield exactly 6 honey cells.",
+        "zh": "由邻格约束可推出恰有 6 格含蜜。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q23: Cookie Tray Order",
+        "zh": "Math Kangaroo 2024 – Level B -2 第23题：饼干托盘"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Three girls take cookies in some order: all hearts; all white; all large. They take 3, 6 and 7 cookies. Which set does one girl take?",
+        "zh": "三个女孩分别拿走所有心形、所有白色、所有大块饼干（顺序不定），分别拿 3、6、7 块。哪一组是其中一人拿走的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Order must be large → hearts → white, taking 7, 6, 3 cookies.",
+        "zh": "顺序为大块→心形→白色，分别 7、6、3 块。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q24: White and Red Blocks",
+        "zh": "Math Kangaroo 2024 – Level B -2 第24题：白红积木"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A small cube uses 4 white blocks or 1 white + 1 red. The large cube is made of small cubes. What is the smallest number of white blocks needed?",
+        "zh": "小立方体可用 4 白或 1 白+1 红搭成。大立方体由小立方体组成。最少需要几块白色积木？"
+      },
+      "choices": [
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "14",
+          "zh": "14"
+        },
+        {
+          "en": "23",
+          "zh": "23"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "8 small cubes; minimize whites: 6×1 + 2×4 = 14.",
+        "zh": "8 个小立方体；最少白块 6×1+2×4=14。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    }
+  ]
+}

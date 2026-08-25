@@ -1,0 +1,488 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2016 – Level B -1",
+    "zh": "Math Kangaroo 2016 – 等级 B -1 -1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q1: Largest Dice Total",
+        "zh": "Math Kangaroo 2016 – Level B -1 第1题：骰子点数最大"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Amy, Bert, Carl, Doris and Ernst each rolled two dice and added the number of dots. Who rolled the largest total?",
+        "zh": "Amy、Bert、Carl、Doris 和 Ernst 各掷了两颗骰子并把点数相加。谁的点数之和最大？"
+      },
+      "choices": [
+        {
+          "en": "Amy",
+          "zh": "Amy"
+        },
+        {
+          "en": "Bert",
+          "zh": "Bert"
+        },
+        {
+          "en": "Carl",
+          "zh": "Carl"
+        },
+        {
+          "en": "Doris",
+          "zh": "Doris"
+        },
+        {
+          "en": "Ernst",
+          "zh": "Ernst"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Dice totals: Amy 7, Bert 6, Carl 5, Doris 8, Ernst 9. Ernst is largest.",
+        "zh": "点数：Amy7、Bert6、Carl5、Doris8、Ernst9。最大是 Ernst。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q2: Kanga Turns 8 Weeks",
+        "zh": "Math Kangaroo 2016 – Level B -1 第2题：小袋鼠满八周"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Small Kanga is 7 weeks and 2 days old. In how many days will he be 8 weeks old?",
+        "zh": "小 Kanga 现在 7 个星期又 2 天大。再过多少天他会满 8 个星期？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "8 weeks = 7 weeks + 7 days; already 2 days into the week ⇒ 5 days left.",
+        "zh": "8 周=7 周+7 天；已过 2 天，还差 5 天。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q3: Arrow Number Puzzle",
+        "zh": "Math Kangaroo 2016 – Level B -1 第3题：箭头算式求值"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Follow the arrows in the diagram. What number replaces the question mark?",
+        "zh": "按图中箭头运算。问号处应填什么数？"
+      },
+      "choices": [
+        {
+          "en": "24",
+          "zh": "24"
+        },
+        {
+          "en": "28",
+          "zh": "28"
+        },
+        {
+          "en": "36",
+          "zh": "36"
+        },
+        {
+          "en": "56",
+          "zh": "56"
+        },
+        {
+          "en": "80",
+          "zh": "80"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "17+3=20 and 20−16=4; then 20+4=24.",
+        "zh": "17+3=20，20−16=4；再 20+4=24。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q4: Pipo in the Mirror",
+        "zh": "Math Kangaroo 2016 – Level B -1 第4题：Pipo 照镜子"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "What does Pipo see when he looks at himself in the mirror?",
+        "zh": "Pipo 照镜子时将看见什么？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "A mirror flips left and right; only option A matches the reflection.",
+        "zh": "镜子左右翻转，只有 A 与镜像一致。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q5: Circus Seat Direction",
+        "zh": "Math Kangaroo 2016 – Level B -1 第5题：马戏团座位方向"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Geoff goes with his father to a circus. Their seats are numbered 71 and 72. Which way should they go?",
+        "zh": "Geoff 和他爸爸去马戏团，座位编号是 71 和 72。他们应向哪个方向走？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Seats 71–72 fall in the 61–80 range, which points diagonally up-right.",
+        "zh": "71、72 属于 61–80，对应斜向上右箭头。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q6: Sharing Half Apples",
+        "zh": "Math Kangaroo 2016 – Level B -1 第6题：分享半个苹果"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Anna shares some apples between herself and 5 friends (6 people total). Everyone gets half an apple. How many apples does she share?",
+        "zh": "Anna 与 5 位朋友（共 6 人）分享苹果，每人半个。她一共分享了多少个苹果？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "6 people × 1/2 apple = 3 apples.",
+        "zh": "6 人×半个苹果=3 个苹果。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q7: Hidden Behind Curtain",
+        "zh": "Math Kangaroo 2016 – Level B -1 第7题：窗帘后的形状"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A rectangle is partly hidden behind a curtain. What shape is the hidden part?",
+        "zh": "一个长方形的一部分藏在窗帘后面。被隐藏的部分是什么形状？"
+      },
+      "choices": [
+        {
+          "en": "Triangle",
+          "zh": "三角形"
+        },
+        {
+          "en": "Square",
+          "zh": "正方形"
+        },
+        {
+          "en": "Hexagon",
+          "zh": "六边形"
+        },
+        {
+          "en": "Circle",
+          "zh": "圆形"
+        },
+        {
+          "en": "Rectangle",
+          "zh": "长方形"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The visible cut shows the hidden part is a triangle.",
+        "zh": "从露出的切口可判断隐藏部分是三角形。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q8: Year Digit Sum 9",
+        "zh": "Math Kangaroo 2016 – Level B -1 第8题：年份数字和为9"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The digit sum of 2016 is 2+0+1+6=9. What is the nearest year after 2016 whose digits also sum to 9?",
+        "zh": "2016 的数字之和为 9。2016 年之后，下一个数字之和同样为 9 的最近年份是哪一年？"
+      },
+      "choices": [
+        {
+          "en": "2007",
+          "zh": "2007"
+        },
+        {
+          "en": "2025",
+          "zh": "2025"
+        },
+        {
+          "en": "2034",
+          "zh": "2034"
+        },
+        {
+          "en": "2108",
+          "zh": "2108"
+        },
+        {
+          "en": "2134",
+          "zh": "2134"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "After 2016, the nearest year with digit sum 9 is 2025 (2+0+2+5=9).",
+        "zh": "2016 之后最近数字和为 9 的是 2025。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q9: Mouse Maze Paths",
+        "zh": "Math Kangaroo 2016 – Level B -1 第9题：老鼠迷宫路线"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The mouse wants to escape from the maze. How many different paths can it take without passing through the same gate more than once?",
+        "zh": "老鼠想逃出迷宫。在不经过同一扇门超过一次的情况下，有几条逃脱路线？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Counting gate-paths without reuse gives 4 routes.",
+        "zh": "不重复过门，共有 4 条路线。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 9,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -1 Q10: Zoe’s Hidden Numbers",
+        "zh": "Math Kangaroo 2016 – Level B -1 第10题：Zoe 卡上的数字"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Zoe has two cards with a number on each side. The two side-sums are equal; the four numbers sum to 32. What could the two hidden numbers be?",
+        "zh": "Zoe 有两张卡，每面一个数。两张卡各自两面之和相等，四个数之和为 32。看不见的两面可能是哪两个数？"
+      },
+      "choices": [
+        {
+          "en": "7 & 0",
+          "zh": "7 和 0"
+        },
+        {
+          "en": "8 & 1",
+          "zh": "8 和 1"
+        },
+        {
+          "en": "11 & 4",
+          "zh": "11 和 4"
+        },
+        {
+          "en": "9 & 2",
+          "zh": "9 和 2"
+        },
+        {
+          "en": "6 & 3",
+          "zh": "6 和 3"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Each card sums to 16. Visible numbers force the hidden pair 11 & 4.",
+        "zh": "每张卡和为 16；可见数字推出背面是 11 与 4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 10,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2016 – Level B -1"
+      },
+      "is_published": true
+    }
+  ]
+}

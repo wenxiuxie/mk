@@ -1,590 +1,596 @@
-[
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q13: Food for Six Sheep",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第13题：六只羊的干粮"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Renée feeds 6 sheep a total of 210 grams of dry food. The smallest sheep gets twice as much as each of the others. How much does the smallest sheep get?",
-      "zh": "小芮给 6 只羊共分发 210 克干粮。最小的羊获得的是其他每只羊的两倍。请问最小的羊得到了多少克干粮？"
-    },
-    "choices": [
-      {
-        "en": "55 grams",
-        "zh": "55 克"
-      },
-      {
-        "en": "60 grams",
-        "zh": "60 克"
-      },
-      {
-        "en": "70 grams",
-        "zh": "70 克"
-      },
-      {
-        "en": "75 grams",
-        "zh": "75 克"
-      },
-      {
-        "en": "80 grams",
-        "zh": "80 克"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Count the small sheep as two shares: 7 shares of 30 g; smallest gets 60 g.",
-      "zh": "把最小的羊算作两份：共 7 份，每份 30 克，最小的羊得 60 克。"
-    },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 13,
-      "points": 4,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
+{
+  "title": {
+    "en": "Math Kangaroo 2025 – Level 2-2",
+    "zh": "Math Kangaroo 2025 – 等级 2-2 -2"
   },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q14: Pizza Cuts Equal Tomatoes",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第14题：披萨均分番茄"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Tom wishes to slice a pizza into 2 halves with the same number of tomatoes on each half. It is possible with two different cuts. Along which lines could he cut?",
-      "zh": "小汤想把披萨切成两半，且每半番茄数量相同。已知有两种不同切法可以实现。请问他可以沿着哪些线来切？"
-    },
-    "choices": [
-      {
-        "en": "1 and 3",
-        "zh": "1 和 3"
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q13: Food for Six Sheep",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第13题：六只羊的干粮"
       },
-      {
-        "en": "1 and 4",
-        "zh": "1 和 4"
+      "type": "single_choice",
+      "content": {
+        "en": "Renée feeds 6 sheep a total of 210 grams of dry food. The smallest sheep gets twice as much as each of the others. How much does the smallest sheep get?",
+        "zh": "小芮给 6 只羊共分发 210 克干粮。最小的羊获得的是其他每只羊的两倍。请问最小的羊得到了多少克干粮？"
       },
-      {
-        "en": "2 and 3",
-        "zh": "2 和 3"
+      "choices": [
+        {
+          "en": "55 grams",
+          "zh": "55 克"
+        },
+        {
+          "en": "60 grams",
+          "zh": "60 克"
+        },
+        {
+          "en": "70 grams",
+          "zh": "70 克"
+        },
+        {
+          "en": "75 grams",
+          "zh": "75 克"
+        },
+        {
+          "en": "80 grams",
+          "zh": "80 克"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Count the small sheep as two shares: 7 shares of 30 g; smallest gets 60 g.",
+        "zh": "把最小的羊算作两份：共 7 份，每份 30 克，最小的羊得 60 克。"
       },
-      {
-        "en": "2 and 4",
-        "zh": "2 和 4"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "3 and 4",
-        "zh": "3 和 4"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "Cuts 2 and 4 each give 9 tomatoes on both halves.",
-      "zh": "沿 2 和沿 4 切割时，两边番茄都是 9 个。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 14,
-      "points": 4,
-      "answer_letter": "D",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q15: Number Pyramid Star",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第15题：数字金字塔中的星号"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Maria fills the circles with 1–7. Each lower circle equals the sum of the two connected circles above it. What number is in the circle marked with ★?",
-      "zh": "小玛在圆圈里填入 1–7。下方每个圆圈等于上方相连两圆之和。请问标有 ★ 的圆圈里的数字是什么？"
-    },
-    "choices": [
-      {
-        "en": "2",
-        "zh": "2"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q14: Pizza Cuts Equal Tomatoes",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第14题：披萨均分番茄"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "type": "single_choice",
+      "content": {
+        "en": "Tom wishes to slice a pizza into 2 halves with the same number of tomatoes on each half. It is possible with two different cuts. Along which lines could he cut?",
+        "zh": "小汤想把披萨切成两半，且每半番茄数量相同。已知有两种不同切法可以实现。请问他可以沿着哪些线来切？"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "choices": [
+        {
+          "en": "1 and 3",
+          "zh": "1 和 3"
+        },
+        {
+          "en": "1 and 4",
+          "zh": "1 和 4"
+        },
+        {
+          "en": "2 and 3",
+          "zh": "2 和 3"
+        },
+        {
+          "en": "2 and 4",
+          "zh": "2 和 4"
+        },
+        {
+          "en": "3 and 4",
+          "zh": "3 和 4"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Cuts 2 and 4 each give 9 tomatoes on both halves.",
+        "zh": "沿 2 和沿 4 切割时，两边番茄都是 9 个。"
       },
-      {
-        "en": "5",
-        "zh": "5"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "D",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "7",
-        "zh": "7"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Working from the given 6, the star (bottom middle) must be 4.",
-      "zh": "由已给出的 6 推导，★（下排中间）是 4。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 15,
-      "points": 4,
-      "answer_letter": "C",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q16: Fourth Piece of the Square",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第16题：正方形的第四块"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Bob makes a square from 4 rectangular pieces. 3 of the pieces he uses are shown. Which of the following is the fourth piece he uses?",
-      "zh": "小鲍用 4 块长方形碎片拼出一个正方形。其中 3 块如图所示。请问下列哪个选项是他用的第四块碎片？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q15: Number Pyramid Star",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第15题：数字金字塔中的星号"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Maria fills the circles with 1–7. Each lower circle equals the sum of the two connected circles above it. What number is in the circle marked with ★?",
+        "zh": "小玛在圆圈里填入 1–7。下方每个圆圈等于上方相连两圆之和。请问标有 ★ 的圆圈里的数字是什么？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Working from the given 6, the star (bottom middle) must be 4.",
+        "zh": "由已给出的 6 推导，★（下排中间）是 4。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "C",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "The square is 6×6=36 cells; three pieces use 24, so the fourth has 12 cells — option E.",
-      "zh": "大正方形为 6×6=36 格，三块共 24 格，第四块 12 格，对应 E。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 16,
-      "points": 4,
-      "answer_letter": "E",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q17: Ladybirds Fourth Photo",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第17题：瓢虫第四张照片"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "6 ladybirds have 1, 2, 3, 4, 5 or 6 spots. Marta took 4 photos of groups of 3. Each ladybird appeared the same number of times. How many spots do the three ladybirds in the fourth photo have in total?",
-      "zh": "6 只瓢虫斑点分别为 1–6。小玛拍了 4 张照片，每张 3 只，每只出现次数相同。请问第四张照片里三只瓢虫斑点总数是多少？"
-    },
-    "choices": [
-      {
-        "en": "9",
-        "zh": "9"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q16: Fourth Piece of the Square",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第16题：正方形的第四块"
       },
-      {
-        "en": "10",
-        "zh": "10"
+      "type": "single_choice",
+      "content": {
+        "en": "Bob makes a square from 4 rectangular pieces. 3 of the pieces he uses are shown. Which of the following is the fourth piece he uses?",
+        "zh": "小鲍用 4 块长方形碎片拼出一个正方形。其中 3 块如图所示。请问下列哪个选项是他用的第四块碎片？"
       },
-      {
-        "en": "11",
-        "zh": "11"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The square is 6×6=36 cells; three pieces use 24, so the fourth has 12 cells — option E.",
+        "zh": "大正方形为 6×6=36 格，三块共 24 格，第四块 12 格，对应 E。"
       },
-      {
-        "en": "12",
-        "zh": "12"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "E",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "23",
-        "zh": "23"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "Ladybirds 1,3,5 appear twice in the first three photos; 2,4,6 once. The fourth photo has 2+4+6=12.",
-      "zh": "前三张中 1、3、5 各出现两次，2、4、6 各一次。第四张是 2+4+6=12。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 17,
-      "points": 5,
-      "answer_letter": "D",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q18: Paper Snowflake Cuts",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第18题：纸雪花裁剪"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Nela folds a paper square in half and then in half again. She cuts pieces out. After unfolding she sees a paper snowflake. How did she cut the folded piece of paper?",
-      "zh": "小娜把正方形纸对折两次后剪掉几块，展开后得到纸雪花。请问她是如何裁剪这张折好的纸的？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q17: Ladybirds Fourth Photo",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第17题：瓢虫第四张照片"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "6 ladybirds have 1, 2, 3, 4, 5 or 6 spots. Marta took 4 photos of groups of 3. Each ladybird appeared the same number of times. How many spots do the three ladybirds in the fourth photo have in total?",
+        "zh": "6 只瓢虫斑点分别为 1–6。小玛拍了 4 张照片，每张 3 只，每只出现次数相同。请问第四张照片里三只瓢虫斑点总数是多少？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        },
+        {
+          "en": "23",
+          "zh": "23"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Ladybirds 1,3,5 appear twice in the first three photos; 2,4,6 once. The fourth photo has 2+4+6=12.",
+        "zh": "前三张中 1、3、5 各出现两次，2、4、6 各一次。第四张是 2+4+6=12。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Each quarter of the snowflake matches cutting pattern B.",
-      "zh": "雪花每一象限的图案对应裁剪方式 B。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 18,
-      "points": 5,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q19: Black and Grey Pyramid",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第19题：黑灰立方体金字塔"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Leonia built a pyramid with black and grey cubes so that no face of a cube touches another cube of the same colour. One black cube is shown. What will the pyramid look like from above?",
-      "zh": "小莉用黑、灰立方体搭金字塔，同色立方体面不相贴。其中一个黑色立方体如图所示。请问从上面看，金字塔是什么样子？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q18: Paper Snowflake Cuts",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第18题：纸雪花裁剪"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Nela folds a paper square in half and then in half again. She cuts pieces out. After unfolding she sees a paper snowflake. How did she cut the folded piece of paper?",
+        "zh": "小娜把正方形纸对折两次后剪掉几块，展开后得到纸雪花。请问她是如何裁剪这张折好的纸的？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Each quarter of the snowflake matches cutting pattern B.",
+        "zh": "雪花每一象限的图案对应裁剪方式 B。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "The cube under the shown black must be grey, forcing bottom X,Z black and Y grey → D.",
-      "zh": "图中黑块正下方必为灰，从而底层 X、Z 为黑、Y 为灰，俯视图为 D。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 19,
-      "points": 5,
-      "answer_letter": "D",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q20: Calendar First Day",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第20题：日历第一天是星期几"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The picture shows one month of a calendar without dates. The total of the dates for the 2 shaded days is 31. On what day of the week does the first day of the month fall?",
-      "zh": "图中展示了一个月的日历页（未标日期）。两个阴影日期之和是 31。请问这个月的第一天是星期几？"
-    },
-    "choices": [
-      {
-        "en": "Monday",
-        "zh": "星期一"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q19: Black and Grey Pyramid",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第19题：黑灰立方体金字塔"
       },
-      {
-        "en": "Tuesday",
-        "zh": "星期二"
+      "type": "single_choice",
+      "content": {
+        "en": "Leonia built a pyramid with black and grey cubes so that no face of a cube touches another cube of the same colour. One black cube is shown. What will the pyramid look like from above?",
+        "zh": "小莉用黑、灰立方体搭金字塔，同色立方体面不相贴。其中一个黑色立方体如图所示。请问从上面看，金字塔是什么样子？"
       },
-      {
-        "en": "Wednesday",
-        "zh": "星期三"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The cube under the shown black must be grey, forcing bottom X,Z black and Y grey → D.",
+        "zh": "图中黑块正下方必为灰，从而底层 X、Z 为黑、Y 为灰，俯视图为 D。"
       },
-      {
-        "en": "Thursday",
-        "zh": "星期四"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "D",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "Sunday",
-        "zh": "星期日"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "The shaded dates differ by 13 and sum to 31 → 9 and 22. Day 1 is 8 days before the 9th → Wednesday.",
-      "zh": "两日期相差 13 且和为 31，即 9 与 22。1 号比 9 号早 8 天，是星期三。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 20,
-      "points": 5,
-      "answer_letter": "C",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q21: Size of Each Brick",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第21题：每块砖的尺寸"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The construction uses 11 identical bricks. It has length 100 cm and width 60 cm. What is the size of each brick?",
-      "zh": "如图建筑使用了 11 块相同的砖，长 100 cm、宽 60 cm。请问每块砖的尺寸是多少？"
-    },
-    "choices": [
-      {
-        "en": "40 cm × 8 cm",
-        "zh": "40 cm × 8 cm"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q20: Calendar First Day",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第20题：日历第一天是星期几"
       },
-      {
-        "en": "40 cm × 10 cm",
-        "zh": "40 cm × 10 cm"
+      "type": "single_choice",
+      "content": {
+        "en": "The picture shows one month of a calendar without dates. The total of the dates for the 2 shaded days is 31. On what day of the week does the first day of the month fall?",
+        "zh": "图中展示了一个月的日历页（未标日期）。两个阴影日期之和是 31。请问这个月的第一天是星期几？"
       },
-      {
-        "en": "40 cm × 12 cm",
-        "zh": "40 cm × 12 cm"
+      "choices": [
+        {
+          "en": "Monday",
+          "zh": "星期一"
+        },
+        {
+          "en": "Tuesday",
+          "zh": "星期二"
+        },
+        {
+          "en": "Wednesday",
+          "zh": "星期三"
+        },
+        {
+          "en": "Thursday",
+          "zh": "星期四"
+        },
+        {
+          "en": "Sunday",
+          "zh": "星期日"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The shaded dates differ by 13 and sum to 31 → 9 and 22. Day 1 is 8 days before the 9th → Wednesday.",
+        "zh": "两日期相差 13 且和为 31，即 9 与 22。1 号比 9 号早 8 天，是星期三。"
       },
-      {
-        "en": "44 cm × 9 cm",
-        "zh": "44 cm × 9 cm"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "C",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "50 cm × 10 cm",
-        "zh": "50 cm × 10 cm"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Height is 6 brick-heights: 60÷6=10 cm. Length is 4×height=40 cm → 40×10.",
-      "zh": "高度为 6 块砖高：60÷6=10 cm；砖长为高的 4 倍=40 cm，即 40×10。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 21,
-      "points": 5,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q22: How Many Bananas",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第22题：有多少根香蕉"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Rossitza listed counts of different fruits; some digits are covered by paint. In total she has 106 pieces. Two types have equal counts; one type is twice another. She has more than 10 of each type. How many bananas does she have?",
-      "zh": "小罗写下了各种水果数量，部分数字被颜料遮住。一共 106 个；有两种数量相同；有一种是另一种的两倍；每种都超过 10 个。请问她有多少根香蕉？"
-    },
-    "choices": [
-      {
-        "en": "13",
-        "zh": "13"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q21: Size of Each Brick",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第21题：每块砖的尺寸"
       },
-      {
-        "en": "23",
-        "zh": "23"
+      "type": "single_choice",
+      "content": {
+        "en": "The construction uses 11 identical bricks. It has length 100 cm and width 60 cm. What is the size of each brick?",
+        "zh": "如图建筑使用了 11 块相同的砖，长 100 cm、宽 60 cm。请问每块砖的尺寸是多少？"
       },
-      {
-        "en": "43",
-        "zh": "43"
+      "choices": [
+        {
+          "en": "40 cm × 8 cm",
+          "zh": "40 cm × 8 cm"
+        },
+        {
+          "en": "40 cm × 10 cm",
+          "zh": "40 cm × 10 cm"
+        },
+        {
+          "en": "40 cm × 12 cm",
+          "zh": "40 cm × 12 cm"
+        },
+        {
+          "en": "44 cm × 9 cm",
+          "zh": "44 cm × 9 cm"
+        },
+        {
+          "en": "50 cm × 10 cm",
+          "zh": "50 cm × 10 cm"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Height is 6 brick-heights: 60÷6=10 cm. Length is 4×height=40 cm → 40×10.",
+        "zh": "高度为 6 块砖高：60÷6=10 cm；砖长为高的 4 倍=40 cm，即 40×10。"
       },
-      {
-        "en": "53",
-        "zh": "53"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "63",
-        "zh": "63"
-      }
-    ],
-    "correct_answer": 1,
-    "explanation": {
-      "en": "Apples=oranges=30; mangoes=2×pears with pears≥11 → mangoes≥22. Minimum for four types is 93, so bananas ≤13 and >10 → 13.",
-      "zh": "苹果=橙子=30；芒果是梨的两倍且梨≥11→芒果≥22。前四种至少 93，香蕉≤13 且>10，故为 13。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 22,
-      "points": 5,
-      "answer_letter": "A",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q23: Least Water After Removing Balls",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第23题：取出球后水最少的试管"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Identical balls are in 5 identical test tubes; then water is added. Levels in tubes 1–3 are the same; levels in 4–5 are the same and twice as high. After all balls are removed, which test tube has the least water?",
-      "zh": "5 个相同试管中放入相同的球后加水。试管 1–3 水位相同；4 与 5 水位相同且为前三者两倍。取出所有球后，哪个试管里的水最少？"
-    },
-    "choices": [
-      {
-        "en": "Test tube 1",
-        "zh": "试管 1"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q22: How Many Bananas",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第22题：有多少根香蕉"
       },
-      {
-        "en": "Test tube 2",
-        "zh": "试管 2"
+      "type": "single_choice",
+      "content": {
+        "en": "Rossitza listed counts of different fruits; some digits are covered by paint. In total she has 106 pieces. Two types have equal counts; one type is twice another. She has more than 10 of each type. How many bananas does she have?",
+        "zh": "小罗写下了各种水果数量，部分数字被颜料遮住。一共 106 个；有两种数量相同；有一种是另一种的两倍；每种都超过 10 个。请问她有多少根香蕉？"
       },
-      {
-        "en": "Test tube 3",
-        "zh": "试管 3"
+      "choices": [
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "23",
+          "zh": "23"
+        },
+        {
+          "en": "43",
+          "zh": "43"
+        },
+        {
+          "en": "53",
+          "zh": "53"
+        },
+        {
+          "en": "63",
+          "zh": "63"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Apples=oranges=30; mangoes=2×pears with pears≥11 → mangoes≥22. Minimum for four types is 93, so bananas ≤13 and >10 → 13.",
+        "zh": "苹果=橙子=30；芒果是梨的两倍且梨≥11→芒果≥22。前四种至少 93，香蕉≤13 且>10，故为 13。"
       },
-      {
-        "en": "Test tube 4",
-        "zh": "试管 4"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "A",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "Test tube 5",
-        "zh": "试管 5"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "With the same water level, more balls mean less water. Tube 3 has the least among 1–3; tube 5 has twice tube 3’s water, so tube 3 has the least overall.",
-      "zh": "同水位时球越多水越少。1–3 中 3 最少；5 的水量是 3 的两倍，故整体最少是试管 3。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 23,
-      "points": 5,
-      "answer_letter": "C",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-2 Q24: Mass of One Star",
-      "zh": "Math Kangaroo 2025 – Level 2-2 第24题：一颗星的质量"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "A pair of scales weighs 3 different objects (results shown). Each type has a different mass from {1,2,3,4,5} kg. What is the mass of one ★ in kilograms?",
-      "zh": "用天平称量 3 种不同物体（结果如图）。每种质量不同，可能是 1–5 千克。请问一颗 ★ 的质量是多少千克？"
-    },
-    "choices": [
-      {
-        "en": "1",
-        "zh": "1"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q23: Least Water After Removing Balls",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第23题：取出球后水最少的试管"
       },
-      {
-        "en": "2",
-        "zh": "2"
+      "type": "single_choice",
+      "content": {
+        "en": "Identical balls are in 5 identical test tubes; then water is added. Levels in tubes 1–3 are the same; levels in 4–5 are the same and twice as high. After all balls are removed, which test tube has the least water?",
+        "zh": "5 个相同试管中放入相同的球后加水。试管 1–3 水位相同；4 与 5 水位相同且为前三者两倍。取出所有球后，哪个试管里的水最少？"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "choices": [
+        {
+          "en": "Test tube 1",
+          "zh": "试管 1"
+        },
+        {
+          "en": "Test tube 2",
+          "zh": "试管 2"
+        },
+        {
+          "en": "Test tube 3",
+          "zh": "试管 3"
+        },
+        {
+          "en": "Test tube 4",
+          "zh": "试管 4"
+        },
+        {
+          "en": "Test tube 5",
+          "zh": "试管 5"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "With the same water level, more balls mean less water. Tube 3 has the least among 1–3; tube 5 has twice tube 3’s water, so tube 3 has the least overall.",
+        "zh": "同水位时球越多水越少。1–3 中 3 最少；5 的水量是 3 的两倍，故整体最少是试管 3。"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "C",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "5",
-        "zh": "5"
-      }
-    ],
-    "correct_answer": 1,
-    "explanation": {
-      "en": "Circle=5, square=3, star=1 satisfies both weighings.",
-      "zh": "圆=5、方=3、星=1 满足两次称量结果。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-2",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 24,
-      "points": 5,
-      "answer_letter": "A",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  }
-]
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-2 Q24: Mass of One Star",
+        "zh": "Math Kangaroo 2025 – Level 2-2 第24题：一颗星的质量"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A pair of scales weighs 3 different objects (results shown). Each type has a different mass from {1,2,3,4,5} kg. What is the mass of one ★ in kilograms?",
+        "zh": "用天平称量 3 种不同物体（结果如图）。每种质量不同，可能是 1–5 千克。请问一颗 ★ 的质量是多少千克？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Circle=5, square=3, star=1 satisfies both weighings.",
+        "zh": "圆=5、方=3、星=1 满足两次称量结果。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-2",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "A",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
+      },
+      "is_published": true
+    }
+  ]
+}

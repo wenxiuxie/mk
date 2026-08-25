@@ -1,0 +1,968 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2014 – Level 1",
+    "zh": "Math Kangaroo 2014 – 等级 1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q1: Ladybird will sit on a…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第1题：瓢虫将会爬在拥有五片花瓣和三片叶…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Ladybird will sit on a ﬂower that has ﬁve petals and three leaves. On which of the following ﬂowers will ladybird sit? Seekor kumbang akan hinggap di atas bunga yang mempunyai lima kelopak dan tiga daun.",
+        "zh": "瓢虫将会爬在拥有五片花瓣和三片叶子的花上。请问瓢虫将会爬在哪朵花上？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q2: In what order do you meet…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第2题：In what order…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In what order do you meet the shapes starting from the arrow?",
+        "zh": "In what order do you meet the shapes starting from the arrow?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q3: How many more grey squares…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第3题：请问灰色正方格比白色的多出多少个…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many more grey squares than white ones can you see? Berapakah lebihan bilangan petak kelabu berbanding dengan petak putih yang dapat dilihat?",
+        "zh": "请问灰色正方格比白色的多出多少个？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q4: Put the animals in line…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第4题：把图中的动物从小至大顺序排列。请…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Put the animals in line from the smallest to the largest. What animal is in the middle? Susun haiwan-haiwan berikut daripada yang paling kecil hingga ke yang paling besar. Hai- wan manakah yang terletak di tengah?",
+        "zh": "把图中的动物从小至大顺序排列。请问哪一只会排在中间？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q5: Ann has twelve of these…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第5题：Ann拥有12个的砖。她要把砖上…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Ann has twelve of these tiles. She makes one line with the design. Ann starts at the left side. How does the line end? Ann mempunyai 12 keping petak sedemikian. Dia membuat satu garis melengkung meng-",
+        "zh": "Ann拥有12个的砖。她要把砖上的图案排成一条线。Ann从左边开始排。请问那条线结 束时是怎样的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q6: Which is the shadow of the…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第6题：以下哪个是小女孩的影子？"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which is the shadow of the girl? Yang mana satukah bayang-bayang budak tersebut?",
+        "zh": "以下哪个是小女孩的影子？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q7: A square was composed of 25…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第7题：一个正方形是由25个小正方形组成…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A square was composed of 25 small squares, but some of these small squares are lost. How many are lost? Suatu petak terdiri daripada 25 petak kecil, tetapi beberapa petak kecil tersebut telah hilang.",
+        "zh": "一个正方形是由25个小正方形组成的，但是一部分的小正方形不见了。请问共缺了多少 个？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q8: How many ducks balance the…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第8题：请问该放多少只鸭才能和鳄鱼保持平…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many ducks balance the crocodile? Berapakah bilangan itik yang seimbang dengan seekor buaya?",
+        "zh": "请问该放多少只鸭才能和鳄鱼保持平衡？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q9: When the ant goes from home…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第9题：当蚂蚁 从家里"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "When the ant goes from home following these arrows: →3, ↑3, →3, ↑1, it",
+        "zh": "当蚂蚁 从家里"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 9,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -1 Q10: The kangaroo is inside how…",
+        "zh": "Math Kangaroo 2014 – Level 1 -1 第10题：请问袋鼠共在多少个圆圈里？"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The kangaroo is inside how many circles? Kangaroo tersebut terletak di dalam berapa bulatan?",
+        "zh": "请问袋鼠共在多少个圆圈里？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 10,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2014 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q11: A square was cut into 4…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第11题：一个正方形被切成四个部分（如下图…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A square was cut into 4 parts as shown in the picture. Which of the following shapes cannot be made with these 4 parts? Suatu petak dipotong kepada 4 bahagian seperti ditunjukkan pada gambarajah. Bentuk yang",
+        "zh": "一个正方形被切成四个部分（如下图）。请问以下哪个形状不能被这四个部分组成？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q12: Which form ﬁts exactly the…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第12题：以下哪一个形状可以恰好嵌合这个形…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which form ﬁts exactly the one given below? Bentuk manakah yang boleh dimuatkan secara tepat dengan bentuk di bawah?",
+        "zh": "以下哪一个形状可以恰好嵌合这个形状？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q13: Walking from K to O along…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第13题：沿着线上从K至O走，但必须以正确…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Walking from K to O along the lines pick up the letters KANGAROO in the correct order. What is the length of the shortest walk in meters? Dengan berjalan dari K ke O sepanjang garisan-garisan, kutip huruf-huruf KANGAROO",
+        "zh": "沿着线上从K至O走，但必须以正确的次序经过KANGAROO字母。请问最短的距离多 长？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q14: How many numbers are…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第14题：请问有多少个号码大于10但小于或…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many numbers are greater than 10 and less than or equal to 31 which can be written with digits 1, 2 or 3 only? You can repeat digits. Berapakah bilangan nombor yang lebih daripada 10 dan kurang daripada atau sama dengan",
+        "zh": "请问有多少个号码大于10但小于或相等于31并且只由数字1，2，3组成？你可以重复数 字。"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q15: Seven sticks lie on top of…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第15题：有七根棒相叠。2号棒在最下面，6…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Seven sticks lie on top of each other. Stick 2 is at the bottom. Stick 6 is at the top. Which stick is in the middle? Tujuh batang bertindihan antara satu sama lain. Batang 2 terletak di bawah sekali. Batang",
+        "zh": "有七根棒相叠。2号棒在最下面，6号棒在最上面。请问哪一根棒在中间？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q16: Rabbit Venya eats cabbages…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第16题：兔子Venya喜欢吃包菜和萝卜。…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Rabbit Venya eats cabbages and carrots. Each day he eats either 10 carrots, or 2 cabbages. In the previous week Venya ate 6 cabbages. How many carrots did he eat? Venya si Arnab suka makan kobis dan lobak. Setiap hari dia memakan sama ada 10 lobak,",
+        "zh": "兔子Venya喜欢吃包菜和萝卜。每天它只吃10根萝卜或2个包菜。上个星期Venya吃了6个 包菜.请问它吃了多少根萝卜？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q17: Put the digits 2, 3, 4 and…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第17题：把数字2，3，4，5放进方格里并…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Put the digits 2, 3, 4 and 5 in the squares and calculate the sum to get the largest value. What is that value? Letakkan digit-digit 2, 3, 4 dan 5 ke dalam petak-petak berikut dan kira hasil tambah terse-",
+        "zh": "把数字2，3，4，5放进方格里并算出和数中最大的数值。请问最大的数值是多少？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 17,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q18: The central cell of the…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第18题：此正方形中间的一个小方格被取出，…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The central cell of the square was removed. We cut it into equal pieces. Which piece is not possible to get? Petak tengah pada segiempat berikut telah dibuang. Segiempat tersebut kemudian dipotong",
+        "zh": "此正方形中间的一个小方格被取出，并被切成一些相等的纸片。请问那一片是不可能获 得的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 18,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q19: To get the product of…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第19题：为了获得2 × 3 ×…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "To get the product of 2×3×15, Bill has to press the keys of his calculator seven times. Bill wants to multiply all numbers from 3 to 21, using his calculator. How many times will he press the keys of his calculator?",
+        "zh": "为了获得2 × 3 × 15的积,Bill必须按计算机的按键七次：。如果Bill要用他的计算机获得所 有从3至21的数字的积，请问他必须在按键上按多少次？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 19,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2014 – Level 1 -2 Q20: Cogwheel A turns round…",
+        "zh": "Math Kangaroo 2014 – Level 1 -2 第20题：齿轮A旋转了完整一圈。x现在在什…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Cogwheel A turns round completely once. At which place is x now? Gerigi A membuat satu pusingan lengkap. Dimanakah terletaknya x sekarang?",
+        "zh": "齿轮A旋转了完整一圈。x现在在什么地方？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2014",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 20,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2014 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

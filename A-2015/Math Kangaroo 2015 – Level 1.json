@@ -1,0 +1,1160 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2015 – Level 1",
+    "zh": "Math Kangaroo 2015 – 等级 1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q1: Question 1",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第1题：1. Which figure…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Question 1",
+        "zh": "1. Which figure is not in each of four pictures?下图中没有出现哪个图形？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q2: Question 2",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第2题：2. How many…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Question 2",
+        "zh": "2. How many triangles are there in the picture? 下图中一共有多少个三角形"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q3: Question 3",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第3题：3. Find the…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Question 3",
+        "zh": "3. Find the missing part of the house. 找到房子中缺失的部分。"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q4: Five lady-bugs live on a…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第4题：下图瓢虫中有多少个点点？"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five lady-bugs live on a bush. In total, how many spots have the lady-bugs?",
+        "zh": "下图瓢虫中有多少个点点？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q5: Question 5",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第5题：5. Eric had 10…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Question 5",
+        "zh": "5. Eric had 10 equal metal strips. 小E有10个一模一样的金属条。 He has screwed pairs of them together into five long strips. 每两个组合起来形成5个长的金属条"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q6: Which of the following…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第6题：Which of the…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which of the following pictures can be rotated so that it will coincide with the picture shown on the right?",
+        "zh": "Which of the following pictures can be rotated so that it will coincide with the picture shown on the right?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q7: Question 7",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第7题：7. What does…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Question 7",
+        "zh": "7. What does the round tower look like from above? 哪个图形是下面图形的俯视图？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q8: 4 point problems Don made…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第8题：8. What is the…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "4 point problems Don made two bricks by sticking two cubes together. Which construction cannot be built of these two bricks?",
+        "zh": "8. What is the sum of the numbers outside the square? 方形外面的数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q9: It takes half an hour for…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第9题：小D用两个正方体堆成两个立方体。…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "It takes half an hour for Jenny to go half of the way from school to home. How long does it",
+        "zh": "小D用两个正方体堆成两个立方体。请问下列哪个选项不能用这两个立方体堆成？ 小M有9块糖果，小T 有17块糖果。小T需要给小M多少糖果才能使得两人的糖果一样多？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 9,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q10: Don made two bricks by…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第10题：Don made two…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Don made two bricks by sticking two cubes together. Which construction cannot be built of these two bricks?",
+        "zh": "Don made two bricks by sticking two cubes together. Which construction cannot be built of these two bricks?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 10,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q11: Marko has 9 sweets and Tomo…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第11题：Marko has 9…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Marko has 9 sweets and Tomo has 17 sweets. How many sweets does Tomo need to give to Marko so that each boy has the same number of sweets?",
+        "zh": "Marko has 9 sweets and Tomo has 17 sweets. How many sweets does Tomo need to give to Marko so that each boy has the same number of sweets?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -1 Q12: Six towers are built with…",
+        "zh": "Math Kangaroo 2015 – Level 1 -1 第12题：Six towers are…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Six towers are built with grey cubes and white cubes. Each tower is made with five cubes. Cubes of the same colors do not touch. How many white cubes are there?",
+        "zh": "Six towers are built with grey cubes and white cubes. Each tower is made with five cubes. Cubes of the same colors do not touch. How many white cubes are there?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q13: Question 13",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第13题：13. Which piece…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Question 13",
+        "zh": "13. Which piece is missing?  下列图中缺失的是哪个图形？ 5/5/2015中有3个5。请问之后又会出现3个5的最早的日期是？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q14: The date 5/5/2015 has three…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第14题：one slice to…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The date 5/5/2015 has three 5's. The earliest date that will have three 5's again is: were 14 children at the party including Vera. How many slices are left over if mother gives 5 point problems",
+        "zh": "one slice to each child? 妈妈为小V的生日宴会订了两张披萨并且将每张披萨都分成了8块。小V的生日宴会上 有14个小小朋友（包括小V）。请问如果妈妈给每位小朋友一块披萨，那么还剩几块披萨？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q15: Mother ordered 2 pizzas and…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第15题：Mother ordered…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Mother ordered 2 pizzas and sliced each of them into 8 pieces for Vera's birthday. There",
+        "zh": "Mother ordered 2 pizzas and sliced each of them into 8 pieces for Vera's birthday. There"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q16: Place each of the numbers…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第16题：Place each of…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Place each of the numbers 1, 2, 3, 4, 5 into one box so that everything is correct. Which number goes into the box marked with question mark?",
+        "zh": "Place each of the numbers 1, 2, 3, 4, 5 into one box so that everything is correct. Which number goes into the box marked with question mark?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q17: There were 11 flags on a…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第17题：There were 11…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There were 11 flags on a straight track of a race. The first one was at the start, the last one taking only 4 jumps, can the Kangaroo reach circle F?",
+        "zh": "There were 11 flags on a straight track of a race. The first one was at the start, the last one taking only 4 jumps, can the Kangaroo reach circle F?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q18: The Kangaroo jumps from…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第18题：一只袋鼠从圆S沿着线跳到下一个圆…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The Kangaroo jumps from circle S along the line to the next circle in one jump. It is not allowed to jump into any circle more than once. In how many different ways, by The pirate captain was in the middle and he was also the eighth one from the beginning.",
+        "zh": "一只袋鼠从圆S沿着线跳到下一个圆， 一次只能跳一个圆，每个圆不能跳超过"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q19: A ship was attacked by…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第19题：A ship was…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A ship was attacked by pirates. One by one they were climbing a rope to get to the ship.",
+        "zh": "A ship was attacked by pirates. One by one they were climbing a rope to get to the ship."
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q20: During 3 days Joy the cat…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第20题：During 3 days…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "During 3 days Joy the cat was catching mice. Each day, Joy caught 2 mice more than the previous day. On the third day, Joy caught twice as many mice as on the first day. In total, how many mice did Joy catch during the three days?",
+        "zh": "During 3 days Joy the cat was catching mice. Each day, Joy caught 2 mice more than the previous day. On the third day, Joy caught twice as many mice as on the first day. In total, how many mice did Joy catch during the three days?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q21: Rick and Tom were building…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第21题：Rick and Tom…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Rick and Tom were building an igloo. Each hour Rick made 8 snow bricks and Tom made",
+        "zh": "Rick and Tom were building an igloo. Each hour Rick made 8 snow bricks and Tom made"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q22: Nick built a cube using…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第22题：Nick built a…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Nick built a cube using gray and white cubes (see fig.). The cubes with the same color do",
+        "zh": "Nick built a cube using gray and white cubes (see fig.). The cubes with the same color do"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q23: We left for a summer camp…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第23题：We left for a…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "We left for a summer camp yesterday at 4:32 PM and got to our destination today at",
+        "zh": "We left for a summer camp yesterday at 4:32 PM and got to our destination today at"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2015 – Level 1 -2 Q24: The numbers 3, 5, 7, 8 and…",
+        "zh": "Math Kangaroo 2015 – Level 1 -2 第24题：The numbers 3,…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The numbers 3, 5, 7, 8 and 9 are written into the squares (see fig.) so that the sum of the",
+        "zh": "The numbers 3, 5, 7, 8 and 9 are written into the squares (see fig.) so that the sum of the"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2015",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2015 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

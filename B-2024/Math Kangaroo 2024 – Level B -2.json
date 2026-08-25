@@ -1,0 +1,584 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2024 – Level B -2",
+    "zh": "Math Kangaroo 2024 – 等级 B -2 -2"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q13: Overlapping Rings",
+        "zh": "Math Kangaroo 2024 – Level B -2 第13题：相交圆环"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "7 cards numbered 1 to 7 are in 4 overlapping rings. Each ring sums to 10. Which number is under the question mark?",
+        "zh": "1–7 的卡片放在 4 个相交圆环中，每环数字和为 10。问号下是哪个数？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Ring sums force ? = 1.",
+        "zh": "各环和为 10 可推出问号为 1。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q14: Caterpillar Puzzles",
+        "zh": "Math Kangaroo 2024 – Level B -2 第14题：毛毛虫拼图"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lucas makes a caterpillar with a head, a tail and 1, 2 or 3 puzzle pieces between. How many different caterpillars can he make without flipping pieces?",
+        "zh": "毛毛虫有头有尾，中间 1、2 或 3 片拼图。不翻转时能拼出几条不同的？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Without flipping, exactly 4 different caterpillars are possible.",
+        "zh": "不翻转时恰有 4 种拼法。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q15: Flipped Number Cards",
+        "zh": "Math Kangaroo 2024 – Level B -2 第15题：翻转后的数字卡"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "John writes 1–4 on a sheet, flips it and writes 5–8, then cuts into 4 cards in a row: ? 5 ? 6. What is the sum of the numbers under the question marks?",
+        "zh": "纸上写 1–4，翻面写 5–8，剪成 4 张排成 ? 5 ? 6。问号数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Pairs: 1↔7, 2↔6, 3↔8, 4↔5; the ? cards show 1 and 3, sum 4.",
+        "zh": "正反配对后问号为 1 与 3，和为 4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q16: Square Tile Side",
+        "zh": "Math Kangaroo 2024 – Level B -2 第16题：正方形瓷砖边长"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A floor uses rectangular tiles 23 cm × 11 cm and square tiles. What is the side-length of the square tiles?",
+        "zh": "地板有 23 cm × 11 cm 长方形瓷砖和正方形瓷砖。正方形边长是多少？"
+      },
+      "choices": [
+        {
+          "en": "3 cm",
+          "zh": "3 cm"
+        },
+        {
+          "en": "4 cm",
+          "zh": "4 cm"
+        },
+        {
+          "en": "5 cm",
+          "zh": "5 cm"
+        },
+        {
+          "en": "6 cm",
+          "zh": "6 cm"
+        },
+        {
+          "en": "7 cm",
+          "zh": "7 cm"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "23 = 11 + 2s ⇒ s = 6.",
+        "zh": "23=11+2s ⇒ s=6。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q17: Worm-Eaten Digits",
+        "zh": "Math Kangaroo 2024 – Level B -2 第17题：被虫吃掉的数字"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Three cards sum to 782. A worm ate part of each card. What is the sum of the 3 missing digits?",
+        "zh": "三张卡片数字之和为 782，每张都被虫吃掉一部分。被吃掉的 3 个数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Missing units digit 5; missing tens digits sum to 6; total missing 11.",
+        "zh": "个位缺 5；十位两缺数之和 6；缺数之和 11。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q18: Weighing Blocks",
+        "zh": "Math Kangaroo 2024 – Level B -2 第18题：积木称重"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lucy weighs some blocks on three scales showing 200 g, 100 g and 240 g. How much do the 3 different blocks weigh together?",
+        "zh": "三台秤分别显示 200 g、100 g、240 g。三种不同积木一共多重？"
+      },
+      "choices": [
+        {
+          "en": "270 g",
+          "zh": "270 g"
+        },
+        {
+          "en": "280 g",
+          "zh": "280 g"
+        },
+        {
+          "en": "290 g",
+          "zh": "290 g"
+        },
+        {
+          "en": "300 g",
+          "zh": "300 g"
+        },
+        {
+          "en": "310 g",
+          "zh": "310 g"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "(200+100+240)/2 = 270 because each block appears twice.",
+        "zh": "三秤相加每种积木出现两次，(200+100+240)/2=270。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q19: Yellow Vest Orange Pack",
+        "zh": "Math Kangaroo 2024 – Level B -2 第19题：黄背心橙书包"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "60 pupils: vests yellow, green, yellow, green…; backpacks red, brown, orange, red, brown, orange… How many have a yellow vest and an orange backpack?",
+        "zh": "60 名学生：背心黄绿交替；书包红棕橙循环。黄背心且橙书包的有多少人？"
+      },
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "LCM of periods 2 and 3 is 6; yellow+orange once per 6 ⇒ 60/6=10.",
+        "zh": "周期 2 与 3 的最小公倍数为 6；每 6 人 1 个黄+橙 ⇒ 10。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q20: Hidden Digits Product",
+        "zh": "Math Kangaroo 2024 – Level B -2 第20题：图形藏数字"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Same shapes hide the same digits; different shapes hide different digits. What is the value of the product of the three shapes?",
+        "zh": "相同图形代表相同数字。请问三个图形相乘的值是多少？"
+      },
+      "choices": [
+        {
+          "en": "0",
+          "zh": "0"
+        },
+        {
+          "en": "15",
+          "zh": "15"
+        },
+        {
+          "en": "18",
+          "zh": "18"
+        },
+        {
+          "en": "28",
+          "zh": "28"
+        },
+        {
+          "en": "30",
+          "zh": "30"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Digits give 7+7=14 and 4+7=11; product 7×4×1=28.",
+        "zh": "解得 7+7=14、4+7=11；乘积 7×4×1=28。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q21: Frogs Jump Together",
+        "zh": "Math Kangaroo 2024 – Level B -2 第21题：青蛙同时跳"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Exactly 2 frogs in each row and column. Two frogs jump at once to neighbouring empty cells; afterwards still 2 per row/column. In how many ways?",
+        "zh": "每行每列恰有 2 只青蛙。两只同时跳到相邻空格后仍每行每列 2 只。有几种跳法？"
+      },
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "There are exactly 4 valid simultaneous jump pairs.",
+        "zh": "恰有 4 种合法的同时跳跃方式。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q22: Honeycomb Honey Count",
+        "zh": "Math Kangaroo 2024 – Level B -2 第22题：蜂巢蜂蜜格"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A beehive has 9 cells. Each number shows how many neighbouring cells contain honey. How many cells contain honey?",
+        "zh": "9 格蜂巢，数字表示相邻含蜜格数。共有多少格含有蜂蜜？"
+      },
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Forced neighbour constraints yield exactly 6 honey cells.",
+        "zh": "由邻格约束可推出恰有 6 格含蜜。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q23: Cookie Tray Order",
+        "zh": "Math Kangaroo 2024 – Level B -2 第23题：饼干托盘"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Three girls take cookies in some order: all hearts; all white; all large. They take 3, 6 and 7 cookies. Which set does one girl take?",
+        "zh": "三个女孩分别拿走所有心形、所有白色、所有大块饼干（顺序不定），分别拿 3、6、7 块。哪一组是其中一人拿走的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Order must be large → hearts → white, taking 7, 6, 3 cookies.",
+        "zh": "顺序为大块→心形→白色，分别 7、6、3 块。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2024 – Level B -2 Q24: White and Red Blocks",
+        "zh": "Math Kangaroo 2024 – Level B -2 第24题：白红积木"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A small cube uses 4 white blocks or 1 white + 1 red. The large cube is made of small cubes. What is the smallest number of white blocks needed?",
+        "zh": "小立方体可用 4 白或 1 白+1 红搭成。大立方体由小立方体组成。最少需要几块白色积木？"
+      },
+      "choices": [
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "11",
+          "zh": "11"
+        },
+        {
+          "en": "13",
+          "zh": "13"
+        },
+        {
+          "en": "14",
+          "zh": "14"
+        },
+        {
+          "en": "23",
+          "zh": "23"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "8 small cubes; minimize whites: 6×1 + 2×4 = 14.",
+        "zh": "8 个小立方体；最少白块 6×1+2×4=14。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2024",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2024 – Level B -2"
+      },
+      "is_published": true
+    }
+  ]
+}

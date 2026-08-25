@@ -1,578 +1,584 @@
-[
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q13: Largest Shaded Area",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第13题：阴影面积最大"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Which picture has the largest shaded area?",
-      "zh": "以下哪张图片中的阴影部分面积最大？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
-      },
-      {
-        "en": "B",
-        "zh": "B"
-      },
-      {
-        "en": "C",
-        "zh": "C"
-      },
-      {
-        "en": "D",
-        "zh": "D"
-      },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Each grid has 9 cells. Count white (halves = 0.5); shade = 9 − white. Least white wins.",
-      "zh": "每图 9 格。数白色（半格算 0.5）；阴影 = 9 − 白。白最少的阴影最大。"
-    },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 13,
-      "points": 4,
-      "answer_letter": "B",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
+{
+  "title": {
+    "en": "Math Kangaroo 2020 – Level 1 -2",
+    "zh": "Math Kangaroo 2020 – 等级 1 -2 -2"
   },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q14: Blue and Yellow Squares",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第14题：蓝格与黄格"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Mary wants to write the numbers 1, 2, 3, 4, 5 and 6 inside the six squares of the figure. She wants a different number in each square. She wants both the sum of the numbers in the blue squares and the sum of the numbers in the yellow squares to be 10. What number must she write in the square with the question mark?",
-      "zh": "小莉想把数字 1, 2, 3, 4, 5, 6 写进下面的六个方格中，且每个方格中的数字都不同。除此之外，她想让蓝色方格里的数字之和与黄色方格里的数字之和都为 10。请问她必须在标有问号的方格里写上什么数字？"
-    },
-    "choices": [
-      {
-        "en": "1",
-        "zh": "1"
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q13: Largest Shaded Area",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第13题：阴影面积最大"
       },
-      {
-        "en": "2",
-        "zh": "2"
+      "type": "single_choice",
+      "content": {
+        "en": "Which picture has the largest shaded area?",
+        "zh": "以下哪张图片中的阴影部分面积最大？"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Each grid has 9 cells. Count white (halves = 0.5); shade = 9 − white. Least white wins.",
+        "zh": "每图 9 格。数白色（半格算 0.5）；阴影 = 9 − 白。白最少的阴影最大。"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "5",
-        "zh": "5"
-      }
-    ],
-    "correct_answer": 1,
-    "explanation": {
-      "en": "1+…+6=21 and blue+yellow=20, so the remaining square is 1.",
-      "zh": "1 到 6 之和为 21，蓝格与黄格各为 10，剩余格必为 1。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 14,
-      "points": 4,
-      "answer_letter": "A",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q15: Flipping the Card",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第15题：翻转卡片"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "The card was on the table. It is flipped over its top edge then flipped over its left edge. What does the card look like now?",
-      "zh": "如图所示，桌子上摆放着一张卡片。该卡片沿着顶部的边缘进行折叠翻转，然后再沿着左侧的边缘折叠翻转后，请问该卡片会变成什么样子？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q14: Blue and Yellow Squares",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第14题：蓝格与黄格"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Mary wants to write the numbers 1, 2, 3, 4, 5 and 6 inside the six squares of the figure. She wants a different number in each square. She wants both the sum of the numbers in the blue squares and the sum of the numbers in the yellow squares to be 10. What number must she write in the square with the question mark?",
+        "zh": "小莉想把数字 1, 2, 3, 4, 5, 6 写进下面的六个方格中，且每个方格中的数字都不同。除此之外，她想让蓝色方格里的数字之和与黄色方格里的数字之和都为 10。请问她必须在标有问号的方格里写上什么数字？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "1+…+6=21 and blue+yellow=20, so the remaining square is 1.",
+        "zh": "1 到 6 之和为 21，蓝格与黄格各为 10，剩余格必为 1。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Flip over the top edge, then over the left edge; track the drawing.",
-      "zh": "先沿顶边翻转，再沿左边翻转，跟踪图案朝向。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 15,
-      "points": 4,
-      "answer_letter": "B",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q16: Extra Cookies",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第16题：再多烤几块饼干"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Grandmother has baked 12 cookies. She wants to give all the cookies to her 5 grandchildren. She also wants to give each grandchild the same number of cookies. How many extra cookies should she bake?",
-      "zh": "祖母烤了 12 块饼干，她想将所有饼干平均分配给她的 5 个孙子。请问她还需要再多烤几块饼干？"
-    },
-    "choices": [
-      {
-        "en": "0",
-        "zh": "0"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q15: Flipping the Card",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第15题：翻转卡片"
       },
-      {
-        "en": "1",
-        "zh": "1"
+      "type": "single_choice",
+      "content": {
+        "en": "The card was on the table. It is flipped over its top edge then flipped over its left edge. What does the card look like now?",
+        "zh": "如图所示，桌子上摆放着一张卡片。该卡片沿着顶部的边缘进行折叠翻转，然后再沿着左侧的边缘折叠翻转后，请问该卡片会变成什么样子？"
       },
-      {
-        "en": "2",
-        "zh": "2"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Flip over the top edge, then over the left edge; track the drawing.",
+        "zh": "先沿顶边翻转，再沿左边翻转，跟踪图案朝向。"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "4",
-        "zh": "4"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "Need a multiple of 5; from 12 bake 3 more to get 15.",
-      "zh": "要能被 5 整除；从 12 再烤 3 块得到 15。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 16,
-      "points": 4,
-      "answer_letter": "D",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q17: Card on Grey Square",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第17题：灰格上的卡片"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Tom has 9 cards, as shown. He puts the cards on the board so that each horizontal line and each vertical line contains three cards with three different shapes and three different numbers of shapes. He has already put three cards, as shown. Which card does he put on the grey square?",
-      "zh": "小唐有 9 张卡片，如图。他把卡片放在方格内，使得每个水平和垂直方向上都有三张不同形状和不同形状数目的卡片。他已经放了三张卡片了，如下图所示。请问他应该在灰色的方格内放入哪张卡片？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q16: Extra Cookies",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第16题：再多烤几块饼干"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Grandmother has baked 12 cookies. She wants to give all the cookies to her 5 grandchildren. She also wants to give each grandchild the same number of cookies. How many extra cookies should she bake?",
+        "zh": "祖母烤了 12 块饼干，她想将所有饼干平均分配给她的 5 个孙子。请问她还需要再多烤几块饼干？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "0",
+          "zh": "0"
+        },
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Need a multiple of 5; from 12 bake 3 more to get 15.",
+        "zh": "要能被 5 整除；从 12 再烤 3 块得到 15。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "Each row/column needs three different shapes and three different counts.",
-      "zh": "每行每列形状与数量都要不重复。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 17,
-      "points": 5,
-      "answer_letter": "D",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q18: Opposite Train Cars",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第18题：相对的车厢"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Two identical trains, each with 31 cars, are traveling in opposite directions. When car No. 19 of one train is opposite car No. 19 of the other, which car is opposite car No. 12?",
-      "zh": "两列相同的火车，各有 31 节车厢，它们朝相反的方向行驶。当其中一列火车的 19 号车厢与另一列火车的 19 号车厢相对时，几号车厢会与 12 号车厢相对？"
-    },
-    "choices": [
-      {
-        "en": "7",
-        "zh": "7"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q17: Card on Grey Square",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第17题：灰格上的卡片"
       },
-      {
-        "en": "12",
-        "zh": "12"
+      "type": "single_choice",
+      "content": {
+        "en": "Tom has 9 cards, as shown. He puts the cards on the board so that each horizontal line and each vertical line contains three cards with three different shapes and three different numbers of shapes. He has already put three cards, as shown. Which card does he put on the grey square?",
+        "zh": "小唐有 9 张卡片，如图。他把卡片放在方格内，使得每个水平和垂直方向上都有三张不同形状和不同形状数目的卡片。他已经放了三张卡片了，如下图所示。请问他应该在灰色的方格内放入哪张卡片？"
       },
-      {
-        "en": "21",
-        "zh": "21"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Each row/column needs three different shapes and three different counts.",
+        "zh": "每行每列形状与数量都要不重复。"
       },
-      {
-        "en": "26",
-        "zh": "26"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 17,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "31",
-        "zh": "31"
-      }
-    ],
-    "correct_answer": 4,
-    "explanation": {
-      "en": "Opposite cars sum to 19+19=38, so opposite 12 is 26.",
-      "zh": "相对车厢号之和为 38，与 12 相对的是 26。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 18,
-      "points": 5,
-      "answer_letter": "D",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q19: Bee Path Colouring",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第19题：蜜蜂涂色通路"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Mark the Bee can walk only on grey cells. In how many ways could you colour exactly two white cells grey so that Mark can walk from A to B?",
-      "zh": "有一只小蜜蜂只能在灰色的蜂房上行走。请问你可以通过几种方式将其中两个白色蜂房涂为灰色，以便小蜜蜂可以从 A 行走到 B？"
-    },
-    "choices": [
-      {
-        "en": "3",
-        "zh": "3"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q18: Opposite Train Cars",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第18题：相对的车厢"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "type": "single_choice",
+      "content": {
+        "en": "Two identical trains, each with 31 cars, are traveling in opposite directions. When car No. 19 of one train is opposite car No. 19 of the other, which car is opposite car No. 12?",
+        "zh": "两列相同的火车，各有 31 节车厢，它们朝相反的方向行驶。当其中一列火车的 19 号车厢与另一列火车的 19 号车厢相对时，几号车厢会与 12 号车厢相对？"
       },
-      {
-        "en": "5",
-        "zh": "5"
+      "choices": [
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "12",
+          "zh": "12"
+        },
+        {
+          "en": "21",
+          "zh": "21"
+        },
+        {
+          "en": "26",
+          "zh": "26"
+        },
+        {
+          "en": "31",
+          "zh": "31"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Opposite cars sum to 19+19=38, so opposite 12 is 26.",
+        "zh": "相对车厢号之和为 38，与 12 相对的是 26。"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 18,
+        "points": 5,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "7",
-        "zh": "7"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Count the ways to grey exactly two white cells that connect A to B.",
-      "zh": "数出使 A 通到 B 的“恰涂两格”的方法种数。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 19,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q20: Who Is Shortest",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第20题：谁最矮"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "An arrow pointing from one person to another means that the first person is taller than the second. For example, person B is taller than person A. Who is the shortest?",
-      "zh": "如图所示，当一个箭头从一个人指向另一个人时，表示第一个人比第二个人高。例如，箭头从 B 指向 A，表示 B 比 A 高。请问谁是当中最矮的？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q19: Bee Path Colouring",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第19题：蜜蜂涂色通路"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Mark the Bee can walk only on grey cells. In how many ways could you colour exactly two white cells grey so that Mark can walk from A to B?",
+        "zh": "有一只小蜜蜂只能在灰色的蜂房上行走。请问你可以通过几种方式将其中两个白色蜂房涂为灰色，以便小蜜蜂可以从 A 行走到 B？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Count the ways to grey exactly two white cells that connect A to B.",
+        "zh": "数出使 A 通到 B 的“恰涂两格”的方法种数。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 19,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Follow the taller-than arrows; the person with no one shorter is shortest.",
-      "zh": "按“更高”箭头比较，谁最矮。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 20,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q21: Yellow Apples",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第21题：黄色苹果"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "There are some apples and 8 pears in a basket, each of them green or yellow. There are three more apples than the total number of green fruit. There are 6 yellow pears. How many yellow apples are there in the basket?",
-      "zh": "一个篮子里有一些苹果和 8 个梨，它们要么是绿色，要么是黄色。苹果的数量比绿色水果总数多了三个。如果篮子里有 6 个黄色的梨，请问篮子里有几个黄色的苹果？"
-    },
-    "choices": [
-      {
-        "en": "4",
-        "zh": "4"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q20: Who Is Shortest",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第20题：谁最矮"
       },
-      {
-        "en": "5",
-        "zh": "5"
+      "type": "single_choice",
+      "content": {
+        "en": "An arrow pointing from one person to another means that the first person is taller than the second. For example, person B is taller than person A. Who is the shortest?",
+        "zh": "如图所示，当一个箭头从一个人指向另一个人时，表示第一个人比第二个人高。例如，箭头从 B 指向 A，表示 B 比 A 高。请问谁是当中最矮的？"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Follow the taller-than arrows; the person with no one shorter is shortest.",
+        "zh": "按“更高”箭头比较，谁最矮。"
       },
-      {
-        "en": "7",
-        "zh": "7"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 20,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "8",
-        "zh": "8"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Green pears=2; yellow apples=green pears+3=5.",
-      "zh": "绿梨有 2 个；黄苹果=绿梨+3=5。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 21,
-      "points": 5,
-      "answer_letter": "B",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q22: Row and Column Sums",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第22题：行列数字和"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Roo wrote each of the numbers 1, 2, 3, 4 and 5 in one of the circles so that the sum of the numbers in the row is equal to the sum of the numbers in the column. What number could be written in the circle with the question mark?",
-      "zh": "小卢在每个圆中分别写下了数字 1、2、3、4 和 5，因此横行中的数字之和等于竖列中的数字之和。请问图中画问号的圆中是什么数字？"
-    },
-    "choices": [
-      {
-        "en": "Only 5",
-        "zh": "只有 5"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q21: Yellow Apples",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第21题：黄色苹果"
       },
-      {
-        "en": "2, 3 or 4",
-        "zh": "2、3 或 4"
+      "type": "single_choice",
+      "content": {
+        "en": "There are some apples and 8 pears in a basket, each of them green or yellow. There are three more apples than the total number of green fruit. There are 6 yellow pears. How many yellow apples are there in the basket?",
+        "zh": "一个篮子里有一些苹果和 8 个梨，它们要么是绿色，要么是黄色。苹果的数量比绿色水果总数多了三个。如果篮子里有 6 个黄色的梨，请问篮子里有几个黄色的苹果？"
       },
-      {
-        "en": "Only 3",
-        "zh": "只有 3"
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Green pears=2; yellow apples=green pears+3=5.",
+        "zh": "绿梨有 2 个；黄苹果=绿梨+3=5。"
       },
-      {
-        "en": "Only 1 or 3",
-        "zh": "只有 1 或 3"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 21,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "1, 3 or 5",
-        "zh": "1、3 或 5"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "The centre must be odd; 1, 3 and 5 are all possible.",
-      "zh": "中心数必为奇数；1、3、5 都可能。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 22,
-      "points": 5,
-      "answer_letter": "E",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q23: Opposite Face of 5",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第23题：5的对面"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Six different numbers chosen from 1 to 9 are written on the faces of a cube, one number on each face. The sums of numbers on each pair of opposite faces are equal. Which number could be on the face opposite to the face with number 5?",
-      "zh": "从 1 到 9 中选择六个不同的数字写在正方体的表面上，且每一面只写一个数字。如果每一个数字与它相对面上的数字总和是相等的，请问哪个数字将会出现在数字 5 相对的面上？"
-    },
-    "choices": [
-      {
-        "en": "3",
-        "zh": "3"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q22: Row and Column Sums",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第22题：行列数字和"
       },
-      {
-        "en": "5",
-        "zh": "5"
+      "type": "single_choice",
+      "content": {
+        "en": "Roo wrote each of the numbers 1, 2, 3, 4 and 5 in one of the circles so that the sum of the numbers in the row is equal to the sum of the numbers in the column. What number could be written in the circle with the question mark?",
+        "zh": "小卢在每个圆中分别写下了数字 1、2、3、4 和 5，因此横行中的数字之和等于竖列中的数字之和。请问图中画问号的圆中是什么数字？"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "choices": [
+        {
+          "en": "Only 5",
+          "zh": "只有 5"
+        },
+        {
+          "en": "2, 3 or 4",
+          "zh": "2、3 或 4"
+        },
+        {
+          "en": "Only 3",
+          "zh": "只有 3"
+        },
+        {
+          "en": "Only 1 or 3",
+          "zh": "只有 1 或 3"
+        },
+        {
+          "en": "1, 3 or 5",
+          "zh": "1、3 或 5"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The centre must be odd; 1, 3 and 5 are all possible.",
+        "zh": "中心数必为奇数；1、3、5 都可能。"
       },
-      {
-        "en": "7",
-        "zh": "7"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 22,
+        "points": 5,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "9",
-        "zh": "9"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "Opposite pairs share one common sum; opposite 5 can be 6.",
-      "zh": "三对对面数字和相同；5 的对面可以是 6。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 23,
-      "points": 5,
-      "answer_letter": "C",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2020 – Level 1 -2 Q24: John’s Sweets",
-      "zh": "Math Kangaroo 2020 – Level 1 -2 第24题：小强的糖果"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "John and Olivia exchanged sweets. First, John gave Olivia as many sweets as Olivia had. Then, Olivia gave John as many sweets as John had after the first exchange. After these two exchanges, each had 4 sweets. How many sweets did John have at the beginning?",
-      "zh": "小强和小欧互相交换糖果。首先，小强给小欧的糖果数量是小欧原本有的糖果数量。然后，小欧给小强的糖果数量是第一次交换后小强还剩的糖果数量。经过这两次交换后，每个人都有 4 颗糖果。请问小强一开始拥有多少颗糖果？"
-    },
-    "choices": [
-      {
-        "en": "6",
-        "zh": "6"
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q23: Opposite Face of 5",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第23题：5的对面"
       },
-      {
-        "en": "5",
-        "zh": "5"
+      "type": "single_choice",
+      "content": {
+        "en": "Six different numbers chosen from 1 to 9 are written on the faces of a cube, one number on each face. The sums of numbers on each pair of opposite faces are equal. Which number could be on the face opposite to the face with number 5?",
+        "zh": "从 1 到 9 中选择六个不同的数字写在正方体的表面上，且每一面只写一个数字。如果每一个数字与它相对面上的数字总和是相等的，请问哪个数字将会出现在数字 5 相对的面上？"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "choices": [
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Opposite pairs share one common sum; opposite 5 can be 6.",
+        "zh": "三对对面数字和相同；5 的对面可以是 6。"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 23,
+        "points": 5,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
       },
-      {
-        "en": "2",
-        "zh": "2"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Work backwards from 4 and 4; John started with 5.",
-      "zh": "从最后都是 4 倒推；小强起初有 5 颗。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2020",
-      "level_en": "Level 1 (Grades 1–2)",
-      "level_zh": "等级 1（1–2 年级）",
-      "question_number": 24,
-      "points": 5,
-      "answer_letter": "B",
-      "set_title": "Math Kangaroo 2020 – Level 1 -2"
-    },
-    "is_published": true
-  }
-]
+    {
+      "title": {
+        "en": "Math Kangaroo 2020 – Level 1 -2 Q24: John’s Sweets",
+        "zh": "Math Kangaroo 2020 – Level 1 -2 第24题：小强的糖果"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "John and Olivia exchanged sweets. First, John gave Olivia as many sweets as Olivia had. Then, Olivia gave John as many sweets as John had after the first exchange. After these two exchanges, each had 4 sweets. How many sweets did John have at the beginning?",
+        "zh": "小强和小欧互相交换糖果。首先，小强给小欧的糖果数量是小欧原本有的糖果数量。然后，小欧给小强的糖果数量是第一次交换后小强还剩的糖果数量。经过这两次交换后，每个人都有 4 颗糖果。请问小强一开始拥有多少颗糖果？"
+      },
+      "choices": [
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Work backwards from 4 and 4; John started with 5.",
+        "zh": "从最后都是 4 倒推；小强起初有 5 颗。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2020",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 1（1–2 年级）",
+        "question_number": 24,
+        "points": 5,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2020 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

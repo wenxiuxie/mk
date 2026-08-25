@@ -1,0 +1,488 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2016 – Level 1 -2",
+    "zh": "Math Kangaroo 2016 – 等级 1 -2 -2"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q11: Granny went out to the yard…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第11题：奶奶出去院子把所有的母鸡和她的猫…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Granny went out to the yard and called all the hens and her cat named Kitty. All 20 legs ran to her. How many hens does Granny have? Nenek pergi ke halaman rumah dan memanggil semua ayamnya dan kucingnya yang bernama",
+        "zh": "奶奶出去院子把所有的母鸡和她的猫Kitty叫来。所有的20只脚向她跑来。请问奶奶共有 多少只母鸡？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q12: In Baby Roo’s house, each…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第12题：在Baby…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In Baby Roo’s house, each room is connected to any neighboring room by a door, as in the picture. Baby Roo wants to get from the room A to the room B. What is the least number of doors that he will need to go through?",
+        "zh": "在Baby Roo的屋子里，每一个房间和相邻的房间连接着一扇门（如图）。Baby Roo想 从A房间去到B房间。请问他最少需要通过多少扇门？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q13: There are twelve rooms in a…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第13题：在一栋建筑物里有12个房间。每个…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are twelve rooms in a building. Each room has two windows and one light. Last evening, eighteen windows were lighted. In how many rooms was the light oﬀ? Terdapat dua belas bilik di dalam suatu bangunan. Setiap bilik mempunyai dua tingkap",
+        "zh": "在一栋建筑物里有12个房间。每个房间内有两扇窗口和一盏灯。昨天晚上，共有18扇窗 口是亮着的。请问共有多少个房间没有开灯？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q14: Mary is walking along the…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第14题：Mary沿着路走，但她只读取在她…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Mary is walking along the road and she reads only the letters located on her right side. Moving from point 1 to point 2, what is the word she will get? Mary sedang berjalan sambil membaca huruf-huruf yang terletak di sebelah kanan jalan",
+        "zh": "Mary沿着路走，但她只读取在她右边的字母。从1这个点出发走到2这个点。请问她会读 取什么字母？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q15: Which of the following…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第15题：以下哪个选项中的图是不能被以下这…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which of the following pictures cannot be made by using ﬁgures like the one given below? Gambar yang manakah tidak boleh dibina dengan menggunakan bentuk berikut?",
+        "zh": "以下哪个选项中的图是不能被以下这个图所构成的？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q16: Amy used six equal small…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第16题：Amy用了六个相同大小的小正方形…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Amy used six equal small squares to build the ﬁgure. What is the least number of equal small squares she should add to the picture in order to obtain a larger square? Amy menggunakan 6 petak kecil yang sama saiz untuk mendapatkan bentuk berikut. Apakah",
+        "zh": "Amy用了六个相同大小的小正方形构成了一个形状（如图）。请问她最少需要再加多少 个相同的小正方形来构成一个更大的正方形？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q17: Five sparrows sat on a wire…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第17题：有五只麻雀站在一条线上（如图）。…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five sparrows sat on a wire as shown in the picture. Some of them looked to their left, others looked to their right. Each sparrow chirped only once to each bird it saw on its side. For example, the third sparrow from the left chirped two times. In total, how many times did",
+        "zh": "有五只麻雀站在一条线上（如图）。它们有些看向左边，有些看向右边。每一只麻雀每 看见一只麻雀便会吱一声。比如说，从左算起的第三只麻雀吱两声。请问它们总共会吱多少"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 17,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q18: There are 4 ladybirds in…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第18题：图中有四只瓢虫，每只爬在一朵花上…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are 4 ladybirds in the picture. Each one sits on a ﬂower. The diﬀerence between the number of dots on their left and right wings equals the number of the leaves. The sum of the number of dots on both wings equals the number of the petals. Which of the following",
+        "zh": "图中有四只瓢虫，每只爬在一朵花上。它们左右翅膀上点的差数是叶子的数量，翅膀上 的点数的和是花瓣的数量。请问哪朵花没有瓢虫？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 18,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q19: On each of six faces of a…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第19题：在一个立方体的每一面有下列符号中…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "On each of six faces of a cube there is one of the following six symbols: ♣, ♦, ♥, ♠, □ and ⃝. In the picture we can see this cube shown in two diﬀerent positions. Which symbol is opposite the □?",
+        "zh": "在一个立方体的每一面有下列符号中的其中一个：♣，♦，♥，♠，□和⃝。在图中我们 能看见这个立方体以两种不同的方法被摆放。请问哪个符号在□的对面？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 19,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level 1 -2 Q20: The numbers 1, 5, 8, 9, 10,…",
+        "zh": "Math Kangaroo 2016 – Level 1 -2 第20题：数目1，5，8，9，10，12和…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "The numbers 1, 5, 8, 9, 10, 12 and 15 are distributed into groups with one or more numbers. The sum of the numbers in each group is the same. What is the largest number of groups?",
+        "zh": "数目1，5，8，9，10，12和15被分配入一些组里（每组由一个或更多的数目组成）。每组 数目的和是相同的。请问最多可分为多少组？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 20,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

@@ -1,590 +1,596 @@
-[
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q1: Building a 3×3×3 Cube",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第1题：搭建 3×3×3 立方体"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Mia is joining small cubes, adding one at a time, to build a 3×3×3 cube. She took pictures at 5 different moments. What does Mia’s third picture look like?",
-      "zh": "小米正在用小立方体搭建一个 3×3×3 的大立方体，每次添加一块小立方体。她在五个不同的时刻拍下照片。请问小米拍的第三张照片是什么样子？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
-      },
-      {
-        "en": "B",
-        "zh": "B"
-      },
-      {
-        "en": "C",
-        "zh": "C"
-      },
-      {
-        "en": "D",
-        "zh": "D"
-      },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "As cubes are added, the count increases. The photo order is D, B, E, A, C; the third is E.",
-      "zh": "小立方体数量逐渐增加，五张照片顺序为 D、B、E、A、C，第三张是 E。"
-    },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 1,
-      "points": 3,
-      "answer_letter": "E",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
+{
+  "title": {
+    "en": "Math Kangaroo 2025 – Level 2-1",
+    "zh": "Math Kangaroo 2025 – 等级 2-1 -1"
   },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q2: Largest Result with Digits 2025",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第2题：用 2、0、2、5 得到最大结果"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Simona writes the four digits 2, 0, 2, 5 in the four boxes. Which order would give her the largest result?",
-      "zh": "小西将 2、0、2、5 四个数字填入四个方框中。请问哪种顺序能让她得到最大的结果？"
-    },
-    "choices": [
-      {
-        "en": "5, 2, 2, 0",
-        "zh": "5, 2, 2, 0"
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q1: Building a 3×3×3 Cube",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第1题：搭建 3×3×3 立方体"
       },
-      {
-        "en": "5, 2, 0, 2",
-        "zh": "5, 2, 0, 2"
+      "type": "single_choice",
+      "content": {
+        "en": "Mia is joining small cubes, adding one at a time, to build a 3×3×3 cube. She took pictures at 5 different moments. What does Mia’s third picture look like?",
+        "zh": "小米正在用小立方体搭建一个 3×3×3 的大立方体，每次添加一块小立方体。她在五个不同的时刻拍下照片。请问小米拍的第三张照片是什么样子？"
       },
-      {
-        "en": "5, 0, 2, 2",
-        "zh": "5, 0, 2, 2"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "As cubes are added, the count increases. The photo order is D, B, E, A, C; the third is E.",
+        "zh": "小立方体数量逐渐增加，五张照片顺序为 D、B、E、A、C，第三张是 E。"
       },
-      {
-        "en": "2, 2, 5, 0",
-        "zh": "2, 2, 5, 0"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "E",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "2, 2, 0, 5",
-        "zh": "2, 2, 0, 5"
-      }
-    ],
-    "correct_answer": 3,
-    "explanation": {
-      "en": "One digit is subtracted and the other three are added. Subtract the smallest digit 0: 5−0+2+2=9.",
-      "zh": "一个数被减去、另外三个相加。减去最小的 0：5−0+2+2=9，最大。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 2,
-      "points": 3,
-      "answer_letter": "C",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q3: Which Rope Ties a Knot",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第3题：哪根绳子会打结"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Which rope ties into a knot when the ends are pulled?",
-      "zh": "请问下面哪根绳子在两端拉紧时会打成结？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q2: Largest Result with Digits 2025",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第2题：用 2、0、2、5 得到最大结果"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Simona writes the four digits 2, 0, 2, 5 in the four boxes. Which order would give her the largest result?",
+        "zh": "小西将 2、0、2、5 四个数字填入四个方框中。请问哪种顺序能让她得到最大的结果？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "5, 2, 2, 0",
+          "zh": "5, 2, 2, 0"
+        },
+        {
+          "en": "5, 2, 0, 2",
+          "zh": "5, 2, 0, 2"
+        },
+        {
+          "en": "5, 0, 2, 2",
+          "zh": "5, 0, 2, 2"
+        },
+        {
+          "en": "2, 2, 5, 0",
+          "zh": "2, 2, 5, 0"
+        },
+        {
+          "en": "2, 2, 0, 5",
+          "zh": "2, 2, 0, 5"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "One digit is subtracted and the other three are added. Subtract the smallest digit 0: 5−0+2+2=9.",
+        "zh": "一个数被减去、另外三个相加。减去最小的 0：5−0+2+2=9，最大。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "C",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "Only a rope that forms a tightening loop (under–over–under) will knot; that is E.",
-      "zh": "只有形成收紧环（一股从另一股下、上、再下穿过）的绳子会打结，即 E。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 3,
-      "points": 3,
-      "answer_letter": "E",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q4: Tracks Beneath the Shoe",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第4题：鞋底下的印记"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Alex stepped on some tracks on the ground. What is beneath her shoe?",
-      "zh": "小艾踩到了地上的一些印记。请问她鞋底的图案是什么样子？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q3: Which Rope Ties a Knot",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第3题：哪根绳子会打结"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Which rope ties into a knot when the ends are pulled?",
+        "zh": "请问下面哪根绳子在两端拉紧时会打成结？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Only a rope that forms a tightening loop (under–over–under) will knot; that is E.",
+        "zh": "只有形成收紧环（一股从另一股下、上、再下穿过）的绳子会打结，即 E。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "E",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Connecting the visible tracks shows the pattern matches option B.",
-      "zh": "把可见印记连起来，图案对应选项 B。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 4,
-      "points": 3,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q5: Normal Dice Opposite Faces",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第5题：标准骰子相对面"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "On a normal dice, the total number of spots on two opposite faces is always 7. Which one of the dice shown could be a normal dice?",
-      "zh": "在一个标准的骰子上，相对的两个面上的点数之和总是 7。请问下面哪个骰子可能是一个标准的骰子？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q4: Tracks Beneath the Shoe",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第4题：鞋底下的印记"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Alex stepped on some tracks on the ground. What is beneath her shoe?",
+        "zh": "小艾踩到了地上的一些印记。请问她鞋底的图案是什么样子？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Connecting the visible tracks shows the pattern matches option B.",
+        "zh": "把可见印记连起来，图案对应选项 B。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 1,
-    "explanation": {
-      "en": "Pairs 1–6, 2–5, 3–4 must be opposite. Only A does not force any of these pairs to be adjacent.",
-      "zh": "1 与 6、2 与 5、3 与 4 必须相对。只有 A 不会迫使这些对数相邻。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 5,
-      "points": 3,
-      "answer_letter": "A",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q6: Spinning Sail",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第6题：旋转的风车"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Larissa spins her sail. Which of the sails below is hers?",
-      "zh": "小拉在旋转她的风车。请问下面哪个风车是她的？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q5: Normal Dice Opposite Faces",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第5题：标准骰子相对面"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "On a normal dice, the total number of spots on two opposite faces is always 7. Which one of the dice shown could be a normal dice?",
+        "zh": "在一个标准的骰子上，相对的两个面上的点数之和总是 7。请问下面哪个骰子可能是一个标准的骰子？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Pairs 1–6, 2–5, 3–4 must be opposite. Only A does not force any of these pairs to be adjacent.",
+        "zh": "1 与 6、2 与 5、3 与 4 必须相对。只有 A 不会迫使这些对数相邻。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "A",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "Two black fields are opposite; the gray field is clockwise next to a black field → E.",
-      "zh": "两块黑色相对，灰色在黑色顺时针相邻处，对应 E。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 6,
-      "points": 3,
-      "answer_letter": "E",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q7: Kenny Jumps to a House",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第7题：袋鼠小肯跳到哪座房子"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Kenny the Kangaroo jumps from the School to the Zoo as follows: ↑2, ↖2, ↙1, ←4. Then from the Zoo: →5, ↗2, ↑2. Which house will he get to?",
-      "zh": "袋鼠小肯从学校跳到动物园：↑2, ↖2, ↙1, ←4。再从动物园：→5, ↗2, ↑2。请问它会跳到哪座房子？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q6: Spinning Sail",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第6题：旋转的风车"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Larissa spins her sail. Which of the sails below is hers?",
+        "zh": "小拉在旋转她的风车。请问下面哪个风车是她的？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Two black fields are opposite; the gray field is clockwise next to a black field → E.",
+        "zh": "两块黑色相对，灰色在黑色顺时针相邻处，对应 E。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "E",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Following the path from the Zoo leads to house B.",
-      "zh": "从动物园按路线走，到达房子 B。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 7,
-      "points": 3,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q8: Pinwheel with Three Rods",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第8题：三根小棒搭风车"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Which pinwheel can Jorge build with these 3 rods?",
-      "zh": "请问小豪可以用这 3 根小棒搭建出哪个风车？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q7: Kenny Jumps to a House",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第7题：袋鼠小肯跳到哪座房子"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Kenny the Kangaroo jumps from the School to the Zoo as follows: ↑2, ↖2, ↙1, ←4. Then from the Zoo: →5, ↗2, ↑2. Which house will he get to?",
+        "zh": "袋鼠小肯从学校跳到动物园：↑2, ↖2, ↙1, ←4。再从动物园：→5, ↗2, ↑2。请问它会跳到哪座房子？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Following the path from the Zoo leads to house B.",
+        "zh": "从动物园按路线走，到达房子 B。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "The rod with two green triangles has both on the same side; only E matches all three rods.",
-      "zh": "带两个绿色三角形的小棒上两三角形同侧，只有 E 能用这三根小棒搭成。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 8,
-      "points": 3,
-      "answer_letter": "E",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q9: Shells and Marbles Value 15",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第9题：贝壳与弹珠总值 15"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Nico and his little sister pay with shells and marbles. Each shell has value 6 and each marble has value 1. Which has a total value of 15?",
-      "zh": "小尼和妹妹用贝壳和弹珠支付。每个贝壳价值 6，每个弹珠价值 1。请问下列哪个选项的总价值是 15？"
-    },
-    "choices": [
-      {
-        "en": "A",
-        "zh": "A"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q8: Pinwheel with Three Rods",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第8题：三根小棒搭风车"
       },
-      {
-        "en": "B",
-        "zh": "B"
+      "type": "single_choice",
+      "content": {
+        "en": "Which pinwheel can Jorge build with these 3 rods?",
+        "zh": "请问小豪可以用这 3 根小棒搭建出哪个风车？"
       },
-      {
-        "en": "C",
-        "zh": "C"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The rod with two green triangles has both on the same side; only E matches all three rods.",
+        "zh": "带两个绿色三角形的小棒上两三角形同侧，只有 E 能用这三根小棒搭成。"
       },
-      {
-        "en": "D",
-        "zh": "D"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "E",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "E",
-        "zh": "E"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Option B: 1 shell + 9 marbles = 6+9 = 15.",
-      "zh": "选项 B：1 个贝壳 + 9 个弹珠 = 6+9 = 15。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 9,
-      "points": 4,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q10: Sharing Kangaroo Cookies",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第10题：分享袋鼠饼干"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Anna, Bonnie and Caspar have some kangaroo cookies on their plates, as shown. They share the remaining 15 cookies so everyone has the same number. How many more cookies does Bonnie get?",
-      "zh": "小安、小波和小卡盘子里各有一些袋鼠饼干。他们分享托盘上剩余的 15 块饼干，使每人数量相同。请问小波又得到了多少块饼干？"
-    },
-    "choices": [
-      {
-        "en": "4",
-        "zh": "4"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q9: Shells and Marbles Value 15",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第9题：贝壳与弹珠总值 15"
       },
-      {
-        "en": "5",
-        "zh": "5"
+      "type": "single_choice",
+      "content": {
+        "en": "Nico and his little sister pay with shells and marbles. Each shell has value 6 and each marble has value 1. Which has a total value of 15?",
+        "zh": "小尼和妹妹用贝壳和弹珠支付。每个贝壳价值 6，每个弹珠价值 1。请问下列哪个选项的总价值是 15？"
       },
-      {
-        "en": "6",
-        "zh": "6"
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Option B: 1 shell + 9 marbles = 6+9 = 15.",
+        "zh": "选项 B：1 个贝壳 + 9 个弹珠 = 6+9 = 15。"
       },
-      {
-        "en": "7",
-        "zh": "7"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 9,
+        "points": 4,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "8",
-        "zh": "8"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "They have 3, 4, 5 cookies; total with 15 is 27, so each gets 9. Bonnie needs 9−4=5 more.",
-      "zh": "已有 3、4、5 块，加上 15 共 27，每人 9 块。小波还需 9−4=5 块。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 10,
-      "points": 4,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q11: Whose Phone Is Edward’s",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第11题：哪部手机是小爱的"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "In the morning, 5 friends had identical fully-charged phones. By evening, Bob had spoken as much as Ann and Cristina together. Bob ran out of power. David had not used his phone at all. Which phone belonged to Edward?",
-      "zh": "早上 5 个朋友各有一部满电的相同手机。晚上小鲍的通话时间等于小安和小克之和。小鲍手机没电了，小戴完全没用手机。请问哪部手机是小爱的？"
-    },
-    "choices": [
-      {
-        "en": "1",
-        "zh": "1"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q10: Sharing Kangaroo Cookies",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第10题：分享袋鼠饼干"
       },
-      {
-        "en": "2",
-        "zh": "2"
+      "type": "single_choice",
+      "content": {
+        "en": "Anna, Bonnie and Caspar have some kangaroo cookies on their plates, as shown. They share the remaining 15 cookies so everyone has the same number. How many more cookies does Bonnie get?",
+        "zh": "小安、小波和小卡盘子里各有一些袋鼠饼干。他们分享托盘上剩余的 15 块饼干，使每人数量相同。请问小波又得到了多少块饼干？"
       },
-      {
-        "en": "3",
-        "zh": "3"
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "7",
+          "zh": "7"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "They have 3, 4, 5 cookies; total with 15 is 27, so each gets 9. Bonnie needs 9−4=5 more.",
+        "zh": "已有 3、4、5 块，加上 15 共 27，每人 9 块。小波还需 9−4=5 块。"
       },
-      {
-        "en": "4",
-        "zh": "4"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 10,
+        "points": 4,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "5",
-        "zh": "5"
-      }
-    ],
-    "correct_answer": 2,
-    "explanation": {
-      "en": "Bob is phone 3 (empty), David is phone 1 (full). Phones 4 and 5 sum to one full battery (Ann & Cristina). Phone 2 is Edward’s.",
-      "zh": "小鲍是 3 号（没电），小戴是 1 号（满电）。4 与 5 电量相加等于一整格（小安、小克）。2 号属于小爱。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 11,
-      "points": 4,
-      "answer_letter": "B",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  },
-  {
-    "title": {
-      "en": "Math Kangaroo 2025 – Level 2-1 Q12: Complete the Chessboard",
-      "zh": "Math Kangaroo 2025 – Level 2-1 第12题：补全棋盘"
-    },
-    "type": "single_choice",
-    "content": {
-      "en": "Which two of the pieces shown below complete the chessboard?",
-      "zh": "请问下面哪两块碎片可以补全这个棋盘？"
-    },
-    "choices": [
-      {
-        "en": "Pieces 1 and 2",
-        "zh": "碎片 1 和 2"
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q11: Whose Phone Is Edward’s",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第11题：哪部手机是小爱的"
       },
-      {
-        "en": "Pieces 1 and 5",
-        "zh": "碎片 1 和 5"
+      "type": "single_choice",
+      "content": {
+        "en": "In the morning, 5 friends had identical fully-charged phones. By evening, Bob had spoken as much as Ann and Cristina together. Bob ran out of power. David had not used his phone at all. Which phone belonged to Edward?",
+        "zh": "早上 5 个朋友各有一部满电的相同手机。晚上小鲍的通话时间等于小安和小克之和。小鲍手机没电了，小戴完全没用手机。请问哪部手机是小爱的？"
       },
-      {
-        "en": "Pieces 3 and 4",
-        "zh": "碎片 3 和 4"
+      "choices": [
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Bob is phone 3 (empty), David is phone 1 (full). Phones 4 and 5 sum to one full battery (Ann & Cristina). Phone 2 is Edward’s.",
+        "zh": "小鲍是 3 号（没电），小戴是 1 号（满电）。4 与 5 电量相加等于一整格（小安、小克）。2 号属于小爱。"
       },
-      {
-        "en": "Pieces 3 and 5",
-        "zh": "碎片 3 和 5"
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "B",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
       },
-      {
-        "en": "Pieces 4 and 5",
-        "zh": "碎片 4 和 5"
-      }
-    ],
-    "correct_answer": 5,
-    "explanation": {
-      "en": "After rotating, pieces 4 and 5 fit the holes with correct coloring.",
-      "zh": "旋转后，碎片 4 和 5 形状与着色都吻合缺口。"
+      "is_published": true
     },
-    "meta": {
-      "contest": "Math Kangaroo 2025 (China) – Level B",
-      "set_title": "Math Kangaroo 2025 – Level 2-1",
-      "level_en": "Level B / Level 2 (Grades 3–4)",
-      "level_zh": "等级 B / Level 2（3–4 年级）",
-      "question_number": 12,
-      "points": 4,
-      "answer_letter": "E",
-      "source_pdf": "2025 等级B：3-4年级.pdf"
-    },
-    "is_published": true
-  }
-]
+    {
+      "title": {
+        "en": "Math Kangaroo 2025 – Level 2-1 Q12: Complete the Chessboard",
+        "zh": "Math Kangaroo 2025 – Level 2-1 第12题：补全棋盘"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which two of the pieces shown below complete the chessboard?",
+        "zh": "请问下面哪两块碎片可以补全这个棋盘？"
+      },
+      "choices": [
+        {
+          "en": "Pieces 1 and 2",
+          "zh": "碎片 1 和 2"
+        },
+        {
+          "en": "Pieces 1 and 5",
+          "zh": "碎片 1 和 5"
+        },
+        {
+          "en": "Pieces 3 and 4",
+          "zh": "碎片 3 和 4"
+        },
+        {
+          "en": "Pieces 3 and 5",
+          "zh": "碎片 3 和 5"
+        },
+        {
+          "en": "Pieces 4 and 5",
+          "zh": "碎片 4 和 5"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "After rotating, pieces 4 and 5 fit the holes with correct coloring.",
+        "zh": "旋转后，碎片 4 和 5 形状与着色都吻合缺口。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2025 (China) – Level B",
+        "set_title": "Math Kangaroo 2025 – Level 2-1",
+        "level_en": "Level B / Level 2 (Grades 3–4)",
+        "level_zh": "等级 B / Level 2（3–4 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "E",
+        "source_pdf": "2025 等级B：3-4年级.pdf"
+      },
+      "is_published": true
+    }
+  ]
+}

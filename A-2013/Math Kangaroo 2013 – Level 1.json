@@ -1,0 +1,968 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2013 – Level 1",
+    "zh": "Math Kangaroo 2013 – 等级 1"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q1: Which digits are missing?…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第1题：Which digits…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which digits are missing? Digit apakah yang tiada?",
+        "zh": "Which digits are missing? Digit apakah yang tiada?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 1,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q2: There are 12 books on a…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第2题：There are 12…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are 12 books on a shelf and four children in a room. How many books will be left on the shelf if each child takes one book? Ada 12 buah buku di atas sebuah rak buku, dan 4 orang kanak-kanak di dalam sebuah bilik.",
+        "zh": "There are 12 books on a shelf and four children in a room. How many books will be left on the shelf if each child takes one book? Ada 12 buah buku di atas sebuah rak buku, dan 4 orang kanak-kanak di dalam sebuah bilik."
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 2,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q3: Which of the dresses has…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第3题：Which of the…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which of the dresses has less than 7, but more than 5 dots? How many more bricks are there on the larger stack? Berapakah lebihnya bilangan bata pada susunan yang lebih besar berbanding dengan susunan yang",
+        "zh": "Which of the dresses has less than 7, but more than 5 dots? How many more bricks are there on the larger stack? Berapakah lebihnya bilangan bata pada susunan yang lebih besar berbanding dengan susunan yang"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 3,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q4: There are white, grey and…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第4题：There are…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are white, grey and black kangaroos. Which picture has more black kangaroos than white kangaroos? Terdapat kangaroo berwarna putih, kelabu dan hitam. Gambar yang manakah mempunyai lebih",
+        "zh": "There are white, grey and black kangaroos. Which picture has more black kangaroos than white kangaroos? Terdapat kangaroo berwarna putih, kelabu dan hitam. Gambar yang manakah mempunyai lebih"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 4,
+        "points": 3,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q5: How many more bricks are…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第5题：How many more…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many more bricks are there on the larger stack? Berapakah lebihnya bilangan bata pada susunan yang lebih besar berbanding dengan susunan yang kecil?",
+        "zh": "How many more bricks are there on the larger stack? Berapakah lebihnya bilangan bata pada susunan yang lebih besar berbanding dengan susunan yang kecil?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 5,
+        "points": 3,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q6: There is a path with square…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第6题：There is a path…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There is a path with square tiles. How many tiles ﬁt in the area inside? Terdapat satu laluan yang terdiri daripada jubin petak. Berapakah bilangan jubin petak yang boleh dimuatkan di ruang kosong antara laluan itu?",
+        "zh": "There is a path with square tiles. How many tiles ﬁt in the area inside? Terdapat satu laluan yang terdiri daripada jubin petak. Berapakah bilangan jubin petak yang boleh dimuatkan di ruang kosong antara laluan itu?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 6,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q7: Lotta cuts a big piece out…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第7题：Lotta cuts a…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Lotta cuts a big piece out of a cake. Which one? Lotta memotong sebahagian daripada kek berikut. Bahagian yang manakah telah dipotongnya? Lotta \u0007\u0000WËÕ\u0002÷î/ê\u0000W",
+        "zh": "Lotta cuts a big piece out of a cake. Which one? Lotta memotong sebahagian daripada kek berikut. Bahagian yang manakah telah dipotongnya? Lotta \u0007\u0000WËÕ\u0002÷î/ê\u0000W"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 7,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q8: Father gives 5 apples to…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第8题：Father gives 5…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Father gives 5 apples to each of his three children. Ana gives 3 apples to Sanja and Sanja gives half of her apples to Mihael. How many apples does Mihael have now? Ayah memberikan 5 biji epal kepada setiap daripada tiga orang anaknya.",
+        "zh": "Father gives 5 apples to each of his three children. Ana gives 3 apples to Sanja and Sanja gives half of her apples to Mihael. How many apples does Mihael have now? Ayah memberikan 5 biji epal kepada setiap daripada tiga orang anaknya."
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 8,
+        "points": 3,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q9: George has 2 cats of the…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第9题：George has 2…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "George has 2 cats of the same weight. What is the weight of one cat if George weights 30 kg? George mempunyai 2 ekor kucing yang sama berat. Berapakah berat seekor kucing jika berat",
+        "zh": "George has 2 cats of the same weight. What is the weight of one cat if George weights 30 kg? George mempunyai 2 ekor kucing yang sama berat. Berapakah berat seekor kucing jika berat"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 9,
+        "points": 3,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -1 Q10: Which kind of square is at…",
+        "zh": "Math Kangaroo 2013 – Level 1 -1 第10题：ê\u0000ÍþHú°的!数最多"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which kind of square is at most? Petak bercorak manakah yang paling kerap digunakan?",
+        "zh": "ê\u0000ÍþHú°的!数最多"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 10,
+        "points": 3,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2013 – Level 1 -1"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q11: How many carrots can the…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第11题：How many…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "How many carrots can the rabbit eat, walking freely in this maze? Berapakah lobak yang boleh dimakan oleh arnab tersebut, jika arnab tersebut boleh berjalan melalui laluan ini?",
+        "zh": "How many carrots can the rabbit eat, walking freely in this maze? Berapakah lobak yang boleh dimakan oleh arnab tersebut, jika arnab tersebut boleh berjalan melalui laluan ini?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q12: Cat and Mouse are moving to…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第12题：Cat and Mouse…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Cat and Mouse are moving to the right. When Mouse jumps 1 tile, Cat jumps 2 tiles at the same time. On which tile does Cat catch Mouse? Kucing dan Tikus sedang bergerak ke kanan. Apabila Tikus bergerak 1 petak, Kucing akan bergerak",
+        "zh": "Cat and Mouse are moving to the right. When Mouse jumps 1 tile, Cat jumps 2 tiles at the same time. On which tile does Cat catch Mouse? Kucing dan Tikus sedang bergerak ke kanan. Apabila Tikus bergerak 1 petak, Kucing akan bergerak"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q13: Peter built a podium (as in…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第13题：Peter built a…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Peter built a podium (as in the picture). How many cubes did he use? Peter membina satu bongkah (seperti dalam gambar). Berapakah bilangan kiub yang dia gunakan? Peter ú\u0000*Vð\bþ@:\t\u0002îÖ(àW¹W",
+        "zh": "Peter built a podium (as in the picture). How many cubes did he use? Peter membina satu bongkah (seperti dalam gambar). Berapakah bilangan kiub yang dia gunakan? Peter ú\u0000*Vð\bþ@:\t\u0002îÖ(àW¹W"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "The correct answer is E.",
+        "zh": "正确答案是 E。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q14: There are 5 children in a…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第14题：ÌÞÎ\u0002请î这几个孩子-，\u0001的年…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "There are 5 children in a family. Kitty is 2 years elder than Betty, but 2 years younger than Dannie. Teddy is 3 years elder than Annie. Betty and Annie are twins. Who of them is the eldest? Suatu keluarga mempunyai 5 orang anak. Kitty adalah 2 tahun lebih tua dari Betty, dan 2 tahun",
+        "zh": "ÌÞÎ\u0002请î这几个孩子-，\u0001的年龄比较大"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q15: Which is the next? Yang…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第15题：Which is the…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which is the next? Yang manakah selepas ini? \u0000*þb/ê\u0000*",
+        "zh": "Which is the next? Yang manakah selepas ini? \u0000*þb/ê\u0000*"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "The correct answer is A.",
+        "zh": "正确答案是 A。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q16: In a game it is possible to…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第16题：In a game it is…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "In a game it is possible to make the following exchanges. Adam has 6 pears. How many strawberries will Adam have, when he trades all his pears for strawberries only? Di dalam satu permainan, seseorang dibenarkan membuat pertukaran berikut. Adam mempunyai 6",
+        "zh": "In a game it is possible to make the following exchanges. Adam has 6 pears. How many strawberries will Adam have, when he trades all his pears for strawberries only? Di dalam satu permainan, seseorang dibenarkan membuat pertukaran berikut. Adam mempunyai 6"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q17: Ann has a square sheet of…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第17题：Ann has a…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Ann has a square sheet of paper. She cuts these pieces out of the sheet, as many as possible. How many pieces does she get? Ann mempunyai kertas berbentuk segiempat sama. Dia memotong bentuk berikut daripada kertas",
+        "zh": "Ann has a square sheet of paper. She cuts these pieces out of the sheet, as many as possible. How many pieces does she get? Ann mempunyai kertas berbentuk segiempat sama. Dia memotong bentuk berikut daripada kertas"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "The correct answer is C.",
+        "zh": "正确答案是 C。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 17,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q18: Sophie makes a row of 10…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第18题：Sophie makes a…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Sophie makes a row of 10 houses with matchsticks. In the picture you can see the beginning. How many matchsticks does Sophie need? Sophie membina sederet 10 buah rumah menggunakan batang mancis. Gambar tersebut menun-",
+        "zh": "Sophie makes a row of 10 houses with matchsticks. In the picture you can see the beginning. How many matchsticks does Sophie need? Sophie membina sederet 10 buah rumah menggunakan batang mancis. Gambar tersebut menun-"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "The correct answer is B.",
+        "zh": "正确答案是 B。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 18,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q19: Ana has one coin of 5…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第19题：Ana has one…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Ana has one coin of 5 cents, one coin of 10 cents, one coin of 20 cents and one coin of 50 cents. How many diﬀerent values can she make with these coins? Ana mempunyai satu syiling 5 sen, satu syiling 10 sen, satu syiling 20 sen dan satu syiling 50",
+        "zh": "Ana has one coin of 5 cents, one coin of 10 cents, one coin of 20 cents and one coin of 50 cents. How many diﬀerent values can she make with these coins? Ana mempunyai satu syiling 5 sen, satu syiling 10 sen, satu syiling 20 sen dan satu syiling 50"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 19,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2013 – Level 1 -2 Q20: A square box is ﬁlled with…",
+        "zh": "Math Kangaroo 2013 – Level 1 -2 第20题：A square box is…"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "A square box is ﬁlled with two layers of identical square pieces of chocolate. Kirill has eaten all 20 pieces in the upper layer along the walls of the box. How many pieces of chocolate are left in the box?",
+        "zh": "A square box is ﬁlled with two layers of identical square pieces of chocolate. Kirill has eaten all 20 pieces in the upper layer along the walls of the box. How many pieces of chocolate are left in the box?"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "The correct answer is D.",
+        "zh": "正确答案是 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2013",
+        "level_en": "Level 1 (Grades 1–2)",
+        "level_zh": "等级 A（1–2 年级）",
+        "question_number": 20,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2013 – Level 1 -2"
+      },
+      "is_published": true
+    }
+  ]
+}

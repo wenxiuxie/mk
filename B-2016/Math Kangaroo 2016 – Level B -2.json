@@ -1,0 +1,488 @@
+{
+  "title": {
+    "en": "Math Kangaroo 2016 – Level B -2",
+    "zh": "Math Kangaroo 2016 – 等级 B -2 -2"
+  },
+  "questions": [
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q11: Triangle Above Square",
+        "zh": "Math Kangaroo 2016 – Level B -2 第11题：三角形在正方形上"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five children each stacked a square, a triangle and a circle. The teacher removed all circles. How many piles have the triangle above the square?",
+        "zh": "五位孩子各把正方形、三角形、圆形纸片堆起来。老师拿走所有圆形后，有几堆是三角形在正方形之上？"
+      },
+      "choices": [
+        {
+          "en": "0",
+          "zh": "0"
+        },
+        {
+          "en": "1",
+          "zh": "1"
+        },
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "After removing circles, 3 piles still have triangle above square.",
+        "zh": "拿走圆形后，仍有 3 堆三角形在正方形之上。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 11,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q12: Three Pieces Make Square",
+        "zh": "Math Kangaroo 2016 – Level B -2 第12题：三片拼正方形"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Which three of the five jigsaw pieces can be joined to form a square?",
+        "zh": "下列五片拼图中，哪三片可以拼成一个正方形？"
+      },
+      "choices": [
+        {
+          "en": "1, 3, 5",
+          "zh": "1, 3, 5"
+        },
+        {
+          "en": "1, 2, 5",
+          "zh": "1, 2, 5"
+        },
+        {
+          "en": "1, 4, 5",
+          "zh": "1, 4, 5"
+        },
+        {
+          "en": "3, 4, 5",
+          "zh": "3, 4, 5"
+        },
+        {
+          "en": "2, 3, 5",
+          "zh": "2, 3, 5"
+        }
+      ],
+      "correct_answer": 1,
+      "explanation": {
+        "en": "Pieces 1, 3 and 5 fit together into a square.",
+        "zh": "第 1、3、5 片可拼成正方形。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 12,
+        "points": 4,
+        "answer_letter": "A",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q13: Shaded Cells Sum",
+        "zh": "Math Kangaroo 2016 – Level B -2 第13题：涂黑格数字和"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Each row and column of the table must contain 1, 2 and 3 exactly once. What is the sum of the numbers in the two shaded squares?",
+        "zh": "表格每行每列的 1、2、3 各出现一次。两个涂黑格子里的数字之和是多少？"
+      },
+      "choices": [
+        {
+          "en": "2",
+          "zh": "2"
+        },
+        {
+          "en": "3",
+          "zh": "3"
+        },
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Latin-square style filling forces the shaded cells to sum to 4.",
+        "zh": "每行每列 1–3 各一次，涂黑格之和为 4。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 13,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q14: Turn the Card Over",
+        "zh": "Math Kangaroo 2016 – Level B -2 第14题：翻转卡片"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "After turning a card over around its right side we see the figure. What do we see if we turn it over around its upper side?",
+        "zh": "沿右边翻转卡片后看到图中一面。若沿上边翻转，会看到哪一面？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Turning over the top edge gives the figure in option D.",
+        "zh": "沿上边翻转后得到选项 D。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 14,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q15: Four Brothers’ Ages",
+        "zh": "Math Kangaroo 2016 – Level B -2 第15题：四兄弟年龄和"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Tim, Tom and Jim are triplets; Paul is exactly 3 years older. Which number can be the sum of the four brothers’ ages?",
+        "zh": "Tim、Tom、Jim 是三胞胎，哥哥 Paul 正好大 3 岁。下列哪个可能是四兄弟年龄之和？"
+      },
+      "choices": [
+        {
+          "en": "25",
+          "zh": "25"
+        },
+        {
+          "en": "27",
+          "zh": "27"
+        },
+        {
+          "en": "29",
+          "zh": "29"
+        },
+        {
+          "en": "30",
+          "zh": "30"
+        },
+        {
+          "en": "60",
+          "zh": "60"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Ages: x,x,x,x+3 → sum 4x+3. Only 27=4×6+3 works among the options.",
+        "zh": "年龄和=4x+3；选项中只有 27=4×6+3 成立。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 15,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q16: Magic Trees Fruit",
+        "zh": "Math Kangaroo 2016 – Level B -2 第16题：魔幻树的水果"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Each magic tree has either 6 pears & 3 apples, or 8 pears & 4 apples. There are 25 apples. How many pears are there?",
+        "zh": "每棵魔幻树有 6 梨+3 苹果，或 8 梨+4 苹果。果园共 25 个苹果，有多少个梨？"
+      },
+      "choices": [
+        {
+          "en": "35",
+          "zh": "35"
+        },
+        {
+          "en": "40",
+          "zh": "40"
+        },
+        {
+          "en": "45",
+          "zh": "45"
+        },
+        {
+          "en": "50",
+          "zh": "50"
+        },
+        {
+          "en": "56",
+          "zh": "56"
+        }
+      ],
+      "correct_answer": 4,
+      "explanation": {
+        "en": "Apples come in 3s and 4s totaling 25 ⇒ 3 type-A + 4 type-B trees; pears=3×6+4×8=50.",
+        "zh": "苹果 3a+4b=25 ⇒ a=3,b=4；梨=3×6+4×8=50。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 16,
+        "points": 4,
+        "answer_letter": "D",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q17: Cats Legs and Noses",
+        "zh": "Math Kangaroo 2016 – Level B -2 第17题：猫的腿与鼻子"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "My cats have 18 more legs than noses. How many cats do I have?",
+        "zh": "我的猫腿的总数比鼻子总数多 18。我有多少只猫？"
+      },
+      "choices": [
+        {
+          "en": "4",
+          "zh": "4"
+        },
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "6",
+          "zh": "6"
+        },
+        {
+          "en": "8",
+          "zh": "8"
+        },
+        {
+          "en": "9",
+          "zh": "9"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "Each cat: 4 legs − 1 nose = 3 extra legs. 18÷3=6 cats.",
+        "zh": "每只猫多 3 条腿（4−1）；18÷3=6 只。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 17,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q18: Replace 201 with 102",
+        "zh": "Math Kangaroo 2016 – Level B -2 第18题：把201换成102"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Rachel adds seven numbers and gets 2016. One number is 201; she replaces it with 102. What answer does she get?",
+        "zh": "Rachel 把七个数加得 2016，其中有一个 201。把 201 换成 102 后再加，得到什么？"
+      },
+      "choices": [
+        {
+          "en": "1815",
+          "zh": "1815"
+        },
+        {
+          "en": "1914",
+          "zh": "1914"
+        },
+        {
+          "en": "1917",
+          "zh": "1917"
+        },
+        {
+          "en": "2115",
+          "zh": "2115"
+        },
+        {
+          "en": "2118",
+          "zh": "2118"
+        }
+      ],
+      "correct_answer": 3,
+      "explanation": {
+        "en": "New sum = 2016 − 201 + 102 = 1917.",
+        "zh": "新和=2016−201+102=1917。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 18,
+        "points": 4,
+        "answer_letter": "C",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q19: Breaking Brick Bars",
+        "zh": "Math Kangaroo 2016 – Level B -2 第19题：切开砖条"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Malte has a bar of 27 bricks. He repeatedly breaks a bar into two bars where one is twice the other. Which bar can he not get?",
+        "zh": "Malte 有 27 块砖的砖条，反复切成一条是另一条两倍长的两段。他不可能得到下列哪段？"
+      },
+      "choices": [
+        {
+          "en": "A",
+          "zh": "A"
+        },
+        {
+          "en": "B",
+          "zh": "B"
+        },
+        {
+          "en": "C",
+          "zh": "C"
+        },
+        {
+          "en": "D",
+          "zh": "D"
+        },
+        {
+          "en": "E",
+          "zh": "E"
+        }
+      ],
+      "correct_answer": 5,
+      "explanation": {
+        "en": "Breaks keep lengths that are multiples of powers of 3 from 27; E cannot appear.",
+        "zh": "每次按 2:1 切开，长度始终是 3 的方幂相关；E 不可能出现。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 19,
+        "points": 4,
+        "answer_letter": "E",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    },
+    {
+      "title": {
+        "en": "Math Kangaroo 2016 – Level B -2 Q20: Sparrows Chirping",
+        "zh": "Math Kangaroo 2016 – Level B -2 第20题：麻雀转头呼叫"
+      },
+      "type": "single_choice",
+      "content": {
+        "en": "Five sparrows chirp as many times as the sparrows they see. After one turns around, the total chirps increase. Which sparrow turned?",
+        "zh": "五只麻雀呼叫次数等于它看见的麻雀数。一只转头后，呼叫总数变多。是哪只转头了？"
+      },
+      "choices": [
+        {
+          "en": "Angel",
+          "zh": "Angel"
+        },
+        {
+          "en": "Bertha",
+          "zh": "Bertha"
+        },
+        {
+          "en": "Charlie",
+          "zh": "Charlie"
+        },
+        {
+          "en": "David",
+          "zh": "David"
+        },
+        {
+          "en": "Eglio",
+          "zh": "Eglio"
+        }
+      ],
+      "correct_answer": 2,
+      "explanation": {
+        "en": "Only Bertha turning increases the total number of chirps.",
+        "zh": "只有 Bertha 转头会使呼叫总数增加。"
+      },
+      "meta": {
+        "contest": "Math Kangaroo 2016",
+        "level_en": "Level B (Grades 3–4)",
+        "level_zh": "等级 B（3–4 年级）",
+        "question_number": 20,
+        "points": 4,
+        "answer_letter": "B",
+        "set_title": "Math Kangaroo 2016 – Level B -2"
+      },
+      "is_published": true
+    }
+  ]
+}
