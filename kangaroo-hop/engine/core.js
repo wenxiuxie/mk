@@ -173,7 +173,7 @@ function renderMap() {
     <p class="note" style="margin-top:4px">${T('Watch the mini-lesson, answer 20 questions, and play a 60-second game after every 10.', '先看趣味小课，再做 20 题，每做 10 题玩一次 60 秒小游戏。')}</p>
     <div class="islands">
       ${SERIES.filter(s => s.camp).map(islandCard).join('')}
-      ${lockedCard(['Times Camp', '乘法营'], ['Times Tables', '乘法口诀'], ['Equal groups, arrays and facts', '相同组、方阵和口诀'])}
+      ${lockedCard(['Times Camp 2', '乘法营 2'], ['Times Tables ×3 ×4 ×6', '口诀 ×3 ×4 ×6'], ['Use facts you know to find new ones', '用会的口诀推出新的'])}
       ${lockedCard(['Division Camp', '除法营'], ['Sharing & Grouping', '平均分与分组'], ['More questions on the way', '题量会更多'])}
     </div>
     <h2 class="sect">${TI('Islands', '闯关岛')}</h2>

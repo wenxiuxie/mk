@@ -303,6 +303,45 @@ const TOOLS = {
     };
     $('#br', el).onclick = () => { b = init(); draw(); };
     draw();
+  },
+
+  // logic table: rows × cols of boxes; a tap marks ✗ (no), a second tap ✓ (yes), a third clears it
+  grid(el, cfg) {
+    const marks = {};
+    el.innerHTML = `<div style="overflow-x:auto"><table class="lgrid" id="lg"></table></div>
+      <div class="row" style="justify-content:center"><button class="btn ghost" id="gr">${TI('Start over', '重来')}</button></div>`;
+    const draw = () => {
+      $('#lg', el).innerHTML = `<tr><th></th>${cfg.cols.map(c => `<th>${c}</th>`).join('')}</tr>` + cfg.rows.map((r, i) =>
+        `<tr><th>${r}</th>${cfg.cols.map((_, j) => { const m = marks[i + '-' + j] || ''; return `<td><button data-c="${i}-${j}" class="${m}" aria-label="${m || 'empty'}">${m === 'no' ? '✗' : m === 'yes' ? '✓' : ''}</button></td>`; }).join('')}</tr>`).join('');
+    };
+    $('#lg', el).onclick = e => {
+      const b = e.target.closest('[data-c]'); if (!b) return;
+      const k = b.dataset.c;
+      marks[k] = !marks[k] ? 'no' : marks[k] === 'no' ? 'yes' : '';
+      tick(); draw();
+    };
+    $('#gr', el).onclick = () => { Object.keys(marks).forEach(k => delete marks[k]); draw(); };
+    draw();
+  },
+
+  // put people in order: tap one name, then another, and they swap places
+  order(el, cfg) {
+    let items = [...cfg.items], sel = -1;
+    const place = cfg.places || [['1st', '第 1'], ['2nd', '第 2'], ['3rd', '第 3'], ['4th', '第 4'], ['5th', '第 5']];
+    el.innerHTML = `${cfg.ends ? `<div class="ordends"><span>${TI(...cfg.ends[0])}</span><span>${TI(...cfg.ends[1])}</span></div>` : ''}<div class="ordrow" id="or"></div>
+      <div class="row" style="justify-content:center"><button class="btn ghost" id="ors">${TI('Start over', '重来')}</button></div>`;
+    const draw = () => {
+      $('#or', el).innerHTML = items.map((n, i) => `<button class="ordchip${i === sel ? ' sel' : ''}" data-i="${i}"><b>${n}</b><small>${TI(...place[i])}</small></button>`).join('');
+    };
+    $('#or', el).onclick = e => {
+      const b = e.target.closest('[data-i]'); if (!b) return;
+      const i = +b.dataset.i;
+      if (sel === -1) sel = i;
+      else { [items[sel], items[i]] = [items[i], items[sel]]; sel = -1; boing(); }
+      tick(); draw();
+    };
+    $('#ors', el).onclick = () => { items = [...cfg.items]; sel = -1; draw(); };
+    draw();
   }
 };
 
@@ -340,7 +379,9 @@ const LABS = {
   pattern: T('Color the repeating groups, or continue the pattern yourself.', '给重复的部分涂色，或者自己接着画下去。'),
   tenframe: T('Tap the empty boxes to add counters. Count how many you need.', '点空格子放圆片，数一数要几个。'),
   jumper: T('Press the jump buttons to move the kangaroo. Jump to a ten first!', '按按钮让袋鼠跳，先跳到整十！'),
-  blocks: T('Each stick is a ten, each cube is a one. 10 ones can trade for a ten.', '一根是一个十，一块是一个一。10 个一可以换成 1 个十。')
+  blocks: T('Each stick is a ten, each cube is a one. 10 ones can trade for a ten.', '一根是一个十，一块是一个一。10 个一可以换成 1 个十。'),
+  grid: T('Tap a box once for ✗ (no), twice for ✓ (yes). Each row and each column has exactly one ✓.', '点一下格子打 ✗（不是），点两下打 ✓（是）。每行每列只有一个 ✓。'),
+  order: T('Tap two names to swap them. Move everyone until every clue is true.', '点两个名字可以交换位置。一直调整，直到每条线索都对。')
 };
 const mk = (pts, en, zh, choices, answer, hints, explain, tool, cfg, extra = {}) =>
   ({ pts, stem: T(en, zh), choices, answer, hints: hints.map(h => T(...h)), explain: T(...explain), lab: LABS[tool], mount: el => TOOLS[tool](el, cfg), ...extra });
@@ -349,11 +390,11 @@ const mk = (pts, en, zh, choices, answer, hints, explain, tool, cfg, extra = {})
 //   choice question:   { pts, q: [en, zh], choices: [...], answer: index, hints, explain, tool?, cfg?, lab?: [en, zh] }
 //   type-in question:  { pts, q: [en, zh], input: true, answer: number, hints, explain, ... }
 // tool is optional; fig is a picture under the question (e.g. colHTML); shape: true draws choices as shapes (R B G Y P);
-// boss: true marks the last, hardest question.
+// boss: true marks the last, hardest question; data is kept on the question for the answer-checking tests.
 const cq = o => ({
   pts: o.pts, stem: T(...o.q), fig: o.fig, choices: o.choices, answer: o.answer, input: !!o.input, boss: o.boss, unit: o.unit, shape: o.shape,
   hints: o.hints.map(h => T(...h)), explain: T(...o.explain),
-  lab: o.tool && (o.lab ? T(...o.lab) : LABS[o.tool]), mount: o.tool && (el => TOOLS[o.tool](el, o.cfg)), cfg: o.cfg
+  lab: o.tool && (o.lab ? T(...o.lab) : LABS[o.tool]), mount: o.tool && (el => TOOLS[o.tool](el, o.cfg)), cfg: o.cfg, data: o.data
 });
 // five number choices: the answer plus distinct wrong ones (near misses filled in if needed), smallest first like the contest
 function numChoices(ans, wrongs) {
