@@ -247,7 +247,7 @@ const Q_TIMES1 = [
 ];
 
 registerSeries({
-  id: 'times1', camp: true, breakEvery: 10, perRound: 20, games: ['jump', 'bubbles'],
+  id: 'times1', camp: true, breakEvery: 10, perRound: 20, games: ['catch', 'compare'], facts: [2, 5, 10],
   tag: ['Times Camp 1', '乘法营 1'], name: ['What Is Multiplication?', '乘法是什么'],
   desc: ['Equal groups, arrays, ×2 ×5 ×10, coins', '相同的几组、方阵、乘 2 乘 5 乘 10、硬币'],
   lesson: LESSON_TIMES1,

@@ -135,7 +135,7 @@ function openVideo(v) {
   m.onclick = e => { if (e.target === m) close(); };
   $('#vx', m).onclick = close;
 }
-document.addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (b) openVideo(VIDS[+b.dataset.v]); });
+document.addEventListener('click', e => { const b = e.target.closest('.vid[data-v]'); if (b) openVideo(VIDS[+b.dataset.v]); });
 
 // ---------- read aloud ----------
 function speak(pair) {
@@ -149,7 +149,8 @@ const hush = () => { if ('speechSynthesis' in window) speechSynthesis.cancel(); 
 
 // ---------- series registry ----------
 // Island options: breakEvery (questions between mini games), games (which mini games, in turn),
-// lesson (animated slides shown before the first round), perRound (questions drawn from a longer list).
+// lesson (animated slides shown before the first round), perRound (questions drawn from a longer list),
+// facts (times tables the × and ÷ mini games start on, e.g. [3, 4, 6]).
 // A question may be a function that builds a fresh question each round.
 const SERIES = [];
 function registerSeries(s) { SERIES.push(s); }
@@ -173,7 +174,6 @@ function renderMap() {
     <p class="note" style="margin-top:4px">${T('Watch the mini-lesson, answer 20 questions, and play a 60-second game after every 10.', '先看趣味小课，再做 20 题，每做 10 题玩一次 60 秒小游戏。')}</p>
     <div class="islands">
       ${SERIES.filter(s => s.camp).map(islandCard).join('')}
-      ${lockedCard(['Times Camp 2', '乘法营 2'], ['Times Tables ×3 ×4 ×6', '口诀 ×3 ×4 ×6'], ['Use facts you know to find new ones', '用会的口诀推出新的'])}
       ${lockedCard(['Division Camp', '除法营'], ['Sharing & Grouping', '平均分与分组'], ['More questions on the way', '题量会更多'])}
     </div>
     <h2 class="sect">${TI('Islands', '闯关岛')}</h2>

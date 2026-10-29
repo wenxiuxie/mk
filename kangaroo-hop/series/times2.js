@@ -252,7 +252,7 @@ const Q_TIMES2 = [
 ];
 
 registerSeries({
-  id: 'times2', camp: true, breakEvery: 10, perRound: 20, games: ['jump', 'bubbles'],
+  id: 'times2', camp: true, breakEvery: 10, perRound: 20, games: ['catch', 'memory'], facts: [3, 4, 6],
   tag: ['Times Camp 2', '乘法营 2'], name: ['Times 3, 4 and 6', '口诀 ×3 ×4 ×6'],
   desc: ['Use facts you know: ×4 is double double, ×6 is ×5 and one more', '用已知推未知：×4 翻两次倍，×6 是 ×5 再加 1 组'],
   lesson: LESSON_TIMES2,

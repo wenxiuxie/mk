@@ -302,7 +302,7 @@ const Q_COUNTING = [
 ];
 
 registerSeries({
-  id: 'counting', camp: true, breakEvery: 10, perRound: 20, games: ['jump', 'bubbles'],
+  id: 'counting', camp: true, breakEvery: 10, perRound: 20, games: ['coins', 'jump'],
   tag: ['Thinking Camp · Counting', '竞赛思维 · 数数营'], name: ['Count Them All', '数数小能手'],
   desc: ['Listing in order, handshakes, outfits, routes', '有序列举、握手问题、搭配、路线条数'],
   lesson: LESSON_COUNTING,

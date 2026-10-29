@@ -266,7 +266,7 @@ const Q_THREEDIGIT = [
 ];
 
 registerSeries({
-  id: 'threedigit', camp: true, breakEvery: 10, perRound: 20, games: ['sprint', 'jump'],
+  id: 'threedigit', camp: true, breakEvery: 10, perRound: 20, games: ['sprint', 'coins'],
   tag: ['Add & Subtract Camp 3', '加减营 3'], name: ['3-Digit Numbers & Estimating', '三位数加减与估算'],
   desc: ['Carrying twice, subtracting across zeros, rounding, estimating', '两次进位、连续退位、四舍五入、估算'],
   lesson: LESSON_THREEDIGIT,

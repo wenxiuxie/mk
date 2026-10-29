@@ -1,6 +1,13 @@
 // Mini games: 60 seconds each. Shown between questions on an island, or played alone from the map.
 const GAME_SECONDS = 60;
 let stopGame = null;   // cleanup for the game that is running
+// times-table levels for the × and ÷ games; a camp's `facts` picks its level, and players can switch on the start screen
+const GAME_LEVELS = [[2, 5, 10], [3, 4, 6], [7, 8, 9], [2, 3, 4, 5, 6, 7, 8, 9, 10]];
+// one times fact from the level: [table, other factor 2–10], in either order
+const gFact = facts => { const a = pick(facts), b = ri(2, 10); return rnd(2) ? [a, b] : [b, a]; };
+// wiggle a wrong answer so the child sees it
+const gBad = b => { b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); boo(); };
+const gBurst = (b, n = 25) => { const r = b.getBoundingClientRect(); confetti(r.left + r.width / 2, r.top + r.height / 2, n); };
 
 const GAMES = {
   bubbles: {
@@ -123,6 +130,159 @@ const GAMES = {
       };
       move(); next();
     }
+  },
+
+  catch: {
+    title: ['Times Star Catch', '乘法接星星'], sign: '×', levels: true,
+    rule: ['Stars fall from the sky. Tap the star with the right answer before it lands! They fall faster as you score.', '星星从天上掉下来，在它落地前点中正确答案！得分越多，星星掉得越快。'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a'];
+      let ans, round = 0;
+      g.body.innerHTML = `<div class="prompt eqbig" id="ceq"></div><div class="sky" id="sky"></div>`;
+      const sky = $('#sky', g.body);
+      const next = () => {
+        const r = ++round, [a, b] = gFact(g.facts);
+        ans = a * b;
+        const o = new Set([ans]);
+        while (o.size < 4) { const v = pick([ans + a, ans - a, ans + b, ans - b, ans + 1, ans - 1, ans + 10, a + b]); if (v > 0) o.add(v); }
+        $('#ceq', g.body).textContent = `${a} × ${b} = ?`;
+        const dur = Math.max(3, 6 - g.score * .12);
+        sky.innerHTML = shuffle([...o]).map((v, i) => `<button class="fstar" data-n="${v}" style="left:${1 + i * 25}%;--bc:${cols[i]};animation-duration:${dur}s;animation-delay:${rnd(9) / 10}s">${v}</button>`).join('');
+        // the right star landed: no point, a new round comes
+        sky.querySelector(`[data-n="${ans}"]`).addEventListener('animationend', e => { if (e.animationName === 'fall' && r === round && !g.over) { boo(); next(); } });
+      };
+      sky.onclick = e => {
+        const b = e.target.closest('.fstar'); if (!b || g.over || b.classList.contains('pop')) return;
+        if (+b.dataset.n === ans) { g.add(); pop(); gBurst(b); b.classList.add('pop'); round++; setTimeout(next, 300); }
+        else gBad(b);
+      };
+      next();
+    }
+  },
+
+  share: {
+    title: ['Share the Cookies', '分饼干'], sign: '÷', levels: true,
+    rule: ['Share the cookies fairly, or pack them into bags. Pop the right answer!', '把饼干平均分给小袋鼠，或者装进袋子里。戳中正确答案！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a', '#8a5cc2'];
+      let ans;
+      g.body.innerHTML = `<div class="prompt" id="sp"></div><div class="shview" id="sv"></div><div class="prompt eqbig" id="seq"></div><div class="bubbles opts" id="sop"></div>`;
+      const next = () => {
+        // sharing: k joeys, how many does each get?   grouping: k in each bag, how many bags?
+        const k = pick(g.facts), q = ri(2, 9), n = k * q, bags = rnd(2);
+        ans = q;
+        $('#sp', g.body).innerHTML = bags ? TI(`${n} cookies, ${k} in each bag. How many bags?`, `${n} 块饼干，每袋装 ${k} 块。能装几袋？`)
+          : TI(`${n} cookies shared by ${k} joeys. How many does each get?`, `${n} 块饼干平均分给 ${k} 只小袋鼠。每只分几块？`);
+        $('#sv', g.body).innerHTML = (n <= 40 ? `<div class="cpile">${item('cookie', 'sm').repeat(n)}</div>` : `<div class="bignum">${n} ${item('cookie')}</div>`)
+          + `<div class="joeys">${bags ? `<span class="bag">🛍️ ?</span><small>${TI(`${k} in each bag`, `每袋 ${k} 块`)}</small>` : '<svg viewBox="0 0 64 64" aria-hidden="true"><use href="#roo"/></svg>'.repeat(k)}</div>`;
+        $('#seq', g.body).textContent = `${n} ÷ ${k} = ?`;
+        const o = new Set([ans]);
+        while (o.size < 3) { const v = pick([ans - 2, ans - 1, ans + 1, ans + 2, k]); if (v > 0) o.add(v); }
+        $('#sop', g.body).innerHTML = shuffle([...o]).map(v => `<button class="bub" data-n="${v}" style="--bc:${pick(cols)};animation-delay:${-Math.random() * 3}s">${v}</button>`).join('');
+      };
+      $('#sop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (+b.dataset.n === ans) { g.add(); pop(); gBurst(b); b.classList.add('pop'); setTimeout(next, 300); }
+        else gBad(b);
+      };
+      next();
+    }
+  },
+
+  compare: {
+    title: ['Bigger Wins', '比大小'], sign: '×', levels: true,
+    rule: ['Which side is bigger? Tap it. If they are the same, tap =.', '哪边大？点大的那一边。一样大就点 =。'],
+    setup(g) {
+      let L, R;
+      g.body.innerHTML = `<div class="prompt">${TI('Tap the bigger one', '点大的那一个')}</div><div class="cmp" id="cmp"></div><div class="msg" id="cm"></div>`;
+      const val = f => f[0] * f[1], sign = () => val(L) > val(R) ? '>' : val(L) < val(R) ? '<' : '=';
+      const next = () => {
+        L = gFact(g.facts);
+        if (rnd(4) === 0) {
+          // same answer, different look: the turn-around fact or another pair with the same product
+          const p = val(L), same = [];
+          for (let x = 2; x <= 10; x++) if (p % x === 0 && p / x >= 2 && p / x <= 10 && x !== L[0]) same.push([x, p / x]);
+          R = same.length ? pick(same) : gFact(g.facts);
+        } else do { R = gFact(g.facts); } while (val(R) === val(L) || Math.abs(val(R) - val(L)) > 15);
+        $('#cmp', g.body).innerHTML = `<button class="cmpcard" data-a=">">${L[0]} × ${L[1]}</button><button class="cmpeq" data-a="=">=</button><button class="cmpcard" data-a="<">${R[0]} × ${R[1]}</button>`;
+      };
+      $('#cmp', g.body).onclick = e => {
+        const b = e.target.closest('[data-a]'); if (!b || g.over) return;
+        const said = `${L[0]} × ${L[1]} = ${val(L)}  ${sign()}  ${R[0]} × ${R[1]} = ${val(R)}`;
+        if (b.dataset.a === sign()) { g.add(); pop(); gBurst(b, 18); $('#cm', g.body).textContent = '✓ ' + said; next(); }
+        else { gBad(b); $('#cm', g.body).textContent = said; }
+      };
+      next();
+    }
+  },
+
+  memory: {
+    title: ['Flip and Match', '翻牌配对'], sign: '×', levels: true,
+    rule: ['Flip two cards. Match a fact with its answer, like 6 × 4 and 24. Clear the board for a bonus!', '每次翻两张牌，把算式和它的得数配成一对，比如 6 × 4 和 24。全部配完有奖励分！'],
+    setup(g) {
+      let cards, open = [], busy = false;
+      g.body.innerHTML = `<div class="mgrid" id="mg"></div>`;
+      const mg = $('#mg', g.body);
+      const deal = () => {
+        const pairs = [], used = new Set();
+        while (pairs.length < 6) {
+          const [a, b] = gFact(g.facts), p = a * b, face = rnd(10) < 3 ? [`${p} ÷ ${a}`, b] : [`${a} × ${b}`, p];   // some division cards too
+          if (used.has(face[1])) continue;
+          used.add(face[1]); pairs.push(face);
+        }
+        cards = shuffle(pairs.flatMap((f, k) => [{ k, t: f[0] }, { k, t: String(f[1]) }]));
+        mg.innerHTML = cards.map((c, i) => `<button class="mcard" data-i="${i}"><span>${c.t}</span></button>`).join('');
+      };
+      mg.onclick = e => {
+        const b = e.target.closest('.mcard'); if (!b || g.over || busy || b.classList.contains('up')) return;
+        b.classList.add('up'); tick(); open.push(+b.dataset.i);
+        if (open.length < 2) return;
+        const [i, j] = open; open = [];
+        if (cards[i].k === cards[j].k) {
+          g.add(); pop(); gBurst(b, 18);
+          [i, j].forEach(x => mg.children[x].classList.add('ok'));
+          if (mg.querySelectorAll('.ok').length === cards.length) { g.add(3); fanfare(); busy = true; setTimeout(() => { busy = false; deal(); }, 700); }
+        } else {
+          busy = true; boo();
+          setTimeout(() => { [i, j].forEach(x => mg.children[x].classList.remove('up')); busy = false; }, 800);
+        }
+      };
+      deal();
+    }
+  },
+
+  coins: {
+    title: ['Coin Shop', '硬币商店'],
+    rule: ['Pay the exact price with quarters, dimes, nickels and pennies. Use the fewest coins for a bonus!', '用 quarter、dime、nickel、penny 正好付清价钱。用的硬币最少还有奖励分！'],
+    setup(g) {
+      const COIN = [[25, 'quarter', 'q'], [10, 'dime', 'd'], [5, 'nickel', 'n'], [1, 'penny', 'p']];
+      const toys = ['🧸', '🎈', '🪀', '🍭', '🚀', '🦖', '🎨', '⚽', '🍦', '📚'];
+      let price, paid = [];
+      g.body.innerHTML = `<div class="shop"><span class="toy" id="ct"></span><span class="ptag" id="cp"></span></div>
+        <div class="tray" id="tr"></div><div class="prompt" id="cpaid"></div>
+        <div class="row" style="justify-content:center" id="cb">${COIN.map(([v, n, c]) => `<button class="coin ${c}" data-c="${v}" aria-label="${n}"><b>${v}¢</b><small>${n}</small></button>`).join('')}</div>
+        <div class="row" style="justify-content:center"><button class="btn ghost" id="cu">${TI('Take one back', '拿回一个')}</button></div>`;
+      const fewest = c => COIN.reduce((s, [v]) => { s += Math.floor(c / v); c %= v; return s; }, 0);
+      const draw = () => {
+        $('#tr', g.body).innerHTML = paid.map(v => `<span class="coin sm ${COIN.find(x => x[0] === v)[2]}"><b>${v}</b></span>`).join('');
+        $('#cpaid', g.body).innerHTML = TI(`Paid ${sum(paid)}¢ of ${price}¢`, `已付 ${sum(paid)} 分，要付 ${price} 分`);
+      };
+      const next = () => { price = ri(11, 99); paid = []; $('#ct', g.body).textContent = pick(toys); $('#cp', g.body).textContent = price + '¢'; draw(); };
+      $('#cb', g.body).onclick = e => {
+        const b = e.target.closest('.coin'); if (!b || g.over || sum(paid) === price) return;
+        paid.push(+b.dataset.c); tick();
+        const t = sum(paid);
+        if (t === price) {
+          const best = paid.length === fewest(price);
+          g.add(best ? 2 : 1); pop(); gBurst($('#ct', g.body), best ? 50 : 25); draw();
+          $('#cpaid', g.body).innerHTML = best ? TI('Fewest coins! +2', '硬币最少！+2') : TI('Paid! +1', '付清啦！+1');
+          setTimeout(next, 800);
+        } else if (t > price) { paid.pop(); gBad(b); draw(); $('#cpaid', g.body).innerHTML += '<br>' + TI('Too much! Try a smaller coin.', '多了！换个小一点的硬币。'); }
+        else draw();
+      };
+      $('#cu', g.body).onclick = () => { if (sum(paid) !== price) { paid.pop(); draw(); } };
+      next();
+    }
   }
 };
 
@@ -133,16 +293,24 @@ function runGame(el, key, opts) {
   el.innerHTML = `<section class="game"><div class="ghead"><h2>${T(G.title[0], G.title[1])}</h2><span class="gscore" id="gs">0</span></div>
     <div class="timer"><i id="gt"></i></div><div id="gbody"></div></section>`;
   const body = $('#gbody', el);
+  let lv = Math.max(0, GAME_LEVELS.findIndex(l => cur && cur.facts && l.join() === cur.facts.join()));
   body.innerHTML = `<div class="gameover"><svg width="84" height="84" viewBox="0 0 64 64" aria-hidden="true"><use href="#roo"/></svg>
     <p class="big" style="margin:0;max-width:40ch">${T(G.rule[0], G.rule[1])}</p>
+    ${G.levels ? `<div class="row lvl" id="glv">${GAME_LEVELS.map((l, i) => `<button class="btn ${i === lv ? 'next' : 'ghost'}" data-l="${i}">${i === GAME_LEVELS.length - 1 ? TI(`All ${G.sign}2–${G.sign}10`, `全部 ${G.sign}2–${G.sign}10`) : l.map(n => G.sign + n).join(' ')}</button>`).join('')}</div>` : ''}
     <div class="row"><button class="btn next" id="gstart">${TI('Go!', '开始！')}</button>${opts.skip === false ? '' : `<button class="btn ghost" id="gskip">${TI('Skip', '跳过')}</button>`}</div></div>`;
   if ($('#gskip', el)) $('#gskip', el).onclick = opts.onEnd;
+  if (G.levels) $('#glv', el).onclick = e => {
+    const b = e.target.closest('[data-l]'); if (!b) return;
+    lv = +b.dataset.l; tick();
+    $('#glv', el).querySelectorAll('button').forEach((x, i) => x.className = `btn ${i === lv ? 'next' : 'ghost'}`);
+  };
   $('#gstart', el).onclick = () => {
     let score = 0, left = GAME_SECONDS, over = false, cleanup;
     const sc = $('#gs', el), bar = $('#gt', el);
     const g = {
-      body,
+      body, facts: GAME_LEVELS[lv],
       get over() { return over; },
+      get score() { return score; },
       add(n = 1) { score += n; sc.textContent = score; sc.classList.remove('bump'); void sc.offsetWidth; sc.classList.add('bump'); }
     };
     const finish = () => {
