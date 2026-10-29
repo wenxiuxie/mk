@@ -305,19 +305,21 @@ const TOOLS = {
     draw();
   },
 
-  // logic table: rows × cols of boxes; a tap marks ✗ (no), a second tap ✓ (yes), a third clears it
+  // logic table: rows × cols of boxes; a tap marks ✗ (no), a second tap ✓ (yes), a third clears it.
+  // { tick: true } is a counting table instead: a tap marks ✓, a second tap clears it, and the ✓s are counted
   grid(el, cfg) {
     const marks = {};
-    el.innerHTML = `<div style="overflow-x:auto"><table class="lgrid" id="lg"></table></div>
+    el.innerHTML = `<div style="overflow-x:auto"><table class="lgrid" id="lg"></table></div>${cfg.tick ? '<div class="msg" id="gm"></div>' : ''}
       <div class="row" style="justify-content:center"><button class="btn ghost" id="gr">${TI('Start over', '重来')}</button></div>`;
     const draw = () => {
       $('#lg', el).innerHTML = `<tr><th></th>${cfg.cols.map(c => `<th>${c}</th>`).join('')}</tr>` + cfg.rows.map((r, i) =>
         `<tr><th>${r}</th>${cfg.cols.map((_, j) => { const m = marks[i + '-' + j] || ''; return `<td><button data-c="${i}-${j}" class="${m}" aria-label="${m || 'empty'}">${m === 'no' ? '✗' : m === 'yes' ? '✓' : ''}</button></td>`; }).join('')}</tr>`).join('');
+      if (cfg.tick) { const n = Object.values(marks).filter(m => m === 'yes').length; $('#gm', el).innerHTML = TI(`✓ marked: ${n}`, `已打 ✓：${n} 个`); }
     };
     $('#lg', el).onclick = e => {
       const b = e.target.closest('[data-c]'); if (!b) return;
       const k = b.dataset.c;
-      marks[k] = !marks[k] ? 'no' : marks[k] === 'no' ? 'yes' : '';
+      marks[k] = cfg.tick ? (marks[k] ? '' : 'yes') : !marks[k] ? 'no' : marks[k] === 'no' ? 'yes' : '';
       tick(); draw();
     };
     $('#gr', el).onclick = () => { Object.keys(marks).forEach(k => delete marks[k]); draw(); };
@@ -341,6 +343,36 @@ const TOOLS = {
       tick(); draw();
     };
     $('#ors', el).onclick = () => { items = [...cfg.items]; sel = -1; draw(); };
+    draw();
+  },
+
+  // names around a circle: tap one, then another, to draw a line between them (a handshake, a game); tap a line's ends again to remove it
+  connect(el, cfg) {
+    const n = cfg.names.length, lines = new Set(), R = 92, C = 120;
+    const at = i => [C + R * Math.sin(2 * Math.PI * i / n), C - R * Math.cos(2 * Math.PI * i / n)];
+    let sel = -1;
+    el.innerHTML = `<svg id="cn" viewBox="0 0 240 240" style="width:100%;max-width:300px;display:block;margin:0 auto"></svg><div class="msg" id="cm"></div>
+      <div class="row" style="justify-content:center"><button class="btn ghost" id="cr">${TI('Start over', '重来')}</button></div>`;
+    const draw = () => {
+      let s = '';
+      lines.forEach(k => { const [a, b] = k.split('-').map(i => at(+i)); s += `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#2f8f6b" stroke-width="3"/>`; });
+      cfg.names.forEach((nm, i) => {
+        const [x, y] = at(i);
+        s += `<g data-i="${i}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="22" fill="${i === sel ? '#f2b630' : '#fff'}" stroke="#c8742c" stroke-width="3"/>
+          <text x="${x}" y="${y + 5}" text-anchor="middle" font-size="${nm.length > 3 ? 11 : 14}" font-weight="800" fill="#1f2a37">${nm}</text></g>`;
+      });
+      $('#cn', el).innerHTML = s;
+      $('#cm', el).innerHTML = TI(`Lines: ${lines.size}`, `连线：${lines.size} 条`) + (sel > -1 ? '<br>' + TI(`Now tap someone to join to ${cfg.names[sel]}.`, `再点一个人，和 ${cfg.names[sel]} 连起来。`) : '');
+    };
+    $('#cn', el).onclick = e => {
+      const g = e.target.closest('[data-i]'); if (!g) return;
+      const i = +g.dataset.i;
+      if (sel === -1) sel = i;
+      else if (sel === i) sel = -1;
+      else { const k = Math.min(sel, i) + '-' + Math.max(sel, i); lines.has(k) ? lines.delete(k) : lines.add(k); sel = -1; boing(); }
+      tick(); draw();
+    };
+    $('#cr', el).onclick = () => { lines.clear(); sel = -1; draw(); };
     draw();
   }
 };
@@ -381,7 +413,8 @@ const LABS = {
   jumper: T('Press the jump buttons to move the kangaroo. Jump to a ten first!', '按按钮让袋鼠跳，先跳到整十！'),
   blocks: T('Each stick is a ten, each cube is a one. 10 ones can trade for a ten.', '一根是一个十，一块是一个一。10 个一可以换成 1 个十。'),
   grid: T('Tap a box once for ✗ (no), twice for ✓ (yes). Each row and each column has exactly one ✓.', '点一下格子打 ✗（不是），点两下打 ✓（是）。每行每列只有一个 ✓。'),
-  order: T('Tap two names to swap them. Move everyone until every clue is true.', '点两个名字可以交换位置。一直调整，直到每条线索都对。')
+  order: T('Tap two names to swap them. Move everyone until every clue is true.', '点两个名字可以交换位置。一直调整，直到每条线索都对。'),
+  connect: T('Tap one name, then another, to draw a line between them. Count the lines.', '先点一个名字，再点另一个，就能连一条线。数一数有几条线。')
 };
 const mk = (pts, en, zh, choices, answer, hints, explain, tool, cfg, extra = {}) =>
   ({ pts, stem: T(en, zh), choices, answer, hints: hints.map(h => T(...h)), explain: T(...explain), lab: LABS[tool], mount: el => TOOLS[tool](el, cfg), ...extra });
