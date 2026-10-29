@@ -346,6 +346,32 @@ const TOOLS = {
     draw();
   },
 
+  // rows of counters for "even it out" and "together / more than" puzzles: { rows: [9, 5], names: ['Ann', 'Ben'], icon }.
+  // A tap on a counter moves it to the other row (with 3 rows: to the row that has the fewest)
+  bars(el, cfg) {
+    let rows = [...cfg.rows], moves = 0;
+    const names = cfg.names || rows.map((_, i) => 'ABC'[i]);
+    el.innerHTML = `<div class="bars" id="bs"></div><div class="msg" id="bsm"></div>
+      <div class="row" style="justify-content:center"><button class="btn ghost" id="bsr">${TI('Start over', '重来')}</button></div>`;
+    const draw = () => {
+      $('#bs', el).innerHTML = rows.map((n, i) => `<div class="barrow"><b>${names[i]}</b><span class="barctr">${Array.from({ length: n }, () =>
+        `<button data-r="${i}" aria-label="counter">${item(cfg.icon || 'marble', 'sm')}</button>`).join('')}</span><span class="barn">${n}</span></div>`).join('');
+      const same = rows.every(n => n === rows[0]);
+      $('#bsm', el).innerHTML = TI(`Moved ${moves}. `, `挪了 ${moves} 个。`)
+        + (rows.length === 2 ? TI(`Together ${rows[0] + rows[1]}, difference ${Math.abs(rows[0] - rows[1])}.`, `合起来 ${rows[0] + rows[1]}，相差 ${Math.abs(rows[0] - rows[1])}。`) : TI(`Together ${sum(rows)}.`, `合起来 ${sum(rows)}。`))
+        + (same && rows[0] ? '<br>' + TI('All the same! ✓', '一样多啦！✓') : '');
+    };
+    $('#bs', el).onclick = e => {
+      const b = e.target.closest('[data-r]'); if (!b) return;
+      const i = +b.dataset.r;
+      let to = -1;
+      rows.forEach((n, j) => { if (j !== i && (to < 0 || n < rows[to])) to = j; });
+      rows[i]--; rows[to]++; moves++; boing(); draw();
+    };
+    $('#bsr', el).onclick = () => { rows = [...cfg.rows]; moves = 0; draw(); };
+    draw();
+  },
+
   // names around a circle: tap one, then another, to draw a line between them (a handshake, a game); tap a line's ends again to remove it
   connect(el, cfg) {
     const n = cfg.names.length, lines = new Set(), R = 92, C = 120;
@@ -414,7 +440,8 @@ const LABS = {
   blocks: T('Each stick is a ten, each cube is a one. 10 ones can trade for a ten.', '一根是一个十，一块是一个一。10 个一可以换成 1 个十。'),
   grid: T('Tap a box once for ✗ (no), twice for ✓ (yes). Each row and each column has exactly one ✓.', '点一下格子打 ✗（不是），点两下打 ✓（是）。每行每列只有一个 ✓。'),
   order: T('Tap two names to swap them. Move everyone until every clue is true.', '点两个名字可以交换位置。一直调整，直到每条线索都对。'),
-  connect: T('Tap one name, then another, to draw a line between them. Count the lines.', '先点一个名字，再点另一个，就能连一条线。数一数有几条线。')
+  connect: T('Tap one name, then another, to draw a line between them. Count the lines.', '先点一个名字，再点另一个，就能连一条线。数一数有几条线。'),
+  bars: T('Tap a counter to move it to the other row. Watch the numbers change.', '点一个圆片，它会挪到另一行。看看数怎么变。')
 };
 const mk = (pts, en, zh, choices, answer, hints, explain, tool, cfg, extra = {}) =>
   ({ pts, stem: T(en, zh), choices, answer, hints: hints.map(h => T(...h)), explain: T(...explain), lab: LABS[tool], mount: el => TOOLS[tool](el, cfg), ...extra });

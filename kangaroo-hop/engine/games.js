@@ -283,6 +283,89 @@ const GAMES = {
       $('#cu', g.body).onclick = () => { if (sum(paid) !== price) { paid.pop(); draw(); } };
       next();
     }
+  },
+  river: {
+    title: ['River Hop', '袋鼠过河'], sign: '×', levels: true,
+    rule: ['Hop across the river one row at a time! Only land on lily pads from the times table shown. Reach the other bank for a bonus. The river gets faster!', '一行一行跳过河！只能跳到口诀里的荷叶上，跳到对岸有奖励分。河水会越流越快！'],
+    setup(g) {
+      const LANES = 4, ROO = '<svg class="proo" viewBox="0 0 64 64" aria-hidden="true"><use href="#roo"/></svg>';
+      let t, row, crossings = 0;
+      g.body.innerHTML = `<div class="prompt" id="rp"></div><div class="river" id="rv"></div>`;
+      const rv = $('#rv', g.body);
+      const lane = k => {
+        const good = [1, 2].map(() => t * ri(1, 10)), bad = [];
+        while (bad.length < 4) { const v = t * ri(1, 10) + pick([-2, -1, 1, 2]); if (v > 0 && v % t) bad.push(v); }
+        const pads = shuffle([...good, ...bad]).map(v => `<button class="lily" data-n="${v}" data-l="${k}">${v}</button>`).join('');
+        const dur = Math.max(6, 15 - crossings * 1.5 - k);
+        return `<div class="rlane"><div class="strip" style="animation-duration:${dur}s;animation-direction:${k % 2 ? 'reverse' : 'normal'}">${pads}${pads}</div></div>`;
+      };
+      const newRiver = () => {
+        t = pick(g.facts); row = -1;
+        $('#rp', g.body).innerHTML = TI(`Hop only on the ${t}s: ${t}, ${2 * t}, ${3 * t}, …`, `只能跳到 ${t} 的口诀数上：${t}、${2 * t}、${3 * t}……`);
+        rv.innerHTML = `<div class="bank far">🏁</div>${Array.from({ length: LANES }, (_, i) => lane(LANES - 1 - i)).join('')}<div class="bank near" id="near">${ROO}</div>`;
+      };
+      rv.onclick = e => {
+        const b = e.target.closest('.lily'); if (!b || g.over) return;
+        const n = +b.dataset.n, k = +b.dataset.l;
+        if (k !== row + 1) { b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); tick(); return; }   // one row at a time
+        if (n % t) { gBad(b); return; }
+        rv.querySelectorAll('.proo').forEach(r => r.remove());
+        b.insertAdjacentHTML('beforeend', ROO); b.classList.add('on');
+        row = k; g.add(); boing();
+        if (row === LANES - 1) {
+          crossings++; g.add(3); fanfare(); gBurst($('.far', rv), 50);
+          rv.querySelector('.far').innerHTML = '🏁' + ROO;
+          setTimeout(() => { if (!g.over) newRiver(); }, 900);
+        }
+      };
+      newRiver();
+    }
+  },
+
+  balance: {
+    title: ['Balance the Scale', '天平平衡'],
+    rule: ['Tap a weight to move it to the other side. Make the scale level! Doing it in one move gets a bonus.', '点一个砝码，把它挪到另一边，让天平平衡！一步就摆平还有奖励分。'],
+    setup(g) {
+      let L, R, moves, done;
+      g.body.innerHTML = `<div class="prompt">${TI('Make both sides the same!', '让两边一样重！')}</div>
+        <div class="scale"><div class="beam" id="bm"><div class="pan" id="pl"></div><div class="pan" id="pr"></div></div><div class="post"></div></div>
+        <div class="msg" id="bmsg"></div><div class="row" style="justify-content:center"><button class="btn ghost" id="brs">${TI('Start over', '重来')}</button></div>`;
+      let start;
+      const fresh = () => {
+        // move one weight x from the heavy side: the heavy side is 2x heavier, so one move can balance it
+        let heavy, light;
+        do {
+          const x = ri(1, 9);
+          heavy = [x, ri(1, 9), ri(1, 9)];
+          let need = sum(heavy) - 2 * x;
+          light = [];
+          while (need > 0) { const w = light.length === 2 ? need : Math.min(need, ri(1, 9)); light.push(w); need -= w; }
+        } while (light.length < 2 || light.some(w => w > 12));
+        start = rnd(2) ? [shuffle(heavy), shuffle(light)] : [shuffle(light), shuffle(heavy)];
+        reset();
+      };
+      const reset = () => { L = [...start[0]]; R = [...start[1]]; moves = 0; done = false; draw(); };
+      const draw = () => {
+        const d = sum(R) - sum(L);
+        $('#bm', g.body).style.transform = `rotate(${Math.max(-16, Math.min(16, d * 2))}deg)`;
+        const w = (a, side) => a.map((v, i) => `<button class="wt" data-s="${side}" data-i="${i}" style="--w:${30 + v * 3}px">${v}</button>`).join('');
+        $('#pl', g.body).innerHTML = w(L, 'L') + `<small>${sum(L)}</small>`;
+        $('#pr', g.body).innerHTML = w(R, 'R') + `<small>${sum(R)}</small>`;
+        $('#bmsg', g.body).innerHTML = d ? TI(`Moves: ${moves}. One side is ${Math.abs(d)} heavier.`, `挪了 ${moves} 次。一边重了 ${Math.abs(d)}。`) : TI('Level! ✓', '平衡啦！✓');
+      };
+      $('#bm', g.body).onclick = e => {
+        const b = e.target.closest('.wt'); if (!b || g.over || done) return;
+        const from = b.dataset.s === 'L' ? L : R, to = from === L ? R : L, [v] = from.splice(+b.dataset.i, 1);
+        to.push(v); moves++; boing(); draw();
+        if (sum(L) === sum(R)) {
+          done = true; g.add(moves === 1 ? 2 : 1); pop(); gBurst($('#bm', g.body), moves === 1 ? 50 : 25);
+          if (moves === 1) $('#bmsg', g.body).innerHTML = TI('Level in one move! +2', '一步就平衡！+2');
+          setTimeout(() => { if (!g.over) fresh(); }, 900);
+        }
+      };
+      $('#brs', g.body).onclick = reset;
+      fresh();
+    }
   }
 };
 
