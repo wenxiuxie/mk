@@ -400,6 +400,90 @@ const TOOLS = {
     };
     $('#cr', el).onclick = () => { lines.clear(); sel = -1; draw(); };
     draw();
+  },
+
+  // a pile packed into groups of `size` (how many groups?); adjustable lets the child change the group size
+  groups(el, cfg) {
+    let size = cfg.size, made = 0;
+    el.innerHTML = `${cfg.adjustable ? `<div class="row" style="justify-content:center"><span class="big">${TI('In each group', '每组几个')}</span><div class="pm"><button id="gmm" aria-label="smaller groups">−</button><span id="gn"></span><button id="gmp" aria-label="bigger groups">+</button></div></div>` : ''}
+      <div class="pile" id="gpile"></div><div class="gbags" id="gbags"></div><div class="msg" id="gm"></div>
+      <div class="row" style="justify-content:center"><button class="btn next" id="gmake"></button><button class="btn ghost" id="gr">${TI('Start over', '重来')}</button></div>`;
+    const draw = () => {
+      const left = cfg.items - made * size;
+      if (cfg.adjustable) $('#gn', el).textContent = size;
+      $('#gmake', el).innerHTML = TI(`Make a group of ${size}`, `圈出 ${size} 个`);
+      $('#gpile', el).innerHTML = left ? item(cfg.icon, 'sm').repeat(left) : TI('All packed', '装完了');
+      $('#gbags', el).innerHTML = Array.from({ length: made }, (_, k) => `<span class="gbag"><span class="pc">${item(cfg.icon, 'sm').repeat(size)}</span><b>${k + 1}</b></span>`).join('');
+      let m = made ? TI(`${made} ${made === 1 ? 'group' : 'groups'} of ${size}`, `${made} 组，每组 ${size} 个`) : '';
+      if (made && !left) m += TI('. None left over!', '，正好分完！');
+      else if (made && left < size) m += TI(`, ${left} left. Not enough for another group.`, `，还剩 ${left} 个，不够再圈一组了。`);
+      $('#gm', el).innerHTML = m;
+    };
+    $('#gmake', el).onclick = () => {
+      const left = cfg.items - made * size;
+      if (left >= size) { made++; boing(); draw(); }
+      else { boo(); if (left) $('#gm', el).innerHTML = TI(`Only ${left} left. Not enough for a group of ${size}.`, `只剩 ${left} 个，不够 ${size} 个一组。`); }
+    };
+    $('#gr', el).onclick = () => { made = 0; draw(); };
+    if (cfg.adjustable) {
+      $('#gmm', el).onclick = () => { size = Math.max(1, size - 1); made = 0; tick(); draw(); };
+      $('#gmp', el).onclick = () => { size = Math.min(10, size + 1); made = 0; tick(); draw(); };
+    }
+    draw();
+  },
+
+  // a road, a log or a ring split into n equal gaps. Road: tap a mark to plant a tree (ends: true puts a house at each end, 'end' only at the far end).
+  // Log: tap an inside mark to cut it. Ring: tap a mark to plant a tree, or to cut it with cut: true.
+  gaps(el, cfg) {
+    const { n, mode = 'line' } = cfg, on = new Set(), W = 640, unit = cfg.unit || '';
+    const x = k => 34 + k * (W - 68) / n, lab = k => cfg.step ? `${k * cfg.step}${unit}` : '';
+    const tree = (cx, base, s = 1) => `<g pointer-events="none"><rect x="${cx - 3 * s}" y="${base - 14 * s}" width="${6 * s}" height="${14 * s}" fill="#8a5a2b"/><circle cx="${cx}" cy="${base - 24 * s}" r="${13 * s}" fill="#2f8f6b"/><circle cx="${cx - 4 * s}" cy="${base - 28 * s}" r="${4 * s}" fill="#5cbf8a"/></g>`;
+    const house = cx => `<g pointer-events="none"><rect x="${cx - 14}" y="38" width="28" height="24" fill="#c8435a"/><path d="M${cx - 18} 40 L${cx} 22 L${cx + 18} 40 Z" fill="#8a3040"/><rect x="${cx - 4}" y="50" width="8" height="12" fill="#fff"/></g>`;
+    const isHouse = k => mode === 'line' && (cfg.ends === true ? k === 0 || k === n : cfg.ends === 'end' && k === n);
+    const can = k => mode === 'log' ? k > 0 && k < n : !isHouse(k);
+    el.innerHTML = `<div style="overflow-x:auto"><svg id="gsv" viewBox="${mode === 'ring' ? '0 0 260 260' : `0 0 ${W} 110`}" style="width:100%;${mode === 'ring' ? 'max-width:300px' : 'min-width:420px'};display:block;margin:0 auto"></svg></div>
+      <div class="msg" id="gpm"></div><div class="row" style="justify-content:center"><button class="btn ghost" id="gpr">${TI('Start over', '重来')}</button></div>`;
+    const draw = () => {
+      let s = '';
+      if (mode === 'line') {
+        s += `<line x1="${x(0)}" y1="64" x2="${x(n)}" y2="64" stroke="#8b98a8" stroke-width="6" stroke-linecap="round"/>`;
+        for (let k = 0; k <= n; k++) {
+          if (isHouse(k)) s += house(x(k));
+          else s += `<g data-k="${k}" style="cursor:pointer"><rect x="${x(k) - 22}" y="14" width="44" height="72" fill="transparent"/><circle cx="${x(k)}" cy="64" r="5" fill="${on.has(k) ? '#2f8f6b' : '#fff'}" stroke="#5d6b7c" stroke-width="2"/></g>${on.has(k) ? tree(x(k), 62) : ''}`;
+          if (lab(k)) s += `<text x="${x(k)}" y="102" text-anchor="middle" font-size="12" font-weight="600" fill="#5d6b7c">${lab(k)}</text>`;
+        }
+      } else if (mode === 'log') {
+        const segs = [0, ...[...on].sort((a, b) => a - b), n];
+        for (let i = 1; i < segs.length; i++) {
+          const a = x(segs[i - 1]) + (i > 1 ? 4 : 0), b = x(segs[i]) - (i < segs.length - 1 ? 4 : 0);
+          s += `<rect x="${a}" y="40" width="${b - a}" height="34" rx="8" fill="#c8742c" stroke="#8a5a2b" stroke-width="2"/>`;
+        }
+        for (let k = 0; k <= n; k++) {
+          if (can(k)) s += `<g data-k="${k}" style="cursor:pointer"><rect x="${x(k) - 20}" y="14" width="40" height="80" fill="transparent"/>${on.has(k) ? '' : `<line x1="${x(k)}" y1="44" x2="${x(k)}" y2="70" stroke="#8a5a2b" stroke-width="2" stroke-dasharray="3 3"/>`}</g>${on.has(k) ? `<text x="${x(k)}" y="32" text-anchor="middle" font-size="18" pointer-events="none">🪚</text>` : ''}`;
+          if (lab(k)) s += `<text x="${x(k)}" y="102" text-anchor="middle" font-size="12" font-weight="600" fill="#5d6b7c">${lab(k)}</text>`;
+        }
+      } else {
+        const at = k => [130 + 92 * Math.sin(2 * Math.PI * k / n), 134 - 92 * Math.cos(2 * Math.PI * k / n)];
+        s += `<circle cx="130" cy="134" r="92" fill="${cfg.cut ? 'none' : '#cfe8f7'}" stroke="${cfg.cut ? '#c8742c' : '#8b98a8'}" stroke-width="${cfg.cut ? 12 : 5}"/>`;
+        for (let k = 0; k < n; k++) {
+          const [px, py] = at(k);
+          s += `<g data-k="${k}" style="cursor:pointer"><circle cx="${px}" cy="${py}" r="18" fill="transparent"/><circle cx="${px}" cy="${py}" r="5" fill="${on.has(k) ? '#2f8f6b' : '#fff'}" stroke="#5d6b7c" stroke-width="2"/></g>`
+            + (on.has(k) ? cfg.cut ? `<text x="${px}" y="${py + 6}" text-anchor="middle" font-size="18" pointer-events="none">✂️</text>` : tree(px, py - 2, .7) : '');
+        }
+      }
+      $('#gsv', el).innerHTML = s;
+      const c = on.size;
+      $('#gpm', el).innerHTML = mode === 'log' ? TI(`${c} ${c === 1 ? 'cut' : 'cuts'} → ${c + 1} ${c ? 'pieces' : 'piece'}`, `锯了 ${c} 次 → ${c + 1} 段`)
+        : mode === 'ring' && cfg.cut ? c ? TI(`${c} ${c === 1 ? 'cut' : 'cuts'} → ${c} ${c === 1 ? 'piece' : 'pieces'}`, `剪了 ${c} 刀 → ${c} 段`) : TI('No cuts yet: still one ring.', '还没剪：还是一个圈。')
+        : TI(`${n} gaps · ${c} ${c === 1 ? 'tree' : 'trees'} planted`, `${n} 个间隔 · 种了 ${c} 棵树`);
+    };
+    $('#gsv', el).onclick = e => {
+      const g = e.target.closest('[data-k]'); if (!g) return;
+      const k = +g.dataset.k; if (!can(k)) return;
+      on.has(k) ? on.delete(k) : on.add(k); boing(); draw();
+    };
+    $('#gpr', el).onclick = () => { on.clear(); draw(); };
+    draw();
   }
 };
 
@@ -441,7 +525,9 @@ const LABS = {
   grid: T('Tap a box once for ✗ (no), twice for ✓ (yes). Each row and each column has exactly one ✓.', '点一下格子打 ✗（不是），点两下打 ✓（是）。每行每列只有一个 ✓。'),
   order: T('Tap two names to swap them. Move everyone until every clue is true.', '点两个名字可以交换位置。一直调整，直到每条线索都对。'),
   connect: T('Tap one name, then another, to draw a line between them. Count the lines.', '先点一个名字，再点另一个，就能连一条线。数一数有几条线。'),
-  bars: T('Tap a counter to move it to the other row. Watch the numbers change.', '点一个圆片，它会挪到另一行。看看数怎么变。')
+  bars: T('Tap a counter to move it to the other row. Watch the numbers change.', '点一个圆片，它会挪到另一行。看看数怎么变。'),
+  groups: T('Press the button to circle one group. Count the groups.', '按按钮圈出一组，数一数能圈几组。'),
+  gaps: T('Tap the dots to plant trees (or cut the log). Count the trees and the gaps.', '点小圆点种树（或者锯木头）。数一数树和间隔。')
 };
 const mk = (pts, en, zh, choices, answer, hints, explain, tool, cfg, extra = {}) =>
   ({ pts, stem: T(en, zh), choices, answer, hints: hints.map(h => T(...h)), explain: T(...explain), lab: LABS[tool], mount: el => TOOLS[tool](el, cfg), ...extra });

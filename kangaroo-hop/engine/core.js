@@ -151,7 +151,7 @@ const hush = () => { if ('speechSynthesis' in window) speechSynthesis.cancel(); 
 // Island options: breakEvery (questions between mini games), games (which mini games, in turn),
 // lesson (animated slides shown before the first round), perRound (questions drawn from a longer list),
 // facts (times tables the × and ÷ mini games start on, e.g. [3, 4, 6]).
-// A question may be a function that builds a fresh question each round.
+// A question may be a function that builds a fresh question each round, or a list of such questions (one is picked each round).
 const SERIES = [];
 function registerSeries(s) { SERIES.push(s); }
 
@@ -174,7 +174,7 @@ function renderMap() {
     <p class="note" style="margin-top:4px">${T('Watch the mini-lesson, answer 20 questions, and play a 60-second game after every 10.', '先看趣味小课，再做 20 题，每做 10 题玩一次 60 秒小游戏。')}</p>
     <div class="islands">
       ${SERIES.filter(s => s.camp).map(islandCard).join('')}
-      ${lockedCard(['Division Camp', '除法营'], ['Sharing & Grouping', '平均分与分组'], ['More questions on the way', '题量会更多'])}
+      ${lockedCard(['Division Camp 2', '除法营 2'], ['Times & Divide Are Family', '乘除是一家'], ['Fact families, use a times fact to divide', '一组乘除算式、用口诀求商'])}
     </div>
     <h2 class="sect">${TI('Islands', '闯关岛')}</h2>
     <div class="islands">
@@ -206,7 +206,7 @@ function buildRound() {
     const keep = new Set(shuffle(pool.map((_, i) => i)).slice(0, cur.perRound));
     pool = pool.filter((_, i) => keep.has(i));
   }
-  return pool.map(q => typeof q === 'function' ? q() : q);
+  return pool.map(q => Array.isArray(q) ? pick(q) : q).map(q => typeof q === 'function' ? q() : q);
 }
 
 function playSeries(id) {

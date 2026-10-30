@@ -366,6 +366,67 @@ const GAMES = {
       $('#brs', g.body).onclick = reset;
       fresh();
     }
+  },
+
+  saw: {
+    title: ['Saw the Logs', '锯木头'],
+    rule: ['Logs slide past. Tap a log to saw it. Make exactly the pieces asked, then press Done! Even pieces get a bonus. Remember: pieces = cuts + 1.', '木头一根根滑过来，点木头就锯一下。锯出要求的段数，再按“锯好了”！锯得一样长有奖励分。记住：段数 = 锯的次数 + 1。'],
+    setup(g) {
+      let want, meters, cuts, x, w, laneW, speed, raf, last, busy, logs = 0;
+      g.body.innerHTML = `<div class="prompt" id="swp"></div><div class="sawlane" id="swl"><div class="slog" id="slg"></div></div>
+        <div class="msg" id="swm"></div><div class="row" style="justify-content:center"><button class="btn next" id="swd">🪚 ${TI('Done', '锯好了')}</button></div>`;
+      const lane = $('#swl', g.body), lg = $('#slg', g.body), msg = $('#swm', g.body);
+      const draw = () => {
+        const at = [0, ...cuts, 1];
+        lg.innerHTML = at.slice(1).map((b, i) => `<span class="pc" style="left:calc(${at[i] * 100}% + ${i ? 3 : 0}px);width:calc(${(b - at[i]) * 100}% - ${(i ? 3 : 0) + (b < 1 ? 3 : 0)}px)"></span>`).join('')
+          + (meters ? Array.from({ length: meters - 1 }, (_, k) => `<i class="mtick" style="left:${(k + 1) / meters * 100}%"></i>`).join('') : '');
+        msg.innerHTML = TI(`${cuts.length} ${cuts.length === 1 ? 'cut' : 'cuts'} → ${cuts.length + 1} ${cuts.length ? 'pieces' : 'piece'}`, `锯了 ${cuts.length} 次 → ${cuts.length + 1} 段`);
+      };
+      const next = () => {
+        busy = false; cuts = [];
+        want = ri(2, Math.min(6, 3 + Math.floor(logs / 2)));
+        meters = rnd(2) ? want : 0;
+        $('#swp', g.body).innerHTML = meters ? TI(`This log is ${meters} m long. Saw it into 1 m pieces!`, `这根木头长 ${meters} 米，锯成每段 1 米！`)
+          : TI(`Saw this log into ${want} pieces!`, `把这根木头锯成 ${want} 段！`);
+        laneW = lane.clientWidth; w = Math.min(340, laneW * .7);
+        lg.style.width = w + 'px'; lg.classList.remove('gone');
+        x = laneW; speed = (laneW + w) / Math.max(3.5, 8 - logs * .45) * (reduce ? .6 : 1);
+        draw();
+      };
+      // finish this log: right number of pieces scores 1, nearly even pieces 1 more
+      const judge = why => {
+        if (busy) return; busy = true; logs++;
+        const at = [0, ...cuts, 1], len = at.slice(1).map((b, i) => b - at[i]);
+        if (cuts.length + 1 === want) {
+          const even = Math.max(...len) <= Math.min(...len) * 1.5;
+          g.add(even ? 2 : 1); pop(); gBurst(lg, even ? 45 : 25);
+          msg.innerHTML = TI(`${cuts.length} cuts → ${want} pieces ✓${even ? ' Even pieces! +2' : ''}`, `锯 ${cuts.length} 次 → ${want} 段 ✓${even ? ' 锯得真匀！+2' : ''}`);
+        } else {
+          boo();
+          msg.innerHTML = why || TI(`${want} pieces need ${want - 1} cuts. You made ${cuts.length}.`, `${want} 段要锯 ${want - 1} 次，你锯了 ${cuts.length} 次。`);
+        }
+        lg.classList.add('gone');
+        setTimeout(() => { if (!g.over) next(); }, 1100);
+      };
+      lg.onclick = e => {
+        if (busy || g.over) return;
+        const r = lg.getBoundingClientRect(), f = (e.clientX - r.left) / r.width;
+        if (f < .04 || f > .96 || cuts.some(c => Math.abs(c - f) < .04)) return;
+        cuts.push(f); cuts.sort((a, b) => a - b); tick(); draw();
+        if (cuts.length + 1 > want) judge(TI(`Too many! ${want} pieces need only ${want - 1} cuts.`, `锯多了！${want} 段只要锯 ${want - 1} 次。`));
+      };
+      $('#swd', g.body).onclick = () => { if (!g.over) judge(); };
+      const step = t => {
+        if (last != null && !busy) {
+          x -= speed * Math.min(.05, (t - last) / 1000);
+          lg.style.transform = `translateX(${x}px)`;
+          if (x < -w) judge(TI('The log got away! Press Done when you have finished sawing.', '木头溜走了！锯好了就按“锯好了”。'));
+        }
+        last = t; raf = requestAnimationFrame(step);
+      };
+      next(); raf = requestAnimationFrame(step);
+      return () => cancelAnimationFrame(raf);
+    }
   }
 };
 

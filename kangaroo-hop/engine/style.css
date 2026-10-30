@@ -204,6 +204,10 @@ input[type=range]{width:100%;max-width:420px;display:block;margin:0 auto;accent-
 .plate{border:2px solid var(--line);background:var(--paper);border-radius:50%/42%;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px}
 .plate .pc{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;max-width:76px}
 .plate b{font-family:var(--font-display);font-size:18px}
+.gbags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;min-height:20px}
+.gbag{border:2px dashed var(--roo);border-radius:18px;background:var(--roo-soft);padding:6px 8px;display:flex;flex-direction:column;align-items:center;gap:2px;animation:pop .3s ease-out}
+.gbag .pc{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;max-width:64px}
+.gbag b{font-family:var(--font-display);font-size:14px;color:var(--roo)}
 .pseq{display:flex;flex-wrap:wrap;gap:8px 6px;justify-content:center;padding-top:8px}
 .pcell{position:relative;width:48px;min-height:64px;border-radius:10px;background:var(--paper);border:2px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:4px}
 .pcell small{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -487,3 +491,9 @@ body[data-lang="both"] .bigeq .inl .zh{display:none}
 .pan small{width:100%;text-align:center;color:var(--muted);font-weight:700;order:-1}
 .wt{width:var(--w);height:var(--w);border:0;border-radius:10px 10px 6px 6px;background:linear-gradient(#5d6b7c,#3d4a5a);color:#fff;font-family:var(--font-display);font-weight:800;font-size:18px;padding:0}
 @media (prefers-reduced-motion: reduce){.strip{animation-duration:60s !important}}
+.sawlane{position:relative;height:130px;max-width:620px;width:100%;margin:0 auto;overflow:hidden;border-radius:16px;background:linear-gradient(#cfe8f7 0 62%,#8cc068 62%)}
+.slog{position:absolute;left:0;top:34px;height:58px;cursor:crosshair;transition:opacity .5s}
+.slog.gone{opacity:.35}
+.slog .pc{position:absolute;top:0;bottom:0;border-radius:12px;border:3px solid #8a5a2b;pointer-events:none;
+  background:radial-gradient(ellipse 9px 24px at 100% 50%,#e9a868 0 60%,transparent 62%),repeating-linear-gradient(#c8742c 0 9px,#b5652a 9px 12px)}
+.slog .mtick{position:absolute;top:-10px;width:2px;height:10px;background:#5d6b7c;margin-left:-1px;pointer-events:none}
