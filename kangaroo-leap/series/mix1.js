@@ -267,7 +267,7 @@ const Q_MIX1 = [
 ];
 
 registerSeries({
-  id: 'mix1', camp: true, breakEvery: 10, perRound: 20, games: ['orderops', 'opsprint', 'parenfix', 'opcombo'],
+  id: 'mix1', camp: true, breakEvery: 10, perRound: 20, games: ['opmachine', 'opsprint', 'parenfix', 'opcombo'],
   tag: ['Mixed Ops Camp A · G4', '混合运算营 A · 四年级'],
   name: ['Order & Parentheses', '顺序与括号'],
   desc: ['×÷ before +− , parentheses first, common traps', '先乘除后加减、先算括号、常见陷阱'],

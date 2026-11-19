@@ -174,8 +174,7 @@ function renderMap() {
     <p class="note" style="margin-top:4px">${T('Watch the mini-lesson, answer 20 questions, and play a 60-second game after every 10.', '先看趣味小课，再做 20 题，每做 10 题玩一次 60 秒小游戏。')}</p>
     <div class="islands">
       ${SERIES.filter(s => s.camp).map(islandCard).join('')}
-      ${lockedCard(['Fraction Camp D', '分数营 D'], ['Fraction × Whole Number', '分数乘整数'], ['Find a fraction of a set', '求一个数的几分之几'])}
-      ${lockedCard(['Mixed Ops A', '混合运算营 A'], ['Order & Parentheses', '顺序与括号'], ['Later Leap phase', 'Leap 后续阶段'])}
+      ${lockedCard(['Fraction Camp E', '分数营 E'], ['Fraction Stories', '分数应用题'], ['Two steps, part of a whole', '两步、已知部分求整体'])}
     </div>
     <h2 class="sect">${TI('Practice islands', '练习岛')}</h2>
     <div class="islands">

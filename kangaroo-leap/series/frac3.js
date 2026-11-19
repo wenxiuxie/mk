@@ -213,5 +213,5 @@ registerSeries({
   desc: ['Same-denominator +/− , leftovers, short stories', '同分母加减、求剩余、小故事'],
   lesson: LESSON_FRAC3,
   questions: Q_FRAC3,
-  next: 'mix1'
+  next: 'frac4'
 });

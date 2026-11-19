@@ -484,6 +484,199 @@ const LEAP_GAMES = {
       };
       deal();
     }
+  },
+
+  pizzarush: {
+    title: ['Pizza Rush', '披萨订单'],
+    rule: ['Each order asks for a fraction of the pizza. Tap slices to add topping, then press Serve. Three correct orders in a row give a bonus!',
+      '每张订单要披萨的几分之几。点扇形加料，再按“上菜”。连续做对 3 单有奖励！'],
+    setup(g) {
+      let d, need, on, streak = 0;
+      g.body.innerHTML = `<div class="prompt" id="pzq"></div>
+        <div id="pzbox" style="display:flex;justify-content:center"></div>
+        <div class="row" style="justify-content:center"><button class="btn next" id="pzgo">${TI('Serve', '上菜')}</button>
+        <button class="btn ghost" id="pzclr">${TI('Clear', '清空')}</button></div>
+        <div class="msg" id="pzmsg"></div>`;
+      const slice = (i, R, cx, cy) => {
+        const a0 = -Math.PI / 2 + (i / d) * Math.PI * 2;
+        const a1 = -Math.PI / 2 + ((i + 1) / d) * Math.PI * 2;
+        const large = (a1 - a0) > Math.PI ? 1 : 0;
+        const x0 = cx + R * Math.cos(a0), y0 = cy + R * Math.sin(a0);
+        const x1 = cx + R * Math.cos(a1), y1 = cy + R * Math.sin(a1);
+        const fill = on.has(i) ? '#c8435a' : '#f6d7a7';
+        return `<path data-i="${i}" d="M${cx},${cy} L${x0},${y0} A${R},${R} 0 ${large} 1 ${x1},${y1} Z" fill="${fill}" stroke="#5a3d00" stroke-width="2" style="cursor:pointer"/>`;
+      };
+      const paint = () => {
+        const cx = 130, cy = 130, R = 116;
+        $('#pzbox', g.body).innerHTML = `<svg viewBox="0 0 260 260" width="240" height="240" id="pz">${
+          Array.from({ length: d }, (_, i) => slice(i, R, cx, cy)).join('')
+        }<circle cx="${cx}" cy="${cy}" r="26" fill="#f2b630" stroke="#5a3d00" stroke-width="2" pointer-events="none"/></svg>`;
+        $('#pzmsg', g.body).innerHTML = TI(`Topped ${on.size}/${d} · streak ${streak}`, `已加料 ${on.size}/${d} · 连对 ${streak}`);
+      };
+      const deal = () => {
+        d = pick([4, 6, 8]); need = ri(1, d - 1); on = new Set();
+        $('#pzq', g.body).innerHTML = TI(`Order: top ${need}/${d} of the pizza`, `订单：请做出 ${need}/${d} 的披萨`);
+        paint();
+      };
+      $('#pzbox', g.body).onclick = e => {
+        const p = e.target.closest('path'); if (!p || g.over) return;
+        const i = +p.dataset.i;
+        if (on.has(i)) on.delete(i); else on.add(i);
+        tick(); paint();
+      };
+      $('#pzclr', g.body).onclick = () => { if (g.over) return; on = new Set(); paint(); };
+      $('#pzgo', g.body).onclick = () => {
+        if (g.over) return;
+        if (on.size === need) {
+          streak++;
+          const bonus = streak % 3 === 0;
+          if (bonus) { g.add(2); fanfare(); } else g.add();
+          pop(); confetti(innerWidth / 2, 200, bonus ? 40 : 18);
+          deal();
+        } else { streak = 0; boo(); const b = $('#pzgo', g.body); b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); paint(); }
+      };
+      deal();
+    }
+  },
+
+  frachop: {
+    title: ['Fraction Hop', '分数跳格子'],
+    rule: ['The flag marks a fraction of the track. Hop by 1 part, 2 parts, or a half. Land exactly on the flag. Jump past it and you slide back to the start!',
+      '旗帜标出跑道上的一个分数。可以跳 1 格、2 格或一半。正好跳到旗上得分；跳过头会滑回起点！'],
+    setup(g) {
+      let d, pos, target, steps;
+      g.body.innerHTML = `<div class="prompt" id="fhq"></div><div class="lgcells" id="fhtrack"></div>
+        <div class="row" id="fhops" style="justify-content:center;flex-wrap:wrap"></div>`;
+      const paint = () => {
+        $('#fhtrack', g.body).style.gridTemplateColumns = `repeat(${d + 1},minmax(0,1fr))`;
+        $('#fhtrack', g.body).innerHTML = Array.from({ length: d + 1 }, (_, i) => {
+          const flag = i === target ? ' flag' : '';
+          const here = i === pos ? `<svg class="proo" viewBox="0 0 64 64"><use href="#roo"/></svg>` : '';
+          const mark = i === target ? '🚩' : '';
+          return `<div class="lgcell${flag}">${here}${mark}<span>${i}/${d}</span></div>`;
+        }).join('');
+      };
+      const deal = () => {
+        d = pick([4, 6, 8]); pos = 0;
+        steps = [...new Set([1, 2, d / 2])].filter(s => s >= 1 && s < d);
+        target = ri(Math.max(2, d / 2), d);
+        $('#fhq', g.body).innerHTML = TI(`Land on ${target}/${d}`, `请跳到 ${target}/${d}`);
+        $('#fhops', g.body).innerHTML = steps.map(s =>
+          `<button class="btn next" data-s="${s}">+${s}/${d}</button>`).join('');
+        paint();
+      };
+      $('#fhops', g.body).onclick = e => {
+        const b = e.target.closest('[data-s]'); if (!b || g.over) return;
+        const s = +b.dataset.s, nxt = pos + s;
+        if (nxt === target) { pos = nxt; g.add(); pop(); boing(); paint(); setTimeout(() => { if (!g.over) deal(); }, 450); return; }
+        if (nxt > target) { pos = 0; boo(); paint(); return; }
+        pos = nxt; tick(); boing(); paint();
+      };
+      deal();
+    }
+  },
+
+  bowlshare: {
+    title: ['Bowl Share', '分碗达人'],
+    rule: ['Move pieces into the bowl until it holds the fraction asked. Then press Check. A perfect share scores a point!',
+      '把小物搬进碗里，直到碗里正好是题目要的几分之几，再按“检查”。'],
+    setup(g) {
+      let total, need, bowl;
+      g.body.innerHTML = `<div class="prompt" id="bwq"></div>
+        <div class="bowls"><div><div class="msg">${TI('Table', '桌上')}</div><div class="bowl" id="bwout"></div></div>
+        <div><div class="msg">${TI('Bowl', '碗里')}</div><div class="bowl" id="bwin"></div></div></div>
+        <div class="row" style="justify-content:center"><button class="btn next" id="bwok">${TI('Check', '检查')}</button></div>`;
+      const paint = () => {
+        const chip = (i, inn) => `<button class="pilebtn" data-i="${i}" data-in="${inn ? 1 : 0}" aria-label="piece">${item('cookie')}</button>`;
+        $('#bwout', g.body).innerHTML = bowl.map((inn, i) => inn ? '' : chip(i, false)).join('');
+        $('#bwin', g.body).innerHTML = bowl.map((inn, i) => inn ? chip(i, true) : '').join('');
+      };
+      const deal = () => {
+        const d = pick([2, 3, 4, 5]), n = ri(1, d - 1), q = ri(2, 4);
+        total = d * q; need = n * q; bowl = Array(total).fill(false);
+        $('#bwq', g.body).innerHTML = TI(`Put ${n}/${d} of the ${total} cookies in the bowl`, `把 ${total} 块饼干的 ${n}/${d} 放进碗里`);
+        paint();
+      };
+      g.body.onclick = e => {
+        const b = e.target.closest('.pilebtn'); if (!b || g.over) return;
+        const i = +b.dataset.i;
+        bowl[i] = !bowl[i]; tick(); paint();
+      };
+      $('#bwok', g.body).onclick = () => {
+        if (g.over) return;
+        const got = bowl.filter(Boolean).length;
+        if (got === need) { g.add(); pop(); gBurst($('#bwin', g.body), 28); deal(); }
+        else { boo(); const el = $('#bwok', g.body); el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); }
+      };
+      deal();
+    }
+  },
+
+  opmachine: {
+    title: ['Expression Machine', '算式机器'],
+    rule: ['Tap the operation buttons to cycle + − ×, and tap the parentheses button. Make the machine equal the target, then press Check!',
+      '点运算按钮切换 + − ×，再点括号按钮。让算式等于目标数，然后按“检查”！'],
+    setup(g) {
+      const ops = ['+', '−', '×'];
+      let a, b, c, i1, i2, paren, target;
+      const apply = (x, o, y) => o === '+' ? x + y : o === '−' ? x - y : x * y;
+      const value = () => {
+        const o1 = ops[i1], o2 = ops[i2];
+        if (paren === 'L') return apply(apply(a, o1, b), o2, c);
+        if (paren === 'R') return apply(a, o1, apply(b, o2, c));
+        if (o2 === '×' && o1 !== '×') return apply(a, o1, apply(b, o2, c));
+        if (o1 === '×' && o2 !== '×') return apply(apply(a, o1, b), o2, c);
+        return apply(apply(a, o1, b), o2, c);
+      };
+      const text = () => {
+        const o1 = ops[i1], o2 = ops[i2];
+        if (paren === 'L') return `(${a} ${o1} ${b}) ${o2} ${c}`;
+        if (paren === 'R') return `${a} ${o1} (${b} ${o2} ${c})`;
+        return `${a} ${o1} ${b} ${o2} ${c}`;
+      };
+      const parenLabel = () => paren === 'L' ? TI('( first two )', '括号在前两个') : paren === 'R' ? TI('( last two )', '括号在后两个') : TI('No parentheses', '没有括号');
+      g.body.innerHTML = `<div class="prompt">${TI('Make this value', '凑出这个得数')}</div>
+        <div class="prompt eqbig" id="omt"></div>
+        <div class="prompt eqbig" id="omx" style="font-size:clamp(22px,5.5vw,34px)"></div>
+        <div class="row" style="justify-content:center;flex-wrap:wrap">
+          <button class="btn ghost" id="om1"></button>
+          <button class="btn ghost" id="om2"></button>
+          <button class="btn ghost" id="omp"></button>
+          <button class="btn next" id="omok">${TI('Check', '检查')}</button>
+        </div>
+        <div class="msg" id="omnow"></div>`;
+      const paint = () => {
+        $('#om1', g.body).textContent = ops[i1];
+        $('#om2', g.body).textContent = ops[i2];
+        $('#omp', g.body).innerHTML = parenLabel();
+        $('#omx', g.body).textContent = text();
+        $('#omnow', g.body).innerHTML = TI(`Now = ${value()}`, `现在 = ${value()}`);
+      };
+      const deal = () => {
+        const forms = [];
+        a = ri(2, 9); b = ri(2, 9); c = ri(2, 6);
+        [['+', '×', 'none'], ['×', '−', 'none'], ['+', '×', 'L'], ['×', '+', 'R'], ['−', '×', 'none'], ['+', '+', 'L']].forEach(([o1, o2, p]) => {
+          i1 = ops.indexOf(o1); i2 = ops.indexOf(o2); paren = p;
+          const v = value();
+          if (v > 0 && v < 100 && Number.isInteger(v)) forms.push({ i1, i2, paren, v });
+        });
+        const win = forms.length ? pick(forms) : { v: a + b * c };
+        target = win.v;
+        let guard = 0;
+        do { i1 = rnd(3); i2 = rnd(3); paren = pick(['none', 'L', 'R']); } while (value() === target && ++guard < 12);
+        $('#omt', g.body).textContent = String(target);
+        paint();
+      };
+      $('#om1', g.body).onclick = () => { if (g.over) return; i1 = (i1 + 1) % 3; tick(); paint(); };
+      $('#om2', g.body).onclick = () => { if (g.over) return; i2 = (i2 + 1) % 3; tick(); paint(); };
+      $('#omp', g.body).onclick = () => { if (g.over) return; paren = paren === 'none' ? 'L' : paren === 'L' ? 'R' : 'none'; tick(); paint(); };
+      $('#omok', g.body).onclick = () => {
+        if (g.over) return;
+        if (value() === target) { g.add(); pop(); gBurst($('#omx', g.body), 30); deal(); }
+        else { boo(); const el = $('#omok', g.body); el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); }
+      };
+      deal();
+    }
   }
 };
 
