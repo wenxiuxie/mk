@@ -775,6 +775,59 @@ const LEAP_GAMES = {
       };
       deal();
     }
+  },
+
+  blankdial: {
+    title: ['Missing-Number Dial', '缺数转盘'],
+    rule: ['A box is hiding a number. Nudge it with −5, −1, +1 and +5 until the equation is true, then press Check.',
+      '方框里藏着一个数。用 −5、−1、+1、+5 把它调到正好，再按“检查”。'],
+    setup(g) {
+      let guess, ans, render;
+      g.body.innerHTML = `<div class="prompt" id="bdeq" style="font-size:clamp(20px,5vw,30px)"></div>
+        <div class="prompt eqbig" id="bdg"></div>
+        <div class="msg" id="bdnow"></div>
+        <div class="row" id="bddial" style="justify-content:center;flex-wrap:wrap">
+          <button class="btn ghost" data-d="-5">−5</button>
+          <button class="btn ghost" data-d="-1">−1</button>
+          <button class="btn ghost" data-d="1">+1</button>
+          <button class="btn ghost" data-d="5">+5</button>
+          <button class="btn next" id="bdok">${TI('Check', '检查')}</button>
+        </div>`;
+      const paint = () => {
+        $('#bdeq', g.body).textContent = render('□');
+        $('#bdg', g.body).textContent = guess;
+        $('#bdnow', g.body).innerHTML = TI(`Trying ${render(guess)}`, `正在试 ${render(guess)}`);
+      };
+      const deal = () => {
+        const t = rnd(3);
+        if (t === 0) {
+          const b = ri(2, 9), c = ri(2, 6), q = ri(2, 12);
+          ans = q;
+          render = n => `${n} + ${b} × ${c} = ${q + b * c}`;
+        } else if (t === 1) {
+          const a = ri(2, 9), q = ri(2, 9);
+          ans = q;
+          render = n => `${a} × ${n} = ${a * q}`;
+        } else {
+          const b = ri(2, 8), c = ri(2, 5), q = ri(2, 9);
+          ans = q;
+          render = n => `(${n} + ${b}) × ${c} = ${(q + b) * c}`;
+        }
+        do { guess = ri(0, 12); } while (guess === ans);
+        paint();
+      };
+      $('#bddial', g.body).onclick = e => {
+        const b = e.target.closest('[data-d]'); if (!b || g.over) return;
+        guess = Math.max(0, Math.min(40, guess + (+b.dataset.d)));
+        tick(); paint();
+      };
+      $('#bdok', g.body).onclick = () => {
+        if (g.over) return;
+        if (guess === ans) { g.add(); pop(); gBurst($('#bdg', g.body), 28); deal(); }
+        else { boo(); const el = $('#bdok', g.body); el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); }
+      };
+      deal();
+    }
   }
 };
 
