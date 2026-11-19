@@ -828,6 +828,86 @@ const LEAP_GAMES = {
       };
       deal();
     }
+  },
+
+  fracchain: {
+    title: ['Fraction Chain', '同分母接龙'],
+    rule: ['Add or subtract fractions with the same denominator. Tap the fraction you land on.',
+      '同分母分数相加或相减。点出算完以后的分数。'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a'];
+      let ans;
+      g.body.innerHTML = `<div class="prompt eqbig" id="fceq"></div><div class="bubbles opts" id="fcop"></div>`;
+      const deal = () => {
+        const d = pick([6, 7, 8, 9, 10]);
+        const n = ri(2, d - 2);
+        let step, next;
+        if (rnd(2) === 0 && n > 2) { step = ri(1, Math.min(2, n - 1)); next = n - step; $('#fceq', g.body).textContent = `${n}/${d} − ${step}/${d} = ?`; }
+        else { step = ri(1, Math.min(2, d - 1 - n)); next = n + step; $('#fceq', g.body).textContent = `${n}/${d} + ${step}/${d} = ?`; }
+        ans = `${next}/${d}`;
+        const wrong = [`${n}/${d}`, `${step}/${d}`, `${next}/${d + d}`, `${next + 1}/${d}`, `${Math.max(1, next - 1)}/${d}`]
+          .filter(v => v !== ans);
+        const opts = shuffle([ans, ...wrong.filter((v, i, a) => a.indexOf(v) === i).slice(0, 2)]);
+        $('#fcop', g.body).innerHTML = opts.map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)};border-radius:18px;font-size:clamp(18px,5vw,26px)">${v}</button>`).join('');
+      };
+      $('#fcop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (b.dataset.n === ans) { g.add(); pop(); gBurst(b); deal(); }
+        else gBad(b);
+      };
+      deal();
+    }
+  },
+
+  extraout: {
+    title: ['Extra Number', '多余的数'],
+    rule: ['A story hides one number you do not need. Tap that extra number, then tap the answer. Both steps score a bonus!',
+      '故事里有一个用不到的数。先点出这个多余的数，再点出答案。两步都对有奖励！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#8a5cc2'];
+      let stage, unused, ans, bags, each;
+      g.body.innerHTML = `<div class="prompt" id="exstory" style="font-size:clamp(16px,4vw,22px)"></div>
+        <div class="msg" id="exbar" style="font-weight:700"></div>
+        <div class="prompt" id="exq"></div>
+        <div class="bubbles opts" id="exop"></div>`;
+      const buttons = values => {
+        const set = [];
+        values.forEach(v => { if (!set.includes(String(v))) set.push(String(v)); });
+        let k = 1;
+        while (set.length < 3) { const v = String(+ans + k); if (!set.includes(v)) set.push(v); k++; }
+        $('#exop', g.body).innerHTML = shuffle(set.slice(0, 3)).map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)};border-radius:18px;font-size:clamp(18px,5vw,28px)">${v}</button>`).join('');
+      };
+      const ask = () => {
+        $('#exbar', g.body).innerHTML = stage === 0 ? '① → ②' : '①✓ → ②';
+        $('#exq', g.body).innerHTML = stage === 0
+          ? TI('Which number is NOT needed?', '哪个数用不到？')
+          : TI('Now what is the answer?', '那么答案是多少？');
+        buttons(stage === 0 ? [bags, each, unused] : [ans, unused, ans + each]);
+      };
+      const deal = () => {
+        stage = 0;
+        bags = ri(3, 8); each = ri(3, 9);
+        while (each === bags) each = ri(3, 9);
+        let km = ri(2, 12);
+        const total = bags * each;
+        while (km === bags || km === each || km === total) km = ri(2, 15);
+        unused = km; ans = total;
+        $('#exstory', g.body).innerHTML = TI(`${bags} bags with ${each} stickers in each. The shop is ${km} km away. How many stickers?`,
+          `${bags} 袋贴纸，每袋 ${each} 张。商店在 ${km} 千米外。一共有多少张贴纸？`);
+        ask();
+      };
+      $('#exop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        const want = stage === 0 ? String(unused) : String(ans);
+        if (b.dataset.n !== want) { gBad(b); setTimeout(() => { if (!g.over) deal(); }, 400); return; }
+        g.add(); pop(); gBurst(b);
+        if (stage === 0) { stage = 1; ask(); }
+        else { g.add(2); fanfare(); setTimeout(() => { if (!g.over) deal(); }, 600); }
+      };
+      deal();
+    }
   }
 };
 

@@ -7,7 +7,7 @@ Higher-grade track for **四年级 / Grade 4**. Companion to `kangaroo-hop` (G3)
 | 年级 | ~G3 | **G4 only** |
 | G5 | — | **以后单独新建目录**，不写进 Leap |
 | 引擎 | 自有 | **技术同源**（从 Hop 复制后改品牌），**数据完全独立** |
-| 已开放 | （Hop 未做组仍在 Hop 做） | **分数营 A–E** + **混合运算营 A–B** |
+| 已开放 | （Hop 未做组仍在 Hop 做） | **分数营 A–E** + **混合运算营 A–D** |
 
 ## 打开方式
 
@@ -21,14 +21,16 @@ Higher-grade track for **四年级 / Grade 4**. Companion to `kangaroo-hop` (G3)
 - `series/frac5.html` 分数营 E：分数应用题
 - `series/mix1.html` 混合运算营 A：顺序与括号
 - `series/mix2.html` 混合运算营 B：多步与缺数
+- `series/mix3.html` 混合运算营 C：分数混合运算
+- `series/mix4.html` 混合运算营 D：应用题与干扰信息
 
 在线：https://wenxiuxie.github.io/mk/kangaroo-leap/
 
 Leap 专属小游戏（`engine/leap_games.js`）：
-- 分数：双胞胎 · 蛋糕点分数 · 涂色挑战 · 接星星 · 过河 · 翻翻乐 · 披萨订单 · 分数跳格子 · 分碗达人 · 补齐罐子 · 两步小径
-- 混合运算：先算谁 · 运算冲刺 · 括号修理工 · 运算三连击 · 算式机器 · 缺数转盘
+- 分数：双胞胎 · 蛋糕点分数 · 涂色挑战 · 接星星 · 过河 · 翻翻乐 · 披萨订单 · 分数跳格子 · 分碗达人 · 补齐罐子 · 两步小径 · 同分母接龙
+- 混合运算：先算谁 · 运算冲刺 · 括号修理工 · 运算三连击 · 算式机器 · 缺数转盘 · 多余的数
 
-下一组是混合运算营 C。
+分数营和混合运算营 A–D 都已开放。后续大数、小数等再商量。
 
 ## 独立原则（请保持）
 

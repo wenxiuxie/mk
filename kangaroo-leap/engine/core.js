@@ -174,7 +174,7 @@ function renderMap() {
     <p class="note" style="margin-top:4px">${T('Watch the mini-lesson, answer 20 questions, and play a 60-second game after every 10.', '先看趣味小课，再做 20 题，每做 10 题玩一次 60 秒小游戏。')}</p>
     <div class="islands">
       ${SERIES.filter(s => s.camp).map(islandCard).join('')}
-      ${lockedCard(['Mixed Ops Camp C', '混合运算营 C'], ['Fractions in the Mix', '分数混合运算'], ['Next Leap camp', '下一组'])}
+      ${lockedCard(['Big Numbers', '大数与估算'], ['Ten-thousands & rounding', '万以内、四舍五入'], ['Later Leap camp', '后续再商量'])}
     </div>
     <h2 class="sect">${TI('Practice islands', '练习岛')}</h2>
     <div class="islands">
