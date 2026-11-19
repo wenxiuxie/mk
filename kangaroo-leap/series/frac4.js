@@ -238,5 +238,5 @@ registerSeries({
   desc: ['Find a fraction of a whole number; fraction × integer', '求一个数的几分之几；分数乘整数'],
   lesson: LESSON_FRAC4,
   questions: Q_FRAC4,
-  next: 'mix1'
+  next: 'frac5'
 });

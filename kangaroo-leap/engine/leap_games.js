@@ -677,6 +677,104 @@ const LEAP_GAMES = {
       };
       deal();
     }
+  },
+
+  jarwhole: {
+    title: ['Fill the Jar', '补齐罐子'],
+    rule: ['Some equal parts of the jar are already full. Tap an empty part to fill it with the same number of cookies, until the whole jar is full!',
+      '罐子里已经装满了几份同样多的饼干。点空着的一份，装进同样多的饼干，直到整罐都满！'],
+    setup(g) {
+      let d, q, filled;
+      g.body.innerHTML = `<div class="prompt" id="jwq"></div>
+        <div class="lgcells" id="jwrow" style="padding-top:8px"></div>
+        <div class="msg" id="jwmsg"></div>`;
+      const paint = () => {
+        $('#jwrow', g.body).style.gridTemplateColumns = `repeat(${d},minmax(0,1fr))`;
+        $('#jwrow', g.body).innerHTML = Array.from({ length: d }, (_, i) => i < filled
+          ? `<div class="lgcell" style="min-height:74px;background:#f6d7a7;align-items:center;flex-direction:column">${item('cookie').repeat(q)}</div>`
+          : `<button class="lgcell" style="min-height:74px;cursor:pointer;font-size:28px">+</button>`).join('');
+        $('#jwmsg', g.body).innerHTML = TI(`${filled}/${d} full · ${filled * q} cookies so far`, `已满 ${filled}/${d} 份 · 现在 ${filled * q} 块`);
+      };
+      const deal = () => {
+        d = pick([4, 5, 6, 8]);
+        const start = ri(1, Math.max(1, d - 2));
+        q = ri(2, 3);
+        filled = start;
+        $('#jwq', g.body).innerHTML = TI(`${start}/${d} of the jar is full. Each part has ${q} cookies. Fill the rest!`,
+          `罐子的 ${start}/${d} 已经装满，每份 ${q} 块。把空着的份补齐！`);
+        paint();
+      };
+      $('#jwrow', g.body).onclick = e => {
+        if (!e.target.closest('button') || g.over || filled >= d) return;
+        filled++; tick(); paint();
+        if (filled === d) {
+          g.add(); pop();
+          $('#jwmsg', g.body).innerHTML = TI(`The whole jar is ${d * q} cookies!`, `整罐是 ${d * q} 块！`);
+          setTimeout(() => { if (!g.over) deal(); }, 550);
+        }
+      };
+      deal();
+    }
+  },
+
+  twostep: {
+    title: ['Two-Step Trail', '两步小径'],
+    rule: ['A short story needs two steps. Answer step 1, then step 2. Both correct gives a bonus!',
+      '一小段故事要分两步算。先答第 1 步，再答第 2 步。两步都对有奖励！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a'];
+      let stage, a1, a2, mode;
+      g.body.innerHTML = `<div class="prompt" id="tsstory" style="font-size:clamp(16px,4vw,22px)"></div>
+        <div class="msg" id="tsbar" style="font-weight:700"></div>
+        <div class="prompt" id="tsq"></div>
+        <div class="bubbles opts" id="tsop"></div>`;
+      const opts = (ans, wrongs) => {
+        const set = new Set([ans]);
+        wrongs.forEach(w => { if (Number.isInteger(w) && w > 0 && w !== ans) set.add(w); });
+        let k = 1;
+        while (set.size < 3) { set.add(ans + k); k++; }
+        $('#tsop', g.body).innerHTML = shuffle([...set].slice(0, 3)).map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)}">${v}</button>`).join('');
+      };
+      const ask = () => {
+        $('#tsbar', g.body).innerHTML = stage === 0 ? '① → ②' : '①✓ → ②';
+        if (mode === 'cookie') {
+          $('#tsq', g.body).innerHTML = stage === 0
+            ? TI('Step 1: how many were eaten first?', '第 1 步：先吃了几块？')
+            : TI('Step 2: how many are left?', '第 2 步：还剩几块？');
+        } else {
+          $('#tsq', g.body).innerHTML = stage === 0
+            ? TI('Step 1: how long is one equal part?', '第 1 步：每一份是几米？')
+            : TI('Step 2: how long is the whole path?', '第 2 步：整条小路有几米？');
+        }
+        opts(stage === 0 ? a1 : a2, [a1, a2, a2 - a1, a1 * 2, a1 + a2]);
+      };
+      const deal = () => {
+        stage = 0;
+        if (rnd(2) === 0) {
+          mode = 'cookie';
+          const k = pick([2, 3, 4, 5]), q = ri(3, 6), extra = ri(1, q - 1), N = k * q;
+          a1 = q; a2 = N - q - extra;
+          $('#tsstory', g.body).innerHTML = TI(`${N} cookies. Eat 1/${k} first, then eat ${extra} more.`,
+            `${N} 块饼干。先吃掉 1/${k}，再吃 ${extra} 块。`);
+        } else {
+          mode = 'path';
+          const d = pick([4, 5, 6]), share = ri(2, 6), parts = ri(1, d - 1);
+          a1 = share; a2 = share * d;
+          $('#tsstory', g.body).innerHTML = TI(`${parts}/${d} of the path is ${share * parts} m.`,
+            `小路的 ${parts}/${d} 是 ${share * parts} 米。`);
+        }
+        ask();
+      };
+      $('#tsop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (+b.dataset.n !== (stage === 0 ? a1 : a2)) { gBad(b); setTimeout(() => { if (!g.over) deal(); }, 400); return; }
+        g.add(); pop(); gBurst(b);
+        if (stage === 0) { stage = 1; ask(); }
+        else { g.add(2); fanfare(); setTimeout(() => { if (!g.over) deal(); }, 600); }
+      };
+      deal();
+    }
   }
 };
 
