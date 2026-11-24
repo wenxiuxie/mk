@@ -908,6 +908,94 @@ const LEAP_GAMES = {
       };
       deal();
     }
+  },
+
+  rounddash: {
+    title: ['Round Dash', '四舍五入冲刺'],
+    rule: ['Round the number to the nearest 10, 100, or 1000. Tap the rounded answer!',
+      '把数四舍五入到最近的 10、100 或 1000。点出答案！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a'];
+      let ans;
+      g.body.innerHTML = `<div class="prompt" id="rdq"></div><div class="prompt eqbig" id="rdn"></div>
+        <div class="bubbles opts" id="rdop"></div>`;
+      const deal = () => {
+        const place = pick([10, 100, 1000]);
+        let n;
+        if (place === 10) n = ri(25, 980);
+        else if (place === 100) n = ri(150, 9800);
+        else n = ri(1500, 9800);
+        ans = Math.round(n / place) * place;
+        const wrong = [ans + place, Math.max(0, ans - place), n, Math.floor(n / place) * place, Math.ceil(n / place) * place]
+          .filter(v => v !== ans && v >= 0);
+        const opts = shuffle([ans, ...wrong.filter((v, i, a) => a.indexOf(v) === i).slice(0, 2)]);
+        const zhPlace = place === 10 ? '十' : place === 100 ? '百' : '千';
+        $('#rdq', g.body).innerHTML = TI(`Round to the nearest ${place}`, `四舍五入到最近的${zhPlace}位`);
+        $('#rdn', g.body).textContent = String(n);
+        $('#rdop', g.body).innerHTML = opts.map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)};border-radius:16px;font-size:clamp(16px,4vw,24px)">${v}</button>`).join('');
+      };
+      $('#rdop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (+b.dataset.n === ans) { g.add(); pop(); gBurst(b); deal(); }
+        else gBad(b);
+      };
+      deal();
+    }
+  },
+
+  tenthmatch: {
+    title: ['Tenth Twin', '十分位双胞胎'],
+    rule: ['Tap the decimal and the fraction that match, like 0.3 and 3/10. How many pairs in 60 seconds?',
+      '点出相等的小数和分数，例如 0.3 和 3/10。60 秒能对上几对？'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a', '#8a5cc2'];
+      const makePair = () => {
+        if (rnd(2) === 0) {
+          const n = ri(1, 9);
+          return [`0.${n}`, `${n}/10`];
+        }
+        const n = ri(1, 99);
+        const dec = n < 10 ? `0.0${n}` : `0.${String(n).padStart(2, '0')}`;
+        return [dec, `${n}/100`];
+      };
+      const vals = [];
+      for (let i = 0; i < 4; i++) vals.push(...makePair());
+      shuffle(vals);
+      let sel = -1;
+      g.body.innerHTML = `<div class="prompt">${TI('Match decimal ↔ fraction', '把小数和分数配对')}</div>
+        <div class="bubbles" id="tm" style="grid-template-columns:repeat(4,minmax(0,1fr))">${vals.map((_, i) =>
+          `<button class="bub" data-i="${i}" style="--bc:${pick(cols)};border-radius:18px;font-size:clamp(14px,3.8vw,20px)"></button>`).join('')}</div>`;
+      const box = $('#tm', g.body);
+      const paint = i => { box.children[i].textContent = vals[i]; box.children[i].className = 'bub'; };
+      vals.forEach((_, i) => paint(i));
+      const toHund = s => {
+        if (s.includes('/')) {
+          const [a, b] = s.split('/').map(Number);
+          return a * (100 / b);
+        }
+        return Math.round(parseFloat(s) * 100);
+      };
+      box.onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        const i = +b.dataset.i;
+        if (sel < 0) { sel = i; b.classList.add('sel'); tick(); return; }
+        const j = sel; sel = -1; box.children[j].classList.remove('sel');
+        if (i === j) return;
+        if (toHund(vals[i]) === toHund(vals[j]) && vals[i] !== vals[j]) {
+          g.add(); pop(); gBurst(b);
+          box.children[i].classList.add('pop'); box.children[j].classList.add('pop');
+          setTimeout(() => {
+            const [p, q] = makePair();
+            vals[i] = p; vals[j] = q;
+            const a = rnd(vals.length), c = rnd(vals.length);
+            [vals[i], vals[a]] = [vals[a], vals[i]];
+            [vals[j], vals[c]] = [vals[c], vals[j]];
+            new Set([i, j, a, c]).forEach(paint);
+          }, 280);
+        } else gBad(b), gBad(box.children[j]);
+      };
+    }
   }
 };
 

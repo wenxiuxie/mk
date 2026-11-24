@@ -290,5 +290,5 @@ registerSeries({
   desc: ['Cross out numbers the question does not use, then compute', '划掉用不到的数，再列式计算'],
   lesson: LESSON_MIX4,
   questions: Q_MIX4,
-  next: null
+  next: 'big1'
 });
