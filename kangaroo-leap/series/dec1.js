@@ -259,5 +259,5 @@ registerSeries({
   desc: ['Read decimals; swap with /10 and /100 fractions', '读写小数；与分母 10、100 的分数互化'],
   lesson: LESSON_DEC1,
   questions: Q_DEC1,
-  next: null
+  next: 'fact1'
 });

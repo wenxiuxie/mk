@@ -996,6 +996,163 @@ const LEAP_GAMES = {
         } else gBad(b), gBad(box.children[j]);
       };
     }
+  },
+
+  factorpop: {
+    title: ['Factor Pop', '因数泡泡'],
+    rule: ['A number appears. Tap every bubble that is a factor of that number. Clear the board for a bonus!',
+      '出现一个数。点出所有是它因数的泡泡。清完一轮有奖励！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a', '#8a5cc2'];
+      let N, left;
+      g.body.innerHTML = `<div class="prompt" id="fpq"></div><div class="bubbles" id="fpb"></div>`;
+      const factors = n => {
+        const f = [];
+        for (let i = 1; i <= n; i++) if (n % i === 0) f.push(i);
+        return f;
+      };
+      const deal = () => {
+        N = pick([12, 16, 18, 20, 24, 30, 36]);
+        const good = factors(N);
+        const bad = [];
+        while (bad.length < 4) {
+          const v = ri(2, N + 6);
+          if (N % v !== 0 && !bad.includes(v) && !good.includes(v)) bad.push(v);
+        }
+        const vals = shuffle([...good, ...bad]).slice(0, Math.min(8, good.length + 3));
+        // ensure at least 3 factors present
+        while (vals.filter(v => N % v === 0).length < 3) {
+          const miss = good.find(v => !vals.includes(v));
+          if (!miss) break;
+          vals[rnd(vals.length)] = miss;
+        }
+        left = vals.filter(v => N % v === 0).length;
+        $('#fpq', g.body).innerHTML = TI(`Tap factors of ${N}`, `点出 ${N} 的因数`);
+        $('#fpb', g.body).innerHTML = vals.map((v, i) =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)}">${v}</button>`).join('');
+      };
+      $('#fpb', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over || b.classList.contains('pop')) return;
+        const v = +b.dataset.n;
+        if (N % v === 0) {
+          g.add(); pop(); gBurst(b); b.classList.add('pop'); left--;
+          if (left <= 0) { g.add(2); fanfare(); setTimeout(() => { if (!g.over) deal(); }, 500); }
+        } else gBad(b);
+      };
+      deal();
+    }
+  },
+
+  fencefill: {
+    title: ['Fence & Floor', '篱笆与地板'],
+    rule: ['Sometimes find the perimeter, sometimes the area. Tap the right number for the rectangle or square!',
+      '有时求周长，有时求面积。点出长方形或正方形的正确答案！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#8a5cc2'];
+      let ans;
+      g.body.innerHTML = `<div class="prompt" id="ffq"></div>
+        <div id="fffig" style="display:flex;justify-content:center;min-height:90px"></div>
+        <div class="bubbles opts" id="ffop"></div>`;
+      const rectSvg = (w, h) => {
+        const W = 160, H = Math.max(40, Math.round(160 * h / w));
+        return `<svg viewBox="0 0 ${W + 40} ${H + 36}" width="${W + 40}" height="${H + 36}">
+          <rect x="20" y="8" width="${W}" height="${H}" fill="#fff8e8" stroke="#1f2b3a" stroke-width="3"/>
+          <text x="${20 + W / 2}" y="${H + 28}" text-anchor="middle" font-size="14">${w}</text>
+          <text x="10" y="${8 + H / 2}" text-anchor="middle" font-size="14" dominant-baseline="middle">${h}</text>
+        </svg>`;
+      };
+      const deal = () => {
+        const square = rnd(3) === 0;
+        const L = square ? ri(3, 9) : ri(4, 12);
+        const W = square ? L : ri(2, Math.min(8, L - 1));
+        const peri = 2 * (L + W), area = L * W;
+        const wantArea = rnd(2) === 0;
+        ans = wantArea ? area : peri;
+        $('#ffq', g.body).innerHTML = wantArea
+          ? TI(square ? `Area of the ${L}×${L} square?` : `Area of the ${L}×${W} rectangle?`,
+            square ? `边长 ${L} 的正方形，面积是多少？` : `长 ${L}、宽 ${W} 的长方形，面积是多少？`)
+          : TI(square ? `Perimeter of the ${L}×${L} square?` : `Perimeter of the ${L}×${W} rectangle?`,
+            square ? `边长 ${L} 的正方形，周长是多少？` : `长 ${L}、宽 ${W} 的长方形，周长是多少？`);
+        $('#fffig', g.body).innerHTML = rectSvg(L, W);
+        const opts = new Set([ans, peri, area, L + W, L * 2 + W]);
+        while (opts.size < 3) opts.add(ans + pick([-2, -1, 1, 2, 3]));
+        $('#ffop', g.body).innerHTML = shuffle([...opts].filter(v => v > 0).slice(0, 3)).map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)}">${v}</button>`).join('');
+      };
+      $('#ffop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (+b.dataset.n === ans) { g.add(); pop(); gBurst(b); deal(); }
+        else gBad(b);
+      };
+      deal();
+    }
+  },
+
+  changechase: {
+    title: ['Change Chase', '找零追击'],
+    rule: ['You pay with a bill. Tap the correct change. Prices and bills keep changing!',
+      '用一张纸币付钱。点出应找回多少。价格和纸币会不断变化！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#c8435a'];
+      const bills = [10, 20, 50, 100];
+      let ans;
+      g.body.innerHTML = `<div class="prompt" id="ccq"></div><div class="bubbles opts" id="ccop"></div>`;
+      const deal = () => {
+        const bill = pick(bills);
+        let price = ri(1, bill - 1);
+        // keep change interesting
+        while (price === bill) price = ri(1, bill - 1);
+        ans = bill - price;
+        $('#ccq', g.body).innerHTML = TI(`Price ${price}. Pay with ${bill}. Change?`,
+          `价钱 ${price} 元，付 ${bill} 元。应找回多少元？`);
+        const opts = new Set([ans, price, bill, ans + 1, Math.max(1, ans - 1), bill + price]);
+        $('#ccop', g.body).innerHTML = shuffle([...opts].filter(v => v >= 0).slice(0, 3)).map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)}">${v}</button>`).join('');
+      };
+      $('#ccop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (+b.dataset.n === ans) { g.add(); pop(); gBurst(b); deal(); }
+        else gBad(b);
+      };
+      deal();
+    }
+  },
+
+  patternpick: {
+    title: ['Pattern Pick', '找规律'],
+    rule: ['Look at the sequence. Tap what comes next!',
+      '看这一串数的规律。点出下一个！'],
+    setup(g) {
+      const cols = ['#3a76b8', '#2f8f6b', '#c8742c', '#8a5cc2'];
+      let ans;
+      g.body.innerHTML = `<div class="prompt eqbig" id="ppseq" style="font-size:clamp(18px,4.5vw,28px)"></div>
+        <div class="bubbles opts" id="ppop"></div>`;
+      const deal = () => {
+        const t = rnd(4);
+        let seq;
+        if (t === 0) {
+          const a = ri(2, 8), d = ri(2, 6);
+          seq = [a, a + d, a + 2 * d, a + 3 * d]; ans = a + 4 * d;
+        } else if (t === 1) {
+          const a = ri(2, 5); seq = [a, a * 2, a * 4, a * 8]; ans = a * 16;
+        } else if (t === 2) {
+          const a = ri(20, 40), d = ri(2, 5);
+          seq = [a, a - d, a - 2 * d, a - 3 * d]; ans = a - 4 * d;
+        } else {
+          const a = ri(1, 4); seq = [a, a + 1, a + 3, a + 6]; ans = a + 10; // +1,+2,+3,+4
+        }
+        $('#ppseq', g.body).textContent = seq.join(', ') + ', ?';
+        const opts = new Set([ans, ans + 1, ans - 1, seq[seq.length - 1] + (seq[1] - seq[0]), seq[seq.length - 1] * 2]);
+        $('#ppop', g.body).innerHTML = shuffle([...opts].filter(v => Number.isInteger(v) && v > 0).slice(0, 3)).map(v =>
+          `<button class="bub" data-n="${v}" style="--bc:${pick(cols)}">${v}</button>`).join('');
+      };
+      $('#ppop', g.body).onclick = e => {
+        const b = e.target.closest('.bub'); if (!b || g.over) return;
+        if (+b.dataset.n === ans) { g.add(); pop(); gBurst(b); deal(); }
+        else gBad(b);
+      };
+      deal();
+    }
   }
 };
 
