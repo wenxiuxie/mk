@@ -20,7 +20,11 @@ Higher-grade track for **四年级 / Grade 4**. Companion to `kangaroo-hop` (G3)
 - `series/frac4.html` 分数营 D：一个数的几分之几
 - `series/frac5.html` 分数营 E：分数应用题
 - `series/mix1.html` 混合运算营 A：顺序与括号
+- `series/mix1b.html` 顺序与括号 · 加练 1
+- `series/mix1c.html` 顺序与括号 · 加练 2
 - `series/mix2.html` 混合运算营 B：多步与缺数
+- `series/mix2b.html` 多步与缺数 · 加练 1
+- `series/mix2c.html` 多步与缺数 · 加练 2
 - `series/mix3.html` 混合运算营 C：分数混合运算
 - `series/mix4.html` 混合运算营 D：应用题与干扰信息
 - `series/big1.html` 大数与估算：万以内与四舍五入

@@ -273,5 +273,5 @@ registerSeries({
   desc: ['×÷ before +− , parentheses first, common traps', '先乘除后加减、先算括号、常见陷阱'],
   lesson: LESSON_MIX1,
   questions: Q_MIX1,
-  next: 'mix2'
+  next: 'mix1b'
 });

@@ -251,5 +251,5 @@ registerSeries({
   desc: ['Longer + − × chains, and missing numbers', '多步加减乘，以及求方框里的数'],
   lesson: LESSON_MIX2,
   questions: Q_MIX2,
-  next: 'mix3'
+  next: 'mix2b'
 });
