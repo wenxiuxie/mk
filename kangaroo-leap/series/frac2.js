@@ -226,5 +226,5 @@ registerSeries({
   desc: ['Equivalent fractions, same/different denominators', '等价分数、同分母/同分子比较'],
   lesson: LESSON_FRAC2,
   questions: Q_FRAC2,
-  next: 'frac3'
+  next: 'frac2b'
 });

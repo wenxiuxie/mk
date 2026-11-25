@@ -16,6 +16,8 @@ Higher-grade track for **四年级 / Grade 4**. Companion to `kangaroo-hop` (G3)
 已开放训练营：
 - `series/frac1.html` 分数营 A：再认识
 - `series/frac2.html` 分数营 B：等价与比较
+- `series/frac2b.html` 等价分数 · 加练 1（1/2=3/6 等）
+- `series/frac2c.html` 等价分数 · 加练 2（约分后再比）
 - `series/frac3.html` 分数营 C：同分母加减
 - `series/frac4.html` 分数营 D：一个数的几分之几
 - `series/frac5.html` 分数营 E：分数应用题
@@ -51,4 +53,5 @@ Leap 专属小游戏（`engine/leap_games.js`）：
 
 ## 提纲
 
-见 [训练营提纲.md](训练营提纲.md)。
+见 [训练营提纲.md](训练营提纲.md)。  
+各类别开通/更新时间与自检勾选见 [类别时间核对.md](类别时间核对.md)。
